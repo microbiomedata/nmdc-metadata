@@ -1,0 +1,242 @@
+{
+   "$id": "https://microbiomedata/schema",
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "definitions": {
+      "alternate_identifiers": {
+         "description": "Non-primary identifiers",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "annotations": {
+         "description": "Zero to many annotations on a sample",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "description": {
+         "description": "a human-readable description of a thing",
+         "type": "string"
+      },
+      "has_characteristic": {
+         "description": "Links an annotation to the field/characteristic",
+         "type": "string"
+      },
+      "has_normalized_value": {
+         "description": "Connects an annotation to the normalized/parsed raw value",
+         "type": "string"
+      },
+      "has_numeric_value": {
+         "description": "connects a quantity value to a number",
+         "type": "string"
+      },
+      "has_raw_value": {
+         "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+         "type": "string"
+      },
+      "has_unit": {
+         "description": "connects a quantity value to a unit",
+         "type": "string"
+      },
+      "id": {
+         "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+         "type": "string"
+      },
+      "input": {
+         "description": "An input biosample to a processing step",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "instance_of": {
+         "type": "string"
+      },
+      "latitude": {
+         "description": "latitude",
+         "type": "string"
+      },
+      "longitude": {
+         "description": "longitude",
+         "type": "string"
+      },
+      "name": {
+         "description": "A human readable label for an entity",
+         "type": "string"
+      },
+      "output": {
+         "description": "An output biosample to a processing step",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      }
+   },
+   "properties": {
+      "Annotation": {
+         "description": "An annotation on a sample. This is essentially a key value pair",
+         "properties": {
+            "has_characteristic": {
+               "description": "Links an annotation to the field/characteristic",
+               "type": "string"
+            },
+            "has_normalized_value": {
+               "description": "Connects an annotation to the normalized/parsed raw value",
+               "type": "string"
+            },
+            "has_raw_value": {
+               "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+               "required": true,
+               "type": "string"
+            }
+         },
+         "title": "Annotation",
+         "type": "object"
+      },
+      "Biosample": {
+         "description": "A material sample. May be environmental (encompassing many organisms) or isolate or tissue",
+         "properties": {
+            "alternate_identifiers": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "annotations": {
+               "description": "Zero to many annotations on a sample",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "required": true,
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "title": "Biosample",
+         "type": "object"
+      },
+      "BiosampleProcessing": {
+         "description": "A process that takes one or more biosamples as inputs and generates one or more as output",
+         "properties": {
+            "input": {
+               "description": "An input biosample to a processing step",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "output": {
+               "description": "An output biosample to a processing step",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "title": "BiosampleProcessing",
+         "type": "object"
+      },
+      "Characteristic": {
+         "description": "A characteristic of a biosample. Examples: depth, habitat, material, ... For NMDC, characteristics SHOULD be mapped to fields within a MIxS template",
+         "properties": {
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            }
+         },
+         "title": "Characteristic",
+         "type": "object"
+      },
+      "ControlledTermValue": {
+         "description": "A controlled term or class from an ontology",
+         "properties": {
+            "instance_of": {
+               "type": "string"
+            }
+         },
+         "title": "ControlledTermValue",
+         "type": "object"
+      },
+      "GeolocationValue": {
+         "description": "A normalized value for a location on the earth's surface",
+         "properties": {
+            "latitude": {
+               "description": "latitude",
+               "type": "string"
+            },
+            "longitude": {
+               "description": "longitude",
+               "type": "string"
+            }
+         },
+         "title": "GeolocationValue",
+         "type": "object"
+      },
+      "NamedThing": {
+         "description": "a databased entity or concept/class",
+         "properties": {
+            "alternate_identifiers": {
+               "description": "Non-primary identifiers",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "required": true,
+               "type": "string"
+            },
+            "name": {
+               "description": "A human readable label for an entity",
+               "type": "string"
+            }
+         },
+         "title": "NamedThing",
+         "type": "object"
+      },
+      "NormalizedValue": {
+         "description": "The value that was specified for an annotation in parsed/normalized form. This could be a range of different types",
+         "properties": {},
+         "title": "NormalizedValue",
+         "type": "object"
+      },
+      "OntologyClass": {
+         "description": "",
+         "properties": {},
+         "title": "OntologyClass",
+         "type": "object"
+      },
+      "QuantityValue": {
+         "description": "A simple quantity, e.g. 2cm",
+         "properties": {
+            "has_numeric_value": {
+               "description": "connects a quantity value to a number",
+               "type": "string"
+            },
+            "has_unit": {
+               "description": "connects a quantity value to a unit",
+               "type": "string"
+            }
+         },
+         "title": "QuantityValue",
+         "type": "object"
+      },
+      "Unit": {
+         "description": "",
+         "properties": {},
+         "title": "Unit",
+         "type": "object"
+      }
+   },
+   "title": "nmdc_schema",
+   "type": "object"
+}
+
