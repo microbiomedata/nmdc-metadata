@@ -1,0 +1,49 @@
+id: https://microbiomedata/schema
+name: nmdc_schema
+description: >-
+  Schema for NMDC. Alpha. Currently focuses on samples
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+prefixes:
+  wgs: http://www.w3.org/2003/01/geo/wgs84_pos
+  qud: http://qudt.org/1.1/schema/qudt#
+  
+default_prefix: nmdc
+default_range: string
+
+default_curi_maps:
+  - obo_context
+  - idot_context
+
+emit_prefixes:
+  - rdf
+  - rdfs
+  - xsd
+  - skos
+
+classes:  
+
+  biosample:
+    description: >-
+      A material sample. May be environmental (encompassing many organisms) or isolate or tissue
+    slots:
+      - id
+      - name
+      - annotations
+      - alternate identifiers
+
+  annotation:
+    description: >-
+      An annotation on a sample. This is essentially a key value pair
+    slots:
+      - characteristic
+      - raw value
+      - 
+
+slots:
+
+  annotations:
+    description: >-
+      Zero to many annotations on a sample
+    multivalued: true
+    range: annotation
