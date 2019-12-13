@@ -24,6 +24,7 @@ emit_prefixes:
 classes:  
 
   biosample:
+    aliases: ['sample', 'material sample']
     description: >-
       A material sample. May be environmental (encompassing many organisms) or isolate or tissue
     slots:
@@ -31,6 +32,9 @@ classes:
       - name
       - annotations
       - alternate identifiers
+    slot_usage:
+      alternate identifiers:
+        
 
   annotation:
     description: >-
@@ -38,12 +42,29 @@ classes:
     slots:
       - characteristic
       - raw value
-      - 
+      - normalized value
 
 slots:
 
+  characteristic:
+    aliases: ['field', 'property', 'template field', 'key']
+    description: >-
+      A characteristic of a biosample. Examples: depth, habitat, material, ...
+      For NMDC, characteristics SHOULD be mapped to fields within a MIxS template
+    slots:
+      - id
+      - name
+      - description
+      
   annotations:
     description: >-
       Zero to many annotations on a sample
     multivalued: true
+    domain: biosample
     range: annotation
+
+  raw value:
+    description: >-
+      The value that was specified for an annotation in raw form, i.e. a string. E.g. "2 cm" or "2-4 cm"
+    range: string
+    
