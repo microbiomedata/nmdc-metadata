@@ -43,6 +43,16 @@ classes:
         description: >-
           The same sample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
 
+  biosample processing:
+    description: >-
+      A process that takes one or more biosamples as inputs and generates one or more as output
+    slots:
+      - input
+      - output
+
+  ## TODO: provenance on an annotation; some will be directly entered by a submitter;
+  ## others will be done post-submission by a curator; others will be done automatically (e.g. by text mining)
+  ## or by automatic enrichment methods (e.g. calling ORNL-Identify using geolocation)
   annotation:
     description: >-
       An annotation on a sample. This is essentially a key value pair
@@ -74,6 +84,14 @@ classes:
       A controlled term or class from an ontology
     slots:
       - ontology class
+    
+  geolocation value:
+    is_a: normalized value
+    description: >-
+      A normalized value for a location on the earth's surface
+    slots:
+      - latitude
+      - longitude
       
 slots:
 
@@ -103,6 +121,17 @@ slots:
     domain: biosample
     range: annotation
 
+  latitude:
+    range: float
+    description: >-
+      latitude
+    slot_uri: wgs:lat
+
+  longitude:
+    range: float
+    description: >-
+      longitude
+    slot_uri: wgs:long
     
 types:
 
