@@ -77,11 +77,9 @@ classes:
     description: >-
       A characteristic of a biosample. Examples: depth, habitat, material, ...
       For NMDC, characteristics SHOULD be mapped to fields within a MIxS template
+    is_a: named thing
     slots:
-      - id
-      - name
       - description
-      - alternate identifiers
       
   normalized value:
     description: >-
