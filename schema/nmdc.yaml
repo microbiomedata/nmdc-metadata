@@ -28,15 +28,20 @@ imports:
   
 classes:
 
+  named thing:
+    description: "a databased entity or concept/class"
+    slots:
+      - id
+      - name
+      - alternate identifiers
+      
   biosample:
     aliases: ['sample', 'material sample']
     description: >-
       A material sample. May be environmental (encompassing many organisms) or isolate or tissue
+    is_a: named thing
     slots:
-      - id
-      - name
       - annotations
-      - alternate identifiers
     slot_usage:
       id:
         description: >-
@@ -113,9 +118,7 @@ classes:
       - UO:0000000
       
   ontology class:
-    slots:
-      - id
-      - name
+    is_a: named thing
       
 slots:
 
