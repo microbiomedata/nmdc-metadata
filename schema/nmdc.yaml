@@ -21,7 +21,7 @@ emit_prefixes:
   - xsd
   - skos
 
-classes:  
+classes:
 
   biosample:
     aliases: ['sample', 'material sample']
@@ -33,8 +33,15 @@ classes:
       - annotations
       - alternate identifiers
     slot_usage:
+      id:
+        description: >-
+          The primary identifier for the sample
+      name:
+        description: >-
+          A human readable name or description of the sample
       alternate identifiers:
-        
+        description: >-
+          The same sample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
 
   annotation:
     description: >-
@@ -44,8 +51,41 @@ classes:
       - raw value
       - normalized value
 
+  raw value:
+    description: >-
+      The value that was specified for an annotation in raw form, i.e. a string. E.g. "2 cm" or "2-4 cm"
+    range: string
+    
+  normalized value:
+    description: >-
+      The value that was specified for an annotation in parsed/normalized form. This could be a range of different types
+    
+  quantity value:
+    is_a: normalized value
+    description: >-
+      A simple quantity, e.g. 2cm
+    slots:
+      - unit
+      - magnitude
+    
+  controlled term value:
+    is_a: normalized value
+    description: >-
+      A controlled term or class from an ontology
+    slots:
+      - ontology class
+      
 slots:
 
+  id:
+    is_a: node property
+    identifier: true
+    description: >-
+      A unique identifier for a thing.
+      Must be either a CURIE shorthand for a URI or a complete URI
+    range: identifier type
+    required: true
+  
   characteristic:
     aliases: ['field', 'property', 'template field', 'key']
     description: >-
@@ -63,8 +103,12 @@ slots:
     domain: biosample
     range: annotation
 
-  raw value:
-    description: >-
-      The value that was specified for an annotation in raw form, i.e. a string. E.g. "2 cm" or "2-4 cm"
-    range: string
     
+types:
+
+  identifier type:
+    base: ElementIdentifier
+    uri: xsd:anyURI
+    description: >-
+      A string that is intended to uniquely identify a thing
+      May be URI in full or compact (CURIE) form
