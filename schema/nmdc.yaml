@@ -5,6 +5,7 @@ description: >-
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
+  nmdc: https://microbiomedata/meta/
   wgs: http://www.w3.org/2003/01/geo/wgs84_pos
   qud: http://qudt.org/1.1/schema/qudt#
   
@@ -43,6 +44,7 @@ classes:
         description: >-
           The same sample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
 
+  ## TODO
   biosample processing:
     description: >-
       A process that takes one or more biosamples as inputs and generates one or more as output
@@ -57,14 +59,26 @@ classes:
     description: >-
       An annotation on a sample. This is essentially a key value pair
     slots:
-      - characteristic
+      - has characteristic
       - raw value
       - normalized value
 
+  characteristic:
+    aliases: ['field', 'property', 'template field', 'key']
+    description: >-
+      A characteristic of a biosample. Examples: depth, habitat, material, ...
+      For NMDC, characteristics SHOULD be mapped to fields within a MIxS template
+    slots:
+      - id
+      - name
+      - description
+      - alternate identifiers
+      
   raw value:
     description: >-
       The value that was specified for an annotation in raw form, i.e. a string. E.g. "2 cm" or "2-4 cm"
-    range: string
+    slots:
+      - value
     
   normalized value:
     description: >-
@@ -104,16 +118,13 @@ slots:
     range: identifier type
     required: true
   
-  characteristic:
-    aliases: ['field', 'property', 'template field', 'key']
+  has characteristic:
     description: >-
-      A characteristic of a biosample. Examples: depth, habitat, material, ...
-      For NMDC, characteristics SHOULD be mapped to fields within a MIxS template
-    slots:
-      - id
-      - name
-      - description
-      
+      Links an annotation to the field/characteristic
+    multivalued: false
+    domain: annotation
+    range: characteristic
+    
   annotations:
     description: >-
       Zero to many annotations on a sample
