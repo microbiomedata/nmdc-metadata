@@ -106,7 +106,6 @@ classes:
       - longitude
 
   unit:
-    uri: 
     id_prefixes:
       - UO
     mappings:
