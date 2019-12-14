@@ -125,7 +125,6 @@ slots:
     description: >-
       A unique identifier for a thing.
       Must be either a CURIE shorthand for a URI or a complete URI
-    range: identifier type
     required: true
 
   name:
@@ -159,7 +158,6 @@ slots:
   has normalized value:
     description: >-
       Connects an annotation to the normalized/parsed raw value
-    multivalued: false
     domain: annotation
     range: normalized value
     
@@ -184,7 +182,7 @@ slots:
     description: >-
       Non-primary identifiers
     multivalued: true
-    range: identifier type
+    range: string
     required: false
 
   annotations:
@@ -218,11 +216,3 @@ slots:
     description: >-
       An output biosample to a processing step
     
-types:
-
-  identifier type:
-    base: ElementIdentifier
-    uri: xsd:anyURI
-    description: >-
-      A string that is intended to uniquely identify a thing
-      May be URI in full or compact (CURIE) form
