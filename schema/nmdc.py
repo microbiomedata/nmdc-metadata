@@ -1,9 +1,5 @@
-Warning: The following errors were encountered in the schema
-		Slot has normalized value is declared inline but single valued
-		Slot has unit is declared inline but single valued
-
 # Auto generated from nmdc.yaml by pythongen.py version: 0.2.0
-# Generation date: 2019-12-13 10:44
+# Generation date: 2019-12-13 16:15
 # Schema: nmdc_schema
 #
 # id: https://microbiomedata/schema
@@ -14,19 +10,14 @@ from typing import Optional, List, Union, Dict, ClassVar
 from dataclasses import dataclass
 from biolinkml.utils.metamodelcore import empty_list, empty_dict
 from biolinkml.utils.yamlutils import YAMLRoot
-from biolinkml.utils.metamodelcore import ElementIdentifier
 from includes.types import Double, Float, String
 
 metamodel_version = "1.3.5"
 
 # Types
-class IdentifierType(ElementIdentifier):
-    """ A string that is intended to uniquely identify a thing May be URI in full or compact (CURIE) form """
-    pass
-
 
 # Class references
-class NamedThingId(ElementIdentifier):
+class NamedThingId(str):
     pass
 
 
@@ -50,9 +41,9 @@ class NamedThing(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
     # === named thing ===
-    id: Union[ElementIdentifier, NamedThingId]
+    id: Union[str, NamedThingId]
     name: Optional[str] = None
-    alternate_identifiers: List[ElementIdentifier] = empty_list()
+    alternate_identifiers: List[str] = empty_list()
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -70,9 +61,9 @@ class Biosample(NamedThing):
     # === named thing ===
 
     # === biosample ===
-    id: Union[ElementIdentifier, BiosampleId] = None
+    id: Union[str, BiosampleId] = None
     name: Optional[str] = None
-    alternate_identifiers: List[ElementIdentifier] = empty_list()
+    alternate_identifiers: List[str] = empty_list()
     annotations: List[Union[dict, "Annotation"]] = empty_list()
 
     def _fix_elements(self):
@@ -91,8 +82,8 @@ class BiosampleProcessing(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
     # === biosample processing ===
-    input: List[Union[ElementIdentifier, BiosampleId]] = empty_list()
-    output: List[Union[ElementIdentifier, BiosampleId]] = empty_list()
+    input: List[Union[str, BiosampleId]] = empty_list()
+    output: List[Union[str, BiosampleId]] = empty_list()
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -111,15 +102,15 @@ class Annotation(YAMLRoot):
 
     # === annotation ===
     has_raw_value: str
-    has_characteristic: Optional[Union[ElementIdentifier, CharacteristicId]] = None
-    has_normalized_value: Optional[Union[dict, "NormalizedValue"]] = None
+    has_characteristic: Optional[Union[str, CharacteristicId]] = None
+    has_normalized_value: List[Union[dict, "NormalizedValue"]] = empty_list()
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.has_characteristic is not None and not isinstance(self.has_characteristic, CharacteristicId):
             self.has_characteristic = CharacteristicId(self.has_characteristic)
-        if self.has_normalized_value is not None and not isinstance(self.has_normalized_value, NormalizedValue):
-            self.has_normalized_value = NormalizedValue()
+        self.has_normalized_value = [v if isinstance(v, NormalizedValue)
+                                     else NormalizedValue(**v) for v in self.has_normalized_value]
 
 
 @dataclass
@@ -131,9 +122,9 @@ class Characteristic(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
     # === named thing ===
-    id: Union[ElementIdentifier, CharacteristicId] = None
+    id: Union[str, CharacteristicId] = None
     name: Optional[str] = None
-    alternate_identifiers: List[ElementIdentifier] = empty_list()
+    alternate_identifiers: List[str] = empty_list()
 
     # === characteristic ===
     description: Optional[str] = None
@@ -162,13 +153,13 @@ class QuantityValue(NormalizedValue):
     pass
 
     # === quantity value ===
-    has_unit: Optional[Union[dict, "Unit"]] = None
+    has_unit: List[Union[dict, "Unit"]] = empty_list()
     has_numeric_value: Optional[float] = None
 
     def _fix_elements(self):
         super()._fix_elements()
-        if self.has_unit is not None and not isinstance(self.has_unit, Unit):
-            self.has_unit = Unit()
+        self.has_unit = [v if isinstance(v, Unit)
+                         else Unit(**v) for v in self.has_unit]
 
 
 @dataclass
@@ -180,7 +171,7 @@ class ControlledTermValue(NormalizedValue):
     pass
 
     # === controlled term value ===
-    instance_of: Optional[Union[ElementIdentifier, OntologyClassId]] = None
+    instance_of: Optional[Union[str, OntologyClassId]] = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -212,9 +203,9 @@ class OntologyClass(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
     # === named thing ===
-    id: Union[ElementIdentifier, OntologyClassId] = None
+    id: Union[str, OntologyClassId] = None
     name: Optional[str] = None
-    alternate_identifiers: List[ElementIdentifier] = empty_list()
+    alternate_identifiers: List[str] = empty_list()
 
     # === ontology class ===
 
