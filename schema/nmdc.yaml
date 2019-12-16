@@ -61,26 +61,6 @@ classes:
       - input
       - output
 
-  ## TODO: provenance on an annotation; some will be directly entered by a submitter;
-  ## others will be done post-submission by a curator; others will be done automatically (e.g. by text mining)
-  ## or by automatic enrichment methods (e.g. calling ORNL-Identify using geolocation)
-  annotation:
-    description: >-
-      An annotation on a sample. This is essentially a key value pair
-    slots:
-      - has characteristic
-      - has raw value
-      - has normalized value
-
-  characteristic:
-    aliases: ['field', 'property', 'template field', 'key']
-    description: >-
-      A characteristic of a biosample. Examples: depth, habitat, material, ...
-      For NMDC, characteristics SHOULD be mapped to fields within a MIxS template
-    is_a: named thing
-    slots:
-      - description
-      
   normalized value:
     description: >-
       The value that was specified for an annotation in parsed/normalized form. This could be a range of different types
@@ -92,13 +72,6 @@ classes:
     slots:
       - has unit
       - has numeric value
-    
-  controlled term value:
-    is_a: normalized value
-    description: >-
-      A controlled term or class from an ontology
-    slots:
-      - instance of
     
   geolocation value:
     is_a: normalized value
@@ -117,6 +90,9 @@ classes:
       
   ontology class:
     is_a: named thing
+
+  environmental material term:
+    is_a: ontology class
       
 slots:
 
@@ -216,4 +192,31 @@ slots:
     multivalued: true
     description: >-
       An output biosample to a processing step
+    
+  ## characteristic
+  characteristic:
+    domain: biosample
+
+  depth:
+    is_a: characteristic
+    range: quantity value
+    mappings:
+      - PATO:nnn
+      - MIXS:nnn
+    
+  water calcium:
+    is_a: characteristic
+    range: quantity value
+
+  material:
+    is_a: characteristic
+    range: environmental material term
+
+  biome:
+    is_a: characteristic
+    range: biome term
+
+  feature:
+    is_a: characteristic
+    range: environmental feature term
     
