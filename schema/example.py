@@ -10,7 +10,7 @@ kvs = {
 
 for k,v in kvs.items():
     c = Characteristic(id=k)
-    ann = Annotation(has_characteristic=jsonasobj.as_json(c), has_raw_value=v)
+    ann = Annotation(has_characteristic=c, has_raw_value=v)
     s.annotations.append(ann)
 
 json = jsonasobj.as_json(s)

@@ -141,6 +141,7 @@ slots:
     description: >-
       Links an annotation to the field/characteristic
     multivalued: false
+    inlined: true
     domain: annotation
     range: characteristic
 

@@ -1,5 +1,5 @@
-# Auto generated from nmdc.yaml by pythongen.py version: 0.2.0
-# Generation date: 2019-12-13 16:15
+# Auto generated from nmdc.yaml by pythongen.py version: 0.2.1
+# Generation date: 2019-12-16 14:58
 # Schema: nmdc_schema
 #
 # id: https://microbiomedata/schema
@@ -8,11 +8,28 @@
 
 from typing import Optional, List, Union, Dict, ClassVar
 from dataclasses import dataclass
-from biolinkml.utils.metamodelcore import empty_list, empty_dict
+from biolinkml.utils.metamodelcore import empty_list, empty_dict, bnode
 from biolinkml.utils.yamlutils import YAMLRoot
+from biolinkml.utils.formatutils import camelcase, underscore, sfx
+from rdflib import Namespace, URIRef
 from includes.types import Double, Float, String
 
-metamodel_version = "1.3.5"
+metamodel_version = "1.4.1"
+
+
+# Namespaces
+UO = Namespace('http://purl.obolibrary.org/obo/UO_')
+DCTERMS = Namespace('http://example.org/UNKNOWN/dcterms/')
+NMDC = Namespace('https://microbiomedata/meta/')
+QUD = Namespace('http://qudt.org/1.1/schema/qudt#')
+RDF = Namespace('http://example.org/UNKNOWN/rdf/')
+RDFS = Namespace('http://example.org/UNKNOWN/rdfs/')
+SHEX = Namespace('http://www.w3.org/ns/shex#')
+SKOS = Namespace('http://example.org/UNKNOWN/skos/')
+WGS = Namespace('http://www.w3.org/2003/01/geo/wgs84_pos')
+XSD = Namespace('http://www.w3.org/2001/XMLSchema#')
+DEFAULT_ = NMDC
+
 
 # Types
 
@@ -40,15 +57,21 @@ class NamedThing(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    # === named thing ===
+    class_class_uri: ClassVar[URIRef] = NMDC.NamedThing
+    class_class_curie: ClassVar[str] = "nmdc:NamedThing"
+    class_name: ClassVar[str] = "named thing"
+    class_model_uri: ClassVar[URIRef] = NMDC.NamedThing
+
     id: Union[str, NamedThingId]
     name: Optional[str] = None
     alternate_identifiers: List[str] = empty_list()
 
-    def _fix_elements(self):
-        super()._fix_elements()
+    def __post_init__(self):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
         if not isinstance(self.id, NamedThingId):
             self.id = NamedThingId(self.id)
+        super().__post_init__()
 
 
 @dataclass
@@ -58,20 +81,24 @@ class Biosample(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    # === named thing ===
+    class_class_uri: ClassVar[URIRef] = NMDC.Biosample
+    class_class_curie: ClassVar[str] = "nmdc:Biosample"
+    class_name: ClassVar[str] = "biosample"
+    class_model_uri: ClassVar[URIRef] = NMDC.Biosample
 
-    # === biosample ===
     id: Union[str, BiosampleId] = None
     name: Optional[str] = None
     alternate_identifiers: List[str] = empty_list()
     annotations: List[Union[dict, "Annotation"]] = empty_list()
 
-    def _fix_elements(self):
-        super()._fix_elements()
-        if self.id is not None and not isinstance(self.id, BiosampleId):
+    def __post_init__(self):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, BiosampleId):
             self.id = BiosampleId(self.id)
         self.annotations = [v if isinstance(v, Annotation)
                             else Annotation(**v) for v in self.annotations]
+        super().__post_init__()
 
 
 @dataclass
@@ -81,16 +108,20 @@ class BiosampleProcessing(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    # === biosample processing ===
+    class_class_uri: ClassVar[URIRef] = NMDC.BiosampleProcessing
+    class_class_curie: ClassVar[str] = "nmdc:BiosampleProcessing"
+    class_name: ClassVar[str] = "biosample processing"
+    class_model_uri: ClassVar[URIRef] = NMDC.BiosampleProcessing
+
     input: List[Union[str, BiosampleId]] = empty_list()
     output: List[Union[str, BiosampleId]] = empty_list()
 
-    def _fix_elements(self):
-        super()._fix_elements()
+    def __post_init__(self):
         self.input = [v if isinstance(v, BiosampleId)
                       else BiosampleId(v) for v in self.input]
         self.output = [v if isinstance(v, BiosampleId)
                        else BiosampleId(v) for v in self.output]
+        super().__post_init__()
 
 
 @dataclass
@@ -100,17 +131,23 @@ class Annotation(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    # === annotation ===
+    class_class_uri: ClassVar[URIRef] = NMDC.Annotation
+    class_class_curie: ClassVar[str] = "nmdc:Annotation"
+    class_name: ClassVar[str] = "annotation"
+    class_model_uri: ClassVar[URIRef] = NMDC.Annotation
+
     has_raw_value: str
-    has_characteristic: Optional[Union[str, CharacteristicId]] = None
+    has_characteristic: Optional[Union[dict, "Characteristic"]] = None
     has_normalized_value: List[Union[dict, "NormalizedValue"]] = empty_list()
 
-    def _fix_elements(self):
-        super()._fix_elements()
-        if self.has_characteristic is not None and not isinstance(self.has_characteristic, CharacteristicId):
-            self.has_characteristic = CharacteristicId(self.has_characteristic)
+    def __post_init__(self):
+        if self.has_characteristic is not None and not isinstance(self.has_characteristic, Characteristic):
+            self.has_characteristic = Characteristic(self.has_characteristic)
+        if self.has_raw_value is None:
+            raise ValueError(f"has_raw_value must be supplied")
         self.has_normalized_value = [v if isinstance(v, NormalizedValue)
                                      else NormalizedValue(**v) for v in self.has_normalized_value]
+        super().__post_init__()
 
 
 @dataclass
@@ -121,27 +158,32 @@ class Characteristic(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    # === named thing ===
-    id: Union[str, CharacteristicId] = None
-    name: Optional[str] = None
-    alternate_identifiers: List[str] = empty_list()
+    class_class_uri: ClassVar[URIRef] = NMDC.Characteristic
+    class_class_curie: ClassVar[str] = "nmdc:Characteristic"
+    class_name: ClassVar[str] = "characteristic"
+    class_model_uri: ClassVar[URIRef] = NMDC.Characteristic
 
-    # === characteristic ===
+    id: Union[str, CharacteristicId] = None
     description: Optional[str] = None
 
-    def _fix_elements(self):
-        super()._fix_elements()
-        if self.id is not None and not isinstance(self.id, CharacteristicId):
+    def __post_init__(self):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, CharacteristicId):
             self.id = CharacteristicId(self.id)
+        super().__post_init__()
 
 
-@dataclass
 class NormalizedValue(YAMLRoot):
     """
     The value that was specified for an annotation in parsed/normalized form. This could be a range of different types
     """
     _inherited_slots: ClassVar[List[str]] = []
-    pass
+
+    class_class_uri: ClassVar[URIRef] = NMDC.NormalizedValue
+    class_class_curie: ClassVar[str] = "nmdc:NormalizedValue"
+    class_name: ClassVar[str] = "normalized value"
+    class_model_uri: ClassVar[URIRef] = NMDC.NormalizedValue
 
 
 @dataclass
@@ -150,16 +192,19 @@ class QuantityValue(NormalizedValue):
     A simple quantity, e.g. 2cm
     """
     _inherited_slots: ClassVar[List[str]] = []
-    pass
 
-    # === quantity value ===
+    class_class_uri: ClassVar[URIRef] = NMDC.QuantityValue
+    class_class_curie: ClassVar[str] = "nmdc:QuantityValue"
+    class_name: ClassVar[str] = "quantity value"
+    class_model_uri: ClassVar[URIRef] = NMDC.QuantityValue
+
     has_unit: List[Union[dict, "Unit"]] = empty_list()
     has_numeric_value: Optional[float] = None
 
-    def _fix_elements(self):
-        super()._fix_elements()
+    def __post_init__(self):
         self.has_unit = [v if isinstance(v, Unit)
                          else Unit(**v) for v in self.has_unit]
+        super().__post_init__()
 
 
 @dataclass
@@ -168,15 +213,18 @@ class ControlledTermValue(NormalizedValue):
     A controlled term or class from an ontology
     """
     _inherited_slots: ClassVar[List[str]] = []
-    pass
 
-    # === controlled term value ===
+    class_class_uri: ClassVar[URIRef] = NMDC.ControlledTermValue
+    class_class_curie: ClassVar[str] = "nmdc:ControlledTermValue"
+    class_name: ClassVar[str] = "controlled term value"
+    class_model_uri: ClassVar[URIRef] = NMDC.ControlledTermValue
+
     instance_of: Optional[Union[str, OntologyClassId]] = None
 
-    def _fix_elements(self):
-        super()._fix_elements()
+    def __post_init__(self):
         if self.instance_of is not None and not isinstance(self.instance_of, OntologyClassId):
             self.instance_of = OntologyClassId(self.instance_of)
+        super().__post_init__()
 
 
 @dataclass
@@ -185,32 +233,39 @@ class GeolocationValue(NormalizedValue):
     A normalized value for a location on the earth's surface
     """
     _inherited_slots: ClassVar[List[str]] = []
-    pass
 
-    # === geolocation value ===
+    class_class_uri: ClassVar[URIRef] = NMDC.GeolocationValue
+    class_class_curie: ClassVar[str] = "nmdc:GeolocationValue"
+    class_name: ClassVar[str] = "geolocation value"
+    class_model_uri: ClassVar[URIRef] = NMDC.GeolocationValue
+
     latitude: Optional[float] = None
     longitude: Optional[float] = None
 
-
-@dataclass
 class Unit(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
-    pass
+
+    class_class_uri: ClassVar[URIRef] = NMDC.Unit
+    class_class_curie: ClassVar[str] = "nmdc:Unit"
+    class_name: ClassVar[str] = "unit"
+    class_model_uri: ClassVar[URIRef] = NMDC.Unit
 
 
 @dataclass
 class OntologyClass(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
-    # === named thing ===
+    class_class_uri: ClassVar[URIRef] = NMDC.OntologyClass
+    class_class_curie: ClassVar[str] = "nmdc:OntologyClass"
+    class_name: ClassVar[str] = "ontology class"
+    class_model_uri: ClassVar[URIRef] = NMDC.OntologyClass
+
     id: Union[str, OntologyClassId] = None
-    name: Optional[str] = None
-    alternate_identifiers: List[str] = empty_list()
 
-    # === ontology class ===
-
-    def _fix_elements(self):
-        super()._fix_elements()
-        if self.id is not None and not isinstance(self.id, OntologyClassId):
+    def __post_init__(self):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, OntologyClassId):
             self.id = OntologyClassId(self.id)
+        super().__post_init__()
 
