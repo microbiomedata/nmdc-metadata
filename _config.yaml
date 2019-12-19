@@ -1,0 +1,16 @@
+title: NMDC Metadata schema
+email: deepak.unni3@gmail.com
+description: A schema for managing metadata in [National Microbiome Data Collaborative](https://microbiomedata.org/)
+
+remote_theme: pmarsceill/just-the-docs
+
+aux_links:
+  "GitHub":
+    - "//github.com/microbiomedata/nmdc-metadata"
+
+search_enabled: true
+heading_anchors: true
+
+includes:
+- docs
+- about
