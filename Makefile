@@ -4,6 +4,7 @@ all: install build
 
 python_dataclasses: schema/nmdc.py
 json_schema: schema/nmdc.json
+schema_uml: schema/nmdc_schema_uml.png
 
 install: env.lock
 
@@ -25,3 +26,6 @@ schema/nmdc.json: schema/nmdc.yaml env.lock
 
 docs: schema/nmdc.yaml env.lock
 	pipenv run gen-markdown --dir docs $<
+
+schema/nmdc_schema_uml.png: schema/nmdc.yaml
+	pipenv run python schema/generate_uml.py $< $@
