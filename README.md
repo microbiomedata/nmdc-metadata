@@ -12,6 +12,12 @@ Generated human-readable documentation:
  
  ![img](https://raw.githubusercontent.com/microbiomedata/nmdc-metadata/master/schema/nmdc_schema_uml.png)
 
+## Standardization of characteristics
+
+See the [mixs-ng](https://github.com/GenomicsStandardsConsortium/mixs-ng) repository.
+
+In the interim we are using the GOLD columns.
+
 ## Ingest from GOLD
 
 Currently this is in [Jupyter notebooks in a separate repo](https://github.com/microbiomedata/GOLD-ontology-translation/tree/master/notebooks) but this will move to a library here.
