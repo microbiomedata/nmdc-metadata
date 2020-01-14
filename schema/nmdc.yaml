@@ -139,7 +139,7 @@ slots:
   has characteristic:
     description: >-
       Links an annotation to the field/characteristic
-    multivalued: false
+    multivalued: true     ## workaround for https://github.com/biolink/biolinkml/issues/86
     inlined: true
     domain: annotation
     range: characteristic
