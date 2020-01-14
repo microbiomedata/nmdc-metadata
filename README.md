@@ -9,6 +9,14 @@ The schema is in the [schema](https://github.com/microbiomedata/nmdc-metadata/tr
 Generated human-readable documentation:
 
  * https://microbiomedata.github.io/nmdc-metadata/
+ 
+ ![img](https://raw.githubusercontent.com/microbiomedata/nmdc-metadata/master/schema/nmdc_schema_uml.png)
+
+## Standardization of characteristics
+
+See the [mixs-ng](https://github.com/GenomicsStandardsConsortium/mixs-ng) repository.
+
+In the interim we are using the GOLD columns.
 
 ## Ingest from GOLD
 

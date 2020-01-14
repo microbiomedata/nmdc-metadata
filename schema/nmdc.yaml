@@ -33,6 +33,7 @@ classes:
     slots:
       - id
       - name
+      - description
       - alternate identifiers
       
   biosample:
@@ -78,8 +79,6 @@ classes:
       A characteristic of a biosample. Examples: depth, habitat, material, ...
       For NMDC, characteristics SHOULD be mapped to fields within a MIxS template
     is_a: named thing
-    slots:
-      - description
       
   normalized value:
     description: >-
@@ -121,11 +120,11 @@ classes:
 slots:
 
   id:
-    identifier: true
+    identifier: false
     description: >-
       A unique identifier for a thing.
       Must be either a CURIE shorthand for a URI or a complete URI
-    required: true
+    required: false # for now we setting this to false until we develop an id template
 
   name:
     description: >-
@@ -140,7 +139,7 @@ slots:
   has characteristic:
     description: >-
       Links an annotation to the field/characteristic
-    multivalued: false
+    multivalued: true     ## workaround for https://github.com/biolink/biolinkml/issues/86
     inlined: true
     domain: annotation
     range: characteristic
@@ -217,4 +216,3 @@ slots:
     multivalued: true
     description: >-
       An output biosample to a processing step
-    

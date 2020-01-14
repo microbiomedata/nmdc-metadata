@@ -121,7 +121,6 @@
                "type": "array"
             },
             "id": {
-               "required": true,
                "type": "string"
             },
             "name": {
@@ -154,12 +153,7 @@
       },
       "Characteristic": {
          "description": "A characteristic of a biosample. Examples: depth, habitat, material, ... For NMDC, characteristics SHOULD be mapped to fields within a MIxS template",
-         "properties": {
-            "description": {
-               "description": "a human-readable description of a thing",
-               "type": "string"
-            }
-         },
+         "properties": {},
          "title": "Characteristic",
          "type": "object"
       },
@@ -198,9 +192,12 @@
                },
                "type": "array"
             },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-               "required": true,
                "type": "string"
             },
             "name": {

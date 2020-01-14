@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.2.1
-# Generation date: 2019-12-16 14:58
+# Generation date: 2019-12-18 21:33
 # Schema: nmdc_schema
 #
 # id: https://microbiomedata/schema
@@ -34,20 +34,7 @@ DEFAULT_ = NMDC
 # Types
 
 # Class references
-class NamedThingId(str):
-    pass
 
-
-class BiosampleId(NamedThingId):
-    pass
-
-
-class CharacteristicId(NamedThingId):
-    pass
-
-
-class OntologyClassId(NamedThingId):
-    pass
 
 
 @dataclass
@@ -62,17 +49,10 @@ class NamedThing(YAMLRoot):
     class_name: ClassVar[str] = "named thing"
     class_model_uri: ClassVar[URIRef] = NMDC.NamedThing
 
-    id: Union[str, NamedThingId]
+    id: Optional[str] = None
     name: Optional[str] = None
+    description: Optional[str] = None
     alternate_identifiers: List[str] = empty_list()
-
-    def __post_init__(self):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, NamedThingId):
-            self.id = NamedThingId(self.id)
-        super().__post_init__()
-
 
 @dataclass
 class Biosample(NamedThing):
@@ -86,16 +66,12 @@ class Biosample(NamedThing):
     class_name: ClassVar[str] = "biosample"
     class_model_uri: ClassVar[URIRef] = NMDC.Biosample
 
-    id: Union[str, BiosampleId] = None
+    id: Optional[str] = None
     name: Optional[str] = None
     alternate_identifiers: List[str] = empty_list()
     annotations: List[Union[dict, "Annotation"]] = empty_list()
 
     def __post_init__(self):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, BiosampleId):
-            self.id = BiosampleId(self.id)
         self.annotations = [v if isinstance(v, Annotation)
                             else Annotation(**v) for v in self.annotations]
         super().__post_init__()
@@ -113,14 +89,14 @@ class BiosampleProcessing(YAMLRoot):
     class_name: ClassVar[str] = "biosample processing"
     class_model_uri: ClassVar[URIRef] = NMDC.BiosampleProcessing
 
-    input: List[Union[str, BiosampleId]] = empty_list()
-    output: List[Union[str, BiosampleId]] = empty_list()
+    input: List[Union[dict, Biosample]] = empty_list()
+    output: List[Union[dict, Biosample]] = empty_list()
 
     def __post_init__(self):
-        self.input = [v if isinstance(v, BiosampleId)
-                      else BiosampleId(v) for v in self.input]
-        self.output = [v if isinstance(v, BiosampleId)
-                       else BiosampleId(v) for v in self.output]
+        self.input = [v if isinstance(v, Biosample)
+                      else Biosample(**v) for v in self.input]
+        self.output = [v if isinstance(v, Biosample)
+                       else Biosample(**v) for v in self.output]
         super().__post_init__()
 
 
@@ -142,7 +118,7 @@ class Annotation(YAMLRoot):
 
     def __post_init__(self):
         if self.has_characteristic is not None and not isinstance(self.has_characteristic, Characteristic):
-            self.has_characteristic = Characteristic(self.has_characteristic)
+            self.has_characteristic = Characteristic(**self.has_characteristic)
         if self.has_raw_value is None:
             raise ValueError(f"has_raw_value must be supplied")
         self.has_normalized_value = [v if isinstance(v, NormalizedValue)
@@ -150,7 +126,6 @@ class Annotation(YAMLRoot):
         super().__post_init__()
 
 
-@dataclass
 class Characteristic(NamedThing):
     """
     A characteristic of a biosample. Examples: depth, habitat, material, ... For NMDC, characteristics SHOULD be
@@ -162,16 +137,6 @@ class Characteristic(NamedThing):
     class_class_curie: ClassVar[str] = "nmdc:Characteristic"
     class_name: ClassVar[str] = "characteristic"
     class_model_uri: ClassVar[URIRef] = NMDC.Characteristic
-
-    id: Union[str, CharacteristicId] = None
-    description: Optional[str] = None
-
-    def __post_init__(self):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, CharacteristicId):
-            self.id = CharacteristicId(self.id)
-        super().__post_init__()
 
 
 class NormalizedValue(YAMLRoot):
@@ -219,11 +184,11 @@ class ControlledTermValue(NormalizedValue):
     class_name: ClassVar[str] = "controlled term value"
     class_model_uri: ClassVar[URIRef] = NMDC.ControlledTermValue
 
-    instance_of: Optional[Union[str, OntologyClassId]] = None
+    instance_of: Optional[Union[dict, "OntologyClass"]] = None
 
     def __post_init__(self):
-        if self.instance_of is not None and not isinstance(self.instance_of, OntologyClassId):
-            self.instance_of = OntologyClassId(self.instance_of)
+        if self.instance_of is not None and not isinstance(self.instance_of, OntologyClass):
+            self.instance_of = OntologyClass(**self.instance_of)
         super().__post_init__()
 
 
@@ -251,7 +216,6 @@ class Unit(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = NMDC.Unit
 
 
-@dataclass
 class OntologyClass(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -259,13 +223,4 @@ class OntologyClass(NamedThing):
     class_class_curie: ClassVar[str] = "nmdc:OntologyClass"
     class_name: ClassVar[str] = "ontology class"
     class_model_uri: ClassVar[URIRef] = NMDC.OntologyClass
-
-    id: Union[str, OntologyClassId] = None
-
-    def __post_init__(self):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, OntologyClassId):
-            self.id = OntologyClassId(self.id)
-        super().__post_init__()
 
