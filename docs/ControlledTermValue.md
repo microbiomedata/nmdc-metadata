@@ -1,4 +1,3 @@
-
 # Class: controlled term value
 
 
@@ -6,28 +5,15 @@ A controlled term or class from an ontology
 
 URI: [nmdc:ControlledTermValue](https://microbiomedata/meta/ControlledTermValue)
 
-![img](ControlledTermValue
-OntologyClass
-NormalizedValue
-ControlledTermValue
-http://yuml.me/diagram/nofunky;dir:TB/class/\[OntologyClass]<instance%20of%200..1-++\[ControlledTermValue],%20\[NormalizedValue]^-\[ControlledTermValue])
-
-## Parents
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OntologyClass]<instance%20of%200..1-++\[ControlledTermValue],%20\[NormalizedValue]^-\[ControlledTermValue])
+## Inheritance
 
  *  is_a: [NormalizedValue](NormalizedValue.md) - The value that was specified for an annotation in parsed/normalized form. This could be a range of different types
+## Children
 
-## Referenced by class
+## Used by
 
-
-## Attributes
-
-
-### Own
-
- * [instance of](instance_of.md)  <sub>OPT</sub>
-    * range: [OntologyClass](OntologyClass.md)
-
-### Domain for slot:
+## Fields
 
  * [instance of](instance_of.md)  <sub>OPT</sub>
     * range: [OntologyClass](OntologyClass.md)
