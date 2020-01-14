@@ -6,12 +6,28 @@ A process that takes one or more biosamples as inputs and generates one or more 
 
 URI: [nmdc:BiosampleProcessing](https://microbiomedata/meta/BiosampleProcessing)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Biosample]<output%200..*-%20\[BiosampleProcessing],%20\[Biosample]<input%200..*-%20\[BiosampleProcessing])
+![img](BiosampleProcessing
+Biosample
+BiosampleProcessing
+Biosample
+http://yuml.me/diagram/nofunky;dir:TB/class/\[Biosample]<output%200..*-++\[BiosampleProcessing],%20\[Biosample]<input%200..*-++\[BiosampleProcessing])
+
+## Referenced by class
+
 
 ## Attributes
 
 
 ### Own
+
+ * [input](input.md)  <sub>0..*</sub>
+    * Description: An input biosample to a processing step
+    * range: [Biosample](Biosample.md)
+ * [output](output.md)  <sub>0..*</sub>
+    * Description: An output biosample to a processing step
+    * range: [Biosample](Biosample.md)
+
+### Domain for slot:
 
  * [input](input.md)  <sub>0..*</sub>
     * Description: An input biosample to a processing step

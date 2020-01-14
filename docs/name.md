@@ -8,7 +8,7 @@ URI: [nmdc:name](https://microbiomedata/meta/name)
 
 ## Domain and Range
 
-None ->  <sub>OPT</sub> [String](String.md)
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](String.md)
 
 ## Parents
 

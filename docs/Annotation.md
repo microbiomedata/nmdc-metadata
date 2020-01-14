@@ -6,7 +6,13 @@ An annotation on a sample. This is essentially a key value pair
 
 URI: [nmdc:Annotation](https://microbiomedata/meta/Annotation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NormalizedValue]<has%20normalized%20value%200..*-++\[Annotation|has_raw_value:string],%20\[Characteristic]<has%20characteristic%200..1-++\[Annotation],%20\[Biosample]++-%20annotations%200..*>\[Annotation])
+![img](Annotation
+NormalizedValue
+Annotation
+Characteristic
+Biosample
+Annotation
+http://yuml.me/diagram/nofunky;dir:TB/class/\[NormalizedValue]<has%20normalized%20value%200..*-++\[Annotation%7Chas_raw_value:string],%20\[Characteristic]<has%20characteristic%200..*-++\[Annotation],%20\[Biosample]++-%20annotations%200..*>\[Annotation])
 
 ## Referenced by class
 
@@ -17,7 +23,7 @@ URI: [nmdc:Annotation](https://microbiomedata/meta/Annotation)
 
 ### Own
 
- * [has characteristic](has_characteristic.md)  <sub>OPT</sub>
+ * [has characteristic](has_characteristic.md)  <sub>0..*</sub>
     * Description: Links an annotation to the field/characteristic
     * range: [Characteristic](Characteristic.md)
  * [has normalized value](has_normalized_value.md)  <sub>0..*</sub>
@@ -29,7 +35,7 @@ URI: [nmdc:Annotation](https://microbiomedata/meta/Annotation)
 
 ### Domain for slot:
 
- * [has characteristic](has_characteristic.md)  <sub>OPT</sub>
+ * [has characteristic](has_characteristic.md)  <sub>0..*</sub>
     * Description: Links an annotation to the field/characteristic
     * range: [Characteristic](Characteristic.md)
  * [has normalized value](has_normalized_value.md)  <sub>0..*</sub>

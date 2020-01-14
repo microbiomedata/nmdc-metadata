@@ -8,7 +8,7 @@ URI: [nmdc:instance_of](https://microbiomedata/meta/instance_of)
 
 ## Domain and Range
 
-None ->  <sub>OPT</sub> [OntologyClass](OntologyClass.md)
+[ControlledTermValue](ControlledTermValue.md) ->  <sub>OPT</sub> [OntologyClass](OntologyClass.md)
 
 ## Parents
 

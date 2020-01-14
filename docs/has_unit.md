@@ -8,7 +8,7 @@ URI: [nmdc:has_unit](https://microbiomedata/meta/has_unit)
 
 ## Domain and Range
 
-None ->  <sub>0..*</sub> [Unit](Unit.md)
+[QuantityValue](QuantityValue.md) ->  <sub>0..*</sub> [Unit](Unit.md)
 
 ## Parents
 

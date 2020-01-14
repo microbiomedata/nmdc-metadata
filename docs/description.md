@@ -8,7 +8,7 @@ URI: [nmdc:description](https://microbiomedata/meta/description)
 
 ## Domain and Range
 
-None ->  <sub>OPT</sub> [String](String.md)
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](String.md)
 
 ## Parents
 
@@ -18,4 +18,7 @@ None ->  <sub>OPT</sub> [String](String.md)
 
 ## Used by
 
+ * [Biosample](Biosample.md)
  * [Characteristic](Characteristic.md)
+ * [NamedThing](NamedThing.md)
+ * [OntologyClass](OntologyClass.md)

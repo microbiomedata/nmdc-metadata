@@ -8,7 +8,7 @@ URI: [nmdc:longitude](https://microbiomedata/meta/longitude)
 
 ## Domain and Range
 
-None ->  <sub>OPT</sub> [Float](Float.md)
+[GeolocationValue](GeolocationValue.md) ->  <sub>OPT</sub> [Float](Float.md)
 
 ## Parents
 

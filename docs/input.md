@@ -8,7 +8,7 @@ URI: [nmdc:input](https://microbiomedata/meta/input)
 
 ## Domain and Range
 
-None ->  <sub>0..*</sub> [Biosample](Biosample.md)
+[BiosampleProcessing](BiosampleProcessing.md) ->  <sub>0..*</sub> [Biosample](Biosample.md)
 
 ## Parents
 

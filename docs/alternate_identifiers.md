@@ -8,7 +8,7 @@ URI: [nmdc:alternate_identifiers](https://microbiomedata/meta/alternate_identifi
 
 ## Domain and Range
 
-None ->  <sub>0..*</sub> [String](String.md)
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [String](String.md)
 
 ## Parents
 

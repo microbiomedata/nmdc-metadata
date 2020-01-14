@@ -8,7 +8,7 @@ URI: [nmdc:has_numeric_value](https://microbiomedata/meta/has_numeric_value)
 
 ## Domain and Range
 
-None ->  <sub>OPT</sub> [Double](Double.md)
+[QuantityValue](QuantityValue.md) ->  <sub>OPT</sub> [Double](Double.md)
 
 ## Parents
 
