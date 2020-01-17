@@ -22,17 +22,20 @@
       },
       "has_characteristic": {
          "description": "Links an annotation to the field/characteristic",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "has_normalized_value": {
-         "description": "Connects an annotation to the normalized/parsed raw value",
+         "description": "Links an annotation to the normalized/parsed raw value",
          "items": {
             "type": "string"
          },
          "type": "array"
       },
       "has_numeric_value": {
-         "description": "connects a quantity value to a number",
+         "description": "Links a quantity value to a number",
          "type": "string"
       },
       "has_raw_value": {
@@ -40,7 +43,7 @@
          "type": "string"
       },
       "has_unit": {
-         "description": "connects a quantity value to a unit",
+         "description": "Links a quantity value to a unit",
          "items": {
             "type": "string"
          },
@@ -60,6 +63,13 @@
       "instance_of": {
          "type": "string"
       },
+      "involved_in": {
+         "description": "Links a biosample to a project that makes use of it.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
       "latitude": {
          "description": "latitude",
          "type": "string"
@@ -78,6 +88,13 @@
             "type": "string"
          },
          "type": "array"
+      },
+      "part_of": {
+         "description": "Linds a resource to another resource that either logically or physically includes it.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       }
    },
    "properties": {
@@ -86,10 +103,13 @@
          "properties": {
             "has_characteristic": {
                "description": "Links an annotation to the field/characteristic",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "has_normalized_value": {
-               "description": "Connects an annotation to the normalized/parsed raw value",
+               "description": "Links an annotation to the normalized/parsed raw value",
                "items": {
                   "type": "string"
                },
@@ -122,6 +142,13 @@
             },
             "id": {
                "type": "string"
+            },
+            "involved_in": {
+               "description": "Links a biosample to a project that makes use of it.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "name": {
                "type": "string"
@@ -220,15 +247,41 @@
          "title": "OntologyClass",
          "type": "object"
       },
+      "Project": {
+         "description": "An individual or collaborative enterprise that is carefully planned and designed to achieve a particular aim.",
+         "properties": {
+            "alternate_identifiers": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            },
+            "part_of": {
+               "description": "Linds a resource to another resource that either logically or physically includes it.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "title": "Project",
+         "type": "object"
+      },
       "QuantityValue": {
          "description": "A simple quantity, e.g. 2cm",
          "properties": {
             "has_numeric_value": {
-               "description": "connects a quantity value to a number",
+               "description": "Links a quantity value to a number",
                "type": "string"
             },
             "has_unit": {
-               "description": "connects a quantity value to a unit",
+               "description": "Links a quantity value to a unit",
                "items": {
                   "type": "string"
                },
@@ -236,6 +289,25 @@
             }
          },
          "title": "QuantityValue",
+         "type": "object"
+      },
+      "Study": {
+         "description": "A detailed investigation that  defines the overall goal of a research proposal.  It contains the list of sequencing projects that are part of the original proposal. (see https://gold.jgi.doe.gov/resources/project_help_doc.pdf)",
+         "properties": {
+            "alternate_identifiers": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "title": "Study",
          "type": "object"
       },
       "Unit": {
