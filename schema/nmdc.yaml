@@ -72,6 +72,8 @@ classes:
       alternate identifiers:
         description: >-
           The same project may have distinct identifiers in different databases (e.g. GOLD and EMSL)
+      part of:
+        range: study
 
   biosample:
     aliases: ['sample', 'material sample']
@@ -80,7 +82,7 @@ classes:
     is_a: named thing
     slots:
       - annotations
-      - involved in
+      - part of
     slot_usage:
       id:
         description: >-
@@ -91,6 +93,8 @@ classes:
       alternate identifiers:
         description: >-
           The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
+      part of:
+        range: project
 
   ## TODO
   biosample processing:
@@ -266,9 +270,8 @@ slots:
   
   part of:
     aliases: ['is part of']
-    domain: project
-    range: study
+    domain: named thing
     multivalued: true
     slot_uri: http://purl.org/dc/terms/isPartOf
     description: >-
-      Linds a resource to another resource that either logically or physically includes it.
+      Links a resource to another resource that either logically or physically includes it.
