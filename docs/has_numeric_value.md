@@ -1,16 +1,29 @@
-# Slot: has numeric value
+
+# Type: has numeric value
 
 
-connects a quantity value to a number
+Links a quantity value to a number
 
 URI: [nmdc:has_numeric_value](https://microbiomedata/meta/has_numeric_value)
+
+
 ## Domain and Range
 
-[QuantityValue](QuantityValue.md) ->  <sub>OPT</sub> [Double](Double.md)
-## Inheritance
+None ->  <sub>OPT</sub> [Double](types/Double.md)
+
+## Parents
+
 
 ## Children
+
 
 ## Used by
 
  * [QuantityValue](QuantityValue.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | qud:quantityValue |
+

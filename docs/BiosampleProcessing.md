@@ -1,18 +1,18 @@
-# Class: biosample processing
+
+# Type: biosample processing
 
 
 A process that takes one or more biosamples as inputs and generates one or more as output
 
 URI: [nmdc:BiosampleProcessing](https://microbiomedata/meta/BiosampleProcessing)
 
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Biosample]<output%200..*-++\[BiosampleProcessing],%20\[Biosample]<input%200..*-++\[BiosampleProcessing])
-## Inheritance
 
-## Children
+## Attributes
 
-## Used by
 
-## Fields
+### Own
 
  * [input](input.md)  <sub>0..*</sub>
     * Description: An input biosample to a processing step

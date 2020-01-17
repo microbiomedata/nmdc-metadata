@@ -1,15 +1,21 @@
-# Slot: description
+
+# Type: description
 
 
 a human-readable description of a thing
 
 URI: [nmdc:description](https://microbiomedata/meta/description)
+
+
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](String.md)
-## Inheritance
+None ->  <sub>OPT</sub> [String](types/String.md)
+
+## Parents
+
 
 ## Children
+
 
 ## Used by
 
@@ -17,3 +23,12 @@ URI: [nmdc:description](https://microbiomedata/meta/description)
  * [Characteristic](Characteristic.md)
  * [NamedThing](NamedThing.md)
  * [OntologyClass](OntologyClass.md)
+ * [Project](Project.md)
+ * [Study](Study.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | dcterms:description |
+
