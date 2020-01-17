@@ -14,7 +14,7 @@ URI: [nmdc:NamedThing](https://microbiomedata/meta/NamedThing)
  * [Characteristic](Characteristic.md) - A characteristic of a biosample. Examples: depth, habitat, material, ... For NMDC, characteristics SHOULD be mapped to fields within a MIxS template
  * [OntologyClass](OntologyClass.md)
  * [Project](Project.md) - An individual or collaborative enterprise that is carefully planned and designed to achieve a particular aim.
- * [Study](Study.md) - A detailed investigation that  defines the overall goal of a research proposal.  It contains the list of sequencing projects that are part of the original proposal.
+ * [Study](Study.md) - A detailed investigation that  defines the overall goal of a research proposal.  It contains the list of sequencing projects that are part of the original proposal. (see https://gold.jgi.doe.gov/resources/project_help_doc.pdf)
 
 ## Referenced by class
 

@@ -2,7 +2,7 @@
 # Class: study
 
 
-A detailed investigation that  defines the overall goal of a research proposal.  It contains the list of sequencing projects that are part of the original proposal.
+A detailed investigation that  defines the overall goal of a research proposal.  It contains the list of sequencing projects that are part of the original proposal. (see https://gold.jgi.doe.gov/resources/project_help_doc.pdf)
 
 URI: [nmdc:Study](https://microbiomedata/meta/Study)
 

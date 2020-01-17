@@ -1,9 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.2.1
-<<<<<<< HEAD
-# Generation date: 2019-12-18 21:33
-=======
-# Generation date: 2020-01-16 19:14
->>>>>>> schema-draft
+# Generation date: 2020-01-17 15:49
 # Schema: nmdc_schema
 #
 # id: https://microbiomedata/schema
@@ -19,22 +15,6 @@ from rdflib import Namespace, URIRef
 from includes.types import Double, Float, String
 
 metamodel_version = "1.4.1"
-<<<<<<< HEAD
-
-
-# Namespaces
-UO = Namespace('http://purl.obolibrary.org/obo/UO_')
-DCTERMS = Namespace('http://example.org/UNKNOWN/dcterms/')
-NMDC = Namespace('https://microbiomedata/meta/')
-QUD = Namespace('http://qudt.org/1.1/schema/qudt#')
-RDF = Namespace('http://example.org/UNKNOWN/rdf/')
-RDFS = Namespace('http://example.org/UNKNOWN/rdfs/')
-SHEX = Namespace('http://www.w3.org/ns/shex#')
-SKOS = Namespace('http://example.org/UNKNOWN/skos/')
-WGS = Namespace('http://www.w3.org/2003/01/geo/wgs84_pos')
-XSD = Namespace('http://www.w3.org/2001/XMLSchema#')
-DEFAULT_ = NMDC
-=======
 
 
 # Namespaces
@@ -56,7 +36,6 @@ DEFAULT_ = NMDC
 # Class references
 
 
->>>>>>> schema-draft
 
 @dataclass
 class NamedThing(YAMLRoot):
@@ -65,12 +44,6 @@ class NamedThing(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-<<<<<<< HEAD
-# Types
-
-# Class references
-
-=======
     class_class_uri: ClassVar[URIRef] = NMDC.NamedThing
     class_class_curie: ClassVar[str] = "nmdc:NamedThing"
     class_name: ClassVar[str] = "named thing"
@@ -85,7 +58,7 @@ class NamedThing(YAMLRoot):
 class Study(NamedThing):
     """
     A detailed investigation that defines the overall goal of a research proposal. It contains the list of sequencing
-    projects that are part of the original proposal.
+    projects that are part of the original proposal. (see https://gold.jgi.doe.gov/resources/project_help_doc.pdf)
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -93,7 +66,6 @@ class Study(NamedThing):
     class_class_curie: ClassVar[str] = "nmdc:Study"
     class_name: ClassVar[str] = "study"
     class_model_uri: ClassVar[URIRef] = NMDC.Study
->>>>>>> schema-draft
 
     id: Optional[str] = None
     name: Optional[str] = None
@@ -106,12 +78,6 @@ class Project(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-<<<<<<< HEAD
-    class_class_uri: ClassVar[URIRef] = NMDC.NamedThing
-    class_class_curie: ClassVar[str] = "nmdc:NamedThing"
-    class_name: ClassVar[str] = "named thing"
-    class_model_uri: ClassVar[URIRef] = NMDC.NamedThing
-=======
     class_class_uri: ClassVar[URIRef] = NMDC.Project
     class_class_curie: ClassVar[str] = "nmdc:Project"
     class_name: ClassVar[str] = "project"
@@ -126,12 +92,7 @@ class Project(NamedThing):
         self.part_of = [v if isinstance(v, Study)
                         else Study(**v) for v in self.part_of]
         super().__post_init__()
->>>>>>> schema-draft
 
-    id: Optional[str] = None
-    name: Optional[str] = None
-    description: Optional[str] = None
-    alternate_identifiers: List[str] = empty_list()
 
 @dataclass
 class Biosample(NamedThing):
@@ -154,11 +115,8 @@ class Biosample(NamedThing):
     def __post_init__(self):
         self.annotations = [v if isinstance(v, Annotation)
                             else Annotation(**v) for v in self.annotations]
-<<<<<<< HEAD
-=======
         self.involved_in = [v if isinstance(v, Project)
                             else Project(**v) for v in self.involved_in]
->>>>>>> schema-draft
         super().__post_init__()
 
 
@@ -173,17 +131,10 @@ class BiosampleProcessing(YAMLRoot):
     class_class_curie: ClassVar[str] = "nmdc:BiosampleProcessing"
     class_name: ClassVar[str] = "biosample processing"
     class_model_uri: ClassVar[URIRef] = NMDC.BiosampleProcessing
-<<<<<<< HEAD
 
     input: List[Union[dict, Biosample]] = empty_list()
     output: List[Union[dict, Biosample]] = empty_list()
 
-=======
-
-    input: List[Union[dict, Biosample]] = empty_list()
-    output: List[Union[dict, Biosample]] = empty_list()
-
->>>>>>> schema-draft
     def __post_init__(self):
         self.input = [v if isinstance(v, Biosample)
                       else Biosample(**v) for v in self.input]
@@ -205,21 +156,12 @@ class Annotation(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = NMDC.Annotation
 
     has_raw_value: str
-<<<<<<< HEAD
-    has_characteristic: Optional[Union[dict, "Characteristic"]] = None
-    has_normalized_value: List[Union[dict, "NormalizedValue"]] = empty_list()
-
-    def __post_init__(self):
-        if self.has_characteristic is not None and not isinstance(self.has_characteristic, Characteristic):
-            self.has_characteristic = Characteristic(**self.has_characteristic)
-=======
     has_characteristic: List[Union[dict, "Characteristic"]] = empty_list()
     has_normalized_value: List[Union[dict, "NormalizedValue"]] = empty_list()
 
     def __post_init__(self):
         self.has_characteristic = [v if isinstance(v, Characteristic)
                                    else Characteristic(**v) for v in self.has_characteristic]
->>>>>>> schema-draft
         if self.has_raw_value is None:
             raise ValueError(f"has_raw_value must be supplied")
         self.has_normalized_value = [v if isinstance(v, NormalizedValue)
@@ -238,13 +180,8 @@ class Characteristic(NamedThing):
     class_class_curie: ClassVar[str] = "nmdc:Characteristic"
     class_name: ClassVar[str] = "characteristic"
     class_model_uri: ClassVar[URIRef] = NMDC.Characteristic
-<<<<<<< HEAD
 
 
-=======
-
-
->>>>>>> schema-draft
 class NormalizedValue(YAMLRoot):
     """
     The value that was specified for an annotation in parsed/normalized form. This could be a range of different types
@@ -289,15 +226,9 @@ class ControlledTermValue(NormalizedValue):
     class_class_curie: ClassVar[str] = "nmdc:ControlledTermValue"
     class_name: ClassVar[str] = "controlled term value"
     class_model_uri: ClassVar[URIRef] = NMDC.ControlledTermValue
-<<<<<<< HEAD
 
     instance_of: Optional[Union[dict, "OntologyClass"]] = None
 
-=======
-
-    instance_of: Optional[Union[dict, "OntologyClass"]] = None
-
->>>>>>> schema-draft
     def __post_init__(self):
         if self.instance_of is not None and not isinstance(self.instance_of, OntologyClass):
             self.instance_of = OntologyClass(**self.instance_of)
