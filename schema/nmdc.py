@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-01-17 16:13
+# Generation date: 2020-01-17 15:42
 # Schema: nmdc_schema
 #
 # id: https://microbiomedata/schema
@@ -112,13 +112,13 @@ class Biosample(NamedThing):
     name: Optional[str] = None
     alternate_identifiers: List[str] = empty_list()
     annotations: List[Union[dict, "Annotation"]] = empty_list()
-    involved_in: List[Union[dict, Project]] = empty_list()
+    part_of: List[Union[dict, Project]] = empty_list()
 
     def __post_init__(self):
         self.annotations = [v if isinstance(v, Annotation)
                             else Annotation(**v) for v in self.annotations]
-        self.involved_in = [v if isinstance(v, Project)
-                            else Project(**v) for v in self.involved_in]
+        self.part_of = [v if isinstance(v, Project)
+                        else Project(**v) for v in self.part_of]
         super().__post_init__()
 
 
@@ -324,7 +324,7 @@ slots.involved_in = Slot(uri=NMDC.involved_in, name="involved in", curie=NMDC.cu
                       model_uri=NMDC.involved_in, domain=Biosample, range=List[Union[dict, Project]])
 
 slots.part_of = Slot(uri=DCTERMS.isPartOf, name="part of", curie=DCTERMS.curie('isPartOf'),
-                      model_uri=NMDC.part_of, domain=Project, range=List[Union[dict, Study]])
+                      model_uri=NMDC.part_of, domain=NamedThing, range=List[str])
 
 slots.study_id = Slot(uri=NMDC.id, name="study_id", curie=NMDC.curie('id'),
                       model_uri=NMDC.study_id, domain=Study, range=Optional[str])
@@ -344,6 +344,9 @@ slots.project_name = Slot(uri=NMDC.name, name="project_name", curie=NMDC.curie('
 slots.project_alternate_identifiers = Slot(uri=NMDC.alternate_identifiers, name="project_alternate identifiers", curie=NMDC.curie('alternate_identifiers'),
                       model_uri=NMDC.project_alternate_identifiers, domain=Project, range=List[str])
 
+slots.project_part_of = Slot(uri=NMDC.part_of, name="project_part of", curie=NMDC.curie('part_of'),
+                      model_uri=NMDC.project_part_of, domain=Project, range=List[Union[dict, Study]])
+
 slots.biosample_id = Slot(uri=NMDC.id, name="biosample_id", curie=NMDC.curie('id'),
                       model_uri=NMDC.biosample_id, domain=Biosample, range=Optional[str])
 
@@ -352,3 +355,6 @@ slots.biosample_name = Slot(uri=NMDC.name, name="biosample_name", curie=NMDC.cur
 
 slots.biosample_alternate_identifiers = Slot(uri=NMDC.alternate_identifiers, name="biosample_alternate identifiers", curie=NMDC.curie('alternate_identifiers'),
                       model_uri=NMDC.biosample_alternate_identifiers, domain=Biosample, range=List[str])
+
+slots.biosample_part_of = Slot(uri=NMDC.part_of, name="biosample_part of", curie=NMDC.curie('part_of'),
+                      model_uri=NMDC.biosample_part_of, domain=Biosample, range=List[Union[dict, Project]])

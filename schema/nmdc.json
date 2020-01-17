@@ -90,7 +90,7 @@
          "type": "array"
       },
       "part_of": {
-         "description": "Linds a resource to another resource that either logically or physically includes it.",
+         "description": "Links a resource to another resource that either logically or physically includes it.",
          "items": {
             "type": "string"
          },
@@ -152,6 +152,12 @@
             },
             "name": {
                "type": "string"
+            },
+            "part_of": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "title": "Biosample",
@@ -230,6 +236,13 @@
             "name": {
                "description": "A human readable label for an entity",
                "type": "string"
+            },
+            "part_of": {
+               "description": "Links a resource to another resource that either logically or physically includes it.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "title": "NamedThing",
@@ -263,7 +276,6 @@
                "type": "string"
             },
             "part_of": {
-               "description": "Linds a resource to another resource that either logically or physically includes it.",
                "items": {
                   "type": "string"
                },
