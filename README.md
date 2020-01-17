@@ -20,7 +20,7 @@ In the interim we are using the GOLD columns.
 
 ## Ingest from GOLD
 
-Currently this is in [Jupyter notebooks](https://github.com/microbiomedata/nmdc-metadata/tree/master/GOLD-ontology-translation). We are working on developing a more comprehensive ETL pipeline.
+Currently this is in [Jupyter notebooks](https://github.com/microbiomedata/nmdc-metadata/tree/master/GOLD-ontology-translation). We are developing a more comprehensive ETL pipeline.
 
 ## Ingest from EMSL
 
