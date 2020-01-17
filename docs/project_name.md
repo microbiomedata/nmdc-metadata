@@ -1,14 +1,15 @@
 
-# Slot: name
+# Type: project_name
 
 
 
 
 URI: [nmdc:project_name](https://microbiomedata/meta/project_name)
 
+
 ## Domain and Range
 
-[Project](Project.md) ->  <sub>OPT</sub> [String](String.md)
+[Project](Project.md) ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 

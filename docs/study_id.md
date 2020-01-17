@@ -1,14 +1,15 @@
 
-# Slot: id
+# Type: study_id
 
 
 
 
 URI: [nmdc:study_id](https://microbiomedata/meta/study_id)
 
+
 ## Domain and Range
 
-[Study](Study.md) ->  <sub>OPT</sub> [String](String.md)
+[Study](Study.md) ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 

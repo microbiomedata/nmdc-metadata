@@ -1,23 +1,24 @@
 
-# Slot: name
+# Type: name
 
 
 A human readable label for an entity
 
 URI: [nmdc:name](https://microbiomedata/meta/name)
 
+
 ## Domain and Range
 
-None ->  <sub>OPT</sub> [String](String.md)
+None ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 
 
 ## Children
 
- *  [name](biosample_name.md)
- *  [name](project_name.md)
- *  [name](study_name.md)
+ *  [biosample➞name](biosample_name.md)
+ *  [project➞name](project_name.md)
+ *  [study➞name](study_name.md)
 
 ## Used by
 

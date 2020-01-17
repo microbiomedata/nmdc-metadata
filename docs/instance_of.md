@@ -1,10 +1,11 @@
 
-# Slot: instance of
+# Type: instance of
 
 
 
 
 URI: [nmdc:instance_of](https://microbiomedata/meta/instance_of)
+
 
 ## Domain and Range
 

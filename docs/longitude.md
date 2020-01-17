@@ -1,14 +1,15 @@
 
-# Slot: longitude
+# Type: longitude
 
 
 longitude
 
 URI: [nmdc:longitude](https://microbiomedata/meta/longitude)
 
+
 ## Domain and Range
 
-None ->  <sub>OPT</sub> [Float](Float.md)
+None ->  <sub>OPT</sub> [Float](types/Float.md)
 
 ## Parents
 
@@ -19,3 +20,10 @@ None ->  <sub>OPT</sub> [Float](Float.md)
 ## Used by
 
  * [GeolocationValue](GeolocationValue.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | wgs:long |
+

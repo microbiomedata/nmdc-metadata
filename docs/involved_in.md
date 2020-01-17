@@ -1,10 +1,11 @@
 
-# Slot: involved in
+# Type: involved in
 
 
 Links a biosample to a project that makes use of it.
 
 URI: [nmdc:involved_in](https://microbiomedata/meta/involved_in)
+
 
 ## Domain and Range
 

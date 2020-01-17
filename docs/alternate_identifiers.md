@@ -1,23 +1,24 @@
 
-# Slot: alternate identifiers
+# Type: alternate identifiers
 
 
 Non-primary identifiers
 
 URI: [nmdc:alternate_identifiers](https://microbiomedata/meta/alternate_identifiers)
 
+
 ## Domain and Range
 
-None ->  <sub>0..*</sub> [String](String.md)
+None ->  <sub>0..*</sub> [String](types/String.md)
 
 ## Parents
 
 
 ## Children
 
- *  [alternate identifiers](biosample_alternate_identifiers.md)
- *  [alternate identifiers](project_alternate_identifiers.md)
- *  [alternate identifiers](study_alternate_identifiers.md)
+ *  [biosample➞alternate identifiers](biosample_alternate_identifiers.md)
+ *  [project➞alternate identifiers](project_alternate_identifiers.md)
+ *  [study➞alternate identifiers](study_alternate_identifiers.md)
 
 ## Used by
 
@@ -27,3 +28,12 @@ None ->  <sub>0..*</sub> [String](String.md)
  * [OntologyClass](OntologyClass.md)
  * [Project](Project.md)
  * [Study](Study.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | mappings |
+|  | | alt ids |
+|  | | xrefs |
+

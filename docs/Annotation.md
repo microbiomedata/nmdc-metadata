@@ -1,12 +1,13 @@
 
-# Class: annotation
+# Type: annotation
 
 
 An annotation on a sample. This is essentially a key value pair
 
 URI: [nmdc:Annotation](https://microbiomedata/meta/Annotation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NormalizedValue]<has%20normalized%20value%200..*-++\[Annotation|has_raw_value:string],%20\[Characteristic]<has%20characteristic%200..*-++\[Annotation],%20\[Biosample]++-%20annotations%200..*>\[Annotation])
+
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NormalizedValue]<has%20normalized%20value%200..*-++\[Annotation&#124;has_raw_value:string],%20\[Characteristic]<has%20characteristic%200..*-++\[Annotation],%20\[Biosample]++-%20annotations%200..*>\[Annotation])
 
 ## Referenced by class
 
@@ -25,7 +26,7 @@ URI: [nmdc:Annotation](https://microbiomedata/meta/Annotation)
     * range: [NormalizedValue](NormalizedValue.md)
  * [has raw value](has_raw_value.md)  <sub>REQ</sub>
     * Description: The value that was specified for an annotation in raw form, i.e. a string. E.g. "2 cm" or "2-4 cm"
-    * range: [String](String.md)
+    * range: [String](types/String.md)
 
 ### Domain for slot:
 
@@ -37,4 +38,4 @@ URI: [nmdc:Annotation](https://microbiomedata/meta/Annotation)
     * range: [NormalizedValue](NormalizedValue.md)
  * [has raw value](has_raw_value.md)  <sub>REQ</sub>
     * Description: The value that was specified for an annotation in raw form, i.e. a string. E.g. "2 cm" or "2-4 cm"
-    * range: [String](String.md)
+    * range: [String](types/String.md)

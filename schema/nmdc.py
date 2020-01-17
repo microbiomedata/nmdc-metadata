@@ -1,5 +1,5 @@
-# Auto generated from nmdc.yaml by pythongen.py version: 0.2.1
-# Generation date: 2020-01-17 15:49
+# Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
+# Generation date: 2020-01-17 16:13
 # Schema: nmdc_schema
 #
 # id: https://microbiomedata/schema
@@ -8,26 +8,28 @@
 
 from typing import Optional, List, Union, Dict, ClassVar
 from dataclasses import dataclass
+from biolinkml.utils.slot import Slot
 from biolinkml.utils.metamodelcore import empty_list, empty_dict, bnode
 from biolinkml.utils.yamlutils import YAMLRoot
 from biolinkml.utils.formatutils import camelcase, underscore, sfx
 from rdflib import Namespace, URIRef
+from biolinkml.utils.curienamespace import CurieNamespace
 from includes.types import Double, Float, String
 
-metamodel_version = "1.4.1"
+metamodel_version = "1.4.3"
 
 
 # Namespaces
-UO = Namespace('http://purl.obolibrary.org/obo/UO_')
-DCTERMS = Namespace('http://purl.org/dc/terms/')
-NMDC = Namespace('https://microbiomedata/meta/')
-QUD = Namespace('http://qudt.org/1.1/schema/qudt#')
-RDF = Namespace('http://example.org/UNKNOWN/rdf/')
-RDFS = Namespace('http://example.org/UNKNOWN/rdfs/')
-SHEX = Namespace('http://www.w3.org/ns/shex#')
-SKOS = Namespace('http://example.org/UNKNOWN/skos/')
-WGS = Namespace('http://www.w3.org/2003/01/geo/wgs84_pos')
-XSD = Namespace('http://www.w3.org/2001/XMLSchema#')
+UO = CurieNamespace('UO', 'http://purl.obolibrary.org/obo/UO_')
+BIOLINKML = CurieNamespace('biolinkml', 'https://w3id.org/biolink/biolinkml/')
+DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
+NMDC = CurieNamespace('nmdc', 'https://microbiomedata/meta/')
+QUD = CurieNamespace('qud', 'http://qudt.org/1.1/schema/qudt#')
+RDF = CurieNamespace('rdf', 'http://example.org/UNKNOWN/rdf/')
+RDFS = CurieNamespace('rdfs', 'http://example.org/UNKNOWN/rdfs/')
+SKOS = CurieNamespace('skos', 'http://example.org/UNKNOWN/skos/')
+WGS = CurieNamespace('wgs', 'http://www.w3.org/2003/01/geo/wgs84_pos')
+XSD = CurieNamespace('xsd', 'http://www.w3.org/2001/XMLSchema#')
 DEFAULT_ = NMDC
 
 
@@ -267,3 +269,86 @@ class OntologyClass(NamedThing):
     class_name: ClassVar[str] = "ontology class"
     class_model_uri: ClassVar[URIRef] = NMDC.OntologyClass
 
+
+
+# Slots
+class slots:
+    pass
+
+slots.id = Slot(uri=NMDC.id, name="id", curie=NMDC.curie('id'),
+                      model_uri=NMDC.id, domain=None, range=Optional[str])
+
+slots.name = Slot(uri=NMDC.name, name="name", curie=NMDC.curie('name'),
+                      model_uri=NMDC.name, domain=None, range=Optional[str])
+
+slots.description = Slot(uri=DCTERMS.description, name="description", curie=DCTERMS.curie('description'),
+                      model_uri=NMDC.description, domain=None, range=Optional[str])
+
+slots.has_characteristic = Slot(uri=NMDC.has_characteristic, name="has characteristic", curie=NMDC.curie('has_characteristic'),
+                      model_uri=NMDC.has_characteristic, domain=Annotation, range=List[Union[dict, "Characteristic"]])
+
+slots.instance_of = Slot(uri=NMDC.instance_of, name="instance of", curie=NMDC.curie('instance_of'),
+                      model_uri=NMDC.instance_of, domain=None, range=Optional[Union[dict, OntologyClass]])
+
+slots.has_raw_value = Slot(uri=NMDC.has_raw_value, name="has raw value", curie=NMDC.curie('has_raw_value'),
+                      model_uri=NMDC.has_raw_value, domain=Annotation, range=str)
+
+slots.has_normalized_value = Slot(uri=NMDC.has_normalized_value, name="has normalized value", curie=NMDC.curie('has_normalized_value'),
+                      model_uri=NMDC.has_normalized_value, domain=Annotation, range=List[Union[dict, "NormalizedValue"]])
+
+slots.has_unit = Slot(uri=NMDC.has_unit, name="has unit", curie=NMDC.curie('has_unit'),
+                      model_uri=NMDC.has_unit, domain=None, range=List[Union[dict, Unit]], mappings = [QUD.unit])
+
+slots.has_numeric_value = Slot(uri=NMDC.has_numeric_value, name="has numeric value", curie=NMDC.curie('has_numeric_value'),
+                      model_uri=NMDC.has_numeric_value, domain=None, range=Optional[float], mappings = [QUD.quantityValue])
+
+slots.alternate_identifiers = Slot(uri=NMDC.alternate_identifiers, name="alternate identifiers", curie=NMDC.curie('alternate_identifiers'),
+                      model_uri=NMDC.alternate_identifiers, domain=None, range=List[str])
+
+slots.annotations = Slot(uri=NMDC.annotations, name="annotations", curie=NMDC.curie('annotations'),
+                      model_uri=NMDC.annotations, domain=Biosample, range=List[Union[dict, "Annotation"]])
+
+slots.latitude = Slot(uri=WGS.lat, name="latitude", curie=WGS.curie('lat'),
+                      model_uri=NMDC.latitude, domain=None, range=Optional[float])
+
+slots.longitude = Slot(uri=WGS.long, name="longitude", curie=WGS.curie('long'),
+                      model_uri=NMDC.longitude, domain=None, range=Optional[float])
+
+slots.input = Slot(uri=NMDC.input, name="input", curie=NMDC.curie('input'),
+                      model_uri=NMDC.input, domain=None, range=List[Union[dict, Biosample]])
+
+slots.output = Slot(uri=NMDC.output, name="output", curie=NMDC.curie('output'),
+                      model_uri=NMDC.output, domain=None, range=List[Union[dict, Biosample]])
+
+slots.involved_in = Slot(uri=NMDC.involved_in, name="involved in", curie=NMDC.curie('involved_in'),
+                      model_uri=NMDC.involved_in, domain=Biosample, range=List[Union[dict, Project]])
+
+slots.part_of = Slot(uri=DCTERMS.isPartOf, name="part of", curie=DCTERMS.curie('isPartOf'),
+                      model_uri=NMDC.part_of, domain=Project, range=List[Union[dict, Study]])
+
+slots.study_id = Slot(uri=NMDC.id, name="study_id", curie=NMDC.curie('id'),
+                      model_uri=NMDC.study_id, domain=Study, range=Optional[str])
+
+slots.study_name = Slot(uri=NMDC.name, name="study_name", curie=NMDC.curie('name'),
+                      model_uri=NMDC.study_name, domain=Study, range=Optional[str])
+
+slots.study_alternate_identifiers = Slot(uri=NMDC.alternate_identifiers, name="study_alternate identifiers", curie=NMDC.curie('alternate_identifiers'),
+                      model_uri=NMDC.study_alternate_identifiers, domain=Study, range=List[str])
+
+slots.project_id = Slot(uri=NMDC.id, name="project_id", curie=NMDC.curie('id'),
+                      model_uri=NMDC.project_id, domain=Project, range=Optional[str])
+
+slots.project_name = Slot(uri=NMDC.name, name="project_name", curie=NMDC.curie('name'),
+                      model_uri=NMDC.project_name, domain=Project, range=Optional[str])
+
+slots.project_alternate_identifiers = Slot(uri=NMDC.alternate_identifiers, name="project_alternate identifiers", curie=NMDC.curie('alternate_identifiers'),
+                      model_uri=NMDC.project_alternate_identifiers, domain=Project, range=List[str])
+
+slots.biosample_id = Slot(uri=NMDC.id, name="biosample_id", curie=NMDC.curie('id'),
+                      model_uri=NMDC.biosample_id, domain=Biosample, range=Optional[str])
+
+slots.biosample_name = Slot(uri=NMDC.name, name="biosample_name", curie=NMDC.curie('name'),
+                      model_uri=NMDC.biosample_name, domain=Biosample, range=Optional[str])
+
+slots.biosample_alternate_identifiers = Slot(uri=NMDC.alternate_identifiers, name="biosample_alternate identifiers", curie=NMDC.curie('alternate_identifiers'),
+                      model_uri=NMDC.biosample_alternate_identifiers, domain=Biosample, range=List[str])

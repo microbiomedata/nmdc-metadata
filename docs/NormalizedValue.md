@@ -1,10 +1,11 @@
 
-# Class: normalized value
+# Type: normalized value
 
 
 The value that was specified for an annotation in parsed/normalized form. This could be a range of different types
 
 URI: [nmdc:NormalizedValue](https://microbiomedata/meta/NormalizedValue)
+
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Annotation]++-%20has%20normalized%20value%200..*>\[NormalizedValue],%20\[NormalizedValue]^-\[QuantityValue],%20\[NormalizedValue]^-\[GeolocationValue],%20\[NormalizedValue]^-\[ControlledTermValue])
 

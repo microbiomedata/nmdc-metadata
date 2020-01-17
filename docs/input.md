@@ -1,10 +1,11 @@
 
-# Slot: input
+# Type: input
 
 
 An input biosample to a processing step
 
 URI: [nmdc:input](https://microbiomedata/meta/input)
+
 
 ## Domain and Range
 

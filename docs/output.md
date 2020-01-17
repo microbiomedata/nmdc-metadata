@@ -1,10 +1,11 @@
 
-# Slot: output
+# Type: output
 
 
 An output biosample to a processing step
 
 URI: [nmdc:output](https://microbiomedata/meta/output)
+
 
 ## Domain and Range
 

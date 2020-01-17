@@ -1,14 +1,15 @@
 
-# Slot: alternate identifiers
+# Type: project_alternate identifiers
 
 
 
 
 URI: [nmdc:project_alternate_identifiers](https://microbiomedata/meta/project_alternate_identifiers)
 
+
 ## Domain and Range
 
-[Project](Project.md) ->  <sub>0..*</sub> [String](String.md)
+[Project](Project.md) ->  <sub>0..*</sub> [String](types/String.md)
 
 ## Parents
 

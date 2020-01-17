@@ -1,12 +1,13 @@
 
-# Class: named thing
+# Type: named thing
 
 
 a databased entity or concept/class
 
 URI: [nmdc:NamedThing](https://microbiomedata/meta/NamedThing)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing|id:string%20%3F;name:string%20%3F;description:string%20%3F;alternate_identifiers:string%20*]^-\[Study],%20\[NamedThing]^-\[Project],%20\[NamedThing]^-\[OntologyClass],%20\[NamedThing]^-\[Characteristic],%20\[NamedThing]^-\[Biosample])
+
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing&#124;id:string%20%3F;name:string%20%3F;description:string%20%3F;alternate_identifiers:string%20*]^-\[Study],%20\[NamedThing]^-\[Project],%20\[NamedThing]^-\[OntologyClass],%20\[NamedThing]^-\[Characteristic],%20\[NamedThing]^-\[Biosample])
 
 ## Children
 
@@ -26,13 +27,13 @@ URI: [nmdc:NamedThing](https://microbiomedata/meta/NamedThing)
 
  * [alternate identifiers](alternate_identifiers.md)  <sub>0..*</sub>
     * Description: Non-primary identifiers
-    * range: [String](String.md)
+    * range: [String](types/String.md)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of a thing
-    * range: [String](String.md)
+    * range: [String](types/String.md)
  * [id](id.md)  <sub>OPT</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [String](String.md)
+    * range: [String](types/String.md)
  * [name](name.md)  <sub>OPT</sub>
     * Description: A human readable label for an entity
-    * range: [String](String.md)
+    * range: [String](types/String.md)

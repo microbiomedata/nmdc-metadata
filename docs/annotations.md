@@ -1,10 +1,11 @@
 
-# Slot: annotations
+# Type: annotations
 
 
 Zero to many annotations on a sample
 
 URI: [nmdc:annotations](https://microbiomedata/meta/annotations)
+
 
 ## Domain and Range
 

@@ -1,12 +1,13 @@
 
-# Class: geolocation value
+# Type: geolocation value
 
 
 A normalized value for a location on the earth's surface
 
 URI: [nmdc:GeolocationValue](https://microbiomedata/meta/GeolocationValue)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NormalizedValue]^-\[GeolocationValue|latitude:float%20%3F;longitude:float%20%3F])
+
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NormalizedValue]^-\[GeolocationValue&#124;latitude:float%20%3F;longitude:float%20%3F])
 
 ## Parents
 
@@ -19,7 +20,7 @@ URI: [nmdc:GeolocationValue](https://microbiomedata/meta/GeolocationValue)
 
  * [latitude](latitude.md)  <sub>OPT</sub>
     * Description: latitude
-    * range: [Float](Float.md)
+    * range: [Float](types/Float.md)
  * [longitude](longitude.md)  <sub>OPT</sub>
     * Description: longitude
-    * range: [Float](Float.md)
+    * range: [Float](types/Float.md)

@@ -1,14 +1,15 @@
 
-# Slot: latitude
+# Type: latitude
 
 
 latitude
 
 URI: [nmdc:latitude](https://microbiomedata/meta/latitude)
 
+
 ## Domain and Range
 
-None ->  <sub>OPT</sub> [Float](Float.md)
+None ->  <sub>OPT</sub> [Float](types/Float.md)
 
 ## Parents
 
@@ -19,3 +20,10 @@ None ->  <sub>OPT</sub> [Float](Float.md)
 ## Used by
 
  * [GeolocationValue](GeolocationValue.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | wgs:lat |
+

@@ -1,10 +1,11 @@
 
-# Class: controlled term value
+# Type: controlled term value
 
 
 A controlled term or class from an ontology
 
 URI: [nmdc:ControlledTermValue](https://microbiomedata/meta/ControlledTermValue)
+
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OntologyClass]<instance%20of%200..1-++\[ControlledTermValue],%20\[NormalizedValue]^-\[ControlledTermValue])
 
