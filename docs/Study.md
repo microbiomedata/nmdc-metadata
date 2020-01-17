@@ -2,11 +2,11 @@
 # Class: study
 
 
-A detailed investigation of a phenomenon, development, or question.
+A detailed investigation that  defines the overall goal of a research proposal.  It contains the list of sequencing projects that are part of the original proposal.
 
 URI: [nmdc:Study](https://microbiomedata/meta/Study)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]^-\[Study|id:string%20%3F;name:string%20%3F;alternate_identifiers:string%20*;description(i):string%20%3F])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Project]++-%20part%20of%200..*>\[Study|id:string%20%3F;name:string%20%3F;alternate_identifiers:string%20*;description(i):string%20%3F],%20\[NamedThing]^-\[Study])
 
 ## Parents
 
@@ -14,6 +14,7 @@ URI: [nmdc:Study](https://microbiomedata/meta/Study)
 
 ## Referenced by class
 
+ *  **[Project](Project.md)** *[part of](part_of.md)*  <sub>0..*</sub>  **[Study](Study.md)**
 
 ## Attributes
 

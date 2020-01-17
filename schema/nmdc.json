@@ -28,14 +28,14 @@
          "type": "array"
       },
       "has_normalized_value": {
-         "description": "Connects an annotation to the normalized/parsed raw value",
+         "description": "Links an annotation to the normalized/parsed raw value",
          "items": {
             "type": "string"
          },
          "type": "array"
       },
       "has_numeric_value": {
-         "description": "connects a quantity value to a number",
+         "description": "Links a quantity value to a number",
          "type": "string"
       },
       "has_raw_value": {
@@ -43,7 +43,7 @@
          "type": "string"
       },
       "has_unit": {
-         "description": "connects a quantity value to a unit",
+         "description": "Links a quantity value to a unit",
          "items": {
             "type": "string"
          },
@@ -63,6 +63,13 @@
       "instance_of": {
          "type": "string"
       },
+      "involved_in": {
+         "description": "Links a biosample to a project that makes use of it.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
       "latitude": {
          "description": "latitude",
          "type": "string"
@@ -81,6 +88,13 @@
             "type": "string"
          },
          "type": "array"
+      },
+      "part_of": {
+         "description": "Linds a resource to another resource that either logically or physically includes it.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       }
    },
    "properties": {
@@ -95,7 +109,7 @@
                "type": "array"
             },
             "has_normalized_value": {
-               "description": "Connects an annotation to the normalized/parsed raw value",
+               "description": "Links an annotation to the normalized/parsed raw value",
                "items": {
                   "type": "string"
                },
@@ -119,8 +133,22 @@
                },
                "type": "array"
             },
+            "annotations": {
+               "description": "Zero to many annotations on a sample",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "id": {
                "type": "string"
+            },
+            "involved_in": {
+               "description": "Links a biosample to a project that makes use of it.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "name": {
                "type": "string"
@@ -191,13 +219,6 @@
                },
                "type": "array"
             },
-            "annotations": {
-               "description": "Zero to many annotations on a sample",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "description": {
                "description": "a human-readable description of a thing",
                "type": "string"
@@ -240,6 +261,13 @@
             },
             "name": {
                "type": "string"
+            },
+            "part_of": {
+               "description": "Linds a resource to another resource that either logically or physically includes it.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "title": "Project",
@@ -249,11 +277,11 @@
          "description": "A simple quantity, e.g. 2cm",
          "properties": {
             "has_numeric_value": {
-               "description": "connects a quantity value to a number",
+               "description": "Links a quantity value to a number",
                "type": "string"
             },
             "has_unit": {
-               "description": "connects a quantity value to a unit",
+               "description": "Links a quantity value to a unit",
                "items": {
                   "type": "string"
                },
@@ -264,7 +292,7 @@
          "type": "object"
       },
       "Study": {
-         "description": "A detailed investigation of a phenomenon, development, or question.",
+         "description": "A detailed investigation that  defines the overall goal of a research proposal.  It contains the list of sequencing projects that are part of the original proposal.",
          "properties": {
             "alternate_identifiers": {
                "items": {

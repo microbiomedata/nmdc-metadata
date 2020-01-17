@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.2.1
-# Generation date: 2020-01-16 14:22
+# Generation date: 2020-01-16 19:10
 # Schema: nmdc_schema
 #
 # id: https://microbiomedata/schema
@@ -19,7 +19,7 @@ metamodel_version = "1.4.1"
 
 # Namespaces
 UO = Namespace('http://purl.obolibrary.org/obo/UO_')
-DCTERMS = Namespace('http://example.org/UNKNOWN/dcterms/')
+DCTERMS = Namespace('http://purl.org/dc/terms/')
 NMDC = Namespace('https://microbiomedata/meta/')
 QUD = Namespace('http://qudt.org/1.1/schema/qudt#')
 RDF = Namespace('http://example.org/UNKNOWN/rdf/')
@@ -57,7 +57,8 @@ class NamedThing(YAMLRoot):
 @dataclass
 class Study(NamedThing):
     """
-    A detailed investigation of a phenomenon, development, or question.
+    A detailed investigation that defines the overall goal of a research proposal. It contains the list of sequencing
+    projects that are part of the original proposal.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -85,6 +86,13 @@ class Project(NamedThing):
     id: Optional[str] = None
     name: Optional[str] = None
     alternate_identifiers: List[str] = empty_list()
+    part_of: List[Union[dict, Study]] = empty_list()
+
+    def __post_init__(self):
+        self.part_of = [v if isinstance(v, Study)
+                        else Study(**v) for v in self.part_of]
+        super().__post_init__()
+
 
 @dataclass
 class Biosample(NamedThing):
@@ -101,6 +109,16 @@ class Biosample(NamedThing):
     id: Optional[str] = None
     name: Optional[str] = None
     alternate_identifiers: List[str] = empty_list()
+    annotations: List[Union[dict, "Annotation"]] = empty_list()
+    involved_in: List[Union[dict, Project]] = empty_list()
+
+    def __post_init__(self):
+        self.annotations = [v if isinstance(v, Annotation)
+                            else Annotation(**v) for v in self.annotations]
+        self.involved_in = [v if isinstance(v, Project)
+                            else Project(**v) for v in self.involved_in]
+        super().__post_init__()
+
 
 @dataclass
 class BiosampleProcessing(YAMLRoot):

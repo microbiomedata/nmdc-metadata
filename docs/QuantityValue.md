@@ -18,8 +18,8 @@ URI: [nmdc:QuantityValue](https://microbiomedata/meta/QuantityValue)
 ### Own
 
  * [has numeric value](has_numeric_value.md)  <sub>OPT</sub>
-    * Description: connects a quantity value to a number
+    * Description: Links a quantity value to a number
     * range: [Double](Double.md)
  * [has unit](has_unit.md)  <sub>0..*</sub>
-    * Description: connects a quantity value to a unit
+    * Description: Links a quantity value to a unit
     * range: [Unit](Unit.md)

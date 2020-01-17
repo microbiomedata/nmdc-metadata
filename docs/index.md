@@ -14,7 +14,7 @@ Schema for NMDC. Alpha. Currently focuses on samples
     * [Characteristic](Characteristic.md) - A characteristic of a biosample. Examples: depth, habitat, material, ... For NMDC, characteristics SHOULD be mapped to fields within a MIxS template
     * [OntologyClass](OntologyClass.md)
     * [Project](Project.md) - An individual or collaborative enterprise that is carefully planned and designed to achieve a particular aim.
-    * [Study](Study.md) - A detailed investigation of a phenomenon, development, or question.
+    * [Study](Study.md) - A detailed investigation that  defines the overall goal of a research proposal.  It contains the list of sequencing projects that are part of the original proposal.
  * [NormalizedValue](NormalizedValue.md) - The value that was specified for an annotation in parsed/normalized form. This could be a range of different types
     * [ControlledTermValue](ControlledTermValue.md) - A controlled term or class from an ontology
     * [GeolocationValue](GeolocationValue.md) - A normalized value for a location on the earth's surface
@@ -33,16 +33,17 @@ Schema for NMDC. Alpha. Currently focuses on samples
  * [annotations](annotations.md) - Zero to many annotations on a sample
  * [description](description.md) - a human-readable description of a thing
  * [has characteristic](has_characteristic.md) - Links an annotation to the field/characteristic
- * [has normalized value](has_normalized_value.md) - Connects an annotation to the normalized/parsed raw value
- * [has numeric value](has_numeric_value.md) - connects a quantity value to a number
+ * [has normalized value](has_normalized_value.md) - Links an annotation to the normalized/parsed raw value
+ * [has numeric value](has_numeric_value.md) - Links a quantity value to a number
  * [has raw value](has_raw_value.md) - The value that was specified for an annotation in raw form, i.e. a string. E.g. "2 cm" or "2-4 cm"
- * [has unit](has_unit.md) - connects a quantity value to a unit
+ * [has unit](has_unit.md) - Links a quantity value to a unit
  * [id](id.md) - A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * [id](biosample_id.md)
     * [id](project_id.md)
     * [id](study_id.md)
  * [input](input.md) - An input biosample to a processing step
  * [instance of](instance_of.md)
+ * [involved in](involved_in.md) - Links a biosample to a project that makes use of it.
  * [latitude](latitude.md) - latitude
  * [longitude](longitude.md) - longitude
  * [name](name.md) - A human readable label for an entity
@@ -50,6 +51,7 @@ Schema for NMDC. Alpha. Currently focuses on samples
     * [name](project_name.md)
     * [name](study_name.md)
  * [output](output.md) - An output biosample to a processing step
+ * [part of](part_of.md) - Linds a resource to another resource that either logically or physically includes it.
 
 ### Types
 

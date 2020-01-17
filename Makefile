@@ -1,4 +1,4 @@
-.SECONDARY:
+.PHONY: all
 
 all: install build
 

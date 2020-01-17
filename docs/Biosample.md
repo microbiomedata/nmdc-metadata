@@ -6,7 +6,7 @@ A material sample. May be environmental (encompassing many organisms) or isolate
 
 URI: [nmdc:Biosample](https://microbiomedata/meta/Biosample)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]^-\[Biosample|id:string%20%3F;name:string%20%3F;alternate_identifiers:string%20*;description(i):string%20%3F])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Project]<involved%20in%200..*-++\[Biosample|id:string%20%3F;name:string%20%3F;alternate_identifiers:string%20*;description(i):string%20%3F],%20\[Annotation]<annotations%200..*-++\[Biosample],%20\[NamedThing]^-\[Biosample])
 
 ## Parents
 
@@ -22,12 +22,18 @@ URI: [nmdc:Biosample](https://microbiomedata/meta/Biosample)
 
 ### Own
 
+ * [annotations](annotations.md)  <sub>0..*</sub>
+    * Description: Zero to many annotations on a sample
+    * range: [Annotation](Annotation.md)
  * [alternate identifiers](biosample_alternate_identifiers.md)  <sub>0..*</sub>
     * range: [String](String.md)
  * [id](biosample_id.md)  <sub>OPT</sub>
     * range: [String](String.md)
  * [name](biosample_name.md)  <sub>OPT</sub>
     * range: [String](String.md)
+ * [involved in](involved_in.md)  <sub>0..*</sub>
+    * Description: Links a biosample to a project that makes use of it.
+    * range: [Project](Project.md)
 
 ### Inherited from named thing:
 
@@ -50,9 +56,15 @@ URI: [nmdc:Biosample](https://microbiomedata/meta/Biosample)
 
 ### Domain for slot:
 
+ * [annotations](annotations.md)  <sub>0..*</sub>
+    * Description: Zero to many annotations on a sample
+    * range: [Annotation](Annotation.md)
  * [alternate identifiers](biosample_alternate_identifiers.md)  <sub>0..*</sub>
     * range: [String](String.md)
  * [id](biosample_id.md)  <sub>OPT</sub>
     * range: [String](String.md)
  * [name](biosample_name.md)  <sub>OPT</sub>
     * range: [String](String.md)
+ * [involved in](involved_in.md)  <sub>0..*</sub>
+    * Description: Links a biosample to a project that makes use of it.
+    * range: [Project](Project.md)

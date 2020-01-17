@@ -2,7 +2,7 @@
 # Slot: has numeric value
 
 
-connects a quantity value to a number
+Links a quantity value to a number
 
 URI: [nmdc:has_numeric_value](https://microbiomedata/meta/has_numeric_value)
 

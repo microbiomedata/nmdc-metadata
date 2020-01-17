@@ -2,7 +2,7 @@
 # Slot: has unit
 
 
-connects a quantity value to a unit
+Links a quantity value to a unit
 
 URI: [nmdc:has_unit](https://microbiomedata/meta/has_unit)
 

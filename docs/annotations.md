@@ -8,7 +8,7 @@ URI: [nmdc:annotations](https://microbiomedata/meta/annotations)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [Annotation](Annotation.md)
+[Biosample](Biosample.md) ->  <sub>0..*</sub> [Annotation](Annotation.md)
 
 ## Parents
 
@@ -19,8 +19,3 @@ URI: [nmdc:annotations](https://microbiomedata/meta/annotations)
 ## Used by
 
  * [Biosample](Biosample.md)
- * [Characteristic](Characteristic.md)
- * [NamedThing](NamedThing.md)
- * [OntologyClass](OntologyClass.md)
- * [Project](Project.md)
- * [Study](Study.md)

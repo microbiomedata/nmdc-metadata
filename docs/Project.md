@@ -6,7 +6,7 @@ An individual or collaborative enterprise that is carefully planned and designed
 
 URI: [nmdc:Project](https://microbiomedata/meta/Project)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]^-\[Project|id:string%20%3F;name:string%20%3F;alternate_identifiers:string%20*;description(i):string%20%3F])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Study]<part%20of%200..*-++\[Project|id:string%20%3F;name:string%20%3F;alternate_identifiers:string%20*;description(i):string%20%3F],%20\[Biosample]++-%20involved%20in%200..*>\[Project],%20\[NamedThing]^-\[Project])
 
 ## Parents
 
@@ -14,12 +14,16 @@ URI: [nmdc:Project](https://microbiomedata/meta/Project)
 
 ## Referenced by class
 
+ *  **[Biosample](Biosample.md)** *[involved in](involved_in.md)*  <sub>0..*</sub>  **[Project](Project.md)**
 
 ## Attributes
 
 
 ### Own
 
+ * [part of](part_of.md)  <sub>0..*</sub>
+    * Description: Linds a resource to another resource that either logically or physically includes it.
+    * range: [Study](Study.md)
  * [alternate identifiers](project_alternate_identifiers.md)  <sub>0..*</sub>
     * range: [String](String.md)
  * [id](project_id.md)  <sub>OPT</sub>
@@ -48,6 +52,9 @@ URI: [nmdc:Project](https://microbiomedata/meta/Project)
 
 ### Domain for slot:
 
+ * [part of](part_of.md)  <sub>0..*</sub>
+    * Description: Linds a resource to another resource that either logically or physically includes it.
+    * range: [Study](Study.md)
  * [alternate identifiers](project_alternate_identifiers.md)  <sub>0..*</sub>
     * range: [String](String.md)
  * [id](project_id.md)  <sub>OPT</sub>
