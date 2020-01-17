@@ -9,10 +9,10 @@ schema_uml: schema/nmdc_schema_uml.png
 install: env.lock
 
 env.lock:
-	pipenv install pyyaml biolinkml requests
+	pipenv install
 	cp /dev/null env.lock
 
-build: python_dataclasses json_schema
+build: python_dataclasses json_schema schema_uml
 
 # Python dataclasses
 
