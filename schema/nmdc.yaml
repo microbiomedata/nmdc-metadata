@@ -272,6 +272,6 @@ slots:
     aliases: ['is part of']
     domain: named thing
     multivalued: true
-    slot_uri: http://purl.org/dc/terms/isPartOf
+    slot_uri: dcterms:isPartOf
     description: >-
       Links a resource to another resource that either logically or physically includes it.
