@@ -8,6 +8,9 @@ schema_uml: schema/nmdc_schema_uml.png
 
 install: env.lock
 
+clean:
+	rm env.lock
+
 env.lock:
 	pipenv install
 	cp /dev/null env.lock
