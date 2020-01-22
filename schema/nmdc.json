@@ -251,25 +251,6 @@
          "title": "OntologyClass",
          "type": "object"
       },
-      "Organism": {
-         "description": "An organism is a living individual entity such as a bacterium, fungus, plant, animal or a virus.  It can be a cultured isolate of a pure strain of bacterium or an uncultured single-cell isolated using cell sorting.   (see https://academic.oup.com/nar/article/47/D1/D649/5144132)",
-         "properties": {
-            "alternate_identifiers": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "id": {
-               "type": "string"
-            },
-            "name": {
-               "type": "string"
-            }
-         },
-         "title": "Organism",
-         "type": "object"
-      },
       "QuantityValue": {
          "description": "A simple quantity, e.g. 2cm",
          "properties": {
@@ -286,6 +267,25 @@
             }
          },
          "title": "QuantityValue",
+         "type": "object"
+      },
+      "SampleOrganism": {
+         "description": "An biosample that is a living individual entity such as a bacterium, fungus, plant, animal or a virus.  It can be a cultured isolate of a pure strain of bacterium or an uncultured single-cell isolated using cell sorting.   (see https://academic.oup.com/nar/article/47/D1/D649/5144132)",
+         "properties": {
+            "alternate_identifiers": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "title": "SampleOrganism",
          "type": "object"
       },
       "SequencingProject": {

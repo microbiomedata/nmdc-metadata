@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-01-21 19:05
+# Generation date: 2020-01-22 10:07
 # Schema: nmdc_schema
 #
 # id: https://microbiomedata/schema
@@ -82,18 +82,18 @@ class Biosample(NamedThing):
     alternate_identifiers: List[str] = empty_list()
 
 @dataclass
-class Organism(Biosample):
+class SampleOrganism(Biosample):
     """
-    An organism is a living individual entity such as a bacterium, fungus, plant, animal or a virus. It can be a
+    An biosample that is a living individual entity such as a bacterium, fungus, plant, animal or a virus. It can be a
     cultured isolate of a pure strain of bacterium or an uncultured single-cell isolated using cell sorting. (see
     https://academic.oup.com/nar/article/47/D1/D649/5144132)
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMDC.Organism
-    class_class_curie: ClassVar[str] = "nmdc:Organism"
-    class_name: ClassVar[str] = "organism"
-    class_model_uri: ClassVar[URIRef] = NMDC.Organism
+    class_class_uri: ClassVar[URIRef] = NMDC.SampleOrganism
+    class_class_curie: ClassVar[str] = "nmdc:SampleOrganism"
+    class_name: ClassVar[str] = "sample organism"
+    class_model_uri: ClassVar[URIRef] = NMDC.SampleOrganism
 
     id: Optional[str] = None
     name: Optional[str] = None
@@ -363,14 +363,14 @@ slots.biosample_name = Slot(uri=NMDC.name, name="biosample_name", curie=NMDC.cur
 slots.biosample_alternate_identifiers = Slot(uri=NMDC.alternate_identifiers, name="biosample_alternate identifiers", curie=NMDC.curie('alternate_identifiers'),
                       model_uri=NMDC.biosample_alternate_identifiers, domain=Biosample, range=List[str])
 
-slots.organism_id = Slot(uri=NMDC.id, name="organism_id", curie=NMDC.curie('id'),
-                      model_uri=NMDC.organism_id, domain=Organism, range=Optional[str])
+slots.sample_organism_id = Slot(uri=NMDC.id, name="sample organism_id", curie=NMDC.curie('id'),
+                      model_uri=NMDC.sample_organism_id, domain=SampleOrganism, range=Optional[str])
 
-slots.organism_name = Slot(uri=NMDC.name, name="organism_name", curie=NMDC.curie('name'),
-                      model_uri=NMDC.organism_name, domain=Organism, range=Optional[str])
+slots.sample_organism_name = Slot(uri=NMDC.name, name="sample organism_name", curie=NMDC.curie('name'),
+                      model_uri=NMDC.sample_organism_name, domain=SampleOrganism, range=Optional[str])
 
-slots.organism_alternate_identifiers = Slot(uri=NMDC.alternate_identifiers, name="organism_alternate identifiers", curie=NMDC.curie('alternate_identifiers'),
-                      model_uri=NMDC.organism_alternate_identifiers, domain=Organism, range=List[str])
+slots.sample_organism_alternate_identifiers = Slot(uri=NMDC.alternate_identifiers, name="sample organism_alternate identifiers", curie=NMDC.curie('alternate_identifiers'),
+                      model_uri=NMDC.sample_organism_alternate_identifiers, domain=SampleOrganism, range=List[str])
 
 slots.study_id = Slot(uri=NMDC.id, name="study_id", curie=NMDC.curie('id'),
                       model_uri=NMDC.study_id, domain=Study, range=Optional[str])
