@@ -36,13 +36,52 @@ classes:
       - name
       - description
       - alternate identifiers
-      
+      - annotations
+    slot_usage:
+      annotations:
+        range: annotation
+
+  biosample:
+    aliases: ['sample', 'material sample']
+    description: >-
+      A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.  
+      An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.  
+      (see https://academic.oup.com/nar/article/47/D1/D649/5144132)
+    is_a: named thing
+    slot_usage:
+      id:
+        description: >-
+          The primary identifier for the biosample
+      name:
+        description: >-
+          A human readable name or description of the biosample
+      alternate identifiers:
+        description: >-
+          The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
+
+  organism:
+    is_a: biosample
+    description: >-
+      An organism is a living individual entity such as a bacterium, fungus, plant, animal or a virus. 
+      It can be a cultured isolate of a pure strain of bacterium or an uncultured single-cell isolated using cell sorting.  
+      (see https://academic.oup.com/nar/article/47/D1/D649/5144132)
+    slot_usage:
+      id:
+        description: >-
+          The primary identifier for the oranism
+      name:
+        description: >-
+          A human readable name or description of the organism
+      alternate identifiers:
+        description: >-
+          The same organism may have distinct identifiers in different databases (e.g. GOLD and EMSL)
+          
   study:
     aliases: ['proposal', 'research proposal', 'research study']
     description: >-
-      A detailed investigation that  defines the overall goal of a research proposal. 
-      It contains the list of sequencing projects that are part of the original proposal.
-      (see https://gold.jgi.doe.gov/resources/project_help_doc.pdf)
+      A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.  
+      A study may have only one sequencing and analysis project, where sequencing a single organism fulfills a research objective.  
+      (see https://academic.oup.com/nar/article/47/D1/D649/5144132)
     is_a: named thing
     slot_usage:
       id:
@@ -55,50 +94,38 @@ classes:
         description: >-
           The same study may have distinct identifiers in different databases (e.g. GOLD and EMSL)
 
-  project:
-    aliases: ['research project']
+  sequencing project:
+    aliases: ['research project', 'project']
     description: >-
-      An individual or collaborative enterprise that is carefully planned and designed to achieve a particular aim.
-    is_a: named thing
+      The methods and processes used to generate sequencing output from a biosample or organism.
+    is_a: biosample processing
     slots:
       - part of
+      - output
     slot_usage:
       id:
         description: >-
-          The primary identifier for the project
+          The primary identifier for the sequencing project
       name:
         description: >-
-          A human readable name or description of the project.
+          A human readable name or description of the sequencing project.
       alternate identifiers:
         description: >-
-          The same project may have distinct identifiers in different databases (e.g. GOLD and EMSL)
-
-  biosample:
-    aliases: ['sample', 'material sample']
-    description: >-
-      A material sample. May be environmental (encompassing many organisms) or isolate or tissue
-    is_a: named thing
-    slots:
-      - annotations
-      - involved in
-    slot_usage:
-      id:
-        description: >-
-          The primary identifier for the biosample
-      name:
-        description: >-
-          A human readable name or description of the biosample
-      alternate identifiers:
-        description: >-
-          The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
+          The same sequencing project may have distinct identifiers in different databases (e.g. GOLD and EMSL)
+      part of:
+        range: study
+      output:
+        range: data object
 
   ## TODO
   biosample processing:
     description: >-
-      A process that takes one or more biosamples as inputs and generates one or more as output
+      A process that takes one or more biosamples as inputs and generates one or more data objects as output
     slots:
       - input
-      - output
+    slot_usage:
+      input:
+        range: biosample
 
   ## TODO: provenance on an annotation; some will be directly entered by a submitter;
   ## others will be done post-submission by a curator; others will be done automatically (e.g. by text mining)
@@ -155,6 +182,12 @@ classes:
   ontology class:
     is_a: named thing
       
+  data object:
+    is_a: named thing
+    description: >-
+      An object that primarily consists of symbols that represenst information.  
+      Files, records, and sequencing data are examples of data objects. 
+
 slots:
 
   id:
@@ -227,10 +260,8 @@ slots:
   annotations:
     description: >-
       Zero to many annotations on a sample
-    multivalued: true
-    domain: biosample
-    # domain: [biosample, project, study]
-    # domain: named thing
+    multivalued: true 
+    domain: named thing
     range: annotation
 
   latitude:
@@ -246,29 +277,22 @@ slots:
     slot_uri: wgs:long
     
   input:
-    range: biosample
+    domain: named thing
+    # range: named thing
     multivalued: true
     description: >-
       An input biosample to a processing step
     
   output:
-    range: biosample
+    domain: named thing
     multivalued: true
     description: >-
       An output biosample to a processing step
   
-  involved in:
-    domain: biosample
-    range: project
-    multivalued: true
-    description: >-
-      Links a biosample to a project that makes use of it.
-  
   part of:
     aliases: ['is part of']
-    domain: project
-    range: study
+    domain: named thing
     multivalued: true
     slot_uri: http://purl.org/dc/terms/isPartOf
     description: >-
-      Linds a resource to another resource that either logically or physically includes it.
+      Links a resource to another resource that either logically or physically includes it.

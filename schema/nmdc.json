@@ -63,13 +63,6 @@
       "instance_of": {
          "type": "string"
       },
-      "involved_in": {
-         "description": "Links a biosample to a project that makes use of it.",
-         "items": {
-            "type": "string"
-         },
-         "type": "array"
-      },
       "latitude": {
          "description": "latitude",
          "type": "string"
@@ -90,7 +83,7 @@
          "type": "array"
       },
       "part_of": {
-         "description": "Linds a resource to another resource that either logically or physically includes it.",
+         "description": "Links a resource to another resource that either logically or physically includes it.",
          "items": {
             "type": "string"
          },
@@ -125,7 +118,7 @@
          "type": "object"
       },
       "Biosample": {
-         "description": "A material sample. May be environmental (encompassing many organisms) or isolate or tissue",
+         "description": "A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.   An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.   (see https://academic.oup.com/nar/article/47/D1/D649/5144132)",
          "properties": {
             "alternate_identifiers": {
                "items": {
@@ -133,22 +126,8 @@
                },
                "type": "array"
             },
-            "annotations": {
-               "description": "Zero to many annotations on a sample",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "id": {
                "type": "string"
-            },
-            "involved_in": {
-               "description": "Links a biosample to a project that makes use of it.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
             },
             "name": {
                "type": "string"
@@ -158,17 +137,9 @@
          "type": "object"
       },
       "BiosampleProcessing": {
-         "description": "A process that takes one or more biosamples as inputs and generates one or more as output",
+         "description": "A process that takes one or more biosamples as inputs and generates one or more data objects as output",
          "properties": {
             "input": {
-               "description": "An input biosample to a processing step",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "output": {
-               "description": "An output biosample to a processing step",
                "items": {
                   "type": "string"
                },
@@ -192,6 +163,12 @@
             }
          },
          "title": "ControlledTermValue",
+         "type": "object"
+      },
+      "DataObject": {
+         "description": "An object that primarily consists of symbols that represenst information.   Files, records, and sequencing data are examples of data objects.",
+         "properties": {},
+         "title": "DataObject",
          "type": "object"
       },
       "GeolocationValue": {
@@ -219,6 +196,12 @@
                },
                "type": "array"
             },
+            "annotations": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "description": {
                "description": "a human-readable description of a thing",
                "type": "string"
@@ -227,9 +210,30 @@
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "input": {
+               "description": "An input biosample to a processing step",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "name": {
                "description": "A human readable label for an entity",
                "type": "string"
+            },
+            "output": {
+               "description": "An output biosample to a processing step",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "part_of": {
+               "description": "Links a resource to another resource that either logically or physically includes it.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "title": "NamedThing",
@@ -247,8 +251,8 @@
          "title": "OntologyClass",
          "type": "object"
       },
-      "Project": {
-         "description": "An individual or collaborative enterprise that is carefully planned and designed to achieve a particular aim.",
+      "Organism": {
+         "description": "An organism is a living individual entity such as a bacterium, fungus, plant, animal or a virus.  It can be a cultured isolate of a pure strain of bacterium or an uncultured single-cell isolated using cell sorting.   (see https://academic.oup.com/nar/article/47/D1/D649/5144132)",
          "properties": {
             "alternate_identifiers": {
                "items": {
@@ -261,16 +265,9 @@
             },
             "name": {
                "type": "string"
-            },
-            "part_of": {
-               "description": "Linds a resource to another resource that either logically or physically includes it.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
             }
          },
-         "title": "Project",
+         "title": "Organism",
          "type": "object"
       },
       "QuantityValue": {
@@ -291,8 +288,39 @@
          "title": "QuantityValue",
          "type": "object"
       },
+      "SequencingProject": {
+         "description": "The methods and processes used to generate sequencing output from a biosample or organism.",
+         "properties": {
+            "alternate_identifiers": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            },
+            "output": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "part_of": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "title": "SequencingProject",
+         "type": "object"
+      },
       "Study": {
-         "description": "A detailed investigation that  defines the overall goal of a research proposal.  It contains the list of sequencing projects that are part of the original proposal. (see https://gold.jgi.doe.gov/resources/project_help_doc.pdf)",
+         "description": "A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.   A study may have only one sequencing and analysis project, where sequencing a single organism fulfills a research objective.   (see https://academic.oup.com/nar/article/47/D1/D649/5144132)",
          "properties": {
             "alternate_identifiers": {
                "items": {
