@@ -58,23 +58,6 @@ classes:
       alternate identifiers:
         description: >-
           The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
-
-  sample organism:
-    is_a: biosample
-    description: >-
-      An biosample that is a living individual entity such as a bacterium, fungus, plant, animal or a virus. 
-      It can be a cultured isolate of a pure strain of bacterium or an uncultured single-cell isolated using cell sorting.  
-      (see https://academic.oup.com/nar/article/47/D1/D649/5144132)
-    slot_usage:
-      id:
-        description: >-
-          The primary identifier for the oranism
-      name:
-        description: >-
-          A human readable name or description of the organism
-      alternate identifiers:
-        description: >-
-          The same organism may have distinct identifiers in different databases (e.g. GOLD and EMSL)
           
   study:
     aliases: ['proposal', 'research proposal', 'research study']
@@ -185,7 +168,7 @@ classes:
   data object:
     is_a: named thing
     description: >-
-      An object that primarily consists of symbols that represenst information.  
+      An object that primarily consists of symbols that represent information.  
       Files, records, and sequencing data are examples of data objects. 
 
 slots:
