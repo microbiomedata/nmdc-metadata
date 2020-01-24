@@ -41,6 +41,9 @@ classes:
       annotations:
         range: annotation
 
+  ontology class:
+    is_a: named thing
+      
   biosample:
     aliases: ['sample', 'material sample']
     description: >-
@@ -77,6 +80,19 @@ classes:
         description: >-
           The same study may have distinct identifiers in different databases (e.g. GOLD and EMSL)
 
+  biosample processing:
+    description: >-
+      A process that takes one or more biosamples as inputs and generates one or as outputs.
+      Examples of outputs include samples cultivated from another sample or data objects created by instruments runs.
+    slots:
+      - has input
+      - has output
+    slot_usage:
+      has input:
+        range: biosample
+      has output:
+        range: named thing
+
   sequencing project:
     aliases: ['research project', 'project']
     description: >-
@@ -84,7 +100,8 @@ classes:
     is_a: biosample processing
     slots:
       - part of
-      - output
+      - has output
+      - annotations
     slot_usage:
       id:
         description: >-
@@ -97,30 +114,11 @@ classes:
           The same sequencing project may have distinct identifiers in different databases (e.g. GOLD and EMSL)
       part of:
         range: study
-      output:
+      has output:
         range: data object
-
-  ## TODO
-  biosample processing:
-    description: >-
-      A process that takes one or more biosamples as inputs and generates one or more data objects as output
-    slots:
-      - input
-    slot_usage:
-      input:
-        range: biosample
-
-  ## TODO: provenance on an annotation; some will be directly entered by a submitter;
-  ## others will be done post-submission by a curator; others will be done automatically (e.g. by text mining)
-  ## or by automatic enrichment methods (e.g. calling ORNL-Identify using geolocation)
-  annotation:
-    description: >-
-      An annotation on a sample. This is essentially a key value pair
-    slots:
-      - has characteristic
-      - has raw value
-      - has normalized value
-
+      annotations:
+        range: annotation
+  
   characteristic:
     aliases: ['field', 'property', 'template field', 'key']
     description: >-
@@ -162,14 +160,22 @@ classes:
       - qud:Unit
       - UO:0000000
       
-  ontology class:
-    is_a: named thing
-      
   data object:
     is_a: named thing
     description: >-
       An object that primarily consists of symbols that represent information.  
       Files, records, and sequencing data are examples of data objects. 
+
+  ## TODO: provenance on an annotation; some will be directly entered by a submitter;
+  ## others will be done post-submission by a curator; others will be done automatically (e.g. by text mining)
+  ## or by automatic enrichment methods (e.g. calling ORNL-Identify using geolocation)
+  annotation:
+    description: >-
+      An annotation on a named thing. This is essentially a key value pair
+    slots:
+      - has characteristic
+      - has raw value
+      - has normalized value
 
 slots:
 
@@ -205,7 +211,7 @@ slots:
     description: >-
       The value that was specified for an annotation in raw form, i.e. a string. E.g. "2 cm" or "2-4 cm"
     multivalued: false
-    required: true
+    required: false
     domain: annotation
     range: string
     
@@ -259,14 +265,16 @@ slots:
       longitude
     slot_uri: wgs:long
     
-  input:
+  has input:
+    aliases: ['input']
     domain: named thing
     # range: named thing
     multivalued: true
     description: >-
       An input biosample to a processing step
     
-  output:
+  has output:
+    aliases: ['output']
     domain: named thing
     multivalued: true
     description: >-
