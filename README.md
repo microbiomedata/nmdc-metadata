@@ -1,5 +1,7 @@
 # Metadata management for NMDC
 
+[![Build Status](https://travis-ci.org/microbiomedata/nmdc-metadata.svg?branch=master)](https://travis-ci.org/microbiomedata/nmdc-metadata)
+
 This repo contains code, schema, documentation, and example metadata for the NMDC project
 
 ## Schema
