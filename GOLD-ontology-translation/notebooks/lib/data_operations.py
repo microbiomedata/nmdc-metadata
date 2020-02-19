@@ -195,3 +195,16 @@ def save_json_string_list(file_name, json_list):
 
     with open(file_name, "w") as f:
         f.write(json_str)
+
+
+def load_dict_from_from_json_file(file_name):
+    """
+    Creates and returns from a json file.
+    Args:
+      file_name: The name of the file containing the json formated data.
+    Returns:
+      A dict object containing the JSON dta.
+    """
+    with open(file_name, "r") as json_file:
+        return json.load(json_file)
+    
