@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-01-24 13:45
+# Generation date: 2020-02-18 14:19
 # Schema: nmdc_schema
 #
 # id: https://microbiomedata/schema
@@ -55,6 +55,20 @@ class NamedThing(YAMLRoot):
     name: Optional[str] = None
     description: Optional[str] = None
     alternate_identifiers: List[str] = empty_list()
+
+@dataclass
+class DataObject(NamedThing):
+    """
+    An object that primarily consists of symbols that represent information. Files, records, and omics data are
+    examples of data objects.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC.DataObject
+    class_class_curie: ClassVar[str] = "nmdc:DataObject"
+    class_name: ClassVar[str] = "data object"
+    class_model_uri: ClassVar[URIRef] = NMDC.DataObject
+
     annotations: List[Union[dict, "Annotation"]] = empty_list()
 
     def __post_init__(self):
@@ -63,21 +77,11 @@ class NamedThing(YAMLRoot):
         super().__post_init__()
 
 
-class OntologyClass(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = NMDC.OntologyClass
-    class_class_curie: ClassVar[str] = "nmdc:OntologyClass"
-    class_name: ClassVar[str] = "ontology class"
-    class_model_uri: ClassVar[URIRef] = NMDC.OntologyClass
-
-
 @dataclass
 class Biosample(NamedThing):
     """
     A material sample. It may be environmental (encompassing many organisms) or isolate or tissue. An environmental
-    sample containing genetic material from multiple individuals is commonly referred to as a biosample. (see
-    https://academic.oup.com/nar/article/47/D1/D649/5144132)
+    sample containing genetic material from multiple individuals is commonly referred to as a biosample.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -89,13 +93,19 @@ class Biosample(NamedThing):
     id: Optional[str] = None
     name: Optional[str] = None
     alternate_identifiers: List[str] = empty_list()
+    annotations: List[Union[dict, "Annotation"]] = empty_list()
+
+    def __post_init__(self):
+        self.annotations = [v if isinstance(v, Annotation)
+                            else Annotation(**v) for v in self.annotations]
+        super().__post_init__()
+
 
 @dataclass
 class Study(NamedThing):
     """
     A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying
-    projects. A study may have only one sequencing and analysis project, where sequencing a single organism fulfills a
-    research objective. (see https://academic.oup.com/nar/article/47/D1/D649/5144132)
+    projects.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -107,9 +117,16 @@ class Study(NamedThing):
     id: Optional[str] = None
     name: Optional[str] = None
     alternate_identifiers: List[str] = empty_list()
+    annotations: List[Union[dict, "Annotation"]] = empty_list()
+
+    def __post_init__(self):
+        self.annotations = [v if isinstance(v, Annotation)
+                            else Annotation(**v) for v in self.annotations]
+        super().__post_init__()
+
 
 @dataclass
-class BiosampleProcessing(YAMLRoot):
+class BiosampleProcessing(NamedThing):
     """
     A process that takes one or more biosamples as inputs and generates one or as outputs. Examples of outputs include
     samples cultivated from another sample or data objects created by instruments runs.
@@ -122,43 +139,46 @@ class BiosampleProcessing(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = NMDC.BiosampleProcessing
 
     has_input: List[Union[dict, Biosample]] = empty_list()
-    has_output: List[Union[dict, NamedThing]] = empty_list()
+    annotations: List[Union[dict, "Annotation"]] = empty_list()
 
     def __post_init__(self):
         self.has_input = [v if isinstance(v, Biosample)
                           else Biosample(**v) for v in self.has_input]
-        self.has_output = [v if isinstance(v, NamedThing)
-                           else NamedThing(**v) for v in self.has_output]
-        super().__post_init__()
-
-
-@dataclass
-class SequencingProject(BiosampleProcessing):
-    """
-    The methods and processes used to generate sequencing output from a biosample or organism.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = NMDC.SequencingProject
-    class_class_curie: ClassVar[str] = "nmdc:SequencingProject"
-    class_name: ClassVar[str] = "sequencing project"
-    class_model_uri: ClassVar[URIRef] = NMDC.SequencingProject
-
-    part_of: List[Union[dict, Study]] = empty_list()
-    annotations: List[Union[dict, "Annotation"]] = empty_list()
-
-    def __post_init__(self):
-        self.part_of = [v if isinstance(v, Study)
-                        else Study(**v) for v in self.part_of]
         self.annotations = [v if isinstance(v, Annotation)
                             else Annotation(**v) for v in self.annotations]
         super().__post_init__()
 
 
+@dataclass
+class OmicsProcessing(BiosampleProcessing):
+    """
+    The methods and processes used to generate omics data from a biosample or organism.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC.OmicsProcessing
+    class_class_curie: ClassVar[str] = "nmdc:OmicsProcessing"
+    class_name: ClassVar[str] = "omics processing"
+    class_model_uri: ClassVar[URIRef] = NMDC.OmicsProcessing
+
+    id: Optional[str] = None
+    name: Optional[str] = None
+    alternate_identifiers: List[str] = empty_list()
+    part_of: List[Union[dict, Study]] = empty_list()
+    has_output: List[Union[dict, DataObject]] = empty_list()
+
+    def __post_init__(self):
+        self.part_of = [v if isinstance(v, Study)
+                        else Study(**v) for v in self.part_of]
+        self.has_output = [v if isinstance(v, DataObject)
+                           else DataObject(**v) for v in self.has_output]
+        super().__post_init__()
+
+
 class Characteristic(NamedThing):
     """
-    A characteristic of a biosample. Examples: depth, habitat, material, ... For NMDC, characteristics SHOULD be
-    mapped to fields within a MIxS template
+    A characteristic of a biosample. Examples: depth, habitat, material. For NMDC, characteristics SHOULD be mapped to
+    terms within a MIxS template
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -170,7 +190,7 @@ class Characteristic(NamedThing):
 
 class NormalizedValue(YAMLRoot):
     """
-    The value that was specified for an annotation in parsed/normalized form. This could be a range of different types
+    The value that was specified for an annotation in parsed/normalized form. This could be a range of different types.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -201,7 +221,6 @@ class QuantityValue(NormalizedValue):
         super().__post_init__()
 
 
-@dataclass
 class ControlledTermValue(NormalizedValue):
     """
     A controlled term or class from an ontology
@@ -212,13 +231,6 @@ class ControlledTermValue(NormalizedValue):
     class_class_curie: ClassVar[str] = "nmdc:ControlledTermValue"
     class_name: ClassVar[str] = "controlled term value"
     class_model_uri: ClassVar[URIRef] = NMDC.ControlledTermValue
-
-    instance_of: Optional[Union[dict, OntologyClass]] = None
-
-    def __post_init__(self):
-        if self.instance_of is not None and not isinstance(self.instance_of, OntologyClass):
-            self.instance_of = OntologyClass(**self.instance_of)
-        super().__post_init__()
 
 
 @dataclass
@@ -243,19 +255,6 @@ class Unit(YAMLRoot):
     class_class_curie: ClassVar[str] = "nmdc:Unit"
     class_name: ClassVar[str] = "unit"
     class_model_uri: ClassVar[URIRef] = NMDC.Unit
-
-
-class DataObject(NamedThing):
-    """
-    An object that primarily consists of symbols that represent information. Files, records, and sequencing data are
-    examples of data objects.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = NMDC.DataObject
-    class_class_curie: ClassVar[str] = "nmdc:DataObject"
-    class_name: ClassVar[str] = "data object"
-    class_model_uri: ClassVar[URIRef] = NMDC.DataObject
 
 
 @dataclass
@@ -299,9 +298,6 @@ slots.description = Slot(uri=DCTERMS.description, name="description", curie=DCTE
 slots.has_characteristic = Slot(uri=NMDC.has_characteristic, name="has characteristic", curie=NMDC.curie('has_characteristic'),
                       model_uri=NMDC.has_characteristic, domain=Annotation, range=List[Union[dict, Characteristic]])
 
-slots.instance_of = Slot(uri=NMDC.instance_of, name="instance of", curie=NMDC.curie('instance_of'),
-                      model_uri=NMDC.instance_of, domain=None, range=Optional[Union[dict, OntologyClass]])
-
 slots.has_raw_value = Slot(uri=NMDC.has_raw_value, name="has raw value", curie=NMDC.curie('has_raw_value'),
                       model_uri=NMDC.has_raw_value, domain=Annotation, range=Optional[str])
 
@@ -330,13 +326,13 @@ slots.has_input = Slot(uri=NMDC.has_input, name="has input", curie=NMDC.curie('h
                       model_uri=NMDC.has_input, domain=NamedThing, range=List[str])
 
 slots.has_output = Slot(uri=NMDC.has_output, name="has output", curie=NMDC.curie('has_output'),
-                      model_uri=NMDC.has_output, domain=NamedThing, range=List[str])
+                      model_uri=NMDC.has_output, domain=None, range=List[str])
 
 slots.part_of = Slot(uri=DCTERMS.isPartOf, name="part of", curie=DCTERMS.curie('isPartOf'),
                       model_uri=NMDC.part_of, domain=NamedThing, range=List[str])
 
-slots.named_thing_annotations = Slot(uri=NMDC.annotations, name="named thing_annotations", curie=NMDC.curie('annotations'),
-                      model_uri=NMDC.named_thing_annotations, domain=NamedThing, range=List[Union[dict, "Annotation"]])
+slots.data_object_annotations = Slot(uri=NMDC.annotations, name="data object_annotations", curie=NMDC.curie('annotations'),
+                      model_uri=NMDC.data_object_annotations, domain=DataObject, range=List[Union[dict, "Annotation"]])
 
 slots.biosample_id = Slot(uri=NMDC.id, name="biosample_id", curie=NMDC.curie('id'),
                       model_uri=NMDC.biosample_id, domain=Biosample, range=Optional[str])
@@ -347,6 +343,9 @@ slots.biosample_name = Slot(uri=NMDC.name, name="biosample_name", curie=NMDC.cur
 slots.biosample_alternate_identifiers = Slot(uri=NMDC.alternate_identifiers, name="biosample_alternate identifiers", curie=NMDC.curie('alternate_identifiers'),
                       model_uri=NMDC.biosample_alternate_identifiers, domain=Biosample, range=List[str])
 
+slots.biosample_annotations = Slot(uri=NMDC.annotations, name="biosample_annotations", curie=NMDC.curie('annotations'),
+                      model_uri=NMDC.biosample_annotations, domain=Biosample, range=List[Union[dict, "Annotation"]])
+
 slots.study_id = Slot(uri=NMDC.id, name="study_id", curie=NMDC.curie('id'),
                       model_uri=NMDC.study_id, domain=Study, range=Optional[str])
 
@@ -356,26 +355,26 @@ slots.study_name = Slot(uri=NMDC.name, name="study_name", curie=NMDC.curie('name
 slots.study_alternate_identifiers = Slot(uri=NMDC.alternate_identifiers, name="study_alternate identifiers", curie=NMDC.curie('alternate_identifiers'),
                       model_uri=NMDC.study_alternate_identifiers, domain=Study, range=List[str])
 
+slots.study_annotations = Slot(uri=NMDC.annotations, name="study_annotations", curie=NMDC.curie('annotations'),
+                      model_uri=NMDC.study_annotations, domain=Study, range=List[Union[dict, "Annotation"]])
+
 slots.biosample_processing_has_input = Slot(uri=NMDC.has_input, name="biosample processing_has input", curie=NMDC.curie('has_input'),
                       model_uri=NMDC.biosample_processing_has_input, domain=BiosampleProcessing, range=List[Union[dict, Biosample]])
 
-slots.biosample_processing_has_output = Slot(uri=NMDC.has_output, name="biosample processing_has output", curie=NMDC.curie('has_output'),
-                      model_uri=NMDC.biosample_processing_has_output, domain=BiosampleProcessing, range=List[Union[dict, NamedThing]])
+slots.biosample_processing_annotations = Slot(uri=NMDC.annotations, name="biosample processing_annotations", curie=NMDC.curie('annotations'),
+                      model_uri=NMDC.biosample_processing_annotations, domain=BiosampleProcessing, range=List[Union[dict, "Annotation"]])
 
-slots.sequencing_project_id = Slot(uri=NMDC.id, name="sequencing project_id", curie=NMDC.curie('id'),
-                      model_uri=NMDC.sequencing_project_id, domain=SequencingProject, range=Optional[str])
+slots.omics_processing_id = Slot(uri=NMDC.id, name="omics processing_id", curie=NMDC.curie('id'),
+                      model_uri=NMDC.omics_processing_id, domain=OmicsProcessing, range=Optional[str])
 
-slots.sequencing_project_name = Slot(uri=NMDC.name, name="sequencing project_name", curie=NMDC.curie('name'),
-                      model_uri=NMDC.sequencing_project_name, domain=SequencingProject, range=Optional[str])
+slots.omics_processing_name = Slot(uri=NMDC.name, name="omics processing_name", curie=NMDC.curie('name'),
+                      model_uri=NMDC.omics_processing_name, domain=OmicsProcessing, range=Optional[str])
 
-slots.sequencing_project_alternate_identifiers = Slot(uri=NMDC.alternate_identifiers, name="sequencing project_alternate identifiers", curie=NMDC.curie('alternate_identifiers'),
-                      model_uri=NMDC.sequencing_project_alternate_identifiers, domain=SequencingProject, range=List[str])
+slots.omics_processing_alternate_identifiers = Slot(uri=NMDC.alternate_identifiers, name="omics processing_alternate identifiers", curie=NMDC.curie('alternate_identifiers'),
+                      model_uri=NMDC.omics_processing_alternate_identifiers, domain=OmicsProcessing, range=List[str])
 
-slots.sequencing_project_part_of = Slot(uri=NMDC.part_of, name="sequencing project_part of", curie=NMDC.curie('part_of'),
-                      model_uri=NMDC.sequencing_project_part_of, domain=SequencingProject, range=List[Union[dict, Study]])
+slots.omics_processing_part_of = Slot(uri=NMDC.part_of, name="omics processing_part of", curie=NMDC.curie('part_of'),
+                      model_uri=NMDC.omics_processing_part_of, domain=OmicsProcessing, range=List[Union[dict, Study]])
 
-slots.sequencing_project_has_output = Slot(uri=NMDC.has_output, name="sequencing project_has output", curie=NMDC.curie('has_output'),
-                      model_uri=NMDC.sequencing_project_has_output, domain=SequencingProject, range=List[Union[dict, "DataObject"]])
-
-slots.sequencing_project_annotations = Slot(uri=NMDC.annotations, name="sequencing project_annotations", curie=NMDC.curie('annotations'),
-                      model_uri=NMDC.sequencing_project_annotations, domain=SequencingProject, range=List[Union[dict, "Annotation"]])
+slots.omics_processing_has_output = Slot(uri=NMDC.has_output, name="omics processing_has output", curie=NMDC.curie('has_output'),
+                      model_uri=NMDC.omics_processing_has_output, domain=OmicsProcessing, range=List[Union[dict, DataObject]])

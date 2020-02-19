@@ -10,7 +10,7 @@
          "type": "array"
       },
       "annotations": {
-         "description": "Zero to many annotations on a sample",
+         "description": "Zero to many annotations on an entity.",
          "items": {
             "type": "string"
          },
@@ -28,7 +28,7 @@
          "type": "array"
       },
       "has_input": {
-         "description": "An input biosample to a processing step",
+         "description": "An input to a process.",
          "items": {
             "type": "string"
          },
@@ -65,9 +65,6 @@
       },
       "id": {
          "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-         "type": "string"
-      },
-      "instance_of": {
          "type": "string"
       },
       "latitude": {
@@ -117,9 +114,15 @@
          "type": "object"
       },
       "Biosample": {
-         "description": "A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.   An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.   (see https://academic.oup.com/nar/article/47/D1/D649/5144132)",
+         "description": "A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.   An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.",
          "properties": {
             "alternate_identifiers": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "annotations": {
                "items": {
                   "type": "string"
                },
@@ -138,13 +141,13 @@
       "BiosampleProcessing": {
          "description": "A process that takes one or more biosamples as inputs and generates one or as outputs. Examples of outputs include samples cultivated from another sample or data objects created by instruments runs.",
          "properties": {
-            "has_input": {
+            "annotations": {
                "items": {
                   "type": "string"
                },
                "type": "array"
             },
-            "has_output": {
+            "has_input": {
                "items": {
                   "type": "string"
                },
@@ -155,24 +158,27 @@
          "type": "object"
       },
       "Characteristic": {
-         "description": "A characteristic of a biosample. Examples: depth, habitat, material, ... For NMDC, characteristics SHOULD be mapped to fields within a MIxS template",
+         "description": "A characteristic of a biosample. Examples: depth, habitat, material. For NMDC, characteristics SHOULD be mapped to terms within a MIxS template",
          "properties": {},
          "title": "Characteristic",
          "type": "object"
       },
       "ControlledTermValue": {
          "description": "A controlled term or class from an ontology",
-         "properties": {
-            "instance_of": {
-               "type": "string"
-            }
-         },
+         "properties": {},
          "title": "ControlledTermValue",
          "type": "object"
       },
       "DataObject": {
-         "description": "An object that primarily consists of symbols that represent information.   Files, records, and sequencing data are examples of data objects.",
-         "properties": {},
+         "description": "An object that primarily consists of symbols that represent information.   Files, records, and omics data are examples of data objects.",
+         "properties": {
+            "annotations": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
          "title": "DataObject",
          "type": "object"
       },
@@ -202,6 +208,7 @@
                "type": "array"
             },
             "annotations": {
+               "description": "Zero to many annotations on an entity.",
                "items": {
                   "type": "string"
                },
@@ -212,14 +219,7 @@
                "type": "string"
             },
             "has_input": {
-               "description": "An input biosample to a processing step",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "has_output": {
-               "description": "An output biosample to a processing step",
+               "description": "An input to a process.",
                "items": {
                   "type": "string"
                },
@@ -245,15 +245,40 @@
          "type": "object"
       },
       "NormalizedValue": {
-         "description": "The value that was specified for an annotation in parsed/normalized form. This could be a range of different types",
+         "description": "The value that was specified for an annotation in parsed/normalized form. This could be a range of different types.",
          "properties": {},
          "title": "NormalizedValue",
          "type": "object"
       },
-      "OntologyClass": {
-         "description": "",
-         "properties": {},
-         "title": "OntologyClass",
+      "OmicsProcessing": {
+         "description": "The methods and processes used to generate omics data from a biosample or organism.",
+         "properties": {
+            "alternate_identifiers": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_output": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            },
+            "part_of": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "title": "OmicsProcessing",
          "type": "object"
       },
       "QuantityValue": {
@@ -274,8 +299,8 @@
          "title": "QuantityValue",
          "type": "object"
       },
-      "SequencingProject": {
-         "description": "The methods and processes used to generate sequencing output from a biosample or organism.",
+      "Study": {
+         "description": "A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.",
          "properties": {
             "alternate_identifiers": {
                "items": {
@@ -284,38 +309,6 @@
                "type": "array"
             },
             "annotations": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "has_output": {
-               "description": "An output biosample to a processing step",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "id": {
-               "type": "string"
-            },
-            "name": {
-               "type": "string"
-            },
-            "part_of": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            }
-         },
-         "title": "SequencingProject",
-         "type": "object"
-      },
-      "Study": {
-         "description": "A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.   A study may have only one sequencing and analysis project, where sequencing a single organism fulfills a research objective.   (see https://academic.oup.com/nar/article/47/D1/D649/5144132)",
-         "properties": {
-            "alternate_identifiers": {
                "items": {
                   "type": "string"
                },
