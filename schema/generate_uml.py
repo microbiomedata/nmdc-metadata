@@ -8,6 +8,7 @@ OUTPUT = sys.argv[2]
 
 model = yaml.load(open(YAML_SPEC), Loader=yaml.FullLoader)
 yuml = YumlGenerator(model).serialize()
-yuml = yuml.replace('&#', '|')
+yuml = yuml.replace('&#124;', '|')
 myfile = requests.get(yuml)
+
 open(OUTPUT, 'wb').write(myfile.content)
