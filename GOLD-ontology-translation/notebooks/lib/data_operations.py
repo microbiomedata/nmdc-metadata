@@ -54,15 +54,7 @@ def make_dataframe(file_name, subset_cols=[], exclude_cols=[], nrows=None, lower
             df = pds.read_excel(file_name, sheet_name=sheet_name, nrows=nrows)
 
     ## clean column names
-    if lowercase_col_names:
-        df.columns = [c.strip().lower() for c in df.columns]
-
-    if replace_spaces:
-        df.columns = [c.replace(" ", "_") for c in df.columns]
-
-    ## drop any unwanted columns
-    if exclude_cols:
-        df = df.drop(exclude_cols, axis=1)
+    df = clean_dataframe_column_names(df, lowercase_col_names, replace_spaces)
 
     ## create subset of columns
     ## note: since column names are case sensitive, this needs to happen after cleaning column names
@@ -70,6 +62,29 @@ def make_dataframe(file_name, subset_cols=[], exclude_cols=[], nrows=None, lower
         df = df[subset_cols]
 
     ## return dataframe
+    return df
+
+
+def clean_dataframe_column_names(df, lowercase_col_names=True, replace_spaces=True):
+    """
+    Changes the column names of a dataframe into a standard format. The default settings change the column names to:
+      - lower case
+      - replaces spaces with underscores
+    Args:
+        df: The dataframe whose columns will be cleaned.
+        lowercase_col_names: If true, the column names are converted to lower case.
+        replace_spaces: If true, spaces in column names are replaced with spaces.
+    Returns:
+      Pandas dataframe
+    """
+
+        ## clean column names
+    if lowercase_col_names:
+        df.columns = [c.strip().lower() for c in df.columns]
+
+    if replace_spaces:
+        df.columns = [c.replace(" ", "_") for c in df.columns]
+
     return df
 
 
@@ -135,6 +150,49 @@ def make_json_string_list(dictionary, nmdc_class, id_key, name_key="", descripti
         A list in which each item is a json string.
       
     """
+    dict_list = \
+        make_nmdc_dict_list(dictionary, nmdc_class, id_key, name_key=name_key, description_key=description_key,
+                            part_of_key=part_of_key, has_input_key=has_input_key, has_output_key=has_output_key, characteristic_fields=characteristic_fields)
+
+    return convert_dict_list_to_json_list(dict_list)
+
+
+def convert_dict_list_to_json_list(dict_list):
+    """
+    Takes a list of dictionaries, converts each dictionary into json, and returns a list the json strings.
+    Args:
+      dict_list: A list in which each item is a dictionary.
+    Returns:
+      A list in which each item is a json string.
+    """
+    json_list = [] # list to hold json 
+
+    ## iterate over dict list
+    for d in dict_list:
+        json_list.append(json.dumps(d))
+        
+    ## return final list
+    return json_list
+
+
+def make_nmdc_dict_list(dictionary, nmdc_class, id_key, name_key="", description_key="",
+                        part_of_key="", has_input_key="", has_output_key="", characteristic_fields=[]):
+    """
+    Takes a dictionary in which each item is a record and returns a list of dictionaries that conform to the nmdc schema.
+    Args:
+        dictionary: A python dictionary containing each record as an item.
+        nmdc_class: The NMDC class (found in nmdc.py) that will be used to convert each record.
+        id_key: The key in each record whose value is to be used as the id.
+        name_key: The key in each record whose value is to be used as the name.
+        description_key: The key in each record whose value is to be used as the description.
+        part_of_key: The key in each record whose value is to be used as the part of value.
+        has_input_key: The key in each record whose value is to be used as the has input value.
+        has_output_key: The key in each record whose value is to be used as the has output value.
+        characteristic_fields: A list that contains the names of fields whose values will transformed into characteristics.
+    Returns:
+        A list in which each item is a dictionary that conforms to the nmdc schema
+      
+    """
     def make_characteristic_annotation(obj, key):
         """
         Local function used to create an annotation object with a characteristic that will be added to the set of annotations.
@@ -149,7 +207,7 @@ def make_json_string_list(dictionary, nmdc_class, id_key, name_key="", descripti
         return ann
 
         
-    json_list = [] # list to hold individual json objects
+    dict_list = [] # list to hold individual dictionary objects
 
     ## for each record in the dictionary, create an object of type nmdc_class,
     ## and put the object into the list
@@ -174,11 +232,11 @@ def make_json_string_list(dictionary, nmdc_class, id_key, name_key="", descripti
                 obj.annotations.append(make_characteristic_annotation(obj, key))
                 #print(obj)
 
-        json_out = jsonasobj.as_json(obj)
-        json_list.append(json_out)
+        dict_obj = json.loads(jsonasobj.as_json(obj)) # in order to not save empty values you need to convert to json
+        dict_list.append(dict_obj)                    # and then loads json to get dict; this may be a bug
                 
     ## return final list
-    return json_list
+    return dict_list
 
 
 def save_json_string_list(file_name, json_list):
@@ -197,7 +255,7 @@ def save_json_string_list(file_name, json_list):
         f.write(json_str)
 
 
-def load_dict_from_from_json_file(file_name):
+def load_dict_from_json_file(file_name):
     """
     Creates and returns from a json file.
     Args:
