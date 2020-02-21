@@ -40,9 +40,9 @@ At present, we ingest metadata from the [Joint Genome Institute (JGI)](https://j
 Metadata from [JGI](https://jgi.doe.gov/) is exported from the Institute's [Genomes Online Database (GOLD)](https://gold.jgi.doe.gov/) and [JGI Archive and Metadata Organizer (JAMO)](https://storageconference.us/2018/Presentations/Beecroft.pdf). These exports can be downloaded as:
 * [nmdc-version2.zip](https://drive.google.com/drive/u/1/folders/1Wohthyv23Wi6VjY2i_N3AkZuuKPL_P_Q): contains [GOLD's](https://gold.jgi.doe.gov/) metadata.
 * [JAMO's](https://storageconference.us/2018/Presentations/Beecroft.pdf) metadata is contained in the files:
-  - [ficus_project_fastq.tsv](https://drive.google.com/drive/u/1/folders/1frzGlz8EB8inpVokNTSwD6Ia94eVUlsZ)
-  - [ficus_project_fna.tsv](https://drive.google.com/drive/u/1/folders/1frzGlz8EB8inpVokNTSwD6Ia94eVUlsZ)
-  - [ficus_project_faa.tsv](https://drive.google.com/drive/u/1/folders/1frzGlz8EB8inpVokNTSwD6Ia94eVUlsZ)
+  - [ficus_project_fastq.tsv](https://drive.google.com/drive/u/1/folders/1frzGlz8EB8inpVokNTSwD6Ia94eVUlsZ) (sequencing metadata)
+  - [ficus_project_fna.tsv](https://drive.google.com/drive/u/1/folders/1frzGlz8EB8inpVokNTSwD6Ia94eVUlsZ) (nucleotide assembly metadata)
+  - [ficus_project_faa.tsv](https://drive.google.com/drive/u/1/folders/1frzGlz8EB8inpVokNTSwD6Ia94eVUlsZ) (amino acid assembly metadata)
 
 ## Metadata integration
 
