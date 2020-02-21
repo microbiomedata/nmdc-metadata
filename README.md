@@ -46,7 +46,7 @@ Metadata from [JGI](https://jgi.doe.gov/) is exported from the Institute's [Geno
 
 ## Metadata integration
 
-Currently, we use [Jupyter notebooks](https://github.com/microbiomedata/nmdc-metadata/tree/master/GOLD-ontology-translation) to integrate the metadata sources. Due to early stage of the project, we need to be able to iterate quickly as new metadata sources become available and new schema changes are needed. The [Jupyter notebooks](https://github.com/microbiomedata/nmdc-metadata/tree/master/GOLD-ontology-translation) allow us to do this in a transparent and interactive manner.  
+Currently, we use [Jupyter notebooks](https://github.com/microbiomedata/nmdc-metadata/tree/master/metadata-translation) to integrate the metadata sources. Due to early stage of the project, we need to be able to iterate quickly as new metadata sources become available and new schema changes are needed. The [Jupyter notebooks](https://github.com/microbiomedata/nmdc-metadata/tree/master/metadata-translation) allow us to do this in a transparent and interactive manner.  
 
 Development of more comprehensive ETL pipeline will progress as the metadata sources and schema become more concrete.
 
