@@ -2,6 +2,9 @@
 
 all: install build
 
+clean:
+	rm env.lock
+
 python_dataclasses: schema/nmdc.py
 json_schema: schema/nmdc.json
 schema_uml: schema/nmdc_schema_uml.png

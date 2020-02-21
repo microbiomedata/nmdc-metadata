@@ -10,7 +10,7 @@
          "type": "array"
       },
       "annotations": {
-         "description": "Zero to many annotations on a sample",
+         "description": "Zero to many annotations on an entity.",
          "items": {
             "type": "string"
          },
@@ -27,6 +27,13 @@
          },
          "type": "array"
       },
+      "has_input": {
+         "description": "An input to a process.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
       "has_normalized_value": {
          "description": "Links an annotation to the normalized/parsed raw value",
          "items": {
@@ -37,6 +44,13 @@
       "has_numeric_value": {
          "description": "Links a quantity value to a number",
          "type": "string"
+      },
+      "has_output": {
+         "description": "An output biosample to a processing step",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "has_raw_value": {
          "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
@@ -53,23 +67,6 @@
          "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
          "type": "string"
       },
-      "input": {
-         "description": "An input biosample to a processing step",
-         "items": {
-            "type": "string"
-         },
-         "type": "array"
-      },
-      "instance_of": {
-         "type": "string"
-      },
-      "involved_in": {
-         "description": "Links a biosample to a project that makes use of it.",
-         "items": {
-            "type": "string"
-         },
-         "type": "array"
-      },
       "latitude": {
          "description": "latitude",
          "type": "string"
@@ -82,15 +79,8 @@
          "description": "A human readable label for an entity",
          "type": "string"
       },
-      "output": {
-         "description": "An output biosample to a processing step",
-         "items": {
-            "type": "string"
-         },
-         "type": "array"
-      },
       "part_of": {
-         "description": "Linds a resource to another resource that either logically or physically includes it.",
+         "description": "Links a resource to another resource that either logically or physically includes it.",
          "items": {
             "type": "string"
          },
@@ -99,7 +89,7 @@
    },
    "properties": {
       "Annotation": {
-         "description": "An annotation on a sample. This is essentially a key value pair",
+         "description": "An annotation on a named thing. This is essentially a key value pair",
          "properties": {
             "has_characteristic": {
                "description": "Links an annotation to the field/characteristic",
@@ -117,7 +107,6 @@
             },
             "has_raw_value": {
                "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
-               "required": true,
                "type": "string"
             }
          },
@@ -125,7 +114,7 @@
          "type": "object"
       },
       "Biosample": {
-         "description": "A material sample. May be environmental (encompassing many organisms) or isolate or tissue",
+         "description": "A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.   An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.",
          "properties": {
             "alternate_identifiers": {
                "items": {
@@ -134,7 +123,6 @@
                "type": "array"
             },
             "annotations": {
-               "description": "Zero to many annotations on a sample",
                "items": {
                   "type": "string"
                },
@@ -142,13 +130,6 @@
             },
             "id": {
                "type": "string"
-            },
-            "involved_in": {
-               "description": "Links a biosample to a project that makes use of it.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
             },
             "name": {
                "type": "string"
@@ -158,17 +139,15 @@
          "type": "object"
       },
       "BiosampleProcessing": {
-         "description": "A process that takes one or more biosamples as inputs and generates one or more as output",
+         "description": "A process that takes one or more biosamples as inputs and generates one or as outputs. Examples of outputs include samples cultivated from another sample or data objects created by instruments runs.",
          "properties": {
-            "input": {
-               "description": "An input biosample to a processing step",
+            "annotations": {
                "items": {
                   "type": "string"
                },
                "type": "array"
             },
-            "output": {
-               "description": "An output biosample to a processing step",
+            "has_input": {
                "items": {
                   "type": "string"
                },
@@ -179,19 +158,28 @@
          "type": "object"
       },
       "Characteristic": {
-         "description": "A characteristic of a biosample. Examples: depth, habitat, material, ... For NMDC, characteristics SHOULD be mapped to fields within a MIxS template",
+         "description": "A characteristic of a biosample. Examples: depth, habitat, material. For NMDC, characteristics SHOULD be mapped to terms within a MIxS template",
          "properties": {},
          "title": "Characteristic",
          "type": "object"
       },
       "ControlledTermValue": {
          "description": "A controlled term or class from an ontology",
+         "properties": {},
+         "title": "ControlledTermValue",
+         "type": "object"
+      },
+      "DataObject": {
+         "description": "An object that primarily consists of symbols that represent information.   Files, records, and omics data are examples of data objects.",
          "properties": {
-            "instance_of": {
-               "type": "string"
+            "annotations": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "title": "ControlledTermValue",
+         "title": "DataObject",
          "type": "object"
       },
       "GeolocationValue": {
@@ -219,9 +207,23 @@
                },
                "type": "array"
             },
+            "annotations": {
+               "description": "Zero to many annotations on an entity.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "description": {
                "description": "a human-readable description of a thing",
                "type": "string"
+            },
+            "has_input": {
+               "description": "An input to a process.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -230,27 +232,34 @@
             "name": {
                "description": "A human readable label for an entity",
                "type": "string"
+            },
+            "part_of": {
+               "description": "Links a resource to another resource that either logically or physically includes it.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "title": "NamedThing",
          "type": "object"
       },
       "NormalizedValue": {
-         "description": "The value that was specified for an annotation in parsed/normalized form. This could be a range of different types",
+         "description": "The value that was specified for an annotation in parsed/normalized form. This could be a range of different types.",
          "properties": {},
          "title": "NormalizedValue",
          "type": "object"
       },
-      "OntologyClass": {
-         "description": "",
-         "properties": {},
-         "title": "OntologyClass",
-         "type": "object"
-      },
-      "Project": {
-         "description": "An individual or collaborative enterprise that is carefully planned and designed to achieve a particular aim.",
+      "OmicsProcessing": {
+         "description": "The methods and processes used to generate omics data from a biosample or organism.",
          "properties": {
             "alternate_identifiers": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_output": {
                "items": {
                   "type": "string"
                },
@@ -263,14 +272,13 @@
                "type": "string"
             },
             "part_of": {
-               "description": "Linds a resource to another resource that either logically or physically includes it.",
                "items": {
                   "type": "string"
                },
                "type": "array"
             }
          },
-         "title": "Project",
+         "title": "OmicsProcessing",
          "type": "object"
       },
       "QuantityValue": {
@@ -292,9 +300,15 @@
          "type": "object"
       },
       "Study": {
-         "description": "A detailed investigation that  defines the overall goal of a research proposal.  It contains the list of sequencing projects that are part of the original proposal. (see https://gold.jgi.doe.gov/resources/project_help_doc.pdf)",
+         "description": "A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.",
          "properties": {
             "alternate_identifiers": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "annotations": {
                "items": {
                   "type": "string"
                },
