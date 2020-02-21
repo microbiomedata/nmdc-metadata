@@ -9,7 +9,7 @@ URI: [nmdc:has_raw_value](https://microbiomedata/meta/has_raw_value)
 
 ## Domain and Range
 
-[Annotation](Annotation.md) ->  <sub>REQ</sub> [String](types/String.md)
+[Annotation](Annotation.md) ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 

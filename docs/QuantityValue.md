@@ -11,7 +11,7 @@ URI: [nmdc:QuantityValue](https://microbiomedata/meta/QuantityValue)
 
 ## Parents
 
- *  is_a: [NormalizedValue](NormalizedValue.md) - The value that was specified for an annotation in parsed/normalized form. This could be a range of different types
+ *  is_a: [NormalizedValue](NormalizedValue.md) - The value that was specified for an annotation in parsed/normalized form. This could be a range of different types.
 
 ## Attributes
 

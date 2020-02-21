@@ -1,10 +1,10 @@
 
-# Type: part of
+# Type: has input
 
 
-Links a resource to another resource that either logically or physically includes it.
+An input to a process.
 
-URI: [nmdc:part_of](https://microbiomedata/meta/part_of)
+URI: [nmdc:has_input](https://microbiomedata/meta/has_input)
 
 
 ## Domain and Range
@@ -16,7 +16,7 @@ URI: [nmdc:part_of](https://microbiomedata/meta/part_of)
 
 ## Children
 
- *  [omics processing➞part of](omics_processing_part_of.md)
+ *  [biosample processing➞has input](biosample_processing_has_input.md)
 
 ## Used by
 
@@ -25,13 +25,11 @@ URI: [nmdc:part_of](https://microbiomedata/meta/part_of)
  * [Characteristic](Characteristic.md)
  * [DataObject](DataObject.md)
  * [NamedThing](NamedThing.md)
- * [OmicsProcessing](OmicsProcessing.md)
  * [Study](Study.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Aliases:** | | is part of |
-| **Mappings:** | | http://purl.org/dc/terms/isPartOf |
+| **Aliases:** | | input |
 

@@ -17,14 +17,15 @@ None ->  <sub>OPT</sub> [String](types/String.md)
 ## Children
 
  *  [biosample➞name](biosample_name.md)
- *  [project➞name](project_name.md)
+ *  [omics processing➞name](omics_processing_name.md)
  *  [study➞name](study_name.md)
 
 ## Used by
 
  * [Biosample](Biosample.md)
+ * [BiosampleProcessing](BiosampleProcessing.md)
  * [Characteristic](Characteristic.md)
+ * [DataObject](DataObject.md)
  * [NamedThing](NamedThing.md)
- * [OntologyClass](OntologyClass.md)
- * [Project](Project.md)
+ * [OmicsProcessing](OmicsProcessing.md)
  * [Study](Study.md)

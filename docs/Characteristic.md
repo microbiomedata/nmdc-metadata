@@ -2,7 +2,7 @@
 # Type: characteristic
 
 
-A characteristic of a biosample. Examples: depth, habitat, material, ... For NMDC, characteristics SHOULD be mapped to fields within a MIxS template
+A characteristic of a biosample. Examples: depth, habitat, material. For NMDC, characteristics SHOULD be mapped to terms within a MIxS template
 
 URI: [nmdc:Characteristic](https://microbiomedata/meta/Characteristic)
 

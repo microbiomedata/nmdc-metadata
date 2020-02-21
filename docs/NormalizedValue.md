@@ -2,7 +2,7 @@
 # Type: normalized value
 
 
-The value that was specified for an annotation in parsed/normalized form. This could be a range of different types
+The value that was specified for an annotation in parsed/normalized form. This could be a range of different types.
 
 URI: [nmdc:NormalizedValue](https://microbiomedata/meta/NormalizedValue)
 

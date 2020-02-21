@@ -2,12 +2,12 @@
 # Type: biosample
 
 
-A material sample. May be environmental (encompassing many organisms) or isolate or tissue
+A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.   An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.
 
 URI: [nmdc:Biosample](https://microbiomedata/meta/Biosample)
 
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Project]<involved%20in%200..*-++\[Biosample&#124;id:string%20%3F;name:string%20%3F;alternate_identifiers:string%20*;description(i):string%20%3F],%20\[Annotation]<annotations%200..*-++\[Biosample],%20\[NamedThing]^-\[Biosample])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Annotation]<annotations%200..*-++\[Biosample&#124;id:string%20%3F;name:string%20%3F;alternate_identifiers:string%20*;description(i):string%20%3F],%20\[BiosampleProcessing]++-%20has%20input%200..*>\[Biosample],%20\[NamedThing]^-\[Biosample])
 
 ## Parents
 
@@ -15,26 +15,21 @@ URI: [nmdc:Biosample](https://microbiomedata/meta/Biosample)
 
 ## Referenced by class
 
- *  **None** *[input](input.md)*  <sub>0..*</sub>  **[Biosample](Biosample.md)**
- *  **None** *[output](output.md)*  <sub>0..*</sub>  **[Biosample](Biosample.md)**
+ *  **[BiosampleProcessing](BiosampleProcessing.md)** *[biosample processing➞has input](biosample_processing_has_input.md)*  <sub>0..*</sub>  **[Biosample](Biosample.md)**
 
 ## Attributes
 
 
 ### Own
 
- * [annotations](annotations.md)  <sub>0..*</sub>
-    * Description: Zero to many annotations on a sample
-    * range: [Annotation](Annotation.md)
  * [biosample➞alternate identifiers](biosample_alternate_identifiers.md)  <sub>0..*</sub>
     * range: [String](types/String.md)
+ * [biosample➞annotations](biosample_annotations.md)  <sub>0..*</sub>
+    * range: [Annotation](Annotation.md)
  * [biosample➞id](biosample_id.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
  * [biosample➞name](biosample_name.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [involved in](involved_in.md)  <sub>0..*</sub>
-    * Description: Links a biosample to a project that makes use of it.
-    * range: [Project](Project.md)
 
 ### Inherited from named thing:
 
@@ -57,18 +52,14 @@ URI: [nmdc:Biosample](https://microbiomedata/meta/Biosample)
 
 ### Domain for slot:
 
- * [annotations](annotations.md)  <sub>0..*</sub>
-    * Description: Zero to many annotations on a sample
-    * range: [Annotation](Annotation.md)
  * [biosample➞alternate identifiers](biosample_alternate_identifiers.md)  <sub>0..*</sub>
     * range: [String](types/String.md)
+ * [biosample➞annotations](biosample_annotations.md)  <sub>0..*</sub>
+    * range: [Annotation](Annotation.md)
  * [biosample➞id](biosample_id.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
  * [biosample➞name](biosample_name.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [involved in](involved_in.md)  <sub>0..*</sub>
-    * Description: Links a biosample to a project that makes use of it.
-    * range: [Project](Project.md)
 
 ## Other properties
 

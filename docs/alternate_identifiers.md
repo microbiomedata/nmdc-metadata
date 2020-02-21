@@ -17,16 +17,17 @@ None ->  <sub>0..*</sub> [String](types/String.md)
 ## Children
 
  *  [biosample➞alternate identifiers](biosample_alternate_identifiers.md)
- *  [project➞alternate identifiers](project_alternate_identifiers.md)
+ *  [omics processing➞alternate identifiers](omics_processing_alternate_identifiers.md)
  *  [study➞alternate identifiers](study_alternate_identifiers.md)
 
 ## Used by
 
  * [Biosample](Biosample.md)
+ * [BiosampleProcessing](BiosampleProcessing.md)
  * [Characteristic](Characteristic.md)
+ * [DataObject](DataObject.md)
  * [NamedThing](NamedThing.md)
- * [OntologyClass](OntologyClass.md)
- * [Project](Project.md)
+ * [OmicsProcessing](OmicsProcessing.md)
  * [Study](Study.md)
 
 ## Other properties

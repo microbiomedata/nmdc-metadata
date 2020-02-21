@@ -20,10 +20,11 @@ None ->  <sub>OPT</sub> [String](types/String.md)
 ## Used by
 
  * [Biosample](Biosample.md)
+ * [BiosampleProcessing](BiosampleProcessing.md)
  * [Characteristic](Characteristic.md)
+ * [DataObject](DataObject.md)
  * [NamedThing](NamedThing.md)
- * [OntologyClass](OntologyClass.md)
- * [Project](Project.md)
+ * [OmicsProcessing](OmicsProcessing.md)
  * [Study](Study.md)
 
 ## Other properties
