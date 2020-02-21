@@ -1,5 +1,5 @@
-# GOLD ontology translation
-Translates the environmental level values in the GOLD dataset into a hierarchical ontology. 
+# Metadata translation
+Translates [JGI](https://jgi.doe.gov/) and [EMSL](https://www.pnnl.gov/environmental-molecular-sciences-laboratory) metadata into JSON conformant with the NMDC [schema](https://github.com/microbiomedata/nmdc-metadata/tree/master/schema).
 
 The project uses venv to create a virtural enironment.  
 To create a virtual environment run the command `python3 -m venv <environment name>`  .  
