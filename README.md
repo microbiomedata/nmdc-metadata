@@ -44,12 +44,9 @@ Metadata from [JGI](https://jgi.doe.gov/) is exported from the Institute's [Geno
   - [ficus_project_fna.tsv](https://drive.google.com/drive/u/1/folders/1frzGlz8EB8inpVokNTSwD6Ia94eVUlsZ)
   - [ficus_project_faa.tsv](https://drive.google.com/drive/u/1/folders/1frzGlz8EB8inpVokNTSwD6Ia94eVUlsZ)
 
-## Ingest from GOLD
+## Metadata integration
 
-Currently this is in [Jupyter notebooks](https://github.com/microbiomedata/nmdc-metadata/tree/master/GOLD-ontology-translation). We are developing a more comprehensive ETL pipeline.
+Currently, we use [Jupyter notebooks](https://github.com/microbiomedata/nmdc-metadata/tree/master/GOLD-ontology-translation) to integrate the metadata sources. Due to early stage of the project, we need to be able to iterate quickly as new metadata sources become available and new schema changes are needed. The [Jupyter notebooks](https://github.com/microbiomedata/nmdc-metadata/tree/master/GOLD-ontology-translation) allow us to do this in a transparent and interactive manner.  
 
-## Ingest from EMSL
+Development of more comprehensive ETL pipeline will progress as the metadata sources and schema become more concrete.
 
-In progress.
-
-For now see the [metadata files](https://drive.google.com/drive/u/1/folders/1frzGlz8EB8inpVokNTSwD6Ia94eVUlsZ) folder on the NMDC drive
