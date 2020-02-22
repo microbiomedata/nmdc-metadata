@@ -15,4 +15,9 @@ You exit the environment by executing the command `deactivate` in the terminal.
 
 ## Translation workflow
 
-TODO
+The metadata translation workflow consists of the notebooks executed in the following order:
+1. [Translate GOLD study, project, biosample](https://github.com/microbiomedata/nmdc-metadata/blob/master/metadata-translation/notebooks/translate-GOLD-study-project-biosample.ipynb)
+2. [Translate GOLD data objects](https://github.com/microbiomedata/nmdc-metadata/blob/master/metadata-translation/notebooks/translate-GOLD-data-objects.ipynb)
+3. [Translate EMSL data](https://github.com/microbiomedata/nmdc-metadata/blob/master/metadata-translation/notebooks/translate-EMSL-data.ipynb)
+
+![img](images/NMDC-jupyter-translation-workflow.png)
