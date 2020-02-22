@@ -1,4 +1,7 @@
 
+# Notebooks
+We use [Jupyter notebooks](https://github.com/microbiomedata/nmdc-metadata/tree/master/metadata-translation/notebooks) to integrate the metadata sources. Due to early stage of the project, we need to be able to iterate quickly as new metadata sources become available and new schema changes are needed. The [Jupyter notebooks](https://github.com/microbiomedata/nmdc-metadata/tree/master/metadata-translation/notebooks) allow us to do this in a transparent and interactive manner. 
+
 ## Notebook setup
 We use [venv](https://docs.python.org/3/tutorial/venv.html) to create a virtual enironment.  
 
