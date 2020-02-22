@@ -21,3 +21,15 @@ The metadata translation workflow consists of the notebooks executed in the foll
 3. [Translate EMSL data](https://github.com/microbiomedata/nmdc-metadata/blob/master/metadata-translation/notebooks/translate-EMSL-data.ipynb)
 
 ![img](images/NMDC-jupyter-translation-workflow.png)
+
+## Translate GOLD study, project, biosample
+
+![img](images/GOLD-study-project-biosample-translation.png)
+
+## Translate GOLD data objects
+
+TODO
+
+## Translate EMSL data
+
+TODO
