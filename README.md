@@ -45,7 +45,7 @@ Metadata from [EMSL](https://www.pnnl.gov/environmental-molecular-sciences-labor
 
 ## Metadata integration
 
-We use [Jupyter notebooks]((https://github.com/microbiomedata/nmdc-metadata/tree/master/metadata-translation/notebooks) to integrate the metadata sources. This allows us to iterate quickly in a transparent and interactive manner as new metadata sources become available. 
+We use [Jupyter notebooks](https://github.com/microbiomedata/nmdc-metadata/tree/master/metadata-translation/notebooks) to integrate the metadata sources. This allows us to iterate quickly in a transparent and interactive manner as new metadata sources become available. 
 
 Development of more comprehensive ETL pipeline will progress as the metadata sources and schema become more concrete.
 
