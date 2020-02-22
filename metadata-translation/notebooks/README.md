@@ -28,7 +28,7 @@ The metadata translation workflow consists of the notebooks executed in the foll
 
 ## Translate GOLD data objects
 
-TODO
+![img](images/GOLD-data-objects-translation.png)
 
 ## Translate EMSL data
 
