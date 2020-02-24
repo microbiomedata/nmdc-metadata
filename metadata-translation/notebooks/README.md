@@ -20,6 +20,7 @@ The metadata translation workflow consists of the notebooks executed in the foll
 2. [Translate GOLD data objects](https://github.com/microbiomedata/nmdc-metadata/blob/master/metadata-translation/notebooks/translate-GOLD-data-objects.ipynb)
 3. [Translate EMSL data](https://github.com/microbiomedata/nmdc-metadata/blob/master/metadata-translation/notebooks/translate-EMSL-data.ipynb)
 
+A hig-level overview of the translation process is depicted below.  The output of the last step is forwarded to the web-development team for ingestion.
 ![img](images/NMDC-jupyter-translation-workflow.png)
 
 ## Translate GOLD study, project, biosample
@@ -31,4 +32,5 @@ The metadata translation workflow consists of the notebooks executed in the foll
 ## Translate EMSL data
 ![img](images/EMSL-data-translation.png)
 
-TODO
+## Future work
+Develop a more automated ETL pipeline. This may (or may not) include making use of [Papermill](https://papermill.readthedocs.io/en/latest/) to execute batch runs of notebooks.
