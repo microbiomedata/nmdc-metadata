@@ -23,13 +23,12 @@ The metadata translation workflow consists of the notebooks executed in the foll
 ![img](images/NMDC-jupyter-translation-workflow.png)
 
 ## Translate GOLD study, project, biosample
-
 ![img](images/GOLD-study-project-biosample-translation.png)
 
 ## Translate GOLD data objects
-
 ![img](images/GOLD-data-objects-translation.png)
 
 ## Translate EMSL data
+![img](images/EMSL-data-translation.png)
 
 TODO
