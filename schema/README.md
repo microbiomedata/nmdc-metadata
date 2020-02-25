@@ -10,7 +10,8 @@ Examples of outputs include samples cultivated from another sample or data objec
 * [Data object](https://microbiomedata.github.io/nmdc-metadata/docs/DataObject.html): An object that primarily consists of symbols that represent information.  
 Files, records, and omics data are examples of data objects.  
 
-During the [translation process](../metadata-translation/notebooks) biosamples are annotated with metadata. 
+During the [translation process](../metadata-translation/notebooks) [biosamples](https://microbiomedata.github.io/nmdc-metadata/docs/Biosample.html) are annotated with [characteristics](https://microbiomedata.github.io/nmdc-metadata/docs/Characteristic.html) that specify such things as where, when, or how the sample was collected.
+
 ![img](https://raw.githubusercontent.com/microbiomedata/nmdc-metadata/master/schema/nmdc_schema_uml.png)
 
 ## Schema management
