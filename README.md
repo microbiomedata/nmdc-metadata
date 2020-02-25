@@ -14,7 +14,7 @@ The [NMDC schema](./schema) is used during the [translation process](./metadata-
 ![img](https://raw.githubusercontent.com/microbiomedata/nmdc-metadata/master/schema/nmdc_schema_uml.png)
 
 ## Documentation
-Documentation for the [NMDC schema](./schema) can be browsed here:
+[Documentation](https://microbiomedata.github.io/nmdc-metadata/) for the [NMDC schema](./schema) can be browsed here:
 * https://microbiomedata.github.io/nmdc-metadata/
  
 ## Standardization of characteristics
