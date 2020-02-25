@@ -6,13 +6,12 @@ The purpose of this repository is to manage metadata for the [National Microbiom
 Tasks managed by the repository are:
 * Generating the [schema](https://github.com/microbiomedata/nmdc-metadata/tree/master/schema)
 * Deploying the [documentation](https://microbiomedata.github.io/nmdc-metadata/) 
-* Integrating metadata from multiple environmental data repositories
+* [Integrating](./metadata-translation/notebooks) metadata from multiple environmental data repositories
 
 ## Schema
-The [NMDC](https://microbiomedata.org/) [schema](https://github.com/microbiomedata/nmdc-metadata/tree/master/schema) is developed using the [Biolink modeling language (BiolinkML)](https://github.com/biolink/biolinkml). [BiolinkML](https://github.com/biolink/biolinkml) is a general purpose modeling language following object-oriented and ontological principles. Models are authored in YAML, and a variety of artifacts can be generated from the model, such as ShEx, JSON-Schema, OWL, Python dataclasses, UML diagrams, and Markdown pages for deployment in a GitHub pages site. Using [BiolinkML](https://github.com/biolink/biolinkml), we define high-level entities to represent the data we are integrating. These entities include biosamples (specific portions of material collected from a site), biosample processing (e.g., sequencing performed on a biosample), data objects (e.g., a fastq file produced from a sequencing run), and annotations that specify characteristics of biosamples (e.g., the temperature and elevation of the site where the sample was collected). 
+The [NMDC schema](./schema) is used during the [translation process](./metadata-translation/notebooks) to specify how metadata elements are related.
 
-The schema is in the [schema](https://github.com/microbiomedata/nmdc-metadata/tree/master/schema) folder. The yaml file is the source.
-  ![img](https://raw.githubusercontent.com/microbiomedata/nmdc-metadata/master/schema/nmdc_schema_uml.png)
+![img](https://raw.githubusercontent.com/microbiomedata/nmdc-metadata/master/schema/nmdc_schema_uml.png)
 
 ## Documentation
 Documentation for the [NMDC schema](./schema) can be browsed here:
