@@ -1,4 +1,14 @@
 # Schema
+The [NMDC](https://microbiomedata.org/) schema specifies how metadata elements are related. The main elements are:s
+* [Study](https://microbiomedata.github.io/nmdc-metadata/docs/Study.html): Summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.
+* [Biosample](https://microbiomedata.github.io/nmdc-metadata/docs/Biosample.html): A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.  
+An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.
+* [Characteristic](https://microbiomedata.github.io/nmdc-metadata/docs/Characteristic.html): A characteristic of a biosample.  
+Examples: depth, habitat, material. For NMDC, characteristics SHOULD be mapped to terms within a MIxS template
+* [Omics processing](https://microbiomedata.github.io/nmdc-metadata/docs/OmicsProcessing.html): The methods and processes used to generate omics data from a biosample or organism.
+Examples of outputs include samples cultivated from another sample or data objects created by instruments runs.
+* [Data object](https://microbiomedata.github.io/nmdc-metadata/docs/DataObject.html): An object that primarily consists of symbols that represent information.  
+Files, records, and omics data are examples of data objects. 
 
 ![img](https://raw.githubusercontent.com/microbiomedata/nmdc-metadata/master/schema/nmdc_schema_uml.png)
 
