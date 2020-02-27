@@ -15,10 +15,12 @@ You exit the environment by executing the command `deactivate` in the terminal.
 
 ## Translation workflow
 
-The metadata translation workflow consists of the notebooks executed in the following order:
+The [translation pipeline](https://github.com/microbiomedata/nmdc-metadata/blob/master/metadata-translation/notebooks/translation-pipeline.ipynb) notebook translates metadata to JSON. Operationally, it executes the following notebooks in order:
 1. [Translate GOLD study, project, biosample](https://github.com/microbiomedata/nmdc-metadata/blob/master/metadata-translation/notebooks/translate-GOLD-study-project-biosample.ipynb)
 2. [Translate GOLD data objects](https://github.com/microbiomedata/nmdc-metadata/blob/master/metadata-translation/notebooks/translate-GOLD-data-objects.ipynb)
 3. [Translate EMSL data](https://github.com/microbiomedata/nmdc-metadata/blob/master/metadata-translation/notebooks/translate-EMSL-data.ipynb)
+
+The final output is saved to the directory `./output/nmdc-json/`.
 
 A high-level overview of the translation process is depicted below. At each step, metadata and the [NMDC schema](lib/nmdc.py) are input into the translation notebook, and JSON files are created. The output of the last step is forwarded to the web-development team for ingestion and display on the [NMDC pilot site](https://microbiomedata.github.io/pilot/).  
 
