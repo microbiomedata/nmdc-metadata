@@ -28,6 +28,8 @@ All prefixes should be registered with a standard identifier prefix system. Thes
  * http://n2t.net
  * http://identifiers.org
 
+These prefixed identifiers can also act as [CURIEs](https://www.w3.org/TR/curie/) (Compact URIs).
+
 Examples:
 
  * https://registry.identifiers.org/registry/biosample
@@ -40,4 +42,18 @@ http://n2t.net/biosample:SAMEA2397676
 
 Please check this section later
 
+# identifiers for ontology terms
+
+Most of the ontologies we use are in OBO. All OBO IDs are prefixed
+using the ontology ID space. The list of ID spaces can be found on
+http://obofoundry.org
+
+For example the ID/CURIE `ENVO:00002007` represents the class `sediment` and is expanded to a URI of http://purl.obolibrary.org/obo/ENVO_00002007
+
+# MIxS identifiers
+
+Please check this section later
+
 # Identifier mapping
+
+Please check this section later
