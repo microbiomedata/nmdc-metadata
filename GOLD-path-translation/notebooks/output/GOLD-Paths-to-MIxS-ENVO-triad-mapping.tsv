@@ -1,919 +1,919 @@
-	ecosystem_path_id	ecosystem	ecosystem_category	ecosystem_type	ecosystem_subtype	specific_ecosystem	biome_label	biome_iri	material_label	material_iri	feature_label	feature_iri
-0		Environmental					environmental system	ENVO:01000254				
-1		Environmental	Air						air	ENVO:00002005		
-2		Environmental	Air	Indoor Air							building	ENVO:00000073
-3		Environmental	Air	Outdoor Air							nitrogen-oxygen planetary atmosphere	ENVO:01000811
-4		Environmental	Aquatic				aquatic biome	ENVO:00002030				
-5		Environmental	Aquatic	Aquaculture			aquatic biome	ENVO:00002030				ENVO:http://purl.obolibrary.org/obo/FOODON_03520111
-6		Environmental	Aquatic	Estuary			estuarine biome	ENVO:01000020			estuary	ENVO:00000045
-7		Environmental	Aquatic	Estuary	Sediment		estuarine biome	ENVO:01000020	sediment	ENVO:00002007		
-8		Environmental	Aquatic	Freshwater			freshwater biome	ENVO:00000873	fresh water	ENVO:00002011		
-9		Environmental	Aquatic	Freshwater	Drinking water		freshwater biome	ENVO:00000873	drinking water	ENVO:00003064		
-10		Environmental	Aquatic	Freshwater	Drinking water	Chlorinated	freshwater biome	ENVO:00000873		ENVO:http://purl.obolibrary.org/obo/FOODON_03301647		
-11		Environmental	Aquatic	Freshwater	Drinking water	Delivery networks					plumbing fixture	ENVO:01000989
-12		Environmental	Aquatic	Freshwater	Groundwater		freshwater biome	ENVO:00000873	groundwater	ENVO:01001004		
-13		Environmental	Aquatic	Freshwater	Groundwater	Acid Mine Drainage	freshwater biome	ENVO:00000873			acid mine drainage	ENVO:00001997
-14		Environmental	Aquatic	Freshwater	Groundwater	Biofilm	freshwater biome	ENVO:00000873			biofilm	ENVO:00002034
-15		Environmental	Aquatic	Freshwater	Groundwater	Cave water	freshwater biome	ENVO:00000873	cave	ENVO:00000067		
-16		Environmental	Aquatic	Freshwater	Groundwater	Coalbed water	freshwater biome	ENVO:00000873	coal	ENVO:02000091		
-17		Environmental	Aquatic	Freshwater	Groundwater	Contaminated	freshwater biome	ENVO:00000873	contaminated water	ENVO:00002186		
-18		Environmental	Aquatic	Freshwater	Groundwater	Mine	aquatic biome	ENVO:00002030			mine	ENVO:00000076
-19		Environmental	Aquatic	Freshwater	Groundwater	Mine drainage	freshwater biome	ENVO:00000873	mine drainage	ENVO:00001996		
-20		Environmental	Aquatic	Freshwater	Ice		freshwater biome	ENVO:00000873	water ice	ENVO:01000277		
-21		Environmental	Aquatic	Freshwater	Ice	Glacial lake	freshwater lake biome	ENVO:01000252			glacial lake	ENVO:00000488
-22		Environmental	Aquatic	Freshwater	Ice	Glacier	freshwater biome	ENVO:00000873	glacier	ENVO:00000133	glacial feature	ENVO:00000131
-23		Environmental	Aquatic	Freshwater	Ice	Ice accretions	freshwater biome	ENVO:00000873	ice mass	ENVO:01000293		
-24		Environmental	Aquatic	Freshwater	Lake		freshwater lake biome	ENVO:01000252	freshwater lake	ENVO:00000021		
-25		Environmental	Aquatic	Freshwater	Lentic		freshwater biome	ENVO:00000873			lentic water body	ENVO:01000617
-26		Environmental	Aquatic	Freshwater	Lentic	Epilimnion	freshwater lake biome	ENVO:01000252			epilimnion	ENVO:00002131
-27		Environmental	Aquatic	Freshwater	Lentic	Hypolimnion	freshwater lake biome	ENVO:01000252			hypolimnion	ENVO:00002130
-28		Environmental	Aquatic	Freshwater	Lentic	Limnetic zone	freshwater lake biome	ENVO:01000252				
-29		Environmental	Aquatic	Freshwater	Lentic	Littoral zone	freshwater biome	ENVO:00000873				
-30		Environmental	Aquatic	Freshwater	Lentic	Sediment	freshwater biome	ENVO:00000873	sediment	ENVO:00002007		
-31		Environmental	Aquatic	Freshwater	Lotic		freshwater biome	ENVO:00000873	lotic water body	ENVO:01000618		
-32		Environmental	Aquatic	Freshwater	Lotic	Acidic	acidic environment	ENVO:01000315				
-33		Environmental	Aquatic	Freshwater	Lotic	Low land river systems	freshwater river biome	ENVO:01000253				
-34		Environmental	Aquatic	Freshwater	Lotic	Microbial mats	freshwater biome	ENVO:00000873			microbial mat	ENVO:01000008
-35		Environmental	Aquatic	Freshwater	Lotic	Mid stream	freshwater biome	ENVO:00000873				
-36		Environmental	Aquatic	Freshwater	Lotic	Sediment	freshwater biome	ENVO:00000873	sediment permeated by freshwater	ENVO:01001028		
-37		Environmental	Aquatic	Freshwater	Microbialites		freshwater biome	ENVO:00000873				
-38		Environmental	Aquatic	Freshwater	Pond		freshwater biome	ENVO:00000873			pond	ENVO:00000033
-39		Environmental	Aquatic	Freshwater	Pond	Sediment	freshwater biome	ENVO:00000873	sediment permeated by freshwater	ENVO:01001028		
-40		Environmental	Aquatic	Freshwater	Sediment		freshwater biome	ENVO:00000873	sediment permeated by freshwater	ENVO:01001028		
-41		Environmental	Aquatic	Freshwater	Storm water		freshwater biome	ENVO:00000873	stormwater	ENVO:01001267		
-42		Environmental	Aquatic	Freshwater	Storm water	Drainage pipe biofilm			biofilm material	ENVO:01000156	plumbing drain	ENVO:01000924
-43		Environmental	Aquatic	Freshwater	Subglacial lake		freshwater lake biome	ENVO:01000252			subglacial lake	ENVO:03000120
-44		Environmental	Aquatic	Freshwater	Wetlands		freshwater wetland ecosystem	ENVO:00000243				
-45		Environmental	Aquatic	Freshwater	Wetlands	Bog	freshwater wetland ecosystem	ENVO:00000243				
-46		Environmental	Aquatic	Freshwater	Wetlands	Marsh	freshwater marsh	ENVO:00000053				
-47		Environmental	Aquatic	Freshwater	Wetlands	Sediment	freshwater wetland ecosystem	ENVO:00000243	sediment permeated by freshwater	ENVO:01001028		
-48		Environmental	Aquatic	Freshwater	Wetlands	Swamp	swamp ecosystem	ENVO:00000233				
-49		Environmental	Aquatic	Lentic			aquatic biome	ENVO:00002030			lentic water body	ENVO:01000617
-50		Environmental	Aquatic	Lentic	Brackish		brackish water environment	ENVO:01000322	brackish water	ENVO:00002019		
-51		Environmental	Aquatic	Marine			marine biome	ENVO:00000447				
-52		Environmental	Aquatic	Marine	Brackish		brackish water environment	ENVO:01000322	brackish water	ENVO:00002019		
-53		Environmental	Aquatic	Marine	Coastal		marine biome	ENVO:00000447			coastal water body	ENVO:02000049
-54		Environmental	Aquatic	Marine	Coastal	Sediment	marine biome	ENVO:00000447	marine sediment	ENVO:03000033		
-55		Environmental	Aquatic	Marine	Cold seeps		marine cold seep biome	ENVO:01000127			cold seep	ENVO:01000263
-56		Environmental	Aquatic	Marine	Cold seeps	Sediment	marine cold seep biome	ENVO:01000127	marine sediment	ENVO:03000033		
-57		Environmental	Aquatic	Marine	Fossil		marine biome	ENVO:00000447			fossil	ENVO:00002164
-58		Environmental	Aquatic	Marine	Fossil	Whale fall	marine biome	ENVO:00000447			whale fall	ENVO:01000140
-59		Environmental	Aquatic	Marine	Hydrothermal vents		marine hydrothermal vent biome	ENVO:01000030			hydrothermal vent	ENVO:00000215
-60		Environmental	Aquatic	Marine	Hydrothermal vents	Black smokers	marine black smoker biome	ENVO:01000051			black smoker	ENVO:00000218
-61		Environmental	Aquatic	Marine	Hydrothermal vents	Diffuse flow	marine hydrothermal vent biome	ENVO:01000030	hydrothermal fluid	ENVO:01000134		
-62		Environmental	Aquatic	Marine	Hydrothermal vents	Microbial mats	marine hydrothermal vent biome	ENVO:01000030			microbial mat	ENVO:01000008
-63		Environmental	Aquatic	Marine	Hydrothermal vents	Sediment	marine hydrothermal vent biome	ENVO:01000030	marine sediment	ENVO:03000033		
-64		Environmental	Aquatic	Marine	Intertidal zone		intertidal ecosystem	ENVO:01001468				
-65		Environmental	Aquatic	Marine	Intertidal zone	Beach	intertidal ecosystem	ENVO:01001468			beach	ENVO:00000091
-66		Environmental	Aquatic	Marine	Intertidal zone	Coral reef	marine coral reef biome	ENVO:01000049			coral reef	ENVO:00000150
-67		Environmental	Aquatic	Marine	Intertidal zone	Estuary	estuarine biome	ENVO:01000020			estuary	ENVO:00000045
-68		Environmental	Aquatic	Marine	Intertidal zone	Mangrove swamp	mangrove swamp	ENVO:00000057				
-69		Environmental	Aquatic	Marine	Intertidal zone	Microbialites	intertidal ecosystem	ENVO:01001468				
-70		Environmental	Aquatic	Marine	Intertidal zone	Oil-contaminated	intertidal ecosystem	ENVO:01001468	oil	ENVO:00002985		
-71		Environmental	Aquatic	Marine	Intertidal zone	Salt marsh	marine salt marsh biome	ENVO:01000022				
-72		Environmental	Aquatic	Marine	Intertidal zone	Sediment	intertidal ecosystem	ENVO:01001468	intertidal sediment	ENVO:00002179		
-73		Environmental	Aquatic	Marine	Marginal Sea		marginal sea biome	ENVO:01000046				
-74		Environmental	Aquatic	Marine	Neritic zone		neritic pelagic zone biome	ENVO:01000032				
-75		Environmental	Aquatic	Marine	Neritic zone	Oil-contaminated sediment			oil	ENVO:00002985		
-76		Environmental	Aquatic	Marine	Neritic zone	Sediment	neritic pelagic zone biome	ENVO:01000032	marine sediment	ENVO:03000033		
-77		Environmental	Aquatic	Marine	Oceanic		ocean biome	ENVO:01000048				
-78		Environmental	Aquatic	Marine	Oceanic	Abyssal plane	marine abyssal zone biome	ENVO:01000027			abyssal plain	ENVO:00000244
-79		Environmental	Aquatic	Marine	Oceanic	Aphotic zone	ocean biome	ENVO:01000048			marine aphotic zone	ENVO:00000210
-80		Environmental	Aquatic	Marine	Oceanic	Benthic	marine benthic biome	ENVO:01000024			marine benthic feature	ENVO:01000105
-81		Environmental	Aquatic	Marine	Oceanic	Oil-contaminated	ocean biome	ENVO:01000048	oil	ENVO:00002985		
-82		Environmental	Aquatic	Marine	Oceanic	Oil-contaminated sediments	ocean biome	ENVO:01000048	contaminated sediment	ENVO:00002114	oil	ENVO:00002985
-83		Environmental	Aquatic	Marine	Oceanic	Photic zone	ocean biome	ENVO:01000048			marine photic zone	ENVO:00000209
-84		Environmental	Aquatic	Marine	Oceanic	Sediment	ocean biome	ENVO:01000048	marine sediment	ENVO:03000033		
-85		Environmental	Aquatic	Marine	Oil field		marine biome	ENVO:00000447	oil field production water	ENVO:00002194		
-86		Environmental	Aquatic	Marine	Oil field	bore hole	marine biome	ENVO:00000447	bore hole water	ENVO:00003097	borehole	ENVO:00002226
-87		Environmental	Aquatic	Marine	Oil seeps		marine biome	ENVO:00000447	oil seep	ENVO:00002063		
-88		Environmental	Aquatic	Marine	Oil-contaminated sediment				contaminated sediment	ENVO:00002114	oil	ENVO:00002985
-89		Environmental	Aquatic	Marine	Pelagic		marine pelagic biome	ENVO:01000023				
-90		Environmental	Aquatic	Marine	Sediment		marine biome	ENVO:00000447	marine sediment	ENVO:03000033		
-91		Environmental	Aquatic	Marine	Volcanic		marine biome	ENVO:00000447				
-92		Environmental	Aquatic	Marine	Wetlands		coastal wetland ecosystem	ENVO:00000230				
-93		Environmental	Aquatic	Marine	Wetlands	Sediment	wetland ecosystem	ENVO:01001209	sediment	ENVO:00002007		
-94		Environmental	Aquatic	Meromictic lake			aquatic biome	ENVO:00002030			meromictic lake	ENVO:00000199
-95		Environmental	Aquatic	Non-marine Saline and Alkaline			aquatic biome	ENVO:00002030				
-96		Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline		alkaline environment	ENVO:01000316				
-97		Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Carbonate	alkaline environment	ENVO:01000316		ENVO:http://purl.obolibrary.org/obo/CHEBI_41609		
-98		Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Microbial mats	alkaline environment	ENVO:01000316			microbial mat	ENVO:01000008
-99		Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Sediment	alkaline environment	ENVO:01000316	sediment	ENVO:00002007		
-100		Environmental	Aquatic	Non-marine Saline and Alkaline	Hypersaline		hypersaline water environment	ENVO:01001043				
-101		Environmental	Aquatic	Non-marine Saline and Alkaline	Hypersaline	Microbial mats	hypersaline water environment	ENVO:01001043			microbial mat	ENVO:01000008
-102		Environmental	Aquatic	Non-marine Saline and Alkaline	Hypersaline	Sediment	hypersaline water environment	ENVO:01001043	sediment permeated by saline water	ENVO:01001036		
-103		Environmental	Aquatic	Non-marine Saline and Alkaline	Near-boiling (>90C)		extreme high temperature environment	ENVO:01000318				
-104		Environmental	Aquatic	Non-marine Saline and Alkaline	Near-boiling (>90C)	Alkaline	alkaline environment	ENVO:01000316				
-105		Environmental	Aquatic	Non-marine Saline and Alkaline	Saline		saline water environment	ENVO:01000307				
-106		Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Athalassic	saline water environment	ENVO:01000307			saline lake	ENVO:00000019
-107		Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Epilimnion	saline water environment	ENVO:01000307			epilimnion	ENVO:00002131
-108		Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Hypolimnion	saline water environment	ENVO:01000307			hypolimnion	ENVO:00002130
-109		Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Microbial mats	saline water environment	ENVO:01000307			microbial mat	ENVO:01000008
-110		Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Sediment	saline water environment	ENVO:01000307	sediment permeated by saline water	ENVO:01001036		
-111		Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Thalassic	saline water environment	ENVO:01000307				
-112		Environmental	Aquatic	Non-marine Saline and Alkaline	Salt crystallizer pond		saline water environment	ENVO:01000307			saline evaporation pond	ENVO:00000055
-113		Environmental	Aquatic	Non-marine Saline and Alkaline	Salt crystallizer pond	Microbial mats	aquatic biome	ENVO:00002030			microbial mat	ENVO:01000008
-114		Environmental	Aquatic	Sediment			aquatic biome	ENVO:00002030	sediment	ENVO:00002007		
-115		Environmental	Aquatic	Thermal springs			aquatic biome	ENVO:00002030			hot spring	ENVO:00000051
-116		Environmental	Aquatic	Thermal springs	Hot (42-90C)		high temperature environment	ENVO:01000305				
-117		Environmental	Aquatic	Thermal springs	Hot (42-90C)	Acidic	high temperature environment	ENVO:01000305			acid hot spring	ENVO:00002120
-118		Environmental	Aquatic	Thermal springs	Hot (42-90C)	Alkaline	high temperature environment	ENVO:01000305			alkaline hot spring	ENVO:00002119
-119		Environmental	Aquatic	Thermal springs	Hot (42-90C)	Neutral	high temperature environment	ENVO:01000305			neutral hot spring	ENVO:00002181
-120		Environmental	Aquatic	Thermal springs	Hot (42-90C)	Sediment	high temperature environment	ENVO:01000305	sediment	ENVO:00002007		
-121		Environmental	Aquatic	Thermal springs	Near-boiling (>90C)		extreme high temperature environment	ENVO:01000318				
-122		Environmental	Aquatic	Thermal springs	Near-boiling (>90C)	Alkaline	extreme high temperature environment	ENVO:01000318			alkaline hot spring	ENVO:00002119
-123		Environmental	Aquatic	Thermal springs	Sediment		aquatic biome	ENVO:00002030	sediment	ENVO:00002007		
-124		Environmental	Aquatic	Thermal springs	Tepid (25-34C)		aquatic biome	ENVO:00002030				
-125		Environmental	Aquatic	Thermal springs	Tepid (25-34C)	Sediment	aquatic biome	ENVO:00002030	sediment	ENVO:00002007		
-126		Environmental	Aquatic	Thermal springs	Warm (34-42C)							
-127		Environmental	Aquatic	Thermal springs	Warm (34-42C)	Neutral	aquatic biome	ENVO:00002030			neutral hot spring	ENVO:00002181
-128		Environmental	Aquatic	Thermal springs	Warm (34-42C)	Sediment	aquatic biome	ENVO:00002030	sediment	ENVO:00002007		
-129		Environmental	Terrestrial				terrestrial biome	ENVO:00000446				
-130		Environmental	Terrestrial	Agricultural field			cropland biome	ENVO:01000245			agricultural field	ENVO:00000114
-131		Environmental	Terrestrial	Asphalt lakes			terrestrial biome	ENVO:00000446			asphalt lake	ENVO:00000165
-132		Environmental	Terrestrial	Asphalt lakes	Tar		terrestrial biome	ENVO:00000446	asphalt	ENVO:01000460		
-133		Environmental	Terrestrial	Deep subsurface			terrestrial biome	ENVO:00000446				
-134		Environmental	Terrestrial	Deep subsurface	Clay		terrestrial biome	ENVO:00000446	clay	ENVO:00002982		
-135		Environmental	Terrestrial	Geologic			terrestrial biome	ENVO:00000446	solid astronomical body part	ENVO:00000191		
-136		Environmental	Terrestrial	Geologic	Mine		terrestrial biome	ENVO:00000446	mine	ENVO:00000076		
-137		Environmental	Terrestrial	Oil reservoir			terrestrial biome	ENVO:00000446	oil reservoir	ENVO:00002185		
-138		Environmental	Terrestrial	Rock-dwelling (subaerial biofilm)			terrestrial biome	ENVO:00000446	rock	ENVO:00001995	biofilm	ENVO:00002034
-139		Environmental	Terrestrial	Soil			terrestrial biome	ENVO:00000446	soil	ENVO:00001998		
-140		Environmental	Terrestrial	Soil	Agricultural		cropland biome	ENVO:01000245	agricultural soil	ENVO:00002259		
-141		Environmental	Terrestrial	Soil	Boreal forest		subpolar coniferous forest biome	ENVO:01000250				
-142		Environmental	Terrestrial	Soil	Clay		terrestrial biome	ENVO:00000446	clay soil	ENVO:00002262		
-143		Environmental	Terrestrial	Soil	Clay	Agricultural land	cropland biome	ENVO:01000245	agricultural soil	ENVO:00002259		
-144		Environmental	Terrestrial	Soil	Clay	Contaminated	terrestrial biome	ENVO:00000446	contaminated soil	ENVO:00002116		
-145		Environmental	Terrestrial	Soil	Clay	Grasslands	grassland biome	ENVO:01000177				
-146		Environmental	Terrestrial	Soil	Clay	Oil-contaminated	terrestrial biome	ENVO:00000446	oil contaminated soil	ENVO:00002875		
-147		Environmental	Terrestrial	Soil	Contaminated		terrestrial biome	ENVO:00000446	contaminated soil	ENVO:00002116		
-148		Environmental	Terrestrial	Soil	Crop		cropland biome	ENVO:01000245		ENVO:http://purl.obolibrary.org/obo/AGRO_00000325		
-149		Environmental	Terrestrial	Soil	Crop	Agricultural land	cropland biome	ENVO:01000245	agricultural soil	ENVO:00002259		
-150		Environmental	Terrestrial	Soil	Desert		desert biome	ENVO:01000179			desert	ENVO:01001357
-151		Environmental	Terrestrial	Soil	Forest soil		forest biome	ENVO:01000174				
-152		Environmental	Terrestrial	Soil	Grasslands		grassland biome	ENVO:01000177				
-153		Environmental	Terrestrial	Soil	Loam		terrestrial biome	ENVO:00000446	loam	ENVO:00002258		
-154		Environmental	Terrestrial	Soil	Loam	Agricultural	cropland biome	ENVO:01000245	agricultural soil	ENVO:00002259		
-155		Environmental	Terrestrial	Soil	Loam	Contaminated	terrestrial biome	ENVO:00000446	contaminated soil	ENVO:00002116		
-156		Environmental	Terrestrial	Soil	Loam	Forest soil	forest biome	ENVO:01000174				
-157		Environmental	Terrestrial	Soil	Loam	Grasslands	grassland biome	ENVO:01000177				
-158		Environmental	Terrestrial	Soil	Mine		terrestrial biome	ENVO:00000446	mine	ENVO:00000076		
-159		Environmental	Terrestrial	Soil	Mine drainage		terrestrial biome	ENVO:00000446	mine drainage	ENVO:00001996		
-160		Environmental	Terrestrial	Soil	Oil-contaminated		terrestrial biome	ENVO:00000446	oil contaminated soil	ENVO:00002875		
-161		Environmental	Terrestrial	Soil	Permafrost		terrestrial biome	ENVO:00000446	permafrost	ENVO:00000134		
-162		Environmental	Terrestrial	Soil	Sand		terrestrial biome	ENVO:00000446	sand	ENVO:01000017	sand	ENVO:01000017
-163		Environmental	Terrestrial	Soil	Sand	Desert	desert biome	ENVO:01000179	desert sand	ENVO:00005800	desert	ENVO:01001357
-164		Environmental	Terrestrial	Soil	Sand	Forest soil	forest biome	ENVO:01000174				
-165		Environmental	Terrestrial	Soil	Sand	Grasslands	grassland biome	ENVO:01000177				
-166		Environmental	Terrestrial	Soil	Sand	Oil-contaminated	terrestrial biome	ENVO:00000446	oil contaminated soil	ENVO:00002875		
-167		Environmental	Terrestrial	Soil	Shrubland		shrubland biome	ENVO:01000176				
-168		Environmental	Terrestrial	Soil	Silt		terrestrial biome	ENVO:00000446	silt	ENVO:01000016		
-169		Environmental	Terrestrial	Soil	Tropical rainforest		forest ecosystem	ENVO:01001243	tropical soil	ENVO:00005778		
-170		Environmental	Terrestrial	Soil	Uranium contaminated		terrestrial biome	ENVO:00000446	contaminated soil	ENVO:00002116		
-171		Environmental	Terrestrial	Soil	Wetlands		wetland ecosystem	ENVO:01001209				
-172		Environmental	Terrestrial	Soil	Wetlands	Permafrost	wetland ecosystem	ENVO:01001209	permafrost	ENVO:00000134		
-173		Environmental	Terrestrial	Volcanic			terrestrial biome	ENVO:00000446			volcano	ENVO:00000247
-174		Environmental	Terrestrial	Volcanic	Fumaroles		terrestrial biome	ENVO:00000446			fumarole	ENVO:00000216
-0	4845	Engineered	Artificial ecosystem	Mud microcosm	Unclassified	Unclassified						
-1	4536	Engineered	Bioreactor	Aerobic	Unclassified	Unclassified						
-2	4912	Engineered	Bioreactor	Anaerobic	Food waste	Unclassified						
-3	4914	Engineered	Bioreactor	Anaerobic	Manure	Unclassified						
-4	4442	Engineered	Bioreactor	Anaerobic	Unclassified	Unclassified						
-5	4860	Engineered	Bioreactor	Continuous culture	Marine intertidal flat sediment inoculum	Unclassified						
-6	4853	Engineered	Bioreactor	Continuous culture	Marine sediment inoculum	Unclassified						
-7	4283	Engineered	Bioreactor	Continuous culture	Unclassified	Unclassified						
-8	4282	Engineered	Bioreactor	Continuous culture	Unclassified	Wadden Sea-Germany						
-9	4280	Engineered	Bioreactor	Unclassified	Unclassified	Unclassified						
-10	4299	Engineered	Bioremediation	Hydrocarbon	Benzene	Bioreactor						
-11	4452	Engineered	Bioremediation	Hydrocarbon	Methane	Unclassified						
-12	4300	Engineered	Bioremediation	Hydrocarbon	Unclassified	Unclassified						
-13	5087	Engineered	Bioremediation	Hydrocarbon	Xylene	Unclassified						
-14	4306	Engineered	Bioremediation	Metal	Unclassified	Unclassified						
-15	4305	Engineered	Bioremediation	Persistent organic pollutants (POP)	Polycyclic aromatic hydrocarbons	Unclassified						
-16	4724	Engineered	Bioremediation	Persistent organic pollutants (POP)	Unclassified	Unclassified						
-17	4722	Engineered	Bioremediation	Terephthalate	Unclassified	Unclassified						
-18	4301	Engineered	Bioremediation	Terephthalate	Wastewater	Activated sludge						
-19	4302	Engineered	Bioremediation	Terephthalate	Wastewater	Bioreactor						
-20	4303	Engineered	Bioremediation	Terephthalate	Wastewater	Unclassified						
-21	4297	Engineered	Bioremediation	Tetrachloroethylene and derivatives	Chloroethene	Bioreactor						
-22	4298	Engineered	Bioremediation	Tetrachloroethylene and derivatives	Chloroethene	Unclassified						
-23	4295	Engineered	Bioremediation	Tetrachloroethylene and derivatives	Tetrachloroethylene	Bioreactor						
-24	4296	Engineered	Bioremediation	Tetrachloroethylene and derivatives	Tetrachloroethylene	Unclassified						
-25	4436	Engineered	Bioremediation	Thiocyanate	Unclassified	Unclassified						
-26	4304	Engineered	Bioremediation	Unclassified	Unclassified	Unclassified						
-27	4313	Engineered	Biotransformation	Microbial enhanced oil recovery	Unclassified	Unclassified						
-28	4312	Engineered	Biotransformation	Microbial solubilization of coal	Unclassified	Unclassified						
-29	4315	Engineered	Biotransformation	Mixed alcohol bioreactor	Unclassified	Unclassified						
-30	4314	Engineered	Biotransformation	Unclassified	Unclassified	Unclassified						
-31	5111	Engineered	Built environment	Canal	Irrigation canal	Sediment						
-32	4401	Engineered	Built environment	Canal	Unclassified	Unclassified						
-33	4812	Engineered	Built environment	Cement wall	Unclassified	Unclassified						
-34	4398	Engineered	Built environment	City	Park	Unclassified						
-35	4396	Engineered	Built environment	City	Subway	Unclassified						
-36	4403	Engineered	Built environment	City	Unclassified	Unclassified						
-37	4494	Engineered	Built environment	Hospital	Unclassified	Unclassified						
-38	4847	Engineered	Built environment	House	Doormat	Unclassified						
-39	4405	Engineered	Built environment	House	Unclassified	Unclassified						
-40	4659	Engineered	Built environment	International Space Station	Unclassified	Unclassified						
-41	4868	Engineered	Built environment	Oil refinery	Crude oil sludge	Petroleum sludge						
-42	4521	Engineered	Built environment	Oil refinery	Petroleum sludge	Product sludge						
-43	4519	Engineered	Built environment	Oil refinery	Petroleum sludge	Unclassified						
-44	4817	Engineered	Built environment	Oil refinery	Unclassified	Unclassified						
-45	5259	Engineered	Built environment	Petroleum storage tank	Flotation cells	Produced water						
-46	4665	Engineered	Built environment	Pipeline	Unclassified	Unclassified						
-47	4639	Engineered	Built environment	Solar panel	Unclassified	Unclassified						
-48	4635	Engineered	Built environment	Spacecraft Assembly Cleanrooms	Unclassified	Unclassified						
-49	4704	Engineered	Built environment	Swine confinement building	Unclassified	Unclassified						
-50	4469	Engineered	Built environment	Tailings pond	Unclassified	Unclassified						
-51	4279	Engineered	Built environment	Unclassified	Unclassified	Unclassified						
-52	4407	Engineered	Built environment	Water treatment plant	Unclassified	Unclassified						
-53	4897	Engineered	Feedstock	Composting	Unclassified	Unclassified						
-54	4253	Engineered	Food production	Dairy products	Unclassified	Unclassified						
-55	4252	Engineered	Food production	Fermented beverages	Unclassified	Unclassified						
-56	4251	Engineered	Food production	Fermented seafood	Unclassified	Unclassified						
-57	4249	Engineered	Food production	Fermented vegetables	Unclassified	Unclassified						
-58	4488	Engineered	Food production	Meat products	Unclassified	Unclassified						
-59	4248	Engineered	Food production	Silage fermentation	Unclassified	Unclassified						
-60	4250	Engineered	Food production	Unclassified	Unclassified	Unclassified						
-61	4618	Engineered	Industrial production	Biochar	Unclassified	Unclassified						
-62	4595	Engineered	Industrial production	Engineered product	Bioanode	Unclassified						
-63	4612	Engineered	Industrial production	Engineered product	Biocathode	Unclassified						
-64	4294	Engineered	Industrial production	Engineered product	Unclassified	Unclassified						
-65	4293	Engineered	Industrial production	Unclassified	Unclassified	Unclassified						
-66	4288	Engineered	Lab enrichment	Defined media	Aerobic media	Unclassified						
-67	4289	Engineered	Lab enrichment	Defined media	Anaerobic media	Unclassified						
-68	4291	Engineered	Lab enrichment	Defined media	Marine media	Unclassified						
-69	4287	Engineered	Lab enrichment	Defined media	Unclassified	Unclassified						
-70	4285	Engineered	Lab enrichment	Unclassified	Unclassified	Unclassified						
-71	4286	Engineered	Lab enrichment	Undefined media	Unclassified	Unclassified						
-72	4720	Engineered	Lab synthesis	Genetic cross	Unclassified	Unclassified						
-73	4247	Engineered	Lab synthesis	Unclassified	Unclassified	Unclassified						
-74	4726	Engineered	Laboratory developed	Genetically modified	Unclassified	Unclassified						
-75	4729	Engineered	Laboratory developed	Unclassified	Unclassified	Unclassified						
-76	4311	Engineered	Modeled	Simulated communities (DNA mixture)	Unclassified	Unclassified						
-77	4308	Engineered	Modeled	Simulated communities (microbial mixture)	Unclassified	Unclassified						
-78	4310	Engineered	Modeled	Simulated communities (sequence read mixture)	Sanger	Unclassified						
-79	4309	Engineered	Modeled	Simulated communities (sequence read mixture)	Unclassified	Unclassified						
-80	4307	Engineered	Modeled	Unclassified	Unclassified	Unclassified						
-81	4390	Engineered	Paper	Currency notes	Unclassified	Unclassified						
-82	4910	Engineered	Solid waste	Agricultural waste	Composting	Unclassified						
-83	4936	Engineered	Solid waste	Animal waste	Composting	Unclassified						
-84	4916	Engineered	Solid waste	Animal waste	Manure	Unclassified						
-85	4278	Engineered	Solid waste	Animal waste	Unclassified	Unclassified						
-86	4927	Engineered	Solid waste	Bagasse	Composting	Unclassified						
-87	4930	Engineered	Solid waste	Cellulose associated waste	Composting	Unclassified						
-88	4273	Engineered	Solid waste	Composting	Unclassified	Unclassified						
-89	4893	Engineered	Solid waste	Feedstock	Composting	Unclassified						
-90	4948	Engineered	Solid waste	Food waste	Composting	Unclassified						
-91	4873	Engineered	Solid waste	Grass	Composting	Bioreactor						
-92	4874	Engineered	Solid waste	Grass	Composting	Unclassified						
-93	4907	Engineered	Solid waste	Household waste	Composting	Unclassified						
-94	4939	Engineered	Solid waste	Industrial waste	Composting	Unclassified						
-95	4277	Engineered	Solid waste	Landfill	Unclassified	Unclassified						
-96	4954	Engineered	Solid waste	Latrine chamber	Composting	Unclassified						
-97	4276	Engineered	Solid waste	Unclassified	Unclassified	Unclassified						
-98	4966	Engineered	Solid waste	Unknown material	Composting	Bioreactor						
-99	4967	Engineered	Solid waste	Unknown material	Composting	Unclassified						
-100	4945	Engineered	Solid waste	Urban waste	Composting	Unclassified						
-101	4934	Engineered	Solid waste	Vegetable	Composting	Unclassified						
-102	4942	Engineered	Solid waste	Vermicompost	Unclassified	Unclassified						
-103	4856	Engineered	Solid waste	Wood	Composting	Bioreactor						
-104	4857	Engineered	Solid waste	Wood	Composting	Unclassified						
-105	4924	Engineered	Solid waste	Zoo waste	Composting	Unclassified						
-106	4292	Engineered	Unclassified	Unclassified	Unclassified	Unclassified						
-107	4672	Engineered	WWTP	Wastewater	Unclassified	Unclassified						
-108	4254	Engineered	Wastewater	Activated Sludge	Unclassified	Unclassified						
-109	4271	Engineered	Wastewater	Anaerobic digestor	Unclassified	Unclassified						
-110	4268	Engineered	Wastewater	Industrial wastewater	Agricultural wastewater	Unclassified						
-111	4918	Engineered	Wastewater	Industrial wastewater	Hospital wastewater	Unclassified						
-112	4269	Engineered	Wastewater	Industrial wastewater	Landfill leachate	Unclassified						
-113	4690	Engineered	Wastewater	Industrial wastewater	Mine water	Sediment						
-114	4270	Engineered	Wastewater	Industrial wastewater	Mine water	Unclassified						
-115	4265	Engineered	Wastewater	Industrial wastewater	Petrochemical	Unclassified						
-116	4266	Engineered	Wastewater	Industrial wastewater	Pulp and paper wastewater	Unclassified						
-117	4267	Engineered	Wastewater	Industrial wastewater	Unclassified	Unclassified						
-118	4262	Engineered	Wastewater	Nutrient removal	Biological phosphorus removal	Activated sludge						
-119	4263	Engineered	Wastewater	Nutrient removal	Biological phosphorus removal	Bioreactor						
-120	4730	Engineered	Wastewater	Nutrient removal	Biological phosphorus removal	Unclassified						
-121	4257	Engineered	Wastewater	Nutrient removal	Dissolved organics (aerobic)	Activated sludge						
-122	4258	Engineered	Wastewater	Nutrient removal	Dissolved organics (aerobic)	Unclassified						
-123	4259	Engineered	Wastewater	Nutrient removal	Dissolved organics (anaerobic)	Activated sludge						
-124	4260	Engineered	Wastewater	Nutrient removal	Dissolved organics (anaerobic)	Unclassified						
-125	4256	Engineered	Wastewater	Nutrient removal	Nitrogen removal	Anammox						
-126	4255	Engineered	Wastewater	Nutrient removal	Nitrogen removal	Unclassified						
-127	4261	Engineered	Wastewater	Nutrient removal	Unclassified	Unclassified						
-128	4662	Engineered	Wastewater	Sewage	Unclassified	Unclassified						
-129	4264	Engineered	Wastewater	Unclassified	Unclassified	Unclassified						
-130	4620	Environmental	Air	Indoor Air	Dust	Unclassified						
-131	3961	Environmental	Air	Indoor Air	Unclassified	Unclassified						
-132	3962	Environmental	Air	Outdoor Air	Unclassified	Unclassified						
-133	3963	Environmental	Air	Unclassified	Unclassified	Unclassified						
-134	3965	Environmental	Aquatic	Aquaculture	Unclassified	Unclassified						
-135	4514	Environmental	Aquatic	Freshwater	Creek	Unclassified						
-136	4059	Environmental	Aquatic	Freshwater	Drinking water	Chlorinated						
-137	4058	Environmental	Aquatic	Freshwater	Drinking water	Delivery networks						
-138	5122	Environmental	Aquatic	Freshwater	Drinking water	Filtered water						
-139	4547	Environmental	Aquatic	Freshwater	Drinking water	Unchlorinated						
-140	4057	Environmental	Aquatic	Freshwater	Drinking water	Unclassified						
-141	4164	Environmental	Aquatic	Freshwater	Groundwater	Acid Mine Drainage						
-142	4167	Environmental	Aquatic	Freshwater	Groundwater	Cave water						
-143	4169	Environmental	Aquatic	Freshwater	Groundwater	Coalbed water						
-144	4166	Environmental	Aquatic	Freshwater	Groundwater	Contaminated						
-145	4168	Environmental	Aquatic	Freshwater	Groundwater	Mine						
-146	4170	Environmental	Aquatic	Freshwater	Groundwater	Mine drainage						
-147	4654	Environmental	Aquatic	Freshwater	Groundwater	Spring						
-148	4165	Environmental	Aquatic	Freshwater	Groundwater	Unclassified						
-149	4420	Environmental	Aquatic	Freshwater	Harbor	Unclassified						
-150	4060	Environmental	Aquatic	Freshwater	Ice	Glacial lake						
-151	4063	Environmental	Aquatic	Freshwater	Ice	Glacier						
-152	4062	Environmental	Aquatic	Freshwater	Ice	Ice accretions						
-153	4061	Environmental	Aquatic	Freshwater	Ice	Unclassified						
-154	4426	Environmental	Aquatic	Freshwater	Lake	Sediment						
-155	4179	Environmental	Aquatic	Freshwater	Lake	Unclassified						
-156	4177	Environmental	Aquatic	Freshwater	Lentic	Epilimnion						
-157	4173	Environmental	Aquatic	Freshwater	Lentic	Hypolimnion						
-158	4176	Environmental	Aquatic	Freshwater	Lentic	Limnetic zone						
-159	4178	Environmental	Aquatic	Freshwater	Lentic	Littoral zone						
-160	4175	Environmental	Aquatic	Freshwater	Lentic	Sediment						
-161	4174	Environmental	Aquatic	Freshwater	Lentic	Unclassified						
-162	4645	Environmental	Aquatic	Freshwater	Lotic	Unclassified						
-163	4191	Environmental	Aquatic	Freshwater	Microbialites	Unclassified						
-164	4180	Environmental	Aquatic	Freshwater	Pond	Sediment						
-165	4380	Environmental	Aquatic	Freshwater	Pond	Unclassified						
-166	5237	Environmental	Aquatic	Freshwater	Reservoir	Unclassified						
-167	5109	Environmental	Aquatic	Freshwater	River	Sediment						
-168	4512	Environmental	Aquatic	Freshwater	River	Unclassified						
-169	4171	Environmental	Aquatic	Freshwater	Sediment	Unclassified						
-170	4653	Environmental	Aquatic	Freshwater	Sinkhole	Unclassified						
-171	4190	Environmental	Aquatic	Freshwater	Storm water	Drainage pipe biofilm						
-172	4189	Environmental	Aquatic	Freshwater	Storm water	Unclassified						
-173	4737	Environmental	Aquatic	Freshwater	Subglacial lake	Unclassified						
-174	4562	Environmental	Aquatic	Freshwater	Subterranean lake	Unclassified						
-175	4159	Environmental	Aquatic	Freshwater	Unclassified	Unclassified						
-176	5210	Environmental	Aquatic	Freshwater	Water tank	Unclassified						
-177	4185	Environmental	Aquatic	Freshwater	Wetlands	Bog						
-178	4184	Environmental	Aquatic	Freshwater	Wetlands	Marsh						
-179	4183	Environmental	Aquatic	Freshwater	Wetlands	Sediment						
-180	4182	Environmental	Aquatic	Freshwater	Wetlands	Swamp						
-181	4181	Environmental	Aquatic	Freshwater	Wetlands	Unclassified						
-182	4045	Environmental	Aquatic	Marine	Coastal	Sediment						
-183	4044	Environmental	Aquatic	Marine	Coastal	Unclassified						
-184	4024	Environmental	Aquatic	Marine	Cold seeps	Sediment						
-185	4023	Environmental	Aquatic	Marine	Cold seeps	Unclassified						
-186	4000	Environmental	Aquatic	Marine	Fossil	Whale fall						
-187	4576	Environmental	Aquatic	Marine	Gulf	Unclassified						
-188	4454	Environmental	Aquatic	Marine	Harbor	Unclassified						
-189	4031	Environmental	Aquatic	Marine	Hydrothermal vents	Black smokers						
-190	4030	Environmental	Aquatic	Marine	Hydrothermal vents	Diffuse flow						
-191	4028	Environmental	Aquatic	Marine	Hydrothermal vents	Microbial mats						
-192	4029	Environmental	Aquatic	Marine	Hydrothermal vents	Sediment						
-193	4027	Environmental	Aquatic	Marine	Hydrothermal vents	Unclassified						
-194	4574	Environmental	Aquatic	Marine	Inlet	Unclassified						
-195	4017	Environmental	Aquatic	Marine	Intertidal zone	Beach						
-196	4014	Environmental	Aquatic	Marine	Intertidal zone	Coral reef						
-197	4015	Environmental	Aquatic	Marine	Intertidal zone	Estuary						
-198	4018	Environmental	Aquatic	Marine	Intertidal zone	Mangrove swamp						
-199	4019	Environmental	Aquatic	Marine	Intertidal zone	Microbialites						
-200	4020	Environmental	Aquatic	Marine	Intertidal zone	Oil-contaminated						
-201	4012	Environmental	Aquatic	Marine	Intertidal zone	Salt marsh						
-202	4016	Environmental	Aquatic	Marine	Intertidal zone	Sediment						
-203	4013	Environmental	Aquatic	Marine	Intertidal zone	Unclassified						
-204	4032	Environmental	Aquatic	Marine	Marginal Sea	Unclassified						
-205	4545	Environmental	Aquatic	Marine	Mud volcano	Unclassified						
-206	4033	Environmental	Aquatic	Marine	Neritic zone	Oil-contaminated sediment						
-207	4035|4048	Environmental	Aquatic	Marine	Neritic zone	Sediment						
-209	4034	Environmental	Aquatic	Marine	Neritic zone	Unclassified						
-210	4006	Environmental	Aquatic	Marine	Oceanic	Abyssal plane						
-211	4010	Environmental	Aquatic	Marine	Oceanic	Aphotic zone						
-212	4040	Environmental	Aquatic	Marine	Oceanic	Benthic						
-213	4656	Environmental	Aquatic	Marine	Oceanic	Crustal Fluids						
-214	4557	Environmental	Aquatic	Marine	Oceanic	Microbial mats						
-215	4636	Environmental	Aquatic	Marine	Oceanic	Oceanic crust						
-216	4011	Environmental	Aquatic	Marine	Oceanic	Oil-contaminated						
-217	4007	Environmental	Aquatic	Marine	Oceanic	Oil-contaminated sediment						
-218	4004	Environmental	Aquatic	Marine	Oceanic	Photic zone						
-219	4009	Environmental	Aquatic	Marine	Oceanic	Sediment						
-220	4008	Environmental	Aquatic	Marine	Oceanic	Unclassified						
-221	4026	Environmental	Aquatic	Marine	Oil seeps	Unclassified						
-222	4021	Environmental	Aquatic	Marine	Pelagic	Unclassified						
-223	4686	Environmental	Aquatic	Marine	Seaweed	Unclassified						
-224	4564	Environmental	Aquatic	Marine	Sediment	Unclassified						
-225	4516	Environmental	Aquatic	Marine	Strait	Unclassified						
-226	4647	Environmental	Aquatic	Marine	Subtidal zone	Sediment						
-227	4002	Environmental	Aquatic	Marine	Unclassified	Oil-contaminated sediment						
-228	4003	Environmental	Aquatic	Marine	Unclassified	Unclassified						
-229	4022	Environmental	Aquatic	Marine	Volcanic	Unclassified						
-230	4056	Environmental	Aquatic	Marine	Wetlands	Sediment						
-231	4055	Environmental	Aquatic	Marine	Wetlands	Unclassified						
-232	3969	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Carbonate						
-233	3967	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Microbial mats						
-234	3968	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Sediment						
-235	3966	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Unclassified						
-236	4695	Environmental	Aquatic	Non-marine Saline and Alkaline	Fracking water	Unclassified						
-237	3979	Environmental	Aquatic	Non-marine Saline and Alkaline	Hypersaline	Microbial mats						
-238	3980	Environmental	Aquatic	Non-marine Saline and Alkaline	Hypersaline	Sediment						
-239	3978	Environmental	Aquatic	Non-marine Saline and Alkaline	Hypersaline	Unclassified						
-240	3983	Environmental	Aquatic	Non-marine Saline and Alkaline	Near-boiling (>90C)	Alkaline						
-241	3971	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Athalassic						
-242	3977	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Epilimnion						
-243	3972	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Hypolimnion						
-244	3974	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Microbial mats						
-245	3975	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Sediment						
-246	3976	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Thalassic						
-247	3973	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Unclassified						
-248	3982	Environmental	Aquatic	Non-marine Saline and Alkaline	Salt crystallizer ponds	Microbial mats						
-249	3981	Environmental	Aquatic	Non-marine Saline and Alkaline	Salt crystallizer ponds	Unclassified						
-250	3970	Environmental	Aquatic	Non-marine Saline and Alkaline	Unclassified	Unclassified						
-251	3985	Environmental	Aquatic	Sediment	Unclassified	Unclassified						
-252	3995	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Acidic						
-253	3994	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Alkaline						
-254	4655	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Microbial mats						
-255	3998	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Neutral						
-256	3997	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Sediment						
-257	3992	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Unclassified						
-258	3993	Environmental	Aquatic	Thermal springs	Near-boiling (>90C)	Alkaline						
-259	4818	Environmental	Aquatic	Thermal springs	Near-boiling (>90C)	Unclassified						
-260	3999	Environmental	Aquatic	Thermal springs	Sediment	Unclassified						
-261	3990	Environmental	Aquatic	Thermal springs	Tepid (25-34C)	Sediment						
-262	3989	Environmental	Aquatic	Thermal springs	Tepid (25-34C)	Unclassified						
-263	3991	Environmental	Aquatic	Thermal springs	Unclassified	Unclassified						
-264	4546	Environmental	Aquatic	Thermal springs	Warm (34-42C)	Acidic						
-265	3987	Environmental	Aquatic	Thermal springs	Warm (34-42C)	Neutral						
-266	3988	Environmental	Aquatic	Thermal springs	Warm (34-42C)	Sediment						
-267	3986	Environmental	Aquatic	Thermal springs	Warm (34-42C)	Unclassified						
-268	3984	Environmental	Aquatic	Unclassified	Unclassified	Unclassified						
-269	4706	Environmental	Terrestrial	Agricultural field	Paddy soil	Unclassified						
-270	4199	Environmental	Terrestrial	Agricultural field	Unclassified	Unclassified						
-271	4195	Environmental	Terrestrial	Asphalt lakes	Tar	Unclassified						
-272	4718	Environmental	Terrestrial	Asphalt lakes	Unclassified	Unclassified						
-273	4491	Environmental	Terrestrial	Cave	Unclassified	Unclassified						
-274	4643	Environmental	Terrestrial	Cave	Wall	Biofilm						
-275	4822	Environmental	Terrestrial	Cave	Wall	Unclassified						
-276	4423	Environmental	Terrestrial	Deep subsurface	Aquifer	Unclassified						
-277	4246	Environmental	Terrestrial	Deep subsurface	Clay	Unclassified						
-278	4533	Environmental	Terrestrial	Deep subsurface	Fracking water	Unclassified						
-279	4605	Environmental	Terrestrial	Deep subsurface	Oil well	Unclassified						
-280	4245	Environmental	Terrestrial	Deep subsurface	Unclassified	Unclassified						
-281	4607	Environmental	Terrestrial	Deep subsurface	Water well	Unclassified						
-282	4668	Environmental	Terrestrial	Floodplain	Sediment	Unclassified						
-283	4716	Environmental	Terrestrial	Floodplain	Unclassified	Unclassified						
-284	4193	Environmental	Terrestrial	Geologic	Mine	Unclassified						
-285	4543	Environmental	Terrestrial	Geologic	Sediment	Unclassified						
-286	4192	Environmental	Terrestrial	Geologic	Unclassified	Unclassified						
-287	4689	Environmental	Terrestrial	Mud volcano	Unclassified	Unclassified						
-288	4841	Environmental	Terrestrial	Nest	Alligator nest	Unclassified						
-289	4194	Environmental	Terrestrial	Oil reservoir	Unclassified	Unclassified						
-290	4553	Environmental	Terrestrial	Peat	Unclassified	Unclassified						
-291	4541	Environmental	Terrestrial	Plant litter	Unclassified	Unclassified						
-292	4650	Environmental	Terrestrial	Rock-dwelling (endoliths)	Unclassified	Unclassified						
-293	4201	Environmental	Terrestrial	Rock-dwelling (subaerial biofilms)	Unclassified	Unclassified						
-294	4711	Environmental	Terrestrial	Soil	Biocrust	Unclassified						
-295	4230	Environmental	Terrestrial	Soil	Clay	Agricultural land						
-296	4231	Environmental	Terrestrial	Soil	Clay	Contaminated						
-297	4228	Environmental	Terrestrial	Soil	Clay	Grasslands						
-298	4232	Environmental	Terrestrial	Soil	Clay	Oil-contaminated						
-299	4229	Environmental	Terrestrial	Soil	Clay	Unclassified						
-300	4765	Environmental	Terrestrial	Soil	Crop	Unclassified						
-301	4418	Environmental	Terrestrial	Soil	Fossil	Unclassified						
-302	4745	Environmental	Terrestrial	Soil	Glacier	Unclassified						
-303	4237	Environmental	Terrestrial	Soil	Loam	Agricultural						
-304	4242	Environmental	Terrestrial	Soil	Loam	Agricultural land						
-305	4244	Environmental	Terrestrial	Soil	Loam	Agricultural soil						
-306	4243	Environmental	Terrestrial	Soil	Loam	Contaminated						
-307	4239	Environmental	Terrestrial	Soil	Loam	Forest soil						
-308	4238	Environmental	Terrestrial	Soil	Loam	Grasslands						
-309	4241	Environmental	Terrestrial	Soil	Loam	Unclassified						
-310	4202	Environmental	Terrestrial	Soil	Sand	Desert						
-311	4224	Environmental	Terrestrial	Soil	Sand	Forest soil						
-312	4223	Environmental	Terrestrial	Soil	Sand	Grasslands						
-313	4204	Environmental	Terrestrial	Soil	Sand	Oil-contaminated						
-314	4203	Environmental	Terrestrial	Soil	Sand	Unclassified						
-315	4227	Environmental	Terrestrial	Soil	Silt	Unclassified						
-316	4578	Environmental	Terrestrial	Soil	Soil crust	Unclassified						
-317	4207	Environmental	Terrestrial	Soil	Unclassified	Agricultural						
-318	4213	Environmental	Terrestrial	Soil	Unclassified	Agricultural land						
-319	4217	Environmental	Terrestrial	Soil	Unclassified	Boreal forest						
-320	4215	Environmental	Terrestrial	Soil	Unclassified	Contaminated						
-321	4210	Environmental	Terrestrial	Soil	Unclassified	Desert						
-322	4205	Environmental	Terrestrial	Soil	Unclassified	Forest Soil						
-323	4209	Environmental	Terrestrial	Soil	Unclassified	Grasslands						
-324	4218	Environmental	Terrestrial	Soil	Unclassified	Mine						
-325	4221	Environmental	Terrestrial	Soil	Unclassified	Mine drainage						
-326	4220	Environmental	Terrestrial	Soil	Unclassified	Oil-contaminated						
-327	4206	Environmental	Terrestrial	Soil	Unclassified	Permafrost						
-328	5244	Environmental	Terrestrial	Soil	Unclassified	Riparian soil						
-329	4214	Environmental	Terrestrial	Soil	Unclassified	Shrubland						
-330	4216	Environmental	Terrestrial	Soil	Unclassified	Tropical rainforest						
-331	4212	Environmental	Terrestrial	Soil	Unclassified	Unclassified						
-332	4211	Environmental	Terrestrial	Soil	Unclassified	Uranium contaminated						
-333	4234	Environmental	Terrestrial	Soil	Wetlands	Permafrost						
-334	4235	Environmental	Terrestrial	Soil	Wetlands	Unclassified						
-335	4198	Environmental	Terrestrial	Unclassified	Unclassified	Unclassified						
-336	4196	Environmental	Terrestrial	Volcanic	Fumaroles	Unclassified						
-337	4197	Environmental	Terrestrial	Volcanic	Unclassified	Unclassified						
-338	3964	Environmental	Unclassified	Unclassified	Unclassified	Unclassified						
-339	3960	Host-associated	Algae	Brown Algae	Unclassified	Unclassified						
-340	4675	Host-associated	Algae	Diatoms	Unclassified	Unclassified						
-341	4835	Host-associated	Algae	Golden Algae	Unclassified	Unclassified						
-342	3956	Host-associated	Algae	Green algae	Ectosymbionts	Unclassified						
-343	4760	Host-associated	Algae	Green algae	Unclassified	Unclassified						
-344	4678	Host-associated	Algae	Haptophytes	Unclassified	Unclassified						
-345	4815	Host-associated	Algae	Microalgae	Unclassified	Unclassified						
-346	3958	Host-associated	Algae	Red algae	Ectosymbionts	Unclassified						
-347	3959	Host-associated	Algae	Red algae	Unclassified	Unclassified						
-348	3957	Host-associated	Algae	Unclassified	Unclassified	Unclassified						
-349	4829	Host-associated	Algae	Yellow-green algae	Unclassified	Unclassified						
-350	5167	Host-associated	Amphibia	Digestive system	Intestine	Unclassified						
-351	4083	Host-associated	Amphibia	Digestive system	Unclassified	Unclassified						
-352	5148	Host-associated	Amphibia	Excretory system	Kidney	Unclassified						
-353	5165	Host-associated	Amphibia	Excretory system	Liver	Unclassified						
-354	4085	Host-associated	Amphibia	Excretory system	Unclassified	Unclassified						
-355	5170	Host-associated	Amphibia	Respiratory system	Lung	Unclassified						
-356	4084	Host-associated	Amphibia	Unclassified	Unclassified	Unclassified						
-357	5070	Host-associated	Annelida	Digestive system	Crop	Unclassified						
-358	4329	Host-associated	Annelida	Digestive system	Digestive tube	Extracellular symbionts						
-359	4767	Host-associated	Annelida	Digestive system	Digestive tube	Unclassified						
-360	4330	Host-associated	Annelida	Digestive system	Unclassified	Unclassified						
-361	5195	Host-associated	Annelida	Excretory system	Nephridia	Unclassified						
-362	4821	Host-associated	Annelida	Gills	Unclassified	Unclassified						
-363	4337	Host-associated	Annelida	Integument	Cuticle	Epibionts						
-364	4768	Host-associated	Annelida	Integument	Cuticle	Unclassified						
-365	4335	Host-associated	Annelida	Integument	Subcuticular space	Extracellular symbionts						
-366	4769	Host-associated	Annelida	Integument	Subcuticular space	Unclassified						
-367	4336	Host-associated	Annelida	Integument	Unclassified	Unclassified						
-368	4334	Host-associated	Annelida	Intracellular endosymbionts	Trophosome	Unclassified						
-369	4332	Host-associated	Annelida	Reproductive system	Egg capsule	Extracellular						
-370	4333	Host-associated	Annelida	Reproductive system	Egg capsule	Unclassified						
-371	4771	Host-associated	Annelida	Reproductive system	Unclassified	Unclassified						
-372	5115	Host-associated	Annelida	Tissue	Unclassified	Unclassified						
-373	4331	Host-associated	Annelida	Unclassified	Unclassified	Unclassified						
-374	4531	Host-associated	Annelida	Whole body	Unclassified	Unclassified						
-375	4556	Host-associated	Arthropoda	Ant dump	Unclassified	Unclassified						
-376	5208	Host-associated	Arthropoda	Ant	Cuticle	Unclassified						
-377	4904	Host-associated	Arthropoda	Ant	Unclassified	Unclassified						
-378	4838	Host-associated	Arthropoda	Bee	Abdomen	Unclassified						
-379	4880	Host-associated	Arthropoda	Bee	Beehive	Honey						
-380	4882	Host-associated	Arthropoda	Bee	Royal jelly	Unclassified						
-381	4603	Host-associated	Arthropoda	Beetle	Unclassified	Unclassified						
-382	5205	Host-associated	Arthropoda	Bugs	Unclassified	Unclassified						
-383	5229	Host-associated	Arthropoda	Butterfly	Unclassified	Unclassified						
-384	4681	Host-associated	Arthropoda	Crustacea	Copepoda	Tissue						
-385	4774	Host-associated	Arthropoda	Crustacea	Copepoda	Unclassified						
-386	4773	Host-associated	Arthropoda	Crustacea	Unclassified	Unclassified						
-387	4069	Host-associated	Arthropoda	Digestive system	Foregut	Unclassified						
-388	4070	Host-associated	Arthropoda	Digestive system	Gut	P3 segment						
-389	4071	Host-associated	Arthropoda	Digestive system	Gut	Proctodeal segment						
-390	4072	Host-associated	Arthropoda	Digestive system	Gut	Unclassified						
-391	4955	Host-associated	Arthropoda	Digestive system	Hindgut	Fecal						
-392	4068	Host-associated	Arthropoda	Digestive system	Hindgut	P1 segment						
-393	4066	Host-associated	Arthropoda	Digestive system	Hindgut	P3 segment						
-394	4067	Host-associated	Arthropoda	Digestive system	Hindgut	Unclassified						
-395	4064	Host-associated	Arthropoda	Digestive system	Midgut	Unclassified						
-396	4065	Host-associated	Arthropoda	Digestive system	Unclassified	Unclassified						
-397	5108	Host-associated	Arthropoda	Grasshopper	Unclassified	Unclassified						
-398	4081	Host-associated	Arthropoda	Integument	Cuticle	Thoracic segments						
-399	4082	Host-associated	Arthropoda	Integument	Cuticle	Unclassified						
-400	4776	Host-associated	Arthropoda	Integument	Unclassified	Unclassified						
-401	4077	Host-associated	Arthropoda	Intracellular endosymbionts	Primary	Bacteriomes						
-402	4777	Host-associated	Arthropoda	Intracellular endosymbionts	Primary	Unclassified						
-403	4079	Host-associated	Arthropoda	Intracellular endosymbionts	Secondary	Unclassified						
-404	4078	Host-associated	Arthropoda	Intracellular endosymbionts	Unclassified	Unclassified						
-405	5202	Host-associated	Arthropoda	Lobster	Unclassified	Unclassified						
-406	5118	Host-associated	Arthropoda	Mealybug	Unclassified	Unclassified						
-407	5093	Host-associated	Arthropoda	Mosquito	Gut	Unclassified						
-408	4590	Host-associated	Arthropoda	Mosquito	Unclassified	Unclassified						
-409	5105	Host-associated	Arthropoda	Moth	Unclassified	Unclassified						
-410	4624	Host-associated	Arthropoda	Oral fluid	Unclassified	Pollen						
-411	4429	Host-associated	Arthropoda	Reproductive system	Ovaries	Unclassified						
-412	4779	Host-associated	Arthropoda	Reproductive system	Unclassified	Unclassified						
-413	4080	Host-associated	Arthropoda	Respiratory system	Gills	Unclassified						
-414	4781	Host-associated	Arthropoda	Respiratory system	Unclassified	Unclassified						
-415	5220	Host-associated	Arthropoda	Shrimp	Hepatopancreas	Unclassified						
-416	5146	Host-associated	Arthropoda	Spider	Unclassified	Unclassified						
-417	4076	Host-associated	Arthropoda	Symbiotic fungal gardens and galleries	Fungus gallery	Unclassified						
-418	4075	Host-associated	Arthropoda	Symbiotic fungal gardens and galleries	Fungus garden	Garden dump						
-419	4074	Host-associated	Arthropoda	Symbiotic fungal gardens and galleries	Fungus garden	Unclassified						
-420	4073	Host-associated	Arthropoda	Symbiotic fungal gardens and galleries	Unclassified	Unclassified						
-421	4457	Host-associated	Arthropoda	Tissue	Unclassified	Unclassified						
-422	3901	Host-associated	Arthropoda	Unclassified	Unclassified	Unclassified						
-423	4153	Host-associated	Birds	Circulatory system	Blood	Unclassified						
-424	4786	Host-associated	Birds	Circulatory system	Unclassified	Unclassified						
-425	4148	Host-associated	Birds	Digestive system	Ceca	Lumen						
-426	4147	Host-associated	Birds	Digestive system	Ceca	Unclassified						
-427	4641	Host-associated	Birds	Digestive system	Cloaca	Unclassified						
-428	4151	Host-associated	Birds	Digestive system	Crop	Lumen						
-429	4782	Host-associated	Birds	Digestive system	Crop	Unclassified						
-430	4149	Host-associated	Birds	Digestive system	Digestive tube	Cecum						
-431	4783	Host-associated	Birds	Digestive system	Digestive tube	Unclassified						
-432	4146	Host-associated	Birds	Digestive system	Fecal	Unclassified						
-433	5066	Host-associated	Birds	Digestive system	Intestine	Unclassified						
-434	4957	Host-associated	Birds	Digestive system	Large intestine	Fecal						
-435	4152	Host-associated	Birds	Digestive system	Small intestine	Duodenal						
-436	4784	Host-associated	Birds	Digestive system	Small intestine	Unclassified						
-437	4150	Host-associated	Birds	Digestive system	Unclassified	Unclassified						
-438	5235	Host-associated	Birds	Excretory system	Liver	Unclassified						
-439	5135	Host-associated	Birds	Lymphatic system	Spleen	Unclassified						
-440	4157	Host-associated	Birds	Reproductive system	Unclassified	Unclassified						
-441	4876	Host-associated	Birds	Respiratory system	Lung	Unclassified						
-442	4155	Host-associated	Birds	Respiratory system	Unclassified	Unclassified						
-443	4447	Host-associated	Birds	Skin	Unclassified	Unclassified						
-444	4154	Host-associated	Birds	Unclassified	Unclassified	Unclassified						
-445	4963	Host-associated	Cephalochordata	Digestive system	Intestine	Fecal						
-446	5173	Host-associated	Cephalochordata	Unclassified	Unclassified	Unclassified						
-447	5156	Host-associated	Chordata	Unclassified	Unclassified	Unclassified						
-448	4732	Host-associated	Endosymbionts	Bacteria	Unclassified	Unclassified						
-449	4734	Host-associated	Endosymbionts	Fungi	Unclassified	Unclassified						
-450	4751	Host-associated	Endosymbionts	Unclassified	Unclassified	Unclassified						
-451	5054	Host-associated	Fish	Abdomen	Ascites	Unclassified						
-452	3902	Host-associated	Fish	Circulatory system	Blood	Unclassified						
-453	4788	Host-associated	Fish	Circulatory system	Unclassified	Unclassified						
-454	4789	Host-associated	Fish	Digestive system	Foregut	Unclassified						
-455	4968	Host-associated	Fish	Digestive system	Intestine	Fecal						
-456	4092	Host-associated	Fish	Digestive system	Intestine	Unclassified						
-457	4090	Host-associated	Fish	Digestive system	Unclassified	Unclassified						
-458	4097	Host-associated	Fish	Excretory system	Kidneys	Unclassified						
-459	5150	Host-associated	Fish	Excretory system	Liver	Unclassified						
-460	4791	Host-associated	Fish	Excretory system	Unclassified	Unclassified						
-461	4096	Host-associated	Fish	Reproductive system	Unclassified	Unclassified						
-462	4921	Host-associated	Fish	Respiratory system	Gill	Unclassified						
-463	5152	Host-associated	Fish	Respiratory system	Lung	Unclassified						
-464	4422	Host-associated	Fish	Skin	Epidermal mucus	Unclassified						
-465	4740	Host-associated	Fish	Skin	Scales	Unclassified						
-466	4094	Host-associated	Fish	Skin	Slime	Unclassified						
-467	4093	Host-associated	Fish	Skin	Unclassified	Unclassified						
-468	4714	Host-associated	Fish	Tissue	Unclassified	Unclassified						
-469	4095	Host-associated	Fish	Unclassified	Unclassified	Unclassified						
-470	4743	Host-associated	Fish	Whole body	Carcass	Decomposed						
-471	4794	Host-associated	Fish	Whole body	Carcass	Unclassified						
-472	4793	Host-associated	Fish	Whole body	Unclassified	Unclassified						
-473	4550	Host-associated	Fungi	Fruiting body	Unclassified	Unclassified						
-474	4412	Host-associated	Fungi	Lichen	Unclassified	Unclassified						
-475	4463	Host-associated	Fungi	Mycelium	Unclassified	Unclassified						
-476	4528	Host-associated	Fungi	Sclerotium	Unclassified	Unclassified						
-477	4098	Host-associated	Fungi	Unclassified	Unclassified	Unclassified						
-478	5102	Host-associated	Horse	Circulatory system	Blood	Unclassified						
-479	5064	Host-associated	Horse	Digestive system	Large intestine	Cecum						
-480	5060	Host-associated	Horse	Digestive system	Large intestine	Fecal						
-481	5034	Host-associated	Horse	Excretory system	Urethra	Urine						
-482	5099	Host-associated	Horse	Respiratory system	Lung	Unclassified						
-483	5057	Host-associated	Horse	Respiratory system	Nasopharyngeal	Unclassified						
-484	5063	Host-associated	Horse	Tooth	Unclassified	Unclassified						
-485	4476	Host-associated	Horse	Unclassified	Unclassified	Unclassified						
-486	5120	Host-associated	Human	Abdomen	Peritoneal dialysate	Unclassified						
-487	5037	Host-associated	Human	Abdomen	Peritoneal fluid	Unclassified						
-488	5077	Host-associated	Human	Bone	Bone marrow	Unclassified						
-489	4581	Host-associated	Human	Bone	Unclassified	Unclassified						
-490	4832	Host-associated	Human	Cell Line	HeLa	Unclassified						
-491	4416	Host-associated	Human	Circulatory system	Blood	Plasma						
-492	4430	Host-associated	Human	Circulatory system	Blood	Serum						
-493	3932	Host-associated	Human	Circulatory system	Blood	Unclassified						
-494	5075	Host-associated	Human	Circulatory system	Heart	Heart valve						
-495	4998	Host-associated	Human	Circulatory system	Heart	Unclassified						
-496	4764	Host-associated	Human	Circulatory system	Unclassified	Unclassified						
-497	4762	Host-associated	Human	Digestive system	Hindgut	Unclassified						
-498	3924	Host-associated	Human	Digestive system	Intestine	Unclassified						
-499	5029	Host-associated	Human	Digestive system	Large intestine	Colon						
-500	5028	Host-associated	Human	Digestive system	Large intestine	Descending colon						
-501	3920	Host-associated	Human	Digestive system	Large intestine	Fecal						
-502	5030	Host-associated	Human	Digestive system	Large intestine	Rectum						
-503	3921	Host-associated	Human	Digestive system	Large intestine	Sigmoid colon						
-504	3922	Host-associated	Human	Digestive system	Large intestine	Unclassified						
-505	3910	Host-associated	Human	Digestive system	Oral cavity	Attached/Keratinized gingiva						
-506	3915	Host-associated	Human	Digestive system	Oral cavity	Buccal mucosa						
-507	5038	Host-associated	Human	Digestive system	Oral cavity	Dental plaque						
-508	5083	Host-associated	Human	Digestive system	Oral cavity	Dental pulp						
-509	5192	Host-associated	Human	Digestive system	Oral cavity	Gingival crevice						
-510	3918	Host-associated	Human	Digestive system	Oral cavity	Hard palate						
-511	3909	Host-associated	Human	Digestive system	Oral cavity	Palatine tonsils						
-512	3908	Host-associated	Human	Digestive system	Oral cavity	Periodontal pockets						
-513	3907	Host-associated	Human	Digestive system	Oral cavity	Saliva						
-514	3913	Host-associated	Human	Digestive system	Oral cavity	Subgingival plaque						
-515	3916	Host-associated	Human	Digestive system	Oral cavity	Supragingival plaque						
-516	3914	Host-associated	Human	Digestive system	Oral cavity	Throat						
-517	3912	Host-associated	Human	Digestive system	Oral cavity	Unclassified						
-518	3911	Host-associated	Human	Digestive system	Oral cavity	tongue dorsum						
-519	5023	Host-associated	Human	Digestive system	Small intestine	Duodenum						
-520	5025	Host-associated	Human	Digestive system	Small intestine	Ileum						
-521	5126	Host-associated	Human	Digestive system	Stomach	Gastric biopsy						
-522	5079	Host-associated	Human	Digestive system	Stomach	Gastric mucosa						
-523	5080	Host-associated	Human	Digestive system	Stomach	Unclassified						
-524	3919	Host-associated	Human	Digestive system	Unclassified	Unclassified						
-525	5002	Host-associated	Human	Ear	Ear fluid	Unclassified						
-526	4502	Host-associated	Human	Ear	Unclassified	Unclassified						
-527	5027	Host-associated	Human	Excretory system	Gallbladder	Unclassified						
-528	5024	Host-associated	Human	Excretory system	Liver	Bile						
-529	5000	Host-associated	Human	Excretory system	Liver	Unclassified						
-530	4144	Host-associated	Human	Excretory system	Unclassified	Unclassified						
-531	4761	Host-associated	Human	Excretory system	Urethra	Unclassified						
-532	4145	Host-associated	Human	Excretory system	Urethra	Urine						
-533	4996	Host-associated	Human	Excretory system	Urinary bladder	Unclassified						
-534	5082	Host-associated	Human	Excretory system	Urinary tract	Unclassified						
-535	5240	Host-associated	Human	Eye	Conjunctiva	Unclassified						
-536	4499	Host-associated	Human	Eye	Unclassified	Unclassified						
-537	4584	Host-associated	Human	Hair	Unclassified	Unclassified						
-538	4128	Host-associated	Human	Lymphatic system	Lymph nodes	Unclassified						
-539	5085	Host-associated	Human	Lymphatic system	Spleen	Unclassified						
-540	4797	Host-associated	Human	Lymphatic system	Unclassified	Unclassified						
-541	4129	Host-associated	Human	Milk	Unclassified	Unclassified						
-542	4496	Host-associated	Human	Nervous system	Brain	Unclassified						
-543	3933	Host-associated	Human	Nervous system	Cerebrospinal fluid	Unclassified						
-544	3934	Host-associated	Human	Nervous system	Unclassified	Unclassified						
-545	5073	Host-associated	Human	Pus	Unclassified	Unclassified						
-546	4870	Host-associated	Human	Reproductive system	Amniotic sac	Amniotic fluid						
-547	5089	Host-associated	Human	Reproductive system	Breast	Unclassified						
-548	4982	Host-associated	Human	Reproductive system	Cervix	Unclassified						
-549	4900	Host-associated	Human	Reproductive system	Penis	Unclassified						
-550	5019	Host-associated	Human	Reproductive system	Prostate	Unclassified						
-551	4143	Host-associated	Human	Reproductive system	Unclassified	Unclassified						
-552	4141	Host-associated	Human	Reproductive system	Vagina	Introitus						
-553	4139	Host-associated	Human	Reproductive system	Vagina	Midpoint vagina						
-554	4140	Host-associated	Human	Reproductive system	Vagina	Unclassified						
-555	4142	Host-associated	Human	Reproductive system	Vagina	posterior fornix						
-556	5251	Host-associated	Human	Respiratory system	Lung	Bronchi						
-557	5074	Host-associated	Human	Respiratory system	Lung	Empyema						
-558	5005	Host-associated	Human	Respiratory system	Lung	Pleural fluid						
-559	5252	Host-associated	Human	Respiratory system	Lung	Pulmonary fluid						
-560	5004	Host-associated	Human	Respiratory system	Lung	Unclassified						
-561	4132	Host-associated	Human	Respiratory system	Nasopharyngeal	Pharynx						
-562	4131	Host-associated	Human	Respiratory system	Nasopharyngeal	Unclassified						
-563	4130	Host-associated	Human	Respiratory system	Nasopharyngeal	anterior nares						
-564	4133	Host-associated	Human	Respiratory system	Pulmonary system	Unclassified						
-565	5009	Host-associated	Human	Respiratory system	Sputum	Unclassified						
-566	5007	Host-associated	Human	Respiratory system	Throat	Unclassified						
-567	5021	Host-associated	Human	Respiratory system	Trachea	Unclassified						
-568	4137	Host-associated	Human	Respiratory system	Unclassified	Unclassified						
-569	5250	Host-associated	Human	Skeletal system	Bone	Unclassified						
-570	5213	Host-associated	Human	Skeletal system	Synovial membrane	Synovial fluid						
-571	3926	Host-associated	Human	Skin	Axilla	Unclassified						
-572	4795	Host-associated	Human	Skin	Medial distal leg	Unclassified						
-573	3931	Host-associated	Human	Skin	Medial distal leg	Venous leg ulcers						
-574	3929	Host-associated	Human	Skin	Naris	Unclassified						
-575	3925	Host-associated	Human	Skin	Umbilicus	Unclassified						
-576	3928	Host-associated	Human	Skin	Unclassified	Unclassified						
-577	3927	Host-associated	Human	Skin	Volar forearm	Unclassified						
-578	3930	Host-associated	Human	Skin	retroauricular crease	Unclassified						
-579	4826	Host-associated	Human	Soft tissue	Unclassified	Unclassified						
-580	5256	Host-associated	Human	Thorax	Unclassified	Unclassified						
-581	5091	Host-associated	Human	Tooth	Enamel	Unclassified						
-582	4587	Host-associated	Human	Tooth	Unclassified	Unclassified						
-583	4138	Host-associated	Human	Unclassified	Unclassified	Unclassified						
-584	5051	Host-associated	Insecta	Digestive system	Intestine	Unclassified						
-585	4319	Host-associated	Insecta	Digestive system	Unclassified	Unclassified						
-586	4320	Host-associated	Insecta	Unclassified	Unclassified	Unclassified						
-587	4087	Host-associated	Invertebrates	Bryozoans	Gymnolaemates	Unclassified						
-588	4799	Host-associated	Invertebrates	Bryozoans	Unclassified	Unclassified						
-589	4651	Host-associated	Invertebrates	Cnidaria	Coral	Surface						
-590	4088	Host-associated	Invertebrates	Cnidaria	Coral	Unclassified						
-591	4801	Host-associated	Invertebrates	Cnidaria	Unclassified	Unclassified						
-592	4615	Host-associated	Invertebrates	Ctenophora	Unclassified	Unclassified						
-593	4683	Host-associated	Invertebrates	Echinodermata	Sea Star	Unclassified						
-594	4089	Host-associated	Invertebrates	Echinodermata	Sea Urchin	Unclassified						
-595	5248	Host-associated	Invertebrates	Echinodermata	Sea cucumber	Unclassified						
-596	4803	Host-associated	Invertebrates	Echinodermata	Unclassified	Unclassified						
-597	5246	Host-associated	Invertebrates	Nematoda	Digestive system	Intestine						
-598	4425	Host-associated	Invertebrates	Nematoda	Unclassified	Unclassified						
-599	4736	Host-associated	Invertebrates	Platyhelminthes	Unclassified	Unclassified						
-600	4754	Host-associated	Invertebrates	Unclassified	Unclassified	Unclassified						
-601	5112	Host-associated	Mammals	Circulatory system	Blood	Peripheral blood mononuclear cells						
-602	4114	Host-associated	Mammals	Circulatory system	Blood	Unclassified						
-603	4988	Host-associated	Mammals	Circulatory system	Heart	Unclassified						
-604	4115	Host-associated	Mammals	Circulatory system	Unclassified	Unclassified						
-605	4898	Host-associated	Mammals	Digestive system	Fecal	Unclassified						
-606	4108	Host-associated	Mammals	Digestive system	Foregut	Rumen						
-607	4381	Host-associated	Mammals	Digestive system	Foregut	Unclassified						
-608	5011	Host-associated	Mammals	Digestive system	Hindgut	Rectum						
-609	5043	Host-associated	Mammals	Digestive system	Intestine	Unclassified						
-610	4105	Host-associated	Mammals	Digestive system	Large intestine	Cecum						
-611	5041	Host-associated	Mammals	Digestive system	Large intestine	Colon						
-612	4858	Host-associated	Mammals	Digestive system	Large intestine	Cow Dung						
-613	4104	Host-associated	Mammals	Digestive system	Large intestine	Fecal						
-614	4106	Host-associated	Mammals	Digestive system	Large intestine	Unclassified						
-615	4103	Host-associated	Mammals	Digestive system	Midgut	Unclassified						
-616	4110	Host-associated	Mammals	Digestive system	Oral cavity	Buccal mucosa						
-617	5031	Host-associated	Mammals	Digestive system	Oral cavity	Dental plaque						
-618	5121	Host-associated	Mammals	Digestive system	Oral cavity	Gingiva						
-619	5097	Host-associated	Mammals	Digestive system	Oral cavity	Gingival sulcus						
-620	5017	Host-associated	Mammals	Digestive system	Oral cavity	Periodontal pockets						
-621	4992	Host-associated	Mammals	Digestive system	Oral cavity	Saliva						
-622	4109	Host-associated	Mammals	Digestive system	Oral cavity	Unclassified						
-623	5253	Host-associated	Mammals	Digestive system	Small intestine	Jejunum						
-624	5040	Host-associated	Mammals	Digestive system	Small intestine	Unclassified						
-625	4113	Host-associated	Mammals	Digestive system	Stomach	Endoperitrophic space						
-626	5206	Host-associated	Mammals	Digestive system	Stomach	Gastric mucosa						
-627	4111	Host-associated	Mammals	Digestive system	Stomach	Rumen						
-628	4112	Host-associated	Mammals	Digestive system	Stomach	Unclassified						
-629	4984	Host-associated	Mammals	Digestive system	Throat	Unclassified						
-630	4107	Host-associated	Mammals	Digestive system	Unclassified	Unclassified						
-631	4850	Host-associated	Mammals	Ear	Ear discharge	Unclassified						
-632	5049	Host-associated	Mammals	Ear	Unclassified	Unclassified						
-633	5132	Host-associated	Mammals	Excretory system	Liver	Unclassified						
-634	3903	Host-associated	Mammals	Excretory system	Unclassified	Unclassified						
-635	4852	Host-associated	Mammals	Excretory system	Urine	Unclassified						
-636	4991	Host-associated	Mammals	Eye	Unclassified	Unclassified						
-637	3905	Host-associated	Mammals	Gastrointestinal tract	Intestine	Unclassified						
-638	4701	Host-associated	Mammals	Hoof	Unclassified	Unclassified						
-639	4127	Host-associated	Mammals	Lymphatic	Lymph nodes	Unclassified						
-640	4126	Host-associated	Mammals	Lymphatic	Unclassified	Unclassified						
-641	4117	Host-associated	Mammals	Milk	Unclassified	Unclassified						
-642	4125	Host-associated	Mammals	Nervous system	Brain	Unclassified						
-643	4124	Host-associated	Mammals	Nervous system	Unclassified	Unclassified						
-644	4698	Host-associated	Mammals	Primate	Unclassified	Unclassified						
-645	5096	Host-associated	Mammals	Pus	Unclassified	Unclassified						
-646	4986	Host-associated	Mammals	Reproductive system	Udder	Unclassified						
-647	4119	Host-associated	Mammals	Reproductive system	Unclassified	Unclassified						
-648	4972	Host-associated	Mammals	Reproductive system	Uterus	Unclassified						
-649	5047	Host-associated	Mammals	Reproductive system	Vagina	Unclassified						
-650	4970	Host-associated	Mammals	Respiratory system	Laryngopharyngeal	Lymph node						
-651	4444	Host-associated	Mammals	Respiratory system	Lung	Unclassified						
-652	4121	Host-associated	Mammals	Respiratory system	Nasopharyngeal	Nasal cavity						
-653	4120	Host-associated	Mammals	Respiratory system	Nasopharyngeal	Unclassified						
-654	4980	Host-associated	Mammals	Respiratory system	Nose	Unclassified						
-655	5045	Host-associated	Mammals	Respiratory system	Throat	Unclassified						
-656	5175	Host-associated	Mammals	Respiratory system	Trachea	Unclassified						
-657	4122	Host-associated	Mammals	Respiratory system	Unclassified	Unclassified						
-658	4116	Host-associated	Mammals	Skin	Unclassified	Unclassified						
-659	4409	Host-associated	Mammals	Tissue	Unclassified	Unclassified						
-660	5016	Host-associated	Mammals	Tooth	Unclassified	Unclassified						
-661	4118	Host-associated	Mammals	Unclassified	Unclassified	Unclassified						
-662	4318	Host-associated	Microbial	Bacteria	Unclassified	Unclassified						
-663	4316	Host-associated	Microbial	Dinoflagellates	Endosymbionts	Unclassified						
-664	4756	Host-associated	Microbial	Dinoflagellates	Unclassified	Unclassified						
-665	4317	Host-associated	Microbial	Unclassified	Unclassified	Unclassified						
-666	4978	Host-associated	Mollusca	Circulatory system	Hemolymph	Unclassified						
-667	4866	Host-associated	Mollusca	Digestive system	Ceca	Unclassified						
-668	4323	Host-associated	Mollusca	Digestive system	Glands	Unclassified						
-669	5068	Host-associated	Mollusca	Digestive system	Gut	Unclassified						
-670	4322	Host-associated	Mollusca	Digestive system	Unclassified	Unclassified						
-671	4632	Host-associated	Mollusca	Larvae	Unclassified	Unclassified						
-672	5198	Host-associated	Mollusca	Oyster	Unclassified	Unclassified						
-673	4325	Host-associated	Mollusca	Respiratory system	Gills	Extracellular						
-674	4326	Host-associated	Mollusca	Respiratory system	Gills	Intracellular						
-675	4327	Host-associated	Mollusca	Respiratory system	Gills	Unclassified						
-676	4806	Host-associated	Mollusca	Respiratory system	Unclassified	Unclassified						
-677	4328	Host-associated	Mollusca	Shell	Unclassified	Unclassified						
-678	4709	Host-associated	Mollusca	Tissue	Unclassified	Unclassified						
-679	4324	Host-associated	Mollusca	Unclassified	Unclassified	Unclassified						
-680	5187	Host-associated	Petromyzon	Unclassified	Unclassified	Unclassified						
-681	5217	Host-associated	Plankton	Zooplankton	Unclassified	Unclassified						
-682	3945	Host-associated	Plants	Endosphere	Unclassified	Unclassified						
-683	4566	Host-associated	Plants	Leaf	Leaf surface	Biofilm						
-684	4748	Host-associated	Plants	Leaf	Leaf surface	Unclassified						
-685	4747	Host-associated	Plants	Leaf	Unclassified	Unclassified						
-686	4865	Host-associated	Plants	Mixed parts	Unclassified	Unclassified						
-687	4450	Host-associated	Plants	Nodule	Unclassified	Unclassified						
-688	4433	Host-associated	Plants	Peat moss	Unclassified	Unclassified						
-689	3946	Host-associated	Plants	Phylloplane	Endophytes	Unclassified						
-690	3948	Host-associated	Plants	Phylloplane	Epiphytes	Unclassified						
-691	3947	Host-associated	Plants	Phylloplane	Unclassified	Unclassified						
-692	4621	Host-associated	Plants	Phyllosphere	Anthosphere	Pollen						
-693	4538	Host-associated	Plants	Phyllosphere	Anthosphere	Unclassified						
-694	5265	Host-associated	Plants	Phyllosphere	Carposphere	Endophytes						
-695	5264	Host-associated	Plants	Phyllosphere	Carposphere	Epiphytes						
-696	4600	Host-associated	Plants	Phyllosphere	Carposphere	Unclassified						
-697	4525	Host-associated	Plants	Phyllosphere	Caulosphere	Unclassified						
-698	5268	Host-associated	Plants	Phyllosphere	Leaf	Endophytes						
-699	5274	Host-associated	Plants	Phyllosphere	Leaf	Leaf nodule						
-700	5269	Host-associated	Plants	Phyllosphere	Leaf	Unclassified						
-701	5270	Host-associated	Plants	Phyllosphere	Leaf	Xylem vessels						
-702	5266	Host-associated	Plants	Phyllosphere	Phylloplane/Leaf surface	Endophytes						
-703	5262	Host-associated	Plants	Phyllosphere	Phylloplane/Leaf surface	Epiphytes						
-704	5263	Host-associated	Plants	Phyllosphere	Phylloplane/Leaf surface	Unclassified						
-705	4460	Host-associated	Plants	Phyllosphere	Unclassified	Unclassified						
-706	5277	Host-associated	Plants	Plant callus	Unclassified	Unclassified						
-707	3944	Host-associated	Plants	Rhizome	Epiphytes	Unclassified						
-708	4994	Host-associated	Plants	Rhizome	Stem tuber	Unclassified						
-709	3943	Host-associated	Plants	Rhizome	Unclassified	Unclassified						
-710	3939	Host-associated	Plants	Rhizoplane	Endophytes	Unclassified						
-711	4376	Host-associated	Plants	Rhizoplane	Epiphytes	Orchid rooting						
-712	3941	Host-associated	Plants	Rhizoplane	Epiphytes	Unclassified						
-713	3942	Host-associated	Plants	Rhizoplane	Soil	Unclassified						
-714	3940	Host-associated	Plants	Rhizoplane	Unclassified	Unclassified						
-715	3935	Host-associated	Plants	Rhizosphere	Epiphytes	Unclassified						
-716	3937	Host-associated	Plants	Rhizosphere	Soil	Unclassified						
-717	3936	Host-associated	Plants	Rhizosphere	Unclassified	Unclassified						
-718	4523	Host-associated	Plants	Roots	Nodule	Unclassified						
-719	4466	Host-associated	Plants	Roots	Unclassified	Unclassified						
-720	4572	Host-associated	Plants	Seeds	Unclassified	Unclassified						
-721	5273	Host-associated	Plants	Tissue	Unclassified	Unclassified						
-722	3938	Host-associated	Plants	Unclassified	Unclassified	Unclassified						
-723	4560	Host-associated	Plants	Wood	Unclassified	Unclassified						
-724	4439	Host-associated	Porifera	Sponge	Unclassified	Unclassified						
-725	4341	Host-associated	Porifera	Unclassified	Unclassified	Unclassified						
-726	4626	Host-associated	Protists	Breviatea	Dinoflagellates	Unclassified						
-727	4598	Host-associated	Protists	Breviatea	Unclassified	Unclassified						
-728	4629	Host-associated	Protists	Dinoflagellates	Unclassified	Unclassified						
-729	4472	Host-associated	Protists	Oomycetes	Unclassified	Unclassified						
-730	4738	Host-associated	Protists	Unclassified	Unclassified	Unclassified						
-731	4339	Host-associated	Protozoa	Unclassified	Unclassified	Unclassified						
-732	5160	Host-associated	Reptilia	Digestive system	Intestine	Unclassified						
-733	4693	Host-associated	Reptilia	Digestive system	Large intestine	Fecal						
-734	4809	Host-associated	Reptilia	Digestive system	Large intestine	Unclassified						
-735	4808	Host-associated	Reptilia	Digestive system	Unclassified	Unclassified						
-736	5163	Host-associated	Reptilia	Excretory system	Liver	Unclassified						
-737	5158	Host-associated	Reptilia	Respiratory system	Lung	Unclassified						
-738	4975	Host-associated	Reptilia	Respiratory system	Trachea	Unclassified						
-739	5013	Host-associated	Reptilia	Respiratory system	Unclassified	Unclassified						
-740	3906	Host-associated	Reptilia	Unclassified	Unclassified	Unclassified						
-741	4099	Host-associated	Tunicates	Ascidians	Unclassified	Unclassified						
-742	4569	Host-associated	Tunicates	Unclassified	Unclassified	Unclassified						
-743	4086	Host-associated	Unclassified	Unclassified	Unclassified	Unclassified						
+ecosystem_path_id	ecosystem	ecosystem_category	ecosystem_type	ecosystem_subtype	specific_ecosystem	biome_label	biome_iri	material_label	material_iri	feature_label	feature_iri
+	Environmental					environmental system					
+	Environmental	Air						air			
+	Environmental	Air	Indoor Air							building	
+	Environmental	Air	Outdoor Air							nitrogen-oxygen planetary atmosphere	
+	Environmental	Aquatic				aquatic biome					
+	Environmental	Aquatic	Aquaculture			aquatic biome					FOODON:03520111
+	Environmental	Aquatic	Estuary			estuarine biome				estuary	
+	Environmental	Aquatic	Estuary	Sediment		estuarine biome		sediment			
+	Environmental	Aquatic	Freshwater			freshwater biome		fresh water			
+	Environmental	Aquatic	Freshwater	Drinking water		freshwater biome		drinking water			
+	Environmental	Aquatic	Freshwater	Drinking water	Chlorinated	freshwater biome			FOODON:03301647		
+	Environmental	Aquatic	Freshwater	Drinking water	Delivery networks					plumbing fixture	
+	Environmental	Aquatic	Freshwater	Groundwater		freshwater biome		groundwater			
+	Environmental	Aquatic	Freshwater	Groundwater	Acid Mine Drainage	freshwater biome				acid mine drainage	
+	Environmental	Aquatic	Freshwater	Groundwater	Biofilm	freshwater biome				biofilm	
+	Environmental	Aquatic	Freshwater	Groundwater	Cave water	freshwater biome		cave			
+	Environmental	Aquatic	Freshwater	Groundwater	Coalbed water	freshwater biome		coal			
+	Environmental	Aquatic	Freshwater	Groundwater	Contaminated	freshwater biome		contaminated water			
+	Environmental	Aquatic	Freshwater	Groundwater	Mine	aquatic biome				mine	
+	Environmental	Aquatic	Freshwater	Groundwater	Mine drainage	freshwater biome		mine drainage			
+	Environmental	Aquatic	Freshwater	Ice		freshwater biome		water ice			
+	Environmental	Aquatic	Freshwater	Ice	Glacial lake	freshwater lake biome				glacial lake	
+	Environmental	Aquatic	Freshwater	Ice	Glacier	freshwater biome		glacier		glacial feature	
+	Environmental	Aquatic	Freshwater	Ice	Ice accretions	freshwater biome		ice mass			
+	Environmental	Aquatic	Freshwater	Lake		freshwater lake biome		freshwater lake			
+	Environmental	Aquatic	Freshwater	Lentic		freshwater biome				lentic water body	
+	Environmental	Aquatic	Freshwater	Lentic	Epilimnion	freshwater lake biome				epilimnion	
+	Environmental	Aquatic	Freshwater	Lentic	Hypolimnion	freshwater lake biome				hypolimnion	
+	Environmental	Aquatic	Freshwater	Lentic	Limnetic zone	freshwater lake biome					
+	Environmental	Aquatic	Freshwater	Lentic	Littoral zone	freshwater biome					
+	Environmental	Aquatic	Freshwater	Lentic	Sediment	freshwater biome		sediment			
+	Environmental	Aquatic	Freshwater	Lotic		freshwater biome		lotic water body			
+	Environmental	Aquatic	Freshwater	Lotic	Acidic	acidic environment					
+	Environmental	Aquatic	Freshwater	Lotic	Low land river systems	freshwater river biome					
+	Environmental	Aquatic	Freshwater	Lotic	Microbial mats	freshwater biome				microbial mat	
+	Environmental	Aquatic	Freshwater	Lotic	Mid stream	freshwater biome					
+	Environmental	Aquatic	Freshwater	Lotic	Sediment	freshwater biome		sediment permeated by freshwater			
+	Environmental	Aquatic	Freshwater	Microbialites		freshwater biome					
+	Environmental	Aquatic	Freshwater	Pond		freshwater biome				pond	
+	Environmental	Aquatic	Freshwater	Pond	Sediment	freshwater biome		sediment permeated by freshwater			
+	Environmental	Aquatic	Freshwater	Sediment		freshwater biome		sediment permeated by freshwater			
+	Environmental	Aquatic	Freshwater	Storm water		freshwater biome		stormwater			
+	Environmental	Aquatic	Freshwater	Storm water	Drainage pipe biofilm			biofilm material		plumbing drain	
+	Environmental	Aquatic	Freshwater	Subglacial lake		freshwater lake biome				subglacial lake	
+	Environmental	Aquatic	Freshwater	Wetlands		freshwater wetland ecosystem					
+	Environmental	Aquatic	Freshwater	Wetlands	Bog	freshwater wetland ecosystem					
+	Environmental	Aquatic	Freshwater	Wetlands	Marsh	freshwater marsh					
+	Environmental	Aquatic	Freshwater	Wetlands	Sediment	freshwater wetland ecosystem		sediment permeated by freshwater			
+	Environmental	Aquatic	Freshwater	Wetlands	Swamp	swamp ecosystem					
+	Environmental	Aquatic	Lentic			aquatic biome				lentic water body	
+	Environmental	Aquatic	Lentic	Brackish		brackish water environment		brackish water			
+	Environmental	Aquatic	Marine			marine biome					
+	Environmental	Aquatic	Marine	Brackish		brackish water environment		brackish water			
+	Environmental	Aquatic	Marine	Coastal		marine biome				coastal water body	
+	Environmental	Aquatic	Marine	Coastal	Sediment	marine biome		marine sediment			
+	Environmental	Aquatic	Marine	Cold seeps		marine cold seep biome				cold seep	
+	Environmental	Aquatic	Marine	Cold seeps	Sediment	marine cold seep biome		marine sediment			
+	Environmental	Aquatic	Marine	Fossil		marine biome				fossil	
+	Environmental	Aquatic	Marine	Fossil	Whale fall	marine biome				whale fall	
+	Environmental	Aquatic	Marine	Hydrothermal vents		marine hydrothermal vent biome				hydrothermal vent	
+	Environmental	Aquatic	Marine	Hydrothermal vents	Black smokers	marine black smoker biome				black smoker	
+	Environmental	Aquatic	Marine	Hydrothermal vents	Diffuse flow	marine hydrothermal vent biome		hydrothermal fluid			
+	Environmental	Aquatic	Marine	Hydrothermal vents	Microbial mats	marine hydrothermal vent biome				microbial mat	
+	Environmental	Aquatic	Marine	Hydrothermal vents	Sediment	marine hydrothermal vent biome		marine sediment			
+	Environmental	Aquatic	Marine	Intertidal zone		intertidal ecosystem					
+	Environmental	Aquatic	Marine	Intertidal zone	Beach	intertidal ecosystem				beach	
+	Environmental	Aquatic	Marine	Intertidal zone	Coral reef	marine coral reef biome				coral reef	
+	Environmental	Aquatic	Marine	Intertidal zone	Estuary	estuarine biome				estuary	
+	Environmental	Aquatic	Marine	Intertidal zone	Mangrove swamp	mangrove swamp					
+	Environmental	Aquatic	Marine	Intertidal zone	Microbialites	intertidal ecosystem					
+	Environmental	Aquatic	Marine	Intertidal zone	Oil-contaminated	intertidal ecosystem		oil			
+	Environmental	Aquatic	Marine	Intertidal zone	Salt marsh	marine salt marsh biome					
+	Environmental	Aquatic	Marine	Intertidal zone	Sediment	intertidal ecosystem		intertidal sediment			
+	Environmental	Aquatic	Marine	Marginal Sea		marginal sea biome					
+	Environmental	Aquatic	Marine	Neritic zone		neritic pelagic zone biome					
+	Environmental	Aquatic	Marine	Neritic zone	Oil-contaminated sediment			oil			
+	Environmental	Aquatic	Marine	Neritic zone	Sediment	neritic pelagic zone biome		marine sediment			
+	Environmental	Aquatic	Marine	Oceanic		ocean biome					
+	Environmental	Aquatic	Marine	Oceanic	Abyssal plane	marine abyssal zone biome				abyssal plain	
+	Environmental	Aquatic	Marine	Oceanic	Aphotic zone	ocean biome				marine aphotic zone	
+	Environmental	Aquatic	Marine	Oceanic	Benthic	marine benthic biome				marine benthic feature	
+	Environmental	Aquatic	Marine	Oceanic	Oil-contaminated	ocean biome		oil			
+	Environmental	Aquatic	Marine	Oceanic	Oil-contaminated sediments	ocean biome		contaminated sediment		oil	
+	Environmental	Aquatic	Marine	Oceanic	Photic zone	ocean biome				marine photic zone	
+	Environmental	Aquatic	Marine	Oceanic	Sediment	ocean biome		marine sediment			
+	Environmental	Aquatic	Marine	Oil field		marine biome		oil field production water			
+	Environmental	Aquatic	Marine	Oil field	bore hole	marine biome		bore hole water		borehole	
+	Environmental	Aquatic	Marine	Oil seeps		marine biome		oil seep			
+	Environmental	Aquatic	Marine	Oil-contaminated sediment				contaminated sediment		oil	
+	Environmental	Aquatic	Marine	Pelagic		marine pelagic biome					
+	Environmental	Aquatic	Marine	Sediment		marine biome		marine sediment			
+	Environmental	Aquatic	Marine	Volcanic		marine biome					
+	Environmental	Aquatic	Marine	Wetlands		coastal wetland ecosystem					
+	Environmental	Aquatic	Marine	Wetlands	Sediment	wetland ecosystem		sediment			
+	Environmental	Aquatic	Meromictic lake			aquatic biome				meromictic lake	
+	Environmental	Aquatic	Non-marine Saline and Alkaline			aquatic biome					
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline		alkaline environment					
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Carbonate	alkaline environment					
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Microbial mats	alkaline environment				microbial mat	
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Sediment	alkaline environment		sediment			
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Hypersaline		hypersaline water environment					
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Hypersaline	Microbial mats	hypersaline water environment				microbial mat	
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Hypersaline	Sediment	hypersaline water environment		sediment permeated by saline water			
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Near-boiling (>90C)		extreme high temperature environment					
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Near-boiling (>90C)	Alkaline	alkaline environment					
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline		saline water environment					
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Athalassic	saline water environment				saline lake	
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Epilimnion	saline water environment				epilimnion	
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Hypolimnion	saline water environment				hypolimnion	
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Microbial mats	saline water environment				microbial mat	
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Sediment	saline water environment		sediment permeated by saline water			
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Thalassic	saline water environment					
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Salt crystallizer pond		saline water environment				saline evaporation pond	
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Salt crystallizer pond	Microbial mats	aquatic biome				microbial mat	
+	Environmental	Aquatic	Sediment			aquatic biome		sediment			
+	Environmental	Aquatic	Thermal springs			aquatic biome				hot spring	
+	Environmental	Aquatic	Thermal springs	Hot (42-90C)		high temperature environment					
+	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Acidic	high temperature environment				acid hot spring	
+	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Alkaline	high temperature environment				alkaline hot spring	
+	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Neutral	high temperature environment				neutral hot spring	
+	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Sediment	high temperature environment		sediment			
+	Environmental	Aquatic	Thermal springs	Near-boiling (>90C)		extreme high temperature environment					
+	Environmental	Aquatic	Thermal springs	Near-boiling (>90C)	Alkaline	extreme high temperature environment				alkaline hot spring	
+	Environmental	Aquatic	Thermal springs	Sediment		aquatic biome		sediment			
+	Environmental	Aquatic	Thermal springs	Tepid (25-34C)		aquatic biome					
+	Environmental	Aquatic	Thermal springs	Tepid (25-34C)	Sediment	aquatic biome		sediment			
+	Environmental	Aquatic	Thermal springs	Warm (34-42C)							
+	Environmental	Aquatic	Thermal springs	Warm (34-42C)	Neutral	aquatic biome				neutral hot spring	
+	Environmental	Aquatic	Thermal springs	Warm (34-42C)	Sediment	aquatic biome		sediment			
+	Environmental	Terrestrial				terrestrial biome					
+	Environmental	Terrestrial	Agricultural field			cropland biome				agricultural field	
+	Environmental	Terrestrial	Asphalt lakes			terrestrial biome				asphalt lake	
+	Environmental	Terrestrial	Asphalt lakes	Tar		terrestrial biome		asphalt			
+	Environmental	Terrestrial	Deep subsurface			terrestrial biome					
+	Environmental	Terrestrial	Deep subsurface	Clay		terrestrial biome		clay			
+	Environmental	Terrestrial	Geologic			terrestrial biome		solid astronomical body part			
+	Environmental	Terrestrial	Geologic	Mine		terrestrial biome		mine			
+	Environmental	Terrestrial	Oil reservoir			terrestrial biome		oil reservoir			
+	Environmental	Terrestrial	Rock-dwelling (subaerial biofilm)			terrestrial biome		rock		biofilm	
+	Environmental	Terrestrial	Soil			terrestrial biome		soil			
+	Environmental	Terrestrial	Soil	Agricultural		cropland biome		agricultural soil			
+	Environmental	Terrestrial	Soil	Boreal forest		subpolar coniferous forest biome					
+	Environmental	Terrestrial	Soil	Clay		terrestrial biome		clay soil			
+	Environmental	Terrestrial	Soil	Clay	Agricultural land	cropland biome		agricultural soil			
+	Environmental	Terrestrial	Soil	Clay	Contaminated	terrestrial biome		contaminated soil			
+	Environmental	Terrestrial	Soil	Clay	Grasslands	grassland biome					
+	Environmental	Terrestrial	Soil	Clay	Oil-contaminated	terrestrial biome		oil contaminated soil			
+	Environmental	Terrestrial	Soil	Contaminated		terrestrial biome		contaminated soil			
+	Environmental	Terrestrial	Soil	Crop		cropland biome					
+	Environmental	Terrestrial	Soil	Crop	Agricultural land	cropland biome		agricultural soil			
+	Environmental	Terrestrial	Soil	Desert		desert biome				desert	
+	Environmental	Terrestrial	Soil	Forest soil		forest biome					
+	Environmental	Terrestrial	Soil	Grasslands		grassland biome					
+	Environmental	Terrestrial	Soil	Loam		terrestrial biome		loam			
+	Environmental	Terrestrial	Soil	Loam	Agricultural	cropland biome		agricultural soil			
+	Environmental	Terrestrial	Soil	Loam	Contaminated	terrestrial biome		contaminated soil			
+	Environmental	Terrestrial	Soil	Loam	Forest soil	forest biome					
+	Environmental	Terrestrial	Soil	Loam	Grasslands	grassland biome					
+	Environmental	Terrestrial	Soil	Mine		terrestrial biome		mine			
+	Environmental	Terrestrial	Soil	Mine drainage		terrestrial biome		mine drainage			
+	Environmental	Terrestrial	Soil	Oil-contaminated		terrestrial biome		oil contaminated soil			
+	Environmental	Terrestrial	Soil	Permafrost		terrestrial biome		permafrost			
+	Environmental	Terrestrial	Soil	Sand		terrestrial biome		sand		sand	
+	Environmental	Terrestrial	Soil	Sand	Desert	desert biome		desert sand		desert	
+	Environmental	Terrestrial	Soil	Sand	Forest soil	forest biome					
+	Environmental	Terrestrial	Soil	Sand	Grasslands	grassland biome					
+	Environmental	Terrestrial	Soil	Sand	Oil-contaminated	terrestrial biome		oil contaminated soil			
+	Environmental	Terrestrial	Soil	Shrubland		shrubland biome					
+	Environmental	Terrestrial	Soil	Silt		terrestrial biome		silt			
+	Environmental	Terrestrial	Soil	Tropical rainforest		forest ecosystem		tropical soil			
+	Environmental	Terrestrial	Soil	Uranium contaminated		terrestrial biome		contaminated soil			
+	Environmental	Terrestrial	Soil	Wetlands		wetland ecosystem					
+	Environmental	Terrestrial	Soil	Wetlands	Permafrost	wetland ecosystem		permafrost			
+	Environmental	Terrestrial	Volcanic			terrestrial biome				volcano	
+	Environmental	Terrestrial	Volcanic	Fumaroles		terrestrial biome				fumarole	
+4845	Engineered	Artificial ecosystem	Mud microcosm	Unclassified	Unclassified						
+4536	Engineered	Bioreactor	Aerobic	Unclassified	Unclassified						
+4912	Engineered	Bioreactor	Anaerobic	Food waste	Unclassified						
+4914	Engineered	Bioreactor	Anaerobic	Manure	Unclassified						
+4442	Engineered	Bioreactor	Anaerobic	Unclassified	Unclassified						
+4860	Engineered	Bioreactor	Continuous culture	Marine intertidal flat sediment inoculum	Unclassified						
+4853	Engineered	Bioreactor	Continuous culture	Marine sediment inoculum	Unclassified						
+4283	Engineered	Bioreactor	Continuous culture	Unclassified	Unclassified						
+4282	Engineered	Bioreactor	Continuous culture	Unclassified	Wadden Sea-Germany						
+4280	Engineered	Bioreactor	Unclassified	Unclassified	Unclassified						
+4299	Engineered	Bioremediation	Hydrocarbon	Benzene	Bioreactor						
+4452	Engineered	Bioremediation	Hydrocarbon	Methane	Unclassified						
+4300	Engineered	Bioremediation	Hydrocarbon	Unclassified	Unclassified						
+5087	Engineered	Bioremediation	Hydrocarbon	Xylene	Unclassified						
+4306	Engineered	Bioremediation	Metal	Unclassified	Unclassified						
+4305	Engineered	Bioremediation	Persistent organic pollutants (POP)	Polycyclic aromatic hydrocarbons	Unclassified						
+4724	Engineered	Bioremediation	Persistent organic pollutants (POP)	Unclassified	Unclassified						
+4722	Engineered	Bioremediation	Terephthalate	Unclassified	Unclassified						
+4301	Engineered	Bioremediation	Terephthalate	Wastewater	Activated sludge						
+4302	Engineered	Bioremediation	Terephthalate	Wastewater	Bioreactor						
+4303	Engineered	Bioremediation	Terephthalate	Wastewater	Unclassified						
+4297	Engineered	Bioremediation	Tetrachloroethylene and derivatives	Chloroethene	Bioreactor						
+4298	Engineered	Bioremediation	Tetrachloroethylene and derivatives	Chloroethene	Unclassified						
+4295	Engineered	Bioremediation	Tetrachloroethylene and derivatives	Tetrachloroethylene	Bioreactor						
+4296	Engineered	Bioremediation	Tetrachloroethylene and derivatives	Tetrachloroethylene	Unclassified						
+4436	Engineered	Bioremediation	Thiocyanate	Unclassified	Unclassified						
+4304	Engineered	Bioremediation	Unclassified	Unclassified	Unclassified						
+4313	Engineered	Biotransformation	Microbial enhanced oil recovery	Unclassified	Unclassified						
+4312	Engineered	Biotransformation	Microbial solubilization of coal	Unclassified	Unclassified						
+4315	Engineered	Biotransformation	Mixed alcohol bioreactor	Unclassified	Unclassified						
+4314	Engineered	Biotransformation	Unclassified	Unclassified	Unclassified						
+5111	Engineered	Built environment	Canal	Irrigation canal	Sediment						
+4401	Engineered	Built environment	Canal	Unclassified	Unclassified						
+4812	Engineered	Built environment	Cement wall	Unclassified	Unclassified						
+4398	Engineered	Built environment	City	Park	Unclassified						
+4396	Engineered	Built environment	City	Subway	Unclassified						
+4403	Engineered	Built environment	City	Unclassified	Unclassified						
+4494	Engineered	Built environment	Hospital	Unclassified	Unclassified						
+4847	Engineered	Built environment	House	Doormat	Unclassified						
+4405	Engineered	Built environment	House	Unclassified	Unclassified						
+4659	Engineered	Built environment	International Space Station	Unclassified	Unclassified						
+4868	Engineered	Built environment	Oil refinery	Crude oil sludge	Petroleum sludge						
+4521	Engineered	Built environment	Oil refinery	Petroleum sludge	Product sludge						
+4519	Engineered	Built environment	Oil refinery	Petroleum sludge	Unclassified						
+4817	Engineered	Built environment	Oil refinery	Unclassified	Unclassified						
+5259	Engineered	Built environment	Petroleum storage tank	Flotation cells	Produced water						
+4665	Engineered	Built environment	Pipeline	Unclassified	Unclassified						
+4639	Engineered	Built environment	Solar panel	Unclassified	Unclassified						
+4635	Engineered	Built environment	Spacecraft Assembly Cleanrooms	Unclassified	Unclassified						
+4704	Engineered	Built environment	Swine confinement building	Unclassified	Unclassified						
+4469	Engineered	Built environment	Tailings pond	Unclassified	Unclassified						
+4279	Engineered	Built environment	Unclassified	Unclassified	Unclassified						
+4407	Engineered	Built environment	Water treatment plant	Unclassified	Unclassified						
+4897	Engineered	Feedstock	Composting	Unclassified	Unclassified						
+4253	Engineered	Food production	Dairy products	Unclassified	Unclassified						
+4252	Engineered	Food production	Fermented beverages	Unclassified	Unclassified						
+4251	Engineered	Food production	Fermented seafood	Unclassified	Unclassified						
+4249	Engineered	Food production	Fermented vegetables	Unclassified	Unclassified						
+4488	Engineered	Food production	Meat products	Unclassified	Unclassified						
+4248	Engineered	Food production	Silage fermentation	Unclassified	Unclassified						
+4250	Engineered	Food production	Unclassified	Unclassified	Unclassified						
+4618	Engineered	Industrial production	Biochar	Unclassified	Unclassified						
+4595	Engineered	Industrial production	Engineered product	Bioanode	Unclassified						
+4612	Engineered	Industrial production	Engineered product	Biocathode	Unclassified						
+4294	Engineered	Industrial production	Engineered product	Unclassified	Unclassified						
+4293	Engineered	Industrial production	Unclassified	Unclassified	Unclassified						
+4288	Engineered	Lab enrichment	Defined media	Aerobic media	Unclassified						
+4289	Engineered	Lab enrichment	Defined media	Anaerobic media	Unclassified						
+4291	Engineered	Lab enrichment	Defined media	Marine media	Unclassified						
+4287	Engineered	Lab enrichment	Defined media	Unclassified	Unclassified						
+4285	Engineered	Lab enrichment	Unclassified	Unclassified	Unclassified						
+4286	Engineered	Lab enrichment	Undefined media	Unclassified	Unclassified						
+4720	Engineered	Lab synthesis	Genetic cross	Unclassified	Unclassified						
+4247	Engineered	Lab synthesis	Unclassified	Unclassified	Unclassified						
+4726	Engineered	Laboratory developed	Genetically modified	Unclassified	Unclassified						
+4729	Engineered	Laboratory developed	Unclassified	Unclassified	Unclassified						
+4311	Engineered	Modeled	Simulated communities (DNA mixture)	Unclassified	Unclassified						
+4308	Engineered	Modeled	Simulated communities (microbial mixture)	Unclassified	Unclassified						
+4310	Engineered	Modeled	Simulated communities (sequence read mixture)	Sanger	Unclassified						
+4309	Engineered	Modeled	Simulated communities (sequence read mixture)	Unclassified	Unclassified						
+4307	Engineered	Modeled	Unclassified	Unclassified	Unclassified						
+4390	Engineered	Paper	Currency notes	Unclassified	Unclassified						
+4910	Engineered	Solid waste	Agricultural waste	Composting	Unclassified						
+4936	Engineered	Solid waste	Animal waste	Composting	Unclassified						
+4916	Engineered	Solid waste	Animal waste	Manure	Unclassified						
+4278	Engineered	Solid waste	Animal waste	Unclassified	Unclassified						
+4927	Engineered	Solid waste	Bagasse	Composting	Unclassified						
+4930	Engineered	Solid waste	Cellulose associated waste	Composting	Unclassified						
+4273	Engineered	Solid waste	Composting	Unclassified	Unclassified						
+4893	Engineered	Solid waste	Feedstock	Composting	Unclassified						
+4948	Engineered	Solid waste	Food waste	Composting	Unclassified						
+4873	Engineered	Solid waste	Grass	Composting	Bioreactor						
+4874	Engineered	Solid waste	Grass	Composting	Unclassified						
+4907	Engineered	Solid waste	Household waste	Composting	Unclassified						
+4939	Engineered	Solid waste	Industrial waste	Composting	Unclassified						
+4277	Engineered	Solid waste	Landfill	Unclassified	Unclassified						
+4954	Engineered	Solid waste	Latrine chamber	Composting	Unclassified						
+4276	Engineered	Solid waste	Unclassified	Unclassified	Unclassified						
+4966	Engineered	Solid waste	Unknown material	Composting	Bioreactor						
+4967	Engineered	Solid waste	Unknown material	Composting	Unclassified						
+4945	Engineered	Solid waste	Urban waste	Composting	Unclassified						
+4934	Engineered	Solid waste	Vegetable	Composting	Unclassified						
+4942	Engineered	Solid waste	Vermicompost	Unclassified	Unclassified						
+4856	Engineered	Solid waste	Wood	Composting	Bioreactor						
+4857	Engineered	Solid waste	Wood	Composting	Unclassified						
+4924	Engineered	Solid waste	Zoo waste	Composting	Unclassified						
+4292	Engineered	Unclassified	Unclassified	Unclassified	Unclassified						
+4672	Engineered	WWTP	Wastewater	Unclassified	Unclassified						
+4254	Engineered	Wastewater	Activated Sludge	Unclassified	Unclassified						
+4271	Engineered	Wastewater	Anaerobic digestor	Unclassified	Unclassified						
+4268	Engineered	Wastewater	Industrial wastewater	Agricultural wastewater	Unclassified						
+4918	Engineered	Wastewater	Industrial wastewater	Hospital wastewater	Unclassified						
+4269	Engineered	Wastewater	Industrial wastewater	Landfill leachate	Unclassified						
+4690	Engineered	Wastewater	Industrial wastewater	Mine water	Sediment						
+4270	Engineered	Wastewater	Industrial wastewater	Mine water	Unclassified						
+4265	Engineered	Wastewater	Industrial wastewater	Petrochemical	Unclassified						
+4266	Engineered	Wastewater	Industrial wastewater	Pulp and paper wastewater	Unclassified						
+4267	Engineered	Wastewater	Industrial wastewater	Unclassified	Unclassified						
+4262	Engineered	Wastewater	Nutrient removal	Biological phosphorus removal	Activated sludge						
+4263	Engineered	Wastewater	Nutrient removal	Biological phosphorus removal	Bioreactor						
+4730	Engineered	Wastewater	Nutrient removal	Biological phosphorus removal	Unclassified						
+4257	Engineered	Wastewater	Nutrient removal	Dissolved organics (aerobic)	Activated sludge						
+4258	Engineered	Wastewater	Nutrient removal	Dissolved organics (aerobic)	Unclassified						
+4259	Engineered	Wastewater	Nutrient removal	Dissolved organics (anaerobic)	Activated sludge						
+4260	Engineered	Wastewater	Nutrient removal	Dissolved organics (anaerobic)	Unclassified						
+4256	Engineered	Wastewater	Nutrient removal	Nitrogen removal	Anammox						
+4255	Engineered	Wastewater	Nutrient removal	Nitrogen removal	Unclassified						
+4261	Engineered	Wastewater	Nutrient removal	Unclassified	Unclassified						
+4662	Engineered	Wastewater	Sewage	Unclassified	Unclassified						
+4264	Engineered	Wastewater	Unclassified	Unclassified	Unclassified						
+4620	Environmental	Air	Indoor Air	Dust	Unclassified						
+3961	Environmental	Air	Indoor Air	Unclassified	Unclassified						
+3962	Environmental	Air	Outdoor Air	Unclassified	Unclassified						
+3963	Environmental	Air	Unclassified	Unclassified	Unclassified						
+3965	Environmental	Aquatic	Aquaculture	Unclassified	Unclassified						
+4514	Environmental	Aquatic	Freshwater	Creek	Unclassified						
+4059	Environmental	Aquatic	Freshwater	Drinking water	Chlorinated						
+4058	Environmental	Aquatic	Freshwater	Drinking water	Delivery networks						
+5122	Environmental	Aquatic	Freshwater	Drinking water	Filtered water						
+4547	Environmental	Aquatic	Freshwater	Drinking water	Unchlorinated						
+4057	Environmental	Aquatic	Freshwater	Drinking water	Unclassified						
+4164	Environmental	Aquatic	Freshwater	Groundwater	Acid Mine Drainage						
+4167	Environmental	Aquatic	Freshwater	Groundwater	Cave water						
+4169	Environmental	Aquatic	Freshwater	Groundwater	Coalbed water						
+4166	Environmental	Aquatic	Freshwater	Groundwater	Contaminated						
+4168	Environmental	Aquatic	Freshwater	Groundwater	Mine						
+4170	Environmental	Aquatic	Freshwater	Groundwater	Mine drainage						
+4654	Environmental	Aquatic	Freshwater	Groundwater	Spring						
+4165	Environmental	Aquatic	Freshwater	Groundwater	Unclassified						
+4420	Environmental	Aquatic	Freshwater	Harbor	Unclassified						
+4060	Environmental	Aquatic	Freshwater	Ice	Glacial lake						
+4063	Environmental	Aquatic	Freshwater	Ice	Glacier						
+4062	Environmental	Aquatic	Freshwater	Ice	Ice accretions						
+4061	Environmental	Aquatic	Freshwater	Ice	Unclassified						
+4426	Environmental	Aquatic	Freshwater	Lake	Sediment						
+4179	Environmental	Aquatic	Freshwater	Lake	Unclassified						
+4177	Environmental	Aquatic	Freshwater	Lentic	Epilimnion						
+4173	Environmental	Aquatic	Freshwater	Lentic	Hypolimnion						
+4176	Environmental	Aquatic	Freshwater	Lentic	Limnetic zone						
+4178	Environmental	Aquatic	Freshwater	Lentic	Littoral zone						
+4175	Environmental	Aquatic	Freshwater	Lentic	Sediment						
+4174	Environmental	Aquatic	Freshwater	Lentic	Unclassified						
+4645	Environmental	Aquatic	Freshwater	Lotic	Unclassified						
+4191	Environmental	Aquatic	Freshwater	Microbialites	Unclassified						
+4180	Environmental	Aquatic	Freshwater	Pond	Sediment						
+4380	Environmental	Aquatic	Freshwater	Pond	Unclassified						
+5237	Environmental	Aquatic	Freshwater	Reservoir	Unclassified						
+5109	Environmental	Aquatic	Freshwater	River	Sediment						
+4512	Environmental	Aquatic	Freshwater	River	Unclassified						
+4171	Environmental	Aquatic	Freshwater	Sediment	Unclassified						
+4653	Environmental	Aquatic	Freshwater	Sinkhole	Unclassified						
+4190	Environmental	Aquatic	Freshwater	Storm water	Drainage pipe biofilm						
+4189	Environmental	Aquatic	Freshwater	Storm water	Unclassified						
+4737	Environmental	Aquatic	Freshwater	Subglacial lake	Unclassified						
+4562	Environmental	Aquatic	Freshwater	Subterranean lake	Unclassified						
+4159	Environmental	Aquatic	Freshwater	Unclassified	Unclassified						
+5210	Environmental	Aquatic	Freshwater	Water tank	Unclassified						
+4185	Environmental	Aquatic	Freshwater	Wetlands	Bog						
+4184	Environmental	Aquatic	Freshwater	Wetlands	Marsh						
+4183	Environmental	Aquatic	Freshwater	Wetlands	Sediment						
+4182	Environmental	Aquatic	Freshwater	Wetlands	Swamp						
+4181	Environmental	Aquatic	Freshwater	Wetlands	Unclassified						
+4045	Environmental	Aquatic	Marine	Coastal	Sediment						
+4044	Environmental	Aquatic	Marine	Coastal	Unclassified						
+4024	Environmental	Aquatic	Marine	Cold seeps	Sediment						
+4023	Environmental	Aquatic	Marine	Cold seeps	Unclassified						
+4000	Environmental	Aquatic	Marine	Fossil	Whale fall						
+4576	Environmental	Aquatic	Marine	Gulf	Unclassified						
+4454	Environmental	Aquatic	Marine	Harbor	Unclassified						
+4031	Environmental	Aquatic	Marine	Hydrothermal vents	Black smokers						
+4030	Environmental	Aquatic	Marine	Hydrothermal vents	Diffuse flow						
+4028	Environmental	Aquatic	Marine	Hydrothermal vents	Microbial mats						
+4029	Environmental	Aquatic	Marine	Hydrothermal vents	Sediment						
+4027	Environmental	Aquatic	Marine	Hydrothermal vents	Unclassified						
+4574	Environmental	Aquatic	Marine	Inlet	Unclassified						
+4017	Environmental	Aquatic	Marine	Intertidal zone	Beach						
+4014	Environmental	Aquatic	Marine	Intertidal zone	Coral reef						
+4015	Environmental	Aquatic	Marine	Intertidal zone	Estuary						
+4018	Environmental	Aquatic	Marine	Intertidal zone	Mangrove swamp						
+4019	Environmental	Aquatic	Marine	Intertidal zone	Microbialites						
+4020	Environmental	Aquatic	Marine	Intertidal zone	Oil-contaminated						
+4012	Environmental	Aquatic	Marine	Intertidal zone	Salt marsh						
+4016	Environmental	Aquatic	Marine	Intertidal zone	Sediment						
+4013	Environmental	Aquatic	Marine	Intertidal zone	Unclassified						
+4032	Environmental	Aquatic	Marine	Marginal Sea	Unclassified						
+4545	Environmental	Aquatic	Marine	Mud volcano	Unclassified						
+4033	Environmental	Aquatic	Marine	Neritic zone	Oil-contaminated sediment						
+4035|4048	Environmental	Aquatic	Marine	Neritic zone	Sediment						
+4034	Environmental	Aquatic	Marine	Neritic zone	Unclassified						
+4006	Environmental	Aquatic	Marine	Oceanic	Abyssal plane						
+4010	Environmental	Aquatic	Marine	Oceanic	Aphotic zone						
+4040	Environmental	Aquatic	Marine	Oceanic	Benthic						
+4656	Environmental	Aquatic	Marine	Oceanic	Crustal Fluids						
+4557	Environmental	Aquatic	Marine	Oceanic	Microbial mats						
+4636	Environmental	Aquatic	Marine	Oceanic	Oceanic crust						
+4011	Environmental	Aquatic	Marine	Oceanic	Oil-contaminated						
+4007	Environmental	Aquatic	Marine	Oceanic	Oil-contaminated sediment						
+4004	Environmental	Aquatic	Marine	Oceanic	Photic zone						
+4009	Environmental	Aquatic	Marine	Oceanic	Sediment						
+4008	Environmental	Aquatic	Marine	Oceanic	Unclassified						
+4026	Environmental	Aquatic	Marine	Oil seeps	Unclassified						
+4021	Environmental	Aquatic	Marine	Pelagic	Unclassified						
+4686	Environmental	Aquatic	Marine	Seaweed	Unclassified						
+4564	Environmental	Aquatic	Marine	Sediment	Unclassified						
+4516	Environmental	Aquatic	Marine	Strait	Unclassified						
+4647	Environmental	Aquatic	Marine	Subtidal zone	Sediment						
+4002	Environmental	Aquatic	Marine	Unclassified	Oil-contaminated sediment						
+4003	Environmental	Aquatic	Marine	Unclassified	Unclassified						
+4022	Environmental	Aquatic	Marine	Volcanic	Unclassified						
+4056	Environmental	Aquatic	Marine	Wetlands	Sediment						
+4055	Environmental	Aquatic	Marine	Wetlands	Unclassified						
+3969	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Carbonate						
+3967	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Microbial mats						
+3968	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Sediment						
+3966	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Unclassified						
+4695	Environmental	Aquatic	Non-marine Saline and Alkaline	Fracking water	Unclassified						
+3979	Environmental	Aquatic	Non-marine Saline and Alkaline	Hypersaline	Microbial mats						
+3980	Environmental	Aquatic	Non-marine Saline and Alkaline	Hypersaline	Sediment						
+3978	Environmental	Aquatic	Non-marine Saline and Alkaline	Hypersaline	Unclassified						
+3983	Environmental	Aquatic	Non-marine Saline and Alkaline	Near-boiling (>90C)	Alkaline						
+3971	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Athalassic						
+3977	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Epilimnion						
+3972	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Hypolimnion						
+3974	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Microbial mats						
+3975	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Sediment						
+3976	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Thalassic						
+3973	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Unclassified						
+3982	Environmental	Aquatic	Non-marine Saline and Alkaline	Salt crystallizer ponds	Microbial mats						
+3981	Environmental	Aquatic	Non-marine Saline and Alkaline	Salt crystallizer ponds	Unclassified						
+3970	Environmental	Aquatic	Non-marine Saline and Alkaline	Unclassified	Unclassified						
+3985	Environmental	Aquatic	Sediment	Unclassified	Unclassified						
+3995	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Acidic						
+3994	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Alkaline						
+4655	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Microbial mats						
+3998	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Neutral						
+3997	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Sediment						
+3992	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Unclassified						
+3993	Environmental	Aquatic	Thermal springs	Near-boiling (>90C)	Alkaline						
+4818	Environmental	Aquatic	Thermal springs	Near-boiling (>90C)	Unclassified						
+3999	Environmental	Aquatic	Thermal springs	Sediment	Unclassified						
+3990	Environmental	Aquatic	Thermal springs	Tepid (25-34C)	Sediment						
+3989	Environmental	Aquatic	Thermal springs	Tepid (25-34C)	Unclassified						
+3991	Environmental	Aquatic	Thermal springs	Unclassified	Unclassified						
+4546	Environmental	Aquatic	Thermal springs	Warm (34-42C)	Acidic						
+3987	Environmental	Aquatic	Thermal springs	Warm (34-42C)	Neutral						
+3988	Environmental	Aquatic	Thermal springs	Warm (34-42C)	Sediment						
+3986	Environmental	Aquatic	Thermal springs	Warm (34-42C)	Unclassified						
+3984	Environmental	Aquatic	Unclassified	Unclassified	Unclassified						
+4706	Environmental	Terrestrial	Agricultural field	Paddy soil	Unclassified						
+4199	Environmental	Terrestrial	Agricultural field	Unclassified	Unclassified						
+4195	Environmental	Terrestrial	Asphalt lakes	Tar	Unclassified						
+4718	Environmental	Terrestrial	Asphalt lakes	Unclassified	Unclassified						
+4491	Environmental	Terrestrial	Cave	Unclassified	Unclassified						
+4643	Environmental	Terrestrial	Cave	Wall	Biofilm						
+4822	Environmental	Terrestrial	Cave	Wall	Unclassified						
+4423	Environmental	Terrestrial	Deep subsurface	Aquifer	Unclassified						
+4246	Environmental	Terrestrial	Deep subsurface	Clay	Unclassified						
+4533	Environmental	Terrestrial	Deep subsurface	Fracking water	Unclassified						
+4605	Environmental	Terrestrial	Deep subsurface	Oil well	Unclassified						
+4245	Environmental	Terrestrial	Deep subsurface	Unclassified	Unclassified						
+4607	Environmental	Terrestrial	Deep subsurface	Water well	Unclassified						
+4668	Environmental	Terrestrial	Floodplain	Sediment	Unclassified						
+4716	Environmental	Terrestrial	Floodplain	Unclassified	Unclassified						
+4193	Environmental	Terrestrial	Geologic	Mine	Unclassified						
+4543	Environmental	Terrestrial	Geologic	Sediment	Unclassified						
+4192	Environmental	Terrestrial	Geologic	Unclassified	Unclassified						
+4689	Environmental	Terrestrial	Mud volcano	Unclassified	Unclassified						
+4841	Environmental	Terrestrial	Nest	Alligator nest	Unclassified						
+4194	Environmental	Terrestrial	Oil reservoir	Unclassified	Unclassified						
+4553	Environmental	Terrestrial	Peat	Unclassified	Unclassified						
+4541	Environmental	Terrestrial	Plant litter	Unclassified	Unclassified						
+4650	Environmental	Terrestrial	Rock-dwelling (endoliths)	Unclassified	Unclassified						
+4201	Environmental	Terrestrial	Rock-dwelling (subaerial biofilms)	Unclassified	Unclassified						
+4711	Environmental	Terrestrial	Soil	Biocrust	Unclassified						
+4230	Environmental	Terrestrial	Soil	Clay	Agricultural land						
+4231	Environmental	Terrestrial	Soil	Clay	Contaminated						
+4228	Environmental	Terrestrial	Soil	Clay	Grasslands						
+4232	Environmental	Terrestrial	Soil	Clay	Oil-contaminated						
+4229	Environmental	Terrestrial	Soil	Clay	Unclassified						
+4765	Environmental	Terrestrial	Soil	Crop	Unclassified						
+4418	Environmental	Terrestrial	Soil	Fossil	Unclassified						
+4745	Environmental	Terrestrial	Soil	Glacier	Unclassified						
+4237	Environmental	Terrestrial	Soil	Loam	Agricultural						
+4242	Environmental	Terrestrial	Soil	Loam	Agricultural land						
+4244	Environmental	Terrestrial	Soil	Loam	Agricultural soil						
+4243	Environmental	Terrestrial	Soil	Loam	Contaminated						
+4239	Environmental	Terrestrial	Soil	Loam	Forest soil						
+4238	Environmental	Terrestrial	Soil	Loam	Grasslands						
+4241	Environmental	Terrestrial	Soil	Loam	Unclassified						
+4202	Environmental	Terrestrial	Soil	Sand	Desert						
+4224	Environmental	Terrestrial	Soil	Sand	Forest soil						
+4223	Environmental	Terrestrial	Soil	Sand	Grasslands						
+4204	Environmental	Terrestrial	Soil	Sand	Oil-contaminated						
+4203	Environmental	Terrestrial	Soil	Sand	Unclassified						
+4227	Environmental	Terrestrial	Soil	Silt	Unclassified						
+4578	Environmental	Terrestrial	Soil	Soil crust	Unclassified						
+4207	Environmental	Terrestrial	Soil	Unclassified	Agricultural						
+4213	Environmental	Terrestrial	Soil	Unclassified	Agricultural land						
+4217	Environmental	Terrestrial	Soil	Unclassified	Boreal forest						
+4215	Environmental	Terrestrial	Soil	Unclassified	Contaminated						
+4210	Environmental	Terrestrial	Soil	Unclassified	Desert						
+4205	Environmental	Terrestrial	Soil	Unclassified	Forest Soil						
+4209	Environmental	Terrestrial	Soil	Unclassified	Grasslands						
+4218	Environmental	Terrestrial	Soil	Unclassified	Mine						
+4221	Environmental	Terrestrial	Soil	Unclassified	Mine drainage						
+4220	Environmental	Terrestrial	Soil	Unclassified	Oil-contaminated						
+4206	Environmental	Terrestrial	Soil	Unclassified	Permafrost						
+5244	Environmental	Terrestrial	Soil	Unclassified	Riparian soil						
+4214	Environmental	Terrestrial	Soil	Unclassified	Shrubland						
+4216	Environmental	Terrestrial	Soil	Unclassified	Tropical rainforest						
+4212	Environmental	Terrestrial	Soil	Unclassified	Unclassified						
+4211	Environmental	Terrestrial	Soil	Unclassified	Uranium contaminated						
+4234	Environmental	Terrestrial	Soil	Wetlands	Permafrost						
+4235	Environmental	Terrestrial	Soil	Wetlands	Unclassified						
+4198	Environmental	Terrestrial	Unclassified	Unclassified	Unclassified						
+4196	Environmental	Terrestrial	Volcanic	Fumaroles	Unclassified						
+4197	Environmental	Terrestrial	Volcanic	Unclassified	Unclassified						
+3964	Environmental	Unclassified	Unclassified	Unclassified	Unclassified						
+3960	Host-associated	Algae	Brown Algae	Unclassified	Unclassified						
+4675	Host-associated	Algae	Diatoms	Unclassified	Unclassified						
+4835	Host-associated	Algae	Golden Algae	Unclassified	Unclassified						
+3956	Host-associated	Algae	Green algae	Ectosymbionts	Unclassified						
+4760	Host-associated	Algae	Green algae	Unclassified	Unclassified						
+4678	Host-associated	Algae	Haptophytes	Unclassified	Unclassified						
+4815	Host-associated	Algae	Microalgae	Unclassified	Unclassified						
+3958	Host-associated	Algae	Red algae	Ectosymbionts	Unclassified						
+3959	Host-associated	Algae	Red algae	Unclassified	Unclassified						
+3957	Host-associated	Algae	Unclassified	Unclassified	Unclassified						
+4829	Host-associated	Algae	Yellow-green algae	Unclassified	Unclassified						
+5167	Host-associated	Amphibia	Digestive system	Intestine	Unclassified						
+4083	Host-associated	Amphibia	Digestive system	Unclassified	Unclassified						
+5148	Host-associated	Amphibia	Excretory system	Kidney	Unclassified						
+5165	Host-associated	Amphibia	Excretory system	Liver	Unclassified						
+4085	Host-associated	Amphibia	Excretory system	Unclassified	Unclassified						
+5170	Host-associated	Amphibia	Respiratory system	Lung	Unclassified						
+4084	Host-associated	Amphibia	Unclassified	Unclassified	Unclassified						
+5070	Host-associated	Annelida	Digestive system	Crop	Unclassified						
+4329	Host-associated	Annelida	Digestive system	Digestive tube	Extracellular symbionts						
+4767	Host-associated	Annelida	Digestive system	Digestive tube	Unclassified						
+4330	Host-associated	Annelida	Digestive system	Unclassified	Unclassified						
+5195	Host-associated	Annelida	Excretory system	Nephridia	Unclassified						
+4821	Host-associated	Annelida	Gills	Unclassified	Unclassified						
+4337	Host-associated	Annelida	Integument	Cuticle	Epibionts						
+4768	Host-associated	Annelida	Integument	Cuticle	Unclassified						
+4335	Host-associated	Annelida	Integument	Subcuticular space	Extracellular symbionts						
+4769	Host-associated	Annelida	Integument	Subcuticular space	Unclassified						
+4336	Host-associated	Annelida	Integument	Unclassified	Unclassified						
+4334	Host-associated	Annelida	Intracellular endosymbionts	Trophosome	Unclassified						
+4332	Host-associated	Annelida	Reproductive system	Egg capsule	Extracellular						
+4333	Host-associated	Annelida	Reproductive system	Egg capsule	Unclassified						
+4771	Host-associated	Annelida	Reproductive system	Unclassified	Unclassified						
+5115	Host-associated	Annelida	Tissue	Unclassified	Unclassified						
+4331	Host-associated	Annelida	Unclassified	Unclassified	Unclassified						
+4531	Host-associated	Annelida	Whole body	Unclassified	Unclassified						
+4556	Host-associated	Arthropoda	Ant dump	Unclassified	Unclassified						
+5208	Host-associated	Arthropoda	Ant	Cuticle	Unclassified						
+4904	Host-associated	Arthropoda	Ant	Unclassified	Unclassified						
+4838	Host-associated	Arthropoda	Bee	Abdomen	Unclassified						
+4880	Host-associated	Arthropoda	Bee	Beehive	Honey						
+4882	Host-associated	Arthropoda	Bee	Royal jelly	Unclassified						
+4603	Host-associated	Arthropoda	Beetle	Unclassified	Unclassified						
+5205	Host-associated	Arthropoda	Bugs	Unclassified	Unclassified						
+5229	Host-associated	Arthropoda	Butterfly	Unclassified	Unclassified						
+4681	Host-associated	Arthropoda	Crustacea	Copepoda	Tissue						
+4774	Host-associated	Arthropoda	Crustacea	Copepoda	Unclassified						
+4773	Host-associated	Arthropoda	Crustacea	Unclassified	Unclassified						
+4069	Host-associated	Arthropoda	Digestive system	Foregut	Unclassified						
+4070	Host-associated	Arthropoda	Digestive system	Gut	P3 segment						
+4071	Host-associated	Arthropoda	Digestive system	Gut	Proctodeal segment						
+4072	Host-associated	Arthropoda	Digestive system	Gut	Unclassified						
+4955	Host-associated	Arthropoda	Digestive system	Hindgut	Fecal						
+4068	Host-associated	Arthropoda	Digestive system	Hindgut	P1 segment						
+4066	Host-associated	Arthropoda	Digestive system	Hindgut	P3 segment						
+4067	Host-associated	Arthropoda	Digestive system	Hindgut	Unclassified						
+4064	Host-associated	Arthropoda	Digestive system	Midgut	Unclassified						
+4065	Host-associated	Arthropoda	Digestive system	Unclassified	Unclassified						
+5108	Host-associated	Arthropoda	Grasshopper	Unclassified	Unclassified						
+4081	Host-associated	Arthropoda	Integument	Cuticle	Thoracic segments						
+4082	Host-associated	Arthropoda	Integument	Cuticle	Unclassified						
+4776	Host-associated	Arthropoda	Integument	Unclassified	Unclassified						
+4077	Host-associated	Arthropoda	Intracellular endosymbionts	Primary	Bacteriomes						
+4777	Host-associated	Arthropoda	Intracellular endosymbionts	Primary	Unclassified						
+4079	Host-associated	Arthropoda	Intracellular endosymbionts	Secondary	Unclassified						
+4078	Host-associated	Arthropoda	Intracellular endosymbionts	Unclassified	Unclassified						
+5202	Host-associated	Arthropoda	Lobster	Unclassified	Unclassified						
+5118	Host-associated	Arthropoda	Mealybug	Unclassified	Unclassified						
+5093	Host-associated	Arthropoda	Mosquito	Gut	Unclassified						
+4590	Host-associated	Arthropoda	Mosquito	Unclassified	Unclassified						
+5105	Host-associated	Arthropoda	Moth	Unclassified	Unclassified						
+4624	Host-associated	Arthropoda	Oral fluid	Unclassified	Pollen						
+4429	Host-associated	Arthropoda	Reproductive system	Ovaries	Unclassified						
+4779	Host-associated	Arthropoda	Reproductive system	Unclassified	Unclassified						
+4080	Host-associated	Arthropoda	Respiratory system	Gills	Unclassified						
+4781	Host-associated	Arthropoda	Respiratory system	Unclassified	Unclassified						
+5220	Host-associated	Arthropoda	Shrimp	Hepatopancreas	Unclassified						
+5146	Host-associated	Arthropoda	Spider	Unclassified	Unclassified						
+4076	Host-associated	Arthropoda	Symbiotic fungal gardens and galleries	Fungus gallery	Unclassified						
+4075	Host-associated	Arthropoda	Symbiotic fungal gardens and galleries	Fungus garden	Garden dump						
+4074	Host-associated	Arthropoda	Symbiotic fungal gardens and galleries	Fungus garden	Unclassified						
+4073	Host-associated	Arthropoda	Symbiotic fungal gardens and galleries	Unclassified	Unclassified						
+4457	Host-associated	Arthropoda	Tissue	Unclassified	Unclassified						
+3901	Host-associated	Arthropoda	Unclassified	Unclassified	Unclassified						
+4153	Host-associated	Birds	Circulatory system	Blood	Unclassified						
+4786	Host-associated	Birds	Circulatory system	Unclassified	Unclassified						
+4148	Host-associated	Birds	Digestive system	Ceca	Lumen						
+4147	Host-associated	Birds	Digestive system	Ceca	Unclassified						
+4641	Host-associated	Birds	Digestive system	Cloaca	Unclassified						
+4151	Host-associated	Birds	Digestive system	Crop	Lumen						
+4782	Host-associated	Birds	Digestive system	Crop	Unclassified						
+4149	Host-associated	Birds	Digestive system	Digestive tube	Cecum						
+4783	Host-associated	Birds	Digestive system	Digestive tube	Unclassified						
+4146	Host-associated	Birds	Digestive system	Fecal	Unclassified						
+5066	Host-associated	Birds	Digestive system	Intestine	Unclassified						
+4957	Host-associated	Birds	Digestive system	Large intestine	Fecal						
+4152	Host-associated	Birds	Digestive system	Small intestine	Duodenal						
+4784	Host-associated	Birds	Digestive system	Small intestine	Unclassified						
+4150	Host-associated	Birds	Digestive system	Unclassified	Unclassified						
+5235	Host-associated	Birds	Excretory system	Liver	Unclassified						
+5135	Host-associated	Birds	Lymphatic system	Spleen	Unclassified						
+4157	Host-associated	Birds	Reproductive system	Unclassified	Unclassified						
+4876	Host-associated	Birds	Respiratory system	Lung	Unclassified						
+4155	Host-associated	Birds	Respiratory system	Unclassified	Unclassified						
+4447	Host-associated	Birds	Skin	Unclassified	Unclassified						
+4154	Host-associated	Birds	Unclassified	Unclassified	Unclassified						
+4963	Host-associated	Cephalochordata	Digestive system	Intestine	Fecal						
+5173	Host-associated	Cephalochordata	Unclassified	Unclassified	Unclassified						
+5156	Host-associated	Chordata	Unclassified	Unclassified	Unclassified						
+4732	Host-associated	Endosymbionts	Bacteria	Unclassified	Unclassified						
+4734	Host-associated	Endosymbionts	Fungi	Unclassified	Unclassified						
+4751	Host-associated	Endosymbionts	Unclassified	Unclassified	Unclassified						
+5054	Host-associated	Fish	Abdomen	Ascites	Unclassified						
+3902	Host-associated	Fish	Circulatory system	Blood	Unclassified						
+4788	Host-associated	Fish	Circulatory system	Unclassified	Unclassified						
+4789	Host-associated	Fish	Digestive system	Foregut	Unclassified						
+4968	Host-associated	Fish	Digestive system	Intestine	Fecal						
+4092	Host-associated	Fish	Digestive system	Intestine	Unclassified						
+4090	Host-associated	Fish	Digestive system	Unclassified	Unclassified						
+4097	Host-associated	Fish	Excretory system	Kidneys	Unclassified						
+5150	Host-associated	Fish	Excretory system	Liver	Unclassified						
+4791	Host-associated	Fish	Excretory system	Unclassified	Unclassified						
+4096	Host-associated	Fish	Reproductive system	Unclassified	Unclassified						
+4921	Host-associated	Fish	Respiratory system	Gill	Unclassified						
+5152	Host-associated	Fish	Respiratory system	Lung	Unclassified						
+4422	Host-associated	Fish	Skin	Epidermal mucus	Unclassified						
+4740	Host-associated	Fish	Skin	Scales	Unclassified						
+4094	Host-associated	Fish	Skin	Slime	Unclassified						
+4093	Host-associated	Fish	Skin	Unclassified	Unclassified						
+4714	Host-associated	Fish	Tissue	Unclassified	Unclassified						
+4095	Host-associated	Fish	Unclassified	Unclassified	Unclassified						
+4743	Host-associated	Fish	Whole body	Carcass	Decomposed						
+4794	Host-associated	Fish	Whole body	Carcass	Unclassified						
+4793	Host-associated	Fish	Whole body	Unclassified	Unclassified						
+4550	Host-associated	Fungi	Fruiting body	Unclassified	Unclassified						
+4412	Host-associated	Fungi	Lichen	Unclassified	Unclassified						
+4463	Host-associated	Fungi	Mycelium	Unclassified	Unclassified						
+4528	Host-associated	Fungi	Sclerotium	Unclassified	Unclassified						
+4098	Host-associated	Fungi	Unclassified	Unclassified	Unclassified						
+5102	Host-associated	Horse	Circulatory system	Blood	Unclassified						
+5064	Host-associated	Horse	Digestive system	Large intestine	Cecum						
+5060	Host-associated	Horse	Digestive system	Large intestine	Fecal						
+5034	Host-associated	Horse	Excretory system	Urethra	Urine						
+5099	Host-associated	Horse	Respiratory system	Lung	Unclassified						
+5057	Host-associated	Horse	Respiratory system	Nasopharyngeal	Unclassified						
+5063	Host-associated	Horse	Tooth	Unclassified	Unclassified						
+4476	Host-associated	Horse	Unclassified	Unclassified	Unclassified						
+5120	Host-associated	Human	Abdomen	Peritoneal dialysate	Unclassified						
+5037	Host-associated	Human	Abdomen	Peritoneal fluid	Unclassified						
+5077	Host-associated	Human	Bone	Bone marrow	Unclassified						
+4581	Host-associated	Human	Bone	Unclassified	Unclassified						
+4832	Host-associated	Human	Cell Line	HeLa	Unclassified						
+4416	Host-associated	Human	Circulatory system	Blood	Plasma						
+4430	Host-associated	Human	Circulatory system	Blood	Serum						
+3932	Host-associated	Human	Circulatory system	Blood	Unclassified						
+5075	Host-associated	Human	Circulatory system	Heart	Heart valve						
+4998	Host-associated	Human	Circulatory system	Heart	Unclassified						
+4764	Host-associated	Human	Circulatory system	Unclassified	Unclassified						
+4762	Host-associated	Human	Digestive system	Hindgut	Unclassified						
+3924	Host-associated	Human	Digestive system	Intestine	Unclassified						
+5029	Host-associated	Human	Digestive system	Large intestine	Colon						
+5028	Host-associated	Human	Digestive system	Large intestine	Descending colon						
+3920	Host-associated	Human	Digestive system	Large intestine	Fecal						
+5030	Host-associated	Human	Digestive system	Large intestine	Rectum						
+3921	Host-associated	Human	Digestive system	Large intestine	Sigmoid colon						
+3922	Host-associated	Human	Digestive system	Large intestine	Unclassified						
+3910	Host-associated	Human	Digestive system	Oral cavity	Attached/Keratinized gingiva						
+3915	Host-associated	Human	Digestive system	Oral cavity	Buccal mucosa						
+5038	Host-associated	Human	Digestive system	Oral cavity	Dental plaque						
+5083	Host-associated	Human	Digestive system	Oral cavity	Dental pulp						
+5192	Host-associated	Human	Digestive system	Oral cavity	Gingival crevice						
+3918	Host-associated	Human	Digestive system	Oral cavity	Hard palate						
+3909	Host-associated	Human	Digestive system	Oral cavity	Palatine tonsils						
+3908	Host-associated	Human	Digestive system	Oral cavity	Periodontal pockets						
+3907	Host-associated	Human	Digestive system	Oral cavity	Saliva						
+3913	Host-associated	Human	Digestive system	Oral cavity	Subgingival plaque						
+3916	Host-associated	Human	Digestive system	Oral cavity	Supragingival plaque						
+3914	Host-associated	Human	Digestive system	Oral cavity	Throat						
+3912	Host-associated	Human	Digestive system	Oral cavity	Unclassified						
+3911	Host-associated	Human	Digestive system	Oral cavity	tongue dorsum						
+5023	Host-associated	Human	Digestive system	Small intestine	Duodenum						
+5025	Host-associated	Human	Digestive system	Small intestine	Ileum						
+5126	Host-associated	Human	Digestive system	Stomach	Gastric biopsy						
+5079	Host-associated	Human	Digestive system	Stomach	Gastric mucosa						
+5080	Host-associated	Human	Digestive system	Stomach	Unclassified						
+3919	Host-associated	Human	Digestive system	Unclassified	Unclassified						
+5002	Host-associated	Human	Ear	Ear fluid	Unclassified						
+4502	Host-associated	Human	Ear	Unclassified	Unclassified						
+5027	Host-associated	Human	Excretory system	Gallbladder	Unclassified						
+5024	Host-associated	Human	Excretory system	Liver	Bile						
+5000	Host-associated	Human	Excretory system	Liver	Unclassified						
+4144	Host-associated	Human	Excretory system	Unclassified	Unclassified						
+4761	Host-associated	Human	Excretory system	Urethra	Unclassified						
+4145	Host-associated	Human	Excretory system	Urethra	Urine						
+4996	Host-associated	Human	Excretory system	Urinary bladder	Unclassified						
+5082	Host-associated	Human	Excretory system	Urinary tract	Unclassified						
+5240	Host-associated	Human	Eye	Conjunctiva	Unclassified						
+4499	Host-associated	Human	Eye	Unclassified	Unclassified						
+4584	Host-associated	Human	Hair	Unclassified	Unclassified						
+4128	Host-associated	Human	Lymphatic system	Lymph nodes	Unclassified						
+5085	Host-associated	Human	Lymphatic system	Spleen	Unclassified						
+4797	Host-associated	Human	Lymphatic system	Unclassified	Unclassified						
+4129	Host-associated	Human	Milk	Unclassified	Unclassified						
+4496	Host-associated	Human	Nervous system	Brain	Unclassified						
+3933	Host-associated	Human	Nervous system	Cerebrospinal fluid	Unclassified						
+3934	Host-associated	Human	Nervous system	Unclassified	Unclassified						
+5073	Host-associated	Human	Pus	Unclassified	Unclassified						
+4870	Host-associated	Human	Reproductive system	Amniotic sac	Amniotic fluid						
+5089	Host-associated	Human	Reproductive system	Breast	Unclassified						
+4982	Host-associated	Human	Reproductive system	Cervix	Unclassified						
+4900	Host-associated	Human	Reproductive system	Penis	Unclassified						
+5019	Host-associated	Human	Reproductive system	Prostate	Unclassified						
+4143	Host-associated	Human	Reproductive system	Unclassified	Unclassified						
+4141	Host-associated	Human	Reproductive system	Vagina	Introitus						
+4139	Host-associated	Human	Reproductive system	Vagina	Midpoint vagina						
+4140	Host-associated	Human	Reproductive system	Vagina	Unclassified						
+4142	Host-associated	Human	Reproductive system	Vagina	posterior fornix						
+5251	Host-associated	Human	Respiratory system	Lung	Bronchi						
+5074	Host-associated	Human	Respiratory system	Lung	Empyema						
+5005	Host-associated	Human	Respiratory system	Lung	Pleural fluid						
+5252	Host-associated	Human	Respiratory system	Lung	Pulmonary fluid						
+5004	Host-associated	Human	Respiratory system	Lung	Unclassified						
+4132	Host-associated	Human	Respiratory system	Nasopharyngeal	Pharynx						
+4131	Host-associated	Human	Respiratory system	Nasopharyngeal	Unclassified						
+4130	Host-associated	Human	Respiratory system	Nasopharyngeal	anterior nares						
+4133	Host-associated	Human	Respiratory system	Pulmonary system	Unclassified						
+5009	Host-associated	Human	Respiratory system	Sputum	Unclassified						
+5007	Host-associated	Human	Respiratory system	Throat	Unclassified						
+5021	Host-associated	Human	Respiratory system	Trachea	Unclassified						
+4137	Host-associated	Human	Respiratory system	Unclassified	Unclassified						
+5250	Host-associated	Human	Skeletal system	Bone	Unclassified						
+5213	Host-associated	Human	Skeletal system	Synovial membrane	Synovial fluid						
+3926	Host-associated	Human	Skin	Axilla	Unclassified						
+4795	Host-associated	Human	Skin	Medial distal leg	Unclassified						
+3931	Host-associated	Human	Skin	Medial distal leg	Venous leg ulcers						
+3929	Host-associated	Human	Skin	Naris	Unclassified						
+3925	Host-associated	Human	Skin	Umbilicus	Unclassified						
+3928	Host-associated	Human	Skin	Unclassified	Unclassified						
+3927	Host-associated	Human	Skin	Volar forearm	Unclassified						
+3930	Host-associated	Human	Skin	retroauricular crease	Unclassified						
+4826	Host-associated	Human	Soft tissue	Unclassified	Unclassified						
+5256	Host-associated	Human	Thorax	Unclassified	Unclassified						
+5091	Host-associated	Human	Tooth	Enamel	Unclassified						
+4587	Host-associated	Human	Tooth	Unclassified	Unclassified						
+4138	Host-associated	Human	Unclassified	Unclassified	Unclassified						
+5051	Host-associated	Insecta	Digestive system	Intestine	Unclassified						
+4319	Host-associated	Insecta	Digestive system	Unclassified	Unclassified						
+4320	Host-associated	Insecta	Unclassified	Unclassified	Unclassified						
+4087	Host-associated	Invertebrates	Bryozoans	Gymnolaemates	Unclassified						
+4799	Host-associated	Invertebrates	Bryozoans	Unclassified	Unclassified						
+4651	Host-associated	Invertebrates	Cnidaria	Coral	Surface						
+4088	Host-associated	Invertebrates	Cnidaria	Coral	Unclassified						
+4801	Host-associated	Invertebrates	Cnidaria	Unclassified	Unclassified						
+4615	Host-associated	Invertebrates	Ctenophora	Unclassified	Unclassified						
+4683	Host-associated	Invertebrates	Echinodermata	Sea Star	Unclassified						
+4089	Host-associated	Invertebrates	Echinodermata	Sea Urchin	Unclassified						
+5248	Host-associated	Invertebrates	Echinodermata	Sea cucumber	Unclassified						
+4803	Host-associated	Invertebrates	Echinodermata	Unclassified	Unclassified						
+5246	Host-associated	Invertebrates	Nematoda	Digestive system	Intestine						
+4425	Host-associated	Invertebrates	Nematoda	Unclassified	Unclassified						
+4736	Host-associated	Invertebrates	Platyhelminthes	Unclassified	Unclassified						
+4754	Host-associated	Invertebrates	Unclassified	Unclassified	Unclassified						
+5112	Host-associated	Mammals	Circulatory system	Blood	Peripheral blood mononuclear cells						
+4114	Host-associated	Mammals	Circulatory system	Blood	Unclassified						
+4988	Host-associated	Mammals	Circulatory system	Heart	Unclassified						
+4115	Host-associated	Mammals	Circulatory system	Unclassified	Unclassified						
+4898	Host-associated	Mammals	Digestive system	Fecal	Unclassified						
+4108	Host-associated	Mammals	Digestive system	Foregut	Rumen						
+4381	Host-associated	Mammals	Digestive system	Foregut	Unclassified						
+5011	Host-associated	Mammals	Digestive system	Hindgut	Rectum						
+5043	Host-associated	Mammals	Digestive system	Intestine	Unclassified						
+4105	Host-associated	Mammals	Digestive system	Large intestine	Cecum						
+5041	Host-associated	Mammals	Digestive system	Large intestine	Colon						
+4858	Host-associated	Mammals	Digestive system	Large intestine	Cow Dung						
+4104	Host-associated	Mammals	Digestive system	Large intestine	Fecal						
+4106	Host-associated	Mammals	Digestive system	Large intestine	Unclassified						
+4103	Host-associated	Mammals	Digestive system	Midgut	Unclassified						
+4110	Host-associated	Mammals	Digestive system	Oral cavity	Buccal mucosa						
+5031	Host-associated	Mammals	Digestive system	Oral cavity	Dental plaque						
+5121	Host-associated	Mammals	Digestive system	Oral cavity	Gingiva						
+5097	Host-associated	Mammals	Digestive system	Oral cavity	Gingival sulcus						
+5017	Host-associated	Mammals	Digestive system	Oral cavity	Periodontal pockets						
+4992	Host-associated	Mammals	Digestive system	Oral cavity	Saliva						
+4109	Host-associated	Mammals	Digestive system	Oral cavity	Unclassified						
+5253	Host-associated	Mammals	Digestive system	Small intestine	Jejunum						
+5040	Host-associated	Mammals	Digestive system	Small intestine	Unclassified						
+4113	Host-associated	Mammals	Digestive system	Stomach	Endoperitrophic space						
+5206	Host-associated	Mammals	Digestive system	Stomach	Gastric mucosa						
+4111	Host-associated	Mammals	Digestive system	Stomach	Rumen						
+4112	Host-associated	Mammals	Digestive system	Stomach	Unclassified						
+4984	Host-associated	Mammals	Digestive system	Throat	Unclassified						
+4107	Host-associated	Mammals	Digestive system	Unclassified	Unclassified						
+4850	Host-associated	Mammals	Ear	Ear discharge	Unclassified						
+5049	Host-associated	Mammals	Ear	Unclassified	Unclassified						
+5132	Host-associated	Mammals	Excretory system	Liver	Unclassified						
+3903	Host-associated	Mammals	Excretory system	Unclassified	Unclassified						
+4852	Host-associated	Mammals	Excretory system	Urine	Unclassified						
+4991	Host-associated	Mammals	Eye	Unclassified	Unclassified						
+3905	Host-associated	Mammals	Gastrointestinal tract	Intestine	Unclassified						
+4701	Host-associated	Mammals	Hoof	Unclassified	Unclassified						
+4127	Host-associated	Mammals	Lymphatic	Lymph nodes	Unclassified						
+4126	Host-associated	Mammals	Lymphatic	Unclassified	Unclassified						
+4117	Host-associated	Mammals	Milk	Unclassified	Unclassified						
+4125	Host-associated	Mammals	Nervous system	Brain	Unclassified						
+4124	Host-associated	Mammals	Nervous system	Unclassified	Unclassified						
+4698	Host-associated	Mammals	Primate	Unclassified	Unclassified						
+5096	Host-associated	Mammals	Pus	Unclassified	Unclassified						
+4986	Host-associated	Mammals	Reproductive system	Udder	Unclassified						
+4119	Host-associated	Mammals	Reproductive system	Unclassified	Unclassified						
+4972	Host-associated	Mammals	Reproductive system	Uterus	Unclassified						
+5047	Host-associated	Mammals	Reproductive system	Vagina	Unclassified						
+4970	Host-associated	Mammals	Respiratory system	Laryngopharyngeal	Lymph node						
+4444	Host-associated	Mammals	Respiratory system	Lung	Unclassified						
+4121	Host-associated	Mammals	Respiratory system	Nasopharyngeal	Nasal cavity						
+4120	Host-associated	Mammals	Respiratory system	Nasopharyngeal	Unclassified						
+4980	Host-associated	Mammals	Respiratory system	Nose	Unclassified						
+5045	Host-associated	Mammals	Respiratory system	Throat	Unclassified						
+5175	Host-associated	Mammals	Respiratory system	Trachea	Unclassified						
+4122	Host-associated	Mammals	Respiratory system	Unclassified	Unclassified						
+4116	Host-associated	Mammals	Skin	Unclassified	Unclassified						
+4409	Host-associated	Mammals	Tissue	Unclassified	Unclassified						
+5016	Host-associated	Mammals	Tooth	Unclassified	Unclassified						
+4118	Host-associated	Mammals	Unclassified	Unclassified	Unclassified						
+4318	Host-associated	Microbial	Bacteria	Unclassified	Unclassified						
+4316	Host-associated	Microbial	Dinoflagellates	Endosymbionts	Unclassified						
+4756	Host-associated	Microbial	Dinoflagellates	Unclassified	Unclassified						
+4317	Host-associated	Microbial	Unclassified	Unclassified	Unclassified						
+4978	Host-associated	Mollusca	Circulatory system	Hemolymph	Unclassified						
+4866	Host-associated	Mollusca	Digestive system	Ceca	Unclassified						
+4323	Host-associated	Mollusca	Digestive system	Glands	Unclassified						
+5068	Host-associated	Mollusca	Digestive system	Gut	Unclassified						
+4322	Host-associated	Mollusca	Digestive system	Unclassified	Unclassified						
+4632	Host-associated	Mollusca	Larvae	Unclassified	Unclassified						
+5198	Host-associated	Mollusca	Oyster	Unclassified	Unclassified						
+4325	Host-associated	Mollusca	Respiratory system	Gills	Extracellular						
+4326	Host-associated	Mollusca	Respiratory system	Gills	Intracellular						
+4327	Host-associated	Mollusca	Respiratory system	Gills	Unclassified						
+4806	Host-associated	Mollusca	Respiratory system	Unclassified	Unclassified						
+4328	Host-associated	Mollusca	Shell	Unclassified	Unclassified						
+4709	Host-associated	Mollusca	Tissue	Unclassified	Unclassified						
+4324	Host-associated	Mollusca	Unclassified	Unclassified	Unclassified						
+5187	Host-associated	Petromyzon	Unclassified	Unclassified	Unclassified						
+5217	Host-associated	Plankton	Zooplankton	Unclassified	Unclassified						
+3945	Host-associated	Plants	Endosphere	Unclassified	Unclassified						
+4566	Host-associated	Plants	Leaf	Leaf surface	Biofilm						
+4748	Host-associated	Plants	Leaf	Leaf surface	Unclassified						
+4747	Host-associated	Plants	Leaf	Unclassified	Unclassified						
+4865	Host-associated	Plants	Mixed parts	Unclassified	Unclassified						
+4450	Host-associated	Plants	Nodule	Unclassified	Unclassified						
+4433	Host-associated	Plants	Peat moss	Unclassified	Unclassified						
+3946	Host-associated	Plants	Phylloplane	Endophytes	Unclassified						
+3948	Host-associated	Plants	Phylloplane	Epiphytes	Unclassified						
+3947	Host-associated	Plants	Phylloplane	Unclassified	Unclassified						
+4621	Host-associated	Plants	Phyllosphere	Anthosphere	Pollen						
+4538	Host-associated	Plants	Phyllosphere	Anthosphere	Unclassified						
+5265	Host-associated	Plants	Phyllosphere	Carposphere	Endophytes						
+5264	Host-associated	Plants	Phyllosphere	Carposphere	Epiphytes						
+4600	Host-associated	Plants	Phyllosphere	Carposphere	Unclassified						
+4525	Host-associated	Plants	Phyllosphere	Caulosphere	Unclassified						
+5268	Host-associated	Plants	Phyllosphere	Leaf	Endophytes						
+5274	Host-associated	Plants	Phyllosphere	Leaf	Leaf nodule						
+5269	Host-associated	Plants	Phyllosphere	Leaf	Unclassified						
+5270	Host-associated	Plants	Phyllosphere	Leaf	Xylem vessels						
+5266	Host-associated	Plants	Phyllosphere	Phylloplane/Leaf surface	Endophytes						
+5262	Host-associated	Plants	Phyllosphere	Phylloplane/Leaf surface	Epiphytes						
+5263	Host-associated	Plants	Phyllosphere	Phylloplane/Leaf surface	Unclassified						
+4460	Host-associated	Plants	Phyllosphere	Unclassified	Unclassified						
+5277	Host-associated	Plants	Plant callus	Unclassified	Unclassified						
+3944	Host-associated	Plants	Rhizome	Epiphytes	Unclassified						
+4994	Host-associated	Plants	Rhizome	Stem tuber	Unclassified						
+3943	Host-associated	Plants	Rhizome	Unclassified	Unclassified						
+3939	Host-associated	Plants	Rhizoplane	Endophytes	Unclassified						
+4376	Host-associated	Plants	Rhizoplane	Epiphytes	Orchid rooting						
+3941	Host-associated	Plants	Rhizoplane	Epiphytes	Unclassified						
+3942	Host-associated	Plants	Rhizoplane	Soil	Unclassified						
+3940	Host-associated	Plants	Rhizoplane	Unclassified	Unclassified						
+3935	Host-associated	Plants	Rhizosphere	Epiphytes	Unclassified						
+3937	Host-associated	Plants	Rhizosphere	Soil	Unclassified						
+3936	Host-associated	Plants	Rhizosphere	Unclassified	Unclassified						
+4523	Host-associated	Plants	Roots	Nodule	Unclassified						
+4466	Host-associated	Plants	Roots	Unclassified	Unclassified						
+4572	Host-associated	Plants	Seeds	Unclassified	Unclassified						
+5273	Host-associated	Plants	Tissue	Unclassified	Unclassified						
+3938	Host-associated	Plants	Unclassified	Unclassified	Unclassified						
+4560	Host-associated	Plants	Wood	Unclassified	Unclassified						
+4439	Host-associated	Porifera	Sponge	Unclassified	Unclassified						
+4341	Host-associated	Porifera	Unclassified	Unclassified	Unclassified						
+4626	Host-associated	Protists	Breviatea	Dinoflagellates	Unclassified						
+4598	Host-associated	Protists	Breviatea	Unclassified	Unclassified						
+4629	Host-associated	Protists	Dinoflagellates	Unclassified	Unclassified						
+4472	Host-associated	Protists	Oomycetes	Unclassified	Unclassified						
+4738	Host-associated	Protists	Unclassified	Unclassified	Unclassified						
+4339	Host-associated	Protozoa	Unclassified	Unclassified	Unclassified						
+5160	Host-associated	Reptilia	Digestive system	Intestine	Unclassified						
+4693	Host-associated	Reptilia	Digestive system	Large intestine	Fecal						
+4809	Host-associated	Reptilia	Digestive system	Large intestine	Unclassified						
+4808	Host-associated	Reptilia	Digestive system	Unclassified	Unclassified						
+5163	Host-associated	Reptilia	Excretory system	Liver	Unclassified						
+5158	Host-associated	Reptilia	Respiratory system	Lung	Unclassified						
+4975	Host-associated	Reptilia	Respiratory system	Trachea	Unclassified						
+5013	Host-associated	Reptilia	Respiratory system	Unclassified	Unclassified						
+3906	Host-associated	Reptilia	Unclassified	Unclassified	Unclassified						
+4099	Host-associated	Tunicates	Ascidians	Unclassified	Unclassified						
+4569	Host-associated	Tunicates	Unclassified	Unclassified	Unclassified						
+4086	Host-associated	Unclassified	Unclassified	Unclassified	Unclassified						
