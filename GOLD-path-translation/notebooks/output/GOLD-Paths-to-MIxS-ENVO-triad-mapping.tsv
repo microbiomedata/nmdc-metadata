@@ -1,179 +1,179 @@
 ecosystem_path_id	ecosystem	ecosystem_category	ecosystem_type	ecosystem_subtype	specific_ecosystem	biome_label	biome_iri	material_label	material_iri	feature_label	feature_iri
-	Environmental					environmental system					
-	Environmental	Air						air			
-	Environmental	Air	Indoor Air							building	
-	Environmental	Air	Outdoor Air							nitrogen-oxygen planetary atmosphere	
-	Environmental	Aquatic				aquatic biome					
-	Environmental	Aquatic	Aquaculture			aquatic biome					FOODON:03520111
-	Environmental	Aquatic	Estuary			estuarine biome				estuary	
-	Environmental	Aquatic	Estuary	Sediment		estuarine biome		sediment			
-	Environmental	Aquatic	Freshwater			freshwater biome		fresh water			
-	Environmental	Aquatic	Freshwater	Drinking water		freshwater biome		drinking water			
-	Environmental	Aquatic	Freshwater	Drinking water	Chlorinated	freshwater biome			FOODON:03301647		
-	Environmental	Aquatic	Freshwater	Drinking water	Delivery networks					plumbing fixture	
-	Environmental	Aquatic	Freshwater	Groundwater		freshwater biome		groundwater			
-	Environmental	Aquatic	Freshwater	Groundwater	Acid Mine Drainage	freshwater biome				acid mine drainage	
-	Environmental	Aquatic	Freshwater	Groundwater	Biofilm	freshwater biome				biofilm	
-	Environmental	Aquatic	Freshwater	Groundwater	Cave water	freshwater biome		cave			
-	Environmental	Aquatic	Freshwater	Groundwater	Coalbed water	freshwater biome		coal			
-	Environmental	Aquatic	Freshwater	Groundwater	Contaminated	freshwater biome		contaminated water			
-	Environmental	Aquatic	Freshwater	Groundwater	Mine	aquatic biome				mine	
-	Environmental	Aquatic	Freshwater	Groundwater	Mine drainage	freshwater biome		mine drainage			
-	Environmental	Aquatic	Freshwater	Ice		freshwater biome		water ice			
-	Environmental	Aquatic	Freshwater	Ice	Glacial lake	freshwater lake biome				glacial lake	
-	Environmental	Aquatic	Freshwater	Ice	Glacier	freshwater biome		glacier		glacial feature	
-	Environmental	Aquatic	Freshwater	Ice	Ice accretions	freshwater biome		ice mass			
-	Environmental	Aquatic	Freshwater	Lake		freshwater lake biome		freshwater lake			
-	Environmental	Aquatic	Freshwater	Lentic		freshwater biome				lentic water body	
-	Environmental	Aquatic	Freshwater	Lentic	Epilimnion	freshwater lake biome				epilimnion	
-	Environmental	Aquatic	Freshwater	Lentic	Hypolimnion	freshwater lake biome				hypolimnion	
-	Environmental	Aquatic	Freshwater	Lentic	Limnetic zone	freshwater lake biome					
-	Environmental	Aquatic	Freshwater	Lentic	Littoral zone	freshwater biome					
-	Environmental	Aquatic	Freshwater	Lentic	Sediment	freshwater biome		sediment			
-	Environmental	Aquatic	Freshwater	Lotic		freshwater biome		lotic water body			
-	Environmental	Aquatic	Freshwater	Lotic	Acidic	acidic environment					
-	Environmental	Aquatic	Freshwater	Lotic	Low land river systems	freshwater river biome					
-	Environmental	Aquatic	Freshwater	Lotic	Microbial mats	freshwater biome				microbial mat	
-	Environmental	Aquatic	Freshwater	Lotic	Mid stream	freshwater biome					
-	Environmental	Aquatic	Freshwater	Lotic	Sediment	freshwater biome		sediment permeated by freshwater			
-	Environmental	Aquatic	Freshwater	Microbialites		freshwater biome					
-	Environmental	Aquatic	Freshwater	Pond		freshwater biome				pond	
-	Environmental	Aquatic	Freshwater	Pond	Sediment	freshwater biome		sediment permeated by freshwater			
-	Environmental	Aquatic	Freshwater	Sediment		freshwater biome		sediment permeated by freshwater			
-	Environmental	Aquatic	Freshwater	Storm water		freshwater biome		stormwater			
-	Environmental	Aquatic	Freshwater	Storm water	Drainage pipe biofilm			biofilm material		plumbing drain	
-	Environmental	Aquatic	Freshwater	Subglacial lake		freshwater lake biome				subglacial lake	
-	Environmental	Aquatic	Freshwater	Wetlands		freshwater wetland ecosystem					
-	Environmental	Aquatic	Freshwater	Wetlands	Bog	freshwater wetland ecosystem					
-	Environmental	Aquatic	Freshwater	Wetlands	Marsh	freshwater marsh					
-	Environmental	Aquatic	Freshwater	Wetlands	Sediment	freshwater wetland ecosystem		sediment permeated by freshwater			
-	Environmental	Aquatic	Freshwater	Wetlands	Swamp	swamp ecosystem					
-	Environmental	Aquatic	Lentic			aquatic biome				lentic water body	
-	Environmental	Aquatic	Lentic	Brackish		brackish water environment		brackish water			
-	Environmental	Aquatic	Marine			marine biome					
-	Environmental	Aquatic	Marine	Brackish		brackish water environment		brackish water			
-	Environmental	Aquatic	Marine	Coastal		marine biome				coastal water body	
-	Environmental	Aquatic	Marine	Coastal	Sediment	marine biome		marine sediment			
-	Environmental	Aquatic	Marine	Cold seeps		marine cold seep biome				cold seep	
-	Environmental	Aquatic	Marine	Cold seeps	Sediment	marine cold seep biome		marine sediment			
-	Environmental	Aquatic	Marine	Fossil		marine biome				fossil	
-	Environmental	Aquatic	Marine	Fossil	Whale fall	marine biome				whale fall	
-	Environmental	Aquatic	Marine	Hydrothermal vents		marine hydrothermal vent biome				hydrothermal vent	
-	Environmental	Aquatic	Marine	Hydrothermal vents	Black smokers	marine black smoker biome				black smoker	
-	Environmental	Aquatic	Marine	Hydrothermal vents	Diffuse flow	marine hydrothermal vent biome		hydrothermal fluid			
-	Environmental	Aquatic	Marine	Hydrothermal vents	Microbial mats	marine hydrothermal vent biome				microbial mat	
-	Environmental	Aquatic	Marine	Hydrothermal vents	Sediment	marine hydrothermal vent biome		marine sediment			
-	Environmental	Aquatic	Marine	Intertidal zone		intertidal ecosystem					
-	Environmental	Aquatic	Marine	Intertidal zone	Beach	intertidal ecosystem				beach	
-	Environmental	Aquatic	Marine	Intertidal zone	Coral reef	marine coral reef biome				coral reef	
-	Environmental	Aquatic	Marine	Intertidal zone	Estuary	estuarine biome				estuary	
-	Environmental	Aquatic	Marine	Intertidal zone	Mangrove swamp	mangrove swamp					
-	Environmental	Aquatic	Marine	Intertidal zone	Microbialites	intertidal ecosystem					
-	Environmental	Aquatic	Marine	Intertidal zone	Oil-contaminated	intertidal ecosystem		oil			
-	Environmental	Aquatic	Marine	Intertidal zone	Salt marsh	marine salt marsh biome					
-	Environmental	Aquatic	Marine	Intertidal zone	Sediment	intertidal ecosystem		intertidal sediment			
-	Environmental	Aquatic	Marine	Marginal Sea		marginal sea biome					
-	Environmental	Aquatic	Marine	Neritic zone		neritic pelagic zone biome					
-	Environmental	Aquatic	Marine	Neritic zone	Oil-contaminated sediment			oil			
-	Environmental	Aquatic	Marine	Neritic zone	Sediment	neritic pelagic zone biome		marine sediment			
-	Environmental	Aquatic	Marine	Oceanic		ocean biome					
-	Environmental	Aquatic	Marine	Oceanic	Abyssal plane	marine abyssal zone biome				abyssal plain	
-	Environmental	Aquatic	Marine	Oceanic	Aphotic zone	ocean biome				marine aphotic zone	
-	Environmental	Aquatic	Marine	Oceanic	Benthic	marine benthic biome				marine benthic feature	
-	Environmental	Aquatic	Marine	Oceanic	Oil-contaminated	ocean biome		oil			
-	Environmental	Aquatic	Marine	Oceanic	Oil-contaminated sediments	ocean biome		contaminated sediment		oil	
-	Environmental	Aquatic	Marine	Oceanic	Photic zone	ocean biome				marine photic zone	
-	Environmental	Aquatic	Marine	Oceanic	Sediment	ocean biome		marine sediment			
-	Environmental	Aquatic	Marine	Oil field		marine biome		oil field production water			
-	Environmental	Aquatic	Marine	Oil field	bore hole	marine biome		bore hole water		borehole	
-	Environmental	Aquatic	Marine	Oil seeps		marine biome		oil seep			
-	Environmental	Aquatic	Marine	Oil-contaminated sediment				contaminated sediment		oil	
-	Environmental	Aquatic	Marine	Pelagic		marine pelagic biome					
-	Environmental	Aquatic	Marine	Sediment		marine biome		marine sediment			
-	Environmental	Aquatic	Marine	Volcanic		marine biome					
-	Environmental	Aquatic	Marine	Wetlands		coastal wetland ecosystem					
-	Environmental	Aquatic	Marine	Wetlands	Sediment	wetland ecosystem		sediment			
-	Environmental	Aquatic	Meromictic lake			aquatic biome				meromictic lake	
-	Environmental	Aquatic	Non-marine Saline and Alkaline			aquatic biome					
-	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline		alkaline environment					
-	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Carbonate	alkaline environment					
-	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Microbial mats	alkaline environment				microbial mat	
-	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Sediment	alkaline environment		sediment			
-	Environmental	Aquatic	Non-marine Saline and Alkaline	Hypersaline		hypersaline water environment					
-	Environmental	Aquatic	Non-marine Saline and Alkaline	Hypersaline	Microbial mats	hypersaline water environment				microbial mat	
-	Environmental	Aquatic	Non-marine Saline and Alkaline	Hypersaline	Sediment	hypersaline water environment		sediment permeated by saline water			
-	Environmental	Aquatic	Non-marine Saline and Alkaline	Near-boiling (>90C)		extreme high temperature environment					
-	Environmental	Aquatic	Non-marine Saline and Alkaline	Near-boiling (>90C)	Alkaline	alkaline environment					
-	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline		saline water environment					
-	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Athalassic	saline water environment				saline lake	
-	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Epilimnion	saline water environment				epilimnion	
-	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Hypolimnion	saline water environment				hypolimnion	
-	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Microbial mats	saline water environment				microbial mat	
-	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Sediment	saline water environment		sediment permeated by saline water			
-	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Thalassic	saline water environment					
-	Environmental	Aquatic	Non-marine Saline and Alkaline	Salt crystallizer pond		saline water environment				saline evaporation pond	
-	Environmental	Aquatic	Non-marine Saline and Alkaline	Salt crystallizer pond	Microbial mats	aquatic biome				microbial mat	
-	Environmental	Aquatic	Sediment			aquatic biome		sediment			
-	Environmental	Aquatic	Thermal springs			aquatic biome				hot spring	
-	Environmental	Aquatic	Thermal springs	Hot (42-90C)		high temperature environment					
-	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Acidic	high temperature environment				acid hot spring	
-	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Alkaline	high temperature environment				alkaline hot spring	
-	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Neutral	high temperature environment				neutral hot spring	
-	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Sediment	high temperature environment		sediment			
-	Environmental	Aquatic	Thermal springs	Near-boiling (>90C)		extreme high temperature environment					
-	Environmental	Aquatic	Thermal springs	Near-boiling (>90C)	Alkaline	extreme high temperature environment				alkaline hot spring	
-	Environmental	Aquatic	Thermal springs	Sediment		aquatic biome		sediment			
-	Environmental	Aquatic	Thermal springs	Tepid (25-34C)		aquatic biome					
-	Environmental	Aquatic	Thermal springs	Tepid (25-34C)	Sediment	aquatic biome		sediment			
+	Environmental					environmental system	ENVO:01000254				
+	Environmental	Air						air	ENVO:00002005		
+	Environmental	Air	Indoor Air							building	ENVO:00000073
+	Environmental	Air	Outdoor Air							nitrogen-oxygen planetary atmosphere	ENVO:01000811
+	Environmental	Aquatic				aquatic biome	ENVO:00002030				
+	Environmental	Aquatic	Aquaculture			aquatic biome	ENVO:00002030				FOODON:03520111
+	Environmental	Aquatic	Estuary			estuarine biome	ENVO:01000020			estuary	ENVO:00000045
+	Environmental	Aquatic	Estuary	Sediment		estuarine biome	ENVO:01000020	sediment	ENVO:00002007		
+	Environmental	Aquatic	Freshwater			freshwater biome	ENVO:00000873	fresh water	ENVO:00002011		
+	Environmental	Aquatic	Freshwater	Drinking water		freshwater biome	ENVO:00000873	drinking water	ENVO:00003064		
+	Environmental	Aquatic	Freshwater	Drinking water	Chlorinated	freshwater biome	ENVO:00000873		FOODON:03301647		
+	Environmental	Aquatic	Freshwater	Drinking water	Delivery networks					plumbing fixture	ENVO:01000989
+	Environmental	Aquatic	Freshwater	Groundwater		freshwater biome	ENVO:00000873	groundwater	ENVO:01001004		
+	Environmental	Aquatic	Freshwater	Groundwater	Acid Mine Drainage	freshwater biome	ENVO:00000873			acid mine drainage	ENVO:00001997
+	Environmental	Aquatic	Freshwater	Groundwater	Biofilm	freshwater biome	ENVO:00000873			biofilm	ENVO:00002034
+	Environmental	Aquatic	Freshwater	Groundwater	Cave water	freshwater biome	ENVO:00000873	cave	ENVO:00000067		
+	Environmental	Aquatic	Freshwater	Groundwater	Coalbed water	freshwater biome	ENVO:00000873	coal	ENVO:02000091		
+	Environmental	Aquatic	Freshwater	Groundwater	Contaminated	freshwater biome	ENVO:00000873	contaminated water	ENVO:00002186		
+	Environmental	Aquatic	Freshwater	Groundwater	Mine	aquatic biome	ENVO:00002030			mine	ENVO:00000076
+	Environmental	Aquatic	Freshwater	Groundwater	Mine drainage	freshwater biome	ENVO:00000873	mine drainage	ENVO:00001996		
+	Environmental	Aquatic	Freshwater	Ice		freshwater biome	ENVO:00000873	water ice	ENVO:01000277		
+	Environmental	Aquatic	Freshwater	Ice	Glacial lake	freshwater lake biome	ENVO:01000252			glacial lake	ENVO:00000488
+	Environmental	Aquatic	Freshwater	Ice	Glacier	freshwater biome	ENVO:00000873	glacier	ENVO:00000133	glacial feature	ENVO:00000131
+	Environmental	Aquatic	Freshwater	Ice	Ice accretions	freshwater biome	ENVO:00000873	ice mass	ENVO:01000293		
+	Environmental	Aquatic	Freshwater	Lake		freshwater lake biome	ENVO:01000252	freshwater lake	ENVO:00000021		
+	Environmental	Aquatic	Freshwater	Lentic		freshwater biome	ENVO:00000873			lentic water body	ENVO:01000617
+	Environmental	Aquatic	Freshwater	Lentic	Epilimnion	freshwater lake biome	ENVO:01000252			epilimnion	ENVO:00002131
+	Environmental	Aquatic	Freshwater	Lentic	Hypolimnion	freshwater lake biome	ENVO:01000252			hypolimnion	ENVO:00002130
+	Environmental	Aquatic	Freshwater	Lentic	Limnetic zone	freshwater lake biome	ENVO:01000252				
+	Environmental	Aquatic	Freshwater	Lentic	Littoral zone	freshwater biome	ENVO:00000873				
+	Environmental	Aquatic	Freshwater	Lentic	Sediment	freshwater biome	ENVO:00000873	sediment	ENVO:00002007		
+	Environmental	Aquatic	Freshwater	Lotic		freshwater biome	ENVO:00000873	lotic water body	ENVO:01000618		
+	Environmental	Aquatic	Freshwater	Lotic	Acidic	acidic environment	ENVO:01000315				
+	Environmental	Aquatic	Freshwater	Lotic	Low land river systems	freshwater river biome	ENVO:01000253				
+	Environmental	Aquatic	Freshwater	Lotic	Microbial mats	freshwater biome	ENVO:00000873			microbial mat	ENVO:01000008
+	Environmental	Aquatic	Freshwater	Lotic	Mid stream	freshwater biome	ENVO:00000873				
+	Environmental	Aquatic	Freshwater	Lotic	Sediment	freshwater biome	ENVO:00000873	sediment permeated by freshwater	ENVO:01001028		
+	Environmental	Aquatic	Freshwater	Microbialites		freshwater biome	ENVO:00000873				
+	Environmental	Aquatic	Freshwater	Pond		freshwater biome	ENVO:00000873			pond	ENVO:00000033
+	Environmental	Aquatic	Freshwater	Pond	Sediment	freshwater biome	ENVO:00000873	sediment permeated by freshwater	ENVO:01001028		
+	Environmental	Aquatic	Freshwater	Sediment		freshwater biome	ENVO:00000873	sediment permeated by freshwater	ENVO:01001028		
+	Environmental	Aquatic	Freshwater	Storm water		freshwater biome	ENVO:00000873	stormwater	ENVO:01001267		
+	Environmental	Aquatic	Freshwater	Storm water	Drainage pipe biofilm			biofilm material	ENVO:01000156	plumbing drain	ENVO:01000924
+	Environmental	Aquatic	Freshwater	Subglacial lake		freshwater lake biome	ENVO:01000252			subglacial lake	ENVO:03000120
+	Environmental	Aquatic	Freshwater	Wetlands		freshwater wetland ecosystem	ENVO:00000243				
+	Environmental	Aquatic	Freshwater	Wetlands	Bog	freshwater wetland ecosystem	ENVO:00000243				
+	Environmental	Aquatic	Freshwater	Wetlands	Marsh	freshwater marsh	ENVO:00000053				
+	Environmental	Aquatic	Freshwater	Wetlands	Sediment	freshwater wetland ecosystem	ENVO:00000243	sediment permeated by freshwater	ENVO:01001028		
+	Environmental	Aquatic	Freshwater	Wetlands	Swamp	swamp ecosystem	ENVO:00000233				
+	Environmental	Aquatic	Lentic			aquatic biome	ENVO:00002030			lentic water body	ENVO:01000617
+	Environmental	Aquatic	Lentic	Brackish		brackish water environment	ENVO:01000322	brackish water	ENVO:00002019		
+	Environmental	Aquatic	Marine			marine biome	ENVO:00000447				
+	Environmental	Aquatic	Marine	Brackish		brackish water environment	ENVO:01000322	brackish water	ENVO:00002019		
+	Environmental	Aquatic	Marine	Coastal		marine biome	ENVO:00000447			coastal water body	ENVO:02000049
+	Environmental	Aquatic	Marine	Coastal	Sediment	marine biome	ENVO:00000447	marine sediment	ENVO:03000033		
+	Environmental	Aquatic	Marine	Cold seeps		marine cold seep biome	ENVO:01000127			cold seep	ENVO:01000263
+	Environmental	Aquatic	Marine	Cold seeps	Sediment	marine cold seep biome	ENVO:01000127	marine sediment	ENVO:03000033		
+	Environmental	Aquatic	Marine	Fossil		marine biome	ENVO:00000447			fossil	ENVO:00002164
+	Environmental	Aquatic	Marine	Fossil	Whale fall	marine biome	ENVO:00000447			whale fall	ENVO:01000140
+	Environmental	Aquatic	Marine	Hydrothermal vents		marine hydrothermal vent biome	ENVO:01000030			hydrothermal vent	ENVO:00000215
+	Environmental	Aquatic	Marine	Hydrothermal vents	Black smokers	marine black smoker biome	ENVO:01000051			black smoker	ENVO:00000218
+	Environmental	Aquatic	Marine	Hydrothermal vents	Diffuse flow	marine hydrothermal vent biome	ENVO:01000030	hydrothermal fluid	ENVO:01000134		
+	Environmental	Aquatic	Marine	Hydrothermal vents	Microbial mats	marine hydrothermal vent biome	ENVO:01000030			microbial mat	ENVO:01000008
+	Environmental	Aquatic	Marine	Hydrothermal vents	Sediment	marine hydrothermal vent biome	ENVO:01000030	marine sediment	ENVO:03000033		
+	Environmental	Aquatic	Marine	Intertidal zone		intertidal ecosystem	ENVO:01001468				
+	Environmental	Aquatic	Marine	Intertidal zone	Beach	intertidal ecosystem	ENVO:01001468			beach	ENVO:00000091
+	Environmental	Aquatic	Marine	Intertidal zone	Coral reef	marine coral reef biome	ENVO:01000049			coral reef	ENVO:00000150
+	Environmental	Aquatic	Marine	Intertidal zone	Estuary	estuarine biome	ENVO:01000020			estuary	ENVO:00000045
+	Environmental	Aquatic	Marine	Intertidal zone	Mangrove swamp	mangrove swamp	ENVO:00000057				
+	Environmental	Aquatic	Marine	Intertidal zone	Microbialites	intertidal ecosystem	ENVO:01001468				
+	Environmental	Aquatic	Marine	Intertidal zone	Oil-contaminated	intertidal ecosystem	ENVO:01001468	oil	ENVO:00002985		
+	Environmental	Aquatic	Marine	Intertidal zone	Salt marsh	marine salt marsh biome	ENVO:01000022				
+	Environmental	Aquatic	Marine	Intertidal zone	Sediment	intertidal ecosystem	ENVO:01001468	intertidal sediment	ENVO:00002179		
+	Environmental	Aquatic	Marine	Marginal Sea		marginal sea biome	ENVO:01000046				
+	Environmental	Aquatic	Marine	Neritic zone		neritic pelagic zone biome	ENVO:01000032				
+	Environmental	Aquatic	Marine	Neritic zone	Oil-contaminated sediment			oil	ENVO:00002985		
+	Environmental	Aquatic	Marine	Neritic zone	Sediment	neritic pelagic zone biome	ENVO:01000032	marine sediment	ENVO:03000033		
+	Environmental	Aquatic	Marine	Oceanic		ocean biome	ENVO:01000048				
+	Environmental	Aquatic	Marine	Oceanic	Abyssal plane	marine abyssal zone biome	ENVO:01000027			abyssal plain	ENVO:00000244
+	Environmental	Aquatic	Marine	Oceanic	Aphotic zone	ocean biome	ENVO:01000048			marine aphotic zone	ENVO:00000210
+	Environmental	Aquatic	Marine	Oceanic	Benthic	marine benthic biome	ENVO:01000024			marine benthic feature	ENVO:01000105
+	Environmental	Aquatic	Marine	Oceanic	Oil-contaminated	ocean biome	ENVO:01000048	oil	ENVO:00002985		
+	Environmental	Aquatic	Marine	Oceanic	Oil-contaminated sediments	ocean biome	ENVO:01000048	contaminated sediment	ENVO:00002114	oil	ENVO:00002985
+	Environmental	Aquatic	Marine	Oceanic	Photic zone	ocean biome	ENVO:01000048			marine photic zone	ENVO:00000209
+	Environmental	Aquatic	Marine	Oceanic	Sediment	ocean biome	ENVO:01000048	marine sediment	ENVO:03000033		
+	Environmental	Aquatic	Marine	Oil field		marine biome	ENVO:00000447	oil field production water	ENVO:00002194		
+	Environmental	Aquatic	Marine	Oil field	bore hole	marine biome	ENVO:00000447	bore hole water	ENVO:00003097	borehole	ENVO:00002226
+	Environmental	Aquatic	Marine	Oil seeps		marine biome	ENVO:00000447	oil seep	ENVO:00002063		
+	Environmental	Aquatic	Marine	Oil-contaminated sediment				contaminated sediment	ENVO:00002114	oil	ENVO:00002985
+	Environmental	Aquatic	Marine	Pelagic		marine pelagic biome	ENVO:01000023				
+	Environmental	Aquatic	Marine	Sediment		marine biome	ENVO:00000447	marine sediment	ENVO:03000033		
+	Environmental	Aquatic	Marine	Volcanic		marine biome	ENVO:00000447				
+	Environmental	Aquatic	Marine	Wetlands		coastal wetland ecosystem	ENVO:00000230				
+	Environmental	Aquatic	Marine	Wetlands	Sediment	wetland ecosystem	ENVO:01001209	sediment	ENVO:00002007		
+	Environmental	Aquatic	Meromictic lake			aquatic biome	ENVO:00002030			meromictic lake	ENVO:00000199
+	Environmental	Aquatic	Non-marine Saline and Alkaline			aquatic biome	ENVO:00002030				
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline		alkaline environment	ENVO:01000316				
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Carbonate	alkaline environment	ENVO:01000316				
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Microbial mats	alkaline environment	ENVO:01000316			microbial mat	ENVO:01000008
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Alkaline	Sediment	alkaline environment	ENVO:01000316	sediment	ENVO:00002007		
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Hypersaline		hypersaline water environment	ENVO:01001043				
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Hypersaline	Microbial mats	hypersaline water environment	ENVO:01001043			microbial mat	ENVO:01000008
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Hypersaline	Sediment	hypersaline water environment	ENVO:01001043	sediment permeated by saline water	ENVO:01001036		
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Near-boiling (>90C)		extreme high temperature environment	ENVO:01000318				
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Near-boiling (>90C)	Alkaline	alkaline environment	ENVO:01000316				
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline		saline water environment	ENVO:01000307				
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Athalassic	saline water environment	ENVO:01000307			saline lake	ENVO:00000019
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Epilimnion	saline water environment	ENVO:01000307			epilimnion	ENVO:00002131
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Hypolimnion	saline water environment	ENVO:01000307			hypolimnion	ENVO:00002130
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Microbial mats	saline water environment	ENVO:01000307			microbial mat	ENVO:01000008
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Sediment	saline water environment	ENVO:01000307	sediment permeated by saline water	ENVO:01001036		
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Saline	Thalassic	saline water environment	ENVO:01000307				
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Salt crystallizer pond		saline water environment	ENVO:01000307			saline evaporation pond	ENVO:00000055
+	Environmental	Aquatic	Non-marine Saline and Alkaline	Salt crystallizer pond	Microbial mats	aquatic biome	ENVO:00002030			microbial mat	ENVO:01000008
+	Environmental	Aquatic	Sediment			aquatic biome	ENVO:00002030	sediment	ENVO:00002007		
+	Environmental	Aquatic	Thermal springs			aquatic biome	ENVO:00002030			hot spring	ENVO:00000051
+	Environmental	Aquatic	Thermal springs	Hot (42-90C)		high temperature environment	ENVO:01000305				
+	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Acidic	high temperature environment	ENVO:01000305			acid hot spring	ENVO:00002120
+	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Alkaline	high temperature environment	ENVO:01000305			alkaline hot spring	ENVO:00002119
+	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Neutral	high temperature environment	ENVO:01000305			neutral hot spring	ENVO:00002181
+	Environmental	Aquatic	Thermal springs	Hot (42-90C)	Sediment	high temperature environment	ENVO:01000305	sediment	ENVO:00002007		
+	Environmental	Aquatic	Thermal springs	Near-boiling (>90C)		extreme high temperature environment	ENVO:01000318				
+	Environmental	Aquatic	Thermal springs	Near-boiling (>90C)	Alkaline	extreme high temperature environment	ENVO:01000318			alkaline hot spring	ENVO:00002119
+	Environmental	Aquatic	Thermal springs	Sediment		aquatic biome	ENVO:00002030	sediment	ENVO:00002007		
+	Environmental	Aquatic	Thermal springs	Tepid (25-34C)		aquatic biome	ENVO:00002030				
+	Environmental	Aquatic	Thermal springs	Tepid (25-34C)	Sediment	aquatic biome	ENVO:00002030	sediment	ENVO:00002007		
 	Environmental	Aquatic	Thermal springs	Warm (34-42C)							
-	Environmental	Aquatic	Thermal springs	Warm (34-42C)	Neutral	aquatic biome				neutral hot spring	
-	Environmental	Aquatic	Thermal springs	Warm (34-42C)	Sediment	aquatic biome		sediment			
-	Environmental	Terrestrial				terrestrial biome					
-	Environmental	Terrestrial	Agricultural field			cropland biome				agricultural field	
-	Environmental	Terrestrial	Asphalt lakes			terrestrial biome				asphalt lake	
-	Environmental	Terrestrial	Asphalt lakes	Tar		terrestrial biome		asphalt			
-	Environmental	Terrestrial	Deep subsurface			terrestrial biome					
-	Environmental	Terrestrial	Deep subsurface	Clay		terrestrial biome		clay			
-	Environmental	Terrestrial	Geologic			terrestrial biome		solid astronomical body part			
-	Environmental	Terrestrial	Geologic	Mine		terrestrial biome		mine			
-	Environmental	Terrestrial	Oil reservoir			terrestrial biome		oil reservoir			
-	Environmental	Terrestrial	Rock-dwelling (subaerial biofilm)			terrestrial biome		rock		biofilm	
-	Environmental	Terrestrial	Soil			terrestrial biome		soil			
-	Environmental	Terrestrial	Soil	Agricultural		cropland biome		agricultural soil			
-	Environmental	Terrestrial	Soil	Boreal forest		subpolar coniferous forest biome					
-	Environmental	Terrestrial	Soil	Clay		terrestrial biome		clay soil			
-	Environmental	Terrestrial	Soil	Clay	Agricultural land	cropland biome		agricultural soil			
-	Environmental	Terrestrial	Soil	Clay	Contaminated	terrestrial biome		contaminated soil			
-	Environmental	Terrestrial	Soil	Clay	Grasslands	grassland biome					
-	Environmental	Terrestrial	Soil	Clay	Oil-contaminated	terrestrial biome		oil contaminated soil			
-	Environmental	Terrestrial	Soil	Contaminated		terrestrial biome		contaminated soil			
-	Environmental	Terrestrial	Soil	Crop		cropland biome					
-	Environmental	Terrestrial	Soil	Crop	Agricultural land	cropland biome		agricultural soil			
-	Environmental	Terrestrial	Soil	Desert		desert biome				desert	
-	Environmental	Terrestrial	Soil	Forest soil		forest biome					
-	Environmental	Terrestrial	Soil	Grasslands		grassland biome					
-	Environmental	Terrestrial	Soil	Loam		terrestrial biome		loam			
-	Environmental	Terrestrial	Soil	Loam	Agricultural	cropland biome		agricultural soil			
-	Environmental	Terrestrial	Soil	Loam	Contaminated	terrestrial biome		contaminated soil			
-	Environmental	Terrestrial	Soil	Loam	Forest soil	forest biome					
-	Environmental	Terrestrial	Soil	Loam	Grasslands	grassland biome					
-	Environmental	Terrestrial	Soil	Mine		terrestrial biome		mine			
-	Environmental	Terrestrial	Soil	Mine drainage		terrestrial biome		mine drainage			
-	Environmental	Terrestrial	Soil	Oil-contaminated		terrestrial biome		oil contaminated soil			
-	Environmental	Terrestrial	Soil	Permafrost		terrestrial biome		permafrost			
-	Environmental	Terrestrial	Soil	Sand		terrestrial biome		sand		sand	
-	Environmental	Terrestrial	Soil	Sand	Desert	desert biome		desert sand		desert	
-	Environmental	Terrestrial	Soil	Sand	Forest soil	forest biome					
-	Environmental	Terrestrial	Soil	Sand	Grasslands	grassland biome					
-	Environmental	Terrestrial	Soil	Sand	Oil-contaminated	terrestrial biome		oil contaminated soil			
-	Environmental	Terrestrial	Soil	Shrubland		shrubland biome					
-	Environmental	Terrestrial	Soil	Silt		terrestrial biome		silt			
-	Environmental	Terrestrial	Soil	Tropical rainforest		forest ecosystem		tropical soil			
-	Environmental	Terrestrial	Soil	Uranium contaminated		terrestrial biome		contaminated soil			
-	Environmental	Terrestrial	Soil	Wetlands		wetland ecosystem					
-	Environmental	Terrestrial	Soil	Wetlands	Permafrost	wetland ecosystem		permafrost			
-	Environmental	Terrestrial	Volcanic			terrestrial biome				volcano	
-	Environmental	Terrestrial	Volcanic	Fumaroles		terrestrial biome				fumarole	
+	Environmental	Aquatic	Thermal springs	Warm (34-42C)	Neutral	aquatic biome	ENVO:00002030			neutral hot spring	ENVO:00002181
+	Environmental	Aquatic	Thermal springs	Warm (34-42C)	Sediment	aquatic biome	ENVO:00002030	sediment	ENVO:00002007		
+	Environmental	Terrestrial				terrestrial biome	ENVO:00000446				
+	Environmental	Terrestrial	Agricultural field			cropland biome	ENVO:01000245			agricultural field	ENVO:00000114
+	Environmental	Terrestrial	Asphalt lakes			terrestrial biome	ENVO:00000446			asphalt lake	ENVO:00000165
+	Environmental	Terrestrial	Asphalt lakes	Tar		terrestrial biome	ENVO:00000446	asphalt	ENVO:01000460		
+	Environmental	Terrestrial	Deep subsurface			terrestrial biome	ENVO:00000446				
+	Environmental	Terrestrial	Deep subsurface	Clay		terrestrial biome	ENVO:00000446	clay	ENVO:00002982		
+	Environmental	Terrestrial	Geologic			terrestrial biome	ENVO:00000446	solid astronomical body part	ENVO:00000191		
+	Environmental	Terrestrial	Geologic	Mine		terrestrial biome	ENVO:00000446	mine	ENVO:00000076		
+	Environmental	Terrestrial	Oil reservoir			terrestrial biome	ENVO:00000446	oil reservoir	ENVO:00002185		
+	Environmental	Terrestrial	Rock-dwelling (subaerial biofilm)			terrestrial biome	ENVO:00000446	rock	ENVO:00001995	biofilm	ENVO:00002034
+	Environmental	Terrestrial	Soil			terrestrial biome	ENVO:00000446	soil	ENVO:00001998		
+	Environmental	Terrestrial	Soil	Agricultural		cropland biome	ENVO:01000245	agricultural soil	ENVO:00002259		
+	Environmental	Terrestrial	Soil	Boreal forest		subpolar coniferous forest biome	ENVO:01000250				
+	Environmental	Terrestrial	Soil	Clay		terrestrial biome	ENVO:00000446	clay soil	ENVO:00002262		
+	Environmental	Terrestrial	Soil	Clay	Agricultural land	cropland biome	ENVO:01000245	agricultural soil	ENVO:00002259		
+	Environmental	Terrestrial	Soil	Clay	Contaminated	terrestrial biome	ENVO:00000446	contaminated soil	ENVO:00002116		
+	Environmental	Terrestrial	Soil	Clay	Grasslands	grassland biome	ENVO:01000177				
+	Environmental	Terrestrial	Soil	Clay	Oil-contaminated	terrestrial biome	ENVO:00000446	oil contaminated soil	ENVO:00002875		
+	Environmental	Terrestrial	Soil	Contaminated		terrestrial biome	ENVO:00000446	contaminated soil	ENVO:00002116		
+	Environmental	Terrestrial	Soil	Crop		cropland biome	ENVO:01000245				
+	Environmental	Terrestrial	Soil	Crop	Agricultural land	cropland biome	ENVO:01000245	agricultural soil	ENVO:00002259		
+	Environmental	Terrestrial	Soil	Desert		desert biome	ENVO:01000179			desert	ENVO:01001357
+	Environmental	Terrestrial	Soil	Forest soil		forest biome	ENVO:01000174				
+	Environmental	Terrestrial	Soil	Grasslands		grassland biome	ENVO:01000177				
+	Environmental	Terrestrial	Soil	Loam		terrestrial biome	ENVO:00000446	loam	ENVO:00002258		
+	Environmental	Terrestrial	Soil	Loam	Agricultural	cropland biome	ENVO:01000245	agricultural soil	ENVO:00002259		
+	Environmental	Terrestrial	Soil	Loam	Contaminated	terrestrial biome	ENVO:00000446	contaminated soil	ENVO:00002116		
+	Environmental	Terrestrial	Soil	Loam	Forest soil	forest biome	ENVO:01000174				
+	Environmental	Terrestrial	Soil	Loam	Grasslands	grassland biome	ENVO:01000177				
+	Environmental	Terrestrial	Soil	Mine		terrestrial biome	ENVO:00000446	mine	ENVO:00000076		
+	Environmental	Terrestrial	Soil	Mine drainage		terrestrial biome	ENVO:00000446	mine drainage	ENVO:00001996		
+	Environmental	Terrestrial	Soil	Oil-contaminated		terrestrial biome	ENVO:00000446	oil contaminated soil	ENVO:00002875		
+	Environmental	Terrestrial	Soil	Permafrost		terrestrial biome	ENVO:00000446	permafrost	ENVO:00000134		
+	Environmental	Terrestrial	Soil	Sand		terrestrial biome	ENVO:00000446	sand	ENVO:01000017	sand	ENVO:01000017
+	Environmental	Terrestrial	Soil	Sand	Desert	desert biome	ENVO:01000179	desert sand	ENVO:00005800	desert	ENVO:01001357
+	Environmental	Terrestrial	Soil	Sand	Forest soil	forest biome	ENVO:01000174				
+	Environmental	Terrestrial	Soil	Sand	Grasslands	grassland biome	ENVO:01000177				
+	Environmental	Terrestrial	Soil	Sand	Oil-contaminated	terrestrial biome	ENVO:00000446	oil contaminated soil	ENVO:00002875		
+	Environmental	Terrestrial	Soil	Shrubland		shrubland biome	ENVO:01000176				
+	Environmental	Terrestrial	Soil	Silt		terrestrial biome	ENVO:00000446	silt	ENVO:01000016		
+	Environmental	Terrestrial	Soil	Tropical rainforest		forest ecosystem	ENVO:01001243	tropical soil	ENVO:00005778		
+	Environmental	Terrestrial	Soil	Uranium contaminated		terrestrial biome	ENVO:00000446	contaminated soil	ENVO:00002116		
+	Environmental	Terrestrial	Soil	Wetlands		wetland ecosystem	ENVO:01001209				
+	Environmental	Terrestrial	Soil	Wetlands	Permafrost	wetland ecosystem	ENVO:01001209	permafrost	ENVO:00000134		
+	Environmental	Terrestrial	Volcanic			terrestrial biome	ENVO:00000446			volcano	ENVO:00000247
+	Environmental	Terrestrial	Volcanic	Fumaroles		terrestrial biome	ENVO:00000446			fumarole	ENVO:00000216
 4845	Engineered	Artificial ecosystem	Mud microcosm	Unclassified	Unclassified						
 4536	Engineered	Bioreactor	Aerobic	Unclassified	Unclassified						
 4912	Engineered	Bioreactor	Anaerobic	Food waste	Unclassified						
