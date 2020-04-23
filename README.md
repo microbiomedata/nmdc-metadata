@@ -41,3 +41,6 @@ We use [Jupyter notebooks](https://github.com/microbiomedata/nmdc-metadata/tree/
 
 Development of more comprehensive ETL pipeline will progress as the metadata sources and schema become more concrete.
 
+## Identifiers
+
+See [identifiers](docs/identifiers.md) documentation
