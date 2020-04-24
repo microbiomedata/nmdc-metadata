@@ -8,6 +8,10 @@ Tasks managed by the repository are:
 * Deploying the [documentation](https://microbiomedata.github.io/nmdc-metadata/) 
 * [Integrating](./metadata-translation/notebooks) metadata from multiple environmental data repositories
 
+## Background
+
+The NMDC [Introduction to metadata and ontologies](https://microbiomedata.org/introduction-to-metadata-and-ontologies/) primer describes the context for this project.
+
 ## Schema
 The [NMDC schema](./schema) is used during the [translation process](./metadata-translation/notebooks) to specify how metadata elements are related.
 
@@ -24,6 +28,7 @@ Entities in the schema are annotated with characteristics. When possible, we use
  
 We are actively involved in updating the [MIxS](https://gensc.org/mixs/) standards ([mixs-ng](https://github.com/GenomicsStandardsConsortium/mixs-ng)) and creating an RDF version of [MIxS](https://gensc.org/mixs/) ([mixs-rdf](https://github.com/GenomicsStandardsConsortium/mixs-rdf)).
 
+See also our analysis of [MIxS descriptors](https://docs.google.com/document/d/141BWGbWdTuCQ_QoqdsO_BvHW37wJuLU9xZnvnHTEtNU/edit)
 
 ## Metadata sources
 At present, we ingest metadata from the [Joint Genome Institute (JGI)](https://jgi.doe.gov/) and the [Environmental Molecular Sciences Lab (EMSL)](https://www.pnnl.gov/environmental-molecular-sciences-laboratory).  
@@ -36,3 +41,6 @@ We use [Jupyter notebooks](https://github.com/microbiomedata/nmdc-metadata/tree/
 
 Development of more comprehensive ETL pipeline will progress as the metadata sources and schema become more concrete.
 
+## Identifiers
+
+See [identifiers](docs/identifiers.md) documentation
