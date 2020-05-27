@@ -3,6 +3,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/microbiomedata/nmdc-metadata)
 ![GitHub issues](https://img.shields.io/github/issues/microbiomedata/nmdc-metadata)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/microbiomedata/nmdc-metadata)
+![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/microbiomedata/nmdc-metadata)
 
 The purpose of this repository is to manage metadata for the [National Microbiome Data Collaborative (NMDC)](https://microbiomedata.org/). The [NMDC](https://microbiomedata.org/) is a multi-organizational effort to enable integrated microbiome data across diverse areas in medicine, agriculture, bioenergy, and the environment. This integrated platform facilitates comprehensive discovery of and access to multidisciplinary microbiome data in order to unlock new possibilities with microbiome data science. 
 
