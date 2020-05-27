@@ -8,6 +8,7 @@ prefixes:
   nmdc: https://microbiomedata/meta/
   wgs: http://www.w3.org/2003/01/geo/wgs84_pos
   qud: http://qudt.org/1.1/schema/qudt#
+  dcterms: http://purl.org/dc/terms/
   biolinkml: https://w3id.org/biolink/biolinkml/
   
 default_prefix: nmdc
@@ -33,37 +34,107 @@ classes:
     slots:
       - id
       - name
+      - description
       - alternate identifiers
+
+  data object:
+    is_a: named thing
+    description: >-
+      An object that primarily consists of symbols that represent information.  
+      Files, records, and omics data are examples of data objects. 
+    slots:
+      - annotations
+    slot_usage:
+      annotations:
+        range: annotation
       
   biosample:
+    is_a: named thing
     aliases: ['sample', 'material sample']
     description: >-
-      A material sample. May be environmental (encompassing many organisms) or isolate or tissue
-    is_a: named thing
+      A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.  
+      An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.  
     slots:
       - annotations
     slot_usage:
       id:
         description: >-
-          The primary identifier for the sample
+          The primary identifier for the biosample
       name:
         description: >-
-          A human readable name or description of the sample
+          A human readable name or description of the biosample
       alternate identifiers:
         description: >-
-          The same sample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
-
-  ## TODO
-  biosample processing:
+          The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
+      annotations:
+        range: annotation
+ 
+  study:
+    is_a: named thing
+    aliases: ['proposal', 'research proposal', 'research study']
     description: >-
-      A process that takes one or more biosamples as inputs and generates one or more as output
+      A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.  
     slots:
-      - input
-      - output
+      - annotations
+    slot_usage:
+      id:
+        description: >-
+          The primary identifier for the study.
+      name:
+        description: >-
+          A human readable name or description of the study.
+      alternate identifiers:
+        description: >-
+          The same study may have distinct identifiers in different databases (e.g. GOLD and EMSL)
+      annotations:
+        range: annotation
+
+  biosample processing:
+    is_a: named thing
+    description: >-
+      A process that takes one or more biosamples as inputs and generates one or as outputs.
+      Examples of outputs include samples cultivated from another sample or data objects created by instruments runs.
+    slots:
+      - has input
+      - annotations
+    slot_usage:
+      has input:
+        range: biosample
+      annotations:
+        range: annotation
+
+  omics processing:
+    is_a: biosample processing
+    description: >-
+      The methods and processes used to generate omics data from a biosample or organism.
+    slots:
+      - part of
+      - has output
+    slot_usage:
+      id:
+        description: >-
+          The primary identifier for the omics processing.
+      name:
+        description: >-
+          A human readable name or description of the omics processing.
+      alternate identifiers:
+        description: >-
+          The same omics processing may have distinct identifiers in different databases (e.g. GOLD and EMSL)
+      part of:
+        range: study
+      has output:
+        range: data object
+    
+  characteristic:
+    aliases: ['field', 'property', 'template field', 'key']
+    description: >-
+      A characteristic of a biosample. Examples: depth, habitat, material.
+      For NMDC, characteristics SHOULD be mapped to terms within a MIxS template
+    is_a: named thing
 
   normalized value:
     description: >-
-      The value that was specified for an annotation in parsed/normalized form. This could be a range of different types
+      The value that was specified for an annotation in parsed/normalized form. This could be a range of different types.
     
   quantity value:
     is_a: normalized value
@@ -73,6 +144,11 @@ classes:
       - has unit
       - has numeric value
     
+  controlled term value:
+    is_a: normalized value
+    description: >-
+      A controlled term or class from an ontology
+
   geolocation value:
     is_a: normalized value
     description: >-
@@ -87,21 +163,33 @@ classes:
     mappings:
       - qud:Unit
       - UO:0000000
-      
+
   ontology class:
     is_a: named thing
 
   environmental material term:
     is_a: ontology class
       
+
+  ## TODO: provenance on an annotation; some will be directly entered by a submitter;
+  ## others will be done post-submission by a curator; others will be done automatically (e.g. by text mining)
+  ## or by automatic enrichment methods (e.g. calling ORNL-Identify using geolocation)
+  annotation:
+    description: >-
+      An annotation on a named thing. This is essentially a key value pair
+    slots:
+      - has characteristic
+      - has raw value
+      - has normalized value
+
 slots:
 
   id:
-    identifier: true
+    identifier: false
     description: >-
       A unique identifier for a thing.
       Must be either a CURIE shorthand for a URI or a complete URI
-    required: true
+    required: false # for now we setting this to false until we develop an id template
 
   name:
     description: >-
@@ -116,31 +204,29 @@ slots:
   has characteristic:
     description: >-
       Links an annotation to the field/characteristic
-    multivalued: false
+    multivalued: true     ## workaround for https://github.com/biolink/biolinkml/issues/86
+    inlined: true
     domain: annotation
     range: characteristic
-
-  instance of:
-    range: ontology class
     
   has raw value:
     description: >-
       The value that was specified for an annotation in raw form, i.e. a string. E.g. "2 cm" or "2-4 cm"
     multivalued: false
-    required: true
+    required: false
     domain: annotation
     range: string
     
   has normalized value:
     description: >-
-      Connects an annotation to the normalized/parsed raw value
+      Links an annotation to the normalized/parsed raw value
     domain: annotation
     range: normalized value
     multivalued: true     ## workaround for https://github.com/biolink/biolinkml/issues/86
     
   has unit:
     description: >-
-      connects a quantity value to a unit
+      Links a quantity value to a unit
     range: unit
     multivalued: true     ## workaround for https://github.com/biolink/biolinkml/issues/86
     mappings:
@@ -148,7 +234,7 @@ slots:
 
   has numeric value:
     description: >-
-      connects a quantity value to a number
+      Links a quantity value to a number
     range: double
     multivalued: false
     mappings:
@@ -164,9 +250,9 @@ slots:
 
   annotations:
     description: >-
-      Zero to many annotations on a sample
-    multivalued: true
-    domain: biosample
+      Zero to many annotations on an entity.
+    multivalued: true 
+    domain: named thing
     range: annotation
 
   latitude:
@@ -181,17 +267,22 @@ slots:
       longitude
     slot_uri: wgs:long
     
-  input:
-    range: biosample
+  has input:
+    aliases: ['input']
+    domain: named thing
+    # range: named thing
     multivalued: true
     description: >-
-      An input biosample to a processing step
+      An input to a process.
     
-  output:
-    range: biosample
+  has output:
+    aliases: ['output']
+    #domain: named thing
+    #range: named thing
     multivalued: true
     description: >-
       An output biosample to a processing step
+
     
   ## characteristic
   characteristic:
@@ -220,3 +311,12 @@ slots:
     is_a: characteristic
     range: environmental feature term
     
+  
+  part of:
+    aliases: ['is part of']
+    domain: named thing
+    multivalued: true
+    slot_uri: http://purl.org/dc/terms/isPartOf
+    description: >-
+      Links a resource to another resource that either logically or physically includes it.
+

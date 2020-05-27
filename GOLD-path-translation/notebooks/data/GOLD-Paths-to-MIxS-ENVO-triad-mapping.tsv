@@ -1,0 +1,176 @@
+EBI Biomes	environmental feature	environmental material	biome	quality	GOLD Path > delim
+Environmental			http://purl.obolibrary.org/obo/ENVO_01000254		root > Environmental
+Air		http://purl.obolibrary.org/obo/ENVO_00002005			root > Environmental > Air
+Indoor Air	http://purl.obolibrary.org/obo/ENVO_00000073				root > Environmental > Air > Indoor Air
+Outdoor Air	http://purl.obolibrary.org/obo/ENVO_01000811				root > Environmental > Air > Outdoor Air
+Aquatic			http://purl.obolibrary.org/obo/ENVO_00002030		root > Environmental > Aquatic
+Aquaculture	http://purl.obolibrary.org/obo/FOODON_03520111		http://purl.obolibrary.org/obo/ENVO_00002030		root > Environmental > Aquatic > Aquaculture
+Estuary	http://purl.obolibrary.org/obo/ENVO_00000045		http://purl.obolibrary.org/obo/ENVO_01000020		root > Environmental > Aquatic > Estuary
+Sediment		http://purl.obolibrary.org/obo/ENVO_00002007	http://purl.obolibrary.org/obo/ENVO_01000020		root > Environmental > Aquatic > Estuary > Sediment
+Freshwater		http://purl.obolibrary.org/obo/ENVO_00002011	http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater
+Drinking water		http://purl.obolibrary.org/obo/ENVO_00003064	http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Drinking water
+Chlorinated		http://purl.obolibrary.org/obo/FOODON_03301647	http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Drinking water > Chlorinated
+Delivery networks	http://purl.obolibrary.org/obo/ENVO_01000989				root > Environmental > Aquatic > Freshwater > Drinking water > Delivery networks
+Groundwater		http://purl.obolibrary.org/obo/ENVO_01001004	http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Groundwater
+Acid Mine Drainage	http://purl.obolibrary.org/obo/ENVO_00001997		http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Groundwater > Acid Mine Drainage
+Biofilm	http://purl.obolibrary.org/obo/ENVO_00002034		http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Groundwater > Biofilm
+Cave water		http://purl.obolibrary.org/obo/ENVO_00000067	http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Groundwater > Cave water
+Coalbed water		http://purl.obolibrary.org/obo/ENVO_02000091	http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Groundwater > Coalbed water
+Contaminated		http://purl.obolibrary.org/obo/ENVO_00002186	http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Groundwater > Contaminated
+Mine	http://purl.obolibrary.org/obo/ENVO_00000076		http://purl.obolibrary.org/obo/ENVO_00002030		root > Environmental > Aquatic > Freshwater > Groundwater > Mine
+Mine drainage		http://purl.obolibrary.org/obo/ENVO_00001996	http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Groundwater > Mine drainage
+Ice		http://purl.obolibrary.org/obo/ENVO_01000277	http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Ice
+Glacial lake	http://purl.obolibrary.org/obo/ENVO_00000488		http://purl.obolibrary.org/obo/ENVO_01000252		root > Environmental > Aquatic > Freshwater > Ice > Glacial lake
+Glacier	http://purl.obolibrary.org/obo/ENVO_00000131	http://purl.obolibrary.org/obo/ENVO_00000133	http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Ice > Glacier
+Ice accretions		http://purl.obolibrary.org/obo/ENVO_01000293	http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Ice > Ice accretions
+Lake		http://purl.obolibrary.org/obo/ENVO_00000021	http://purl.obolibrary.org/obo/ENVO_01000252		root > Environmental > Aquatic > Freshwater > Lake
+Lentic	http://purl.obolibrary.org/obo/ENVO_01000617		http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Lentic
+Epilimnion	http://purl.obolibrary.org/obo/ENVO_00002131		http://purl.obolibrary.org/obo/ENVO_01000252		root > Environmental > Aquatic > Freshwater > Lentic > Epilimnion
+Hypolimnion	http://purl.obolibrary.org/obo/ENVO_00002130		http://purl.obolibrary.org/obo/ENVO_01000252		root > Environmental > Aquatic > Freshwater > Lentic > Hypolimnion
+Limnetic zone			http://purl.obolibrary.org/obo/ENVO_01000252		root > Environmental > Aquatic > Freshwater > Lentic > Limnetic zone
+Littoral zone			http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Lentic > Littoral zone
+Sediment		http://purl.obolibrary.org/obo/ENVO_00002007	http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Lentic > Sediment
+Lotic		http://purl.obolibrary.org/obo/ENVO_01000618	http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Lotic
+Acidic			http://purl.obolibrary.org/obo/ENVO_01000315	http://purl.obolibrary.org/obo/PATO_0001429	root > Environmental > Aquatic > Freshwater > Lotic > Acidic
+Low land river systems			http://purl.obolibrary.org/obo/ENVO_01000253		root > Environmental > Aquatic > Freshwater > Lotic > Low land river systems
+Microbial mats	http://purl.obolibrary.org/obo/ENVO_01000008		http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Lotic > Microbial mats
+Mid stream			http://purl.obolibrary.org/obo/ENVO_00000873	http://purl.obolibrary.org/obo/PATO_0002268	root > Environmental > Aquatic > Freshwater > Lotic > Mid stream
+Sediment		http://purl.obolibrary.org/obo/ENVO_01001028	http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Lotic > Sediment
+Microbialites			http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Microbialites
+Pond	http://purl.obolibrary.org/obo/ENVO_00000033		http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Pond
+Sediment		http://purl.obolibrary.org/obo/ENVO_01001028	http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Pond > Sediment
+Sediment		http://purl.obolibrary.org/obo/ENVO_01001028	http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Sediment
+Storm water		http://purl.obolibrary.org/obo/ENVO_01001267	http://purl.obolibrary.org/obo/ENVO_00000873		root > Environmental > Aquatic > Freshwater > Storm water
+Drainage pipe biofilm	http://purl.obolibrary.org/obo/ENVO_01000924	http://purl.obolibrary.org/obo/ENVO_01000156			root > Environmental > Aquatic > Freshwater > Storm water > Drainage pipe biofilm
+Subglacial lake	http://purl.obolibrary.org/obo/ENVO_03000120		http://purl.obolibrary.org/obo/ENVO_01000252		root > Environmental > Aquatic > Freshwater > Subglacial lake
+Wetlands			http://purl.obolibrary.org/obo/ENVO_00000243		root > Environmental > Aquatic > Freshwater > Wetlands
+Bog			http://purl.obolibrary.org/obo/ENVO_00000243		root > Environmental > Aquatic > Freshwater > Wetlands > Bog
+Marsh			http://purl.obolibrary.org/obo/ENVO_00000053		root > Environmental > Aquatic > Freshwater > Wetlands > Marsh
+Sediment		http://purl.obolibrary.org/obo/ENVO_01001028	http://purl.obolibrary.org/obo/ENVO_00000243		root > Environmental > Aquatic > Freshwater > Wetlands > Sediment
+Swamp			http://purl.obolibrary.org/obo/ENVO_00000233		root > Environmental > Aquatic > Freshwater > Wetlands > Swamp
+Lentic	http://purl.obolibrary.org/obo/ENVO_01000617		http://purl.obolibrary.org/obo/ENVO_00002030		root > Environmental > Aquatic > Lentic
+Brackish		http://purl.obolibrary.org/obo/ENVO_00002019	http://purl.obolibrary.org/obo/ENVO_01000322		root > Environmental > Aquatic > Lentic > Brackish
+Marine			http://purl.obolibrary.org/obo/ENVO_00000447		root > Environmental > Aquatic > Marine
+Brackish		http://purl.obolibrary.org/obo/ENVO_00002019	http://purl.obolibrary.org/obo/ENVO_01000322		root > Environmental > Aquatic > Marine > Brackish
+Coastal	http://purl.obolibrary.org/obo/ENVO_02000049		http://purl.obolibrary.org/obo/ENVO_00000447		root > Environmental > Aquatic > Marine > Coastal
+Sediment		http://purl.obolibrary.org/obo/ENVO_03000033	http://purl.obolibrary.org/obo/ENVO_00000447		root > Environmental > Aquatic > Marine > Coastal > Sediment
+Cold seeps	http://purl.obolibrary.org/obo/ENVO_01000263		http://purl.obolibrary.org/obo/ENVO_01000127		root > Environmental > Aquatic > Marine > Cold seeps
+Sediment		http://purl.obolibrary.org/obo/ENVO_03000033	http://purl.obolibrary.org/obo/ENVO_01000127		root > Environmental > Aquatic > Marine > Cold seeps > Sediment
+Fossil	http://purl.obolibrary.org/obo/ENVO_00002164		http://purl.obolibrary.org/obo/ENVO_00000447		root > Environmental > Aquatic > Marine > Fossil
+Whale fall	http://purl.obolibrary.org/obo/ENVO_01000140		http://purl.obolibrary.org/obo/ENVO_00000447		root > Environmental > Aquatic > Marine > Fossil > Whale fall
+Hydrothermal vents	http://purl.obolibrary.org/obo/ENVO_00000215		http://purl.obolibrary.org/obo/ENVO_01000030		root > Environmental > Aquatic > Marine > Hydrothermal vents
+Black smokers	http://purl.obolibrary.org/obo/ENVO_00000218		http://purl.obolibrary.org/obo/ENVO_01000051		root > Environmental > Aquatic > Marine > Hydrothermal vents > Black smokers
+Diffuse flow		http://purl.obolibrary.org/obo/ENVO_01000134	http://purl.obolibrary.org/obo/ENVO_01000030		root > Environmental > Aquatic > Marine > Hydrothermal vents > Diffuse flow
+Microbial mats	http://purl.obolibrary.org/obo/ENVO_01000008		http://purl.obolibrary.org/obo/ENVO_01000030		root > Environmental > Aquatic > Marine > Hydrothermal vents > Microbial mats
+Sediment		http://purl.obolibrary.org/obo/ENVO_03000033	http://purl.obolibrary.org/obo/ENVO_01000030		root > Environmental > Aquatic > Marine > Hydrothermal vents > Sediment
+Intertidal zone			http://purl.obolibrary.org/obo/ENVO_01001468		root > Environmental > Aquatic > Marine > Intertidal zone
+Beach	http://purl.obolibrary.org/obo/ENVO_00000091		http://purl.obolibrary.org/obo/ENVO_01001468		root > Environmental > Aquatic > Marine > Intertidal zone > Beach
+Coral reef	http://purl.obolibrary.org/obo/ENVO_00000150		http://purl.obolibrary.org/obo/ENVO_01000049		root > Environmental > Aquatic > Marine > Intertidal zone > Coral reef
+Estuary	http://purl.obolibrary.org/obo/ENVO_00000045		http://purl.obolibrary.org/obo/ENVO_01000020		root > Environmental > Aquatic > Marine > Intertidal zone > Estuary
+Mangrove swamp			http://purl.obolibrary.org/obo/ENVO_00000057		root > Environmental > Aquatic > Marine > Intertidal zone > Mangrove swamp
+Microbialites			http://purl.obolibrary.org/obo/ENVO_01001468		root > Environmental > Aquatic > Marine > Intertidal zone > Microbialites
+Oil-contaminated		http://purl.obolibrary.org/obo/ENVO_00002985	http://purl.obolibrary.org/obo/ENVO_01001468		root > Environmental > Aquatic > Marine > Intertidal zone > Oil-contaminated
+Salt marsh			http://purl.obolibrary.org/obo/ENVO_01000022		root > Environmental > Aquatic > Marine > Intertidal zone > Salt marsh
+Sediment		http://purl.obolibrary.org/obo/ENVO_00002179	http://purl.obolibrary.org/obo/ENVO_01001468		root > Environmental > Aquatic > Marine > Intertidal zone > Sediment
+Marginal Sea			http://purl.obolibrary.org/obo/ENVO_01000046		root > Environmental > Aquatic > Marine > Marginal Sea
+Neritic zone			http://purl.obolibrary.org/obo/ENVO_01000032		root > Environmental > Aquatic > Marine > Neritic zone
+Oil-contaminated sediment		http://purl.obolibrary.org/obo/ENVO_00002985			root > Environmental > Aquatic > Marine > Neritic zone > Oil-contaminated sediment
+Sediment		http://purl.obolibrary.org/obo/ENVO_03000033	http://purl.obolibrary.org/obo/ENVO_01000032		root > Environmental > Aquatic > Marine > Neritic zone > Sediment
+Oceanic			http://purl.obolibrary.org/obo/ENVO_01000048		root > Environmental > Aquatic > Marine > Oceanic
+Abyssal plane	http://purl.obolibrary.org/obo/ENVO_00000244		http://purl.obolibrary.org/obo/ENVO_01000027		root > Environmental > Aquatic > Marine > Oceanic > Abyssal plane
+Aphotic zone	http://purl.obolibrary.org/obo/ENVO_00000210		http://purl.obolibrary.org/obo/ENVO_01000048		root > Environmental > Aquatic > Marine > Oceanic > Aphotic zone
+Benthic	http://purl.obolibrary.org/obo/ENVO_01000105		http://purl.obolibrary.org/obo/ENVO_01000024		root > Environmental > Aquatic > Marine > Oceanic > Benthic
+Oil-contaminated		http://purl.obolibrary.org/obo/ENVO_00002985	http://purl.obolibrary.org/obo/ENVO_01000048		root > Environmental > Aquatic > Marine > Oceanic > Oil-contaminated
+Oil-contaminated sediments	http://purl.obolibrary.org/obo/ENVO_00002985	http://purl.obolibrary.org/obo/ENVO_00002114	http://purl.obolibrary.org/obo/ENVO_01000048		root > Environmental > Aquatic > Marine > Oceanic > Oil-contaminated sediments
+Photic zone	http://purl.obolibrary.org/obo/ENVO_00000209		http://purl.obolibrary.org/obo/ENVO_01000048		root > Environmental > Aquatic > Marine > Oceanic > Photic zone
+Sediment		http://purl.obolibrary.org/obo/ENVO_03000033	http://purl.obolibrary.org/obo/ENVO_01000048		root > Environmental > Aquatic > Marine > Oceanic > Sediment
+Oil field		http://purl.obolibrary.org/obo/ENVO_00002194	http://purl.obolibrary.org/obo/ENVO_00000447		root > Environmental > Aquatic > Marine > Oil field
+bore hole	http://purl.obolibrary.org/obo/ENVO_00002226	http://purl.obolibrary.org/obo/ENVO_00003097	http://purl.obolibrary.org/obo/ENVO_00000447		root > Environmental > Aquatic > Marine > Oil field > bore hole
+Oil seeps		http://purl.obolibrary.org/obo/ENVO_00002063	http://purl.obolibrary.org/obo/ENVO_00000447		root > Environmental > Aquatic > Marine > Oil seeps
+Oil-contaminated sediment	http://purl.obolibrary.org/obo/ENVO_00002985	http://purl.obolibrary.org/obo/ENVO_00002114			root > Environmental > Aquatic > Marine > Oil-contaminated sediment
+Pelagic			http://purl.obolibrary.org/obo/ENVO_01000023		root > Environmental > Aquatic > Marine > Pelagic
+Sediment		http://purl.obolibrary.org/obo/ENVO_03000033	http://purl.obolibrary.org/obo/ENVO_00000447		root > Environmental > Aquatic > Marine > Sediment
+Volcanic			http://purl.obolibrary.org/obo/ENVO_00000447		root > Environmental > Aquatic > Marine > Volcanic
+Wetlands			http://purl.obolibrary.org/obo/ENVO_00000230		root > Environmental > Aquatic > Marine > Wetlands
+Sediment		http://purl.obolibrary.org/obo/ENVO_00002007	http://purl.obolibrary.org/obo/ENVO_01001209		root > Environmental > Aquatic > Marine > Wetlands > Sediment
+Meromictic lake	http://purl.obolibrary.org/obo/ENVO_00000199		http://purl.obolibrary.org/obo/ENVO_00002030		root > Environmental > Aquatic > Meromictic lake
+Non-marine Saline and Alkaline			http://purl.obolibrary.org/obo/ENVO_00002030		root > Environmental > Aquatic > Non-marine Saline and Alkaline
+Alkaline			http://purl.obolibrary.org/obo/ENVO_01000316		root > Environmental > Aquatic > Non-marine Saline and Alkaline > Alkaline
+Carbonate		http://purl.obolibrary.org/obo/CHEBI_41609	http://purl.obolibrary.org/obo/ENVO_01000316	http://purl.obolibrary.org/obo/PATO_0001162	root > Environmental > Aquatic > Non-marine Saline and Alkaline > Alkaline > Carbonate
+Microbial mats	http://purl.obolibrary.org/obo/ENVO_01000008		http://purl.obolibrary.org/obo/ENVO_01000316		root > Environmental > Aquatic > Non-marine Saline and Alkaline > Alkaline > Microbial mats
+Sediment		http://purl.obolibrary.org/obo/ENVO_00002007	http://purl.obolibrary.org/obo/ENVO_01000316		root > Environmental > Aquatic > Non-marine Saline and Alkaline > Alkaline > Sediment
+Hypersaline			http://purl.obolibrary.org/obo/ENVO_01001043		root > Environmental > Aquatic > Non-marine Saline and Alkaline > Hypersaline
+Microbial mats	http://purl.obolibrary.org/obo/ENVO_01000008		http://purl.obolibrary.org/obo/ENVO_01001043		root > Environmental > Aquatic > Non-marine Saline and Alkaline > Hypersaline > Microbial mats
+Sediment		http://purl.obolibrary.org/obo/ENVO_01001036	http://purl.obolibrary.org/obo/ENVO_01001043		root > Environmental > Aquatic > Non-marine Saline and Alkaline > Hypersaline > Sediment
+Near-boiling (>90C)			http://purl.obolibrary.org/obo/ENVO_01000318	http://purl.obolibrary.org/obo/PATO_0001317	root > Environmental > Aquatic > Non-marine Saline and Alkaline > Near-boiling (>90C)
+Alkaline			http://purl.obolibrary.org/obo/ENVO_01000316		root > Environmental > Aquatic > Non-marine Saline and Alkaline > Near-boiling (>90C) > Alkaline
+Saline			http://purl.obolibrary.org/obo/ENVO_01000307		root > Environmental > Aquatic > Non-marine Saline and Alkaline > Saline
+Athalassic	http://purl.obolibrary.org/obo/ENVO_00000019		http://purl.obolibrary.org/obo/ENVO_01000307		root > Environmental > Aquatic > Non-marine Saline and Alkaline > Saline > Athalassic
+Epilimnion	http://purl.obolibrary.org/obo/ENVO_00002131		http://purl.obolibrary.org/obo/ENVO_01000307		root > Environmental > Aquatic > Non-marine Saline and Alkaline > Saline > Epilimnion
+Hypolimnion	http://purl.obolibrary.org/obo/ENVO_00002130		http://purl.obolibrary.org/obo/ENVO_01000307		root > Environmental > Aquatic > Non-marine Saline and Alkaline > Saline > Hypolimnion
+Microbial mats	http://purl.obolibrary.org/obo/ENVO_01000008		http://purl.obolibrary.org/obo/ENVO_01000307		root > Environmental > Aquatic > Non-marine Saline and Alkaline > Saline > Microbial mats
+Sediment		http://purl.obolibrary.org/obo/ENVO_01001036	http://purl.obolibrary.org/obo/ENVO_01000307		root > Environmental > Aquatic > Non-marine Saline and Alkaline > Saline > Sediment
+Thalassic			http://purl.obolibrary.org/obo/ENVO_01000307		root > Environmental > Aquatic > Non-marine Saline and Alkaline > Saline > Thalassic
+Salt crystallizer pond	http://purl.obolibrary.org/obo/ENVO_00000055		http://purl.obolibrary.org/obo/ENVO_01000307		root > Environmental > Aquatic > Non-marine Saline and Alkaline > Salt crystallizer pond
+Microbial mats	http://purl.obolibrary.org/obo/ENVO_01000008		http://purl.obolibrary.org/obo/ENVO_00002030		root > Environmental > Aquatic > Non-marine Saline and Alkaline > Salt crystallizer pond > Microbial mats
+Sediment		http://purl.obolibrary.org/obo/ENVO_00002007	http://purl.obolibrary.org/obo/ENVO_00002030		root > Environmental > Aquatic > Sediment
+Thermal springs	http://purl.obolibrary.org/obo/ENVO_00000051		http://purl.obolibrary.org/obo/ENVO_00002030		root > Environmental > Aquatic > Thermal springs
+Hot (42-90C)			http://purl.obolibrary.org/obo/ENVO_01000305	http://purl.obolibrary.org/obo/PATO_0001316	root > Environmental > Aquatic > Thermal springs > Hot (42-90C)
+Acidic	http://purl.obolibrary.org/obo/ENVO_00002120		http://purl.obolibrary.org/obo/ENVO_01000305	http://purl.obolibrary.org/obo/PATO_0001844	root > Environmental > Aquatic > Thermal springs > Hot (42-90C) > Acidic
+Alkaline	http://purl.obolibrary.org/obo/ENVO_00002119		http://purl.obolibrary.org/obo/ENVO_01000305	http://purl.obolibrary.org/obo/PATO_0001430	root > Environmental > Aquatic > Thermal springs > Hot (42-90C) > Alkaline
+Neutral	http://purl.obolibrary.org/obo/ENVO_00002181		http://purl.obolibrary.org/obo/ENVO_01000305	http://purl.obolibrary.org/obo/PATO_0045002	root > Environmental > Aquatic > Thermal springs > Hot (42-90C) > Neutral
+Sediment		http://purl.obolibrary.org/obo/ENVO_00002007	http://purl.obolibrary.org/obo/ENVO_01000305		root > Environmental > Aquatic > Thermal springs > Hot (42-90C) > Sediment
+Near-boiling (>90C)			http://purl.obolibrary.org/obo/ENVO_01000318	http://purl.obolibrary.org/obo/PATO_0001317	root > Environmental > Aquatic > Thermal springs > Near-boiling (>90C)
+Alkaline	http://purl.obolibrary.org/obo/ENVO_00002119		http://purl.obolibrary.org/obo/ENVO_01000318	http://purl.obolibrary.org/obo/PATO_0001430	root > Environmental > Aquatic > Thermal springs > Near-boiling (>90C) > Alkaline
+Sediment		http://purl.obolibrary.org/obo/ENVO_00002007	http://purl.obolibrary.org/obo/ENVO_00002030		root > Environmental > Aquatic > Thermal springs > Sediment
+Tepid (25-34C)			http://purl.obolibrary.org/obo/ENVO_00002030	http://purl.obolibrary.org/obo/PATO_0001315	root > Environmental > Aquatic > Thermal springs > Tepid (25-34C)
+Sediment		http://purl.obolibrary.org/obo/ENVO_00002007	http://purl.obolibrary.org/obo/ENVO_00002030		root > Environmental > Aquatic > Thermal springs > Tepid (25-34C) > Sediment
+Warm (34-42C)				http://purl.obolibrary.org/obo/PATO_0001316	root > Environmental > Aquatic > Thermal springs > Warm (34-42C)
+Neutral	http://purl.obolibrary.org/obo/ENVO_00002181		http://purl.obolibrary.org/obo/ENVO_00002030	http://purl.obolibrary.org/obo/PATO_0045002	root > Environmental > Aquatic > Thermal springs > Warm (34-42C) > Neutral
+Sediment		http://purl.obolibrary.org/obo/ENVO_00002007	http://purl.obolibrary.org/obo/ENVO_00002030		root > Environmental > Aquatic > Thermal springs > Warm (34-42C) > Sediment
+Terrestrial			http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial
+Agricultural field	http://purl.obolibrary.org/obo/ENVO_00000114		http://purl.obolibrary.org/obo/ENVO_01000245		root > Environmental > Terrestrial > Agricultural field
+Asphalt lakes	http://purl.obolibrary.org/obo/ENVO_00000165		http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Asphalt lakes
+Tar		http://purl.obolibrary.org/obo/ENVO_01000460	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Asphalt lakes > Tar
+Deep subsurface			http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Deep subsurface
+Clay		http://purl.obolibrary.org/obo/ENVO_00002982	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Deep subsurface > Clay
+Geologic		http://purl.obolibrary.org/obo/ENVO_00000191	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Geologic
+Mine		http://purl.obolibrary.org/obo/ENVO_00000076	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Geologic > Mine
+Oil reservoir		http://purl.obolibrary.org/obo/ENVO_00002185	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Oil reservoir
+Rock-dwelling (subaerial biofilm)	http://purl.obolibrary.org/obo/ENVO_00002034	http://purl.obolibrary.org/obo/ENVO_00001995	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Rock-dwelling (subaerial biofilm)
+Soil		http://purl.obolibrary.org/obo/ENVO_00001998	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Soil
+Agricultural		http://purl.obolibrary.org/obo/ENVO_00002259	http://purl.obolibrary.org/obo/ENVO_01000245		root > Environmental > Terrestrial > Soil > Agricultural
+Boreal forest			http://purl.obolibrary.org/obo/ENVO_01000250		root > Environmental > Terrestrial > Soil > Boreal forest
+Clay		http://purl.obolibrary.org/obo/ENVO_00002262	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Soil > Clay
+Agricultural land		http://purl.obolibrary.org/obo/ENVO_00002259	http://purl.obolibrary.org/obo/ENVO_01000245		root > Environmental > Terrestrial > Soil > Clay > Agricultural land
+Contaminated		http://purl.obolibrary.org/obo/ENVO_00002116	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Soil > Clay > Contaminated
+Grasslands			http://purl.obolibrary.org/obo/ENVO_01000177		root > Environmental > Terrestrial > Soil > Clay > Grasslands
+Oil-contaminated		http://purl.obolibrary.org/obo/ENVO_00002875	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Soil > Clay > Oil-contaminated
+Contaminated		http://purl.obolibrary.org/obo/ENVO_00002116	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Soil > Contaminated
+Crop		http://purl.obolibrary.org/obo/AGRO_00000325	http://purl.obolibrary.org/obo/ENVO_01000245		root > Environmental > Terrestrial > Soil > Crop
+Agricultural land		http://purl.obolibrary.org/obo/ENVO_00002259	http://purl.obolibrary.org/obo/ENVO_01000245		root > Environmental > Terrestrial > Soil > Crop > Agricultural land
+Desert	http://purl.obolibrary.org/obo/ENVO_01001357		http://purl.obolibrary.org/obo/ENVO_01000179		root > Environmental > Terrestrial > Soil > Desert
+Forest soil			http://purl.obolibrary.org/obo/ENVO_01000174		root > Environmental > Terrestrial > Soil > Forest soil
+Grasslands			http://purl.obolibrary.org/obo/ENVO_01000177		root > Environmental > Terrestrial > Soil > Grasslands
+Loam		http://purl.obolibrary.org/obo/ENVO_00002258	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Soil > Loam
+Agricultural		http://purl.obolibrary.org/obo/ENVO_00002259	http://purl.obolibrary.org/obo/ENVO_01000245		root > Environmental > Terrestrial > Soil > Loam > Agricultural
+Contaminated		http://purl.obolibrary.org/obo/ENVO_00002116	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Soil > Loam > Contaminated
+Forest soil			http://purl.obolibrary.org/obo/ENVO_01000174		root > Environmental > Terrestrial > Soil > Loam > Forest soil
+Grasslands			http://purl.obolibrary.org/obo/ENVO_01000177		root > Environmental > Terrestrial > Soil > Loam > Grasslands
+Mine		http://purl.obolibrary.org/obo/ENVO_00000076	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Soil > Mine
+Mine drainage		http://purl.obolibrary.org/obo/ENVO_00001996	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Soil > Mine drainage
+Oil-contaminated		http://purl.obolibrary.org/obo/ENVO_00002875	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Soil > Oil-contaminated
+Permafrost		http://purl.obolibrary.org/obo/ENVO_00000134	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Soil > Permafrost
+Sand	http://purl.obolibrary.org/obo/ENVO_01000017	http://purl.obolibrary.org/obo/ENVO_01000017	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Soil > Sand
+Desert	http://purl.obolibrary.org/obo/ENVO_01001357	http://purl.obolibrary.org/obo/ENVO_00005800	http://purl.obolibrary.org/obo/ENVO_01000179		root > Environmental > Terrestrial > Soil > Sand > Desert
+Forest soil			http://purl.obolibrary.org/obo/ENVO_01000174		root > Environmental > Terrestrial > Soil > Sand > Forest soil
+Grasslands			http://purl.obolibrary.org/obo/ENVO_01000177		root > Environmental > Terrestrial > Soil > Sand > Grasslands
+Oil-contaminated		http://purl.obolibrary.org/obo/ENVO_00002875	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Soil > Sand > Oil-contaminated
+Shrubland			http://purl.obolibrary.org/obo/ENVO_01000176		root > Environmental > Terrestrial > Soil > Shrubland
+Silt		http://purl.obolibrary.org/obo/ENVO_01000016	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Soil > Silt
+Tropical rainforest		http://purl.obolibrary.org/obo/ENVO_00005778	http://purl.obolibrary.org/obo/ENVO_01001243	http://purl.obolibrary.org/obo/ENVO_01000204	root > Environmental > Terrestrial > Soil > Tropical rainforest
+Uranium contaminated		http://purl.obolibrary.org/obo/ENVO_00002116	http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Soil > Uranium contaminated
+Wetlands			http://purl.obolibrary.org/obo/ENVO_01001209		root > Environmental > Terrestrial > Soil > Wetlands
+Permafrost		http://purl.obolibrary.org/obo/ENVO_00000134	http://purl.obolibrary.org/obo/ENVO_01001209		root > Environmental > Terrestrial > Soil > Wetlands > Permafrost
+Volcanic	http://purl.obolibrary.org/obo/ENVO_00000247		http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Volcanic
+Fumaroles	http://purl.obolibrary.org/obo/ENVO_00000216		http://purl.obolibrary.org/obo/ENVO_00000446		root > Environmental > Terrestrial > Volcanic > Fumaroles
