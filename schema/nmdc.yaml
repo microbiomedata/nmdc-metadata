@@ -55,7 +55,11 @@ classes:
       A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.  
       An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.  
     slots:
-      - annotations
+      - geolocation
+      - depth
+      - biome
+      - feature
+      - material
     slot_usage:
       id:
         description: >-
@@ -76,6 +80,7 @@ classes:
       A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.  
     slots:
       - annotations
+      - PI name
     slot_usage:
       id:
         description: >-
@@ -125,19 +130,23 @@ classes:
       has output:
         range: data object
     
-  characteristic:
-    aliases: ['field', 'property', 'template field', 'key']
+  attribute:
+    aliases: ['field', 'property', 'template field', 'key', 'characteristic']
+    domain: named thing
     description: >-
-      A characteristic of a biosample. Examples: depth, habitat, material.
-      For NMDC, characteristics SHOULD be mapped to terms within a MIxS template
+      A attribute of a biosample. Examples: depth, habitat, material.
+      For NMDC, attributes SHOULD be mapped to terms within a MIxS template
     is_a: named thing
 
-  normalized value:
+  attribute value:
     description: >-
-      The value that was specified for an annotation in parsed/normalized form. This could be a range of different types.
+      The value for any value of a attribute for a sample. This object can hold both the un-normalized atomic
+      value and the structured value
+    slots:
+      - has raw value
     
   quantity value:
-    is_a: normalized value
+    is_a: attribute value
     description: >-
       A simple quantity, e.g. 2cm
     slots:
@@ -145,17 +154,23 @@ classes:
       - has numeric value
     
   controlled term value:
-    is_a: normalized value
+    is_a: attribute value
     description: >-
       A controlled term or class from an ontology
+    # TODO: add fields for ontology, branch
 
   geolocation value:
-    is_a: normalized value
+    is_a: attribute value
     description: >-
       A normalized value for a location on the earth's surface
     slots:
       - latitude
       - longitude
+    slot_usage:
+      has raw value:
+        description: >-
+          The raw value for a  geolocation should follow {lat} {long}
+        # to_str: {latitude} {longitude}
 
   unit:
     id_prefixes:
@@ -169,52 +184,36 @@ classes:
 
   environmental material term:
     is_a: ontology class
-      
-
-  ## TODO: provenance on an annotation; some will be directly entered by a submitter;
-  ## others will be done post-submission by a curator; others will be done automatically (e.g. by text mining)
-  ## or by automatic enrichment methods (e.g. calling ORNL-Identify using geolocation)
-  annotation:
-    description: >-
-      An annotation on a named thing. This is essentially a key value pair
-    slots:
-      - has characteristic
-      - has raw value
-      - has normalized value
 
 slots:
 
   id:
     identifier: false
+    multivalued: false
     description: >-
       A unique identifier for a thing.
       Must be either a CURIE shorthand for a URI or a complete URI
     required: false # for now we setting this to false until we develop an id template
 
   name:
+    multivalued: false
+    range: string
     description: >-
       A human readable label for an entity
 
   description:
     range: string
+    multivalued: false
     description: >-
       a human-readable description of a thing
     slot_uri: dcterms:description
       
-  has characteristic:
-    description: >-
-      Links an annotation to the field/characteristic
-    multivalued: true     ## workaround for https://github.com/biolink/biolinkml/issues/86
-    inlined: true
-    domain: annotation
-    range: characteristic
-    
   has raw value:
     description: >-
       The value that was specified for an annotation in raw form, i.e. a string. E.g. "2 cm" or "2-4 cm"
     multivalued: false
     required: false
-    domain: annotation
+    domain: attribute value
     range: string
     
   has normalized value:
@@ -247,26 +246,21 @@ slots:
     multivalued: true
     range: string
     required: false
-
-  annotations:
-    description: >-
-      Zero to many annotations on an entity.
-    multivalued: true 
-    domain: named thing
-    range: annotation
-
+    
   latitude:
+    domain: geolocation value
     range: float
     description: >-
       latitude
     slot_uri: wgs:lat
 
   longitude:
+    domain: geolocation value
     range: float
     description: >-
       longitude
     slot_uri: wgs:long
-    
+
   has input:
     aliases: ['input']
     domain: named thing
@@ -283,34 +277,6 @@ slots:
     description: >-
       An output biosample to a processing step
 
-    
-  ## characteristic
-  characteristic:
-    domain: biosample
-
-  depth:
-    is_a: characteristic
-    range: quantity value
-    mappings:
-      - PATO:nnn
-      - MIXS:nnn
-    
-  water calcium:
-    is_a: characteristic
-    range: quantity value
-
-  material:
-    is_a: characteristic
-    range: environmental material term
-
-  biome:
-    is_a: characteristic
-    range: biome term
-
-  feature:
-    is_a: characteristic
-    range: environmental feature term
-    
   
   part of:
     aliases: ['is part of']
@@ -320,3 +286,43 @@ slots:
     description: >-
       Links a resource to another resource that either logically or physically includes it.
 
+  ## MIxS
+    
+  geolocation:
+    is_a: attribute
+    range: geolocation value
+    # string_range: {latitude} {longitude}
+    # Example: {id: sample123, geolocation: {type: geolocation_value, has_raw_value: "123 456", latitude: 123, longitude: 456}}
+    
+    
+  depth:
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - PATO:nnn
+      - MIXS:nnn
+      - GOLDmeta:depth
+    
+  water calcium:
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - PATO:nnn
+      - MIXS:nnn
+      - ENVO:nnn
+
+  material:
+    is_a: attribute
+    range: environmental material term
+
+  biome:
+    aka: ['broad scale environment']
+    is_a: attribute
+    range: biome term
+
+  feature:
+    is_a: attribute
+    range: environmental feature term
+    
+  
