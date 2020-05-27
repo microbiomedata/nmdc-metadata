@@ -131,7 +131,7 @@ classes:
       A characteristic of a biosample. Examples: depth, habitat, material.
       For NMDC, characteristics SHOULD be mapped to terms within a MIxS template
     is_a: named thing
-      
+
   normalized value:
     description: >-
       The value that was specified for an annotation in parsed/normalized form. This could be a range of different types.
@@ -148,7 +148,7 @@ classes:
     is_a: normalized value
     description: >-
       A controlled term or class from an ontology
-    
+
   geolocation value:
     is_a: normalized value
     description: >-
@@ -163,7 +163,14 @@ classes:
     mappings:
       - qud:Unit
       - UO:0000000
+
+  ontology class:
+    is_a: named thing
+
+  environmental material term:
+    is_a: ontology class
       
+
   ## TODO: provenance on an annotation; some will be directly entered by a submitter;
   ## others will be done post-submission by a curator; others will be done automatically (e.g. by text mining)
   ## or by automatic enrichment methods (e.g. calling ORNL-Identify using geolocation)
@@ -275,6 +282,35 @@ slots:
     multivalued: true
     description: >-
       An output biosample to a processing step
+
+    
+  ## characteristic
+  characteristic:
+    domain: biosample
+
+  depth:
+    is_a: characteristic
+    range: quantity value
+    mappings:
+      - PATO:nnn
+      - MIXS:nnn
+    
+  water calcium:
+    is_a: characteristic
+    range: quantity value
+
+  material:
+    is_a: characteristic
+    range: environmental material term
+
+  biome:
+    is_a: characteristic
+    range: biome term
+
+  feature:
+    is_a: characteristic
+    range: environmental feature term
+    
   
   part of:
     aliases: ['is part of']
@@ -283,3 +319,4 @@ slots:
     slot_uri: http://purl.org/dc/terms/isPartOf
     description: >-
       Links a resource to another resource that either logically or physically includes it.
+
