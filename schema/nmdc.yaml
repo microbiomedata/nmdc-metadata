@@ -45,7 +45,7 @@ classes:
       An object that primarily consists of symbols that represent information.  
       Files, records, and omics data are examples of data objects. 
     slots:
-      - annotations
+      - file_size
       
   biosample:
     is_a: named thing
@@ -110,7 +110,7 @@ classes:
     slot_usage:
       id:
         description: >-
-          The primary identifier for the omics processing.
+          The primary identifier for the omics processing. E.g. GOLD:GpNNNN
       name:
         description: >-
           A human readable name or description of the omics processing.
@@ -121,6 +121,15 @@ classes:
         range: study
       has output:
         range: data object
+
+  person:
+    is_a: named thing
+    description: >-
+      represents a person, such as a researcher
+    slot_usage:
+      id:
+        description: >-
+          Should be an ORCID. Specify in CURIE format. E.g ORCID:0000-1111-...
     
   attribute value:
     description: >-
@@ -148,6 +157,16 @@ classes:
     is_a: attribute value
     description: >-
       A value that is a string that conforms to URL syntax
+
+  timestamp value:
+    is_a: attribute value
+    description: >-
+      A value that is a timestamp. The range should be ISO-8601
+    #slots:
+    #  - year
+    #  - month
+    #  - day
+
       
   integer value:
     is_a: attribute value
@@ -306,42 +325,26 @@ slots:
     description: >-
       Should use standard codes, e.g. "en"
 
-  ## MIxS
-    
-  geolocation:
-    is_a: attribute
-    range: geolocation value
-    # string_range: {latitude} {longitude}
-    # Example: {id: sample123, geolocation: {type: geolocation_value, has_raw_value: "123 456", latitude: 123, longitude: 456}}
-    
-    
-  xxxdepth:
-    multivalued: false
-    is_a: attribute
-    range: quantity value
-    mappings:
-      - PATO:nnn
-      - MIXS:nnn
-      - GOLDmeta:depth
-    
-  water calcium:
-    is_a: attribute
-    range: quantity value
-    mappings:
-      - PATO:nnn
-      - MIXS:nnn
-      - ENVO:nnn
+  ## DATA
 
-  material:
+  file_size:
     is_a: attribute
-    range: environmental material term
+    description: >-
+      units should be bytes.. may be overkill to allow different units
+    
+  ## GOLD PATHS
 
-  biome:
-    aliases: ['broad scale environment']
+  gold_path_field:
     is_a: attribute
-    range: controlled term value
-
-  feature:
-    is_a: attribute
-    range: controlled term value
-  
+    abstract: true
+    
+  ecosystem:
+    is_a: gold_path_field
+  ecosystem_category:
+    is_a: gold_path_field
+  ecosystem_type:
+    is_a: gold_path_field
+  ecosystem_subtype:
+    is_a: gold_path_field
+  specific_ecosystem:
+    is_a: gold_path_field

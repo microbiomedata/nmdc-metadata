@@ -32,3 +32,7 @@ docs: schema/nmdc.yaml env.lock
 
 schema/nmdc_schema_uml.png: schema/nmdc.yaml
 	pipenv run python schema/generate_uml.py $< $@
+
+
+schema/mixs.yaml: mixs5/mixs_v5.txt scripts/mixs-to-blml.pl
+	scripts/mixs-to-blml.pl $< > $@
