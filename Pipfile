@@ -9,6 +9,9 @@ verify_ssl = true
 pyyaml = "*"
 biolinkml = "*"
 requests = "*"
+cli = "*"
+click = "*"
+request = "*"
 
 [requires]
 python_version = "3.7"
