@@ -69,6 +69,16 @@ classes:
       alternate identifiers:
         description: >-
           The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
+      lat_lon:
+        required: true
+      depth:
+        required: false
+      env_broad_scale:
+        required: true
+      env_local_scale:
+        required: true
+      env_medium:
+        required: true
  
   study:
     is_a: named thing
