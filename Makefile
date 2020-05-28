@@ -36,3 +36,11 @@ schema/nmdc_schema_uml.png: schema/nmdc.yaml
 
 schema/mixs.yaml: mixs5/mixs_v5.txt scripts/mixs-to-blml.pl
 	scripts/mixs-to-blml.pl $< > $@
+
+
+docs/%-slides.pdf: docs/%-slides.md
+	pandoc $< -t beamer -o $@
+docs/%-slides.pptx: docs/%-slides.md
+	pandoc $< -o $@
+docs/%-slides.html: docs/%-slides.md
+	pandoc $< -s -t slidy -o $@
