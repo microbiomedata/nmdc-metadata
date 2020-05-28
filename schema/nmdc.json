@@ -1,6 +1,3 @@
-Warning: The following errors were encountered in the schema
-		Slot "has numeric value" owner (boolean value) does not match quantity value
-
 {
    "$id": "https://microbiomedata/schema",
    "$schema": "http://json-schema.org/draft-04/schema#",
