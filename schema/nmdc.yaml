@@ -44,9 +44,6 @@ classes:
       Files, records, and omics data are examples of data objects. 
     slots:
       - annotations
-    slot_usage:
-      annotations:
-        range: annotation
       
   biosample:
     is_a: named thing
@@ -70,8 +67,6 @@ classes:
       alternate identifiers:
         description: >-
           The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
-      annotations:
-        range: annotation
  
   study:
     is_a: named thing
@@ -80,7 +75,7 @@ classes:
       A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.  
     slots:
       - annotations
-      - PI name
+#      - PI name
     slot_usage:
       id:
         description: >-
@@ -91,8 +86,6 @@ classes:
       alternate identifiers:
         description: >-
           The same study may have distinct identifiers in different databases (e.g. GOLD and EMSL)
-      annotations:
-        range: annotation
 
   biosample processing:
     is_a: named thing
@@ -101,12 +94,9 @@ classes:
       Examples of outputs include samples cultivated from another sample or data objects created by instruments runs.
     slots:
       - has input
-      - annotations
     slot_usage:
       has input:
         range: biosample
-      annotations:
-        range: annotation
 
   omics processing:
     is_a: biosample processing
@@ -130,14 +120,6 @@ classes:
       has output:
         range: data object
     
-  attribute:
-    aliases: ['field', 'property', 'template field', 'key', 'characteristic']
-    domain: named thing
-    description: >-
-      A attribute of a biosample. Examples: depth, habitat, material.
-      For NMDC, attributes SHOULD be mapped to terms within a MIxS template
-    is_a: named thing
-
   attribute value:
     description: >-
       The value for any value of a attribute for a sample. This object can hold both the un-normalized atomic
@@ -207,7 +189,19 @@ slots:
     description: >-
       a human-readable description of a thing
     slot_uri: dcterms:description
-      
+
+  # this will be obsoleted
+  annotations:
+    multivalued: true
+    
+  attribute:
+    aliases: ['field', 'property', 'template field', 'key', 'characteristic']
+    abstract: true
+    domain: named thing
+    description: >-
+      A attribute of a biosample. Examples: depth, habitat, material.
+      For NMDC, attributes SHOULD be mapped to terms within a MIxS template
+    
   has raw value:
     description: >-
       The value that was specified for an annotation in raw form, i.e. a string. E.g. "2 cm" or "2-4 cm"
@@ -215,13 +209,6 @@ slots:
     required: false
     domain: attribute value
     range: string
-    
-  has normalized value:
-    description: >-
-      Links an annotation to the normalized/parsed raw value
-    domain: annotation
-    range: normalized value
-    multivalued: true     ## workaround for https://github.com/biolink/biolinkml/issues/86
     
   has unit:
     description: >-
@@ -317,12 +304,11 @@ slots:
     range: environmental material term
 
   biome:
-    aka: ['broad scale environment']
+    aliases: ['broad scale environment']
     is_a: attribute
-    range: biome term
+    range: controlled term value
 
   feature:
     is_a: attribute
-    range: environmental feature term
-    
+    range: controlled term value
   
