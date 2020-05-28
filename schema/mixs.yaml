@@ -59,7 +59,7 @@ slots:
        The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system
     multivalued: false
     is_a: attribute
-    range: text value
+    range: geolocation value
     mappings:
       - MIxS:lat_lon
     #domain: environment:

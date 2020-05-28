@@ -1,11 +1,12 @@
 id: https://microbiomedata/schema
 name: nmdc_schema
 description: >-
-  Schema for NMDC. Alpha. Currently focuses on samples
+  Schema for National Microbiome Data Collaborative (NMDC)
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
   nmdc: https://microbiomedata/meta/
+  mixs: https://w3id.org/gensc/
   wgs: http://www.w3.org/2003/01/geo/wgs84_pos
   qud: http://qudt.org/1.1/schema/qudt#
   dcterms: http://purl.org/dc/terms/
@@ -26,6 +27,7 @@ emit_prefixes:
 
 imports:
   - biolinkml:types
+  - mixs
   
 classes:
 
@@ -52,15 +54,15 @@ classes:
       A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.  
       An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.  
     slots:
-      - geolocation
+      - lat_lon
       - depth
-      - biome
-      - feature
-      - material
+      - env_broad_scale
+      - env_local_scale
+      - env_medium
     slot_usage:
       id:
         description: >-
-          The primary identifier for the biosample
+          The primary identifier for the biosample. Example: GOLD:Gb0205609
       name:
         description: >-
           A human readable name or description of the biosample
@@ -134,7 +136,33 @@ classes:
     slots:
       - has unit
       - has numeric value
-    
+
+  text value:
+    is_a: attribute value
+    description: >-
+      A basic string value
+    slots:
+      - language
+      
+  url value:
+    is_a: attribute value
+    description: >-
+      A value that is a string that conforms to URL syntax
+      
+  integer value:
+    is_a: attribute value
+    description: >-
+      A value that is an integer
+    slots:
+      - has numeric value
+
+  boolean value:
+    is_a: attribute value
+    description: >-
+      A value that is a boolean
+    slots:
+      - has numeric value
+      
   controlled term value:
     is_a: attribute value
     description: >-
@@ -273,6 +301,11 @@ slots:
     description: >-
       Links a resource to another resource that either logically or physically includes it.
 
+  language:
+    range: string
+    description: >-
+      Should use standard codes, e.g. "en"
+
   ## MIxS
     
   geolocation:
@@ -282,7 +315,7 @@ slots:
     # Example: {id: sample123, geolocation: {type: geolocation_value, has_raw_value: "123 456", latitude: 123, longitude: 456}}
     
     
-  depth:
+  xxxdepth:
     multivalued: false
     is_a: attribute
     range: quantity value
