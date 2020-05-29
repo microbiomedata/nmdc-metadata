@@ -1,11 +1,12 @@
 id: https://microbiomedata/schema
 name: nmdc_schema
 description: >-
-  Schema for NMDC. Alpha. Currently focuses on samples
+  Schema for National Microbiome Data Collaborative (NMDC)
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
   nmdc: https://microbiomedata/meta/
+  mixs: https://w3id.org/gensc/
   wgs: http://www.w3.org/2003/01/geo/wgs84_pos
   qud: http://qudt.org/1.1/schema/qudt#
   dcterms: http://purl.org/dc/terms/
@@ -26,6 +27,7 @@ emit_prefixes:
 
 imports:
   - biolinkml:types
+  - mixs
   
 classes:
 
@@ -43,10 +45,7 @@ classes:
       An object that primarily consists of symbols that represent information.  
       Files, records, and omics data are examples of data objects. 
     slots:
-      - annotations
-    slot_usage:
-      annotations:
-        range: annotation
+      - file_size
       
   biosample:
     is_a: named thing
@@ -55,19 +54,31 @@ classes:
       A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.  
       An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.  
     slots:
-      - annotations
+      - lat_lon
+      - depth
+      - env_broad_scale
+      - env_local_scale
+      - env_medium
     slot_usage:
       id:
         description: >-
-          The primary identifier for the biosample
+          The primary identifier for the biosample. Example: GOLD:Gb0205609
       name:
         description: >-
           A human readable name or description of the biosample
       alternate identifiers:
         description: >-
           The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
-      annotations:
-        range: annotation
+      lat_lon:
+        required: true
+      depth:
+        required: false
+      env_broad_scale:
+        required: true
+      env_local_scale:
+        required: true
+      env_medium:
+        required: true
  
   study:
     is_a: named thing
@@ -76,6 +87,7 @@ classes:
       A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.  
     slots:
       - annotations
+#      - PI name
     slot_usage:
       id:
         description: >-
@@ -86,8 +98,6 @@ classes:
       alternate identifiers:
         description: >-
           The same study may have distinct identifiers in different databases (e.g. GOLD and EMSL)
-      annotations:
-        range: annotation
 
   biosample processing:
     is_a: named thing
@@ -96,12 +106,9 @@ classes:
       Examples of outputs include samples cultivated from another sample or data objects created by instruments runs.
     slots:
       - has input
-      - annotations
     slot_usage:
       has input:
         range: biosample
-      annotations:
-        range: annotation
 
   omics processing:
     is_a: biosample processing
@@ -113,7 +120,7 @@ classes:
     slot_usage:
       id:
         description: >-
-          The primary identifier for the omics processing.
+          The primary identifier for the omics processing. E.g. GOLD:GpNNNN
       name:
         description: >-
           A human readable name or description of the omics processing.
@@ -124,38 +131,85 @@ classes:
         range: study
       has output:
         range: data object
-    
-  characteristic:
-    aliases: ['field', 'property', 'template field', 'key']
-    description: >-
-      A characteristic of a biosample. Examples: depth, habitat, material.
-      For NMDC, characteristics SHOULD be mapped to terms within a MIxS template
+
+  person:
     is_a: named thing
-      
-  normalized value:
     description: >-
-      The value that was specified for an annotation in parsed/normalized form. This could be a range of different types.
+      represents a person, such as a researcher
+    slot_usage:
+      id:
+        description: >-
+          Should be an ORCID. Specify in CURIE format. E.g ORCID:0000-1111-...
+    
+  attribute value:
+    description: >-
+      The value for any value of a attribute for a sample. This object can hold both the un-normalized atomic
+      value and the structured value
+    slots:
+      - has raw value
     
   quantity value:
-    is_a: normalized value
+    is_a: attribute value
     description: >-
       A simple quantity, e.g. 2cm
     slots:
       - has unit
       - has numeric value
-    
+
+  text value:
+    is_a: attribute value
+    description: >-
+      A basic string value
+    slots:
+      - language
+      
+  url value:
+    is_a: attribute value
+    description: >-
+      A value that is a string that conforms to URL syntax
+
+  timestamp value:
+    is_a: attribute value
+    description: >-
+      A value that is a timestamp. The range should be ISO-8601
+    #slots:
+    #  - year
+    #  - month
+    #  - day
+
+      
+  integer value:
+    is_a: attribute value
+    description: >-
+      A value that is an integer
+    slots:
+      - has numeric value
+
+  boolean value:
+    is_a: attribute value
+    description: >-
+      A value that is a boolean
+    slots:
+      - has numeric value
+      
   controlled term value:
-    is_a: normalized value
+    is_a: attribute value
     description: >-
       A controlled term or class from an ontology
-    
+    # TODO: add fields for ontology, branch
+
   geolocation value:
-    is_a: normalized value
+    is_a: attribute value
     description: >-
       A normalized value for a location on the earth's surface
     slots:
       - latitude
       - longitude
+    slot_usage:
+      has raw value:
+        description: >-
+          The raw value for a  geolocation should follow {lat} {long}
+        # to_str: {latitude} {longitude}
 
   unit:
     id_prefixes:
@@ -163,59 +217,55 @@ classes:
     mappings:
       - qud:Unit
       - UO:0000000
-      
-  ## TODO: provenance on an annotation; some will be directly entered by a submitter;
-  ## others will be done post-submission by a curator; others will be done automatically (e.g. by text mining)
-  ## or by automatic enrichment methods (e.g. calling ORNL-Identify using geolocation)
-  annotation:
-    description: >-
-      An annotation on a named thing. This is essentially a key value pair
-    slots:
-      - has characteristic
-      - has raw value
-      - has normalized value
+
+  ontology class:
+    is_a: named thing
+
+  environmental material term:
+    is_a: ontology class
 
 slots:
 
   id:
     identifier: false
+    multivalued: false
     description: >-
       A unique identifier for a thing.
       Must be either a CURIE shorthand for a URI or a complete URI
     required: false # for now we setting this to false until we develop an id template
 
   name:
+    multivalued: false
+    range: string
     description: >-
       A human readable label for an entity
 
   description:
     range: string
+    multivalued: false
     description: >-
       a human-readable description of a thing
     slot_uri: dcterms:description
-      
-  has characteristic:
+
+  # this will be obsoleted
+  annotations:
+    multivalued: true
+    
+  attribute:
+    aliases: ['field', 'property', 'template field', 'key', 'characteristic']
+    abstract: true
+    domain: named thing
     description: >-
-      Links an annotation to the field/characteristic
-    multivalued: true     ## workaround for https://github.com/biolink/biolinkml/issues/86
-    inlined: true
-    domain: annotation
-    range: characteristic
+      A attribute of a biosample. Examples: depth, habitat, material.
+      For NMDC, attributes SHOULD be mapped to terms within a MIxS template
     
   has raw value:
     description: >-
       The value that was specified for an annotation in raw form, i.e. a string. E.g. "2 cm" or "2-4 cm"
     multivalued: false
     required: false
-    domain: annotation
+    domain: attribute value
     range: string
-    
-  has normalized value:
-    description: >-
-      Links an annotation to the normalized/parsed raw value
-    domain: annotation
-    range: normalized value
-    multivalued: true     ## workaround for https://github.com/biolink/biolinkml/issues/86
     
   has unit:
     description: >-
@@ -240,26 +290,21 @@ slots:
     multivalued: true
     range: string
     required: false
-
-  annotations:
-    description: >-
-      Zero to many annotations on an entity.
-    multivalued: true 
-    domain: named thing
-    range: annotation
-
+    
   latitude:
+    domain: geolocation value
     range: float
     description: >-
       latitude
     slot_uri: wgs:lat
 
   longitude:
+    domain: geolocation value
     range: float
     description: >-
       longitude
     slot_uri: wgs:long
-    
+
   has input:
     aliases: ['input']
     domain: named thing
@@ -275,6 +320,7 @@ slots:
     multivalued: true
     description: >-
       An output biosample to a processing step
+
   
   part of:
     aliases: ['is part of']
@@ -283,3 +329,32 @@ slots:
     slot_uri: http://purl.org/dc/terms/isPartOf
     description: >-
       Links a resource to another resource that either logically or physically includes it.
+
+  language:
+    range: string
+    description: >-
+      Should use standard codes, e.g. "en"
+
+  ## DATA
+
+  file_size:
+    is_a: attribute
+    description: >-
+      units should be bytes.. may be overkill to allow different units
+    
+  ## GOLD PATHS
+
+  gold_path_field:
+    is_a: attribute
+    abstract: true
+    
+  ecosystem:
+    is_a: gold_path_field
+  ecosystem_category:
+    is_a: gold_path_field
+  ecosystem_type:
+    is_a: gold_path_field
+  ecosystem_subtype:
+    is_a: gold_path_field
+  specific_ecosystem:
+    is_a: gold_path_field

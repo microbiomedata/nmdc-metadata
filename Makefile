@@ -24,11 +24,25 @@ schema/nmdc.py: schema/nmdc.yaml env.lock
 
 # JSON Schema
 
+# TODO rename
 schema/nmdc.json: schema/nmdc.yaml env.lock
 	pipenv run gen-json-schema $< > $@.tmp && mv $@.tmp $@
+
 
 docs: schema/nmdc.yaml env.lock
 	pipenv run gen-markdown --dir docs $<
 
 schema/nmdc_schema_uml.png: schema/nmdc.yaml
 	pipenv run python schema/generate_uml.py $< $@
+
+
+schema/mixs.yaml: mixs5/mixs_v5.txt scripts/mixs-to-blml.pl
+	scripts/mixs-to-blml.pl $< > $@
+
+
+docs/%-slides.pdf: docs/%-slides.md
+	pandoc $< -t beamer -o $@
+docs/%-slides.pptx: docs/%-slides.md
+	pandoc $< -o $@
+docs/%-slides.html: docs/%-slides.md
+	pandoc $< -s -t slidy -o $@
