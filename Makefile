@@ -28,6 +28,12 @@ schema/nmdc.py: schema/nmdc.yaml env.lock
 schema/nmdc.json: schema/nmdc.yaml env.lock
 	pipenv run gen-json-schema $< > $@.tmp && mv $@.tmp $@
 
+schema/nmdc.owl: schema/nmdc.yaml env.lock
+	pipenv run gen-owl $< > $@.tmp && mv $@.tmp $@
+
+schema/nmdc.rdf: schema/nmdc.yaml env.lock
+	pipenv run gen-rdf $< > $@.tmp && mv $@.tmp $@
+
 
 docs: schema/nmdc.yaml env.lock
 	pipenv run gen-markdown --dir docs $<

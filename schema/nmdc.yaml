@@ -155,6 +155,18 @@ classes:
     slots:
       - has unit
       - has numeric value
+    slot_usage:
+      has raw value:
+        description: >-
+          Unnormalized atomic string representation, should in syntax {number} {unit}
+      has unit:
+        description: >-
+          The unit of the quantity
+      has numeric value:
+        description: >-
+          The number part of the quantity
+        range:
+          double
 
   text value:
     is_a: attribute value
@@ -190,7 +202,7 @@ classes:
     description: >-
       A value that is a boolean
     slots:
-      - has numeric value
+      - has boolean value
       
   controlled term value:
     is_a: attribute value
@@ -278,10 +290,15 @@ slots:
   has numeric value:
     description: >-
       Links a quantity value to a number
-    range: double
     multivalued: false
     mappings:
       - qud:quantityValue
+      
+  has boolean value:
+    description: >-
+      Links a quantity value to a boolean
+    range: boolean
+    multivalued: false
       
   alternate identifiers:
     aliases: ['mappings', 'alt ids', 'xrefs']
