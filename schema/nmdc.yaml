@@ -46,8 +46,45 @@ classes:
       Files, records, and omics data are examples of data objects. 
     slots:
       - file_size
+
+  ## TODO: these should be placed in MIxS package
+  environmental package:
+    abstract: true
+    mixin: true
+    description: >-
+      Parent class for all packages which can be 'mixed into' a biosample class
+      
+  soil package:
+    mixin: true
+    slots:
+      - depth
+    slot_usage:
+      depth:
+        required: true
+    description: >-
+      Parent class for all packages which can be 'mixed into' a biosample class
+      
+  plant-associated package:
+    mixin: true
+    slots:
+      - depth
+    slot_usage:
+      depth:
+        required: false
+        
+  uber package:
+    mixin: true
+    mixins:
+      - soil package
+      - plant-associated package
+#...
+    description: >-
+      all packages mixed into one
+
+  ## ROOT biosample class
       
   biosample:
+    abstract: true  ## this should be subclasses
     is_a: named thing
     aliases: ['sample', 'material sample']
     description: >-
@@ -55,10 +92,14 @@ classes:
       An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.  
     slots:
       - lat_lon
-      - depth
       - env_broad_scale
       - env_local_scale
       - env_medium
+      - ecosystem
+      - ecosystem_category
+      - ecosystem_type
+      - ecosystem_subtype
+      - specific_ecosystem
     slot_usage:
       id:
         description: >-
@@ -71,15 +112,35 @@ classes:
           The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
       lat_lon:
         required: true
-      depth:
-        required: false
+        description: >-
+          This is a required field but it's not clear if this should be required for human hosts
       env_broad_scale:
         required: true
       env_local_scale:
         required: true
       env_medium:
         required: true
- 
+
+  # exemplar subclasses; these can incorporate ant number of package mixins;
+  # these could be at different levels of granularity, and could even be made
+  # on a per-project basis, e.g. bioscales
+  soil biosample:
+    is_a: biosample
+    mixins:
+      - soil package
+    description: >-
+      a biosample that is described purely using the soil package
+        
+  plant-associated soil biosample:
+    is_a: biosample
+    mixins:
+      - soil package
+      - plant-associated package
+    description: >-
+      a biosample that is described both using the soil package and plant-associated (e.g. rhizosphere)
+
+  ## -- end of exemplars
+      
   study:
     is_a: named thing
     aliases: ['proposal', 'research proposal', 'research study']
@@ -155,6 +216,18 @@ classes:
     slots:
       - has unit
       - has numeric value
+    slot_usage:
+      has raw value:
+        description: >-
+          Unnormalized atomic string representation, should in syntax {number} {unit}
+      has unit:
+        description: >-
+          The unit of the quantity
+      has numeric value:
+        description: >-
+          The number part of the quantity
+        range:
+          double
 
   text value:
     is_a: attribute value
@@ -190,7 +263,7 @@ classes:
     description: >-
       A value that is a boolean
     slots:
-      - has numeric value
+      - has boolean value
       
   controlled term value:
     is_a: attribute value
@@ -278,10 +351,15 @@ slots:
   has numeric value:
     description: >-
       Links a quantity value to a number
-    range: double
     multivalued: false
     mappings:
       - qud:quantityValue
+      
+  has boolean value:
+    description: >-
+      Links a quantity value to a boolean
+    range: boolean
+    multivalued: false
       
   alternate identifiers:
     aliases: ['mappings', 'alt ids', 'xrefs']
