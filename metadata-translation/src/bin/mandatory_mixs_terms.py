@@ -73,10 +73,7 @@ def main(input, output, delimiter, sheet_number, output_format):
     df = sqldf(query)
     
     if output:
-        print(output_format.strip())
-        print('xls' in output_format.strip())
         if 'xls' in output_format.strip():
-            print(output_format)
             df.to_excel(output)
         else:
             df.to_csv(output, sep=delimiter, index=False)
