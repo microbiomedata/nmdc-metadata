@@ -47,14 +47,50 @@ classes:
     slots:
       - file_size
 
+  ## TODO: these should be placed in MIxS package
+  environmental package:
+    abstract: true
+    mixin: true
+    description: >-
+      Parent class for all packages which can be 'mixed into' a biosample class
+      
+  soil package:
+    mixin: true
+    slots:
+      - depth
+    slot_usage:
+      depth:
+        required: true
+    description: >-
+      Parent class for all packages which can be 'mixed into' a biosample class
+      
+  plant-associated package:
+    mixin: true
+    slots:
+      - depth
+    slot_usage:
+      depth:
+        required: false
+        
+  uber package:
+    mixin: true
+    mixins:
+      - soil package
+      - plant-associated package
+#...
+    description: >-
+      all packages mixed into one
+
+  ## ROOT biosample class
+      
   biosample:
+    abstract: true  ## this should be subclasses
     is_a: named thing
     aliases: ['sample', 'material sample']
     description: >-
       A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.  
       An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.  
     slots:
-      - depth
       - lat_lon
       - env_broad_scale
       - env_local_scale
@@ -78,8 +114,6 @@ classes:
         required: true
         description: >-
           This is a required field but it's not clear if this should be required for human hosts
-      depth:
-        required: false
       env_broad_scale:
         required: true
       env_local_scale:
@@ -87,7 +121,26 @@ classes:
       env_medium:
         required: true
 
+  # exemplar subclasses; these can incorporate ant number of package mixins;
+  # these could be at different levels of granularity, and could even be made
+  # on a per-project basis, e.g. bioscales
+  soil biosample:
+    is_a: biosample
+    mixins:
+      - soil package
+    description: >-
+      a biosample that is described purely using the soil package
         
+  plant-associated soil biosample:
+    is_a: biosample
+    mixins:
+      - soil package
+      - plant-associated package
+    description: >-
+      a biosample that is described both using the soil package and plant-associated (e.g. rhizosphere)
+
+  ## -- end of exemplars
+      
   study:
     is_a: named thing
     aliases: ['proposal', 'research proposal', 'research study']
