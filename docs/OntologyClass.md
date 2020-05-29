@@ -7,15 +7,18 @@
 URI: [nmdc:OntologyClass](https://microbiomedata/meta/OntologyClass)
 
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]^-\[OntologyClass&#124;id(i):string%20%3F;name(i):string%20%3F;description(i):string%20%3F;alternate_identifiers(i):string%20*])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OntologyClass&#124;id(i):string%20%3F;name(i):string%20%3F;description(i):string%20%3F;alternate_identifiers(i):string%20*]^-\[EnvironmentalMaterialTerm],%20\[NamedThing]^-\[OntologyClass])
 
 ## Parents
 
  *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
 
+## Children
+
+ * [EnvironmentalMaterialTerm](EnvironmentalMaterialTerm.md)
+
 ## Referenced by class
 
- *  **None** *[instance of](instance_of.md)*  <sub>OPT</sub>  **[OntologyClass](OntologyClass.md)**
 
 ## Attributes
 

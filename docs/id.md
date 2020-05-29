@@ -18,14 +18,17 @@ None ->  <sub>OPT</sub> [String](types/String.md)
 
  *  [biosample➞id](biosample_id.md)
  *  [omics processing➞id](omics_processing_id.md)
+ *  [person➞id](person_id.md)
  *  [study➞id](study_id.md)
 
 ## Used by
 
  * [Biosample](Biosample.md)
  * [BiosampleProcessing](BiosampleProcessing.md)
- * [Characteristic](Characteristic.md)
  * [DataObject](DataObject.md)
+ * [EnvironmentalMaterialTerm](EnvironmentalMaterialTerm.md)
  * [NamedThing](NamedThing.md)
  * [OmicsProcessing](OmicsProcessing.md)
+ * [OntologyClass](OntologyClass.md)
+ * [Person](Person.md)
  * [Study](Study.md)

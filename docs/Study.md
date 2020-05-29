@@ -7,7 +7,7 @@ A study summarizes the overall goal of a research initiative and outlines the ke
 URI: [nmdc:Study](https://microbiomedata/meta/Study)
 
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Annotation]<annotations%200..*-++\[Study&#124;id:string%20%3F;name:string%20%3F;alternate_identifiers:string%20*;description(i):string%20%3F],%20\[OmicsProcessing]++-%20part%20of%200..*>\[Study],%20\[NamedThing]^-\[Study])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OmicsProcessing]++-%20part%20of%200..*>\[Study&#124;id:string%20%3F;name:string%20%3F;alternate_identifiers:string%20*;annotations:string%20*;description(i):string%20%3F],%20\[NamedThing]^-\[Study])
 
 ## Parents
 
@@ -22,10 +22,10 @@ URI: [nmdc:Study](https://microbiomedata/meta/Study)
 
 ### Own
 
+ * [annotations](annotations.md)  <sub>0..*</sub>
+    * range: [String](types/String.md)
  * [study➞alternate identifiers](study_alternate_identifiers.md)  <sub>0..*</sub>
     * range: [String](types/String.md)
- * [study➞annotations](study_annotations.md)  <sub>0..*</sub>
-    * range: [Annotation](Annotation.md)
  * [study➞id](study_id.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
  * [study➞name](study_name.md)  <sub>OPT</sub>
@@ -54,8 +54,6 @@ URI: [nmdc:Study](https://microbiomedata/meta/Study)
 
  * [study➞alternate identifiers](study_alternate_identifiers.md)  <sub>0..*</sub>
     * range: [String](types/String.md)
- * [study➞annotations](study_annotations.md)  <sub>0..*</sub>
-    * range: [Annotation](Annotation.md)
  * [study➞id](study_id.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
  * [study➞name](study_name.md)  <sub>OPT</sub>

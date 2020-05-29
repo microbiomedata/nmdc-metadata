@@ -22,9 +22,11 @@ URI: [nmdc:has_input](https://microbiomedata/meta/has_input)
 
  * [Biosample](Biosample.md)
  * [BiosampleProcessing](BiosampleProcessing.md)
- * [Characteristic](Characteristic.md)
  * [DataObject](DataObject.md)
+ * [EnvironmentalMaterialTerm](EnvironmentalMaterialTerm.md)
  * [NamedThing](NamedThing.md)
+ * [OntologyClass](OntologyClass.md)
+ * [Person](Person.md)
  * [Study](Study.md)
 
 ## Other properties

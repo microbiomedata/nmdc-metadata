@@ -7,7 +7,7 @@ A material sample. It may be environmental (encompassing many organisms) or isol
 URI: [nmdc:Biosample](https://microbiomedata/meta/Biosample)
 
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Annotation]<annotations%200..*-++\[Biosample&#124;id:string%20%3F;name:string%20%3F;alternate_identifiers:string%20*;description(i):string%20%3F],%20\[BiosampleProcessing]++-%20has%20input%200..*>\[Biosample],%20\[NamedThing]^-\[Biosample])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ControlledTermValue]<env_medium%201..1-++\[Biosample&#124;id:string%20%3F;name:string%20%3F;alternate_identifiers:string%20*;description(i):string%20%3F],%20\[ControlledTermValue]<env_local_scale%201..1-++\[Biosample],%20\[ControlledTermValue]<env_broad_scale%201..1-++\[Biosample],%20\[TextValue]<depth%200..1-++\[Biosample],%20\[GeolocationValue]<lat_lon%201..1-++\[Biosample],%20\[BiosampleProcessing]++-%20has%20input%200..*>\[Biosample],%20\[NamedThing]^-\[Biosample])
 
 ## Parents
 
@@ -24,10 +24,18 @@ URI: [nmdc:Biosample](https://microbiomedata/meta/Biosample)
 
  * [biosample➞alternate identifiers](biosample_alternate_identifiers.md)  <sub>0..*</sub>
     * range: [String](types/String.md)
- * [biosample➞annotations](biosample_annotations.md)  <sub>0..*</sub>
-    * range: [Annotation](Annotation.md)
+ * [biosample➞depth](biosample_depth.md)  <sub>OPT</sub>
+    * range: [TextValue](TextValue.md)
+ * [biosample➞env_broad_scale](biosample_env_broad_scale.md)  <sub>REQ</sub>
+    * range: [ControlledTermValue](ControlledTermValue.md)
+ * [biosample➞env_local_scale](biosample_env_local_scale.md)  <sub>REQ</sub>
+    * range: [ControlledTermValue](ControlledTermValue.md)
+ * [biosample➞env_medium](biosample_env_medium.md)  <sub>REQ</sub>
+    * range: [ControlledTermValue](ControlledTermValue.md)
  * [biosample➞id](biosample_id.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
+ * [biosample➞lat_lon](biosample_lat_lon.md)  <sub>REQ</sub>
+    * range: [GeolocationValue](GeolocationValue.md)
  * [biosample➞name](biosample_name.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
 
@@ -54,10 +62,18 @@ URI: [nmdc:Biosample](https://microbiomedata/meta/Biosample)
 
  * [biosample➞alternate identifiers](biosample_alternate_identifiers.md)  <sub>0..*</sub>
     * range: [String](types/String.md)
- * [biosample➞annotations](biosample_annotations.md)  <sub>0..*</sub>
-    * range: [Annotation](Annotation.md)
+ * [biosample➞depth](biosample_depth.md)  <sub>OPT</sub>
+    * range: [TextValue](TextValue.md)
+ * [biosample➞env_broad_scale](biosample_env_broad_scale.md)  <sub>REQ</sub>
+    * range: [ControlledTermValue](ControlledTermValue.md)
+ * [biosample➞env_local_scale](biosample_env_local_scale.md)  <sub>REQ</sub>
+    * range: [ControlledTermValue](ControlledTermValue.md)
+ * [biosample➞env_medium](biosample_env_medium.md)  <sub>REQ</sub>
+    * range: [ControlledTermValue](ControlledTermValue.md)
  * [biosample➞id](biosample_id.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
+ * [biosample➞lat_lon](biosample_lat_lon.md)  <sub>REQ</sub>
+    * range: [GeolocationValue](GeolocationValue.md)
  * [biosample➞name](biosample_name.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
 

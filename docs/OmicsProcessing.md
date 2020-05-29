@@ -7,7 +7,7 @@ The methods and processes used to generate omics data from a biosample or organi
 URI: [nmdc:OmicsProcessing](https://microbiomedata/meta/OmicsProcessing)
 
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Annotation]<annotations(i)%200..*-++\[OmicsProcessing&#124;id:string%20%3F;name:string%20%3F;alternate_identifiers:string%20*;description(i):string%20%3F],%20\[Biosample]<has%20input(i)%200..*-++\[OmicsProcessing],%20\[DataObject]<has%20output%200..*-++\[OmicsProcessing],%20\[Study]<part%20of%200..*-++\[OmicsProcessing],%20\[BiosampleProcessing]^-\[OmicsProcessing])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Biosample]<has%20input(i)%200..*-++\[OmicsProcessing&#124;id:string%20%3F;name:string%20%3F;alternate_identifiers:string%20*;description(i):string%20%3F],%20\[DataObject]<has%20output%200..*-++\[OmicsProcessing],%20\[Study]<part%20of%200..*-++\[OmicsProcessing],%20\[BiosampleProcessing]^-\[OmicsProcessing])
 
 ## Parents
 
@@ -36,9 +36,6 @@ URI: [nmdc:OmicsProcessing](https://microbiomedata/meta/OmicsProcessing)
 
  * [biosample processing➞has input](biosample_processing_has_input.md)  <sub>0..*</sub>
     * range: [Biosample](Biosample.md)
-    * inherited from: [BiosampleProcessing](BiosampleProcessing.md)
- * [biosample processing➞annotations](biosample_processing_annotations.md)  <sub>0..*</sub>
-    * range: [Annotation](Annotation.md)
     * inherited from: [BiosampleProcessing](BiosampleProcessing.md)
 
 ### Inherited from named thing:

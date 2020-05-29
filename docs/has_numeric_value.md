@@ -19,6 +19,8 @@ None ->  <sub>OPT</sub> [Double](types/Double.md)
 
 ## Used by
 
+ * [BooleanValue](BooleanValue.md)
+ * [IntegerValue](IntegerValue.md)
  * [QuantityValue](QuantityValue.md)
 
 ## Other properties

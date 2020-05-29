@@ -24,10 +24,12 @@ None ->  <sub>0..*</sub> [String](types/String.md)
 
  * [Biosample](Biosample.md)
  * [BiosampleProcessing](BiosampleProcessing.md)
- * [Characteristic](Characteristic.md)
  * [DataObject](DataObject.md)
+ * [EnvironmentalMaterialTerm](EnvironmentalMaterialTerm.md)
  * [NamedThing](NamedThing.md)
  * [OmicsProcessing](OmicsProcessing.md)
+ * [OntologyClass](OntologyClass.md)
+ * [Person](Person.md)
  * [Study](Study.md)
 
 ## Other properties
