@@ -46,7 +46,7 @@ classes:
       Files, records, and omics data are examples of data objects. 
     slots:
       - file_size
-      
+
   biosample:
     is_a: named thing
     aliases: ['sample', 'material sample']
@@ -54,11 +54,16 @@ classes:
       A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.  
       An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.  
     slots:
-      - lat_lon
       - depth
+      - lat_lon
       - env_broad_scale
       - env_local_scale
       - env_medium
+      - ecosystem
+      - ecosystem_category
+      - ecosystem_type
+      - ecosystem_subtype
+      - specific_ecosystem
     slot_usage:
       id:
         description: >-
@@ -71,6 +76,8 @@ classes:
           The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
       lat_lon:
         required: true
+        description: >-
+          This is a required field but it's not clear if this should be required for human hosts
       depth:
         required: false
       env_broad_scale:
@@ -79,7 +86,8 @@ classes:
         required: true
       env_medium:
         required: true
- 
+
+        
   study:
     is_a: named thing
     aliases: ['proposal', 'research proposal', 'research study']
