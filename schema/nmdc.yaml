@@ -31,8 +31,15 @@ imports:
   
 classes:
 
+  database:
+    description: top level holder class
+    slots:
+      - biosample set
+      - data object set
+  
   named thing:
     description: "a databased entity or concept/class"
+    abstract: true
     slots:
       - id
       - name
@@ -56,6 +63,10 @@ classes:
     slots:
       - depth
       - lat_lon
+      - alt
+      - elev
+      - geo_loc_name
+      - collection_date
       - env_broad_scale
       - env_local_scale
       - env_medium
@@ -90,11 +101,14 @@ classes:
         
   study:
     is_a: named thing
-    aliases: ['proposal', 'research proposal', 'research study']
+    aliases: ['proposal', 'research proposal', 'research study', 'investigation']
     description: >-
       A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.  
     slots:
-      - annotations
+      - submitted_to_insdc
+      - investigation_type
+      - project_name
+      - experimental_factor
 #      - PI name
     slot_usage:
       id:
@@ -246,6 +260,14 @@ classes:
 
 slots:
 
+  biosample set:
+    domain: database
+    range: biosample
+
+  data object set:
+    domain: database
+    range: data object
+  
   id:
     identifier: false
     multivalued: false
