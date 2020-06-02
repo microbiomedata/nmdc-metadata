@@ -18,24 +18,18 @@
          "description": "A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.   An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.",
          "properties": {
             "alt": {
-               "description": "\"Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets, atmospheric balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object which is above the earthbs surface. In this context, the altitude measurement is the vertical distance between the earth's surface above sea level and the sampled position in the air\"",
-               "type": {
-                  "$ref": "#/definitions/QuantityValue"
-               }
+               "$ref": "#/definitions/QuantityValue",
+               "description": "\"Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets, atmospheric balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object which is above the earthbs surface. In this context, the altitude measurement is the vertical distance between the earth's surface above sea level and the sampled position in the air\""
             },
             "alternate_identifiers": {
                "type": "string"
             },
             "collection_date": {
-               "description": "\"The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant\"",
-               "type": {
-                  "$ref": "#/definitions/TimestampValue"
-               }
+               "$ref": "#/definitions/TimestampValue",
+               "description": "\"The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant\""
             },
             "depth": {
-               "type": {
-                  "$ref": "#/definitions/TextValue"
-               }
+               "$ref": "#/definitions/TextValue"
             },
             "description": {
                "description": "a human-readable description of a thing",
@@ -54,31 +48,21 @@
                "type": "string"
             },
             "elev": {
-               "description": "\"Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level. Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above the surface, such as an aircraft in flight or a spacecraft in orbit\"",
-               "type": {
-                  "$ref": "#/definitions/QuantityValue"
-               }
+               "$ref": "#/definitions/QuantityValue",
+               "description": "\"Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level. Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above the surface, such as an aircraft in flight or a spacecraft in orbit\""
             },
             "env_broad_scale": {
-               "type": {
-                  "$ref": "#/definitions/ControlledTermValue"
-               }
+               "$ref": "#/definitions/ControlledTermValue"
             },
             "env_local_scale": {
-               "type": {
-                  "$ref": "#/definitions/ControlledTermValue"
-               }
+               "$ref": "#/definitions/ControlledTermValue"
             },
             "env_medium": {
-               "type": {
-                  "$ref": "#/definitions/ControlledTermValue"
-               }
+               "$ref": "#/definitions/ControlledTermValue"
             },
             "geo_loc_name": {
-               "description": "\"The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (v 1.512) (http://purl.bioontology.org/ontology/GAZ)\"",
-               "type": {
-                  "$ref": "#/definitions/TextValue"
-               }
+               "$ref": "#/definitions/TextValue",
+               "description": "\"The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (v 1.512) (http://purl.bioontology.org/ontology/GAZ)\""
             },
             "has_input": {
                "description": "An input to a process.",
@@ -88,9 +72,7 @@
                "type": "string"
             },
             "lat_lon": {
-               "type": {
-                  "$ref": "#/definitions/GeolocationValue"
-               }
+               "$ref": "#/definitions/GeolocationValue"
             },
             "name": {
                "type": "string"
@@ -214,14 +196,10 @@
          "description": "top level holder class",
          "properties": {
             "biosample_set": {
-               "type": {
-                  "$ref": "#/definitions/Biosample"
-               }
+               "$ref": "#/definitions/Biosample"
             },
             "data_object_set": {
-               "type": {
-                  "$ref": "#/definitions/DataObject"
-               }
+               "$ref": "#/definitions/DataObject"
             }
          },
          "required": [],
@@ -428,10 +406,8 @@
                "type": "string"
             },
             "experimental_factor": {
-               "description": "\"Experimental factors are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI\"",
-               "type": {
-                  "$ref": "#/definitions/ControlledTermValue"
-               }
+               "$ref": "#/definitions/ControlledTermValue",
+               "description": "\"Experimental factors are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI\""
             },
             "has_input": {
                "description": "An input to a process.",
@@ -441,10 +417,8 @@
                "type": "string"
             },
             "investigation_type": {
-               "description": "\"Nucleic Acid Sequence Report is the root element of all MIGS/MIMS compliant reports as standardized by Genomic Standards Consortium. This field is either eukaryote,bacteria,virus,plasmid,organelle, metagenome,mimarks-survey, mimarks-specimen, metatranscriptome, single amplified genome, metagenome-assembled genome, or uncultivated viral genome\"",
-               "type": {
-                  "$ref": "#/definitions/TextValue"
-               }
+               "$ref": "#/definitions/TextValue",
+               "description": "\"Nucleic Acid Sequence Report is the root element of all MIGS/MIMS compliant reports as standardized by Genomic Standards Consortium. This field is either eukaryote,bacteria,virus,plasmid,organelle, metagenome,mimarks-survey, mimarks-specimen, metatranscriptome, single amplified genome, metagenome-assembled genome, or uncultivated viral genome\""
             },
             "name": {
                "type": "string"
@@ -454,16 +428,12 @@
                "type": "string"
             },
             "project_name": {
-               "description": "Name of the project within which the sequencing was organized",
-               "type": {
-                  "$ref": "#/definitions/TextValue"
-               }
+               "$ref": "#/definitions/TextValue",
+               "description": "Name of the project within which the sequencing was organized"
             },
             "submitted_to_insdc": {
-               "description": "\"Depending on the study (large-scale e.g. done with next generation sequencing technology, or small-scale) sequences have to be submitted to SRA (Sequence Read Archive), DRA (DDBJ Read Archive) or via the classical Webin/Sequin systems to Genbank, ENA and DDBJ. Although this field is mandatory, it is meant as a self-test field, therefore it is not necessary to include this field in contextual data submitted to databases\"",
-               "type": {
-                  "$ref": "#/definitions/TextValue"
-               }
+               "$ref": "#/definitions/TextValue",
+               "description": "\"Depending on the study (large-scale e.g. done with next generation sequencing technology, or small-scale) sequences have to be submitted to SRA (Sequence Read Archive), DRA (DDBJ Read Archive) or via the classical Webin/Sequin systems to Genbank, ENA and DDBJ. Although this field is mandatory, it is meant as a self-test field, therefore it is not necessary to include this field in contextual data submitted to databases\""
             }
          },
          "required": [],
@@ -520,17 +490,13 @@
    },
    "properties": {
       "biosample_set": {
-         "type": {
-            "$ref": "#/definitions/Biosample"
-         }
+         "$ref": "#/definitions/Biosample"
       },
       "data_object_set": {
-         "type": {
-            "$ref": "#/definitions/DataObject"
-         }
+         "$ref": "#/definitions/DataObject"
       }
    },
-   "title": "nmdc_schema",
+   "title": "NMDC Schema",
    "type": "object"
 }
 
