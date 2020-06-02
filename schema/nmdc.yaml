@@ -274,7 +274,6 @@ slots:
   attribute:
     aliases: ['field', 'property', 'template field', 'key', 'characteristic']
     abstract: true
-    domain: named thing
     description: >-
       A attribute of a biosample. Examples: depth, habitat, material.
       For NMDC, attributes SHOULD be mapped to terms within a MIxS template
