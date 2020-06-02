@@ -1,8 +1,5 @@
-Warning: The following errors were encountered in the schema
-		Slot "has numeric value" owner (boolean value) does not match integer value
-
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-05-28 12:57
+# Generation date: 2020-06-02 00:04
 # Schema: nmdc_schema
 #
 # id: https://microbiomedata/schema
@@ -23,7 +20,8 @@ else:
 from biolinkml.utils.formatutils import camelcase, underscore, sfx
 from rdflib import Namespace, URIRef
 from biolinkml.utils.curienamespace import CurieNamespace
-from includes.types import Depth, Double, EnvBroadScale, Float, LatLon, String
+from biolinkml.utils.metamodelcore import Bool
+from includes.types import Boolean, Depth, Double, EnvBroadScale, EnvLocalScale, EnvMedium, Float, LatLon, String
 
 metamodel_version = "1.4.3"
 
@@ -52,6 +50,29 @@ DEFAULT_ = NMDC
 
 
 @dataclass
+class Database(YAMLRoot):
+    """
+    top level holder class
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC.Database
+    class_class_curie: ClassVar[str] = "nmdc:Database"
+    class_name: ClassVar[str] = "database"
+    class_model_uri: ClassVar[URIRef] = NMDC.Database
+
+    biosample_set: Optional[Union[dict, "Biosample"]] = None
+    data_object_set: Optional[Union[dict, "DataObject"]] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.biosample_set is not None and not isinstance(self.biosample_set, Biosample):
+            self.biosample_set = Biosample(**self.biosample_set)
+        if self.data_object_set is not None and not isinstance(self.data_object_set, DataObject):
+            self.data_object_set = DataObject(**self.data_object_set)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class NamedThing(YAMLRoot):
     """
     a databased entity or concept/class
@@ -68,6 +89,7 @@ class NamedThing(YAMLRoot):
     description: Optional[str] = None
     alternate_identifiers: List[str] = empty_list()
 
+@dataclass
 class DataObject(NamedThing):
     """
     An object that primarily consists of symbols that represent information. Files, records, and omics data are
@@ -80,6 +102,7 @@ class DataObject(NamedThing):
     class_name: ClassVar[str] = "data object"
     class_model_uri: ClassVar[URIRef] = NMDC.DataObject
 
+    file_size: Optional[str] = None
 
 @dataclass
 class Biosample(NamedThing):
@@ -96,22 +119,49 @@ class Biosample(NamedThing):
 
     lat_lon: Union[dict, "GeolocationValue"] = None
     env_broad_scale: Union[dict, "ControlledTermValue"] = None
+    env_local_scale: Union[dict, "ControlledTermValue"] = None
+    env_medium: Union[dict, "ControlledTermValue"] = None
     id: Optional[str] = None
     name: Optional[str] = None
     alternate_identifiers: List[str] = empty_list()
     depth: Optional[Union[dict, "TextValue"]] = None
+    alt: Optional[Union[dict, "QuantityValue"]] = None
+    elev: Optional[Union[dict, "QuantityValue"]] = None
+    geo_loc_name: Optional[Union[dict, "TextValue"]] = None
+    collection_date: Optional[Union[dict, "TimestampValue"]] = None
+    ecosystem: Optional[str] = None
+    ecosystem_category: Optional[str] = None
+    ecosystem_type: Optional[str] = None
+    ecosystem_subtype: Optional[str] = None
+    specific_ecosystem: Optional[str] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.depth is not None and not isinstance(self.depth, TextValue):
+            self.depth = TextValue(**self.depth)
         if self.lat_lon is None:
             raise ValueError(f"lat_lon must be supplied")
         if not isinstance(self.lat_lon, GeolocationValue):
             self.lat_lon = GeolocationValue(**self.lat_lon)
-        if self.depth is not None and not isinstance(self.depth, TextValue):
-            self.depth = TextValue(**self.depth)
+        if self.alt is not None and not isinstance(self.alt, QuantityValue):
+            self.alt = QuantityValue(**self.alt)
+        if self.elev is not None and not isinstance(self.elev, QuantityValue):
+            self.elev = QuantityValue(**self.elev)
+        if self.geo_loc_name is not None and not isinstance(self.geo_loc_name, TextValue):
+            self.geo_loc_name = TextValue(**self.geo_loc_name)
+        if self.collection_date is not None and not isinstance(self.collection_date, TimestampValue):
+            self.collection_date = TimestampValue(**self.collection_date)
         if self.env_broad_scale is None:
             raise ValueError(f"env_broad_scale must be supplied")
         if not isinstance(self.env_broad_scale, ControlledTermValue):
             self.env_broad_scale = ControlledTermValue(**self.env_broad_scale)
+        if self.env_local_scale is None:
+            raise ValueError(f"env_local_scale must be supplied")
+        if not isinstance(self.env_local_scale, ControlledTermValue):
+            self.env_local_scale = ControlledTermValue(**self.env_local_scale)
+        if self.env_medium is None:
+            raise ValueError(f"env_medium must be supplied")
+        if not isinstance(self.env_medium, ControlledTermValue):
+            self.env_medium = ControlledTermValue(**self.env_medium)
         super().__post_init__(**kwargs)
 
 
@@ -131,7 +181,22 @@ class Study(NamedThing):
     id: Optional[str] = None
     name: Optional[str] = None
     alternate_identifiers: List[str] = empty_list()
-    annotations: List[str] = empty_list()
+    submitted_to_insdc: Optional[Union[dict, "TextValue"]] = None
+    investigation_type: Optional[Union[dict, "TextValue"]] = None
+    project_name: Optional[Union[dict, "TextValue"]] = None
+    experimental_factor: Optional[Union[dict, "ControlledTermValue"]] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.submitted_to_insdc is not None and not isinstance(self.submitted_to_insdc, TextValue):
+            self.submitted_to_insdc = TextValue(**self.submitted_to_insdc)
+        if self.investigation_type is not None and not isinstance(self.investigation_type, TextValue):
+            self.investigation_type = TextValue(**self.investigation_type)
+        if self.project_name is not None and not isinstance(self.project_name, TextValue):
+            self.project_name = TextValue(**self.project_name)
+        if self.experimental_factor is not None and not isinstance(self.experimental_factor, ControlledTermValue):
+            self.experimental_factor = ControlledTermValue(**self.experimental_factor)
+        super().__post_init__(**kwargs)
+
 
 @dataclass
 class BiosampleProcessing(NamedThing):
@@ -221,7 +286,9 @@ class QuantityValue(AttributeValue):
     class_name: ClassVar[str] = "quantity value"
     class_model_uri: ClassVar[URIRef] = NMDC.QuantityValue
 
+    has_raw_value: Optional[str] = None
     has_unit: List[Union[dict, "Unit"]] = empty_list()
+    has_numeric_value: Optional[float] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         self.has_unit = [v if isinstance(v, Unit)
@@ -267,6 +334,7 @@ class TimestampValue(AttributeValue):
     class_model_uri: ClassVar[URIRef] = NMDC.TimestampValue
 
 
+@dataclass
 class IntegerValue(AttributeValue):
     """
     A value that is an integer
@@ -278,6 +346,7 @@ class IntegerValue(AttributeValue):
     class_name: ClassVar[str] = "integer value"
     class_model_uri: ClassVar[URIRef] = NMDC.IntegerValue
 
+    has_numeric_value: Optional[str] = None
 
 @dataclass
 class BooleanValue(AttributeValue):
@@ -291,7 +360,7 @@ class BooleanValue(AttributeValue):
     class_name: ClassVar[str] = "boolean value"
     class_model_uri: ClassVar[URIRef] = NMDC.BooleanValue
 
-    has_numeric_value: Optional[float] = None
+    has_boolean_value: Optional[Bool] = None
 
 class ControlledTermValue(AttributeValue):
     """
@@ -353,6 +422,12 @@ class EnvironmentalMaterialTerm(OntologyClass):
 class slots:
     pass
 
+slots.biosample_set = Slot(uri=NMDC.biosample_set, name="biosample set", curie=NMDC.curie('biosample_set'),
+                      model_uri=NMDC.biosample_set, domain=Database, range=Optional[Union[dict, "Biosample"]])
+
+slots.data_object_set = Slot(uri=NMDC.data_object_set, name="data object set", curie=NMDC.curie('data_object_set'),
+                      model_uri=NMDC.data_object_set, domain=Database, range=Optional[Union[dict, "DataObject"]])
+
 slots.id = Slot(uri=NMDC.id, name="id", curie=NMDC.curie('id'),
                       model_uri=NMDC.id, domain=None, range=Optional[str])
 
@@ -366,7 +441,7 @@ slots.annotations = Slot(uri=NMDC.annotations, name="annotations", curie=NMDC.cu
                       model_uri=NMDC.annotations, domain=None, range=List[str])
 
 slots.attribute = Slot(uri=NMDC.attribute, name="attribute", curie=NMDC.curie('attribute'),
-                      model_uri=NMDC.attribute, domain=NamedThing, range=Optional[str])
+                      model_uri=NMDC.attribute, domain=None, range=Optional[str])
 
 slots.has_raw_value = Slot(uri=NMDC.has_raw_value, name="has raw value", curie=NMDC.curie('has_raw_value'),
                       model_uri=NMDC.has_raw_value, domain=AttributeValue, range=Optional[str])
@@ -375,7 +450,10 @@ slots.has_unit = Slot(uri=NMDC.has_unit, name="has unit", curie=NMDC.curie('has_
                       model_uri=NMDC.has_unit, domain=None, range=List[Union[dict, Unit]], mappings = [QUD.unit])
 
 slots.has_numeric_value = Slot(uri=NMDC.has_numeric_value, name="has numeric value", curie=NMDC.curie('has_numeric_value'),
-                      model_uri=NMDC.has_numeric_value, domain=None, range=Optional[float], mappings = [QUD.quantityValue])
+                      model_uri=NMDC.has_numeric_value, domain=None, range=Optional[str], mappings = [QUD.quantityValue])
+
+slots.has_boolean_value = Slot(uri=NMDC.has_boolean_value, name="has boolean value", curie=NMDC.curie('has_boolean_value'),
+                      model_uri=NMDC.has_boolean_value, domain=None, range=Optional[Bool])
 
 slots.alternate_identifiers = Slot(uri=NMDC.alternate_identifiers, name="alternate identifiers", curie=NMDC.curie('alternate_identifiers'),
                       model_uri=NMDC.alternate_identifiers, domain=None, range=List[str])
@@ -399,25 +477,25 @@ slots.language = Slot(uri=NMDC.language, name="language", curie=NMDC.curie('lang
                       model_uri=NMDC.language, domain=None, range=Optional[str])
 
 slots.file_size = Slot(uri=NMDC.file_size, name="file_size", curie=NMDC.curie('file_size'),
-                      model_uri=NMDC.file_size, domain=NamedThing, range=Optional[str])
+                      model_uri=NMDC.file_size, domain=None, range=Optional[str])
 
 slots.gold_path_field = Slot(uri=NMDC.gold_path_field, name="gold_path_field", curie=NMDC.curie('gold_path_field'),
-                      model_uri=NMDC.gold_path_field, domain=NamedThing, range=Optional[str])
+                      model_uri=NMDC.gold_path_field, domain=None, range=Optional[str])
 
 slots.ecosystem = Slot(uri=NMDC.ecosystem, name="ecosystem", curie=NMDC.curie('ecosystem'),
-                      model_uri=NMDC.ecosystem, domain=NamedThing, range=Optional[str])
+                      model_uri=NMDC.ecosystem, domain=None, range=Optional[str])
 
 slots.ecosystem_category = Slot(uri=NMDC.ecosystem_category, name="ecosystem_category", curie=NMDC.curie('ecosystem_category'),
-                      model_uri=NMDC.ecosystem_category, domain=NamedThing, range=Optional[str])
+                      model_uri=NMDC.ecosystem_category, domain=None, range=Optional[str])
 
 slots.ecosystem_type = Slot(uri=NMDC.ecosystem_type, name="ecosystem_type", curie=NMDC.curie('ecosystem_type'),
-                      model_uri=NMDC.ecosystem_type, domain=NamedThing, range=Optional[str])
+                      model_uri=NMDC.ecosystem_type, domain=None, range=Optional[str])
 
 slots.ecosystem_subtype = Slot(uri=NMDC.ecosystem_subtype, name="ecosystem_subtype", curie=NMDC.curie('ecosystem_subtype'),
-                      model_uri=NMDC.ecosystem_subtype, domain=NamedThing, range=Optional[str])
+                      model_uri=NMDC.ecosystem_subtype, domain=None, range=Optional[str])
 
 slots.specific_ecosystem = Slot(uri=NMDC.specific_ecosystem, name="specific_ecosystem", curie=NMDC.curie('specific_ecosystem'),
-                      model_uri=NMDC.specific_ecosystem, domain=NamedThing, range=Optional[str])
+                      model_uri=NMDC.specific_ecosystem, domain=None, range=Optional[str])
 
 slots.biosample_id = Slot(uri=NMDC.id, name="biosample_id", curie=NMDC.curie('id'),
                       model_uri=NMDC.biosample_id, domain=Biosample, range=Optional[str])
@@ -436,6 +514,12 @@ slots.biosample_depth = Slot(uri=NMDC.depth, name="biosample_depth", curie=NMDC.
 
 slots.biosample_env_broad_scale = Slot(uri=NMDC.env_broad_scale, name="biosample_env_broad_scale", curie=NMDC.curie('env_broad_scale'),
                       model_uri=NMDC.biosample_env_broad_scale, domain=Biosample, range=Union[dict, "ControlledTermValue"])
+
+slots.biosample_env_local_scale = Slot(uri=NMDC.env_local_scale, name="biosample_env_local_scale", curie=NMDC.curie('env_local_scale'),
+                      model_uri=NMDC.biosample_env_local_scale, domain=Biosample, range=Union[dict, "ControlledTermValue"])
+
+slots.biosample_env_medium = Slot(uri=NMDC.env_medium, name="biosample_env_medium", curie=NMDC.curie('env_medium'),
+                      model_uri=NMDC.biosample_env_medium, domain=Biosample, range=Union[dict, "ControlledTermValue"])
 
 slots.study_id = Slot(uri=NMDC.id, name="study_id", curie=NMDC.curie('id'),
                       model_uri=NMDC.study_id, domain=Study, range=Optional[str])
@@ -466,6 +550,15 @@ slots.omics_processing_has_output = Slot(uri=NMDC.has_output, name="omics proces
 
 slots.person_id = Slot(uri=NMDC.id, name="person_id", curie=NMDC.curie('id'),
                       model_uri=NMDC.person_id, domain=Person, range=Optional[str])
+
+slots.quantity_value_has_raw_value = Slot(uri=NMDC.has_raw_value, name="quantity value_has raw value", curie=NMDC.curie('has_raw_value'),
+                      model_uri=NMDC.quantity_value_has_raw_value, domain=QuantityValue, range=Optional[str])
+
+slots.quantity_value_has_unit = Slot(uri=NMDC.has_unit, name="quantity value_has unit", curie=NMDC.curie('has_unit'),
+                      model_uri=NMDC.quantity_value_has_unit, domain=QuantityValue, range=List[Union[dict, "Unit"]])
+
+slots.quantity_value_has_numeric_value = Slot(uri=NMDC.has_numeric_value, name="quantity value_has numeric value", curie=NMDC.curie('has_numeric_value'),
+                      model_uri=NMDC.quantity_value_has_numeric_value, domain=QuantityValue, range=Optional[float])
 
 slots.geolocation_value_has_raw_value = Slot(uri=NMDC.has_raw_value, name="geolocation value_has raw value", curie=NMDC.curie('has_raw_value'),
                       model_uri=NMDC.geolocation_value_has_raw_value, domain=GeolocationValue, range=Optional[str])
