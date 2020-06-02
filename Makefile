@@ -25,12 +25,13 @@ schema/mixs.yaml: mixs5/mixs_v5.txt scripts/mixs-to-blml.pl
 # the biolinkml framework provides the ability to compile
 # the schema to: json-schema, python dataclasses, graphql, ...
 
-all_schema_artefacts: python_dataclasses json_schema graphql schema_uml
+all_schema_artefacts: python_dataclasses json_schema graphql schema_uml shex
 
 python_dataclasses: schema/nmdc.py
 json_schema: schema/nmdc.schema.json
 graphql: schema/nmdc.graphql
 owl: schema/nmdc.owl
+shex: schema/nmdc.shex
 schema_uml: schema/nmdc_schema_uml.png
 
 # Python dataclasses
@@ -48,6 +49,10 @@ schema/nmdc.owl: schema/nmdc.yaml env.lock
 # GraphQL
 schema/nmdc.graphql: schema/nmdc.yaml env.lock
 	pipenv run gen-graphql $< > $@.tmp && mv $@.tmp $@
+
+# ShEx
+schema/nmdc.shex: schema/nmdc.yaml env.lock
+	pipenv run gen-shex $< > $@.tmp && mv $@.tmp $@
 
 # ProtoBuf
 schema/nmdc.proto: schema/nmdc.yaml env.lock

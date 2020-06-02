@@ -27,6 +27,7 @@ The schema is also available as:
  * [Protobuf](schema/nmdc.proto)
  * [GraphQL](schema/nmdc.graphql)
  * [OWL](schema/nmdc.owl)
+ * [ShEx](schema/nmdc.shex)
 
 ## Documentation
 [Documentation](https://microbiomedata.github.io/nmdc-metadata/) for the [NMDC schema](./schema) can be browsed here:
