@@ -1,0 +1,94 @@
+{
+    "Table 3 MCD12Q1 Collection 6 IGBP Legend": [
+        {
+            "Name ": "Evergreen Needleleaf Forests",
+            " Value ": "1",
+            " Description": "Dominated by evergreen conifer trees (canopy >2m). Tree cover >60%."
+        },
+        {
+            "Name ": "Evergreen Broadleaf Forests",
+            " Value ": "2",
+            " Description": " Dominated by evergreen broadleaf and palmatetrees (canopy >2m). Tree cover >60%."
+        },
+        {
+            "Name ": "Deciduous Needleleaf Forests",
+            " Value ": "3",
+            " Description": "Dominated by deciduous needleleaf (larch) trees (canopy >2m). Tree cover >60%."
+        },
+        {
+            "Name ": "Deciduous Broadleaf Forests",
+            " Value ": "4",
+            " Description": "Dominated by deciduous broadleaf trees (canopy >2m). Tree cover >60%."
+        },
+        {
+            "Name ": "Mixed Forests",
+            " Value ": "5",
+            " Description": " Dominated by neither deciduous nor evergreen (40-60% of each) tree type (canopy >2m). Tree cover >60%."
+        },
+        {
+            "Name ": "Closed Shrublands",
+            " Value ": "6",
+            " Description": "Dominated by woody perennials (1-2m height) >60% cover."
+        },
+        {
+            "Name ": "Open Shrublands",
+            " Value ": "7",
+            " Description": "Dominated by woody perennials (1-2m height) 10-60% cover."
+        },
+        {
+            "Name ": "Woody Savannas",
+            " Value ": "8",
+            " Description": "Tree cover 30-60% (canopy >2m)."
+        },
+        {
+            "Name ": "Savannas",
+            " Value ": "9",
+            " Description": "Tree cover 10-30% (canopy >2m)."
+        },
+        {
+            "Name ": "Grasslands",
+            " Value ": "10",
+            " Description": "Dominated by herbaceous annuals (<2m)."
+        },
+        {
+            "Name ": "Permanent Wetlands",
+            " Value ": "11",
+            " Description": "Permanently inundated lands with 30-60% water cover and >10% vegetated cover."
+        },
+        {
+            "Name ": "Croplands",
+            " Value ": "12",
+            " Description": "At least 60% of area is cultivated cropland."
+        },
+        {
+            "Name ": "Urban and Built-up Lands",
+            " Value ": "13",
+            " Description": "At least 30% impervious surface area including building materials, asphalt, and vehicles."
+        },
+        {
+            "Name ": "Cropland/Natural Vegetation Mosaics",
+            " Value ": "14",
+            " Description": "Mosaics of small-scale cultivation 40-60% with natural tree, shrub, or herbaceous vegetation."
+        },
+        {
+            "Name ": "Permanent Snow and Ice",
+            " Value ": "15",
+            " Description": "At least 60% of area is covered by snow and ice for at least 10 months of the year."
+        },
+        {
+            "Name ": "Barren",
+            " Value ": "17",
+            " Description": "At least 60% of area is covered by permanent water bodies"
+        },
+        {
+            "Name ": "Water Bodies",
+            " Value ": "16",
+            " Description": "At least 60% of area is non-vegetated barren (sand, rock, soil) areas with less than 10% vegetation."
+        },
+        {
+            "Name ": "Unclassified",
+            " Value ": "255",
+            " Description": "Has not received a map label because of missinginputs."
+        }
+    ]
+}
