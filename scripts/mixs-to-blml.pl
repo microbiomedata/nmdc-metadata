@@ -42,6 +42,9 @@ while(<>) {
     if ($value_syntax =~ m@\{unit\}@) {
         $range = "quantity value";
     }
+    if ($expected eq 'measurement value') {
+        $range = "quantity value";
+    }
 
     if ($example =~ m@\'@) {
         $example = ''; # TODO escap

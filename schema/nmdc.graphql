@@ -1,0 +1,173 @@
+type AttributeValue
+  {
+    hasRawValue: String
+  }
+
+type Biosample
+  {
+    id: String
+    name: String
+    description: String
+    alternateIdentifiers: [String]
+    hasInput: [String]
+    partOf: [String]
+    depth: TextValue
+    latLon: GeolocationValue!
+    alt: QuantityValue
+    elev: QuantityValue
+    geoLocName: TextValue
+    collectionDate: TimestampValue
+    envBroadScale: ControlledTermValue!
+    envLocalScale: ControlledTermValue!
+    envMedium: ControlledTermValue!
+    ecosystem: String
+    ecosystemCategory: String
+    ecosystemType: String
+    ecosystemSubtype: String
+    specificEcosystem: String
+  }
+
+type BiosampleProcessing
+  {
+    id: String
+    name: String
+    description: String
+    alternateIdentifiers: [String]
+    partOf: [String]
+    hasInput: [Biosample]
+  }
+
+type BooleanValue
+  {
+    hasRawValue: String
+    hasBooleanValue: Boolean
+  }
+
+type ControlledTermValue
+  {
+    hasRawValue: String
+  }
+
+type DataObject
+  {
+    id: String
+    name: String
+    description: String
+    alternateIdentifiers: [String]
+    hasInput: [String]
+    partOf: [String]
+    fileSize: String
+  }
+
+type Database
+  {
+    biosampleSet: Biosample
+    dataObjectSet: DataObject
+  }
+
+type EnvironmentalMaterialTerm
+  {
+    id: String
+    name: String
+    description: String
+    alternateIdentifiers: [String]
+    hasInput: [String]
+    partOf: [String]
+  }
+
+type GeolocationValue
+  {
+    hasRawValue: String
+    latitude: Float
+    longitude: Float
+  }
+
+type IntegerValue
+  {
+    hasRawValue: String
+    hasNumericValue: String
+  }
+
+interface NamedThing
+  {
+    id: String
+    name: String
+    description: String
+    alternateIdentifiers: [String]
+    hasInput: [String]
+    partOf: [String]
+  }
+
+type OmicsProcessing
+  {
+    id: String
+    name: String
+    description: String
+    alternateIdentifiers: [String]
+    hasInput: [Biosample]
+    partOf: [Study]
+    hasOutput: [DataObject]
+  }
+
+type OntologyClass
+  {
+    id: String
+    name: String
+    description: String
+    alternateIdentifiers: [String]
+    hasInput: [String]
+    partOf: [String]
+  }
+
+type Person
+  {
+    id: String
+    name: String
+    description: String
+    alternateIdentifiers: [String]
+    hasInput: [String]
+    partOf: [String]
+  }
+
+type QuantityValue
+  {
+    hasRawValue: String
+    hasUnit: [Unit]
+    hasNumericValue: Double
+  }
+
+type Study
+  {
+    id: String
+    name: String
+    description: String
+    alternateIdentifiers: [String]
+    hasInput: [String]
+    partOf: [String]
+    submittedToInsdc: TextValue
+    investigationType: TextValue
+    projectName: TextValue
+    experimentalFactor: ControlledTermValue
+  }
+
+type TextValue
+  {
+    hasRawValue: String
+    language: String
+  }
+
+type TimestampValue
+  {
+    hasRawValue: String
+  }
+
+type Unit
+  {
+  }
+
+type UrlValue
+  {
+    hasRawValue: String
+  }
+
+
