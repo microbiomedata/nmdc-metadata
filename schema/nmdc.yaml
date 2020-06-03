@@ -75,6 +75,7 @@ classes:
       - ecosystem_type
       - ecosystem_subtype
       - specific_ecosystem
+      - tot_org_carb
     slot_usage:
       id:
         description: >-

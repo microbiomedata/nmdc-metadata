@@ -1,10 +1,22 @@
 #!/usr/bin/perl -w
 use strict;
 
+# THIS WILL BE REWRITTEN IN PYTHON!
+
 print "id: https://microbiomedata/schema/mixs\n";
 print "slots:\n";
 
+my %done = ();
+
+my $file_no = 1;
+
 while(<>) {
+    if (m@Environmental package@) {
+        # move onto mixs5e
+        $file_no = 2;
+        next;
+    }
+    
     next if m@^Structured comment name@;
 
         # delete 8th bit
@@ -20,8 +32,19 @@ while(<>) {
     
     chomp;
     my @vals = split(/\t/,$_);
-    my ($name, $item, $def, $expected, $value_syntax, $example, $section) = @vals;
+    my ($package_name, $name, $item, $def, $expected, $value_syntax, $example, $section, $req);
+    $section = '';
+    if ($file_no == 1) {
+        ($name, $item, $def, $expected, $value_syntax, $example, $section) = @vals;
+    }
+    else {
+        ($package_name, $name, $item, $def, $expected, $value_syntax, $example, $req) = @vals;
+    }
+
     next unless $name;
+    
+    next if $done{$name};
+    
     my $unit = $vals[18];
 
     my $range = "text value";
@@ -49,6 +72,12 @@ while(<>) {
     if ($example =~ m@\'@) {
         $example = ''; # TODO escap
     }
+
+    # escape
+    if ($name =~ m@^[^a-zA-z_]@) {
+        $name = '_'.$name;
+    }
+    $done{$name} = 1;
     
     print "  $name:\n";
     print "    aliases:\n";

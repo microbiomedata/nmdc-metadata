@@ -1220,3 +1220,6413 @@ slots:
     #domain: sequencing:
     #examples: ['http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/its/']
 
+  barometric_press:
+    aliases:
+      - barometric pressure
+    description: >-
+       Force per unit area exerted against a surface by the weight of air above that surface
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:barometric_press
+    #domain: :
+    #examples: ['5 millibar']
+
+  carb_dioxide:
+    aliases:
+      - carbon dioxide
+    description: >-
+       Carbon dioxide (gas) amount or concentration at the time of sampling
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:carb_dioxide
+    #domain: :
+    #examples: ['410 parts per million']
+
+  carb_monoxide:
+    aliases:
+      - carbon monoxide
+    description: >-
+       Carbon monoxide (gas) amount or concentration at the time of sampling
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:carb_monoxide
+    #domain: :
+    #examples: ['0.1 parts per million']
+
+  chem_administration:
+    aliases:
+      - chemical administration
+    description: >-
+       "List of chemical compounds administered to the host or site where sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can include multiple compounds. For chemical entities of biological interest ontology (chebi) (v 163), http://purl.bioontology.org/ontology/chebi"
+    multivalued: false
+    is_a: attribute
+    range: controlled term value
+    mappings:
+      - MIxS:chem_administration
+    #domain: :
+    #examples: ['agar [CHEBI:2509];2018-05-11T20:00Z']
+
+  humidity:
+    aliases:
+      - humidity
+    description: >-
+       "Amount of water vapour in the air, at the time of sampling"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:humidity
+    #domain: :
+    #examples: ['25 gram per cubic meter']
+
+  methane:
+    aliases:
+      - methane
+    description: >-
+       Methane (gas) amount or concentration at the time of sampling
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:methane
+    #domain: :
+    #examples: ['1800 parts per billion']
+
+  misc_param:
+    aliases:
+      - miscellaneous parameter
+    description: >-
+       "Any other measurement performed or parameter collected, that is not listed here"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:misc_param
+    #domain: :
+    #examples: ['Bicarbonate ion concentration;2075 micromole per kilogram']
+
+  organism_count:
+    aliases:
+      - organism count
+    description: >-
+       "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:organism_count
+    #domain: :
+    #examples: ['total prokaryotes;3.5e7 cells per milliliter;qPCR']
+
+  oxygen:
+    aliases:
+      - oxygen
+    description: >-
+       Oxygen (gas) amount or concentration at the time of sampling
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:oxygen
+    #domain: :
+    #examples: ['600 parts per million']
+
+  oxy_stat_samp:
+    aliases:
+      - oxygenation status of sample
+    description: >-
+       Oxygenation status of sample
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:oxy_stat_samp
+    #domain: :
+    #examples: ['aerobic']
+
+  perturbation:
+    aliases:
+      - perturbation
+    description: >-
+       "Type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with perturbation regimen including how many times the perturbation was repeated, how long each perturbation lasted, and the start and end time of the entire perturbation period; can include multiple perturbation types"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:perturbation
+    #domain: :
+    #examples: ['antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M']
+
+  pollutants:
+    aliases:
+      - pollutants
+    description: >-
+       "Pollutant types and, amount or concentrations measured at the time of sampling; can report multiple pollutants by entering numeric values preceded by name of pollutant"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:pollutants
+    #domain: :
+    #examples: ['lead;0.15 microgram per cubic meter']
+
+  resp_part_matter:
+    aliases:
+      - respirable particulate matter
+    description: >-
+       "Concentration of substances that remain suspended in the air, and comprise mixtures of organic and inorganic substances (PM10 and PM2.5); can report multiple PM's by entering numeric values preceded by name of PM"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:resp_part_matter
+    #domain: :
+    #examples: ['PM2.5;10 microgram per cubic meter']
+
+  samp_salinity:
+    aliases:
+      - sample salinity
+    description: >-
+       "Salinity is the total concentration of all dissolved salts in a liquid or solid (in the form of an extract obtained by centrifugation) sample. While salinity can be measured by a complete chemical analysis, this method is difficult and time consuming. More often, it is instead derived from the conductivity measurement. This is known as practical salinity. These derivations compare the specific conductance of the sample to a salinity standard such as seawater"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:samp_salinity
+    #domain: :
+    #examples: ['1 milligram per liter']
+
+  samp_store_dur:
+    aliases:
+      - sample storage duration
+    description: >-
+       Duration for which the sample was stored
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:samp_store_dur
+    #domain: :
+    #examples: ['P1Y6M']
+
+  samp_store_loc:
+    aliases:
+      - sample storage location
+    description: >-
+       "Location at which sample was stored, usually name of a specific freezer/room"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:samp_store_loc
+    #domain: :
+    #examples: ['Freezer no:5']
+
+  samp_store_temp:
+    aliases:
+      - sample storage temperature
+    description: >-
+       "Temperature at which sample was stored, e.g. -80 degree Celsius"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:samp_store_temp
+    #domain: :
+    #examples: ['-80 degree Celsius']
+
+  samp_vol_we_dna_ext:
+    aliases:
+      - sample volume or weight for DNA extraction
+    description: >-
+       "Volume (ml), weight (g) of processed sample, or surface area swabbed from sample for DNA extraction"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:samp_vol_we_dna_ext
+    #domain: :
+    #examples: ['1500 milliliter']
+
+  solar_irradiance:
+    aliases:
+      - solar irradiance
+    description: >-
+       The amount of solar energy that arrives at a specific area of a surface during a specific time interval
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:solar_irradiance
+    #domain: :
+    #examples: ['1.36 kilowatts per square meter per day']
+
+  temp:
+    aliases:
+      - temperature
+    description: >-
+       Temperature of the sample at the time of sampling
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:temp
+    #domain: :
+    #examples: ['25 degree Celsius']
+
+  ventilation_rate:
+    aliases:
+      - ventilation rate
+    description: >-
+       Ventilation rate of the system in the sampled premises
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:ventilation_rate
+    #domain: :
+    #examples: ['750 cubic meter per minute']
+
+  ventilation_type:
+    aliases:
+      - ventilation type
+    description: >-
+       Ventilation system used in the sampled premises
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:ventilation_type
+    #domain: :
+    #examples: ['Operable windows']
+
+  volatile_org_comp:
+    aliases:
+      - volatile organic compounds
+    description: >-
+       Concentration of carbon-based chemicals that easily evaporate at room temperature; can report multiple volatile organic compounds by entering numeric values preceded by name of compound
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:volatile_org_comp
+    #domain: :
+    #examples: ['formaldehyde;500 nanogram per liter']
+
+  wind_direction:
+    aliases:
+      - wind direction
+    description: >-
+       Wind direction is the direction from which a wind originates
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:wind_direction
+    #domain: :
+    #examples: ['Northwest']
+
+  wind_speed:
+    aliases:
+      - wind speed
+    description: >-
+       Speed of wind measured at the time of sampling
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:wind_speed
+    #domain: :
+    #examples: ['21 kilometer per hour']
+
+  surf_material:
+    aliases:
+      - surface material
+    description: >-
+       Surface materials at the point of sampling
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:surf_material
+    #domain: :
+    #examples: ['wood']
+
+  surf_air_cont:
+    aliases:
+      - surface-air contaminant
+    description: >-
+       Contaminant identified on surface
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:surf_air_cont
+    #domain: :
+    #examples: ['radon']
+
+  rel_air_humidity:
+    aliases:
+      - relative air humidity
+    description: >-
+       "Partial vapor and air pressure, density of the vapor and air, or by the actual mass of the vapor and air"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:rel_air_humidity
+    #domain: :
+    #examples: ['80%']
+
+  abs_air_humidity:
+    aliases:
+      - absolute air humidity
+    description: >-
+       Actual mass of water vapor - mh20 - present in the air water vapor mixture
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:abs_air_humidity
+    #domain: :
+    #examples: ['9 gram per gram']
+
+  surf_humidity:
+    aliases:
+      - surface humidity
+    description: >-
+       Surfaces: water activity as a function of air and material moisture
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:surf_humidity
+    #domain: :
+    #examples: ['10%']
+
+  air_temp:
+    aliases:
+      - air temperature
+    description: >-
+       Temperature of the air at the time of sampling
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:air_temp
+    #domain: :
+    #examples: ['20 degree Celsius']
+
+  surf_temp:
+    aliases:
+      - surface temperature
+    description: >-
+       Temperature of the surface at the time of sampling
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:surf_temp
+    #domain: :
+    #examples: ['15 degree Celsius']
+
+  surf_moisture_ph:
+    aliases:
+      - surface moisture pH 
+    description: >-
+       ph measurement of surface
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:surf_moisture_ph
+    #domain: :
+    #examples: ['7']
+
+  build_occup_type:
+    aliases:
+      - building occupancy type 
+    description: >-
+       The primary function for which a building or discrete part of a building is intended to be used
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:build_occup_type
+    #domain: :
+    #examples: ['market']
+
+  surf_moisture:
+    aliases:
+      - surface moisture
+    description: >-
+       Water held on a surface
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:surf_moisture
+    #domain: :
+    #examples: ['0.01 gram per square meter']
+
+  dew_point:
+    aliases:
+      - dew point 
+    description: >-
+       "The temperature to which a given parcel of humid air must be cooled, at constant barometric pressure, for water vapor to condense into water. "
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:dew_point
+    #domain: :
+    #examples: ['22 degree Celsius']
+
+  indoor_space:
+    aliases:
+      - indoor space 
+    description: >-
+       "A distinguishable space within a structure, the purpose for which discrete areas of a building is used"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:indoor_space
+    #domain: :
+    #examples: ['foyer']
+
+  indoor_surf:
+    aliases:
+      - indoor surface
+    description: >-
+       Type of indoor surface
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:indoor_surf
+    #domain: :
+    #examples: ['wall']
+
+  filter_type:
+    aliases:
+      - filter type
+    description: >-
+       A device which removes solid particulates or airborne molecular contaminants
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:filter_type
+    #domain: :
+    #examples: ['HEPA']
+
+  heat_cool_type:
+    aliases:
+      - heating and cooling system type
+    description: >-
+       Methods of conditioning or heating a room or building
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:heat_cool_type
+    #domain: :
+    #examples: ['heat pump']
+
+  substructure_type:
+    aliases:
+      - substructure type 
+    description: >-
+       The substructure or under building is that largely hidden section of the building which is built off the foundations to the ground floor level
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:substructure_type
+    #domain: :
+    #examples: ['basement']
+
+  building_setting:
+    aliases:
+      - building setting
+    description: >-
+       A location (geography) where a building is set
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:building_setting
+    #domain: :
+    #examples: ['rural']
+
+  light_type:
+    aliases:
+      - light type
+    description: >-
+       "Application of light to achieve some practical or aesthetic effect. Lighting includes the use of both artificial light sources such as lamps and light fixtures, as well as natural illumination by capturing daylight. Can also include absence of light"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:light_type
+    #domain: :
+    #examples: ['desk lamp']
+
+  samp_sort_meth:
+    aliases:
+      - sample size sorting method
+    description: >-
+       "Method by which samples are sorted; open face filter collecting total suspended particles, prefilter to remove particles larger than X micrometers in diameter, where common values of X would be 10 and 2.5 full size sorting in a cascade impactor."
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:samp_sort_meth
+    #domain: :
+
+  space_typ_state:
+    aliases:
+      - space typical state 
+    description: >-
+       Customary or normal state of the space
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:space_typ_state
+    #domain: :
+    #examples: ['typically occupied']
+
+  typ_occup_density:
+    aliases:
+      - typical occupant density
+    description: >-
+       Customary or normal density of occupants
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:typ_occup_density
+    #domain: :
+    #examples: ['25']
+
+  occup_samp:
+    aliases:
+      - occupancy at sampling
+    description: >-
+       Number of occupants present at time of sample within the given space
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:occup_samp
+    #domain: :
+    #examples: ['10']
+
+  occup_density_samp:
+    aliases:
+      - occupant density at sampling
+    description: >-
+       Average number of occupants at time of sampling per square footage
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:occup_density_samp
+    #domain: :
+
+  address:
+    aliases:
+      - address
+    description: >-
+       The street name and building number where the sampling occurred.
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:address
+    #domain: :
+
+  adj_room:
+    aliases:
+      - adjacent rooms
+    description: >-
+       "List of rooms (room number, room name) immediately adjacent to the sampling room"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:adj_room
+    #domain: :
+
+  aero_struc:
+    aliases:
+      - aerospace structure
+    description: >-
+       "Aerospace structures typically consist of thin plates with stiffeners for the external surfaces, bulkheads and frames to support the shape and fasteners such as welds, rivets, screws and bolts to hold the components together"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:aero_struc
+    #domain: :
+    #examples: ['plane']
+
+  amount_light:
+    aliases:
+      - amount of light
+    description: >-
+       "The unit of illuminance and luminous emittance, measuring luminous flux per unit area"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:amount_light
+    #domain: :
+
+  arch_struc:
+    aliases:
+      - architectural structure
+    description: >-
+       "An architectural structure is a human-made, free-standing, immobile outdoor construction "
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:arch_struc
+    #domain: :
+    #examples: ['shed']
+
+  avg_occup:
+    aliases:
+      - average daily occupancy
+    description: >-
+       Daily average  occupancy of room
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:avg_occup
+    #domain: :
+    #examples: ['2']
+
+  avg_dew_point:
+    aliases:
+      - average dew point
+    description: >-
+       The average of dew point measures taken at the beginning of every hour over a 24 hour period on the sampling day
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:avg_dew_point
+    #domain: :
+    #examples: ['25.5 degree Celsius']
+
+  avg_temp:
+    aliases:
+      - average temperature
+    description: >-
+       The average of temperatures taken at the beginning of every hour over a 24 hour period on the sampling day
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:avg_temp
+    #domain: :
+    #examples: ['12.5 degree Celsius']
+
+  bathroom_count:
+    aliases:
+      - bathroom count
+    description: >-
+       The number of bathrooms in the building
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:bathroom_count
+    #domain: :
+    #examples: ['1']
+
+  bedroom_count:
+    aliases:
+      - bedroom count 
+    description: >-
+       The number of bedrooms in the building
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:bedroom_count
+    #domain: :
+    #examples: ['2']
+
+  built_struc_age:
+    aliases:
+      - built structure age
+    description: >-
+       The age of the built structure since construction
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:built_struc_age
+    #domain: :
+    #examples: ['15']
+
+  built_struc_set:
+    aliases:
+      - built structure setting
+    description: >-
+       The characterization of the location of the built structure as high or low human density
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:built_struc_set
+    #domain: :
+    #examples: ['rural']
+
+  built_struc_type:
+    aliases:
+      - built structure type
+    description: >-
+       A physical structure that is a body or assemblage of bodies in space to form a system capable of supporting loads
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:built_struc_type
+    #domain: :
+
+  ceil_area:
+    aliases:
+      - ceiling area
+    description: >-
+       The area of the ceiling space within the room
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:ceil_area
+    #domain: :
+    #examples: ['25 square meter']
+
+  ceil_cond:
+    aliases:
+      - ceiling condition
+    description: >-
+       The physical condition of the ceiling at the time of sampling; photos or video preferred; use drawings to indicate location of damaged areas
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:ceil_cond
+    #domain: :
+    #examples: ['damaged']
+
+  ceil_finish_mat:
+    aliases:
+      - ceiling finish material
+    description: >-
+       The type of material used to finish a ceiling
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:ceil_finish_mat
+    #domain: :
+    #examples: ['stucco']
+
+  ceil_water_mold:
+    aliases:
+      - ceiling signs of water/mold
+    description: >-
+       Signs of the presence of mold or mildew on the ceiling
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:ceil_water_mold
+    #domain: :
+    #examples: ['presence of mold visible']
+
+  ceil_struc:
+    aliases:
+      - ceiling structure
+    description: >-
+       The construction format of the ceiling
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:ceil_struc
+    #domain: :
+    #examples: ['concrete']
+
+  ceil_texture:
+    aliases:
+      - ceiling texture
+    description: >-
+       "The feel, appearance, or consistency of a ceiling surface"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:ceil_texture
+    #domain: :
+    #examples: ['popcorn']
+
+  ceil_thermal_mass:
+    aliases:
+      - ceiling thermal mass
+    description: >-
+       The ability of the ceiling to provide inertia against temperature fluctuations. Generally this means concrete that is exposed. A metal deck that supports a concrete slab will act thermally as long as it is exposed to room air flow
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:ceil_thermal_mass
+    #domain: :
+
+  ceil_type:
+    aliases:
+      - ceiling type
+    description: >-
+       The type of ceiling according to the ceiling's appearance or construction
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:ceil_type
+    #domain: :
+    #examples: ['coffered']
+
+  cool_syst_id:
+    aliases:
+      - cooling system identifier
+    description: >-
+       The cooling system identifier
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:cool_syst_id
+    #domain: :
+    #examples: ['12345']
+
+  date_last_rain:
+    aliases:
+      - date last rain
+    description: >-
+       The date of the last time it rained
+    multivalued: false
+    is_a: attribute
+    range: timestamp value
+    mappings:
+      - MIxS:date_last_rain
+    #domain: :
+    #examples: ['2018-05-11:T14:30Z']
+
+  build_docs:
+    aliases:
+      - "design, construction, and operation documents"
+    description: >-
+       "The building design, construction and operation documents"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:build_docs
+    #domain: :
+    #examples: ['maintenance plans']
+
+  door_size:
+    aliases:
+      - door area or size
+    description: >-
+       The size of the door
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:door_size
+    #domain: :
+    #examples: ['2.5 square meter']
+
+  door_cond:
+    aliases:
+      - door condition
+    description: >-
+       The phsical condition of the door
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:door_cond
+    #domain: :
+    #examples: ['new']
+
+  door_direct:
+    aliases:
+      - door direction of opening
+    description: >-
+       The direction the door opens
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:door_direct
+    #domain: :
+    #examples: ['inward']
+
+  door_loc:
+    aliases:
+      - door location
+    description: >-
+       The relative location of the door in the room
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:door_loc
+    #domain: :
+    #examples: ['north']
+
+  door_mat:
+    aliases:
+      - door material
+    description: >-
+       The material the door is composed of
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:door_mat
+    #domain: :
+    #examples: ['wood']
+
+  door_move:
+    aliases:
+      - door movement
+    description: >-
+       The type of movement of the door
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:door_move
+    #domain: :
+    #examples: ['swinging']
+
+  door_water_mold:
+    aliases:
+      - door signs of water/mold
+    description: >-
+       Signs of the presence of mold or mildew on a door
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:door_water_mold
+    #domain: :
+    #examples: ['presence of mold visible']
+
+  door_type:
+    aliases:
+      - door type
+    description: >-
+       The type of door material
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:door_type
+    #domain: :
+    #examples: ['wooden']
+
+  door_comp_type:
+    aliases:
+      - "door type, composite"
+    description: >-
+       The composite type of the door
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:door_comp_type
+    #domain: :
+    #examples: ['revolving']
+
+  door_type_metal:
+    aliases:
+      - "door type, metal"
+    description: >-
+       The type of metal door
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:door_type_metal
+    #domain: :
+    #examples: ['hollow']
+
+  door_type_wood:
+    aliases:
+      - "door type, wood"
+    description: >-
+       The type of wood door
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:door_type_wood
+    #domain: :
+    #examples: ['battened']
+
+  drawings:
+    aliases:
+      - drawings
+    description: >-
+       "The buildings architectural drawings; if design is chosen, indicate phase-conceptual, schematic, design development, and construction documents"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:drawings
+    #domain: :
+    #examples: ['sketch']
+
+  elevator:
+    aliases:
+      - elevator count
+    description: >-
+       The number of elevators within the built structure
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:elevator
+    #domain: :
+    #examples: ['2']
+
+  escalator:
+    aliases:
+      - escalator count
+    description: >-
+       The number of escalators within the built structure
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:escalator
+    #domain: :
+    #examples: ['4']
+
+  exp_duct:
+    aliases:
+      - exposed ductwork
+    description: >-
+       The amount of exposed ductwork in the room
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:exp_duct
+    #domain: :
+
+  exp_pipe:
+    aliases:
+      - exposed pipes 
+    description: >-
+       The number of exposed pipes in the room
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:exp_pipe
+    #domain: :
+
+  ext_door:
+    aliases:
+      - exterior door count
+    description: >-
+       The number of exterior doors in the built structure
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:ext_door
+    #domain: :
+
+  fireplace_type:
+    aliases:
+      - fireplace type
+    description: >-
+       A firebox with chimney
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:fireplace_type
+    #domain: :
+    #examples: ['wood burning']
+
+  floor_age:
+    aliases:
+      - floor age
+    description: >-
+       The time period since installment of the carpet or flooring
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:floor_age
+    #domain: :
+
+  floor_area:
+    aliases:
+      - floor area
+    description: >-
+       The area of the floor space within the room
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:floor_area
+    #domain: :
+
+  floor_cond:
+    aliases:
+      - floor condition
+    description: >-
+       The physical condition of the floor at the time of sampling; photos or video preferred; use drawings to indicate location of damaged areas
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:floor_cond
+    #domain: :
+    #examples: ['new']
+
+  floor_count:
+    aliases:
+      - floor count
+    description: >-
+       "The number of floors in the building, including basements and mechanical penthouse"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:floor_count
+    #domain: :
+
+  floor_finish_mat:
+    aliases:
+      - floor finish material
+    description: >-
+       The floor covering type; the finished surface that is walked on
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:floor_finish_mat
+    #domain: :
+    #examples: ['carpet']
+
+  floor_water_mold:
+    aliases:
+      - floor signs of water/mold
+    description: >-
+       Signs of the presence of mold or mildew in a room
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:floor_water_mold
+    #domain: :
+    #examples: ['ceiling discoloration']
+
+  floor_struc:
+    aliases:
+      - floor structure
+    description: >-
+       Refers to the structural elements and subfloor upon which the finish flooring is installed
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:floor_struc
+    #domain: :
+    #examples: ['concrete']
+
+  floor_thermal_mass:
+    aliases:
+      - floor thermal mass
+    description: >-
+       The ability of the floor to provide inertia against temperature fluctuations
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:floor_thermal_mass
+    #domain: :
+
+  freq_clean:
+    aliases:
+      - frequency of cleaning 
+    description: >-
+       The number of times the building is cleaned per week
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:freq_clean
+    #domain: :
+
+  freq_cook:
+    aliases:
+      - frequency of cooking
+    description: >-
+       The number of times a meal is cooked per week
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:freq_cook
+    #domain: :
+
+  furniture:
+    aliases:
+      - furniture
+    description: >-
+       The types of furniture present in the sampled room
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:furniture
+    #domain: :
+    #examples: ['chair']
+
+  gender_restroom:
+    aliases:
+      - gender of restroom
+    description: >-
+       The gender type of the restroom
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:gender_restroom
+    #domain: :
+    #examples: ['male']
+
+  hall_count:
+    aliases:
+      - hallway/corridor count
+    description: >-
+       The total count of hallways and cooridors in the built structure
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:hall_count
+    #domain: :
+
+  handidness:
+    aliases:
+      - handidness
+    description: >-
+       The handidness of the individual sampled
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:handidness
+    #domain: :
+    #examples: ['right handedness']
+
+  heat_deliv_loc:
+    aliases:
+      - heating delivery locations
+    description: >-
+       The location of heat delivery within the room
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:heat_deliv_loc
+    #domain: :
+    #examples: ['north']
+
+  heat_system_deliv_meth:
+    aliases:
+      - heating system delivery method 
+    description: >-
+       The method by which the heat is delivered through the system
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:heat_system_deliv_meth
+    #domain: :
+    #examples: ['radiant']
+
+  heat_system_id:
+    aliases:
+      - heating system identifier
+    description: >-
+       The heating system identifier
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:heat_system_id
+    #domain: :
+
+  height_carper_fiber:
+    aliases:
+      - height carpet fiber mat
+    description: >-
+       The average carpet fiber height in the indoor environment
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:height_carper_fiber
+    #domain: :
+
+  inside_lux:
+    aliases:
+      - inside lux light
+    description: >-
+       The recorded value at sampling time (power density)
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:inside_lux
+    #domain: :
+
+  int_wall_cond:
+    aliases:
+      - interior wall condition
+    description: >-
+       The physical condition of the wall at the time of sampling; photos or video preferred; use drawings to indicate location of damaged areas
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:int_wall_cond
+    #domain: :
+    #examples: ['damaged']
+
+  last_clean:
+    aliases:
+      - last time swept/mopped/vacuumed
+    description: >-
+       "The last time the floor was cleaned (swept, mopped, vacuumed)"
+    multivalued: false
+    is_a: attribute
+    range: timestamp value
+    mappings:
+      - MIxS:last_clean
+    #domain: :
+    #examples: ['2018-05-11:T14:30Z']
+
+  max_occup:
+    aliases:
+      - maximum occupancy
+    description: >-
+       The maximum amount of people allowed in the indoor environment
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:max_occup
+    #domain: :
+
+  mech_struc:
+    aliases:
+      - mechanical structure
+    description: >-
+       mechanical structure: a moving structure
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:mech_struc
+    #domain: :
+    #examples: ['elevator']
+
+  number_plants:
+    aliases:
+      - number of houseplants
+    description: >-
+       The number of plant(s) in the sampling space
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:number_plants
+    #domain: :
+
+  number_pets:
+    aliases:
+      - number of pets
+    description: >-
+       The number of pets residing in the sampled space
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:number_pets
+    #domain: :
+
+  number_resident:
+    aliases:
+      - number of residents 
+    description: >-
+       The number of individuals currently occupying in the sampling location
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:number_resident
+    #domain: :
+
+  occup_document:
+    aliases:
+      - occupancy documentation
+    description: >-
+       The type of documentation of occupancy
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:occup_document
+    #domain: :
+    #examples: ['estimate']
+
+  ext_wall_orient:
+    aliases:
+      - orientations of exterior wall
+    description: >-
+       The orientation of the exterior wall
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:ext_wall_orient
+    #domain: :
+    #examples: ['northwest']
+
+  ext_window_orient:
+    aliases:
+      - orientations of exterior window
+    description: >-
+       The compass direction the exterior window of the room is facing
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:ext_window_orient
+    #domain: :
+    #examples: ['southwest']
+
+  rel_humidity_out:
+    aliases:
+      - outside relative humidity
+    description: >-
+       The recorded outside relative humidity value at the time of sampling
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:rel_humidity_out
+    #domain: :
+    #examples: ['12 per kilogram of air']
+
+  pres_animal:
+    aliases:
+      - "presence of pets, animals, or insects"
+    description: >-
+       The number and type of animals present in the sampling space
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:pres_animal
+    #domain: :
+    #examples: ['cat;5']
+
+  quad_pos:
+    aliases:
+      - quadrant position 
+    description: >-
+       The quadrant position of the sampling room within the building
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:quad_pos
+    #domain: :
+    #examples: ['West side']
+
+  rel_samp_loc:
+    aliases:
+      - relative sampling location
+    description: >-
+       The sampling location within the train car
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:rel_samp_loc
+    #domain: :
+    #examples: ['center of car']
+
+  room_air_exch_rate:
+    aliases:
+      - room air exchange rate
+    description: >-
+       The rate at which outside air replaces indoor air in a given space
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:room_air_exch_rate
+    #domain: :
+
+  room_architec_element:
+    aliases:
+      - room architectural elements
+    description: >-
+       "The unique details and component parts that, together, form the architecture of a distinguisahable space within a built structure"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:room_architec_element
+    #domain: :
+
+  room_condt:
+    aliases:
+      - room condition
+    description: >-
+       The condition of the room at the time of sampling
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:room_condt
+    #domain: :
+    #examples: ['new']
+
+  room_count:
+    aliases:
+      - room count
+    description: >-
+       The total count of rooms in the built structure including all room types
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:room_count
+    #domain: :
+
+  room_dim:
+    aliases:
+      - room dimensions
+    description: >-
+       "The length, width and height of sampling room"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:room_dim
+    #domain: :
+
+  room_door_dist:
+    aliases:
+      - room door distance
+    description: >-
+       Distance between doors (meters) in the hallway between the sampling room and adjacent rooms
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:room_door_dist
+    #domain: :
+
+  room_loc:
+    aliases:
+      - room location in building 
+    description: >-
+       The position of the room within the building
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:room_loc
+    #domain: :
+    #examples: ['interior room']
+
+  room_moist_damage_hist:
+    aliases:
+      - room moisture damage or mold history
+    description: >-
+       The history of moisture damage or mold in the past 12 months. Number of events of moisture damage or mold observed
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:room_moist_damage_hist
+    #domain: :
+
+  room_net_area:
+    aliases:
+      - room net area
+    description: >-
+       The net floor area of sampling room. Net area excludes wall thicknesses
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:room_net_area
+    #domain: :
+
+  room_occup:
+    aliases:
+      - room occupancy
+    description: >-
+       Count of room occupancy at time of sampling
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:room_occup
+    #domain: :
+
+  room_samp_pos:
+    aliases:
+      - room sampling position
+    description: >-
+       The horizontal sampling position in the room relative to architectural elements
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:room_samp_pos
+    #domain: :
+    #examples: ['south corner']
+
+  room_type:
+    aliases:
+      - room type
+    description: >-
+       The main purpose or activity of the sampling room. A room is any distinguishable space within a structure
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:room_type
+    #domain: :
+    #examples: ['bathroom']
+
+  room_vol:
+    aliases:
+      - room volume
+    description: >-
+       Volume of sampling room
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:room_vol
+    #domain: :
+
+  room_window_count:
+    aliases:
+      - room window count
+    description: >-
+       Number of windows in the room
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:room_window_count
+    #domain: :
+
+  room_connected:
+    aliases:
+      - rooms connected by a doorway
+    description: >-
+       List of rooms connected to the sampling room by a doorway
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:room_connected
+    #domain: :
+    #examples: ['office']
+
+  room_hallway:
+    aliases:
+      - rooms that are on the same hallway
+    description: >-
+       "List of room(s) (room number, room name) located in the same hallway as sampling room"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:room_hallway
+    #domain: :
+
+  room_door_share:
+    aliases:
+      - rooms that share a door with sampling room
+    description: >-
+       "List of room(s) (room number, room name) sharing a door with the sampling room"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:room_door_share
+    #domain: :
+
+  room_wall_share:
+    aliases:
+      - rooms that share a wall with sampling room
+    description: >-
+       "List of room(s) (room number, room name) sharing a wall with the sampling room"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:room_wall_share
+    #domain: :
+
+  samp_weather:
+    aliases:
+      - sampling day weather
+    description: >-
+       The weather on the sampling day
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:samp_weather
+    #domain: :
+    #examples: ['foggy']
+
+  samp_floor:
+    aliases:
+      - sampling floor
+    description: >-
+       "The floor of the building, where the sampling room is located"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:samp_floor
+    #domain: :
+    #examples: ['4th floor']
+
+  samp_room_id:
+    aliases:
+      - sampling room ID or name
+    description: >-
+       Sampling room number. This ID should be consistent with the designations on the building floor plans
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:samp_room_id
+    #domain: :
+
+  samp_time_out:
+    aliases:
+      - sampling time outside
+    description: >-
+       The recent and long term history of outside sampling
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:samp_time_out
+    #domain: :
+
+  season:
+    aliases:
+      - season
+    description: >-
+       The season when sampling occurred
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:season
+    #domain: :
+    #examples: ['Summer']
+
+  season_use:
+    aliases:
+      - seasonal use
+    description: >-
+       The seasons the space is occupied
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:season_use
+    #domain: :
+    #examples: ['Winter']
+
+  shading_device_cond:
+    aliases:
+      - shading device condition
+    description: >-
+       The physical condition of the shading device at the time of sampling
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:shading_device_cond
+    #domain: :
+    #examples: ['new']
+
+  shading_device_loc:
+    aliases:
+      - shading device location
+    description: >-
+       The location of the shading device in relation to the built structure
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:shading_device_loc
+    #domain: :
+    #examples: ['exterior']
+
+  shading_device_mat:
+    aliases:
+      - shading device material
+    description: >-
+       The material the shading device is composed of
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:shading_device_mat
+    #domain: :
+
+  shading_device_water_mold:
+    aliases:
+      - shading device signs of water/mold
+    description: >-
+       Signs of the presence of mold or mildew on the shading device
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:shading_device_water_mold
+    #domain: :
+    #examples: ['no presence of mold visible']
+
+  shading_device_type:
+    aliases:
+      - shading device type
+    description: >-
+       The type of shading device
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:shading_device_type
+    #domain: :
+    #examples: ['slatted aluminum awning']
+
+  specific_humidity:
+    aliases:
+      - specific humidity
+    description: >-
+       "The mass of water vapour in a unit mass of moist air, usually expressed as grams of vapour per kilogram of air, or, in air conditioning, as grains per pound."
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:specific_humidity
+    #domain: :
+    #examples: ['15 per kilogram of air']
+
+  specific:
+    aliases:
+      - specifications
+    description: >-
+       "The building specifications. If design is chosen, indicate phase: conceptual, schematic, design development, construction documents"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:specific
+    #domain: :
+    #examples: ['construction']
+
+  temp_out:
+    aliases:
+      - temperature outside house
+    description: >-
+       The recorded temperature value at sampling time outside
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:temp_out
+    #domain: :
+    #examples: ['5 degree Celsius']
+
+  train_line:
+    aliases:
+      - train line
+    description: >-
+       The subway line name
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:train_line
+    #domain: :
+    #examples: ['red']
+
+  train_stat_loc:
+    aliases:
+      - train station collection location
+    description: >-
+       The train station collection location
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:train_stat_loc
+    #domain: :
+    #examples: ['forest hills']
+
+  train_stop_loc:
+    aliases:
+      - train stop collection location
+    description: >-
+       The train stop collection location
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:train_stop_loc
+    #domain: :
+    #examples: ['end']
+
+  vis_media:
+    aliases:
+      - visual media
+    description: >-
+       The building visual media
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:vis_media
+    #domain: :
+    #examples: ['3D scans']
+
+  wall_area:
+    aliases:
+      - wall area
+    description: >-
+       The total area of the sampled room's walls
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:wall_area
+    #domain: :
+
+  wall_const_type:
+    aliases:
+      - wall construction type
+    description: >-
+       The building class of the wall defined by the composition of the building elements and fire-resistance rating.
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:wall_const_type
+    #domain: :
+    #examples: ['fire resistive']
+
+  wall_finish_mat:
+    aliases:
+      - wall finish material
+    description: >-
+       The material utilized to finish the outer most layer of the wall 
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:wall_finish_mat
+    #domain: :
+    #examples: ['wood']
+
+  wall_height:
+    aliases:
+      - wall height
+    description: >-
+       The average height of the walls in the sampled room
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:wall_height
+    #domain: :
+
+  wall_loc:
+    aliases:
+      - wall location
+    description: >-
+       The relative location of the wall within the room
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:wall_loc
+    #domain: :
+    #examples: ['north']
+
+  wall_water_mold:
+    aliases:
+      - wall signs of water/mold
+    description: >-
+       Signs of the presence of mold or mildew on a wall
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:wall_water_mold
+    #domain: :
+    #examples: ['no presence of mold visible']
+
+  wall_surf_treatment:
+    aliases:
+      - wall surface treatment
+    description: >-
+       The surface treatment of interior wall
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:wall_surf_treatment
+    #domain: :
+    #examples: ['paneling']
+
+  wall_texture:
+    aliases:
+      - wall texture
+    description: >-
+       "The feel, appearance, or consistency of a wall surface"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:wall_texture
+    #domain: :
+    #examples: ['popcorn']
+
+  wall_thermal_mass:
+    aliases:
+      - wall thermal mass
+    description: >-
+       The ability of the wall to provide inertia against temperature fluctuations. Generally this means concrete or concrete block that is either exposed or covered only with paint
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:wall_thermal_mass
+    #domain: :
+
+  water_feat_size:
+    aliases:
+      - water feature size
+    description: >-
+       The size of the water feature
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:water_feat_size
+    #domain: :
+
+  water_feat_type:
+    aliases:
+      - water feature type
+    description: >-
+       The type of water feature present within the building being sampled
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:water_feat_type
+    #domain: :
+    #examples: ['stream']
+
+  weekday:
+    aliases:
+      - weekday
+    description: >-
+       The day of the week when sampling occurred
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:weekday
+    #domain: :
+    #examples: ['Sunday']
+
+  window_size:
+    aliases:
+      - window area/size
+    description: >-
+       The window's length and width
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:window_size
+    #domain: :
+
+  window_cond:
+    aliases:
+      - window condition
+    description: >-
+       The physical condition of the window at the time of sampling
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:window_cond
+    #domain: :
+    #examples: ['rupture']
+
+  window_cover:
+    aliases:
+      - window covering
+    description: >-
+       The type of window covering
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:window_cover
+    #domain: :
+    #examples: ['curtains']
+
+  window_horiz_pos:
+    aliases:
+      - window horizontal position
+    description: >-
+       The horizontal position of the window on the wall
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:window_horiz_pos
+    #domain: :
+    #examples: ['middle']
+
+  window_loc:
+    aliases:
+      - window location
+    description: >-
+       The relative location of the window within the room
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:window_loc
+    #domain: :
+    #examples: ['west']
+
+  window_mat:
+    aliases:
+      - window material
+    description: >-
+       The type of material used to finish a window
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:window_mat
+    #domain: :
+    #examples: ['wood']
+
+  window_open_freq:
+    aliases:
+      - window open frequency
+    description: >-
+       The number of times windows are opened per week
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:window_open_freq
+    #domain: :
+
+  window_water_mold:
+    aliases:
+      - window signs of water/mold
+    description: >-
+       Signs of the presence of mold or mildew on the window.
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:window_water_mold
+    #domain: :
+    #examples: ['no presence of mold visible']
+
+  window_status:
+    aliases:
+      - window status
+    description: >-
+       Defines whether the windows were open or closed during environmental testing
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:window_status
+    #domain: :
+    #examples: ['open']
+
+  window_type:
+    aliases:
+      - window type
+    description: >-
+       The type of windows
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:window_type
+    #domain: :
+    #examples: ['fixed window']
+
+  window_vert_pos:
+    aliases:
+      - window vertical position
+    description: >-
+       The vertical position of the window on the wall
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:window_vert_pos
+    #domain: :
+    #examples: ['middle']
+
+  ances_data:
+    aliases:
+      - ancestral data
+    description: >-
+       "Information about either pedigree or other ancestral information description (e.g. parental variety in case of mutant or selection), e.g. A/3*B (meaning [(A x B) x B] x B)"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:ances_data
+    #domain: :
+    #examples: ['A/3*B']
+
+  biol_stat:
+    aliases:
+      - biological status
+    description: >-
+       The level of genome modification
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:biol_stat
+    #domain: :
+    #examples: ['natural']
+
+  genetic_mod:
+    aliases:
+      - genetic modification
+    description: >-
+       "Genetic modifications of the genome of an organism, which may occur naturally by spontaneous mutation, or be introduced by some experimental means, e.g. specification of a transgene or the gene knocked-out or details of transient transfection"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:genetic_mod
+    #domain: :
+    #examples: ['aox1A transgenic ']
+
+  host_common_name:
+    aliases:
+      - host common name
+    description: >-
+       "Common name of the host, e.g. Human"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:host_common_name
+    #domain: :
+    #examples: ['mussel']
+
+  samp_capt_status:
+    aliases:
+      - sample capture status
+    description: >-
+       Reason for the sample
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:samp_capt_status
+    #domain: :
+    #examples: ['farm sample']
+
+  samp_dis_stage:
+    aliases:
+      - sample disease stage
+    description: >-
+       "Stage of the disease at the time of sample collection, e.g. inoculation, penetration, infection, growth and reproduction, dissemination of pathogen."
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:samp_dis_stage
+    #domain: :
+    #examples: ['infection']
+
+  host_taxid:
+    aliases:
+      - host taxid
+    description: >-
+       "NCBI taxon id of the host, e.g. 9606"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:host_taxid
+    #domain: :
+    #examples: ['7955']
+
+  host_subject_id:
+    aliases:
+      - host subject id
+    description: >-
+       "A unique identifier by which each subject can be referred to, de-identified, e.g. #131"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:host_subject_id
+    #domain: :
+    #examples: ['MPI123']
+
+  host_age:
+    aliases:
+      - host age
+    description: >-
+       "Age of host at the time of sampling; relevant scale depends on species and study, e.g. Could be seconds for amoebae or centuries for trees"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:host_age
+    #domain: :
+    #examples: ['10 days']
+
+  host_life_stage:
+    aliases:
+      - host life stage
+    description: >-
+       Description of life stage of host
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:host_life_stage
+    #domain: :
+    #examples: ['adult']
+
+  host_sex:
+    aliases:
+      - host sex
+    description: >-
+       Physical sex of the host
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:host_sex
+    #domain: :
+    #examples: ['female']
+
+  host_disease_stat:
+    aliases:
+      - host disease status
+    description: >-
+       "List of diseases with which the host has been diagnosed; can include multiple diagnoses. The value of the field depends on host; for humans the terms should be chosen from do (disease ontology) at http://www.disease-ontology.org, other hosts are free text"
+    multivalued: false
+    is_a: attribute
+    range: controlled term value
+    mappings:
+      - MIxS:host_disease_stat
+    #domain: :
+    #examples: ['rabies [DOID:11260]']
+
+  host_body_habitat:
+    aliases:
+      - host body habitat
+    description: >-
+       Original body habitat where the sample was obtained from
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:host_body_habitat
+    #domain: :
+    #examples: ['nasopharynx']
+
+  host_body_site:
+    aliases:
+      - host body site
+    description: >-
+       "Name of body site where the sample was obtained from, such as a specific organ or tissue (tongue, lung etc...). For foundational model of anatomy ontology (fma) (v 4.11.0) or Uber-anatomy ontology (UBERON) (v releases/2014-06-15) terms, please see http://purl.bioontology.org/ontology/FMA or http://purl.bioontology.org/ontology/UBERON"
+    multivalued: false
+    is_a: attribute
+    range: controlled term value
+    mappings:
+      - MIxS:host_body_site
+    #domain: :
+    #examples: ['gill [UBERON:0002535]']
+
+  host_body_product:
+    aliases:
+      - host body product
+    description: >-
+       "Substance produced by the body, e.g. Stool, mucus, where the sample was obtained from. For foundational model of anatomy ontology (fma) or Uber-anatomy ontology (UBERON) terms, please see https://www.ebi.ac.uk/ols/ontologies/fma or https://www.ebi.ac.uk/ols/ontologies/uberon"
+    multivalued: false
+    is_a: attribute
+    range: controlled term value
+    mappings:
+      - MIxS:host_body_product
+    #domain: :
+    #examples: ['Portion of mucus [fma66938]']
+
+  host_tot_mass:
+    aliases:
+      - host total mass
+    description: >-
+       "Total mass of the host at collection, the unit depends on host"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:host_tot_mass
+    #domain: :
+    #examples: ['2500 gram']
+
+  host_height:
+    aliases:
+      - host height
+    description: >-
+       The height of subject
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:host_height
+    #domain: :
+    #examples: ['0.1 meter']
+
+  host_length:
+    aliases:
+      - host length
+    description: >-
+       The length of subject
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:host_length
+    #domain: :
+    #examples: ['1 meter']
+
+  host_diet:
+    aliases:
+      - host diet
+    description: >-
+       "Type of diet depending on the host, for animals omnivore, herbivore etc., for humans high-fat, meditteranean etc.; can include multiple diet types"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:host_diet
+    #domain: :
+    #examples: ['herbivore']
+
+  host_last_meal:
+    aliases:
+      - host last meal
+    description: >-
+       Content of last meal and time since feeding; can include multiple values
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:host_last_meal
+    #domain: :
+    #examples: ['corn feed;P2H']
+
+  host_growth_cond:
+    aliases:
+      - host growth conditions
+    description: >-
+       Literature reference giving growth conditions of the host
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:host_growth_cond
+    #domain: :
+    #examples: ['https://academic.oup.com/icesjms/article/68/2/349/617247']
+
+  host_substrate:
+    aliases:
+      - host substrate
+    description: >-
+       The growth substrate of the host 
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:host_substrate
+    #domain: :
+    #examples: ['rock']
+
+  host_family_relationship:
+    aliases:
+      - host family relationship
+    description: >-
+       Relationships to other hosts in the same study; can include multiple relationships
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:host_family_relationship
+    #domain: :
+    #examples: ['offspring;Mussel25']
+
+  host_infra_specific_name:
+    aliases:
+      - host infra-specific name
+    description: >-
+       Taxonomic information about the host below subspecies level
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:host_infra_specific_name
+    #domain: :
+    #examples: ['borealis']
+
+  host_infra_specific_rank:
+    aliases:
+      - host infra-specific rank
+    description: >-
+       "Taxonomic rank information about the host below subspecies level, such as variety, form, rank etc."
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:host_infra_specific_rank
+    #domain: :
+    #examples: ['subspecies']
+
+  host_genotype:
+    aliases:
+      - host genotype
+    description: >-
+       Observed genotype
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:host_genotype
+    #domain: :
+    #examples: ['C57BL/6']
+
+  host_phenotype:
+    aliases:
+      - host phenotype
+    description: >-
+       "Phenotype of human or other host. For phenotypic quality ontology (pato) (v 2018-03-27) terms, please see http://purl.bioontology.org/ontology/pato. For Human Phenotype Ontology (HP) (v 2018-06-13) please see http://purl.bioontology.org/ontology/HP"
+    multivalued: false
+    is_a: attribute
+    range: controlled term value
+    mappings:
+      - MIxS:host_phenotype
+    #domain: :
+    #examples: ['elongated [PATO:0001154]']
+
+  host_body_temp:
+    aliases:
+      - host body temperature
+    description: >-
+       Core body temperature of the host when sample was collected
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:host_body_temp
+    #domain: :
+    #examples: ['15 degree Celsius']
+
+  host_dry_mass:
+    aliases:
+      - host dry mass
+    description: >-
+       Measurement of dry mass
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:host_dry_mass
+    #domain: :
+    #examples: ['500 gram']
+
+  host_blood_press_diast:
+    aliases:
+      - host blood pressure diastolic
+    description: >-
+       "Resting diastolic blood pressure, measured as mm mercury"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:host_blood_press_diast
+    #domain: :
+
+  host_blood_press_syst:
+    aliases:
+      - host blood pressure systolic
+    description: >-
+       "Resting systolic blood pressure, measured as mm mercury"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:host_blood_press_syst
+    #domain: :
+
+  host_color:
+    aliases:
+      - host color
+    description: >-
+       The color of host
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:host_color
+    #domain: :
+
+  host_shape:
+    aliases:
+      - host shape
+    description: >-
+       Morphological shape of host 
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:host_shape
+    #domain: :
+    #examples: ['round']
+
+  gravidity:
+    aliases:
+      - gravidity
+    description: >-
+       "Whether or not subject is gravid, and if yes date due or date post-conception, specifying which is used"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:gravidity
+    #domain: :
+    #examples: ['yes;due date:2018-05-11']
+
+  ihmc_medication_code:
+    aliases:
+      - IHMC medication code
+    description: >-
+       Can include multiple medication codes
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:ihmc_medication_code
+    #domain: :
+    #examples: ['810']
+
+  smoker:
+    aliases:
+      - smoker
+    description: >-
+       Specification of smoking status
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:smoker
+    #domain: :
+    #examples: ['yes']
+
+  host_hiv_stat:
+    aliases:
+      - host HIV status
+    description: >-
+       "HIV status of subject, if yes HAART initiation status should also be indicated as [YES or NO]"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:host_hiv_stat
+    #domain: :
+    #examples: ['yes;yes']
+
+  drug_usage:
+    aliases:
+      - drug usage
+    description: >-
+       Any drug used by subject and the frequency of usage; can include multiple drugs used
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:drug_usage
+    #domain: :
+    #examples: ['Lipitor;2/day']
+
+  host_body_mass_index:
+    aliases:
+      - host body-mass index
+    description: >-
+       "Body mass index, calculated as weight/(height)squared"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:host_body_mass_index
+    #domain: :
+    #examples: ['22 kilogram per square meter']
+
+  diet_last_six_month:
+    aliases:
+      - major diet change in last six months
+    description: >-
+       "Specification of major diet changes in the last six months, if yes the change should be specified"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:diet_last_six_month
+    #domain: :
+    #examples: ['yes;vegetarian diet']
+
+  weight_loss_3_month:
+    aliases:
+      - weight loss in last three months
+    description: >-
+       "Specification of weight loss in the last three months, if yes should be further specified to include amount of weight loss"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:weight_loss_3_month
+    #domain: :
+    #examples: ['yes;5 kilogram']
+
+  ihmc_ethnicity:
+    aliases:
+      - IHMC ethnicity
+    description: >-
+       Ethnicity of the subject
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:ihmc_ethnicity
+    #domain: :
+    #examples: ['caucasian']
+
+  host_occupation:
+    aliases:
+      - host occupation
+    description: >-
+       Most frequent job performed by subject
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:host_occupation
+    #domain: :
+    #examples: ['veterinary']
+
+  pet_farm_animal:
+    aliases:
+      - presence of pets or farm animals
+    description: >-
+       "Specification of presence of pets or farm animals in the environment of subject, if yes the animals should be specified; can include multiple animals present"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:pet_farm_animal
+    #domain: :
+    #examples: ['yes; 5 cats']
+
+  travel_out_six_month:
+    aliases:
+      - travel outside the country in last six months
+    description: >-
+       Specification of the countries travelled in the last six months; can include multiple travels
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:travel_out_six_month
+    #domain: :
+
+  twin_sibling:
+    aliases:
+      - twin sibling presence
+    description: >-
+       Specification of twin sibling presence
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:twin_sibling
+    #domain: :
+    #examples: ['yes']
+
+  medic_hist_perform:
+    aliases:
+      - medical history performed
+    description: >-
+       Whether full medical history was collected
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:medic_hist_perform
+    #domain: :
+    #examples: ['true']
+
+  study_complt_stat:
+    aliases:
+      - study completion status
+    description: >-
+       "Specification of study completion status, if no the reason should be specified"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:study_complt_stat
+    #domain: :
+    #examples: ['no;non-compliance']
+
+  pulmonary_disord:
+    aliases:
+      - lung/pulmonary disorder
+    description: >-
+       History of pulmonary disorders; can include multiple disorders
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:pulmonary_disord
+    #domain: :
+
+  nose_throat_disord:
+    aliases:
+      - lung/nose-throat disorder
+    description: >-
+       History of nose-throat disorders; can include multiple disorders
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:nose_throat_disord
+    #domain: :
+
+  blood_blood_disord:
+    aliases:
+      - blood/blood disorder
+    description: >-
+       History of blood disorders; can include multiple disorders
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:blood_blood_disord
+    #domain: :
+
+  host_pulse:
+    aliases:
+      - host pulse
+    description: >-
+       "Resting pulse, measured as beats per minute"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:host_pulse
+    #domain: :
+    #examples: ['65 beats per minute']
+
+  gestation_state:
+    aliases:
+      - amniotic fluid/gestation state
+    description: >-
+       Specification of the gestation state
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:gestation_state
+    #domain: :
+
+  maternal_health_stat:
+    aliases:
+      - amniotic fluid/maternal health status
+    description: >-
+       Specification of the maternal health status
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:maternal_health_stat
+    #domain: :
+
+  foetal_health_stat:
+    aliases:
+      - amniotic fluid/foetal health status
+    description: >-
+       "Specification of foetal health status, should also include abortion"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:foetal_health_stat
+    #domain: :
+
+  amniotic_fluid_color:
+    aliases:
+      - amniotic fluid/color
+    description: >-
+       Specification of the color of the amniotic fluid sample
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:amniotic_fluid_color
+    #domain: :
+
+  kidney_disord:
+    aliases:
+      - urine/kidney disorder
+    description: >-
+       History of kidney disorders; can include multiple disorders
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:kidney_disord
+    #domain: :
+
+  urogenit_tract_disor:
+    aliases:
+      - urine/urogenital tract disorder
+    description: >-
+       History of urogenitaltract disorders; can include multiple disorders
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:urogenit_tract_disor
+    #domain: :
+
+  urine_collect_meth:
+    aliases:
+      - urine/collection method
+    description: >-
+       Specification of urine collection method
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:urine_collect_meth
+    #domain: :
+    #examples: ['catheter']
+
+  gastrointest_disord:
+    aliases:
+      - gastrointestinal tract disorder
+    description: >-
+       History of gastrointestinal tract disorders; can include multiple disorders 
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:gastrointest_disord
+    #domain: :
+
+  liver_disord:
+    aliases:
+      - liver disorder
+    description: >-
+       History of liver disorders; can include multiple disorders
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:liver_disord
+    #domain: :
+
+  special_diet:
+    aliases:
+      - special diet
+    description: >-
+       Specification of special diet; can include multiple special diets
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:special_diet
+    #domain: :
+    #examples: ['other:vegan']
+
+  nose_mouth_teeth_throat_disord:
+    aliases:
+      - nose/mouth/teeth/throat disorder
+    description: >-
+       History of nose/mouth/teeth/throat disorders; can include multiple disorders
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:nose_mouth_teeth_throat_disord
+    #domain: :
+
+  time_last_toothbrush:
+    aliases:
+      - time since last toothbrushing
+    description: >-
+       Specification of the time since last toothbrushing
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:time_last_toothbrush
+    #domain: :
+    #examples: ['P2H45M']
+
+  dermatology_disord:
+    aliases:
+      - dermatology disorder
+    description: >-
+       History of dermatology disorders; can include multiple disorders
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:dermatology_disord
+    #domain: :
+
+  time_since_last_wash:
+    aliases:
+      - time since last wash
+    description: >-
+       Specification of the time since last wash
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:time_since_last_wash
+    #domain: :
+    #examples: ['P1D']
+
+  dominant_hand:
+    aliases:
+      - dominant hand
+    description: >-
+       Dominant hand of the subject
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:dominant_hand
+    #domain: :
+    #examples: ['right']
+
+  menarche:
+    aliases:
+      - menarche
+    description: >-
+       Date of most recent menstruation
+    multivalued: false
+    is_a: attribute
+    range: timestamp value
+    mappings:
+      - MIxS:menarche
+    #domain: :
+    #examples: ['2018-05-11']
+
+  sexual_act:
+    aliases:
+      - sexual activity
+    description: >-
+       Current sexual partner and frequency of sex
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:sexual_act
+    #domain: :
+
+  pregnancy:
+    aliases:
+      - pregnancy
+    description: >-
+       Date due of pregnancy
+    multivalued: false
+    is_a: attribute
+    range: timestamp value
+    mappings:
+      - MIxS:pregnancy
+    #domain: :
+    #examples: ['2018-05-11']
+
+  douche:
+    aliases:
+      - douche
+    description: >-
+       Date of most recent douche
+    multivalued: false
+    is_a: attribute
+    range: timestamp value
+    mappings:
+      - MIxS:douche
+    #domain: :
+    #examples: ['2018-05-11']
+
+  birth_control:
+    aliases:
+      - birth control
+    description: >-
+       Specification of birth control medication used
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:birth_control
+    #domain: :
+
+  menopause:
+    aliases:
+      - menopause
+    description: >-
+       Date of onset of menopause
+    multivalued: false
+    is_a: attribute
+    range: timestamp value
+    mappings:
+      - MIxS:menopause
+    #domain: :
+    #examples: ['2018-05-11']
+
+  hrt:
+    aliases:
+      - HRT
+    description: >-
+       "Whether subject had hormone replacement theraphy, and if yes start date"
+    multivalued: false
+    is_a: attribute
+    range: timestamp value
+    mappings:
+      - MIxS:hrt
+    #domain: :
+    #examples: ['2018-05-11']
+
+  hysterectomy:
+    aliases:
+      - hysterectomy
+    description: >-
+       Specification of whether hysterectomy was performed
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:hysterectomy
+    #domain: :
+    #examples: ['no']
+
+  gynecologic_disord:
+    aliases:
+      - gynecological disorder
+    description: >-
+       History of gynecological disorders; can include multiple disorders
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:gynecologic_disord
+    #domain: :
+
+  urogenit_disord:
+    aliases:
+      - urogenital disorder
+    description: >-
+       "History of urogenital disorders, can include multiple disorders"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:urogenit_disord
+    #domain: :
+
+  hcr:
+    aliases:
+      - hydrocarbon resource type
+    description: >-
+       "Main Hydrocarbon Resource type. The term ""Hydrocarbon Resource"" HCR defined as a natural environmental feature containing large amounts of hydrocarbons at high concentrations potentially suitable for commercial exploitation.  This term should not be confused with the Hydrocarbon Occurrence term which also includes hydrocarbon-rich environments with currently limited commercial interest such as seeps, outcrops, gas hydrates etc. If ""other"" is specified, please propose entry in ""additional info"" field"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:hcr
+    #domain: :
+    #examples: ['Oil Sand']
+
+  hc_produced:
+    aliases:
+      - hydrocarbon type produced
+    description: >-
+       "Main hydrocarbon type produced from resource (i.e. Oil, gas, condensate, etc). If ""other"" is specified, please propose entry in ""additional info"" field"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:hc_produced
+    #domain: :
+    #examples: ['Gas']
+
+  basin:
+    aliases:
+      - basin name
+    description: >-
+       Name of the basin (e.g. Campos)
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:basin
+    #domain: :
+
+  field:
+    aliases:
+      - field name
+    description: >-
+       Name of the hydrocarbon field (e.g. Albacora)
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:field
+    #domain: :
+
+  reservoir:
+    aliases:
+      - reservoir name
+    description: >-
+       Name of the reservoir (e.g. Carapebus)
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:reservoir
+    #domain: :
+
+  hcr_temp:
+    aliases:
+      - hydrocarbon resource original temperature
+    description: >-
+       Original temperature of the hydrocarbon resource
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:hcr_temp
+    #domain: :
+    #examples: ['150-295 degree Celsius']
+
+  tvdss_of_hcr_temp:
+    aliases:
+      - depth (TVDSS) of hydrocarbon resource temperature
+    description: >-
+       True vertical depth subsea (TVDSS) of the hydrocarbon resource where the original temperature was measured (e.g. 1345 m)
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:tvdss_of_hcr_temp
+    #domain: :
+
+  hcr_pressure:
+    aliases:
+      - hydrocarbon resource original pressure
+    description: >-
+       Original pressure of the hydrocarbon resource 
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:hcr_pressure
+    #domain: :
+
+  tvdss_of_hcr_pressure:
+    aliases:
+      - depth (TVDSS) of hydrocarbon resource pressure
+    description: >-
+       True vertical depth subsea (TVDSS) of the hydrocarbon resource where the original pressure was measured (e.g. 1578 m )
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:tvdss_of_hcr_pressure
+    #domain: :
+
+  permeability:
+    aliases:
+      - permeability
+    description: >-
+       Measure of the ability of a hydrocarbon resource to allow fluids to pass through it. (Additional information: https://en.wikipedia.org/wiki/Permeability_(earth_sciences))
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:permeability
+    #domain: :
+
+  porosity:
+    aliases:
+      - porosity
+    description: >-
+       Porosity of deposited sediment is volume of voids divided by the total volume of sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:porosity
+    #domain: :
+
+  lithology:
+    aliases:
+      - lithology
+    description: >-
+       "Hydrocarbon resource main lithology (Additional information: http://petrowiki.org/Lithology_and_rock_type_determination). If ""other"" is specified, please propose entry in ""additional info"" field"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:lithology
+    #domain: :
+    #examples: ['Volcanic']
+
+  depos_env:
+    aliases:
+      - depositional environment
+    description: >-
+       "Main depositional environment (https://en.wikipedia.org/wiki/Depositional_environment). If ""other"" is specified, please propose entry in ""additional info"" field"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:depos_env
+    #domain: :
+    #examples: ['Continental - Alluvial']
+
+  hcr_geol_age:
+    aliases:
+      - hydrocarbon resource geological age
+    description: >-
+       "Geological age of hydrocarbon resource (Additional info: https://en.wikipedia.org/wiki/Period_(geology)). If ""other"" is specified, please propose entry in ""additional info"" field"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:hcr_geol_age
+    #domain: :
+    #examples: ['Silurian']
+
+  owc_tvdss:
+    aliases:
+      - oil water contact depth
+    description: >-
+       Depth of the original oil water contact (OWC) zone (average) (m TVDSS)
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:owc_tvdss
+    #domain: :
+
+  hcr_fw_salinity:
+    aliases:
+      - formation water salinity
+    description: >-
+       Original formation water salinity (prior to secondary recovery e.g. Waterflooding) expressed as TDS
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:hcr_fw_salinity
+    #domain: :
+
+  sulfate_fw:
+    aliases:
+      - sulfate in formation water
+    description: >-
+       Original sulfate concentration in the hydrocarbon resource
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:sulfate_fw
+    #domain: :
+
+  vfa_fw:
+    aliases:
+      - vfa in formation water
+    description: >-
+       Original volatile fatty acid concentration in the hydrocarbon resource
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:vfa_fw
+    #domain: :
+
+  sr_kerog_type:
+    aliases:
+      - source rock kerogen type
+    description: >-
+       "Origin of kerogen. Type I: Algal (aquatic), Type II: planktonic and soft plant material (aquatic or terrestrial), Type III: terrestrial woody/ fibrous plant material (terrestrial), Type IV: oxidized recycled woody debris (terrestrial) (additional information: https://en.wikipedia.org/wiki/Kerogen). If ""other"" is specified, please propose entry in ""additional info"" field"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:sr_kerog_type
+    #domain: :
+    #examples: ['Type IV']
+
+  sr_lithology:
+    aliases:
+      - source rock lithology
+    description: >-
+       "Lithology of source rock (https://en.wikipedia.org/wiki/Source_rock). If ""other"" is specified, please propose entry in ""additional info"" field"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:sr_lithology
+    #domain: :
+    #examples: ['Coal']
+
+  sr_dep_env:
+    aliases:
+      - source rock depositional environment
+    description: >-
+       "Source rock depositional environment (https://en.wikipedia.org/wiki/Source_rock). If ""other"" is specified, please propose entry in ""additional info"" field"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:sr_dep_env
+    #domain: :
+    #examples: ['Marine']
+
+  sr_geol_age:
+    aliases:
+      - source rock geological age
+    description: >-
+       "Geological age of source rock (Additional info: https://en.wikipedia.org/wiki/Period_(geology)). If ""other"" is specified, please propose entry in ""additional info"" field"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:sr_geol_age
+    #domain: :
+    #examples: ['Silurian']
+
+  samp_well_name:
+    aliases:
+      - sample well name
+    description: >-
+       Name of the well (e.g. BXA1123) where sample was taken
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:samp_well_name
+    #domain: :
+
+  win:
+    aliases:
+      - well identification number
+    description: >-
+       A unique identifier of a well or wellbore. This is part of the Global Framework for Well Identification initiative which is compiled by the Professional Petroleum Data Management Association (PPDM) in an effort to improve well identification systems. (Supporting information: https://ppdm.org/ and http://dl.ppdm.org/dl/690)
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:win
+    #domain: :
+
+  samp_type:
+    aliases:
+      - sample type
+    description: >-
+       "Type of material (i.e. sample) collected. Includes types like core, rock trimmings, drill cuttings, piping section, coupon, pigging debris, solid deposit, produced fluid, produced water, injected water, swabs, etc. If ""other"" is specified, please propose entry in ""additional info"" field"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:samp_type
+    #domain: :
+    #examples: ['solid deposit']
+
+  samp_subtype:
+    aliases:
+      - sample subtype
+    description: >-
+       "Name of sample sub-type. For example if ""sample type"" is ""Produced Water"" then subtype could be ""Oil Phase"" or ""Water Phase"". If ""other"" is specified, please propose entry in ""additional info"" field"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:samp_subtype
+    #domain: :
+    #examples: ['biofilm']
+
+  pressure:
+    aliases:
+      - pressure
+    description: >-
+       "Pressure to which the sample is subject to, in atmospheres"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:pressure
+    #domain: :
+    #examples: ['50 atmosphere']
+
+  samp_tvdss:
+    aliases:
+      - sample true vertical depth subsea
+    description: >-
+       Depth of the sample i.e. The vertical distance between the sea level and the sampled position in the subsurface. Depth can be reported as an interval for subsurface samples e.g. 1325.75-1362.25 m
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:samp_tvdss
+    #domain: :
+
+  samp_md:
+    aliases:
+      - sample measured depth
+    description: >-
+       "In non deviated well, measured depth is equal to the true vertical depth, TVD (TVD=TVDSS plus the reference or datum it refers to). In deviated wells, the MD is the length of trajectory of the borehole measured from the same reference or datum. Common datums used are ground level (GL), drilling rig floor (DF), rotary table (RT), kelly bushing (KB) and mean sea level (MSL). If ""other"" is specified, please propose entry in ""additional info"" field                             "
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:samp_md
+    #domain: :
+    #examples: ['1534 meter;MSL']
+
+  samp_transport_cond:
+    aliases:
+      - sample transport conditions
+    description: >-
+       Sample transport duration (in days or hrs) and temperature the sample was exposed to (e.g. 5.5 days; 20 B0C)
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:samp_transport_cond
+    #domain: :
+    #examples: ['5 days;-20 degree Celsius']
+
+  organism_count_qpcr_info:
+    aliases:
+      - organism count qPCR information
+    description: >-
+       "If qpcr was used for the cell count, the target gene name, the primer sequence and the cycling conditions should also be provided. (Example: 16S rrna; FWD:ACGTAGCTATGACGT REV:GTGCTAGTCGAGTAC; initial denaturation:90C_5min; denaturation:90C_2min; annealing:52C_30 sec; elongation:72C_30 sec; 90 C for 1 min; final elongation:72C_5min; 30 cycles)"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:organism_count_qpcr_info
+    #domain: :
+
+  ph:
+    aliases:
+      - pH
+    description: >-
+       "Ph measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:ph
+    #domain: :
+    #examples: ['7.2']
+
+  alkalinity:
+    aliases:
+      - alkalinity
+    description: >-
+       "Alkalinity, the ability of a solution to neutralize acids to the equivalence point of carbonate or bicarbonate"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:alkalinity
+    #domain: :
+    #examples: ['50 milligram per liter']
+
+  alkalinity_method:
+    aliases:
+      - alkalinity method
+    description: >-
+       Method used for alkalinity measurement
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:alkalinity_method
+    #domain: :
+    #examples: ['titration']
+
+  sulfate:
+    aliases:
+      - sulfate
+    description: >-
+       Concentration of sulfate in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:sulfate
+    #domain: :
+    #examples: ['5 micromole per liter']
+
+  sulfide:
+    aliases:
+      - sulfide
+    description: >-
+       Concentration of sulfide in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:sulfide
+    #domain: :
+    #examples: ['2 micromole per liter']
+
+  tot_sulfur:
+    aliases:
+      - total sulfur
+    description: >-
+       Concentration of total sulfur in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:tot_sulfur
+    #domain: :
+
+  nitrate:
+    aliases:
+      - nitrate
+    description: >-
+       Concentration of nitrate in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:nitrate
+    #domain: :
+    #examples: ['65 micromole per liter']
+
+  nitrite:
+    aliases:
+      - nitrite
+    description: >-
+       Concentration of nitrite in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:nitrite
+    #domain: :
+    #examples: ['0.5 micromole per liter']
+
+  ammonium:
+    aliases:
+      - ammonium
+    description: >-
+       Concentration of ammonium in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:ammonium
+    #domain: :
+    #examples: ['1.5 milligram per liter']
+
+  tot_nitro:
+    aliases:
+      - total nitrogen concentration
+    description: >-
+       "Total nitrogen concentration of water samples, calculated by: total nitrogen = total dissolved nitrogen + particulate nitrogen. Can also be measured without filtering, reported as nitrogen"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:tot_nitro
+    #domain: :
+    #examples: ['50 micromole per liter']
+
+  diss_iron:
+    aliases:
+      - dissolved iron
+    description: >-
+       Concentration of dissolved iron in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:diss_iron
+    #domain: :
+
+  sodium:
+    aliases:
+      - sodium
+    description: >-
+       Sodium concentration in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:sodium
+    #domain: :
+    #examples: ['10.5 milligram per liter']
+
+  chloride:
+    aliases:
+      - chloride
+    description: >-
+       Concentration of chloride in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:chloride
+    #domain: :
+    #examples: ['5000 milligram per liter']
+
+  potassium:
+    aliases:
+      - potassium
+    description: >-
+       Concentration of potassium in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:potassium
+    #domain: :
+    #examples: ['463 milligram per liter']
+
+  magnesium:
+    aliases:
+      - magnesium
+    description: >-
+       Concentration of magnesium in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:magnesium
+    #domain: :
+    #examples: ['52.8 micromole per kilogram']
+
+  calcium:
+    aliases:
+      - calcium
+    description: >-
+       Concentration of calcium in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:calcium
+    #domain: :
+    #examples: ['0.2 micromole per liter']
+
+  tot_iron:
+    aliases:
+      - total iron
+    description: >-
+       Concentration of total iron in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:tot_iron
+    #domain: :
+
+  diss_org_carb:
+    aliases:
+      - dissolved organic carbon
+    description: >-
+       "Concentration of dissolved organic carbon in the sample, liquid portion of the sample, or aqueous phase of the fluid"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:diss_org_carb
+    #domain: :
+    #examples: ['197 micromole per liter']
+
+  diss_inorg_carb:
+    aliases:
+      - dissolved inorganic carbon
+    description: >-
+       "Dissolved inorganic carbon concentration in the sample, typically measured after filtering the sample using a 0.45 micrometer filter"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:diss_inorg_carb
+    #domain: :
+    #examples: ['2059 micromole per kilogram']
+
+  diss_inorg_phosp:
+    aliases:
+      - dissolved inorganic phosphorus
+    description: >-
+       Concentration of dissolved inorganic phosphorus in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:diss_inorg_phosp
+    #domain: :
+    #examples: ['56.5 micromole per liter']
+
+  tot_phosp:
+    aliases:
+      - total phosphorus
+    description: >-
+       "Total phosphorus concentration in the sample, calculated by: total phosphorus = total dissolved phosphorus + particulate phosphorus"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:tot_phosp
+    #domain: :
+    #examples: ['0.03 milligram per liter']
+
+  suspend_solids:
+    aliases:
+      - suspended solids
+    description: >-
+       "Concentration of substances including a wide variety of material, such as silt, decaying plant and animal matter; can include multiple substances"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:suspend_solids
+    #domain: :
+
+  density:
+    aliases:
+      - density
+    description: >-
+       "Density of the sample, which is its mass per unit volume (aka volumetric mass density)"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:density
+    #domain: :
+    #examples: ['1000 kilogram per cubic meter']
+
+  diss_carb_dioxide:
+    aliases:
+      - dissolved carbon dioxide
+    description: >-
+       Concentration of dissolved carbon dioxide in the sample or liquid portion of the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:diss_carb_dioxide
+    #domain: :
+    #examples: ['5 milligram per liter']
+
+  diss_oxygen_fluid:
+    aliases:
+      - dissolved oxygen in fluids
+    description: >-
+       Concentration of dissolved oxygen in the oil field produced fluids as it contributes to oxgen-corrosion and microbial activity (e.g. Mic).
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:diss_oxygen_fluid
+    #domain: :
+
+  vfa:
+    aliases:
+      - volatile fatty acids
+    description: >-
+       Concentration of Volatile Fatty Acids in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:vfa
+    #domain: :
+
+  benzene:
+    aliases:
+      - benzene
+    description: >-
+       Concentration of benzene in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:benzene
+    #domain: :
+
+  toluene:
+    aliases:
+      - toluene
+    description: >-
+       Concentration of toluene in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:toluene
+    #domain: :
+
+  ethylbenzene:
+    aliases:
+      - ethylbenzene
+    description: >-
+       Concentration of ethylbenzene in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:ethylbenzene
+    #domain: :
+
+  xylene:
+    aliases:
+      - xylene
+    description: >-
+       Concentration of xylene in the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:xylene
+    #domain: :
+
+  api:
+    aliases:
+      - API gravity
+    description: >-
+       API gravity is a measure of how heavy or light a petroleum liquid is compared to water (source: https://en.wikipedia.org/wiki/API_gravity) (e.g. 31.1B0 API) 
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:api
+    #domain: :
+
+  tan:
+    aliases:
+      - total acid number
+    description: >-
+       Total Acid NumberB (TAN) is a measurement of acidity that is determined by the amount ofB potassium hydroxideB in milligrams that is needed to neutralize the acids in one gram of oil.B It is an important quality measurement ofB crude oil. (source: https://en.wikipedia.org/wiki/Total_acid_number)
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:tan
+    #domain: :
+
+  viscosity:
+    aliases:
+      - viscosity
+    description: >-
+       A measure of oil's resistanceB to gradual deformation byB shear stressB orB tensile stress (e.g. 3.5 cp;  100 B0C)
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:viscosity
+    #domain: :
+
+  pour_point :
+    aliases:
+      - pour point 
+    description: >-
+       "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a highB pour pointB is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material.  (soure: https://en.wikipedia.org/wiki/pour_point)"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:pour_point 
+    #domain: :
+
+  saturates_pc:
+    aliases:
+      - saturates wt%
+    description: >-
+       "Saturate, Aromatic, Resin and AsphalteneB (SARA) is an analysis method that dividesB crude oilB components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:saturates_pc
+    #domain: :
+
+  aromatics_pc:
+    aliases:
+      - aromatics wt%
+    description: >-
+       "Saturate, Aromatic, Resin and AsphalteneB (SARA) is an analysis method that dividesB crude oilB components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:aromatics_pc
+    #domain: :
+
+  resins_pc:
+    aliases:
+      - resins wt%
+    description: >-
+       "Saturate, Aromatic, Resin and AsphalteneB (SARA) is an analysis method that dividesB crude oilB components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:resins_pc
+    #domain: :
+
+  asphaltenes_pc:
+    aliases:
+      - asphaltenes wt% 
+    description: >-
+       "Saturate, Aromatic, Resin and AsphalteneB (SARA) is an analysis method that dividesB crude oilB components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:asphaltenes_pc
+    #domain: :
+
+  additional_info:
+    aliases:
+      - additional info
+    description: >-
+       Information that doesn't fit anywhere else. Can also be used to propose new entries for fields with controlled vocabulary
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:additional_info
+    #domain: :
+
+  prod_start_date:
+    aliases:
+      - production start date
+    description: >-
+       Date of field's first production
+    multivalued: false
+    is_a: attribute
+    range: timestamp value
+    mappings:
+      - MIxS:prod_start_date
+    #domain: :
+    #examples: ['2018-05-11']
+
+  prod_rate:
+    aliases:
+      - production rate
+    description: >-
+       Oil and/or gas production rates per well (e.g. 524 m3 / day)
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:prod_rate
+    #domain: :
+
+  water_production_rate:
+    aliases:
+      - water production rate
+    description: >-
+       Water production rates per well (e.g. 987 m3 / day)
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:water_production_rate
+    #domain: :
+
+  water_cut:
+    aliases:
+      - water cut
+    description: >-
+       Current amount of water (%) in a produced fluid stream; or the average of the combined streams
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:water_cut
+    #domain: :
+
+  iwf:
+    aliases:
+      - injection water fraction
+    description: >-
+       Proportion of the produced fluids derived from injected water at the time of sampling. (e.g. 87%)
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:iwf
+    #domain: :
+
+  add_recov_method:
+    aliases:
+      - secondary and tertiary recovery methods and start date
+    description: >-
+       "Additional (i.e. Secondary, tertiary, etc.) recovery methods deployed for increase of hydrocarbon recovery from resource and start date for each one of them. If ""other"" is specified, please propose entry in ""additional info"" field"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:add_recov_method
+    #domain: :
+    #examples: ['Polymer Addition;2018-06-21T14:30Z']
+
+  iw_bt_date_well:
+    aliases:
+      - injection water breakthrough date of specific well
+    description: >-
+       Injection water breakthrough date per well following a  secondary and/or tertiary recovery
+    multivalued: false
+    is_a: attribute
+    range: timestamp value
+    mappings:
+      - MIxS:iw_bt_date_well
+    #domain: :
+    #examples: ['2018-05-11']
+
+  biocide:
+    aliases:
+      - biocide administration
+    description: >-
+       List of biocides (commercial name of product and supplier) and date of administration
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:biocide
+    #domain: :
+    #examples: ['ALPHA 1427;Baker Hughes;2008-01-23']
+
+  biocide_admin_method:
+    aliases:
+      - biocide administration method
+    description: >-
+       "Method of biocide administration (dose, frequency, duration, time elapsed between last biociding and sampling) (e.g. 150 mg/l; weekly; 4 hr; 3 days)"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:biocide_admin_method
+    #domain: :
+
+  chem_treatment:
+    aliases:
+      - chemical treatment
+    description: >-
+       "List of chemical compounds administered upstream the sampling location where sampling occurred (e.g. Glycols, H2S scavenger, corrosion and scale inhibitors, demulsifiers, and other production chemicals etc.). The commercial name of the product and name of the supplier should be provided.  The date of administration should also be included"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:chem_treatment
+    #domain: :
+    #examples: ['ACCENT 1125;DOW;2010-11-17']
+
+  chem_treatment_method:
+    aliases:
+      - chemical treatment method
+    description: >-
+       "Method of chemical administration(dose, frequency, duration, time elapsed between administration and sampling) (e.g. 50 mg/l; twice a week; 1 hr; 0 days)"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:chem_treatment_method
+    #domain: :
+
+  samp_loc_corr_rate:
+    aliases:
+      - corrosion rate at sample location
+    description: >-
+       "Metal corrosion rate is the speed of metal deterioration due to environmental conditions. As environmental conditions change corrosion rates change accordingly. Therefore, long term corrosion rates are generally more informative than short term rates and for that reason they are preferred during reporting. In the case of suspected MIC, corrosion rate measurements at the time of sampling might provide insights into the involvement of certain microbial community members in MIC as well as potential microbial interplays"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:samp_loc_corr_rate
+    #domain: :
+
+  samp_collection_point:
+    aliases:
+      - sample collection point
+    description: >-
+       "Sampling  point on the asset were sample was collected (e.g. Wellhead, storage tank, separator, etc). If ""other"" is specified, please propose entry in ""additional info"" field"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:samp_collection_point
+    #domain: :
+    #examples: ['well']
+
+  samp_preserv:
+    aliases:
+      - preservative added to sample
+    description: >-
+       "Preservative added to the sample (e.g. Rnalater, alcohol, formaldehyde, etc.). Where appropriate include volume added (e.g. Rnalater; 2 ml)"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:samp_preserv
+    #domain: :
+
+  alkyl_diethers:
+    aliases:
+      - alkyl diethers
+    description: >-
+       Concentration of alkyl diethers 
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:alkyl_diethers
+    #domain: :
+    #examples: ['0.005 mole per liter']
+
+  aminopept_act:
+    aliases:
+      - aminopeptidase activity
+    description: >-
+       Measurement of aminopeptidase activity
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:aminopept_act
+    #domain: :
+    #examples: ['0.269 mole per liter per hour']
+
+  bacteria_carb_prod:
+    aliases:
+      - bacterial carbon production
+    description: >-
+       Measurement of bacterial carbon production
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:bacteria_carb_prod
+    #domain: :
+    #examples: ['2.53 microgram per liter per hour']
+
+  biomass:
+    aliases:
+      - biomass
+    description: >-
+       "Amount of biomass; should include the name for the part of biomass measured, e.g. Microbial, total. Can include multiple measurements"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:biomass
+    #domain: :
+    #examples: ['total;20 gram']
+
+  bishomohopanol:
+    aliases:
+      - bishomohopanol
+    description: >-
+       Concentration of bishomohopanol 
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:bishomohopanol
+    #domain: :
+    #examples: ['14 microgram per liter']
+
+  bromide:
+    aliases:
+      - bromide
+    description: >-
+       Concentration of bromide 
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:bromide
+    #domain: :
+    #examples: ['0.05 parts per million']
+
+  carb_nitro_ratio:
+    aliases:
+      - carbon/nitrogen ratio
+    description: >-
+       Ratio of amount or concentrations of carbon to nitrogen
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:carb_nitro_ratio
+    #domain: :
+    #examples: ['0.417361111']
+
+  chlorophyll:
+    aliases:
+      - chlorophyll
+    description: >-
+       Concentration of chlorophyll
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:chlorophyll
+    #domain: :
+    #examples: ['5 milligram per cubic meter']
+
+  diether_lipids:
+    aliases:
+      - diether lipids
+    description: >-
+       Concentration of diether lipids; can include multiple types of diether lipids
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:diether_lipids
+    #domain: :
+    #examples: ['0.2 nanogram per liter']
+
+  diss_hydrogen:
+    aliases:
+      - dissolved hydrogen
+    description: >-
+       Concentration of dissolved hydrogen
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:diss_hydrogen
+    #domain: :
+    #examples: ['0.3 micromole per liter']
+
+  diss_org_nitro:
+    aliases:
+      - dissolved organic nitrogen
+    description: >-
+       Dissolved organic nitrogen concentration measured as; total dissolved nitrogen - NH4 - NO3 - NO2
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:diss_org_nitro
+    #domain: :
+    #examples: ['0.05 micromole per liter']
+
+  diss_oxygen:
+    aliases:
+      - dissolved oxygen
+    description: >-
+       Concentration of dissolved oxygen
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:diss_oxygen
+    #domain: :
+    #examples: ['175 micromole per kilogram']
+
+  glucosidase_act:
+    aliases:
+      - glucosidase activity
+    description: >-
+       Measurement of glucosidase activity
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:glucosidase_act
+    #domain: :
+    #examples: ['5 mol per liter per hour']
+
+  mean_frict_vel:
+    aliases:
+      - mean friction velocity
+    description: >-
+       Measurement of mean friction velocity
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:mean_frict_vel
+    #domain: :
+    #examples: ['0.5 meter per second']
+
+  mean_peak_frict_vel:
+    aliases:
+      - mean peak friction velocity
+    description: >-
+       Measurement of mean peak friction velocity
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:mean_peak_frict_vel
+    #domain: :
+    #examples: ['1 meter per second']
+
+  n_alkanes:
+    aliases:
+      - n-alkanes
+    description: >-
+       Concentration of n-alkanes; can include multiple n-alkanes
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:n_alkanes
+    #domain: :
+    #examples: ['n-hexadecane;100 milligram per liter']
+
+  nitro:
+    aliases:
+      - nitrogen
+    description: >-
+       Concentration of nitrogen (total)
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:nitro
+    #domain: :
+    #examples: ['4.2 micromole per liter']
+
+  org_carb:
+    aliases:
+      - organic carbon
+    description: >-
+       Concentration of organic carbon
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:org_carb
+    #domain: :
+    #examples: ['1.5 microgram per liter']
+
+  org_matter:
+    aliases:
+      - organic matter
+    description: >-
+       Concentration of organic matter 
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:org_matter
+    #domain: :
+    #examples: ['1.75 milligram per cubic meter']
+
+  org_nitro:
+    aliases:
+      - organic nitrogen
+    description: >-
+       Concentration of organic nitrogen
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:org_nitro
+    #domain: :
+    #examples: ['4 micromole per liter']
+
+  part_org_carb:
+    aliases:
+      - particulate organic carbon
+    description: >-
+       Concentration of particulate organic carbon
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:part_org_carb
+    #domain: :
+    #examples: ['1.92 micromole per liter']
+
+  petroleum_hydrocarb:
+    aliases:
+      - petroleum hydrocarbon
+    description: >-
+       Concentration of petroleum hydrocarbon
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:petroleum_hydrocarb
+    #domain: :
+    #examples: ['0.05 micromole per liter']
+
+  phaeopigments:
+    aliases:
+      - phaeopigments
+    description: >-
+       Concentration of phaeopigments; can include multiple phaeopigments
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:phaeopigments
+    #domain: :
+    #examples: ['2.5 milligram per cubic meter']
+
+  phosphate:
+    aliases:
+      - phosphate
+    description: >-
+       Concentration of phosphate
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:phosphate
+    #domain: :
+    #examples: ['0.7 micromole per liter']
+
+  phosplipid_fatt_acid:
+    aliases:
+      - phospholipid fatty acid
+    description: >-
+       Concentration of phospholipid fatty acids; can include multiple values
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:phosplipid_fatt_acid
+    #domain: :
+    #examples: ['2.98 milligram per liter']
+
+  redox_potential:
+    aliases:
+      - redox potential
+    description: >-
+       "Redox potential, measured relative to a hydrogen cell, indicating oxidation or reduction potential"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:redox_potential
+    #domain: :
+    #examples: ['300 millivolt']
+
+  salinity:
+    aliases:
+      - salinity
+    description: >-
+       "Salinity is the total concentration of all dissolved salts in a water sample. While salinity can be measured by a complete chemical analysis, this method is difficult and time consuming. More often, it is instead derived from the conductivity measurement. This is known as practical salinity. These derivations compare the specific conductance of the sample to a salinity standard such as seawater"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:salinity
+    #domain: :
+    #examples: ['25 practical salinity unit']
+
+  silicate:
+    aliases:
+      - silicate
+    description: >-
+       Concentration of silicate
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:silicate
+    #domain: :
+    #examples: ['0.05 micromole per liter']
+
+  tot_carb:
+    aliases:
+      - total carbon
+    description: >-
+       Total carbon content
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:tot_carb
+    #domain: :
+
+  tot_nitro_content:
+    aliases:
+      - total nitrogen content
+    description: >-
+       Total nitrogen content of the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:tot_nitro_content
+    #domain: :
+
+  tot_org_carb:
+    aliases:
+      - total organic carbon
+    description: >-
+       "Definition for soil: total organic carbon content of the soil, definition otherwise: total organic carbon content"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:tot_org_carb
+    #domain: :
+
+  turbidity:
+    aliases:
+      - turbidity
+    description: >-
+       Measure of the amount of cloudiness or haziness in water caused by individual particles
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:turbidity
+    #domain: :
+    #examples: ['0.3 nephelometric turbidity units']
+
+  water_content:
+    aliases:
+      - water content
+    description: >-
+       Water content measurement
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:water_content
+    #domain: :
+
+  water_current:
+    aliases:
+      - water current
+    description: >-
+       Measurement of magnitude and direction of flow within a fluid
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:water_current
+    #domain: :
+    #examples: ['10 cubic meter per second']
+
+  air_temp_regm:
+    aliases:
+      - air temperature regimen
+    description: >-
+       "Information about treatment involving an exposure to varying temperatures; should include the temperature, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include different temperature regimens"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:air_temp_regm
+    #domain: :
+    #examples: ['25 degree Celsius;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  antibiotic_regm:
+    aliases:
+      - antibiotic regimen
+    description: >-
+       "Information about treatment involving antibiotic administration; should include the name of antibiotic, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple antibiotic regimens"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:antibiotic_regm
+    #domain: :
+    #examples: ['penicillin;5 milligram;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  biotic_regm:
+    aliases:
+      - biotic regimen
+    description: >-
+       "Information about treatment(s) involving use of biotic factors, such as bacteria, viruses or fungi."
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:biotic_regm
+    #domain: :
+    #examples: ['sample inoculated with Rhizobium spp. Culture']
+
+  chem_mutagen:
+    aliases:
+      - chemical mutagen
+    description: >-
+       "Treatment involving use of mutagens; should include the name of mutagen, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple mutagen regimens"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:chem_mutagen
+    #domain: :
+    #examples: ['nitrous acid;0.5 milligram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  climate_environment:
+    aliases:
+      - climate environment
+    description: >-
+       "Treatment involving an exposure to a particular climate; treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple climates"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:climate_environment
+    #domain: :
+    #examples: ['tropical climate;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  cult_root_med:
+    aliases:
+      - culture rooting medium 
+    description: >-
+       "Name or reference for the hydroponic or in vitro culture rooting medium; can be the name of a commonly used medium or reference to a specific medium, e.g. Murashige and Skoog medium. If the medium has not been formally published, use the rooting medium descriptors."
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:cult_root_med
+    #domain: :
+    #examples: ['http://himedialabs.com/TD/PT158.pdf']
+
+  fertilizer_regm:
+    aliases:
+      - fertilizer regimen
+    description: >-
+       "Information about treatment involving the use of fertilizers; should include the name of fertilizer, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple fertilizer regimens"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:fertilizer_regm
+    #domain: :
+    #examples: ['urea;0.6 milligram per liter;R2/2018-05-11:T14:30/2018-05-11T19:30/P1H30M']
+
+  fungicide_regm:
+    aliases:
+      - fungicide regimen
+    description: >-
+       "Information about treatment involving use of fungicides; should include the name of fungicide, amount administered,  treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple fungicide regimens"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:fungicide_regm
+    #domain: :
+    #examples: ['bifonazole;1 mole per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  gaseous_environment:
+    aliases:
+      - gaseous environment
+    description: >-
+       "Use of conditions with differing gaseous environments; should include the name of gaseous compound, amount administered, treatment duration, interval and total experimental duration; can include multiple gaseous environment regimens"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:gaseous_environment
+    #domain: :
+    #examples: ['nitric oxide;0.5 micromole per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  gravity:
+    aliases:
+      - gravity
+    description: >-
+       "Information about treatment involving use of gravity factor to study various types of responses in presence, absence or modified levels of gravity; treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple treatments"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:gravity
+    #domain: :
+    #examples: ['12 g;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  growth_facil:
+    aliases:
+      - growth facility
+    description: >-
+       "Type of facility where the sampled plant was grown; controlled vocabulary: growth chamber, open top chamber, glasshouse, experimental garden, field. Alternatively use Crop Ontology (CO) terms, see http://www.cropontology.org/ontology/CO_715/Crop%20Research"
+    multivalued: false
+    is_a: attribute
+    range: controlled term value
+    mappings:
+      - MIxS:growth_facil
+    #domain: :
+    #examples: ['Growth chamber [CO_715:0000189]']
+
+  growth_habit:
+    aliases:
+      - growth habit
+    description: >-
+       "Characteristic shape, appearance or growth form of a plant species"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:growth_habit
+    #domain: :
+    #examples: ['spreading']
+
+  growth_hormone_regm:
+    aliases:
+      - growth hormone regimen
+    description: >-
+       "Information about treatment involving use of growth hormones; should include the name of growth hormone, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple growth hormone regimens"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:growth_hormone_regm
+    #domain: :
+    #examples: ['abscisic acid;0.5 milligram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  herbicide_regm:
+    aliases:
+      - herbicide regimen
+    description: >-
+       "Information about treatment involving use of herbicides; information about treatment involving use of growth hormones; should include the name of herbicide, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimens"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:herbicide_regm
+    #domain: :
+    #examples: ['atrazine;10 milligram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  host_wet_mass:
+    aliases:
+      - host wet mass
+    description: >-
+       Measurement of wet mass
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:host_wet_mass
+    #domain: :
+    #examples: ['1500 gram']
+
+  humidity_regm:
+    aliases:
+      - humidity regimen
+    description: >-
+       "Information about treatment involving an exposure to varying degree of humidity; information about treatment involving use of growth hormones; should include amount of humidity administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimens"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:humidity_regm
+    #domain: :
+    #examples: ['25 gram per cubic meter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  light_regm:
+    aliases:
+      - light regimen
+    description: >-
+       "Information about treatment(s) involving exposure to light, including both light intensity and quality."
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:light_regm
+    #domain: :
+    #examples: ['incandescant light;10 lux;450 nanometer']
+
+  mechanical_damage:
+    aliases:
+      - mechanical damage
+    description: >-
+       Information about any mechanical damage exerted on the plant; can include multiple damages and sites
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:mechanical_damage
+    #domain: :
+    #examples: ['pruning;bark']
+
+  mineral_nutr_regm:
+    aliases:
+      - mineral nutrient regimen
+    description: >-
+       "Information about treatment involving the use of mineral supplements; should include the name of mineral nutrient, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple mineral nutrient regimens"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:mineral_nutr_regm
+    #domain: :
+    #examples: ['potassium;15 gram;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  non_mineral_nutr_regm:
+    aliases:
+      - non-mineral nutrient regimen
+    description: >-
+       "Information about treatment involving the exposure of plant to non-mineral nutrient such as oxygen, hydrogen or carbon; should include the name of non-mineral nutrient, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple non-mineral nutrient regimens"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:non_mineral_nutr_regm
+    #domain: :
+    #examples: ['carbon dioxide;10 mole per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  ph_regm:
+    aliases:
+      - pH regimen
+    description: >-
+       "Information about treatment involving exposure of plants to varying levels of ph of the growth media, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimen"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:ph_regm
+    #domain: :
+    #examples: ['7.6;R2/2018-05-11:T14:30/2018-05-11T19:30/P1H30M']
+
+  pesticide_regm:
+    aliases:
+      - pesticide regimen
+    description: >-
+       "Information about treatment involving use of insecticides; should include the name of pesticide, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple pesticide regimens"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:pesticide_regm
+    #domain: :
+    #examples: ['pyrethrum;0.6 milligram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  plant_growth_med:
+    aliases:
+      - plant growth medium 
+    description: >-
+       "Specification of the media for growing the plants or tissue cultured samples, e.g. soil, aeroponic, hydroponic, in vitro solid culture medium, in vitro liquid culture medium. Recommended value is a specific value from EO:plant growth medium (follow this link for terms http://purl.obolibrary.org/obo/EO_0007147) or other controlled vocabulary"
+    multivalued: false
+    is_a: attribute
+    range: controlled term value
+    mappings:
+      - MIxS:plant_growth_med
+    #domain: :
+    #examples: ['hydroponic plant culture media [EO:0007067]']
+
+  plant_product:
+    aliases:
+      - plant product
+    description: >-
+       "Substance produced by the plant, where the sample was obtained from"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:plant_product
+    #domain: :
+    #examples: ['xylem sap [PO:0025539]']
+
+  plant_sex:
+    aliases:
+      - plant sex
+    description: >-
+       "Sex of the reproductive parts on the whole plant, e.g. pistillate, staminate, monoecieous, hermaphrodite."
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:plant_sex
+    #domain: :
+    #examples: ['Hermaphroditic']
+
+  plant_struc:
+    aliases:
+      - plant structure
+    description: >-
+       "Name of plant structure the sample was obtained from; for Plant Ontology (PO) (v releases/2017-12-14) terms, see http://purl.bioontology.org/ontology/PO, e.g. petiole epidermis (PO_0000051). If an individual flower is sampled, the sex of it can be recorded here."
+    multivalued: false
+    is_a: attribute
+    range: controlled term value
+    mappings:
+      - MIxS:plant_struc
+    #domain: :
+    #examples: ['epidermis [PO:0005679]']
+
+  radiation_regm:
+    aliases:
+      - radiation regimen
+    description: >-
+       "Information about treatment involving exposure of plant or a plant part to a particular radiation regimen; should include the radiation type, amount or intensity administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple radiation regimens"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:radiation_regm
+    #domain: :
+    #examples: ['gamma radiation;60 gray;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  rainfall_regm:
+    aliases:
+      - rainfall regimen
+    description: >-
+       "Information about treatment involving an exposure to a given amount of rainfall, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimens"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:rainfall_regm
+    #domain: :
+    #examples: ['15 millimeter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  root_cond:
+    aliases:
+      - rooting conditions
+    description: >-
+       "Relevant rooting conditions such as field plot size, sowing density, container dimensions, number of plants per container."
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:root_cond
+    #domain: :
+    #examples: ['http://himedialabs.com/TD/PT158.pdf']
+
+  root_med_carbon:
+    aliases:
+      - rooting medium carbon
+    description: >-
+       Source of organic carbon in the culture rooting medium; e.g. sucrose.
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:root_med_carbon
+    #domain: :
+    #examples: ['sucrose']
+
+  root_med_macronutr:
+    aliases:
+      - rooting medium macronutrients
+    description: >-
+       "Measurement of the culture rooting medium macronutrients (N,P, K, Ca, Mg, S); e.g. KH2PO4 (170B mg/L)."
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:root_med_macronutr
+    #domain: :
+    #examples: ['KH2PO4;170B milligram per liter']
+
+  root_med_micronutr:
+    aliases:
+      - rooting medium micronutrients
+    description: >-
+       "Measurement of the culture rooting medium micronutrients (Fe, Mn, Zn, B, Cu, Mo); e.g. H3BO3 (6.2B mg/L)."
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:root_med_micronutr
+    #domain: :
+    #examples: ['H3BO3;6.2B milligram per liter']
+
+  root_med_suppl:
+    aliases:
+      - rooting medium organic supplements
+    description: >-
+       "Organic supplements of the culture rooting medium, such as vitamins, amino acids, organic acids, antibiotics activated charcoal; e.g. nicotinic acid (0.5B mg/L)."
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:root_med_suppl
+    #domain: :
+    #examples: ['nicotinic acid;0.5 milligram per liter']
+
+  root_med_ph:
+    aliases:
+      - rooting medium pH
+    description: >-
+       pH measurement of the culture rooting medium; e.g. 5.5.
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:root_med_ph
+    #domain: :
+    #examples: ['7.5']
+
+  root_med_regl:
+    aliases:
+      - rooting medium regulators 
+    description: >-
+       "Growth regulators in the culture rooting medium such as cytokinins, auxins, gybberellins, abscisic acid; e.g. 0.5B mg/L NAA."
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:root_med_regl
+    #domain: :
+    #examples: ['abscisic acid;0.75 milligram per liter']
+
+  root_med_solid:
+    aliases:
+      - rooting medium solidifier
+    description: >-
+       Specification of the solidifying agent in the culture rooting medium; e.g. agar.
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:root_med_solid
+    #domain: :
+    #examples: ['agar']
+
+  salt_regm:
+    aliases:
+      - salt regimen
+    description: >-
+       "Information about treatment involving use of salts as supplement to liquid and soil growth media; should include the name of salt, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple salt regimens"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:salt_regm
+    #domain: :
+    #examples: ['NaCl;5 gram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  season_environment:
+    aliases:
+      - seasonal environment
+    description: >-
+       "Treatment involving an exposure to a particular season (e.g. Winter, summer, rabi, rainy etc.), treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:season_environment
+    #domain: :
+    #examples: ['rainy;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  standing_water_regm:
+    aliases:
+      - standing water regimen
+    description: >-
+       "Treatment involving an exposure to standing water during a plant's life span, types can be flood water or standing water, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimens"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:standing_water_regm
+    #domain: :
+    #examples: ['standing water;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  tiss_cult_growth_med:
+    aliases:
+      - tissue culture growth media
+    description: >-
+       Description of plant tissue culture growth media used
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:tiss_cult_growth_med
+    #domain: :
+    #examples: ['https://link.springer.com/content/pdf/10.1007/BF02796489.pdf']
+
+  water_temp_regm:
+    aliases:
+      - water temperature regimen
+    description: >-
+       "Information about treatment involving an exposure to water with varying degree of temperature, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimens"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:water_temp_regm
+    #domain: :
+    #examples: ['15 degree Celsius;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  watering_regm:
+    aliases:
+      - watering regimen
+    description: >-
+       "Information about treatment involving an exposure to watering frequencies, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimens"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:watering_regm
+    #domain: :
+    #examples: ['1 liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
+
+  particle_class:
+    aliases:
+      - particle classification
+    description: >-
+       "Particles are classified, based on their size, into six general categories:clay, silt, sand, gravel, cobbles, and boulders; should include amount of particle preceded by the name of the particle type; can include multiple values"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:particle_class
+    #domain: :
+
+  sediment_type:
+    aliases:
+      - sediment type
+    description: >-
+       Information about the sediment type based on major constituents
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:sediment_type
+    #domain: :
+    #examples: ['biogenous']
+
+  tidal_stage:
+    aliases:
+      - tidal stage
+    description: >-
+       Stage of tide
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:tidal_stage
+    #domain: :
+    #examples: ['high tide']
+
+  tot_depth_water_col:
+    aliases:
+      - total depth of water column
+    description: >-
+       Measurement of total depth of water column
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:tot_depth_water_col
+    #domain: :
+    #examples: ['500 meter']
+
+  cur_land_use:
+    aliases:
+      - current land use
+    description: >-
+       Present state of sample site
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:cur_land_use
+    #domain: :
+    #examples: ['conifers']
+
+  cur_vegetation:
+    aliases:
+      - current vegetation
+    description: >-
+       "Vegetation classification from one or more standard classification systems, or agricultural crop"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:cur_vegetation
+    #domain: :
+
+  cur_vegetation_meth:
+    aliases:
+      - current vegetation method
+    description: >-
+       Reference or method used in vegetation classification 
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:cur_vegetation_meth
+    #domain: :
+
+  previous_land_use:
+    aliases:
+      - history/previous land use
+    description: >-
+       Previous land use and dates
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:previous_land_use
+    #domain: :
+
+  previous_land_use_meth:
+    aliases:
+      - history/previous land use method
+    description: >-
+       Reference or method used in determining previous land use and dates
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:previous_land_use_meth
+    #domain: :
+
+  crop_rotation:
+    aliases:
+      - history/crop rotation
+    description: >-
+       "Whether or not crop is rotated, and if yes, rotation schedule"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:crop_rotation
+    #domain: :
+    #examples: ['yes;R2/2017-01-01/2018-12-31/P6M']
+
+  agrochem_addition:
+    aliases:
+      - history/agrochemical additions
+    description: >-
+       "Addition of fertilizers, pesticides, etc. - amount and time of applications"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:agrochem_addition
+    #domain: :
+    #examples: ['roundup;5 milligram per liter;2018-06-21']
+
+  tillage:
+    aliases:
+      - history/tillage
+    description: >-
+       Note method(s) used for tilling
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:tillage
+    #domain: :
+    #examples: ['chisel']
+
+  fire:
+    aliases:
+      - history/fire
+    description: >-
+       Historical and/or physical evidence of fire
+    multivalued: false
+    is_a: attribute
+    range: timestamp value
+    mappings:
+      - MIxS:fire
+    #domain: :
+
+  flooding:
+    aliases:
+      - history/flooding
+    description: >-
+       Historical and/or physical evidence of flooding
+    multivalued: false
+    is_a: attribute
+    range: timestamp value
+    mappings:
+      - MIxS:flooding
+    #domain: :
+
+  extreme_event:
+    aliases:
+      - history/extreme events
+    description: >-
+       Unusual physical events that may have affected microbial populations
+    multivalued: false
+    is_a: attribute
+    range: timestamp value
+    mappings:
+      - MIxS:extreme_event
+    #domain: :
+
+  horizon:
+    aliases:
+      - horizon
+    description: >-
+       Specific layer in the land area which measures parallel to the soil surface and possesses physical characteristics which differ from the layers above and beneath
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:horizon
+    #domain: :
+    #examples: ['A horizon']
+
+  horizon_meth:
+    aliases:
+      - horizon method
+    description: >-
+       Reference or method used in determining the horizon
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:horizon_meth
+    #domain: :
+
+  sieving:
+    aliases:
+      - composite design/sieving (if any)
+    description: >-
+       Collection design of pooled samples and/or sieve size and amount of sample sieved 
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:sieving
+    #domain: :
+
+  water_content_soil_meth:
+    aliases:
+      - water content method
+    description: >-
+       Reference or method used in determining the water content of soil
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:water_content_soil_meth
+    #domain: :
+
+  pool_dna_extracts:
+    aliases:
+      - pooling of DNA extracts (if done)
+    description: >-
+       "Indicate whether multiple DNA extractions were mixed. If the answer yes, the number of extracts that were pooled should be given"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:pool_dna_extracts
+    #domain: :
+    #examples: ['yes;5']
+
+  store_cond:
+    aliases:
+      - storage conditions (fresh/frozen/other)
+    description: >-
+       Explain how and for how long the soil sample was stored before DNA extraction
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:store_cond
+    #domain: :
+    #examples: ['-20 degree Celsius freezer;P2Y10D']
+
+  link_climate_info:
+    aliases:
+      - link to climate information
+    description: >-
+       Link to climate resource
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:link_climate_info
+    #domain: :
+
+  annual_temp:
+    aliases:
+      - mean annual temperature
+    description: >-
+       Mean annual temperature
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:annual_temp
+    #domain: :
+    #examples: ['12.5 degree Celsius']
+
+  season_temp:
+    aliases:
+      - mean seasonal temperature
+    description: >-
+       Mean seasonal temperature
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:season_temp
+    #domain: :
+    #examples: ['18 degree Celsius']
+
+  annual_precpt:
+    aliases:
+      - mean annual precipitation
+    description: >-
+       "The average of all annual precipitation values known, or an estimated equivalent value derived by such methods as regional indexes or Isohyetal maps. "
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:annual_precpt
+    #domain: :
+
+  season_precpt:
+    aliases:
+      - mean seasonal precipitation
+    description: >-
+       "The average of all seasonal precipitation values known, or an estimated equivalent value derived by such methods as regional indexes or Isohyetal maps. "
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:season_precpt
+    #domain: :
+
+  link_class_info:
+    aliases:
+      - link to classification information
+    description: >-
+       Link to digitized soil maps or other soil classification information
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:link_class_info
+    #domain: :
+
+  fao_class:
+    aliases:
+      - soil_taxonomic/FAO classification
+    description: >-
+       Soil classification from the FAO World Reference Database for Soil Resources. The list can be found at http://www.fao.org/nr/land/sols/soil/wrb-soil-maps/reference-groups
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:fao_class
+    #domain: :
+    #examples: ['Luvisols']
+
+  local_class:
+    aliases:
+      - soil_taxonomic/local classification
+    description: >-
+       Soil classification based on local soil classification system
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:local_class
+    #domain: :
+
+  local_class_meth:
+    aliases:
+      - soil_taxonomic/local classification method
+    description: >-
+       Reference or method used in determining the local soil classification 
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:local_class_meth
+    #domain: :
+
+  soil_type:
+    aliases:
+      - soil type
+    description: >-
+       Soil series name or other lower-level classification
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:soil_type
+    #domain: :
+
+  soil_type_meth:
+    aliases:
+      - soil type method
+    description: >-
+       Reference or method used in determining soil series name or other lower-level classification
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:soil_type_meth
+    #domain: :
+
+  slope_gradient:
+    aliases:
+      - slope gradient
+    description: >-
+       Commonly called 'slope'. The angle between ground surface and a horizontal line (in percent). This is the direction that overland water would flow. This measure is usually taken with a hand level meter or clinometer
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:slope_gradient
+    #domain: :
+
+  slope_aspect:
+    aliases:
+      - slope aspect
+    description: >-
+       "The direction a slope faces. While looking down a slope use a compass to record the direction you are facing (direction or degrees); e.g., nw or 315 degrees. This measure provides an indication of sun and wind exposure that will influence soil temperature and evapotranspiration."
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:slope_aspect
+    #domain: :
+
+  profile_position:
+    aliases:
+      - profile position
+    description: >-
+       Cross-sectional position in the hillslope where sample was collected.sample area position in relation to surrounding areas
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:profile_position
+    #domain: :
+    #examples: ['summit']
+
+  drainage_class:
+    aliases:
+      - drainage classification
+    description: >-
+       Drainage classification from a standard system such as the USDA system
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:drainage_class
+    #domain: :
+    #examples: ['well']
+
+  texture:
+    aliases:
+      - texture
+    description: >-
+       "The relative proportion of different grain sizes of mineral particles in a soil, as described using a standard system; express as % sand (50 um to 2 mm), silt (2 um to 50 um), and clay (<2 um) with textural name (e.g., silty clay loam) optional."
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:texture
+    #domain: :
+
+  texture_meth:
+    aliases:
+      - texture method
+    description: >-
+       Reference or method used in determining soil texture
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:texture_meth
+    #domain: :
+
+  ph_meth:
+    aliases:
+      - pH method
+    description: >-
+       Reference or method used in determining ph
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:ph_meth
+    #domain: :
+
+  tot_org_c_meth:
+    aliases:
+      - total organic carbon method
+    description: >-
+       Reference or method used in determining total organic carbon
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:tot_org_c_meth
+    #domain: :
+
+  tot_nitro_content_meth:
+    aliases:
+      - total nitrogen content method
+    description: >-
+       Reference or method used in determining the total nitrogen
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:tot_nitro_content_meth
+    #domain: :
+
+  microbial_biomass:
+    aliases:
+      - microbial biomass
+    description: >-
+       "The part of the organic matter in the soil that constitutes living microorganisms smaller than 5-10 micrometer. If you keep this, you would need to have correction factors used for conversion to the final units"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:microbial_biomass
+    #domain: :
+
+  microbial_biomass_meth:
+    aliases:
+      - microbial biomass method
+    description: >-
+       Reference or method used in determining microbial biomass
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:microbial_biomass_meth
+    #domain: :
+
+  link_addit_analys:
+    aliases:
+      - links to additional analysis
+    description: >-
+       Link to additional analysis results performed on the sample
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:link_addit_analys
+    #domain: :
+
+  extreme_salinity:
+    aliases:
+      - extreme_unusual_properties/salinity
+    description: >-
+       Measured salinity 
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:extreme_salinity
+    #domain: :
+
+  salinity_meth:
+    aliases:
+      - extreme_unusual_properties/salinity method
+    description: >-
+       Reference or method used in determining salinity
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:salinity_meth
+    #domain: :
+
+  heavy_metals:
+    aliases:
+      - extreme_unusual_properties/heavy metals
+    description: >-
+       Heavy metals present and concentrationsany drug used by subject and the frequency of usage; can include multiple heavy metals and concentrations
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:heavy_metals
+    #domain: :
+
+  heavy_metals_meth:
+    aliases:
+      - extreme_unusual_properties/heavy metals method
+    description: >-
+       Reference or method used in determining heavy metals
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:heavy_metals_meth
+    #domain: :
+
+  al_sat:
+    aliases:
+      - extreme_unusual_properties/Al saturation
+    description: >-
+       Aluminum saturation (esp. For tropical soils)
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:al_sat
+    #domain: :
+
+  al_sat_meth:
+    aliases:
+      - extreme_unusual_properties/Al saturation method
+    description: >-
+       Reference or method used in determining Al saturation
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:al_sat_meth
+    #domain: :
+
+  biochem_oxygen_dem:
+    aliases:
+      - biochemical oxygen demand
+    description: >-
+       Amount of dissolved oxygen needed by aerobic biological organisms in a body of water to break down organic material present in a given water sample at certain temperature over a specific time period
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:biochem_oxygen_dem
+    #domain: :
+
+  chem_oxygen_dem:
+    aliases:
+      - chemical oxygen demand
+    description: >-
+       A measure of the capacity of water to consume oxygen during the decomposition of organic matter and the oxidation of inorganic chemicals such as ammonia and nitrite
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:chem_oxygen_dem
+    #domain: :
+
+  efficiency_percent:
+    aliases:
+      - efficiency percent
+    description: >-
+       Percentage of volatile solids removed from the anaerobic digestor
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:efficiency_percent
+    #domain: :
+
+  emulsions:
+    aliases:
+      - emulsions
+    description: >-
+       "Amount or concentration of substances such as paints, adhesives, mayonnaise, hair colorants, emulsified oils, etc.; can include multiple emulsion types"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:emulsions
+    #domain: :
+
+  gaseous_substances:
+    aliases:
+      - gaseous substances
+    description: >-
+       "Amount or concentration of substances such as hydrogen sulfide, carbon dioxide, methane, etc.; can include multiple substances"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:gaseous_substances
+    #domain: :
+
+  indust_eff_percent:
+    aliases:
+      - industrial effluent percent
+    description: >-
+       Percentage of industrial effluents received by wastewater treatment plant
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:indust_eff_percent
+    #domain: :
+
+  inorg_particles:
+    aliases:
+      - inorganic particles
+    description: >-
+       "Concentration of particles such as sand, grit, metal particles, ceramics, etc.; can include multiple particles"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:inorg_particles
+    #domain: :
+
+  org_particles:
+    aliases:
+      - organic particles
+    description: >-
+       "Concentration of particles such as faeces, hairs, food, vomit, paper fibers, plant material, humus, etc."
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:org_particles
+    #domain: :
+
+  pre_treatment:
+    aliases:
+      - pre-treatment
+    description: >-
+       The process of pre-treatment removes materials that can be easily collected from the raw wastewater
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:pre_treatment
+    #domain: :
+
+  primary_treatment:
+    aliases:
+      - primary treatment
+    description: >-
+       The process to produce both a generally homogeneous liquid capable of being treated biologically and a sludge that can be separately treated or processed
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:primary_treatment
+    #domain: :
+
+  reactor_type:
+    aliases:
+      - reactor type
+    description: >-
+       "Anaerobic digesters can be designed and engineered to operate using a number of different process configurations, as batch or continuous, mesophilic, high solid or low solid, and single stage or multistage"
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:reactor_type
+    #domain: :
+
+  secondary_treatment:
+    aliases:
+      - secondary treatment
+    description: >-
+       The process for substantially degrading the biological content of the sewage 
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:secondary_treatment
+    #domain: :
+
+  sewage_type:
+    aliases:
+      - sewage type
+    description: >-
+       Type of wastewater treatment plant as municipial or industrial
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:sewage_type
+    #domain: :
+
+  sludge_retent_time:
+    aliases:
+      - sludge retention time
+    description: >-
+       The time activated sludge remains in reactor
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:sludge_retent_time
+    #domain: :
+
+  soluble_inorg_mat:
+    aliases:
+      - soluble inorganic material
+    description: >-
+       "Concentration of substances such as ammonia, road-salt, sea-salt, cyanide, hydrogen sulfide, thiocyanates, thiosulfates, etc."
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:soluble_inorg_mat
+    #domain: :
+
+  soluble_org_mat:
+    aliases:
+      - soluble organic material
+    description: >-
+       "Concentration of substances such as urea, fruit sugars, soluble proteins, drugs, pharmaceuticals, etc."
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:soluble_org_mat
+    #domain: :
+
+  tertiary_treatment:
+    aliases:
+      - tertiary treatment
+    description: >-
+       The process providing a final treatment stage to raise the effluent quality before it is discharged to the receiving environment
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:tertiary_treatment
+    #domain: :
+
+  tot_phosphate:
+    aliases:
+      - total phosphate
+    description: >-
+       Total amount or concentration of phosphate
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:tot_phosphate
+    #domain: :
+
+  wastewater_type:
+    aliases:
+      - wastewater type
+    description: >-
+       "The origin of wastewater such as human waste, rainfall, storm drains, etc."
+    multivalued: false
+    is_a: attribute
+    range: text value
+    mappings:
+      - MIxS:wastewater_type
+    #domain: :
+
+  atmospheric_data:
+    aliases:
+      - atmospheric data
+    description: >-
+       Measurement of atmospheric data; can include multiple data
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:atmospheric_data
+    #domain: :
+    #examples: ['wind speed;9 knots']
+
+  bac_prod:
+    aliases:
+      - bacterial production
+    description: >-
+       Bacterial production in the water column measured by isotope uptake
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:bac_prod
+    #domain: :
+    #examples: ['5 milligram per cubic meter per day']
+
+  bac_resp:
+    aliases:
+      - bacterial respiration
+    description: >-
+       Measurement of bacterial respiration in the water column
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:bac_resp
+    #domain: :
+    #examples: ['300 micromole oxygen per liter per hour']
+
+  conduc:
+    aliases:
+      - conductivity
+    description: >-
+       Electrical conductivity of water
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:conduc
+    #domain: :
+    #examples: ['10 milliSiemens per centimeter']
+
+  diss_inorg_nitro:
+    aliases:
+      - dissolved inorganic nitrogen
+    description: >-
+       Concentration of dissolved inorganic nitrogen 
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:diss_inorg_nitro
+    #domain: :
+    #examples: ['761 micromole per liter']
+
+  down_par:
+    aliases:
+      - downward PAR
+    description: >-
+       Visible waveband radiance and irradiance measurements in the water column
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:down_par
+    #domain: :
+    #examples: ['28.71 microEinstein per square meter per second']
+
+  fluor:
+    aliases:
+      - fluorescence
+    description: >-
+       Raw or converted fluorescence of water
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:fluor
+    #domain: :
+    #examples: ['2.5 volts']
+
+  light_intensity:
+    aliases:
+      - light intensity
+    description: >-
+       Measurement of light intensity
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:light_intensity
+    #domain: :
+    #examples: ['0.3 lux']
+
+  part_org_nitro:
+    aliases:
+      - particulate organic nitrogen
+    description: >-
+       Concentration of particulate organic nitrogen
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:part_org_nitro
+    #domain: :
+    #examples: ['0.3 micromole per liter']
+
+  photon_flux:
+    aliases:
+      - photon flux
+    description: >-
+       Measurement of photon flux
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:photon_flux
+    #domain: :
+    #examples: ['3.926 micromole photons per second per square meter']
+
+  primary_prod:
+    aliases:
+      - primary production
+    description: >-
+       "Measurement of primary production, generally measured as isotope uptake"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:primary_prod
+    #domain: :
+    #examples: ['100 milligram per cubic meter per day']
+
+  size_frac_low:
+    aliases:
+      - size-fraction lower threshold
+    description: >-
+       Refers to the mesh/pore size used to pre-filter/pre-sort the sample. Materials larger than the size threshold are excluded from the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:size_frac_low
+    #domain: :
+    #examples: ['0.2 micrometer']
+
+  size_frac_up:
+    aliases:
+      - size-fraction upper threshold
+    description: >-
+       Refers to the mesh/pore size used to retain the sample. Materials smaller than the size threshold are excluded from the sample
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:size_frac_up
+    #domain: :
+    #examples: ['20 micrometer']
+
+  soluble_react_phosp:
+    aliases:
+      - soluble reactive phosphorus
+    description: >-
+       Concentration of soluble reactive phosphorus
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:soluble_react_phosp
+    #domain: :
+    #examples: ['0.1 milligram per liter']
+
+  suspend_part_matter:
+    aliases:
+      - suspended particulate matter
+    description: >-
+       Concentration of suspended particulate matter
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:suspend_part_matter
+    #domain: :
+    #examples: ['0.5 milligram per liter']
+
+  tot_diss_nitro:
+    aliases:
+      - total dissolved nitrogen
+    description: >-
+       "Total dissolved nitrogen concentration, reported as nitrogen, measured by: total dissolved nitrogen = NH4 + NO3NO2 + dissolved organic nitrogen"
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:tot_diss_nitro
+    #domain: :
+    #examples: ['40 microgram per liter']
+
+  tot_inorg_nitro:
+    aliases:
+      - total inorganic nitrogen
+    description: >-
+       Total inorganic nitrogen content
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:tot_inorg_nitro
+    #domain: :
+    #examples: ['40 microgram per liter']
+
+  tot_part_carb:
+    aliases:
+      - total particulate carbon
+    description: >-
+       Total particulate carbon content
+    multivalued: false
+    is_a: attribute
+    range: quantity value
+    mappings:
+      - MIxS:tot_part_carb
+    #domain: :
+    #examples: ['35 micromole per liter']
+

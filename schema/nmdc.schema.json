@@ -83,6 +83,10 @@
             },
             "specific_ecosystem": {
                "type": "string"
+            },
+            "tot_org_carb": {
+               "$ref": "#/definitions/QuantityValue",
+               "description": "\"Definition for soil: total organic carbon content of the soil, definition otherwise: total organic carbon content\""
             }
          },
          "required": [

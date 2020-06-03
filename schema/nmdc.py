@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-06-02 21:53
+# Generation date: 2020-06-03 11:04
 # Schema: NMDC Schema
 #
 # id: https://microbiomedata/schema
@@ -135,6 +135,7 @@ class Biosample(NamedThing):
     ecosystem_type: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     specific_ecosystem: Optional[str] = None
+    tot_org_carb: Optional[Union[dict, "QuantityValue"]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.depth is not None and not isinstance(self.depth, TextValue):
@@ -163,6 +164,8 @@ class Biosample(NamedThing):
             raise ValueError(f"env_medium must be supplied")
         if not isinstance(self.env_medium, ControlledTermValue):
             self.env_medium = ControlledTermValue(**self.env_medium)
+        if self.tot_org_carb is not None and not isinstance(self.tot_org_carb, QuantityValue):
+            self.tot_org_carb = QuantityValue(**self.tot_org_carb)
         super().__post_init__(**kwargs)
 
 
@@ -779,6 +782,1524 @@ slots.url = Slot(uri="str(uriorcurie)", name="url", curie=None,
 
 slots.sop = Slot(uri="str(uriorcurie)", name="sop", curie=None,
                       model_uri=NMDC.sop, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.sop])
+
+slots.barometric_press = Slot(uri="str(uriorcurie)", name="barometric_press", curie=None,
+                      model_uri=NMDC.barometric_press, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.barometric_press])
+
+slots.carb_dioxide = Slot(uri="str(uriorcurie)", name="carb_dioxide", curie=None,
+                      model_uri=NMDC.carb_dioxide, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.carb_dioxide])
+
+slots.carb_monoxide = Slot(uri="str(uriorcurie)", name="carb_monoxide", curie=None,
+                      model_uri=NMDC.carb_monoxide, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.carb_monoxide])
+
+slots.chem_administration = Slot(uri="str(uriorcurie)", name="chem_administration", curie=None,
+                      model_uri=NMDC.chem_administration, domain=None, range=Optional[Union[dict, ControlledTermValue]], mappings = [MIXS.chem_administration])
+
+slots.humidity = Slot(uri="str(uriorcurie)", name="humidity", curie=None,
+                      model_uri=NMDC.humidity, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.humidity])
+
+slots.methane = Slot(uri="str(uriorcurie)", name="methane", curie=None,
+                      model_uri=NMDC.methane, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.methane])
+
+slots.misc_param = Slot(uri="str(uriorcurie)", name="misc_param", curie=None,
+                      model_uri=NMDC.misc_param, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.misc_param])
+
+slots.organism_count = Slot(uri="str(uriorcurie)", name="organism_count", curie=None,
+                      model_uri=NMDC.organism_count, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.organism_count])
+
+slots.oxygen = Slot(uri="str(uriorcurie)", name="oxygen", curie=None,
+                      model_uri=NMDC.oxygen, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.oxygen])
+
+slots.oxy_stat_samp = Slot(uri="str(uriorcurie)", name="oxy_stat_samp", curie=None,
+                      model_uri=NMDC.oxy_stat_samp, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.oxy_stat_samp])
+
+slots.perturbation = Slot(uri="str(uriorcurie)", name="perturbation", curie=None,
+                      model_uri=NMDC.perturbation, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.perturbation])
+
+slots.pollutants = Slot(uri="str(uriorcurie)", name="pollutants", curie=None,
+                      model_uri=NMDC.pollutants, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.pollutants])
+
+slots.resp_part_matter = Slot(uri="str(uriorcurie)", name="resp_part_matter", curie=None,
+                      model_uri=NMDC.resp_part_matter, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.resp_part_matter])
+
+slots.samp_salinity = Slot(uri="str(uriorcurie)", name="samp_salinity", curie=None,
+                      model_uri=NMDC.samp_salinity, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.samp_salinity])
+
+slots.samp_store_dur = Slot(uri="str(uriorcurie)", name="samp_store_dur", curie=None,
+                      model_uri=NMDC.samp_store_dur, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.samp_store_dur])
+
+slots.samp_store_loc = Slot(uri="str(uriorcurie)", name="samp_store_loc", curie=None,
+                      model_uri=NMDC.samp_store_loc, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.samp_store_loc])
+
+slots.samp_store_temp = Slot(uri="str(uriorcurie)", name="samp_store_temp", curie=None,
+                      model_uri=NMDC.samp_store_temp, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.samp_store_temp])
+
+slots.samp_vol_we_dna_ext = Slot(uri="str(uriorcurie)", name="samp_vol_we_dna_ext", curie=None,
+                      model_uri=NMDC.samp_vol_we_dna_ext, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.samp_vol_we_dna_ext])
+
+slots.solar_irradiance = Slot(uri="str(uriorcurie)", name="solar_irradiance", curie=None,
+                      model_uri=NMDC.solar_irradiance, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.solar_irradiance])
+
+slots.temp = Slot(uri="str(uriorcurie)", name="temp", curie=None,
+                      model_uri=NMDC.temp, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.temp])
+
+slots.ventilation_rate = Slot(uri="str(uriorcurie)", name="ventilation_rate", curie=None,
+                      model_uri=NMDC.ventilation_rate, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.ventilation_rate])
+
+slots.ventilation_type = Slot(uri="str(uriorcurie)", name="ventilation_type", curie=None,
+                      model_uri=NMDC.ventilation_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.ventilation_type])
+
+slots.volatile_org_comp = Slot(uri="str(uriorcurie)", name="volatile_org_comp", curie=None,
+                      model_uri=NMDC.volatile_org_comp, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.volatile_org_comp])
+
+slots.wind_direction = Slot(uri="str(uriorcurie)", name="wind_direction", curie=None,
+                      model_uri=NMDC.wind_direction, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.wind_direction])
+
+slots.wind_speed = Slot(uri="str(uriorcurie)", name="wind_speed", curie=None,
+                      model_uri=NMDC.wind_speed, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.wind_speed])
+
+slots.surf_material = Slot(uri="str(uriorcurie)", name="surf_material", curie=None,
+                      model_uri=NMDC.surf_material, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.surf_material])
+
+slots.surf_air_cont = Slot(uri="str(uriorcurie)", name="surf_air_cont", curie=None,
+                      model_uri=NMDC.surf_air_cont, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.surf_air_cont])
+
+slots.rel_air_humidity = Slot(uri="str(uriorcurie)", name="rel_air_humidity", curie=None,
+                      model_uri=NMDC.rel_air_humidity, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.rel_air_humidity])
+
+slots.abs_air_humidity = Slot(uri="str(uriorcurie)", name="abs_air_humidity", curie=None,
+                      model_uri=NMDC.abs_air_humidity, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.abs_air_humidity])
+
+slots.surf_humidity = Slot(uri="str(uriorcurie)", name="surf_humidity", curie=None,
+                      model_uri=NMDC.surf_humidity, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.surf_humidity])
+
+slots.air_temp = Slot(uri="str(uriorcurie)", name="air_temp", curie=None,
+                      model_uri=NMDC.air_temp, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.air_temp])
+
+slots.surf_temp = Slot(uri="str(uriorcurie)", name="surf_temp", curie=None,
+                      model_uri=NMDC.surf_temp, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.surf_temp])
+
+slots.surf_moisture_ph = Slot(uri="str(uriorcurie)", name="surf_moisture_ph", curie=None,
+                      model_uri=NMDC.surf_moisture_ph, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.surf_moisture_ph])
+
+slots.build_occup_type = Slot(uri="str(uriorcurie)", name="build_occup_type", curie=None,
+                      model_uri=NMDC.build_occup_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.build_occup_type])
+
+slots.surf_moisture = Slot(uri="str(uriorcurie)", name="surf_moisture", curie=None,
+                      model_uri=NMDC.surf_moisture, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.surf_moisture])
+
+slots.dew_point = Slot(uri="str(uriorcurie)", name="dew_point", curie=None,
+                      model_uri=NMDC.dew_point, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.dew_point])
+
+slots.indoor_space = Slot(uri="str(uriorcurie)", name="indoor_space", curie=None,
+                      model_uri=NMDC.indoor_space, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.indoor_space])
+
+slots.indoor_surf = Slot(uri="str(uriorcurie)", name="indoor_surf", curie=None,
+                      model_uri=NMDC.indoor_surf, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.indoor_surf])
+
+slots.filter_type = Slot(uri="str(uriorcurie)", name="filter_type", curie=None,
+                      model_uri=NMDC.filter_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.filter_type])
+
+slots.heat_cool_type = Slot(uri="str(uriorcurie)", name="heat_cool_type", curie=None,
+                      model_uri=NMDC.heat_cool_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.heat_cool_type])
+
+slots.substructure_type = Slot(uri="str(uriorcurie)", name="substructure_type", curie=None,
+                      model_uri=NMDC.substructure_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.substructure_type])
+
+slots.building_setting = Slot(uri="str(uriorcurie)", name="building_setting", curie=None,
+                      model_uri=NMDC.building_setting, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.building_setting])
+
+slots.light_type = Slot(uri="str(uriorcurie)", name="light_type", curie=None,
+                      model_uri=NMDC.light_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.light_type])
+
+slots.samp_sort_meth = Slot(uri="str(uriorcurie)", name="samp_sort_meth", curie=None,
+                      model_uri=NMDC.samp_sort_meth, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.samp_sort_meth])
+
+slots.space_typ_state = Slot(uri="str(uriorcurie)", name="space_typ_state", curie=None,
+                      model_uri=NMDC.space_typ_state, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.space_typ_state])
+
+slots.typ_occup_density = Slot(uri="str(uriorcurie)", name="typ_occup_density", curie=None,
+                      model_uri=NMDC.typ_occup_density, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.typ_occup_density])
+
+slots.occup_samp = Slot(uri="str(uriorcurie)", name="occup_samp", curie=None,
+                      model_uri=NMDC.occup_samp, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.occup_samp])
+
+slots.occup_density_samp = Slot(uri="str(uriorcurie)", name="occup_density_samp", curie=None,
+                      model_uri=NMDC.occup_density_samp, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.occup_density_samp])
+
+slots.address = Slot(uri="str(uriorcurie)", name="address", curie=None,
+                      model_uri=NMDC.address, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.address])
+
+slots.adj_room = Slot(uri="str(uriorcurie)", name="adj_room", curie=None,
+                      model_uri=NMDC.adj_room, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.adj_room])
+
+slots.aero_struc = Slot(uri="str(uriorcurie)", name="aero_struc", curie=None,
+                      model_uri=NMDC.aero_struc, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.aero_struc])
+
+slots.amount_light = Slot(uri="str(uriorcurie)", name="amount_light", curie=None,
+                      model_uri=NMDC.amount_light, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.amount_light])
+
+slots.arch_struc = Slot(uri="str(uriorcurie)", name="arch_struc", curie=None,
+                      model_uri=NMDC.arch_struc, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.arch_struc])
+
+slots.avg_occup = Slot(uri="str(uriorcurie)", name="avg_occup", curie=None,
+                      model_uri=NMDC.avg_occup, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.avg_occup])
+
+slots.avg_dew_point = Slot(uri="str(uriorcurie)", name="avg_dew_point", curie=None,
+                      model_uri=NMDC.avg_dew_point, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.avg_dew_point])
+
+slots.avg_temp = Slot(uri="str(uriorcurie)", name="avg_temp", curie=None,
+                      model_uri=NMDC.avg_temp, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.avg_temp])
+
+slots.bathroom_count = Slot(uri="str(uriorcurie)", name="bathroom_count", curie=None,
+                      model_uri=NMDC.bathroom_count, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.bathroom_count])
+
+slots.bedroom_count = Slot(uri="str(uriorcurie)", name="bedroom_count", curie=None,
+                      model_uri=NMDC.bedroom_count, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.bedroom_count])
+
+slots.built_struc_age = Slot(uri="str(uriorcurie)", name="built_struc_age", curie=None,
+                      model_uri=NMDC.built_struc_age, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.built_struc_age])
+
+slots.built_struc_set = Slot(uri="str(uriorcurie)", name="built_struc_set", curie=None,
+                      model_uri=NMDC.built_struc_set, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.built_struc_set])
+
+slots.built_struc_type = Slot(uri="str(uriorcurie)", name="built_struc_type", curie=None,
+                      model_uri=NMDC.built_struc_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.built_struc_type])
+
+slots.ceil_area = Slot(uri="str(uriorcurie)", name="ceil_area", curie=None,
+                      model_uri=NMDC.ceil_area, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.ceil_area])
+
+slots.ceil_cond = Slot(uri="str(uriorcurie)", name="ceil_cond", curie=None,
+                      model_uri=NMDC.ceil_cond, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.ceil_cond])
+
+slots.ceil_finish_mat = Slot(uri="str(uriorcurie)", name="ceil_finish_mat", curie=None,
+                      model_uri=NMDC.ceil_finish_mat, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.ceil_finish_mat])
+
+slots.ceil_water_mold = Slot(uri="str(uriorcurie)", name="ceil_water_mold", curie=None,
+                      model_uri=NMDC.ceil_water_mold, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.ceil_water_mold])
+
+slots.ceil_struc = Slot(uri="str(uriorcurie)", name="ceil_struc", curie=None,
+                      model_uri=NMDC.ceil_struc, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.ceil_struc])
+
+slots.ceil_texture = Slot(uri="str(uriorcurie)", name="ceil_texture", curie=None,
+                      model_uri=NMDC.ceil_texture, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.ceil_texture])
+
+slots.ceil_thermal_mass = Slot(uri="str(uriorcurie)", name="ceil_thermal_mass", curie=None,
+                      model_uri=NMDC.ceil_thermal_mass, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.ceil_thermal_mass])
+
+slots.ceil_type = Slot(uri="str(uriorcurie)", name="ceil_type", curie=None,
+                      model_uri=NMDC.ceil_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.ceil_type])
+
+slots.cool_syst_id = Slot(uri="str(uriorcurie)", name="cool_syst_id", curie=None,
+                      model_uri=NMDC.cool_syst_id, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.cool_syst_id])
+
+slots.date_last_rain = Slot(uri="str(uriorcurie)", name="date_last_rain", curie=None,
+                      model_uri=NMDC.date_last_rain, domain=None, range=Optional[Union[dict, TimestampValue]], mappings = [MIXS.date_last_rain])
+
+slots.build_docs = Slot(uri="str(uriorcurie)", name="build_docs", curie=None,
+                      model_uri=NMDC.build_docs, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.build_docs])
+
+slots.door_size = Slot(uri="str(uriorcurie)", name="door_size", curie=None,
+                      model_uri=NMDC.door_size, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.door_size])
+
+slots.door_cond = Slot(uri="str(uriorcurie)", name="door_cond", curie=None,
+                      model_uri=NMDC.door_cond, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.door_cond])
+
+slots.door_direct = Slot(uri="str(uriorcurie)", name="door_direct", curie=None,
+                      model_uri=NMDC.door_direct, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.door_direct])
+
+slots.door_loc = Slot(uri="str(uriorcurie)", name="door_loc", curie=None,
+                      model_uri=NMDC.door_loc, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.door_loc])
+
+slots.door_mat = Slot(uri="str(uriorcurie)", name="door_mat", curie=None,
+                      model_uri=NMDC.door_mat, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.door_mat])
+
+slots.door_move = Slot(uri="str(uriorcurie)", name="door_move", curie=None,
+                      model_uri=NMDC.door_move, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.door_move])
+
+slots.door_water_mold = Slot(uri="str(uriorcurie)", name="door_water_mold", curie=None,
+                      model_uri=NMDC.door_water_mold, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.door_water_mold])
+
+slots.door_type = Slot(uri="str(uriorcurie)", name="door_type", curie=None,
+                      model_uri=NMDC.door_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.door_type])
+
+slots.door_comp_type = Slot(uri="str(uriorcurie)", name="door_comp_type", curie=None,
+                      model_uri=NMDC.door_comp_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.door_comp_type])
+
+slots.door_type_metal = Slot(uri="str(uriorcurie)", name="door_type_metal", curie=None,
+                      model_uri=NMDC.door_type_metal, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.door_type_metal])
+
+slots.door_type_wood = Slot(uri="str(uriorcurie)", name="door_type_wood", curie=None,
+                      model_uri=NMDC.door_type_wood, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.door_type_wood])
+
+slots.drawings = Slot(uri="str(uriorcurie)", name="drawings", curie=None,
+                      model_uri=NMDC.drawings, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.drawings])
+
+slots.elevator = Slot(uri="str(uriorcurie)", name="elevator", curie=None,
+                      model_uri=NMDC.elevator, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.elevator])
+
+slots.escalator = Slot(uri="str(uriorcurie)", name="escalator", curie=None,
+                      model_uri=NMDC.escalator, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.escalator])
+
+slots.exp_duct = Slot(uri="str(uriorcurie)", name="exp_duct", curie=None,
+                      model_uri=NMDC.exp_duct, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.exp_duct])
+
+slots.exp_pipe = Slot(uri="str(uriorcurie)", name="exp_pipe", curie=None,
+                      model_uri=NMDC.exp_pipe, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.exp_pipe])
+
+slots.ext_door = Slot(uri="str(uriorcurie)", name="ext_door", curie=None,
+                      model_uri=NMDC.ext_door, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.ext_door])
+
+slots.fireplace_type = Slot(uri="str(uriorcurie)", name="fireplace_type", curie=None,
+                      model_uri=NMDC.fireplace_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.fireplace_type])
+
+slots.floor_age = Slot(uri="str(uriorcurie)", name="floor_age", curie=None,
+                      model_uri=NMDC.floor_age, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.floor_age])
+
+slots.floor_area = Slot(uri="str(uriorcurie)", name="floor_area", curie=None,
+                      model_uri=NMDC.floor_area, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.floor_area])
+
+slots.floor_cond = Slot(uri="str(uriorcurie)", name="floor_cond", curie=None,
+                      model_uri=NMDC.floor_cond, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.floor_cond])
+
+slots.floor_count = Slot(uri="str(uriorcurie)", name="floor_count", curie=None,
+                      model_uri=NMDC.floor_count, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.floor_count])
+
+slots.floor_finish_mat = Slot(uri="str(uriorcurie)", name="floor_finish_mat", curie=None,
+                      model_uri=NMDC.floor_finish_mat, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.floor_finish_mat])
+
+slots.floor_water_mold = Slot(uri="str(uriorcurie)", name="floor_water_mold", curie=None,
+                      model_uri=NMDC.floor_water_mold, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.floor_water_mold])
+
+slots.floor_struc = Slot(uri="str(uriorcurie)", name="floor_struc", curie=None,
+                      model_uri=NMDC.floor_struc, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.floor_struc])
+
+slots.floor_thermal_mass = Slot(uri="str(uriorcurie)", name="floor_thermal_mass", curie=None,
+                      model_uri=NMDC.floor_thermal_mass, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.floor_thermal_mass])
+
+slots.freq_clean = Slot(uri="str(uriorcurie)", name="freq_clean", curie=None,
+                      model_uri=NMDC.freq_clean, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.freq_clean])
+
+slots.freq_cook = Slot(uri="str(uriorcurie)", name="freq_cook", curie=None,
+                      model_uri=NMDC.freq_cook, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.freq_cook])
+
+slots.furniture = Slot(uri="str(uriorcurie)", name="furniture", curie=None,
+                      model_uri=NMDC.furniture, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.furniture])
+
+slots.gender_restroom = Slot(uri="str(uriorcurie)", name="gender_restroom", curie=None,
+                      model_uri=NMDC.gender_restroom, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.gender_restroom])
+
+slots.hall_count = Slot(uri="str(uriorcurie)", name="hall_count", curie=None,
+                      model_uri=NMDC.hall_count, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.hall_count])
+
+slots.handidness = Slot(uri="str(uriorcurie)", name="handidness", curie=None,
+                      model_uri=NMDC.handidness, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.handidness])
+
+slots.heat_deliv_loc = Slot(uri="str(uriorcurie)", name="heat_deliv_loc", curie=None,
+                      model_uri=NMDC.heat_deliv_loc, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.heat_deliv_loc])
+
+slots.heat_system_deliv_meth = Slot(uri="str(uriorcurie)", name="heat_system_deliv_meth", curie=None,
+                      model_uri=NMDC.heat_system_deliv_meth, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.heat_system_deliv_meth])
+
+slots.heat_system_id = Slot(uri="str(uriorcurie)", name="heat_system_id", curie=None,
+                      model_uri=NMDC.heat_system_id, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.heat_system_id])
+
+slots.height_carper_fiber = Slot(uri="str(uriorcurie)", name="height_carper_fiber", curie=None,
+                      model_uri=NMDC.height_carper_fiber, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.height_carper_fiber])
+
+slots.inside_lux = Slot(uri="str(uriorcurie)", name="inside_lux", curie=None,
+                      model_uri=NMDC.inside_lux, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.inside_lux])
+
+slots.int_wall_cond = Slot(uri="str(uriorcurie)", name="int_wall_cond", curie=None,
+                      model_uri=NMDC.int_wall_cond, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.int_wall_cond])
+
+slots.last_clean = Slot(uri="str(uriorcurie)", name="last_clean", curie=None,
+                      model_uri=NMDC.last_clean, domain=None, range=Optional[Union[dict, TimestampValue]], mappings = [MIXS.last_clean])
+
+slots.max_occup = Slot(uri="str(uriorcurie)", name="max_occup", curie=None,
+                      model_uri=NMDC.max_occup, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.max_occup])
+
+slots.mech_struc = Slot(uri="str(uriorcurie)", name="mech_struc", curie=None,
+                      model_uri=NMDC.mech_struc, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.mech_struc])
+
+slots.number_plants = Slot(uri="str(uriorcurie)", name="number_plants", curie=None,
+                      model_uri=NMDC.number_plants, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.number_plants])
+
+slots.number_pets = Slot(uri="str(uriorcurie)", name="number_pets", curie=None,
+                      model_uri=NMDC.number_pets, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.number_pets])
+
+slots.number_resident = Slot(uri="str(uriorcurie)", name="number_resident", curie=None,
+                      model_uri=NMDC.number_resident, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.number_resident])
+
+slots.occup_document = Slot(uri="str(uriorcurie)", name="occup_document", curie=None,
+                      model_uri=NMDC.occup_document, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.occup_document])
+
+slots.ext_wall_orient = Slot(uri="str(uriorcurie)", name="ext_wall_orient", curie=None,
+                      model_uri=NMDC.ext_wall_orient, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.ext_wall_orient])
+
+slots.ext_window_orient = Slot(uri="str(uriorcurie)", name="ext_window_orient", curie=None,
+                      model_uri=NMDC.ext_window_orient, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.ext_window_orient])
+
+slots.rel_humidity_out = Slot(uri="str(uriorcurie)", name="rel_humidity_out", curie=None,
+                      model_uri=NMDC.rel_humidity_out, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.rel_humidity_out])
+
+slots.pres_animal = Slot(uri="str(uriorcurie)", name="pres_animal", curie=None,
+                      model_uri=NMDC.pres_animal, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.pres_animal])
+
+slots.quad_pos = Slot(uri="str(uriorcurie)", name="quad_pos", curie=None,
+                      model_uri=NMDC.quad_pos, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.quad_pos])
+
+slots.rel_samp_loc = Slot(uri="str(uriorcurie)", name="rel_samp_loc", curie=None,
+                      model_uri=NMDC.rel_samp_loc, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.rel_samp_loc])
+
+slots.room_air_exch_rate = Slot(uri="str(uriorcurie)", name="room_air_exch_rate", curie=None,
+                      model_uri=NMDC.room_air_exch_rate, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.room_air_exch_rate])
+
+slots.room_architec_element = Slot(uri="str(uriorcurie)", name="room_architec_element", curie=None,
+                      model_uri=NMDC.room_architec_element, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.room_architec_element])
+
+slots.room_condt = Slot(uri="str(uriorcurie)", name="room_condt", curie=None,
+                      model_uri=NMDC.room_condt, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.room_condt])
+
+slots.room_count = Slot(uri="str(uriorcurie)", name="room_count", curie=None,
+                      model_uri=NMDC.room_count, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.room_count])
+
+slots.room_dim = Slot(uri="str(uriorcurie)", name="room_dim", curie=None,
+                      model_uri=NMDC.room_dim, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.room_dim])
+
+slots.room_door_dist = Slot(uri="str(uriorcurie)", name="room_door_dist", curie=None,
+                      model_uri=NMDC.room_door_dist, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.room_door_dist])
+
+slots.room_loc = Slot(uri="str(uriorcurie)", name="room_loc", curie=None,
+                      model_uri=NMDC.room_loc, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.room_loc])
+
+slots.room_moist_damage_hist = Slot(uri="str(uriorcurie)", name="room_moist_damage_hist", curie=None,
+                      model_uri=NMDC.room_moist_damage_hist, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.room_moist_damage_hist])
+
+slots.room_net_area = Slot(uri="str(uriorcurie)", name="room_net_area", curie=None,
+                      model_uri=NMDC.room_net_area, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.room_net_area])
+
+slots.room_occup = Slot(uri="str(uriorcurie)", name="room_occup", curie=None,
+                      model_uri=NMDC.room_occup, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.room_occup])
+
+slots.room_samp_pos = Slot(uri="str(uriorcurie)", name="room_samp_pos", curie=None,
+                      model_uri=NMDC.room_samp_pos, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.room_samp_pos])
+
+slots.room_type = Slot(uri="str(uriorcurie)", name="room_type", curie=None,
+                      model_uri=NMDC.room_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.room_type])
+
+slots.room_vol = Slot(uri="str(uriorcurie)", name="room_vol", curie=None,
+                      model_uri=NMDC.room_vol, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.room_vol])
+
+slots.room_window_count = Slot(uri="str(uriorcurie)", name="room_window_count", curie=None,
+                      model_uri=NMDC.room_window_count, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.room_window_count])
+
+slots.room_connected = Slot(uri="str(uriorcurie)", name="room_connected", curie=None,
+                      model_uri=NMDC.room_connected, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.room_connected])
+
+slots.room_hallway = Slot(uri="str(uriorcurie)", name="room_hallway", curie=None,
+                      model_uri=NMDC.room_hallway, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.room_hallway])
+
+slots.room_door_share = Slot(uri="str(uriorcurie)", name="room_door_share", curie=None,
+                      model_uri=NMDC.room_door_share, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.room_door_share])
+
+slots.room_wall_share = Slot(uri="str(uriorcurie)", name="room_wall_share", curie=None,
+                      model_uri=NMDC.room_wall_share, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.room_wall_share])
+
+slots.samp_weather = Slot(uri="str(uriorcurie)", name="samp_weather", curie=None,
+                      model_uri=NMDC.samp_weather, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.samp_weather])
+
+slots.samp_floor = Slot(uri="str(uriorcurie)", name="samp_floor", curie=None,
+                      model_uri=NMDC.samp_floor, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.samp_floor])
+
+slots.samp_room_id = Slot(uri="str(uriorcurie)", name="samp_room_id", curie=None,
+                      model_uri=NMDC.samp_room_id, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.samp_room_id])
+
+slots.samp_time_out = Slot(uri="str(uriorcurie)", name="samp_time_out", curie=None,
+                      model_uri=NMDC.samp_time_out, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.samp_time_out])
+
+slots.season = Slot(uri="str(uriorcurie)", name="season", curie=None,
+                      model_uri=NMDC.season, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.season])
+
+slots.season_use = Slot(uri="str(uriorcurie)", name="season_use", curie=None,
+                      model_uri=NMDC.season_use, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.season_use])
+
+slots.shading_device_cond = Slot(uri="str(uriorcurie)", name="shading_device_cond", curie=None,
+                      model_uri=NMDC.shading_device_cond, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.shading_device_cond])
+
+slots.shading_device_loc = Slot(uri="str(uriorcurie)", name="shading_device_loc", curie=None,
+                      model_uri=NMDC.shading_device_loc, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.shading_device_loc])
+
+slots.shading_device_mat = Slot(uri="str(uriorcurie)", name="shading_device_mat", curie=None,
+                      model_uri=NMDC.shading_device_mat, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.shading_device_mat])
+
+slots.shading_device_water_mold = Slot(uri="str(uriorcurie)", name="shading_device_water_mold", curie=None,
+                      model_uri=NMDC.shading_device_water_mold, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.shading_device_water_mold])
+
+slots.shading_device_type = Slot(uri="str(uriorcurie)", name="shading_device_type", curie=None,
+                      model_uri=NMDC.shading_device_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.shading_device_type])
+
+slots.specific_humidity = Slot(uri="str(uriorcurie)", name="specific_humidity", curie=None,
+                      model_uri=NMDC.specific_humidity, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.specific_humidity])
+
+slots.specific = Slot(uri="str(uriorcurie)", name="specific", curie=None,
+                      model_uri=NMDC.specific, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.specific])
+
+slots.temp_out = Slot(uri="str(uriorcurie)", name="temp_out", curie=None,
+                      model_uri=NMDC.temp_out, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.temp_out])
+
+slots.train_line = Slot(uri="str(uriorcurie)", name="train_line", curie=None,
+                      model_uri=NMDC.train_line, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.train_line])
+
+slots.train_stat_loc = Slot(uri="str(uriorcurie)", name="train_stat_loc", curie=None,
+                      model_uri=NMDC.train_stat_loc, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.train_stat_loc])
+
+slots.train_stop_loc = Slot(uri="str(uriorcurie)", name="train_stop_loc", curie=None,
+                      model_uri=NMDC.train_stop_loc, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.train_stop_loc])
+
+slots.vis_media = Slot(uri="str(uriorcurie)", name="vis_media", curie=None,
+                      model_uri=NMDC.vis_media, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.vis_media])
+
+slots.wall_area = Slot(uri="str(uriorcurie)", name="wall_area", curie=None,
+                      model_uri=NMDC.wall_area, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.wall_area])
+
+slots.wall_const_type = Slot(uri="str(uriorcurie)", name="wall_const_type", curie=None,
+                      model_uri=NMDC.wall_const_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.wall_const_type])
+
+slots.wall_finish_mat = Slot(uri="str(uriorcurie)", name="wall_finish_mat", curie=None,
+                      model_uri=NMDC.wall_finish_mat, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.wall_finish_mat])
+
+slots.wall_height = Slot(uri="str(uriorcurie)", name="wall_height", curie=None,
+                      model_uri=NMDC.wall_height, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.wall_height])
+
+slots.wall_loc = Slot(uri="str(uriorcurie)", name="wall_loc", curie=None,
+                      model_uri=NMDC.wall_loc, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.wall_loc])
+
+slots.wall_water_mold = Slot(uri="str(uriorcurie)", name="wall_water_mold", curie=None,
+                      model_uri=NMDC.wall_water_mold, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.wall_water_mold])
+
+slots.wall_surf_treatment = Slot(uri="str(uriorcurie)", name="wall_surf_treatment", curie=None,
+                      model_uri=NMDC.wall_surf_treatment, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.wall_surf_treatment])
+
+slots.wall_texture = Slot(uri="str(uriorcurie)", name="wall_texture", curie=None,
+                      model_uri=NMDC.wall_texture, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.wall_texture])
+
+slots.wall_thermal_mass = Slot(uri="str(uriorcurie)", name="wall_thermal_mass", curie=None,
+                      model_uri=NMDC.wall_thermal_mass, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.wall_thermal_mass])
+
+slots.water_feat_size = Slot(uri="str(uriorcurie)", name="water_feat_size", curie=None,
+                      model_uri=NMDC.water_feat_size, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.water_feat_size])
+
+slots.water_feat_type = Slot(uri="str(uriorcurie)", name="water_feat_type", curie=None,
+                      model_uri=NMDC.water_feat_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.water_feat_type])
+
+slots.weekday = Slot(uri="str(uriorcurie)", name="weekday", curie=None,
+                      model_uri=NMDC.weekday, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.weekday])
+
+slots.window_size = Slot(uri="str(uriorcurie)", name="window_size", curie=None,
+                      model_uri=NMDC.window_size, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.window_size])
+
+slots.window_cond = Slot(uri="str(uriorcurie)", name="window_cond", curie=None,
+                      model_uri=NMDC.window_cond, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.window_cond])
+
+slots.window_cover = Slot(uri="str(uriorcurie)", name="window_cover", curie=None,
+                      model_uri=NMDC.window_cover, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.window_cover])
+
+slots.window_horiz_pos = Slot(uri="str(uriorcurie)", name="window_horiz_pos", curie=None,
+                      model_uri=NMDC.window_horiz_pos, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.window_horiz_pos])
+
+slots.window_loc = Slot(uri="str(uriorcurie)", name="window_loc", curie=None,
+                      model_uri=NMDC.window_loc, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.window_loc])
+
+slots.window_mat = Slot(uri="str(uriorcurie)", name="window_mat", curie=None,
+                      model_uri=NMDC.window_mat, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.window_mat])
+
+slots.window_open_freq = Slot(uri="str(uriorcurie)", name="window_open_freq", curie=None,
+                      model_uri=NMDC.window_open_freq, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.window_open_freq])
+
+slots.window_water_mold = Slot(uri="str(uriorcurie)", name="window_water_mold", curie=None,
+                      model_uri=NMDC.window_water_mold, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.window_water_mold])
+
+slots.window_status = Slot(uri="str(uriorcurie)", name="window_status", curie=None,
+                      model_uri=NMDC.window_status, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.window_status])
+
+slots.window_type = Slot(uri="str(uriorcurie)", name="window_type", curie=None,
+                      model_uri=NMDC.window_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.window_type])
+
+slots.window_vert_pos = Slot(uri="str(uriorcurie)", name="window_vert_pos", curie=None,
+                      model_uri=NMDC.window_vert_pos, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.window_vert_pos])
+
+slots.ances_data = Slot(uri="str(uriorcurie)", name="ances_data", curie=None,
+                      model_uri=NMDC.ances_data, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.ances_data])
+
+slots.biol_stat = Slot(uri="str(uriorcurie)", name="biol_stat", curie=None,
+                      model_uri=NMDC.biol_stat, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.biol_stat])
+
+slots.genetic_mod = Slot(uri="str(uriorcurie)", name="genetic_mod", curie=None,
+                      model_uri=NMDC.genetic_mod, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.genetic_mod])
+
+slots.host_common_name = Slot(uri="str(uriorcurie)", name="host_common_name", curie=None,
+                      model_uri=NMDC.host_common_name, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.host_common_name])
+
+slots.samp_capt_status = Slot(uri="str(uriorcurie)", name="samp_capt_status", curie=None,
+                      model_uri=NMDC.samp_capt_status, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.samp_capt_status])
+
+slots.samp_dis_stage = Slot(uri="str(uriorcurie)", name="samp_dis_stage", curie=None,
+                      model_uri=NMDC.samp_dis_stage, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.samp_dis_stage])
+
+slots.host_taxid = Slot(uri="str(uriorcurie)", name="host_taxid", curie=None,
+                      model_uri=NMDC.host_taxid, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.host_taxid])
+
+slots.host_subject_id = Slot(uri="str(uriorcurie)", name="host_subject_id", curie=None,
+                      model_uri=NMDC.host_subject_id, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.host_subject_id])
+
+slots.host_age = Slot(uri="str(uriorcurie)", name="host_age", curie=None,
+                      model_uri=NMDC.host_age, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.host_age])
+
+slots.host_life_stage = Slot(uri="str(uriorcurie)", name="host_life_stage", curie=None,
+                      model_uri=NMDC.host_life_stage, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.host_life_stage])
+
+slots.host_sex = Slot(uri="str(uriorcurie)", name="host_sex", curie=None,
+                      model_uri=NMDC.host_sex, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.host_sex])
+
+slots.host_disease_stat = Slot(uri="str(uriorcurie)", name="host_disease_stat", curie=None,
+                      model_uri=NMDC.host_disease_stat, domain=None, range=Optional[Union[dict, ControlledTermValue]], mappings = [MIXS.host_disease_stat])
+
+slots.host_body_habitat = Slot(uri="str(uriorcurie)", name="host_body_habitat", curie=None,
+                      model_uri=NMDC.host_body_habitat, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.host_body_habitat])
+
+slots.host_body_site = Slot(uri="str(uriorcurie)", name="host_body_site", curie=None,
+                      model_uri=NMDC.host_body_site, domain=None, range=Optional[Union[dict, ControlledTermValue]], mappings = [MIXS.host_body_site])
+
+slots.host_body_product = Slot(uri="str(uriorcurie)", name="host_body_product", curie=None,
+                      model_uri=NMDC.host_body_product, domain=None, range=Optional[Union[dict, ControlledTermValue]], mappings = [MIXS.host_body_product])
+
+slots.host_tot_mass = Slot(uri="str(uriorcurie)", name="host_tot_mass", curie=None,
+                      model_uri=NMDC.host_tot_mass, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.host_tot_mass])
+
+slots.host_height = Slot(uri="str(uriorcurie)", name="host_height", curie=None,
+                      model_uri=NMDC.host_height, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.host_height])
+
+slots.host_length = Slot(uri="str(uriorcurie)", name="host_length", curie=None,
+                      model_uri=NMDC.host_length, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.host_length])
+
+slots.host_diet = Slot(uri="str(uriorcurie)", name="host_diet", curie=None,
+                      model_uri=NMDC.host_diet, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.host_diet])
+
+slots.host_last_meal = Slot(uri="str(uriorcurie)", name="host_last_meal", curie=None,
+                      model_uri=NMDC.host_last_meal, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.host_last_meal])
+
+slots.host_growth_cond = Slot(uri="str(uriorcurie)", name="host_growth_cond", curie=None,
+                      model_uri=NMDC.host_growth_cond, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.host_growth_cond])
+
+slots.host_substrate = Slot(uri="str(uriorcurie)", name="host_substrate", curie=None,
+                      model_uri=NMDC.host_substrate, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.host_substrate])
+
+slots.host_family_relationship = Slot(uri="str(uriorcurie)", name="host_family_relationship", curie=None,
+                      model_uri=NMDC.host_family_relationship, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.host_family_relationship])
+
+slots.host_infra_specific_name = Slot(uri="str(uriorcurie)", name="host_infra_specific_name", curie=None,
+                      model_uri=NMDC.host_infra_specific_name, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.host_infra_specific_name])
+
+slots.host_infra_specific_rank = Slot(uri="str(uriorcurie)", name="host_infra_specific_rank", curie=None,
+                      model_uri=NMDC.host_infra_specific_rank, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.host_infra_specific_rank])
+
+slots.host_genotype = Slot(uri="str(uriorcurie)", name="host_genotype", curie=None,
+                      model_uri=NMDC.host_genotype, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.host_genotype])
+
+slots.host_phenotype = Slot(uri="str(uriorcurie)", name="host_phenotype", curie=None,
+                      model_uri=NMDC.host_phenotype, domain=None, range=Optional[Union[dict, ControlledTermValue]], mappings = [MIXS.host_phenotype])
+
+slots.host_body_temp = Slot(uri="str(uriorcurie)", name="host_body_temp", curie=None,
+                      model_uri=NMDC.host_body_temp, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.host_body_temp])
+
+slots.host_dry_mass = Slot(uri="str(uriorcurie)", name="host_dry_mass", curie=None,
+                      model_uri=NMDC.host_dry_mass, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.host_dry_mass])
+
+slots.host_blood_press_diast = Slot(uri="str(uriorcurie)", name="host_blood_press_diast", curie=None,
+                      model_uri=NMDC.host_blood_press_diast, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.host_blood_press_diast])
+
+slots.host_blood_press_syst = Slot(uri="str(uriorcurie)", name="host_blood_press_syst", curie=None,
+                      model_uri=NMDC.host_blood_press_syst, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.host_blood_press_syst])
+
+slots.host_color = Slot(uri="str(uriorcurie)", name="host_color", curie=None,
+                      model_uri=NMDC.host_color, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.host_color])
+
+slots.host_shape = Slot(uri="str(uriorcurie)", name="host_shape", curie=None,
+                      model_uri=NMDC.host_shape, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.host_shape])
+
+slots.gravidity = Slot(uri="str(uriorcurie)", name="gravidity", curie=None,
+                      model_uri=NMDC.gravidity, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.gravidity])
+
+slots.ihmc_medication_code = Slot(uri="str(uriorcurie)", name="ihmc_medication_code", curie=None,
+                      model_uri=NMDC.ihmc_medication_code, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.ihmc_medication_code])
+
+slots.smoker = Slot(uri="str(uriorcurie)", name="smoker", curie=None,
+                      model_uri=NMDC.smoker, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.smoker])
+
+slots.host_hiv_stat = Slot(uri="str(uriorcurie)", name="host_hiv_stat", curie=None,
+                      model_uri=NMDC.host_hiv_stat, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.host_hiv_stat])
+
+slots.drug_usage = Slot(uri="str(uriorcurie)", name="drug_usage", curie=None,
+                      model_uri=NMDC.drug_usage, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.drug_usage])
+
+slots.host_body_mass_index = Slot(uri="str(uriorcurie)", name="host_body_mass_index", curie=None,
+                      model_uri=NMDC.host_body_mass_index, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.host_body_mass_index])
+
+slots.diet_last_six_month = Slot(uri="str(uriorcurie)", name="diet_last_six_month", curie=None,
+                      model_uri=NMDC.diet_last_six_month, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.diet_last_six_month])
+
+slots.weight_loss_3_month = Slot(uri="str(uriorcurie)", name="weight_loss_3_month", curie=None,
+                      model_uri=NMDC.weight_loss_3_month, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.weight_loss_3_month])
+
+slots.ihmc_ethnicity = Slot(uri="str(uriorcurie)", name="ihmc_ethnicity", curie=None,
+                      model_uri=NMDC.ihmc_ethnicity, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.ihmc_ethnicity])
+
+slots.host_occupation = Slot(uri="str(uriorcurie)", name="host_occupation", curie=None,
+                      model_uri=NMDC.host_occupation, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.host_occupation])
+
+slots.pet_farm_animal = Slot(uri="str(uriorcurie)", name="pet_farm_animal", curie=None,
+                      model_uri=NMDC.pet_farm_animal, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.pet_farm_animal])
+
+slots.travel_out_six_month = Slot(uri="str(uriorcurie)", name="travel_out_six_month", curie=None,
+                      model_uri=NMDC.travel_out_six_month, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.travel_out_six_month])
+
+slots.twin_sibling = Slot(uri="str(uriorcurie)", name="twin_sibling", curie=None,
+                      model_uri=NMDC.twin_sibling, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.twin_sibling])
+
+slots.medic_hist_perform = Slot(uri="str(uriorcurie)", name="medic_hist_perform", curie=None,
+                      model_uri=NMDC.medic_hist_perform, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.medic_hist_perform])
+
+slots.study_complt_stat = Slot(uri="str(uriorcurie)", name="study_complt_stat", curie=None,
+                      model_uri=NMDC.study_complt_stat, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.study_complt_stat])
+
+slots.pulmonary_disord = Slot(uri="str(uriorcurie)", name="pulmonary_disord", curie=None,
+                      model_uri=NMDC.pulmonary_disord, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.pulmonary_disord])
+
+slots.nose_throat_disord = Slot(uri="str(uriorcurie)", name="nose_throat_disord", curie=None,
+                      model_uri=NMDC.nose_throat_disord, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.nose_throat_disord])
+
+slots.blood_blood_disord = Slot(uri="str(uriorcurie)", name="blood_blood_disord", curie=None,
+                      model_uri=NMDC.blood_blood_disord, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.blood_blood_disord])
+
+slots.host_pulse = Slot(uri="str(uriorcurie)", name="host_pulse", curie=None,
+                      model_uri=NMDC.host_pulse, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.host_pulse])
+
+slots.gestation_state = Slot(uri="str(uriorcurie)", name="gestation_state", curie=None,
+                      model_uri=NMDC.gestation_state, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.gestation_state])
+
+slots.maternal_health_stat = Slot(uri="str(uriorcurie)", name="maternal_health_stat", curie=None,
+                      model_uri=NMDC.maternal_health_stat, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.maternal_health_stat])
+
+slots.foetal_health_stat = Slot(uri="str(uriorcurie)", name="foetal_health_stat", curie=None,
+                      model_uri=NMDC.foetal_health_stat, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.foetal_health_stat])
+
+slots.amniotic_fluid_color = Slot(uri="str(uriorcurie)", name="amniotic_fluid_color", curie=None,
+                      model_uri=NMDC.amniotic_fluid_color, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.amniotic_fluid_color])
+
+slots.kidney_disord = Slot(uri="str(uriorcurie)", name="kidney_disord", curie=None,
+                      model_uri=NMDC.kidney_disord, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.kidney_disord])
+
+slots.urogenit_tract_disor = Slot(uri="str(uriorcurie)", name="urogenit_tract_disor", curie=None,
+                      model_uri=NMDC.urogenit_tract_disor, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.urogenit_tract_disor])
+
+slots.urine_collect_meth = Slot(uri="str(uriorcurie)", name="urine_collect_meth", curie=None,
+                      model_uri=NMDC.urine_collect_meth, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.urine_collect_meth])
+
+slots.gastrointest_disord = Slot(uri="str(uriorcurie)", name="gastrointest_disord", curie=None,
+                      model_uri=NMDC.gastrointest_disord, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.gastrointest_disord])
+
+slots.liver_disord = Slot(uri="str(uriorcurie)", name="liver_disord", curie=None,
+                      model_uri=NMDC.liver_disord, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.liver_disord])
+
+slots.special_diet = Slot(uri="str(uriorcurie)", name="special_diet", curie=None,
+                      model_uri=NMDC.special_diet, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.special_diet])
+
+slots.nose_mouth_teeth_throat_disord = Slot(uri="str(uriorcurie)", name="nose_mouth_teeth_throat_disord", curie=None,
+                      model_uri=NMDC.nose_mouth_teeth_throat_disord, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.nose_mouth_teeth_throat_disord])
+
+slots.time_last_toothbrush = Slot(uri="str(uriorcurie)", name="time_last_toothbrush", curie=None,
+                      model_uri=NMDC.time_last_toothbrush, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.time_last_toothbrush])
+
+slots.dermatology_disord = Slot(uri="str(uriorcurie)", name="dermatology_disord", curie=None,
+                      model_uri=NMDC.dermatology_disord, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.dermatology_disord])
+
+slots.time_since_last_wash = Slot(uri="str(uriorcurie)", name="time_since_last_wash", curie=None,
+                      model_uri=NMDC.time_since_last_wash, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.time_since_last_wash])
+
+slots.dominant_hand = Slot(uri="str(uriorcurie)", name="dominant_hand", curie=None,
+                      model_uri=NMDC.dominant_hand, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.dominant_hand])
+
+slots.menarche = Slot(uri="str(uriorcurie)", name="menarche", curie=None,
+                      model_uri=NMDC.menarche, domain=None, range=Optional[Union[dict, TimestampValue]], mappings = [MIXS.menarche])
+
+slots.sexual_act = Slot(uri="str(uriorcurie)", name="sexual_act", curie=None,
+                      model_uri=NMDC.sexual_act, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.sexual_act])
+
+slots.pregnancy = Slot(uri="str(uriorcurie)", name="pregnancy", curie=None,
+                      model_uri=NMDC.pregnancy, domain=None, range=Optional[Union[dict, TimestampValue]], mappings = [MIXS.pregnancy])
+
+slots.douche = Slot(uri="str(uriorcurie)", name="douche", curie=None,
+                      model_uri=NMDC.douche, domain=None, range=Optional[Union[dict, TimestampValue]], mappings = [MIXS.douche])
+
+slots.birth_control = Slot(uri="str(uriorcurie)", name="birth_control", curie=None,
+                      model_uri=NMDC.birth_control, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.birth_control])
+
+slots.menopause = Slot(uri="str(uriorcurie)", name="menopause", curie=None,
+                      model_uri=NMDC.menopause, domain=None, range=Optional[Union[dict, TimestampValue]], mappings = [MIXS.menopause])
+
+slots.hrt = Slot(uri="str(uriorcurie)", name="hrt", curie=None,
+                      model_uri=NMDC.hrt, domain=None, range=Optional[Union[dict, TimestampValue]], mappings = [MIXS.hrt])
+
+slots.hysterectomy = Slot(uri="str(uriorcurie)", name="hysterectomy", curie=None,
+                      model_uri=NMDC.hysterectomy, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.hysterectomy])
+
+slots.gynecologic_disord = Slot(uri="str(uriorcurie)", name="gynecologic_disord", curie=None,
+                      model_uri=NMDC.gynecologic_disord, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.gynecologic_disord])
+
+slots.urogenit_disord = Slot(uri="str(uriorcurie)", name="urogenit_disord", curie=None,
+                      model_uri=NMDC.urogenit_disord, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.urogenit_disord])
+
+slots.hcr = Slot(uri="str(uriorcurie)", name="hcr", curie=None,
+                      model_uri=NMDC.hcr, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.hcr])
+
+slots.hc_produced = Slot(uri="str(uriorcurie)", name="hc_produced", curie=None,
+                      model_uri=NMDC.hc_produced, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.hc_produced])
+
+slots.basin = Slot(uri="str(uriorcurie)", name="basin", curie=None,
+                      model_uri=NMDC.basin, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.basin])
+
+slots.field = Slot(uri="str(uriorcurie)", name="field", curie=None,
+                      model_uri=NMDC.field, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.field])
+
+slots.reservoir = Slot(uri="str(uriorcurie)", name="reservoir", curie=None,
+                      model_uri=NMDC.reservoir, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.reservoir])
+
+slots.hcr_temp = Slot(uri="str(uriorcurie)", name="hcr_temp", curie=None,
+                      model_uri=NMDC.hcr_temp, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.hcr_temp])
+
+slots.tvdss_of_hcr_temp = Slot(uri="str(uriorcurie)", name="tvdss_of_hcr_temp", curie=None,
+                      model_uri=NMDC.tvdss_of_hcr_temp, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.tvdss_of_hcr_temp])
+
+slots.hcr_pressure = Slot(uri="str(uriorcurie)", name="hcr_pressure", curie=None,
+                      model_uri=NMDC.hcr_pressure, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.hcr_pressure])
+
+slots.tvdss_of_hcr_pressure = Slot(uri="str(uriorcurie)", name="tvdss_of_hcr_pressure", curie=None,
+                      model_uri=NMDC.tvdss_of_hcr_pressure, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.tvdss_of_hcr_pressure])
+
+slots.permeability = Slot(uri="str(uriorcurie)", name="permeability", curie=None,
+                      model_uri=NMDC.permeability, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.permeability])
+
+slots.porosity = Slot(uri="str(uriorcurie)", name="porosity", curie=None,
+                      model_uri=NMDC.porosity, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.porosity])
+
+slots.lithology = Slot(uri="str(uriorcurie)", name="lithology", curie=None,
+                      model_uri=NMDC.lithology, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.lithology])
+
+slots.depos_env = Slot(uri="str(uriorcurie)", name="depos_env", curie=None,
+                      model_uri=NMDC.depos_env, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.depos_env])
+
+slots.hcr_geol_age = Slot(uri="str(uriorcurie)", name="hcr_geol_age", curie=None,
+                      model_uri=NMDC.hcr_geol_age, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.hcr_geol_age])
+
+slots.owc_tvdss = Slot(uri="str(uriorcurie)", name="owc_tvdss", curie=None,
+                      model_uri=NMDC.owc_tvdss, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.owc_tvdss])
+
+slots.hcr_fw_salinity = Slot(uri="str(uriorcurie)", name="hcr_fw_salinity", curie=None,
+                      model_uri=NMDC.hcr_fw_salinity, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.hcr_fw_salinity])
+
+slots.sulfate_fw = Slot(uri="str(uriorcurie)", name="sulfate_fw", curie=None,
+                      model_uri=NMDC.sulfate_fw, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.sulfate_fw])
+
+slots.vfa_fw = Slot(uri="str(uriorcurie)", name="vfa_fw", curie=None,
+                      model_uri=NMDC.vfa_fw, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.vfa_fw])
+
+slots.sr_kerog_type = Slot(uri="str(uriorcurie)", name="sr_kerog_type", curie=None,
+                      model_uri=NMDC.sr_kerog_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.sr_kerog_type])
+
+slots.sr_lithology = Slot(uri="str(uriorcurie)", name="sr_lithology", curie=None,
+                      model_uri=NMDC.sr_lithology, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.sr_lithology])
+
+slots.sr_dep_env = Slot(uri="str(uriorcurie)", name="sr_dep_env", curie=None,
+                      model_uri=NMDC.sr_dep_env, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.sr_dep_env])
+
+slots.sr_geol_age = Slot(uri="str(uriorcurie)", name="sr_geol_age", curie=None,
+                      model_uri=NMDC.sr_geol_age, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.sr_geol_age])
+
+slots.samp_well_name = Slot(uri="str(uriorcurie)", name="samp_well_name", curie=None,
+                      model_uri=NMDC.samp_well_name, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.samp_well_name])
+
+slots.win = Slot(uri="str(uriorcurie)", name="win", curie=None,
+                      model_uri=NMDC.win, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.win])
+
+slots.samp_type = Slot(uri="str(uriorcurie)", name="samp_type", curie=None,
+                      model_uri=NMDC.samp_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.samp_type])
+
+slots.samp_subtype = Slot(uri="str(uriorcurie)", name="samp_subtype", curie=None,
+                      model_uri=NMDC.samp_subtype, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.samp_subtype])
+
+slots.pressure = Slot(uri="str(uriorcurie)", name="pressure", curie=None,
+                      model_uri=NMDC.pressure, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.pressure])
+
+slots.samp_tvdss = Slot(uri="str(uriorcurie)", name="samp_tvdss", curie=None,
+                      model_uri=NMDC.samp_tvdss, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.samp_tvdss])
+
+slots.samp_md = Slot(uri="str(uriorcurie)", name="samp_md", curie=None,
+                      model_uri=NMDC.samp_md, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.samp_md])
+
+slots.samp_transport_cond = Slot(uri="str(uriorcurie)", name="samp_transport_cond", curie=None,
+                      model_uri=NMDC.samp_transport_cond, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.samp_transport_cond])
+
+slots.organism_count_qpcr_info = Slot(uri="str(uriorcurie)", name="organism_count_qpcr_info", curie=None,
+                      model_uri=NMDC.organism_count_qpcr_info, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.organism_count_qpcr_info])
+
+slots.ph = Slot(uri="str(uriorcurie)", name="ph", curie=None,
+                      model_uri=NMDC.ph, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.ph])
+
+slots.alkalinity = Slot(uri="str(uriorcurie)", name="alkalinity", curie=None,
+                      model_uri=NMDC.alkalinity, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.alkalinity])
+
+slots.alkalinity_method = Slot(uri="str(uriorcurie)", name="alkalinity_method", curie=None,
+                      model_uri=NMDC.alkalinity_method, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.alkalinity_method])
+
+slots.sulfate = Slot(uri="str(uriorcurie)", name="sulfate", curie=None,
+                      model_uri=NMDC.sulfate, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.sulfate])
+
+slots.sulfide = Slot(uri="str(uriorcurie)", name="sulfide", curie=None,
+                      model_uri=NMDC.sulfide, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.sulfide])
+
+slots.tot_sulfur = Slot(uri="str(uriorcurie)", name="tot_sulfur", curie=None,
+                      model_uri=NMDC.tot_sulfur, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.tot_sulfur])
+
+slots.nitrate = Slot(uri="str(uriorcurie)", name="nitrate", curie=None,
+                      model_uri=NMDC.nitrate, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.nitrate])
+
+slots.nitrite = Slot(uri="str(uriorcurie)", name="nitrite", curie=None,
+                      model_uri=NMDC.nitrite, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.nitrite])
+
+slots.ammonium = Slot(uri="str(uriorcurie)", name="ammonium", curie=None,
+                      model_uri=NMDC.ammonium, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.ammonium])
+
+slots.tot_nitro = Slot(uri="str(uriorcurie)", name="tot_nitro", curie=None,
+                      model_uri=NMDC.tot_nitro, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.tot_nitro])
+
+slots.diss_iron = Slot(uri="str(uriorcurie)", name="diss_iron", curie=None,
+                      model_uri=NMDC.diss_iron, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.diss_iron])
+
+slots.sodium = Slot(uri="str(uriorcurie)", name="sodium", curie=None,
+                      model_uri=NMDC.sodium, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.sodium])
+
+slots.chloride = Slot(uri="str(uriorcurie)", name="chloride", curie=None,
+                      model_uri=NMDC.chloride, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.chloride])
+
+slots.potassium = Slot(uri="str(uriorcurie)", name="potassium", curie=None,
+                      model_uri=NMDC.potassium, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.potassium])
+
+slots.magnesium = Slot(uri="str(uriorcurie)", name="magnesium", curie=None,
+                      model_uri=NMDC.magnesium, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.magnesium])
+
+slots.calcium = Slot(uri="str(uriorcurie)", name="calcium", curie=None,
+                      model_uri=NMDC.calcium, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.calcium])
+
+slots.tot_iron = Slot(uri="str(uriorcurie)", name="tot_iron", curie=None,
+                      model_uri=NMDC.tot_iron, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.tot_iron])
+
+slots.diss_org_carb = Slot(uri="str(uriorcurie)", name="diss_org_carb", curie=None,
+                      model_uri=NMDC.diss_org_carb, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.diss_org_carb])
+
+slots.diss_inorg_carb = Slot(uri="str(uriorcurie)", name="diss_inorg_carb", curie=None,
+                      model_uri=NMDC.diss_inorg_carb, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.diss_inorg_carb])
+
+slots.diss_inorg_phosp = Slot(uri="str(uriorcurie)", name="diss_inorg_phosp", curie=None,
+                      model_uri=NMDC.diss_inorg_phosp, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.diss_inorg_phosp])
+
+slots.tot_phosp = Slot(uri="str(uriorcurie)", name="tot_phosp", curie=None,
+                      model_uri=NMDC.tot_phosp, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.tot_phosp])
+
+slots.suspend_solids = Slot(uri="str(uriorcurie)", name="suspend_solids", curie=None,
+                      model_uri=NMDC.suspend_solids, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.suspend_solids])
+
+slots.density = Slot(uri="str(uriorcurie)", name="density", curie=None,
+                      model_uri=NMDC.density, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.density])
+
+slots.diss_carb_dioxide = Slot(uri="str(uriorcurie)", name="diss_carb_dioxide", curie=None,
+                      model_uri=NMDC.diss_carb_dioxide, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.diss_carb_dioxide])
+
+slots.diss_oxygen_fluid = Slot(uri="str(uriorcurie)", name="diss_oxygen_fluid", curie=None,
+                      model_uri=NMDC.diss_oxygen_fluid, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.diss_oxygen_fluid])
+
+slots.vfa = Slot(uri="str(uriorcurie)", name="vfa", curie=None,
+                      model_uri=NMDC.vfa, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.vfa])
+
+slots.benzene = Slot(uri="str(uriorcurie)", name="benzene", curie=None,
+                      model_uri=NMDC.benzene, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.benzene])
+
+slots.toluene = Slot(uri="str(uriorcurie)", name="toluene", curie=None,
+                      model_uri=NMDC.toluene, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.toluene])
+
+slots.ethylbenzene = Slot(uri="str(uriorcurie)", name="ethylbenzene", curie=None,
+                      model_uri=NMDC.ethylbenzene, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.ethylbenzene])
+
+slots.xylene = Slot(uri="str(uriorcurie)", name="xylene", curie=None,
+                      model_uri=NMDC.xylene, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.xylene])
+
+slots.api = Slot(uri="str(uriorcurie)", name="api", curie=None,
+                      model_uri=NMDC.api, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.api])
+
+slots.tan = Slot(uri="str(uriorcurie)", name="tan", curie=None,
+                      model_uri=NMDC.tan, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.tan])
+
+slots.viscosity = Slot(uri="str(uriorcurie)", name="viscosity", curie=None,
+                      model_uri=NMDC.viscosity, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.viscosity])
+
+slots.pour_point = Slot(uri="str(uriorcurie)", name="pour_point", curie=None,
+                      model_uri=NMDC.pour_point, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.pour_point])
+
+slots.saturates_pc = Slot(uri="str(uriorcurie)", name="saturates_pc", curie=None,
+                      model_uri=NMDC.saturates_pc, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.saturates_pc])
+
+slots.aromatics_pc = Slot(uri="str(uriorcurie)", name="aromatics_pc", curie=None,
+                      model_uri=NMDC.aromatics_pc, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.aromatics_pc])
+
+slots.resins_pc = Slot(uri="str(uriorcurie)", name="resins_pc", curie=None,
+                      model_uri=NMDC.resins_pc, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.resins_pc])
+
+slots.asphaltenes_pc = Slot(uri="str(uriorcurie)", name="asphaltenes_pc", curie=None,
+                      model_uri=NMDC.asphaltenes_pc, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.asphaltenes_pc])
+
+slots.additional_info = Slot(uri="str(uriorcurie)", name="additional_info", curie=None,
+                      model_uri=NMDC.additional_info, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.additional_info])
+
+slots.prod_start_date = Slot(uri="str(uriorcurie)", name="prod_start_date", curie=None,
+                      model_uri=NMDC.prod_start_date, domain=None, range=Optional[Union[dict, TimestampValue]], mappings = [MIXS.prod_start_date])
+
+slots.prod_rate = Slot(uri="str(uriorcurie)", name="prod_rate", curie=None,
+                      model_uri=NMDC.prod_rate, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.prod_rate])
+
+slots.water_production_rate = Slot(uri="str(uriorcurie)", name="water_production_rate", curie=None,
+                      model_uri=NMDC.water_production_rate, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.water_production_rate])
+
+slots.water_cut = Slot(uri="str(uriorcurie)", name="water_cut", curie=None,
+                      model_uri=NMDC.water_cut, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.water_cut])
+
+slots.iwf = Slot(uri="str(uriorcurie)", name="iwf", curie=None,
+                      model_uri=NMDC.iwf, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.iwf])
+
+slots.add_recov_method = Slot(uri="str(uriorcurie)", name="add_recov_method", curie=None,
+                      model_uri=NMDC.add_recov_method, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.add_recov_method])
+
+slots.iw_bt_date_well = Slot(uri="str(uriorcurie)", name="iw_bt_date_well", curie=None,
+                      model_uri=NMDC.iw_bt_date_well, domain=None, range=Optional[Union[dict, TimestampValue]], mappings = [MIXS.iw_bt_date_well])
+
+slots.biocide = Slot(uri="str(uriorcurie)", name="biocide", curie=None,
+                      model_uri=NMDC.biocide, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.biocide])
+
+slots.biocide_admin_method = Slot(uri="str(uriorcurie)", name="biocide_admin_method", curie=None,
+                      model_uri=NMDC.biocide_admin_method, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.biocide_admin_method])
+
+slots.chem_treatment = Slot(uri="str(uriorcurie)", name="chem_treatment", curie=None,
+                      model_uri=NMDC.chem_treatment, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.chem_treatment])
+
+slots.chem_treatment_method = Slot(uri="str(uriorcurie)", name="chem_treatment_method", curie=None,
+                      model_uri=NMDC.chem_treatment_method, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.chem_treatment_method])
+
+slots.samp_loc_corr_rate = Slot(uri="str(uriorcurie)", name="samp_loc_corr_rate", curie=None,
+                      model_uri=NMDC.samp_loc_corr_rate, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.samp_loc_corr_rate])
+
+slots.samp_collection_point = Slot(uri="str(uriorcurie)", name="samp_collection_point", curie=None,
+                      model_uri=NMDC.samp_collection_point, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.samp_collection_point])
+
+slots.samp_preserv = Slot(uri="str(uriorcurie)", name="samp_preserv", curie=None,
+                      model_uri=NMDC.samp_preserv, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.samp_preserv])
+
+slots.alkyl_diethers = Slot(uri="str(uriorcurie)", name="alkyl_diethers", curie=None,
+                      model_uri=NMDC.alkyl_diethers, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.alkyl_diethers])
+
+slots.aminopept_act = Slot(uri="str(uriorcurie)", name="aminopept_act", curie=None,
+                      model_uri=NMDC.aminopept_act, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.aminopept_act])
+
+slots.bacteria_carb_prod = Slot(uri="str(uriorcurie)", name="bacteria_carb_prod", curie=None,
+                      model_uri=NMDC.bacteria_carb_prod, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.bacteria_carb_prod])
+
+slots.biomass = Slot(uri="str(uriorcurie)", name="biomass", curie=None,
+                      model_uri=NMDC.biomass, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.biomass])
+
+slots.bishomohopanol = Slot(uri="str(uriorcurie)", name="bishomohopanol", curie=None,
+                      model_uri=NMDC.bishomohopanol, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.bishomohopanol])
+
+slots.bromide = Slot(uri="str(uriorcurie)", name="bromide", curie=None,
+                      model_uri=NMDC.bromide, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.bromide])
+
+slots.carb_nitro_ratio = Slot(uri="str(uriorcurie)", name="carb_nitro_ratio", curie=None,
+                      model_uri=NMDC.carb_nitro_ratio, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.carb_nitro_ratio])
+
+slots.chlorophyll = Slot(uri="str(uriorcurie)", name="chlorophyll", curie=None,
+                      model_uri=NMDC.chlorophyll, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.chlorophyll])
+
+slots.diether_lipids = Slot(uri="str(uriorcurie)", name="diether_lipids", curie=None,
+                      model_uri=NMDC.diether_lipids, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.diether_lipids])
+
+slots.diss_hydrogen = Slot(uri="str(uriorcurie)", name="diss_hydrogen", curie=None,
+                      model_uri=NMDC.diss_hydrogen, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.diss_hydrogen])
+
+slots.diss_org_nitro = Slot(uri="str(uriorcurie)", name="diss_org_nitro", curie=None,
+                      model_uri=NMDC.diss_org_nitro, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.diss_org_nitro])
+
+slots.diss_oxygen = Slot(uri="str(uriorcurie)", name="diss_oxygen", curie=None,
+                      model_uri=NMDC.diss_oxygen, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.diss_oxygen])
+
+slots.glucosidase_act = Slot(uri="str(uriorcurie)", name="glucosidase_act", curie=None,
+                      model_uri=NMDC.glucosidase_act, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.glucosidase_act])
+
+slots.mean_frict_vel = Slot(uri="str(uriorcurie)", name="mean_frict_vel", curie=None,
+                      model_uri=NMDC.mean_frict_vel, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.mean_frict_vel])
+
+slots.mean_peak_frict_vel = Slot(uri="str(uriorcurie)", name="mean_peak_frict_vel", curie=None,
+                      model_uri=NMDC.mean_peak_frict_vel, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.mean_peak_frict_vel])
+
+slots.n_alkanes = Slot(uri="str(uriorcurie)", name="n_alkanes", curie=None,
+                      model_uri=NMDC.n_alkanes, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.n_alkanes])
+
+slots.nitro = Slot(uri="str(uriorcurie)", name="nitro", curie=None,
+                      model_uri=NMDC.nitro, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.nitro])
+
+slots.org_carb = Slot(uri="str(uriorcurie)", name="org_carb", curie=None,
+                      model_uri=NMDC.org_carb, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.org_carb])
+
+slots.org_matter = Slot(uri="str(uriorcurie)", name="org_matter", curie=None,
+                      model_uri=NMDC.org_matter, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.org_matter])
+
+slots.org_nitro = Slot(uri="str(uriorcurie)", name="org_nitro", curie=None,
+                      model_uri=NMDC.org_nitro, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.org_nitro])
+
+slots.part_org_carb = Slot(uri="str(uriorcurie)", name="part_org_carb", curie=None,
+                      model_uri=NMDC.part_org_carb, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.part_org_carb])
+
+slots.petroleum_hydrocarb = Slot(uri="str(uriorcurie)", name="petroleum_hydrocarb", curie=None,
+                      model_uri=NMDC.petroleum_hydrocarb, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.petroleum_hydrocarb])
+
+slots.phaeopigments = Slot(uri="str(uriorcurie)", name="phaeopigments", curie=None,
+                      model_uri=NMDC.phaeopigments, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.phaeopigments])
+
+slots.phosphate = Slot(uri="str(uriorcurie)", name="phosphate", curie=None,
+                      model_uri=NMDC.phosphate, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.phosphate])
+
+slots.phosplipid_fatt_acid = Slot(uri="str(uriorcurie)", name="phosplipid_fatt_acid", curie=None,
+                      model_uri=NMDC.phosplipid_fatt_acid, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.phosplipid_fatt_acid])
+
+slots.redox_potential = Slot(uri="str(uriorcurie)", name="redox_potential", curie=None,
+                      model_uri=NMDC.redox_potential, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.redox_potential])
+
+slots.salinity = Slot(uri="str(uriorcurie)", name="salinity", curie=None,
+                      model_uri=NMDC.salinity, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.salinity])
+
+slots.silicate = Slot(uri="str(uriorcurie)", name="silicate", curie=None,
+                      model_uri=NMDC.silicate, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.silicate])
+
+slots.tot_carb = Slot(uri="str(uriorcurie)", name="tot_carb", curie=None,
+                      model_uri=NMDC.tot_carb, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.tot_carb])
+
+slots.tot_nitro_content = Slot(uri="str(uriorcurie)", name="tot_nitro_content", curie=None,
+                      model_uri=NMDC.tot_nitro_content, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.tot_nitro_content])
+
+slots.tot_org_carb = Slot(uri="str(uriorcurie)", name="tot_org_carb", curie=None,
+                      model_uri=NMDC.tot_org_carb, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.tot_org_carb])
+
+slots.turbidity = Slot(uri="str(uriorcurie)", name="turbidity", curie=None,
+                      model_uri=NMDC.turbidity, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.turbidity])
+
+slots.water_content = Slot(uri="str(uriorcurie)", name="water_content", curie=None,
+                      model_uri=NMDC.water_content, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.water_content])
+
+slots.water_current = Slot(uri="str(uriorcurie)", name="water_current", curie=None,
+                      model_uri=NMDC.water_current, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.water_current])
+
+slots.air_temp_regm = Slot(uri="str(uriorcurie)", name="air_temp_regm", curie=None,
+                      model_uri=NMDC.air_temp_regm, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.air_temp_regm])
+
+slots.antibiotic_regm = Slot(uri="str(uriorcurie)", name="antibiotic_regm", curie=None,
+                      model_uri=NMDC.antibiotic_regm, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.antibiotic_regm])
+
+slots.biotic_regm = Slot(uri="str(uriorcurie)", name="biotic_regm", curie=None,
+                      model_uri=NMDC.biotic_regm, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.biotic_regm])
+
+slots.chem_mutagen = Slot(uri="str(uriorcurie)", name="chem_mutagen", curie=None,
+                      model_uri=NMDC.chem_mutagen, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.chem_mutagen])
+
+slots.climate_environment = Slot(uri="str(uriorcurie)", name="climate_environment", curie=None,
+                      model_uri=NMDC.climate_environment, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.climate_environment])
+
+slots.cult_root_med = Slot(uri="str(uriorcurie)", name="cult_root_med", curie=None,
+                      model_uri=NMDC.cult_root_med, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.cult_root_med])
+
+slots.fertilizer_regm = Slot(uri="str(uriorcurie)", name="fertilizer_regm", curie=None,
+                      model_uri=NMDC.fertilizer_regm, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.fertilizer_regm])
+
+slots.fungicide_regm = Slot(uri="str(uriorcurie)", name="fungicide_regm", curie=None,
+                      model_uri=NMDC.fungicide_regm, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.fungicide_regm])
+
+slots.gaseous_environment = Slot(uri="str(uriorcurie)", name="gaseous_environment", curie=None,
+                      model_uri=NMDC.gaseous_environment, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.gaseous_environment])
+
+slots.gravity = Slot(uri="str(uriorcurie)", name="gravity", curie=None,
+                      model_uri=NMDC.gravity, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.gravity])
+
+slots.growth_facil = Slot(uri="str(uriorcurie)", name="growth_facil", curie=None,
+                      model_uri=NMDC.growth_facil, domain=None, range=Optional[Union[dict, ControlledTermValue]], mappings = [MIXS.growth_facil])
+
+slots.growth_habit = Slot(uri="str(uriorcurie)", name="growth_habit", curie=None,
+                      model_uri=NMDC.growth_habit, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.growth_habit])
+
+slots.growth_hormone_regm = Slot(uri="str(uriorcurie)", name="growth_hormone_regm", curie=None,
+                      model_uri=NMDC.growth_hormone_regm, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.growth_hormone_regm])
+
+slots.herbicide_regm = Slot(uri="str(uriorcurie)", name="herbicide_regm", curie=None,
+                      model_uri=NMDC.herbicide_regm, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.herbicide_regm])
+
+slots.host_wet_mass = Slot(uri="str(uriorcurie)", name="host_wet_mass", curie=None,
+                      model_uri=NMDC.host_wet_mass, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.host_wet_mass])
+
+slots.humidity_regm = Slot(uri="str(uriorcurie)", name="humidity_regm", curie=None,
+                      model_uri=NMDC.humidity_regm, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.humidity_regm])
+
+slots.light_regm = Slot(uri="str(uriorcurie)", name="light_regm", curie=None,
+                      model_uri=NMDC.light_regm, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.light_regm])
+
+slots.mechanical_damage = Slot(uri="str(uriorcurie)", name="mechanical_damage", curie=None,
+                      model_uri=NMDC.mechanical_damage, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.mechanical_damage])
+
+slots.mineral_nutr_regm = Slot(uri="str(uriorcurie)", name="mineral_nutr_regm", curie=None,
+                      model_uri=NMDC.mineral_nutr_regm, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.mineral_nutr_regm])
+
+slots.non_mineral_nutr_regm = Slot(uri="str(uriorcurie)", name="non_mineral_nutr_regm", curie=None,
+                      model_uri=NMDC.non_mineral_nutr_regm, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.non_mineral_nutr_regm])
+
+slots.ph_regm = Slot(uri="str(uriorcurie)", name="ph_regm", curie=None,
+                      model_uri=NMDC.ph_regm, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.ph_regm])
+
+slots.pesticide_regm = Slot(uri="str(uriorcurie)", name="pesticide_regm", curie=None,
+                      model_uri=NMDC.pesticide_regm, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.pesticide_regm])
+
+slots.plant_growth_med = Slot(uri="str(uriorcurie)", name="plant_growth_med", curie=None,
+                      model_uri=NMDC.plant_growth_med, domain=None, range=Optional[Union[dict, ControlledTermValue]], mappings = [MIXS.plant_growth_med])
+
+slots.plant_product = Slot(uri="str(uriorcurie)", name="plant_product", curie=None,
+                      model_uri=NMDC.plant_product, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.plant_product])
+
+slots.plant_sex = Slot(uri="str(uriorcurie)", name="plant_sex", curie=None,
+                      model_uri=NMDC.plant_sex, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.plant_sex])
+
+slots.plant_struc = Slot(uri="str(uriorcurie)", name="plant_struc", curie=None,
+                      model_uri=NMDC.plant_struc, domain=None, range=Optional[Union[dict, ControlledTermValue]], mappings = [MIXS.plant_struc])
+
+slots.radiation_regm = Slot(uri="str(uriorcurie)", name="radiation_regm", curie=None,
+                      model_uri=NMDC.radiation_regm, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.radiation_regm])
+
+slots.rainfall_regm = Slot(uri="str(uriorcurie)", name="rainfall_regm", curie=None,
+                      model_uri=NMDC.rainfall_regm, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.rainfall_regm])
+
+slots.root_cond = Slot(uri="str(uriorcurie)", name="root_cond", curie=None,
+                      model_uri=NMDC.root_cond, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.root_cond])
+
+slots.root_med_carbon = Slot(uri="str(uriorcurie)", name="root_med_carbon", curie=None,
+                      model_uri=NMDC.root_med_carbon, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.root_med_carbon])
+
+slots.root_med_macronutr = Slot(uri="str(uriorcurie)", name="root_med_macronutr", curie=None,
+                      model_uri=NMDC.root_med_macronutr, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.root_med_macronutr])
+
+slots.root_med_micronutr = Slot(uri="str(uriorcurie)", name="root_med_micronutr", curie=None,
+                      model_uri=NMDC.root_med_micronutr, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.root_med_micronutr])
+
+slots.root_med_suppl = Slot(uri="str(uriorcurie)", name="root_med_suppl", curie=None,
+                      model_uri=NMDC.root_med_suppl, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.root_med_suppl])
+
+slots.root_med_ph = Slot(uri="str(uriorcurie)", name="root_med_ph", curie=None,
+                      model_uri=NMDC.root_med_ph, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.root_med_ph])
+
+slots.root_med_regl = Slot(uri="str(uriorcurie)", name="root_med_regl", curie=None,
+                      model_uri=NMDC.root_med_regl, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.root_med_regl])
+
+slots.root_med_solid = Slot(uri="str(uriorcurie)", name="root_med_solid", curie=None,
+                      model_uri=NMDC.root_med_solid, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.root_med_solid])
+
+slots.salt_regm = Slot(uri="str(uriorcurie)", name="salt_regm", curie=None,
+                      model_uri=NMDC.salt_regm, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.salt_regm])
+
+slots.season_environment = Slot(uri="str(uriorcurie)", name="season_environment", curie=None,
+                      model_uri=NMDC.season_environment, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.season_environment])
+
+slots.standing_water_regm = Slot(uri="str(uriorcurie)", name="standing_water_regm", curie=None,
+                      model_uri=NMDC.standing_water_regm, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.standing_water_regm])
+
+slots.tiss_cult_growth_med = Slot(uri="str(uriorcurie)", name="tiss_cult_growth_med", curie=None,
+                      model_uri=NMDC.tiss_cult_growth_med, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.tiss_cult_growth_med])
+
+slots.water_temp_regm = Slot(uri="str(uriorcurie)", name="water_temp_regm", curie=None,
+                      model_uri=NMDC.water_temp_regm, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.water_temp_regm])
+
+slots.watering_regm = Slot(uri="str(uriorcurie)", name="watering_regm", curie=None,
+                      model_uri=NMDC.watering_regm, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.watering_regm])
+
+slots.particle_class = Slot(uri="str(uriorcurie)", name="particle_class", curie=None,
+                      model_uri=NMDC.particle_class, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.particle_class])
+
+slots.sediment_type = Slot(uri="str(uriorcurie)", name="sediment_type", curie=None,
+                      model_uri=NMDC.sediment_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.sediment_type])
+
+slots.tidal_stage = Slot(uri="str(uriorcurie)", name="tidal_stage", curie=None,
+                      model_uri=NMDC.tidal_stage, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.tidal_stage])
+
+slots.tot_depth_water_col = Slot(uri="str(uriorcurie)", name="tot_depth_water_col", curie=None,
+                      model_uri=NMDC.tot_depth_water_col, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.tot_depth_water_col])
+
+slots.cur_land_use = Slot(uri="str(uriorcurie)", name="cur_land_use", curie=None,
+                      model_uri=NMDC.cur_land_use, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.cur_land_use])
+
+slots.cur_vegetation = Slot(uri="str(uriorcurie)", name="cur_vegetation", curie=None,
+                      model_uri=NMDC.cur_vegetation, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.cur_vegetation])
+
+slots.cur_vegetation_meth = Slot(uri="str(uriorcurie)", name="cur_vegetation_meth", curie=None,
+                      model_uri=NMDC.cur_vegetation_meth, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.cur_vegetation_meth])
+
+slots.previous_land_use = Slot(uri="str(uriorcurie)", name="previous_land_use", curie=None,
+                      model_uri=NMDC.previous_land_use, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.previous_land_use])
+
+slots.previous_land_use_meth = Slot(uri="str(uriorcurie)", name="previous_land_use_meth", curie=None,
+                      model_uri=NMDC.previous_land_use_meth, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.previous_land_use_meth])
+
+slots.crop_rotation = Slot(uri="str(uriorcurie)", name="crop_rotation", curie=None,
+                      model_uri=NMDC.crop_rotation, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.crop_rotation])
+
+slots.agrochem_addition = Slot(uri="str(uriorcurie)", name="agrochem_addition", curie=None,
+                      model_uri=NMDC.agrochem_addition, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.agrochem_addition])
+
+slots.tillage = Slot(uri="str(uriorcurie)", name="tillage", curie=None,
+                      model_uri=NMDC.tillage, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.tillage])
+
+slots.fire = Slot(uri="str(uriorcurie)", name="fire", curie=None,
+                      model_uri=NMDC.fire, domain=None, range=Optional[Union[dict, TimestampValue]], mappings = [MIXS.fire])
+
+slots.flooding = Slot(uri="str(uriorcurie)", name="flooding", curie=None,
+                      model_uri=NMDC.flooding, domain=None, range=Optional[Union[dict, TimestampValue]], mappings = [MIXS.flooding])
+
+slots.extreme_event = Slot(uri="str(uriorcurie)", name="extreme_event", curie=None,
+                      model_uri=NMDC.extreme_event, domain=None, range=Optional[Union[dict, TimestampValue]], mappings = [MIXS.extreme_event])
+
+slots.horizon = Slot(uri="str(uriorcurie)", name="horizon", curie=None,
+                      model_uri=NMDC.horizon, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.horizon])
+
+slots.horizon_meth = Slot(uri="str(uriorcurie)", name="horizon_meth", curie=None,
+                      model_uri=NMDC.horizon_meth, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.horizon_meth])
+
+slots.sieving = Slot(uri="str(uriorcurie)", name="sieving", curie=None,
+                      model_uri=NMDC.sieving, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.sieving])
+
+slots.water_content_soil_meth = Slot(uri="str(uriorcurie)", name="water_content_soil_meth", curie=None,
+                      model_uri=NMDC.water_content_soil_meth, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.water_content_soil_meth])
+
+slots.pool_dna_extracts = Slot(uri="str(uriorcurie)", name="pool_dna_extracts", curie=None,
+                      model_uri=NMDC.pool_dna_extracts, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.pool_dna_extracts])
+
+slots.store_cond = Slot(uri="str(uriorcurie)", name="store_cond", curie=None,
+                      model_uri=NMDC.store_cond, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.store_cond])
+
+slots.link_climate_info = Slot(uri="str(uriorcurie)", name="link_climate_info", curie=None,
+                      model_uri=NMDC.link_climate_info, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.link_climate_info])
+
+slots.annual_temp = Slot(uri="str(uriorcurie)", name="annual_temp", curie=None,
+                      model_uri=NMDC.annual_temp, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.annual_temp])
+
+slots.season_temp = Slot(uri="str(uriorcurie)", name="season_temp", curie=None,
+                      model_uri=NMDC.season_temp, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.season_temp])
+
+slots.annual_precpt = Slot(uri="str(uriorcurie)", name="annual_precpt", curie=None,
+                      model_uri=NMDC.annual_precpt, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.annual_precpt])
+
+slots.season_precpt = Slot(uri="str(uriorcurie)", name="season_precpt", curie=None,
+                      model_uri=NMDC.season_precpt, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.season_precpt])
+
+slots.link_class_info = Slot(uri="str(uriorcurie)", name="link_class_info", curie=None,
+                      model_uri=NMDC.link_class_info, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.link_class_info])
+
+slots.fao_class = Slot(uri="str(uriorcurie)", name="fao_class", curie=None,
+                      model_uri=NMDC.fao_class, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.fao_class])
+
+slots.local_class = Slot(uri="str(uriorcurie)", name="local_class", curie=None,
+                      model_uri=NMDC.local_class, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.local_class])
+
+slots.local_class_meth = Slot(uri="str(uriorcurie)", name="local_class_meth", curie=None,
+                      model_uri=NMDC.local_class_meth, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.local_class_meth])
+
+slots.soil_type = Slot(uri="str(uriorcurie)", name="soil_type", curie=None,
+                      model_uri=NMDC.soil_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.soil_type])
+
+slots.soil_type_meth = Slot(uri="str(uriorcurie)", name="soil_type_meth", curie=None,
+                      model_uri=NMDC.soil_type_meth, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.soil_type_meth])
+
+slots.slope_gradient = Slot(uri="str(uriorcurie)", name="slope_gradient", curie=None,
+                      model_uri=NMDC.slope_gradient, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.slope_gradient])
+
+slots.slope_aspect = Slot(uri="str(uriorcurie)", name="slope_aspect", curie=None,
+                      model_uri=NMDC.slope_aspect, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.slope_aspect])
+
+slots.profile_position = Slot(uri="str(uriorcurie)", name="profile_position", curie=None,
+                      model_uri=NMDC.profile_position, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.profile_position])
+
+slots.drainage_class = Slot(uri="str(uriorcurie)", name="drainage_class", curie=None,
+                      model_uri=NMDC.drainage_class, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.drainage_class])
+
+slots.texture = Slot(uri="str(uriorcurie)", name="texture", curie=None,
+                      model_uri=NMDC.texture, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.texture])
+
+slots.texture_meth = Slot(uri="str(uriorcurie)", name="texture_meth", curie=None,
+                      model_uri=NMDC.texture_meth, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.texture_meth])
+
+slots.ph_meth = Slot(uri="str(uriorcurie)", name="ph_meth", curie=None,
+                      model_uri=NMDC.ph_meth, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.ph_meth])
+
+slots.tot_org_c_meth = Slot(uri="str(uriorcurie)", name="tot_org_c_meth", curie=None,
+                      model_uri=NMDC.tot_org_c_meth, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.tot_org_c_meth])
+
+slots.tot_nitro_content_meth = Slot(uri="str(uriorcurie)", name="tot_nitro_content_meth", curie=None,
+                      model_uri=NMDC.tot_nitro_content_meth, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.tot_nitro_content_meth])
+
+slots.microbial_biomass = Slot(uri="str(uriorcurie)", name="microbial_biomass", curie=None,
+                      model_uri=NMDC.microbial_biomass, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.microbial_biomass])
+
+slots.microbial_biomass_meth = Slot(uri="str(uriorcurie)", name="microbial_biomass_meth", curie=None,
+                      model_uri=NMDC.microbial_biomass_meth, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.microbial_biomass_meth])
+
+slots.link_addit_analys = Slot(uri="str(uriorcurie)", name="link_addit_analys", curie=None,
+                      model_uri=NMDC.link_addit_analys, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.link_addit_analys])
+
+slots.extreme_salinity = Slot(uri="str(uriorcurie)", name="extreme_salinity", curie=None,
+                      model_uri=NMDC.extreme_salinity, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.extreme_salinity])
+
+slots.salinity_meth = Slot(uri="str(uriorcurie)", name="salinity_meth", curie=None,
+                      model_uri=NMDC.salinity_meth, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.salinity_meth])
+
+slots.heavy_metals = Slot(uri="str(uriorcurie)", name="heavy_metals", curie=None,
+                      model_uri=NMDC.heavy_metals, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.heavy_metals])
+
+slots.heavy_metals_meth = Slot(uri="str(uriorcurie)", name="heavy_metals_meth", curie=None,
+                      model_uri=NMDC.heavy_metals_meth, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.heavy_metals_meth])
+
+slots.al_sat = Slot(uri="str(uriorcurie)", name="al_sat", curie=None,
+                      model_uri=NMDC.al_sat, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.al_sat])
+
+slots.al_sat_meth = Slot(uri="str(uriorcurie)", name="al_sat_meth", curie=None,
+                      model_uri=NMDC.al_sat_meth, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.al_sat_meth])
+
+slots.biochem_oxygen_dem = Slot(uri="str(uriorcurie)", name="biochem_oxygen_dem", curie=None,
+                      model_uri=NMDC.biochem_oxygen_dem, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.biochem_oxygen_dem])
+
+slots.chem_oxygen_dem = Slot(uri="str(uriorcurie)", name="chem_oxygen_dem", curie=None,
+                      model_uri=NMDC.chem_oxygen_dem, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.chem_oxygen_dem])
+
+slots.efficiency_percent = Slot(uri="str(uriorcurie)", name="efficiency_percent", curie=None,
+                      model_uri=NMDC.efficiency_percent, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.efficiency_percent])
+
+slots.emulsions = Slot(uri="str(uriorcurie)", name="emulsions", curie=None,
+                      model_uri=NMDC.emulsions, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.emulsions])
+
+slots.gaseous_substances = Slot(uri="str(uriorcurie)", name="gaseous_substances", curie=None,
+                      model_uri=NMDC.gaseous_substances, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.gaseous_substances])
+
+slots.indust_eff_percent = Slot(uri="str(uriorcurie)", name="indust_eff_percent", curie=None,
+                      model_uri=NMDC.indust_eff_percent, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.indust_eff_percent])
+
+slots.inorg_particles = Slot(uri="str(uriorcurie)", name="inorg_particles", curie=None,
+                      model_uri=NMDC.inorg_particles, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.inorg_particles])
+
+slots.org_particles = Slot(uri="str(uriorcurie)", name="org_particles", curie=None,
+                      model_uri=NMDC.org_particles, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.org_particles])
+
+slots.pre_treatment = Slot(uri="str(uriorcurie)", name="pre_treatment", curie=None,
+                      model_uri=NMDC.pre_treatment, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.pre_treatment])
+
+slots.primary_treatment = Slot(uri="str(uriorcurie)", name="primary_treatment", curie=None,
+                      model_uri=NMDC.primary_treatment, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.primary_treatment])
+
+slots.reactor_type = Slot(uri="str(uriorcurie)", name="reactor_type", curie=None,
+                      model_uri=NMDC.reactor_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.reactor_type])
+
+slots.secondary_treatment = Slot(uri="str(uriorcurie)", name="secondary_treatment", curie=None,
+                      model_uri=NMDC.secondary_treatment, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.secondary_treatment])
+
+slots.sewage_type = Slot(uri="str(uriorcurie)", name="sewage_type", curie=None,
+                      model_uri=NMDC.sewage_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.sewage_type])
+
+slots.sludge_retent_time = Slot(uri="str(uriorcurie)", name="sludge_retent_time", curie=None,
+                      model_uri=NMDC.sludge_retent_time, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.sludge_retent_time])
+
+slots.soluble_inorg_mat = Slot(uri="str(uriorcurie)", name="soluble_inorg_mat", curie=None,
+                      model_uri=NMDC.soluble_inorg_mat, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.soluble_inorg_mat])
+
+slots.soluble_org_mat = Slot(uri="str(uriorcurie)", name="soluble_org_mat", curie=None,
+                      model_uri=NMDC.soluble_org_mat, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.soluble_org_mat])
+
+slots.tertiary_treatment = Slot(uri="str(uriorcurie)", name="tertiary_treatment", curie=None,
+                      model_uri=NMDC.tertiary_treatment, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.tertiary_treatment])
+
+slots.tot_phosphate = Slot(uri="str(uriorcurie)", name="tot_phosphate", curie=None,
+                      model_uri=NMDC.tot_phosphate, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.tot_phosphate])
+
+slots.wastewater_type = Slot(uri="str(uriorcurie)", name="wastewater_type", curie=None,
+                      model_uri=NMDC.wastewater_type, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.wastewater_type])
+
+slots.atmospheric_data = Slot(uri="str(uriorcurie)", name="atmospheric_data", curie=None,
+                      model_uri=NMDC.atmospheric_data, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.atmospheric_data])
+
+slots.bac_prod = Slot(uri="str(uriorcurie)", name="bac_prod", curie=None,
+                      model_uri=NMDC.bac_prod, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.bac_prod])
+
+slots.bac_resp = Slot(uri="str(uriorcurie)", name="bac_resp", curie=None,
+                      model_uri=NMDC.bac_resp, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.bac_resp])
+
+slots.conduc = Slot(uri="str(uriorcurie)", name="conduc", curie=None,
+                      model_uri=NMDC.conduc, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.conduc])
+
+slots.diss_inorg_nitro = Slot(uri="str(uriorcurie)", name="diss_inorg_nitro", curie=None,
+                      model_uri=NMDC.diss_inorg_nitro, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.diss_inorg_nitro])
+
+slots.down_par = Slot(uri="str(uriorcurie)", name="down_par", curie=None,
+                      model_uri=NMDC.down_par, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.down_par])
+
+slots.fluor = Slot(uri="str(uriorcurie)", name="fluor", curie=None,
+                      model_uri=NMDC.fluor, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.fluor])
+
+slots.light_intensity = Slot(uri="str(uriorcurie)", name="light_intensity", curie=None,
+                      model_uri=NMDC.light_intensity, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.light_intensity])
+
+slots.part_org_nitro = Slot(uri="str(uriorcurie)", name="part_org_nitro", curie=None,
+                      model_uri=NMDC.part_org_nitro, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.part_org_nitro])
+
+slots.photon_flux = Slot(uri="str(uriorcurie)", name="photon_flux", curie=None,
+                      model_uri=NMDC.photon_flux, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.photon_flux])
+
+slots.primary_prod = Slot(uri="str(uriorcurie)", name="primary_prod", curie=None,
+                      model_uri=NMDC.primary_prod, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.primary_prod])
+
+slots.size_frac_low = Slot(uri="str(uriorcurie)", name="size_frac_low", curie=None,
+                      model_uri=NMDC.size_frac_low, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.size_frac_low])
+
+slots.size_frac_up = Slot(uri="str(uriorcurie)", name="size_frac_up", curie=None,
+                      model_uri=NMDC.size_frac_up, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.size_frac_up])
+
+slots.soluble_react_phosp = Slot(uri="str(uriorcurie)", name="soluble_react_phosp", curie=None,
+                      model_uri=NMDC.soluble_react_phosp, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.soluble_react_phosp])
+
+slots.suspend_part_matter = Slot(uri="str(uriorcurie)", name="suspend_part_matter", curie=None,
+                      model_uri=NMDC.suspend_part_matter, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.suspend_part_matter])
+
+slots.tot_diss_nitro = Slot(uri="str(uriorcurie)", name="tot_diss_nitro", curie=None,
+                      model_uri=NMDC.tot_diss_nitro, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.tot_diss_nitro])
+
+slots.tot_inorg_nitro = Slot(uri="str(uriorcurie)", name="tot_inorg_nitro", curie=None,
+                      model_uri=NMDC.tot_inorg_nitro, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.tot_inorg_nitro])
+
+slots.tot_part_carb = Slot(uri="str(uriorcurie)", name="tot_part_carb", curie=None,
+                      model_uri=NMDC.tot_part_carb, domain=None, range=Optional[Union[dict, QuantityValue]], mappings = [MIXS.tot_part_carb])
 
 slots.biosample_id = Slot(uri=NMDC.id, name="biosample_id", curie=NMDC.curie('id'),
                       model_uri=NMDC.biosample_id, domain=Biosample, range=Optional[str])
