@@ -1,0 +1,231 @@
+classes:
+  
+  study:
+    id_key: gold_id
+    name_key: study_name
+    description_key: description
+    schema_source: "../../schema/nmdc.yaml"
+    data_sources:
+      - study_table
+      - contact_table
+      - proposals_table
+            
+  omics processing:
+    id_key: dataset_id
+    name_key: dataset_name
+    description_key: dataset_type_description
+    part_of_key: gold_study_id
+    has_output_key: data_object_id
+    schema_source: "../../schema/nmdc.yaml"
+    data_sources:
+      - project_table
+      - study_table
+      - contact_table
+
+        
+  biosample:
+    id_key: gold_id
+    name_key: biosample_name
+    description_key: description
+    part_of_key: project_gold_id
+    schema_slots: "../../schema/nmdc.yaml"
+    data_sources:
+      - biosample_table
+      - project_table
+      - project_biosample_table
+
+        
+  data object:
+    id_key: data_object_id
+    name_key: data_object_name
+    schema_source: "../../schema/nmdc.yaml"
+    data_sources:
+      - ficus_faa_table
+      - ficus_fna_table
+      - ficus_fasq_table
+    
+
+data_sources:
+
+  study_table:
+    data_source:
+      file_name: "export.sql/STUDY_DATA_TABLE.dsv"
+      file_type: tsv
+      file_archive_name: "../src/data/nmdc-version2.zip"
+    data_slots:
+      - contact_id
+    filters:
+      - field: gold_id
+        values:
+          - Gs0110115
+          - Gs0110132
+          - Gs0112340
+          - Gs0114675
+          - Gs0128849
+          - Gs0130354
+          - Gs0114298
+          - Gs0114663
+          - Gs0120351
+          - Gs0134277
+          - Gs0133461
+          - Gs0135152
+          - Gs0135149
+      - {field: active, values: ['Yes']}
+              
+  contact_table:
+    data_source:
+      file_name: "export.sql/CONTACT_DATA_TABLE.dsv"
+      file_type: tsv
+      file_archive_name: "../src/data/nmdc-version2.zip"
+    data_slots:
+      - name
+      - contact_id
+    rename_slots:
+      - old_name: name
+        new_name: principal_investigator_name
+      - old_name: dataset_file_size_bytes
+        new_name: file_size          
+            
+  proposals_table:
+    data_source:
+      file_name: "../src/data/JGI-EMSL-FICUS-proposals.fnl.tsv"
+      file_type: tsv
+      data_slots:
+        - doi
+        - gold_study
+
+  project_table:
+    data_source:
+      file_name: "export.sql/PROJECT_DATA_TABLE.dsv"
+      file_type: tsv
+      file_archive_name: "../src/data/nmdc-version2.zip"
+    data_slots:
+      - master_study_id
+      - pi_id
+    filters:              
+      - {field: active, values: ['Yes']}
+
+  project_biosample_table:
+    data_source:
+      file_name: "export.sql/PROJECT_BIOSAMPLE_DATA_TABLE.dsv"
+      file_type: tsv
+      file_archive_name: "../src/data/nmdc-version2.zip"
+    data_slots:
+      - biosample_id
+      - project_id
+        
+  # biosample_table:
+  #   data_source:
+  #     file_name: "export.sql/BIOSAMPLE_DATA_TABLE.dsv" 
+  #     file_type: tsv
+  #     file_archive_name: "../src/data/nmdc-version2.zip"
+  #   filters:              
+  #     - {field: active, values: ['Yes']}
+  #   subset_cols:
+  #     - gold_id
+  #     - biosample_name
+  #     - description
+  #     - add_date
+  #     - mod_date
+  #     - ecosystem_path_id
+  #     - ecosystem
+  #     - ecosystem_category
+  #     - ecosystem_type
+  #     - ecosystem_subtype
+  #     - specific_ecosystem
+  #     - habitat
+  #     - location
+  #     - community
+  #     - ncbi_taxonomy_name
+  #     - geographic_location
+  #     - latitude
+  #     - longitude
+  #     - sample_collection_site
+  #     - identifier
+  #     - sample_collection_year
+  #     - sample_collection_month
+  #     - sample_collection_day
+  #     - sample_collection_hour
+  #     - sample_collection_minute
+  #     - host_name
+  #     - depth
+  #     - subsurface_depth
+  #     - altitude
+  #     - temperature_range
+  #     - proport_woa_temperature
+  #     - biogas_temperature
+  #     - growth_temperature
+  #     - soil_annual_season_temp
+  #     - water_samp_store_temp
+  #     - biogas_retention_time
+  #     - salinity
+  #     - pressure
+  #     - ph
+  #     - chlorophyll_concentration
+  #     - nitrate_concentration
+  #     - oxygen_concentration
+  #     - salinity_concentration
+
+
+  # ficus_faa_table:
+  #   data_source:
+  #     file_name: "../src/data/ficus_project_faa.tsv"
+  #     file_type: tsv      
+  #   data_slots:
+  #     - file_id
+  #     - gold_project_id
+  #     - file_type_description
+  #     - file_size
+  #   append_columns:
+  #     - name: processing_institution
+  #       value: Environmental Molecular Sciences Lab
+          
+  # ficus_fna_table:
+  #   data_source:
+  #     file_name: "../src/data/ficus_project_fna.tsv"
+  #     file_type: tsv      
+  #   data_slots:
+  #     - file_id
+  #     - gold_project_id
+  #     - file_type_description
+  #     - file_size
+  #   append_columns:
+  #     - name: processing_institution
+  #       value: Environmental Molecular Sciences Lab          
+
+  # ficus_fasq_table:
+  #   data_source:
+  #     file_name: "../src/data/ficus_project_fastq.tsv"
+  #     file_type: tsv      
+  #   data_slots:
+  #     - file_id
+  #     - gold_project_id
+  #     - file_type_description
+  #     - file_size
+  #   append_columns:
+  #     - name: processing_institution
+  #       value: Environmental Molecular Sciences Lab
+
+  # ficus_emsl:
+  #   data_source: 
+  #     file_name: "../src/data/EMSL_FICUS_project_process_data_export.xlsx"
+  #     file_type: excel
+  #   data_slots:
+  #     - experimental_data_type
+  #     - instrument_name
+  #   rename_slots:
+  #     - old_name: experimental_data_type
+  #       new_name: omics_type
+  #     - old_name: dataset_file_size_bytes
+  #       new_name: file_size
+  #   append_columns:
+  #     - name: processing_institution
+  #       value: Environmental Molecular Sciences Lab        
+
+  # ficus_jgi_emsl:
+  #   data_source:
+  #     file_name: "../src/data/FICUS - JGI-EMSL Proposal - Gold Study - ID mapping and PI.xlsx"
+  #     file_type: excel
+  #   data_slots:
+  #     - emsl_proposal_id
+  #     - gold_study_id
