@@ -181,7 +181,7 @@ def convert_dict_list_to_json_list(dict_list):
 
 
 def make_nmdc_dict_list(dictionary, nmdc_class, id_key, name_key="", description_key="", part_of_key = "",
-                        has_input_key="", has_output_key="", characteristic_fields=[], remove_key_attributes=True):
+                        has_input_key="", has_output_key="", attribute_fields=[], remove_key_attributes=True):
     """
     Takes a dictionary in which each item is a record and returns a list of dictionaries that conform to the nmdc schema.
     Args:
@@ -193,34 +193,34 @@ def make_nmdc_dict_list(dictionary, nmdc_class, id_key, name_key="", description
         part_of_key: The key in each record whose value is to be used as the part of value.
         has_input_key: The key in each record whose value is to be used as the has input value.
         has_output_key: The key in each record whose value is to be used as the has output value.
-        characteristic_fields: A list that contains the names of fields whose values will transformed into characteristics.
+        attribute_fields: A list that contains the names of fields whose values will transformed into characteristics.
         remove_key_attributes: Specifies whether to remove the named keys (e.g, id_key, part_of_key) from the attributes list.
     Returns:
         A list in which each item is a dictionary that conforms to the nmdc schema
       
     """
-    def make_characteristic_annotation(obj, key):
-        """
-        Local function used to create an annotation object with a characteristic that will be added to the set of annotations.
-        """
-        #print(key, value)
-        c = nmdc.Characteristic(name=key)
-        #ann = nmdc.Annotation(has_characteristic=c, has_raw_value=value) # this throws an error
-        ann = nmdc.Annotation()
-        ann.has_characteristic = c
-        ann.has_raw_value = value
+    # def make_characteristic_annotation(obj, key):
+    #     """
+    #     Local function used to create an annotation object with a characteristic that will be added to the set of annotations.
+    #     """
+    #     #print(key, value)
+    #     c = nmdc.Characteristic(name=key)
+    #     #ann = nmdc.Annotation(has_characteristic=c, has_raw_value=value) # this throws an error
+    #     ann = nmdc.Annotation()
+    #     ann.has_characteristic = c
+    #     ann.has_raw_value = value
 
-        return ann
+    #     return ann
 
     ## by default, we don't want the attribute keys (e.g, id_key, part_of_key, etc.)
     ## to also be attributes of the object, these keys link objects other objects
     if remove_key_attributes:
-        if id_key in characteristic_fields: characteristic_fields.remove(id_key)
-        if name_key in characteristic_fields: characteristic_fields.remove(name_key)
-        if description_key in characteristic_fields: characteristic_fields.remove(description_key)
-        if part_of_key in characteristic_fields: characteristic_fields.remove(part_of_key)
-        if has_input_key in characteristic_fields: characteristic_fields.remove(has_input_key)
-        if has_output_key in characteristic_fields: characteristic_fields.remove(has_output_key)
+        if id_key in attribute_fields: attribute_fields.remove(id_key)
+        if name_key in attribute_fields: attribute_fields.remove(name_key)
+        if description_key in attribute_fields: attribute_fields.remove(description_key)
+        if part_of_key in attribute_fields: attribute_fields.remove(part_of_key)
+        if has_input_key in attribute_fields: attribute_fields.remove(has_input_key)
+        if has_output_key in attribute_fields: attribute_fields.remove(has_output_key)
     
     dict_list = [] # list to hold individual dictionary objects
 
@@ -242,8 +242,13 @@ def make_nmdc_dict_list(dictionary, nmdc_class, id_key, name_key="", description
             obj.has_output = record[has_output_key].split(",")
 
         ## add annotations to object
+        # for key, value in record.items():
+        #     if (not pds.isnull(value)) and ('' != value) and not(value is None) and (key in attribute_fields):
+        #         obj.annotations.append(make_characteristic_annotation(obj, key))
+        #         #print(obj)
+
         for key, value in record.items():
-            if (not pds.isnull(value)) and ('' != value) and not(value is None) and (key in characteristic_fields):
+            if (not pds.isnull(value)) and ('' != value) and not(value is None) and (key in attribute_fields):
                 obj.annotations.append(make_characteristic_annotation(obj, key))
                 #print(obj)
 
