@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-06-02 10:46
+# Generation date: 2020-06-02 21:53
 # Schema: NMDC Schema
 #
 # id: https://microbiomedata/schema
@@ -687,11 +687,11 @@ slots.sim_search_meth = Slot(uri="str(uriorcurie)", name="sim_search_meth", curi
 slots.tax_class = Slot(uri="str(uriorcurie)", name="tax_class", curie=None,
                       model_uri=NMDC.tax_class, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.tax_class])
 
-slots.16s_recover = Slot(uri="str(uriorcurie)", name="16s_recover", curie=None,
-                      model_uri=NMDC['16s_recover'], domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS["16s_recover"]])
+slots._16s_recover = Slot(uri="str(uriorcurie)", name="_16s_recover", curie=None,
+                      model_uri=NMDC._16s_recover, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS._16s_recover])
 
-slots.16s_recover_software = Slot(uri="str(uriorcurie)", name="16s_recover_software", curie=None,
-                      model_uri=NMDC['16s_recover_software'], domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS["16s_recover_software"]])
+slots._16s_recover_software = Slot(uri="str(uriorcurie)", name="_16s_recover_software", curie=None,
+                      model_uri=NMDC._16s_recover_software, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS._16s_recover_software])
 
 slots.trnas = Slot(uri="str(uriorcurie)", name="trnas", curie=None,
                       model_uri=NMDC.trnas, domain=None, range=Optional[Union[dict, TextValue]], mappings = [MIXS.trnas])
