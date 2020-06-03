@@ -818,7 +818,7 @@ slots:
     #domain: sequencing:
     #examples: ['"vConTACT vContact2 (references from NCBI RefSeq v83, genus rank classification, default parameters)"']
 
-  16s_recover:
+  _16s_recover:
     aliases:
       - 16S recovered
     description: >-
@@ -827,11 +827,11 @@ slots:
     is_a: attribute
     range: text value
     mappings:
-      - MIxS:16s_recover
+      - MIxS:_16s_recover
     #domain: sequencing:
     #examples: ['yes']
 
-  16s_recover_software:
+  _16s_recover_software:
     aliases:
       - 16S recovery software
     description: >-
@@ -840,7 +840,7 @@ slots:
     is_a: attribute
     range: text value
     mappings:
-      - MIxS:16s_recover_software
+      - MIxS:_16s_recover_software
     #domain: sequencing:
     #examples: ['rambl;v2;default parameters']
 
