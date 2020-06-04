@@ -56,6 +56,12 @@ def make_dataframe(file_name, subset_cols=[], exclude_cols=[], nrows=None, lower
             df = pds.read_excel(file_archive.open(file_name), sheet_name=sheet_name, nrows=nrows)
         else:
             df = pds.read_excel(file_name, sheet_name=sheet_name, nrows=nrows)
+    elif "multi-sheet-excel" == file_type.lower():
+        if None != file_archive:
+            df = pds.concat(pds.read_excel(file_archive.open(file_name), sheet_name=None, ignore_index=True, nrows=nrows))
+        else:
+            df = pds.concat(pds.read_excel(file_name, sheet_name=None, ignore_index=True, nrows=nrows))
+
 
     ## clean column names
     df = clean_dataframe_column_names(df, lowercase_col_names, replace_spaces)

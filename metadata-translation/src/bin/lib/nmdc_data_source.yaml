@@ -228,7 +228,7 @@ data_sources:
   #   id_key: dataset_id
   #   data_source: 
   #     file_name: "../src/data/EMSL_FICUS_project_process_data_export.xlsx"
-  #     file_type: excel
+  #     file_type: multi-sheet-excel
   #   data_slots:
   #     - experimental_data_type
   #     - instrument_name
