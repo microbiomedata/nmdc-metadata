@@ -224,21 +224,21 @@ data_sources:
       - emsl_proposal_id
       - gold_study_id
         
-  # ficus_emsl:
-  #   id_key: dataset_id
-  #   data_source: 
-  #     file_name: "../src/data/EMSL_FICUS_project_process_data_export.xlsx"
-  #     file_type: multi-sheet-excel
-  #   data_slots:
-  #     - experimental_data_type
-  #     - instrument_name
-  #   rename_slots:
-  #     - old_name: experimental_data_type
-  #       new_name: omics_type
-  #     - old_name: dataset_file_size_bytes
-  #       new_name: file_size
-  #   append_columns:
-  #     - name: processing_institution
-  #       value: Environmental Molecular Sciences Lab        
+  ficus_emsl:
+    id_key: dataset_id
+    data_source: 
+      file_name: "../src/data/EMSL_FICUS_project_process_data_export.xlsx"
+      file_type: multi-sheet-excel
+    data_slots:
+      - experimental_data_type
+      - instrument_name
+    rename_slots:
+      - old_name: experimental_data_type
+        new_name: omics_type
+      - old_name: dataset_file_size_bytes
+        new_name: file_size
+    append_columns:
+      - name: processing_institution
+        value: Environmental Molecular Sciences Lab        
 
 

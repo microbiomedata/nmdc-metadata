@@ -187,7 +187,7 @@ def convert_dict_list_to_json_list(dict_list):
 
 
 def make_nmdc_dict_list(dictionary, nmdc_class, id_key, name_key="", description_key="", part_of_key = "",
-                        has_input_key="", has_output_key="", attribute_fields=[], remove_key_attributes=True):
+                        has_input_key="", has_output_key="", attribute_fields=[], remove_key_attributes=True, add_attribute=True):
     """
     Takes a dictionary in which each item is a record and returns a list of dictionaries that conform to the nmdc schema.
     Args:
@@ -201,6 +201,7 @@ def make_nmdc_dict_list(dictionary, nmdc_class, id_key, name_key="", description
         has_output_key: The key in each record whose value is to be used as the has output value.
         attribute_fields: A list that contains the names of fields whose values will transformed into characteristics.
         remove_key_attributes: Specifies whether to remove the named keys (e.g, id_key, part_of_key) from the attributes list.
+        add_attribute: Specifies whether an attributes in the attribute_fields list should be added to the nmdc class if not already present.
     Returns:
         A list in which each item is a dictionary that conforms to the nmdc schema
       
@@ -218,6 +219,11 @@ def make_nmdc_dict_list(dictionary, nmdc_class, id_key, name_key="", description
 
     #     return ann
 
+    ## add attribute to the nmdc class if not present
+    if add_attribute:
+        for af in attribute_fields:
+            if not hasattr(nmdc_class, af): setattr(nmdc_class, af, None)
+        
     ## by default, we don't want the attribute keys (e.g, id_key, part_of_key, etc.)
     ## to also be attributes of the object, these keys link objects other objects
     if remove_key_attributes:
@@ -229,7 +235,7 @@ def make_nmdc_dict_list(dictionary, nmdc_class, id_key, name_key="", description
         if has_output_key in attribute_fields: attribute_fields.remove(has_output_key)
     
     dict_list = [] # list to hold individual dictionary objects
-
+    
     ## for each record in the dictionary, create an object of type nmdc_class,
     ## and put the object into the list
     for record in dictionary:
