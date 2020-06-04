@@ -1,5 +1,5 @@
 id: https://microbiomedata/schema
-name: nmdc_schema
+name: NMDC Schema
 description: >-
   Schema for National Microbiome Data Collaborative (NMDC)
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -31,8 +31,15 @@ imports:
   
 classes:
 
+  database:
+    description: top level holder class
+    slots:
+      - biosample set
+      - data object set
+  
   named thing:
     description: "a databased entity or concept/class"
+    abstract: true
     slots:
       - id
       - name
@@ -46,7 +53,7 @@ classes:
       Files, records, and omics data are examples of data objects. 
     slots:
       - file_size
-      
+
   biosample:
     is_a: named thing
     aliases: ['sample', 'material sample']
@@ -54,11 +61,21 @@ classes:
       A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.  
       An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.  
     slots:
-      - lat_lon
       - depth
+      - lat_lon
+      - alt
+      - elev
+      - geo_loc_name
+      - collection_date
       - env_broad_scale
       - env_local_scale
       - env_medium
+      - ecosystem
+      - ecosystem_category
+      - ecosystem_type
+      - ecosystem_subtype
+      - specific_ecosystem
+      - tot_org_carb
     slot_usage:
       id:
         description: >-
@@ -71,6 +88,8 @@ classes:
           The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
       lat_lon:
         required: true
+        description: >-
+          This is a required field but it's not clear if this should be required for human hosts
       depth:
         required: false
       env_broad_scale:
@@ -79,14 +98,18 @@ classes:
         required: true
       env_medium:
         required: true
- 
+
+        
   study:
     is_a: named thing
-    aliases: ['proposal', 'research proposal', 'research study']
+    aliases: ['proposal', 'research proposal', 'research study', 'investigation']
     description: >-
       A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.  
     slots:
-      - annotations
+      - submitted_to_insdc
+      - investigation_type
+      - project_name
+      - experimental_factor
 #      - PI name
     slot_usage:
       id:
@@ -155,6 +178,18 @@ classes:
     slots:
       - has unit
       - has numeric value
+    slot_usage:
+      has raw value:
+        description: >-
+          Unnormalized atomic string representation, should in syntax {number} {unit}
+      has unit:
+        description: >-
+          The unit of the quantity
+      has numeric value:
+        description: >-
+          The number part of the quantity
+        range:
+          double
 
   text value:
     is_a: attribute value
@@ -190,7 +225,7 @@ classes:
     description: >-
       A value that is a boolean
     slots:
-      - has numeric value
+      - has boolean value
       
   controlled term value:
     is_a: attribute value
@@ -226,6 +261,14 @@ classes:
 
 slots:
 
+  biosample set:
+    domain: database
+    range: biosample
+
+  data object set:
+    domain: database
+    range: data object
+  
   id:
     identifier: false
     multivalued: false
@@ -254,7 +297,6 @@ slots:
   attribute:
     aliases: ['field', 'property', 'template field', 'key', 'characteristic']
     abstract: true
-    domain: named thing
     description: >-
       A attribute of a biosample. Examples: depth, habitat, material.
       For NMDC, attributes SHOULD be mapped to terms within a MIxS template
@@ -278,10 +320,15 @@ slots:
   has numeric value:
     description: >-
       Links a quantity value to a number
-    range: double
     multivalued: false
     mappings:
       - qud:quantityValue
+      
+  has boolean value:
+    description: >-
+      Links a quantity value to a boolean
+    range: boolean
+    multivalued: false
       
   alternate identifiers:
     aliases: ['mappings', 'alt ids', 'xrefs']
