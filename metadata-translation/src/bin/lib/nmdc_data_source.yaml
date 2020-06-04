@@ -48,6 +48,7 @@ classes:
 data_sources:
 
   study_table:
+    id_key: study_id
     data_source:
       file_name: "export.sql/STUDY_DATA_TABLE.dsv"
       file_type: tsv
@@ -73,6 +74,7 @@ data_sources:
       - {field: active, values: ['Yes']}
               
   contact_table:
+    id_key: contact_id
     data_source:
       file_name: "export.sql/CONTACT_DATA_TABLE.dsv"
       file_type: tsv
@@ -87,6 +89,7 @@ data_sources:
         new_name: file_size          
             
   proposals_table:
+    id_key: jgi_id
     data_source:
       file_name: "../src/data/JGI-EMSL-FICUS-proposals.fnl.tsv"
       file_type: tsv
@@ -95,6 +98,7 @@ data_sources:
         - gold_study
 
   project_table:
+    id_key: project_id
     data_source:
       file_name: "export.sql/PROJECT_DATA_TABLE.dsv"
       file_type: tsv
@@ -114,99 +118,114 @@ data_sources:
       - biosample_id
       - project_id
         
-  # biosample_table:
-  #   data_source:
-  #     file_name: "export.sql/BIOSAMPLE_DATA_TABLE.dsv" 
-  #     file_type: tsv
-  #     file_archive_name: "../src/data/nmdc-version2.zip"
-  #   filters:              
-  #     - {field: active, values: ['Yes']}
-  #   subset_cols:
-  #     - gold_id
-  #     - biosample_name
-  #     - description
-  #     - add_date
-  #     - mod_date
-  #     - ecosystem_path_id
-  #     - ecosystem
-  #     - ecosystem_category
-  #     - ecosystem_type
-  #     - ecosystem_subtype
-  #     - specific_ecosystem
-  #     - habitat
-  #     - location
-  #     - community
-  #     - ncbi_taxonomy_name
-  #     - geographic_location
-  #     - latitude
-  #     - longitude
-  #     - sample_collection_site
-  #     - identifier
-  #     - sample_collection_year
-  #     - sample_collection_month
-  #     - sample_collection_day
-  #     - sample_collection_hour
-  #     - sample_collection_minute
-  #     - host_name
-  #     - depth
-  #     - subsurface_depth
-  #     - altitude
-  #     - temperature_range
-  #     - proport_woa_temperature
-  #     - biogas_temperature
-  #     - growth_temperature
-  #     - soil_annual_season_temp
-  #     - water_samp_store_temp
-  #     - biogas_retention_time
-  #     - salinity
-  #     - pressure
-  #     - ph
-  #     - chlorophyll_concentration
-  #     - nitrate_concentration
-  #     - oxygen_concentration
-  #     - salinity_concentration
+  biosample_table:
+    id_key: biosample_id
+    data_source:
+      file_name: "export.sql/BIOSAMPLE_DATA_TABLE.dsv" 
+      file_type: tsv
+      file_archive_name: "../src/data/nmdc-version2.zip"
+    filters:              
+      - {field: active, values: ['Yes']}
+    subset_cols:
+      - biosample_id
+      - gold_id
+      - biosample_name
+      - description
+      - add_date
+      - mod_date
+      - ecosystem_path_id
+      - ecosystem
+      - ecosystem_category
+      - ecosystem_type
+      - ecosystem_subtype
+      - specific_ecosystem
+      - habitat
+      - location
+      - community
+      - ncbi_taxonomy_name
+      - geographic_location
+      - latitude
+      - longitude
+      - sample_collection_site
+      - identifier
+      - sample_collection_year
+      - sample_collection_month
+      - sample_collection_day
+      - sample_collection_hour
+      - sample_collection_minute
+      - host_name
+      - depth
+      - subsurface_depth
+      - altitude
+      - temperature_range
+      - proport_woa_temperature
+      - biogas_temperature
+      - growth_temperature
+      - soil_annual_season_temp
+      - water_samp_store_temp
+      - biogas_retention_time
+      - salinity
+      - pressure
+      - ph
+      - chlorophyll_concentration
+      - nitrate_concentration
+      - oxygen_concentration
+      - salinity_concentration
 
 
-  # ficus_faa_table:
-  #   data_source:
-  #     file_name: "../src/data/ficus_project_faa.tsv"
-  #     file_type: tsv      
-  #   data_slots:
-  #     - file_id
-  #     - gold_project_id
-  #     - file_type_description
-  #     - file_size
-  #   append_columns:
-  #     - name: processing_institution
-  #       value: Environmental Molecular Sciences Lab
+  ficus_faa_table:
+    id_key: file_id
+    data_source:
+      file_name: "../src/data/ficus_project_faa.tsv"
+      file_type: tsv      
+    data_slots:
+      - file_id
+      - gold_project_id
+      - file_type_description
+      - file_size
+    append_columns:
+      - name: processing_institution
+        value: Environmental Molecular Sciences Lab
           
-  # ficus_fna_table:
-  #   data_source:
-  #     file_name: "../src/data/ficus_project_fna.tsv"
-  #     file_type: tsv      
-  #   data_slots:
-  #     - file_id
-  #     - gold_project_id
-  #     - file_type_description
-  #     - file_size
-  #   append_columns:
-  #     - name: processing_institution
-  #       value: Environmental Molecular Sciences Lab          
+  ficus_fna_table:
+    id_key: file_id    
+    data_source:
+      file_name: "../src/data/ficus_project_fna.tsv"
+      file_type: tsv      
+    data_slots:
+      - file_id
+      - gold_project_id
+      - file_type_description
+      - file_size
+    append_columns:
+      - name: processing_institution
+        value: Environmental Molecular Sciences Lab          
 
-  # ficus_fasq_table:
-  #   data_source:
-  #     file_name: "../src/data/ficus_project_fastq.tsv"
-  #     file_type: tsv      
-  #   data_slots:
-  #     - file_id
-  #     - gold_project_id
-  #     - file_type_description
-  #     - file_size
-  #   append_columns:
-  #     - name: processing_institution
-  #       value: Environmental Molecular Sciences Lab
+  ficus_fasq_table:
+    id_key: file_id
+    data_source:
+      file_name: "../src/data/ficus_project_fastq.tsv"
+      file_type: tsv      
+    data_slots:
+      - file_id
+      - gold_project_id
+      - file_type_description
+      - file_size
+    append_columns:
+      - name: processing_institution
+        value: Environmental Molecular Sciences Lab
 
+  ficus_jgi_emsl:
+    id_key: gold_study_id
+    data_source:
+      file_name: "../src/data/FICUS - JGI-EMSL Proposal - Gold Study - ID mapping and PI.xlsx"
+      file_type: excel
+    data_slots:
+      - emsl_proposal_id
+      - gold_study_id
+        
   # ficus_emsl:
+  #   id_key: dataset_id
   #   data_source: 
   #     file_name: "../src/data/EMSL_FICUS_project_process_data_export.xlsx"
   #     file_type: excel
@@ -222,10 +241,4 @@ data_sources:
   #     - name: processing_institution
   #       value: Environmental Molecular Sciences Lab        
 
-  # ficus_jgi_emsl:
-  #   data_source:
-  #     file_name: "../src/data/FICUS - JGI-EMSL Proposal - Gold Study - ID mapping and PI.xlsx"
-  #     file_type: excel
-  #   data_slots:
-  #     - emsl_proposal_id
-  #     - gold_study_id
+
