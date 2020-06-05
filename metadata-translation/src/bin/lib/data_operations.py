@@ -264,7 +264,7 @@ def make_nmdc_dict_list(dictionary, nmdc_class, id_key, name_key="", description
         #     if (not pds.isnull(value)) and ('' != value) and not(value is None) and (key in attribute_fields):
         #         obj.annotations.append(make_characteristic_annotation(obj, key))
         #         #print(obj)
-
+        
         for key, value in record.items():
             if (not pds.isnull(value)) and ('' != value) and not(value is None) and (key in attribute_fields):
                 setattr(obj, key, value)
@@ -417,16 +417,16 @@ def extract_table(merged_df, table_name):
 
     
 def make_study_dataframe(study_table, contact_table, proposals_table, result_cols=[]):
-
+    
     ## subset dataframes
-    contact_table = contact_table[['contact_id', 'principal_investigator_name']]
-    proposals_table = proposals_table[['gold_study', 'doi']]
+    contact_table_splice = contact_table[['contact_id', 'principal_investigator_name']].copy()
+    proposals_table_splice = proposals_table[['gold_study', 'doi']].copy()
                          
     ## left join data from contact 
-    temp1_df = pds.merge(study_table, contact_table, how='left', on='contact_id')
+    temp1_df = pds.merge(study_table, contact_table_splice, how='left', on='contact_id')
 
     ## left join data from proposals
-    temp2_df = pds.merge(temp1_df, proposals_table, how='left', left_on='gold_id', right_on='gold_study')
+    temp2_df = pds.merge(temp1_df, proposals_table_splice, how='left', left_on='gold_id', right_on='gold_study')
 
     if len(result_cols) > 0:
         return temp2_df[result_cols]
@@ -435,18 +435,19 @@ def make_study_dataframe(study_table, contact_table, proposals_table, result_col
     
 
 def make_project_dataframe(project_table, study_table, contact_table, result_cols=[]):
-    ## rename study.gold_id
-    study_table.rename(columns={'gold_id':'study_gold_id'}, inplace=True)
-
+    
     ## subset data
-    study_table = study_table[['study_gold_id']]
-    contact_table = contact_table[['contact_id', 'principal_investigator_name']]
+    study_table_splice = study_table[['gold_id']].copy()
+    contact_table_splice = contact_table[['contact_id', 'principal_investigator_name']].copy()
+
+    ## rename study.gold_id to study_gold_id
+    study_table_splice.rename(columns={'gold_id':'study_gold_id'}, inplace=True)
     
     ## inner join on study (project must be part of study)
-    temp1_df = pds.merge(project_table, study_table, how='inner', left_on='master_study_id', right_on='study_gold_id')
+    temp1_df = pds.merge(project_table, study_table_splice, how='inner', left_on='master_study_id', right_on='study_gold_id')
 
     ## left join contact data
-    temp2_df = pds.merge(temp1_df, contact_table, how='left', left_on='pi_id', right_on='contact_id')
+    temp2_df = pds.merge(temp1_df, contact_table_splice, how='left', left_on='pi_id', right_on='contact_id')
 
     if len(result_cols) > 0:
         return temp2_df[result_cols]
@@ -455,24 +456,46 @@ def make_project_dataframe(project_table, study_table, contact_table, result_col
 
 
 def make_biosample_dataframe(biosample_table, project_biosample_table, project_table, result_cols=[]):
+    ## subset data
+    project_biosample_table_splice = project_biosample_table[['biosample_id', 'project_id']].copy()
+    project_table_splice = project_table[['project_id', 'gold_id']].copy()
 
+    ## rename columns
+    #project_biosample_table_splice.rename(columns={'project_id':'xref_project_id', 'biosample_id':'xref_biosample_id'}, inplace=True)
+    #project_table_splice.rename(columns={'project_id':'project_project_id', 'gold_id':'project_gold_id'}, inplace=True)
+    project_table_splice.rename(columns={'gold_id':'project_gold_id'}, inplace=True)
+    
     ## inner join on project_biosample and project; i.e., biosamples must be linked to project
-    temp1_df = pds.merge(biosample_table, project_biosample_table, how='inner', on='biosample_id')
-    temp2_df = pds.merge(temp1_df, project_table, how='inner', on='project_id')
+    temp1_df = pds.merge(biosample_table, project_biosample_table_splice, how='inner', on='biosample_id')
+    temp2_df = pds.merge(temp1_df, project_table_splice, how='inner', on='project_id')
+
+    ## biosample might belong to more than one project; so do the equivalent of a group_cat
+    ## see: https://queirozf.com/entries/pandas-dataframe-groupby-examples
+    ## see: https://stackoverflow.com/questions/18138693/replicating-group-concat-for-pandas-dataframe
+    groups =  temp2_df.groupby('biosample_id')['project_gold_id'].apply(lambda pid: ','.join(filter(None, pid))).reset_index()
+    groups.rename(columns={'project_gold_id':'project_gold_ids'}, inplace=True)
+
+    # join concat groups to dataframe
+    temp3_df = pds.merge(temp2_df, groups, how='left', on='biosample_id')
+
+    ## remove uneeded columns & drop dups
+    temp3_df.drop(columns=['project_gold_id'], inplace=True)
+    temp3_df.drop_duplicates(inplace=True)
+    
 
     if len(result_cols) > 0:
-        return temp2_df[result_cols]
+        return temp3_df[result_cols]
     else:
-        return temp2_df
+        return temp3_df
 
 
 def make_data_objects_datafame(data_objects_table, project_table, result_cols=[]):
-    ## subset data
-    project_table = project_table[['gold_id']]
+    
+
     
     ## inner joing data objects (e.g., faa, fna, fasq) to projects
-    temp1_df = pds.merge(data_objects_table, project_table, how='inner', left_on='gold_project_id', right_on='gold_id')
-    
+    temp1_df = pds.merge(data_objects_table, project_table_splice, how='inner', left_on='gold_project_id', right_on='gold_id')
+
     if len(result_cols) > 0:
         return temp1_df[result_cols]
     else:
