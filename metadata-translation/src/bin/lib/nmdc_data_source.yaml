@@ -106,6 +106,9 @@ data_sources:
     data_slots:
       - master_study_id
       - pi_id
+    rename_slots:
+      - old_name: sequencing_strategy
+        new_name: omics_type
     filters:              
       - {field: active, values: ['Yes']}
 
