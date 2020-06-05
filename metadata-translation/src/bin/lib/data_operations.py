@@ -147,8 +147,42 @@ def make_dataframe_dictionary(file_name, subset_cols=[], exclude_cols=[], nrows=
 
 
 
-def make_json_string_list(dictionary, nmdc_class, id_key, name_key="", description_key="", part_of_key = "",
-                          has_input_key="", has_output_key="", characteristic_fields=[], remove_key_attributes=True):
+# def make_json_string_list_old(dictionary, nmdc_class, id_key, name_key="", description_key="", part_of_key = "",
+#                           has_input_key="", has_output_key="", characteristic_fields=[], remove_key_attributes=True):
+#     """
+#     Takes a dictionary in which each item is a record and returns a list of json strings build from each record.
+#     Args:
+#         dictionary: A python dictionary containing each record as an item.
+#         nmdc_class: The NMDC class (found in nmdc.py) that will be used to convert each record.
+#         id_key: The key in each record whose value is to be used as the id.
+#         name_key: The key in each record whose value is to be used as the name.
+#         description_key: The key in each record whose value is to be used as the description.
+#         part_of_key: The key in each record whose value is to be used as the part of value.
+#         has_input_key: The key in each record whose value is to be used as the has input value.
+#         has_output_key: The key in each record whose value is to be used as the has output value.
+#         characteristic_fields: A list that contains the names of fields whose values will transformed into characteristics.
+#         remove_key_attributes: Specifies whether to remove the named keys (e.g, id_key, part_of_key) from the attributes list.
+#     Returns:
+#         A list in which each item is a json string.
+      
+#     """
+#     dict_list = \
+#         make_nmdc_dict_list(dictionary, nmdc_class, id_key, name_key=name_key, description_key=description_key, part_of_key=part_of_key,
+#                            has_input_key=has_input_key, has_output_key=has_output_key, characteristic_fields=characteristic_fields, remove_key_attributes=remove_key_attributes)
+
+#     return convert_dict_list_to_json_list(dict_list)
+
+
+def make_json_string_list (dictionary,
+                           nmdc_class,
+                           id_key, name_key="",
+                           description_key="",
+                           part_of_key = "",
+                           has_input_key="",
+                           has_output_key="",
+                           attribute_fields=[],
+                           remove_key_attributes=True,
+                           add_attribute=True):
     """
     Takes a dictionary in which each item is a record and returns a list of json strings build from each record.
     Args:
@@ -167,10 +201,20 @@ def make_json_string_list(dictionary, nmdc_class, id_key, name_key="", descripti
       
     """
     dict_list = \
-        make_nmdc_dict_list(dictionary, nmdc_class, id_key, name_key=name_key, description_key=description_key, part_of_key=part_of_key,
-                           has_input_key=has_input_key, has_output_key=has_output_key, characteristic_fields=characteristic_fields, remove_key_attributes=remove_key_attributes)
+        make_nmdc_dict_list (dictionary,
+                             nmdc_class,
+                             id_key,
+                             name_key=name_key,
+                             description_key=description_key,
+                             part_of_key=part_of_key,
+                             has_input_key=has_input_key,
+                             has_output_key=has_output_key,
+                             attribute_fields=attribute_fields,
+                             remove_key_attributes=remove_key_attributes,
+                             add_attribute=add_attribute)
 
     return convert_dict_list_to_json_list(dict_list)
+
 
 
 def convert_dict_list_to_json_list(dict_list):
@@ -191,8 +235,83 @@ def convert_dict_list_to_json_list(dict_list):
     return json_list
 
 
-def make_nmdc_dict_list(dictionary, nmdc_class, id_key, name_key="", description_key="", part_of_key = "",
-                        has_input_key="", has_output_key="", attribute_fields=[], remove_key_attributes=True, add_attribute=True):
+# def make_nmdc_dict_list_old (dictionary, nmdc_class, id_key, name_key="", description_key="", part_of_key = "",
+#                         has_input_key="", has_output_key="", attribute_fields=[], remove_key_attributes=True, add_attribute=True):
+#     """
+#     Takes a dictionary in which each item is a record and returns a list of dictionaries that conform to the nmdc schema.
+#     Args:
+#         dictionary: A python dictionary containing each record as an item.
+#         nmdc_class: The NMDC class (found in nmdc.py) that will be used to convert each record.
+#         id_key: The key in each record whose value is to be used as the id.
+#         name_key: The key in each record whose value is to be used as the name.
+#         description_key: The key in each record whose value is to be used as the description.
+#         part_of_key: The key in each record whose value is to be used as the part of value.
+#         has_input_key: The key in each record whose value is to be used as the has input value.
+#         has_output_key: The key in each record whose value is to be used as the has output value.
+#         attribute_fields: A list that contains the names of fields whose values will transformed into characteristics.
+#         remove_key_attributes: Specifies whether to remove the named keys (e.g, id_key, part_of_key) from the attributes list.
+#         add_attribute: Specifies whether an attributes in the attribute_fields list should be added to the nmdc class if not already present.
+#     Returns:
+#         A list in which each item is a dictionary that conforms to the nmdc schema
+      
+#     """
+#     def make_characteristic_annotation(obj, key):
+#         """
+#         Local function used to create an annotation object with a characteristic that will be added to the set of annotations.
+#         """
+#         #print(key, value)
+#         c = nmdc.Characteristic(name=key)
+#         #ann = nmdc.Annotation(has_characteristic=c, has_raw_value=value) # this throws an error
+#         ann = nmdc.Annotation()
+#         ann.has_characteristic = c
+#         ann.has_raw_value = value
+
+#         return ann
+
+#     ## by default, we don't want the attribute keys (e.g, id_key, part_of_key, etc.)
+#     ## to also be attributes of the object, these keys link objects other objects
+#     if remove_key_attributes:
+#         if id_key in attribute_fields: attribute_fields.remove(id_key)
+#         if name_key in attribute_fields: attribute_fields.remove(name_key)
+#         if description_key in attribute_fields: attribute_fields.remove(description_key)
+#         if part_of_key in attribute_fields: attribute_fields.remove(part_of_key)
+#         if has_input_key in attribute_fields: attribute_fields.remove(has_input_key)
+#         if has_output_key in attribute_fields: attribute_fields.remove(has_output_key)
+    
+#     dict_list = [] # list to hold individual dictionary objects
+    
+#     ## for each record in the dictionary, create an object of type nmdc_class,
+#     ## and put the object into the list
+#     for record in dictionary:
+#         ##  create object with id, name, , description, part of, input, and output info
+#         obj = nmdc_class()
+#         obj.id = record[id_key]
+#         if len(name_key.strip()) > 0:
+#             obj.name = record[name_key]
+#         if len(description_key.strip()) > 0:
+#             obj.description = record[description_key]
+#         if len(part_of_key.strip()) > 0:
+#             obj.part_of = record[part_of_key].split(",")
+#         if len(has_input_key.strip()) > 0:
+#             obj.has_input = record[has_input_key].split(",")
+#         if len(has_output_key.strip()) > 0:
+#             obj.has_output = record[has_output_key].split(",")
+
+#         add annotations to object
+#         for key, value in record.items():
+#             if (not pds.isnull(value)) and ('' != value) and not(value is None) and (key in attribute_fields):
+#                 obj.annotations.append(make_characteristic_annotation(obj, key))
+#                 #print(obj)
+        
+#         dict_obj = json.loads(jsonasobj.as_json(obj)) # in order to not save empty values you need to convert to json
+#         dict_list.append(dict_obj)                    # and then loads json to get dict; this may be a bug
+                
+#     ## return final list
+#     return dict_list
+
+
+def make_nmdc_dict_list (dictionary, nmdc_class, id_key, name_key="", description_key="", part_of_key = "",
+                         has_input_key="", has_output_key="", attribute_fields=[], remove_key_attributes=True, add_attribute=True):
     """
     Takes a dictionary in which each item is a record and returns a list of dictionaries that conform to the nmdc schema.
     Args:
@@ -211,18 +330,15 @@ def make_nmdc_dict_list(dictionary, nmdc_class, id_key, name_key="", description
         A list in which each item is a dictionary that conforms to the nmdc schema
       
     """
-    # def make_characteristic_annotation(obj, key):
-    #     """
-    #     Local function used to create an annotation object with a characteristic that will be added to the set of annotations.
-    #     """
-    #     #print(key, value)
-    #     c = nmdc.Characteristic(name=key)
-    #     #ann = nmdc.Annotation(has_characteristic=c, has_raw_value=value) # this throws an error
-    #     ann = nmdc.Annotation()
-    #     ann.has_characteristic = c
-    #     ann.has_raw_value = value
+    def make_attribute_value(data_value):
+        """
+        Local function used to create attribute_value object linked the the raw value.
+        """
+        #print(obj, key, value)
+        av = nmdc.AttributeValue()
+        av.has_raw_value = data_value
 
-    #     return ann
+        return av
 
     ## add attribute to the nmdc class if not present
     if add_attribute:
@@ -259,21 +375,17 @@ def make_nmdc_dict_list(dictionary, nmdc_class, id_key, name_key="", description
         if len(has_output_key.strip()) > 0:
             obj.has_output = record[has_output_key].split(",")
 
-        ## add annotations to object
-        # for key, value in record.items():
-        #     if (not pds.isnull(value)) and ('' != value) and not(value is None) and (key in attribute_fields):
-        #         obj.annotations.append(make_characteristic_annotation(obj, key))
-        #         #print(obj)
-        
-        for key, value in record.items():
-            if (not pds.isnull(value)) and ('' != value) and not(value is None) and (key in attribute_fields):
-                setattr(obj, key, value)
+        for key, data_value in record.items():
+            if (not pds.isnull(data_value)) and ('' != data_value) and not(data_value is None) and (key in attribute_fields):
+                av = make_attribute_value(data_value)
+                setattr(obj, key, av)
 
         dict_obj = json.loads(jsonasobj.as_json(obj)) # in order to not save empty values you need to convert to json
         dict_list.append(dict_obj)                    # and then loads json to get dict; this may be a bug
                 
     ## return final list
     return dict_list
+
 
 
 def save_json_string_list(file_name, json_list):
@@ -437,14 +549,14 @@ def make_study_dataframe(study_table, contact_table, proposals_table, result_col
 def make_project_dataframe(project_table, study_table, contact_table, result_cols=[]):
     
     ## subset data
-    study_table_splice = study_table[['gold_id']].copy()
+    study_table_splice = study_table[['study_id', 'gold_id']].copy()
     contact_table_splice = contact_table[['contact_id', 'principal_investigator_name']].copy()
 
     ## rename study.gold_id to study_gold_id
     study_table_splice.rename(columns={'gold_id':'study_gold_id'}, inplace=True)
     
     ## inner join on study (project must be part of study)
-    temp1_df = pds.merge(project_table, study_table_splice, how='inner', left_on='master_study_id', right_on='study_gold_id')
+    temp1_df = pds.merge(project_table, study_table_splice, how='inner', left_on='master_study_id', right_on='study_id')
 
     ## left join contact data
     temp2_df = pds.merge(temp1_df, contact_table_splice, how='left', left_on='pi_id', right_on='contact_id')
@@ -490,8 +602,8 @@ def make_biosample_dataframe(biosample_table, project_biosample_table, project_t
 
 
 def make_data_objects_datafame(data_objects_table, project_table, result_cols=[]):
-    
-
+    ## subset data
+    project_table_splice = project_table[['gold_id']].copy()
     
     ## inner joing data objects (e.g., faa, fna, fasq) to projects
     temp1_df = pds.merge(data_objects_table, project_table_splice, how='inner', left_on='gold_project_id', right_on='gold_id')
@@ -500,3 +612,5 @@ def make_data_objects_datafame(data_objects_table, project_table, result_cols=[]
         return temp1_df[result_cols]
     else:
         return temp1_df[data_objects_table.columns]
+
+
