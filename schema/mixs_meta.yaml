@@ -1,0 +1,287 @@
+id: https://microbiomedata/schema/mixs_meta
+name: MIxS Meta-Schema
+description: >-
+  Definitions of fields used in MIxS
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+prefixes:
+  skos: http://www.w3.org/2004/02/skos/core#
+  mixs: https://w3id.org/gensc/
+  biolinkml: https://w3id.org/biolink/biolinkml/
+  
+default_prefix: mixs
+default_range: string
+
+default_curi_maps:
+  - semweb_context
+  - obo_context
+
+imports:
+  - biolinkml:types
+
+types:
+
+  narrative text type:
+    typeof: string
+    description: >-
+      A string that provides a human-readable description of something
+
+  unit type:
+    typeof: string
+    description: >-
+      E.g. cm
+
+  mandatoriness code:
+    typeof: string
+    description: >-
+      M/C/R/X/E
+    
+  occurrence code:
+    typeof: string
+    description: >-
+      One of 1: once; m: multiple, 0: none
+    
+  label type:
+    typeof: string
+    description: >-
+      A string that provides a human-readable name for a thing
+  
+classes:
+  template:
+    aliases:
+      - checklist
+      - MIxS template
+    description: >-
+      A representation of a MIxS template
+    mappings:
+      - biolinkml:ClassDefinition
+    slots:
+      - Structured comment name
+      - Item
+      - Definition
+      - Expected value
+      - Value syntax
+      - Example
+      - Section
+      - migs_eu
+      - migs_ba
+      - migs_pl
+      - migs_vi
+      - migs_org
+      - me
+      - mimarks_s
+      - mimarks_c
+      - misag
+      - mimag
+      - miuvig
+      - Preferred unit
+      - Occurence
+      - Position
+      - MIXS ID
+
+  summary template:
+    description: >-
+      Describes the MIxS summary sheet 
+    mappings:
+      - biolinkml:ClassDefinition
+    slots:
+      - Environmental package
+      - Structured comment name
+      - Item
+      - Definition
+      - Expected value
+      - Value syntax
+      - Example
+      - Requirement
+      - Preferred unit
+      - Occurence
+      - Position
+      - MIXS ID
+      
+slots:
+  template field:
+    abstract: true
+    mappings:
+      - biolinkml:SlotDefinition
+      
+  Environmental package:
+    is_a: template field
+    mappings:
+      - skos:inScheme
+    description: >-
+      name of a checklist item
+    examples:
+      - value: investigation_type
+  
+  Requirement:
+    is_a: template field
+    description: >-
+      if required globally
+    range: mandatoriness code
+    examples:
+      - value: X
+  
+  Structured comment name:
+    is_a: template field
+    mappings:
+      - rdfs:label
+      - biolinkml:id
+    required: true
+    description: >-
+      name of a checklist item
+    examples:
+      - value: investigation_type
+        
+  Item:
+    is_a: template field
+    mappings:
+      - dc:description
+    required: true
+    description: >-
+      full name
+    examples:
+      - value: investigation type
+        
+  Definition:
+    is_a: template field
+    required: true
+    description: >-
+      a description of the item
+    mappings:
+      - skos:definition
+    examples:
+      - value: The estimated size of the genome prior to sequencing.
+        
+  Expected value:
+    is_a: template field
+    description: >-
+      short description and/or expected value
+    examples:
+      - value: measurement value
+        
+  Value syntax:
+    is_a: template field
+    required: true
+    description: >-
+      proper syntax for writing the item
+    examples:
+      - value: "{float} {unit}"
+        
+  Example:
+    is_a: template field
+    description: >-
+      Examples of values of the item
+    examples:
+      - value: 5 liter
+        
+  Section:
+    is_a: template field
+    required: true
+    description: >-
+      The section of the item
+    mappings:
+      - skos:inSubset
+    examples:
+      - value: investigation
+        
+  migs_eu:
+    is_a: template field
+    description: >-
+      Examples of values of the item
+    range: mandatoriness code
+    examples:
+      - value: X
+        
+  migs_ba:
+    is_a: template field
+    range: mandatoriness code
+    examples:
+      - value: M
+        
+  migs_pl:
+    is_a: template field
+    range: mandatoriness code
+    examples:
+      - value: M
+        
+  migs_vi:
+    is_a: template field
+    range: mandatoriness code
+    examples:
+      - value: M
+        
+  migs_org:
+    is_a: template field
+    range: mandatoriness code
+    examples:
+      - value: M
+        
+  me:
+    is_a: template field
+    range: mandatoriness code
+    examples:
+      - value: C
+        
+  mimarks_s:
+    is_a: template field
+    range: mandatoriness code
+    examples:
+      - value: M
+        
+  mimarks_c:
+    is_a: template field
+    range: mandatoriness code
+    examples:
+      - value: M
+        
+  misag:
+    is_a: template field
+    range: mandatoriness code
+    examples:
+      - value: M
+        
+  mimag:
+    is_a: template field
+    range: mandatoriness code
+    examples:
+      - value: M
+        
+  miuvig:
+    is_a: template field
+    range: mandatoriness code
+    examples:
+      - value: M
+        
+  Preferred unit:
+    is_a: template field
+    required: false
+    range: unit type
+    description: >-
+      A unit suggestion if a measurement value is given
+    examples:
+      - value: gram
+        
+  Occurence:
+    is_a: template field
+    aliases:
+      - occurrence
+    description: >-
+      How many times it can be used: 1, m, or none 0
+    comments: >-
+      Note the field in the MIxS templates is mis-spelled, we keep it mis-spelled here for consistency
+    range: occurrence code
+    examples:
+      - value: "1"
+        
+  Position:
+    is_a: template field
+    description: >-
+      as it appears in publication
+    range: integer
+    examples:
+      - value: "22"
+        
+  MIXS ID:
+    is_a: template field
+    examples:
+      - value: MIXS:0000007

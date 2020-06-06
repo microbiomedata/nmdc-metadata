@@ -3,7 +3,11 @@ use strict;
 
 # THIS WILL BE REWRITTEN IN PYTHON!
 
-print "id: https://microbiomedata/schema/mixs\n";
+print "id: https://microbiomedata/schema/mixs\n\n";
+
+print "imports:\n";
+print "  - core\n\n";
+
 print "slots:\n";
 
 my %done = ();
@@ -89,7 +93,7 @@ while(<>) {
     print "    range: $range\n";
     print "    mappings:\n";
     print "      - MIxS:$name\n";
-    print "    #domain: $section:\n";
-    print "    #examples: ['$example']\n" if $example;
+    print "    in_subset:\n      - $section\n" if $section;
+    #print "    examples:\n      - value: $example\n" if $example;
     print "\n";
 }

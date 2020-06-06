@@ -1,4 +1,8 @@
 id: https://microbiomedata/schema/mixs
+
+imports:
+  - core
+
 slots:
   submitted_to_insdc:
     aliases:
@@ -10,8 +14,8 @@ slots:
     range: text value
     mappings:
       - MIxS:submitted_to_insdc
-    #domain: investigation:
-    #examples: ['yes']
+    in_subset:
+      - investigation
 
   investigation_type:
     aliases:
@@ -23,8 +27,8 @@ slots:
     range: text value
     mappings:
       - MIxS:investigation_type
-    #domain: investigation:
-    #examples: ['metagenome']
+    in_subset:
+      - investigation
 
   project_name:
     aliases:
@@ -36,8 +40,8 @@ slots:
     range: text value
     mappings:
       - MIxS:project_name
-    #domain: investigation:
-    #examples: ['Forest soil metagenome']
+    in_subset:
+      - investigation
 
   experimental_factor:
     aliases:
@@ -49,8 +53,8 @@ slots:
     range: controlled term value
     mappings:
       - MIxS:experimental_factor
-    #domain: investigation:
-    #examples: ['time series design [EFO:EFO_0001779]']
+    in_subset:
+      - investigation
 
   lat_lon:
     aliases:
@@ -62,8 +66,8 @@ slots:
     range: geolocation value
     mappings:
       - MIxS:lat_lon
-    #domain: environment:
-    #examples: ['50.586825 6.408977']
+    in_subset:
+      - environment
 
   depth:
     aliases:
@@ -75,7 +79,8 @@ slots:
     range: text value
     mappings:
       - MIxS:depth
-    #domain: environment:
+    in_subset:
+      - environment
 
   alt:
     aliases:
@@ -87,8 +92,8 @@ slots:
     range: quantity value
     mappings:
       - MIxS:alt
-    #domain: environment:
-    #examples: ['100 meter']
+    in_subset:
+      - environment
 
   elev:
     aliases:
@@ -100,8 +105,8 @@ slots:
     range: quantity value
     mappings:
       - MIxS:elev
-    #domain: environment:
-    #examples: ['100 meter']
+    in_subset:
+      - environment
 
   geo_loc_name:
     aliases:
@@ -113,8 +118,8 @@ slots:
     range: text value
     mappings:
       - MIxS:geo_loc_name
-    #domain: environment:
-    #examples: ['Germany;North Rhine-Westphalia;Eifel National Park']
+    in_subset:
+      - environment
 
   collection_date:
     aliases:
@@ -126,8 +131,8 @@ slots:
     range: timestamp value
     mappings:
       - MIxS:collection_date
-    #domain: environment:
-    #examples: ['2018-05-11T10:00:00+01:00']
+    in_subset:
+      - environment
 
   env_broad_scale:
     aliases:
@@ -139,8 +144,8 @@ slots:
     range: controlled term value
     mappings:
       - MIxS:env_broad_scale
-    #domain: environment:
-    #examples: ['forest biome [ENVO:01000174]']
+    in_subset:
+      - environment
 
   env_local_scale:
     aliases:
@@ -152,8 +157,8 @@ slots:
     range: controlled term value
     mappings:
       - MIxS:env_local_scale
-    #domain: environment:
-    #examples: ['litter layer [ENVO:01000338]']
+    in_subset:
+      - environment
 
   env_medium:
     aliases:
@@ -165,8 +170,8 @@ slots:
     range: controlled term value
     mappings:
       - MIxS:env_medium
-    #domain: environment:
-    #examples: ['soil [ENVO:00001998]']
+    in_subset:
+      - environment
 
   env_package:
     aliases:
@@ -178,8 +183,8 @@ slots:
     range: text value
     mappings:
       - MIxS:env_package
-    #domain: mixs extension:
-    #examples: ['soil']
+    in_subset:
+      - mixs extension
 
   subspecf_gen_lin:
     aliases:
@@ -191,8 +196,8 @@ slots:
     range: text value
     mappings:
       - MIxS:subspecf_gen_lin
-    #domain: nucleic acid sequence source:
-    #examples: ['serovar:Newport']
+    in_subset:
+      - nucleic acid sequence source
 
   ploidy:
     aliases:
@@ -204,8 +209,8 @@ slots:
     range: controlled term value
     mappings:
       - MIxS:ploidy
-    #domain: nucleic acid sequence source:
-    #examples: ['allopolyploidy [PATO:0001379]']
+    in_subset:
+      - nucleic acid sequence source
 
   num_replicons:
     aliases:
@@ -217,8 +222,8 @@ slots:
     range: text value
     mappings:
       - MIxS:num_replicons
-    #domain: nucleic acid sequence source:
-    #examples: ['2']
+    in_subset:
+      - nucleic acid sequence source
 
   extrachrom_elements:
     aliases:
@@ -230,8 +235,8 @@ slots:
     range: text value
     mappings:
       - MIxS:extrachrom_elements
-    #domain: nucleic acid sequence source:
-    #examples: ['5']
+    in_subset:
+      - nucleic acid sequence source
 
   estimated_size:
     aliases:
@@ -243,8 +248,8 @@ slots:
     range: text value
     mappings:
       - MIxS:estimated_size
-    #domain: nucleic acid sequence source:
-    #examples: ['300000 bp']
+    in_subset:
+      - nucleic acid sequence source
 
   ref_biomaterial:
     aliases:
@@ -256,8 +261,8 @@ slots:
     range: text value
     mappings:
       - MIxS:ref_biomaterial
-    #domain: nucleic acid sequence source:
-    #examples: ['doi:10.1016/j.syapm.2018.01.009']
+    in_subset:
+      - nucleic acid sequence source
 
   source_mat_id:
     aliases:
@@ -269,8 +274,8 @@ slots:
     range: text value
     mappings:
       - MIxS:source_mat_id
-    #domain: nucleic acid sequence source:
-    #examples: ['MPI012345']
+    in_subset:
+      - nucleic acid sequence source
 
   pathogenicity:
     aliases:
@@ -282,8 +287,8 @@ slots:
     range: text value
     mappings:
       - MIxS:pathogenicity
-    #domain: nucleic acid sequence source:
-    #examples: ['"human, animal, plant, fungi, bacteria"']
+    in_subset:
+      - nucleic acid sequence source
 
   biotic_relationship:
     aliases:
@@ -295,8 +300,8 @@ slots:
     range: text value
     mappings:
       - MIxS:biotic_relationship
-    #domain: nucleic acid sequence source:
-    #examples: ['free living']
+    in_subset:
+      - nucleic acid sequence source
 
   specific_host:
     aliases:
@@ -308,8 +313,8 @@ slots:
     range: text value
     mappings:
       - MIxS:specific_host
-    #domain: nucleic acid sequence source:
-    #examples: ['9606']
+    in_subset:
+      - nucleic acid sequence source
 
   host_spec_range:
     aliases:
@@ -321,8 +326,8 @@ slots:
     range: text value
     mappings:
       - MIxS:host_spec_range
-    #domain: nucleic acid sequence source:
-    #examples: ['9606']
+    in_subset:
+      - nucleic acid sequence source
 
   health_disease_stat:
     aliases:
@@ -334,8 +339,8 @@ slots:
     range: text value
     mappings:
       - MIxS:health_disease_stat
-    #domain: nucleic acid sequence source:
-    #examples: ['dead']
+    in_subset:
+      - nucleic acid sequence source
 
   trophic_level:
     aliases:
@@ -347,8 +352,8 @@ slots:
     range: text value
     mappings:
       - MIxS:trophic_level
-    #domain: nucleic acid sequence source:
-    #examples: ['heterotroph']
+    in_subset:
+      - nucleic acid sequence source
 
   propagation:
     aliases:
@@ -360,8 +365,8 @@ slots:
     range: text value
     mappings:
       - MIxS:propagation
-    #domain: nucleic acid sequence source:
-    #examples: ['lytic']
+    in_subset:
+      - nucleic acid sequence source
 
   encoded_traits:
     aliases:
@@ -373,8 +378,8 @@ slots:
     range: text value
     mappings:
       - MIxS:encoded_traits
-    #domain: nucleic acid sequence source:
-    #examples: ['beta-lactamase class A']
+    in_subset:
+      - nucleic acid sequence source
 
   rel_to_oxygen:
     aliases:
@@ -386,8 +391,8 @@ slots:
     range: text value
     mappings:
       - MIxS:rel_to_oxygen
-    #domain: nucleic acid sequence source:
-    #examples: ['aerobe']
+    in_subset:
+      - nucleic acid sequence source
 
   isol_growth_condt:
     aliases:
@@ -399,8 +404,8 @@ slots:
     range: text value
     mappings:
       - MIxS:isol_growth_condt
-    #domain: nucleic acid sequence source:
-    #examples: ['doi: 10.1016/j.syapm.2018.01.009']
+    in_subset:
+      - nucleic acid sequence source
 
   samp_collect_device:
     aliases:
@@ -412,8 +417,8 @@ slots:
     range: text value
     mappings:
       - MIxS:samp_collect_device
-    #domain: nucleic acid sequence source:
-    #examples: ['"biopsy, niskin bottle, push core"']
+    in_subset:
+      - nucleic acid sequence source
 
   samp_mat_process:
     aliases:
@@ -425,8 +430,8 @@ slots:
     range: controlled term value
     mappings:
       - MIxS:samp_mat_process
-    #domain: nucleic acid sequence source:
-    #examples: ['"filtering of seawater, storing samples in ethanol"']
+    in_subset:
+      - nucleic acid sequence source
 
   size_frac:
     aliases:
@@ -438,8 +443,8 @@ slots:
     range: quantity value
     mappings:
       - MIxS:size_frac
-    #domain: nucleic acid sequence source:
-    #examples: ['0-0.22 micrometer']
+    in_subset:
+      - nucleic acid sequence source
 
   samp_size:
     aliases:
@@ -451,8 +456,8 @@ slots:
     range: quantity value
     mappings:
       - MIxS:samp_size
-    #domain: nucleic acid sequence source:
-    #examples: ['5 liter']
+    in_subset:
+      - nucleic acid sequence source
 
   source_uvig:
     aliases:
@@ -464,8 +469,8 @@ slots:
     range: text value
     mappings:
       - MIxS:source_uvig
-    #domain: nucleic acid sequence source:
-    #examples: ['viral fraction metagenome (virome)']
+    in_subset:
+      - nucleic acid sequence source
 
   virus_enrich_appr:
     aliases:
@@ -477,8 +482,8 @@ slots:
     range: text value
     mappings:
       - MIxS:virus_enrich_appr
-    #domain: nucleic acid sequence source:
-    #examples: ['filtration + FeCl Precipitation + ultracentrifugation + DNAse']
+    in_subset:
+      - nucleic acid sequence source
 
   nucl_acid_ext:
     aliases:
@@ -490,8 +495,8 @@ slots:
     range: text value
     mappings:
       - MIxS:nucl_acid_ext
-    #domain: sequencing:
-    #examples: ['https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf']
+    in_subset:
+      - sequencing
 
   nucl_acid_amp:
     aliases:
@@ -503,8 +508,8 @@ slots:
     range: text value
     mappings:
       - MIxS:nucl_acid_amp
-    #domain: sequencing:
-    #examples: ['https://phylogenomics.me/protocols/16s-pcr-protocol/']
+    in_subset:
+      - sequencing
 
   lib_size:
     aliases:
@@ -516,8 +521,8 @@ slots:
     range: text value
     mappings:
       - MIxS:lib_size
-    #domain: sequencing:
-    #examples: ['50']
+    in_subset:
+      - sequencing
 
   lib_reads_seqd:
     aliases:
@@ -529,8 +534,8 @@ slots:
     range: text value
     mappings:
       - MIxS:lib_reads_seqd
-    #domain: sequencing:
-    #examples: ['20']
+    in_subset:
+      - sequencing
 
   lib_layout:
     aliases:
@@ -542,8 +547,8 @@ slots:
     range: text value
     mappings:
       - MIxS:lib_layout
-    #domain: sequencing:
-    #examples: ['paired']
+    in_subset:
+      - sequencing
 
   lib_vector:
     aliases:
@@ -555,8 +560,8 @@ slots:
     range: text value
     mappings:
       - MIxS:lib_vector
-    #domain: sequencing:
-    #examples: ['Bacteriophage P1']
+    in_subset:
+      - sequencing
 
   lib_screen:
     aliases:
@@ -568,8 +573,8 @@ slots:
     range: text value
     mappings:
       - MIxS:lib_screen
-    #domain: sequencing:
-    #examples: ['"enriched, screened, normalized"']
+    in_subset:
+      - sequencing
 
   target_gene:
     aliases:
@@ -581,8 +586,8 @@ slots:
     range: text value
     mappings:
       - MIxS:target_gene
-    #domain: sequencing:
-    #examples: ['"16S rRNA, 18S rRNA, nif, amoA, rpo"']
+    in_subset:
+      - sequencing
 
   target_subfragment:
     aliases:
@@ -594,8 +599,8 @@ slots:
     range: text value
     mappings:
       - MIxS:target_subfragment
-    #domain: sequencing:
-    #examples: ['"V6, V9, ITS"']
+    in_subset:
+      - sequencing
 
   pcr_primers:
     aliases:
@@ -607,8 +612,8 @@ slots:
     range: text value
     mappings:
       - MIxS:pcr_primers
-    #domain: sequencing:
-    #examples: ['FWD:GTGCCAGCMGCCGCGGTAA;REV:GGACTACHVGGGTWTCTAAT']
+    in_subset:
+      - sequencing
 
   mid:
     aliases:
@@ -620,8 +625,8 @@ slots:
     range: text value
     mappings:
       - MIxS:mid
-    #domain: sequencing:
-    #examples: ['GTGAATAT']
+    in_subset:
+      - sequencing
 
   adapters:
     aliases:
@@ -633,8 +638,8 @@ slots:
     range: text value
     mappings:
       - MIxS:adapters
-    #domain: sequencing:
-    #examples: ['AATGATACGGCGACCACCGAGATCTACACGCT;CAAGCAGAAGACGGCATACGAGAT']
+    in_subset:
+      - sequencing
 
   pcr_cond:
     aliases:
@@ -646,8 +651,8 @@ slots:
     range: text value
     mappings:
       - MIxS:pcr_cond
-    #domain: sequencing:
-    #examples: ['initial denaturation:94_3;annealing:50_1;elongation:72_1.5;final elongation:72_10;35']
+    in_subset:
+      - sequencing
 
   seq_meth:
     aliases:
@@ -659,8 +664,8 @@ slots:
     range: text value
     mappings:
       - MIxS:seq_meth
-    #domain: sequencing:
-    #examples: ['Illumina HiSeq 1500']
+    in_subset:
+      - sequencing
 
   seq_quality_check:
     aliases:
@@ -672,8 +677,8 @@ slots:
     range: text value
     mappings:
       - MIxS:seq_quality_check
-    #domain: sequencing:
-    #examples: ['none']
+    in_subset:
+      - sequencing
 
   chimera_check:
     aliases:
@@ -685,8 +690,8 @@ slots:
     range: text value
     mappings:
       - MIxS:chimera_check
-    #domain: sequencing:
-    #examples: ['uchime;v4.1;default parameters']
+    in_subset:
+      - sequencing
 
   tax_ident:
     aliases:
@@ -698,8 +703,8 @@ slots:
     range: text value
     mappings:
       - MIxS:tax_ident
-    #domain: sequencing:
-    #examples: ['other: rpoB gene']
+    in_subset:
+      - sequencing
 
   assembly_qual:
     aliases:
@@ -711,8 +716,8 @@ slots:
     range: text value
     mappings:
       - MIxS:assembly_qual
-    #domain: sequencing:
-    #examples: ['High-quality draft genome']
+    in_subset:
+      - sequencing
 
   assembly_name:
     aliases:
@@ -724,8 +729,8 @@ slots:
     range: text value
     mappings:
       - MIxS:assembly_name
-    #domain: sequencing:
-    #examples: ['"HuRef, JCVI_ISG_i3_1.0"']
+    in_subset:
+      - sequencing
 
   assembly_software:
     aliases:
@@ -737,8 +742,8 @@ slots:
     range: text value
     mappings:
       - MIxS:assembly_software
-    #domain: sequencing:
-    #examples: ['"metaSPAdes;3.11.0;kmer set 21,33,55,77,99,121, default parameters otherwise"']
+    in_subset:
+      - sequencing
 
   annot:
     aliases:
@@ -750,8 +755,8 @@ slots:
     range: text value
     mappings:
       - MIxS:annot
-    #domain: sequencing:
-    #examples: ['prokka']
+    in_subset:
+      - sequencing
 
   number_contig:
     aliases:
@@ -763,8 +768,8 @@ slots:
     range: text value
     mappings:
       - MIxS:number_contig
-    #domain: sequencing:
-    #examples: ['40']
+    in_subset:
+      - sequencing
 
   feat_pred:
     aliases:
@@ -776,8 +781,8 @@ slots:
     range: text value
     mappings:
       - MIxS:feat_pred
-    #domain: sequencing:
-    #examples: ['Prodigal;2.6.3;default parameters']
+    in_subset:
+      - sequencing
 
   ref_db:
     aliases:
@@ -789,8 +794,8 @@ slots:
     range: text value
     mappings:
       - MIxS:ref_db
-    #domain: sequencing:
-    #examples: ['pVOGs;5;http://dmk-brain.ecn.uiowa.edu/pVOGs/ Grazziotin et al. 2017 doi:10.1093/nar/gkw975']
+    in_subset:
+      - sequencing
 
   sim_search_meth:
     aliases:
@@ -802,8 +807,8 @@ slots:
     range: text value
     mappings:
       - MIxS:sim_search_meth
-    #domain: sequencing:
-    #examples: ['"HMMER3;3.1b2;hmmsearch, cutoff of 50 on score"']
+    in_subset:
+      - sequencing
 
   tax_class:
     aliases:
@@ -815,8 +820,8 @@ slots:
     range: text value
     mappings:
       - MIxS:tax_class
-    #domain: sequencing:
-    #examples: ['"vConTACT vContact2 (references from NCBI RefSeq v83, genus rank classification, default parameters)"']
+    in_subset:
+      - sequencing
 
   _16s_recover:
     aliases:
@@ -828,8 +833,8 @@ slots:
     range: text value
     mappings:
       - MIxS:_16s_recover
-    #domain: sequencing:
-    #examples: ['yes']
+    in_subset:
+      - sequencing
 
   _16s_recover_software:
     aliases:
@@ -841,8 +846,8 @@ slots:
     range: text value
     mappings:
       - MIxS:_16s_recover_software
-    #domain: sequencing:
-    #examples: ['rambl;v2;default parameters']
+    in_subset:
+      - sequencing
 
   trnas:
     aliases:
@@ -854,8 +859,8 @@ slots:
     range: text value
     mappings:
       - MIxS:trnas
-    #domain: sequencing:
-    #examples: ['18']
+    in_subset:
+      - sequencing
 
   trna_ext_software:
     aliases:
@@ -867,8 +872,8 @@ slots:
     range: text value
     mappings:
       - MIxS:trna_ext_software
-    #domain: sequencing:
-    #examples: ['infernal;v2;default parameters']
+    in_subset:
+      - sequencing
 
   compl_score:
     aliases:
@@ -880,8 +885,8 @@ slots:
     range: text value
     mappings:
       - MIxS:compl_score
-    #domain: sequencing:
-    #examples: ['med;60%']
+    in_subset:
+      - sequencing
 
   compl_software:
     aliases:
@@ -893,8 +898,8 @@ slots:
     range: text value
     mappings:
       - MIxS:compl_software
-    #domain: sequencing:
-    #examples: ['checkm']
+    in_subset:
+      - sequencing
 
   compl_appr:
     aliases:
@@ -906,8 +911,8 @@ slots:
     range: text value
     mappings:
       - MIxS:compl_appr
-    #domain: sequencing:
-    #examples: ['other: UViG length compared to the average length of reference genomes from the P22virus genus (NCBI RefSeq v83)']
+    in_subset:
+      - sequencing
 
   contam_score:
     aliases:
@@ -919,8 +924,8 @@ slots:
     range: text value
     mappings:
       - MIxS:contam_score
-    #domain: sequencing:
-    #examples: ['1%']
+    in_subset:
+      - sequencing
 
   contam_screen_input:
     aliases:
@@ -932,8 +937,8 @@ slots:
     range: text value
     mappings:
       - MIxS:contam_screen_input
-    #domain: sequencing:
-    #examples: ['contigs']
+    in_subset:
+      - sequencing
 
   contam_screen_param:
     aliases:
@@ -945,8 +950,8 @@ slots:
     range: text value
     mappings:
       - MIxS:contam_screen_param
-    #domain: sequencing:
-    #examples: ['kmer']
+    in_subset:
+      - sequencing
 
   decontam_software:
     aliases:
@@ -958,7 +963,8 @@ slots:
     range: text value
     mappings:
       - MIxS:decontam_software
-    #domain: sequencing:
+    in_subset:
+      - sequencing
 
   sort_tech:
     aliases:
@@ -970,8 +976,8 @@ slots:
     range: text value
     mappings:
       - MIxS:sort_tech
-    #domain: sequencing:
-    #examples: ['optical manipulation']
+    in_subset:
+      - sequencing
 
   single_cell_lysis_appr:
     aliases:
@@ -983,8 +989,8 @@ slots:
     range: text value
     mappings:
       - MIxS:single_cell_lysis_appr
-    #domain: sequencing:
-    #examples: ['enzymatic']
+    in_subset:
+      - sequencing
 
   single_cell_lysis_prot:
     aliases:
@@ -996,8 +1002,8 @@ slots:
     range: text value
     mappings:
       - MIxS:single_cell_lysis_prot
-    #domain: sequencing:
-    #examples: ['ambion single cell lysis kit']
+    in_subset:
+      - sequencing
 
   wga_amp_appr:
     aliases:
@@ -1009,8 +1015,8 @@ slots:
     range: text value
     mappings:
       - MIxS:wga_amp_appr
-    #domain: sequencing:
-    #examples: ['mda based']
+    in_subset:
+      - sequencing
 
   wga_amp_kit:
     aliases:
@@ -1022,8 +1028,8 @@ slots:
     range: text value
     mappings:
       - MIxS:wga_amp_kit
-    #domain: sequencing:
-    #examples: ['qiagen repli-g']
+    in_subset:
+      - sequencing
 
   bin_param:
     aliases:
@@ -1035,8 +1041,8 @@ slots:
     range: text value
     mappings:
       - MIxS:bin_param
-    #domain: sequencing:
-    #examples: ['coverage and kmer']
+    in_subset:
+      - sequencing
 
   bin_software:
     aliases:
@@ -1048,8 +1054,8 @@ slots:
     range: text value
     mappings:
       - MIxS:bin_software
-    #domain: sequencing:
-    #examples: ['concoct and maxbin']
+    in_subset:
+      - sequencing
 
   reassembly_bin:
     aliases:
@@ -1061,8 +1067,8 @@ slots:
     range: text value
     mappings:
       - MIxS:reassembly_bin
-    #domain: sequencing:
-    #examples: ['no']
+    in_subset:
+      - sequencing
 
   mag_cov_software:
     aliases:
@@ -1074,8 +1080,8 @@ slots:
     range: text value
     mappings:
       - MIxS:mag_cov_software
-    #domain: sequencing:
-    #examples: ['bbmap']
+    in_subset:
+      - sequencing
 
   vir_ident_software:
     aliases:
@@ -1087,8 +1093,8 @@ slots:
     range: text value
     mappings:
       - MIxS:vir_ident_software
-    #domain: sequencing:
-    #examples: ['"VirSorter; 1.0.4; Virome database, category 2"']
+    in_subset:
+      - sequencing
 
   pred_genome_type:
     aliases:
@@ -1100,8 +1106,8 @@ slots:
     range: text value
     mappings:
       - MIxS:pred_genome_type
-    #domain: sequencing:
-    #examples: ['dsDNA']
+    in_subset:
+      - sequencing
 
   pred_genome_struc:
     aliases:
@@ -1113,8 +1119,8 @@ slots:
     range: text value
     mappings:
       - MIxS:pred_genome_struc
-    #domain: sequencing:
-    #examples: ['non-segmented']
+    in_subset:
+      - sequencing
 
   detec_type:
     aliases:
@@ -1126,8 +1132,8 @@ slots:
     range: text value
     mappings:
       - MIxS:detec_type
-    #domain: sequencing:
-    #examples: ['independent sequence (UViG)']
+    in_subset:
+      - sequencing
 
   votu_class_appr:
     aliases:
@@ -1139,8 +1145,8 @@ slots:
     range: text value
     mappings:
       - MIxS:votu_class_appr
-    #domain: sequencing:
-    #examples: ['95% ANI;85% AF; greedy incremental clustering']
+    in_subset:
+      - sequencing
 
   votu_seq_comp_appr:
     aliases:
@@ -1152,8 +1158,8 @@ slots:
     range: text value
     mappings:
       - MIxS:votu_seq_comp_appr
-    #domain: sequencing:
-    #examples: ['blastn;2.6.0+;e-value cutoff: 0.001']
+    in_subset:
+      - sequencing
 
   votu_db:
     aliases:
@@ -1165,8 +1171,8 @@ slots:
     range: text value
     mappings:
       - MIxS:votu_db
-    #domain: sequencing:
-    #examples: ['NCBI Viral RefSeq;83']
+    in_subset:
+      - sequencing
 
   host_pred_appr:
     aliases:
@@ -1178,8 +1184,8 @@ slots:
     range: text value
     mappings:
       - MIxS:host_pred_appr
-    #domain: sequencing:
-    #examples: ['CRISPR spacer match']
+    in_subset:
+      - sequencing
 
   host_pred_est_acc:
     aliases:
@@ -1191,8 +1197,8 @@ slots:
     range: text value
     mappings:
       - MIxS:host_pred_est_acc
-    #domain: sequencing:
-    #examples: ['"CRISPR spacer match: 0 or 1 mismatches, estimated 8% FDR at the host genus rank (Edwards et al. 2016 doi:10.1093/femsre/fuv048)"']
+    in_subset:
+      - sequencing
 
   url:
     aliases:
@@ -1204,8 +1210,8 @@ slots:
     range: text value
     mappings:
       - MIxS:url
-    #domain: sequencing:
-    #examples: ['http://www.earthmicrobiome.org/']
+    in_subset:
+      - sequencing
 
   sop:
     aliases:
@@ -1217,8 +1223,8 @@ slots:
     range: text value
     mappings:
       - MIxS:sop
-    #domain: sequencing:
-    #examples: ['http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/its/']
+    in_subset:
+      - sequencing
 
   barometric_press:
     aliases:
@@ -1230,8 +1236,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:barometric_press
-    #domain: :
-    #examples: ['5 millibar']
 
   carb_dioxide:
     aliases:
@@ -1243,8 +1247,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:carb_dioxide
-    #domain: :
-    #examples: ['410 parts per million']
 
   carb_monoxide:
     aliases:
@@ -1256,8 +1258,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:carb_monoxide
-    #domain: :
-    #examples: ['0.1 parts per million']
 
   chem_administration:
     aliases:
@@ -1269,8 +1269,6 @@ slots:
     range: controlled term value
     mappings:
       - MIxS:chem_administration
-    #domain: :
-    #examples: ['agar [CHEBI:2509];2018-05-11T20:00Z']
 
   humidity:
     aliases:
@@ -1282,8 +1280,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:humidity
-    #domain: :
-    #examples: ['25 gram per cubic meter']
 
   methane:
     aliases:
@@ -1295,8 +1291,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:methane
-    #domain: :
-    #examples: ['1800 parts per billion']
 
   misc_param:
     aliases:
@@ -1308,8 +1302,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:misc_param
-    #domain: :
-    #examples: ['Bicarbonate ion concentration;2075 micromole per kilogram']
 
   organism_count:
     aliases:
@@ -1321,8 +1313,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:organism_count
-    #domain: :
-    #examples: ['total prokaryotes;3.5e7 cells per milliliter;qPCR']
 
   oxygen:
     aliases:
@@ -1334,8 +1324,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:oxygen
-    #domain: :
-    #examples: ['600 parts per million']
 
   oxy_stat_samp:
     aliases:
@@ -1347,8 +1335,6 @@ slots:
     range: text value
     mappings:
       - MIxS:oxy_stat_samp
-    #domain: :
-    #examples: ['aerobic']
 
   perturbation:
     aliases:
@@ -1360,8 +1346,6 @@ slots:
     range: text value
     mappings:
       - MIxS:perturbation
-    #domain: :
-    #examples: ['antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M']
 
   pollutants:
     aliases:
@@ -1373,8 +1357,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:pollutants
-    #domain: :
-    #examples: ['lead;0.15 microgram per cubic meter']
 
   resp_part_matter:
     aliases:
@@ -1386,8 +1368,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:resp_part_matter
-    #domain: :
-    #examples: ['PM2.5;10 microgram per cubic meter']
 
   samp_salinity:
     aliases:
@@ -1399,8 +1379,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:samp_salinity
-    #domain: :
-    #examples: ['1 milligram per liter']
 
   samp_store_dur:
     aliases:
@@ -1412,8 +1390,6 @@ slots:
     range: text value
     mappings:
       - MIxS:samp_store_dur
-    #domain: :
-    #examples: ['P1Y6M']
 
   samp_store_loc:
     aliases:
@@ -1425,8 +1401,6 @@ slots:
     range: text value
     mappings:
       - MIxS:samp_store_loc
-    #domain: :
-    #examples: ['Freezer no:5']
 
   samp_store_temp:
     aliases:
@@ -1438,8 +1412,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:samp_store_temp
-    #domain: :
-    #examples: ['-80 degree Celsius']
 
   samp_vol_we_dna_ext:
     aliases:
@@ -1451,8 +1423,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:samp_vol_we_dna_ext
-    #domain: :
-    #examples: ['1500 milliliter']
 
   solar_irradiance:
     aliases:
@@ -1464,8 +1434,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:solar_irradiance
-    #domain: :
-    #examples: ['1.36 kilowatts per square meter per day']
 
   temp:
     aliases:
@@ -1477,8 +1445,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:temp
-    #domain: :
-    #examples: ['25 degree Celsius']
 
   ventilation_rate:
     aliases:
@@ -1490,8 +1456,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:ventilation_rate
-    #domain: :
-    #examples: ['750 cubic meter per minute']
 
   ventilation_type:
     aliases:
@@ -1503,8 +1467,6 @@ slots:
     range: text value
     mappings:
       - MIxS:ventilation_type
-    #domain: :
-    #examples: ['Operable windows']
 
   volatile_org_comp:
     aliases:
@@ -1516,8 +1478,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:volatile_org_comp
-    #domain: :
-    #examples: ['formaldehyde;500 nanogram per liter']
 
   wind_direction:
     aliases:
@@ -1529,8 +1489,6 @@ slots:
     range: text value
     mappings:
       - MIxS:wind_direction
-    #domain: :
-    #examples: ['Northwest']
 
   wind_speed:
     aliases:
@@ -1542,8 +1500,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:wind_speed
-    #domain: :
-    #examples: ['21 kilometer per hour']
 
   surf_material:
     aliases:
@@ -1555,8 +1511,6 @@ slots:
     range: text value
     mappings:
       - MIxS:surf_material
-    #domain: :
-    #examples: ['wood']
 
   surf_air_cont:
     aliases:
@@ -1568,8 +1522,6 @@ slots:
     range: text value
     mappings:
       - MIxS:surf_air_cont
-    #domain: :
-    #examples: ['radon']
 
   rel_air_humidity:
     aliases:
@@ -1581,8 +1533,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:rel_air_humidity
-    #domain: :
-    #examples: ['80%']
 
   abs_air_humidity:
     aliases:
@@ -1594,8 +1544,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:abs_air_humidity
-    #domain: :
-    #examples: ['9 gram per gram']
 
   surf_humidity:
     aliases:
@@ -1607,8 +1555,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:surf_humidity
-    #domain: :
-    #examples: ['10%']
 
   air_temp:
     aliases:
@@ -1620,8 +1566,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:air_temp
-    #domain: :
-    #examples: ['20 degree Celsius']
 
   surf_temp:
     aliases:
@@ -1633,8 +1577,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:surf_temp
-    #domain: :
-    #examples: ['15 degree Celsius']
 
   surf_moisture_ph:
     aliases:
@@ -1646,8 +1588,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:surf_moisture_ph
-    #domain: :
-    #examples: ['7']
 
   build_occup_type:
     aliases:
@@ -1659,8 +1599,6 @@ slots:
     range: text value
     mappings:
       - MIxS:build_occup_type
-    #domain: :
-    #examples: ['market']
 
   surf_moisture:
     aliases:
@@ -1672,8 +1610,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:surf_moisture
-    #domain: :
-    #examples: ['0.01 gram per square meter']
 
   dew_point:
     aliases:
@@ -1685,8 +1621,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:dew_point
-    #domain: :
-    #examples: ['22 degree Celsius']
 
   indoor_space:
     aliases:
@@ -1698,8 +1632,6 @@ slots:
     range: text value
     mappings:
       - MIxS:indoor_space
-    #domain: :
-    #examples: ['foyer']
 
   indoor_surf:
     aliases:
@@ -1711,8 +1643,6 @@ slots:
     range: text value
     mappings:
       - MIxS:indoor_surf
-    #domain: :
-    #examples: ['wall']
 
   filter_type:
     aliases:
@@ -1724,8 +1654,6 @@ slots:
     range: text value
     mappings:
       - MIxS:filter_type
-    #domain: :
-    #examples: ['HEPA']
 
   heat_cool_type:
     aliases:
@@ -1737,8 +1665,6 @@ slots:
     range: text value
     mappings:
       - MIxS:heat_cool_type
-    #domain: :
-    #examples: ['heat pump']
 
   substructure_type:
     aliases:
@@ -1750,8 +1676,6 @@ slots:
     range: text value
     mappings:
       - MIxS:substructure_type
-    #domain: :
-    #examples: ['basement']
 
   building_setting:
     aliases:
@@ -1763,8 +1687,6 @@ slots:
     range: text value
     mappings:
       - MIxS:building_setting
-    #domain: :
-    #examples: ['rural']
 
   light_type:
     aliases:
@@ -1776,8 +1698,6 @@ slots:
     range: text value
     mappings:
       - MIxS:light_type
-    #domain: :
-    #examples: ['desk lamp']
 
   samp_sort_meth:
     aliases:
@@ -1789,7 +1709,6 @@ slots:
     range: text value
     mappings:
       - MIxS:samp_sort_meth
-    #domain: :
 
   space_typ_state:
     aliases:
@@ -1801,8 +1720,6 @@ slots:
     range: text value
     mappings:
       - MIxS:space_typ_state
-    #domain: :
-    #examples: ['typically occupied']
 
   typ_occup_density:
     aliases:
@@ -1814,8 +1731,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:typ_occup_density
-    #domain: :
-    #examples: ['25']
 
   occup_samp:
     aliases:
@@ -1827,8 +1742,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:occup_samp
-    #domain: :
-    #examples: ['10']
 
   occup_density_samp:
     aliases:
@@ -1840,7 +1753,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:occup_density_samp
-    #domain: :
 
   address:
     aliases:
@@ -1852,7 +1764,6 @@ slots:
     range: text value
     mappings:
       - MIxS:address
-    #domain: :
 
   adj_room:
     aliases:
@@ -1864,7 +1775,6 @@ slots:
     range: text value
     mappings:
       - MIxS:adj_room
-    #domain: :
 
   aero_struc:
     aliases:
@@ -1876,8 +1786,6 @@ slots:
     range: text value
     mappings:
       - MIxS:aero_struc
-    #domain: :
-    #examples: ['plane']
 
   amount_light:
     aliases:
@@ -1889,7 +1797,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:amount_light
-    #domain: :
 
   arch_struc:
     aliases:
@@ -1901,8 +1808,6 @@ slots:
     range: text value
     mappings:
       - MIxS:arch_struc
-    #domain: :
-    #examples: ['shed']
 
   avg_occup:
     aliases:
@@ -1914,8 +1819,6 @@ slots:
     range: text value
     mappings:
       - MIxS:avg_occup
-    #domain: :
-    #examples: ['2']
 
   avg_dew_point:
     aliases:
@@ -1927,8 +1830,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:avg_dew_point
-    #domain: :
-    #examples: ['25.5 degree Celsius']
 
   avg_temp:
     aliases:
@@ -1940,8 +1841,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:avg_temp
-    #domain: :
-    #examples: ['12.5 degree Celsius']
 
   bathroom_count:
     aliases:
@@ -1953,8 +1852,6 @@ slots:
     range: text value
     mappings:
       - MIxS:bathroom_count
-    #domain: :
-    #examples: ['1']
 
   bedroom_count:
     aliases:
@@ -1966,8 +1863,6 @@ slots:
     range: text value
     mappings:
       - MIxS:bedroom_count
-    #domain: :
-    #examples: ['2']
 
   built_struc_age:
     aliases:
@@ -1979,8 +1874,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:built_struc_age
-    #domain: :
-    #examples: ['15']
 
   built_struc_set:
     aliases:
@@ -1992,8 +1885,6 @@ slots:
     range: text value
     mappings:
       - MIxS:built_struc_set
-    #domain: :
-    #examples: ['rural']
 
   built_struc_type:
     aliases:
@@ -2005,7 +1896,6 @@ slots:
     range: text value
     mappings:
       - MIxS:built_struc_type
-    #domain: :
 
   ceil_area:
     aliases:
@@ -2017,8 +1907,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:ceil_area
-    #domain: :
-    #examples: ['25 square meter']
 
   ceil_cond:
     aliases:
@@ -2030,8 +1918,6 @@ slots:
     range: text value
     mappings:
       - MIxS:ceil_cond
-    #domain: :
-    #examples: ['damaged']
 
   ceil_finish_mat:
     aliases:
@@ -2043,8 +1929,6 @@ slots:
     range: text value
     mappings:
       - MIxS:ceil_finish_mat
-    #domain: :
-    #examples: ['stucco']
 
   ceil_water_mold:
     aliases:
@@ -2056,8 +1940,6 @@ slots:
     range: text value
     mappings:
       - MIxS:ceil_water_mold
-    #domain: :
-    #examples: ['presence of mold visible']
 
   ceil_struc:
     aliases:
@@ -2069,8 +1951,6 @@ slots:
     range: text value
     mappings:
       - MIxS:ceil_struc
-    #domain: :
-    #examples: ['concrete']
 
   ceil_texture:
     aliases:
@@ -2082,8 +1962,6 @@ slots:
     range: text value
     mappings:
       - MIxS:ceil_texture
-    #domain: :
-    #examples: ['popcorn']
 
   ceil_thermal_mass:
     aliases:
@@ -2095,7 +1973,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:ceil_thermal_mass
-    #domain: :
 
   ceil_type:
     aliases:
@@ -2107,8 +1984,6 @@ slots:
     range: text value
     mappings:
       - MIxS:ceil_type
-    #domain: :
-    #examples: ['coffered']
 
   cool_syst_id:
     aliases:
@@ -2120,8 +1995,6 @@ slots:
     range: text value
     mappings:
       - MIxS:cool_syst_id
-    #domain: :
-    #examples: ['12345']
 
   date_last_rain:
     aliases:
@@ -2133,8 +2006,6 @@ slots:
     range: timestamp value
     mappings:
       - MIxS:date_last_rain
-    #domain: :
-    #examples: ['2018-05-11:T14:30Z']
 
   build_docs:
     aliases:
@@ -2146,8 +2017,6 @@ slots:
     range: text value
     mappings:
       - MIxS:build_docs
-    #domain: :
-    #examples: ['maintenance plans']
 
   door_size:
     aliases:
@@ -2159,8 +2028,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:door_size
-    #domain: :
-    #examples: ['2.5 square meter']
 
   door_cond:
     aliases:
@@ -2172,8 +2039,6 @@ slots:
     range: text value
     mappings:
       - MIxS:door_cond
-    #domain: :
-    #examples: ['new']
 
   door_direct:
     aliases:
@@ -2185,8 +2050,6 @@ slots:
     range: text value
     mappings:
       - MIxS:door_direct
-    #domain: :
-    #examples: ['inward']
 
   door_loc:
     aliases:
@@ -2198,8 +2061,6 @@ slots:
     range: text value
     mappings:
       - MIxS:door_loc
-    #domain: :
-    #examples: ['north']
 
   door_mat:
     aliases:
@@ -2211,8 +2072,6 @@ slots:
     range: text value
     mappings:
       - MIxS:door_mat
-    #domain: :
-    #examples: ['wood']
 
   door_move:
     aliases:
@@ -2224,8 +2083,6 @@ slots:
     range: text value
     mappings:
       - MIxS:door_move
-    #domain: :
-    #examples: ['swinging']
 
   door_water_mold:
     aliases:
@@ -2237,8 +2094,6 @@ slots:
     range: text value
     mappings:
       - MIxS:door_water_mold
-    #domain: :
-    #examples: ['presence of mold visible']
 
   door_type:
     aliases:
@@ -2250,8 +2105,6 @@ slots:
     range: text value
     mappings:
       - MIxS:door_type
-    #domain: :
-    #examples: ['wooden']
 
   door_comp_type:
     aliases:
@@ -2263,8 +2116,6 @@ slots:
     range: text value
     mappings:
       - MIxS:door_comp_type
-    #domain: :
-    #examples: ['revolving']
 
   door_type_metal:
     aliases:
@@ -2276,8 +2127,6 @@ slots:
     range: text value
     mappings:
       - MIxS:door_type_metal
-    #domain: :
-    #examples: ['hollow']
 
   door_type_wood:
     aliases:
@@ -2289,8 +2138,6 @@ slots:
     range: text value
     mappings:
       - MIxS:door_type_wood
-    #domain: :
-    #examples: ['battened']
 
   drawings:
     aliases:
@@ -2302,8 +2149,6 @@ slots:
     range: text value
     mappings:
       - MIxS:drawings
-    #domain: :
-    #examples: ['sketch']
 
   elevator:
     aliases:
@@ -2315,8 +2160,6 @@ slots:
     range: text value
     mappings:
       - MIxS:elevator
-    #domain: :
-    #examples: ['2']
 
   escalator:
     aliases:
@@ -2328,8 +2171,6 @@ slots:
     range: text value
     mappings:
       - MIxS:escalator
-    #domain: :
-    #examples: ['4']
 
   exp_duct:
     aliases:
@@ -2341,7 +2182,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:exp_duct
-    #domain: :
 
   exp_pipe:
     aliases:
@@ -2353,7 +2193,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:exp_pipe
-    #domain: :
 
   ext_door:
     aliases:
@@ -2365,7 +2204,6 @@ slots:
     range: text value
     mappings:
       - MIxS:ext_door
-    #domain: :
 
   fireplace_type:
     aliases:
@@ -2377,8 +2215,6 @@ slots:
     range: text value
     mappings:
       - MIxS:fireplace_type
-    #domain: :
-    #examples: ['wood burning']
 
   floor_age:
     aliases:
@@ -2390,7 +2226,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:floor_age
-    #domain: :
 
   floor_area:
     aliases:
@@ -2402,7 +2237,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:floor_area
-    #domain: :
 
   floor_cond:
     aliases:
@@ -2414,8 +2248,6 @@ slots:
     range: text value
     mappings:
       - MIxS:floor_cond
-    #domain: :
-    #examples: ['new']
 
   floor_count:
     aliases:
@@ -2427,7 +2259,6 @@ slots:
     range: text value
     mappings:
       - MIxS:floor_count
-    #domain: :
 
   floor_finish_mat:
     aliases:
@@ -2439,8 +2270,6 @@ slots:
     range: text value
     mappings:
       - MIxS:floor_finish_mat
-    #domain: :
-    #examples: ['carpet']
 
   floor_water_mold:
     aliases:
@@ -2452,8 +2281,6 @@ slots:
     range: text value
     mappings:
       - MIxS:floor_water_mold
-    #domain: :
-    #examples: ['ceiling discoloration']
 
   floor_struc:
     aliases:
@@ -2465,8 +2292,6 @@ slots:
     range: text value
     mappings:
       - MIxS:floor_struc
-    #domain: :
-    #examples: ['concrete']
 
   floor_thermal_mass:
     aliases:
@@ -2478,7 +2303,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:floor_thermal_mass
-    #domain: :
 
   freq_clean:
     aliases:
@@ -2490,7 +2314,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:freq_clean
-    #domain: :
 
   freq_cook:
     aliases:
@@ -2502,7 +2325,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:freq_cook
-    #domain: :
 
   furniture:
     aliases:
@@ -2514,8 +2336,6 @@ slots:
     range: text value
     mappings:
       - MIxS:furniture
-    #domain: :
-    #examples: ['chair']
 
   gender_restroom:
     aliases:
@@ -2527,8 +2347,6 @@ slots:
     range: text value
     mappings:
       - MIxS:gender_restroom
-    #domain: :
-    #examples: ['male']
 
   hall_count:
     aliases:
@@ -2540,7 +2358,6 @@ slots:
     range: text value
     mappings:
       - MIxS:hall_count
-    #domain: :
 
   handidness:
     aliases:
@@ -2552,8 +2369,6 @@ slots:
     range: text value
     mappings:
       - MIxS:handidness
-    #domain: :
-    #examples: ['right handedness']
 
   heat_deliv_loc:
     aliases:
@@ -2565,8 +2380,6 @@ slots:
     range: text value
     mappings:
       - MIxS:heat_deliv_loc
-    #domain: :
-    #examples: ['north']
 
   heat_system_deliv_meth:
     aliases:
@@ -2578,8 +2391,6 @@ slots:
     range: text value
     mappings:
       - MIxS:heat_system_deliv_meth
-    #domain: :
-    #examples: ['radiant']
 
   heat_system_id:
     aliases:
@@ -2591,7 +2402,6 @@ slots:
     range: text value
     mappings:
       - MIxS:heat_system_id
-    #domain: :
 
   height_carper_fiber:
     aliases:
@@ -2603,7 +2413,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:height_carper_fiber
-    #domain: :
 
   inside_lux:
     aliases:
@@ -2615,7 +2424,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:inside_lux
-    #domain: :
 
   int_wall_cond:
     aliases:
@@ -2627,8 +2435,6 @@ slots:
     range: text value
     mappings:
       - MIxS:int_wall_cond
-    #domain: :
-    #examples: ['damaged']
 
   last_clean:
     aliases:
@@ -2640,8 +2446,6 @@ slots:
     range: timestamp value
     mappings:
       - MIxS:last_clean
-    #domain: :
-    #examples: ['2018-05-11:T14:30Z']
 
   max_occup:
     aliases:
@@ -2653,7 +2457,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:max_occup
-    #domain: :
 
   mech_struc:
     aliases:
@@ -2665,8 +2468,6 @@ slots:
     range: text value
     mappings:
       - MIxS:mech_struc
-    #domain: :
-    #examples: ['elevator']
 
   number_plants:
     aliases:
@@ -2678,7 +2479,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:number_plants
-    #domain: :
 
   number_pets:
     aliases:
@@ -2690,7 +2490,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:number_pets
-    #domain: :
 
   number_resident:
     aliases:
@@ -2702,7 +2501,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:number_resident
-    #domain: :
 
   occup_document:
     aliases:
@@ -2714,8 +2512,6 @@ slots:
     range: text value
     mappings:
       - MIxS:occup_document
-    #domain: :
-    #examples: ['estimate']
 
   ext_wall_orient:
     aliases:
@@ -2727,8 +2523,6 @@ slots:
     range: text value
     mappings:
       - MIxS:ext_wall_orient
-    #domain: :
-    #examples: ['northwest']
 
   ext_window_orient:
     aliases:
@@ -2740,8 +2534,6 @@ slots:
     range: text value
     mappings:
       - MIxS:ext_window_orient
-    #domain: :
-    #examples: ['southwest']
 
   rel_humidity_out:
     aliases:
@@ -2753,8 +2545,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:rel_humidity_out
-    #domain: :
-    #examples: ['12 per kilogram of air']
 
   pres_animal:
     aliases:
@@ -2766,8 +2556,6 @@ slots:
     range: text value
     mappings:
       - MIxS:pres_animal
-    #domain: :
-    #examples: ['cat;5']
 
   quad_pos:
     aliases:
@@ -2779,8 +2567,6 @@ slots:
     range: text value
     mappings:
       - MIxS:quad_pos
-    #domain: :
-    #examples: ['West side']
 
   rel_samp_loc:
     aliases:
@@ -2792,8 +2578,6 @@ slots:
     range: text value
     mappings:
       - MIxS:rel_samp_loc
-    #domain: :
-    #examples: ['center of car']
 
   room_air_exch_rate:
     aliases:
@@ -2805,7 +2589,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:room_air_exch_rate
-    #domain: :
 
   room_architec_element:
     aliases:
@@ -2817,7 +2600,6 @@ slots:
     range: text value
     mappings:
       - MIxS:room_architec_element
-    #domain: :
 
   room_condt:
     aliases:
@@ -2829,8 +2611,6 @@ slots:
     range: text value
     mappings:
       - MIxS:room_condt
-    #domain: :
-    #examples: ['new']
 
   room_count:
     aliases:
@@ -2842,7 +2622,6 @@ slots:
     range: text value
     mappings:
       - MIxS:room_count
-    #domain: :
 
   room_dim:
     aliases:
@@ -2854,7 +2633,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:room_dim
-    #domain: :
 
   room_door_dist:
     aliases:
@@ -2866,7 +2644,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:room_door_dist
-    #domain: :
 
   room_loc:
     aliases:
@@ -2878,8 +2655,6 @@ slots:
     range: text value
     mappings:
       - MIxS:room_loc
-    #domain: :
-    #examples: ['interior room']
 
   room_moist_damage_hist:
     aliases:
@@ -2891,7 +2666,6 @@ slots:
     range: text value
     mappings:
       - MIxS:room_moist_damage_hist
-    #domain: :
 
   room_net_area:
     aliases:
@@ -2903,7 +2677,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:room_net_area
-    #domain: :
 
   room_occup:
     aliases:
@@ -2915,7 +2688,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:room_occup
-    #domain: :
 
   room_samp_pos:
     aliases:
@@ -2927,8 +2699,6 @@ slots:
     range: text value
     mappings:
       - MIxS:room_samp_pos
-    #domain: :
-    #examples: ['south corner']
 
   room_type:
     aliases:
@@ -2940,8 +2710,6 @@ slots:
     range: text value
     mappings:
       - MIxS:room_type
-    #domain: :
-    #examples: ['bathroom']
 
   room_vol:
     aliases:
@@ -2953,7 +2721,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:room_vol
-    #domain: :
 
   room_window_count:
     aliases:
@@ -2965,7 +2732,6 @@ slots:
     range: text value
     mappings:
       - MIxS:room_window_count
-    #domain: :
 
   room_connected:
     aliases:
@@ -2977,8 +2743,6 @@ slots:
     range: text value
     mappings:
       - MIxS:room_connected
-    #domain: :
-    #examples: ['office']
 
   room_hallway:
     aliases:
@@ -2990,7 +2754,6 @@ slots:
     range: text value
     mappings:
       - MIxS:room_hallway
-    #domain: :
 
   room_door_share:
     aliases:
@@ -3002,7 +2765,6 @@ slots:
     range: text value
     mappings:
       - MIxS:room_door_share
-    #domain: :
 
   room_wall_share:
     aliases:
@@ -3014,7 +2776,6 @@ slots:
     range: text value
     mappings:
       - MIxS:room_wall_share
-    #domain: :
 
   samp_weather:
     aliases:
@@ -3026,8 +2787,6 @@ slots:
     range: text value
     mappings:
       - MIxS:samp_weather
-    #domain: :
-    #examples: ['foggy']
 
   samp_floor:
     aliases:
@@ -3039,8 +2798,6 @@ slots:
     range: text value
     mappings:
       - MIxS:samp_floor
-    #domain: :
-    #examples: ['4th floor']
 
   samp_room_id:
     aliases:
@@ -3052,7 +2809,6 @@ slots:
     range: text value
     mappings:
       - MIxS:samp_room_id
-    #domain: :
 
   samp_time_out:
     aliases:
@@ -3064,7 +2820,6 @@ slots:
     range: text value
     mappings:
       - MIxS:samp_time_out
-    #domain: :
 
   season:
     aliases:
@@ -3076,8 +2831,6 @@ slots:
     range: text value
     mappings:
       - MIxS:season
-    #domain: :
-    #examples: ['Summer']
 
   season_use:
     aliases:
@@ -3089,8 +2842,6 @@ slots:
     range: text value
     mappings:
       - MIxS:season_use
-    #domain: :
-    #examples: ['Winter']
 
   shading_device_cond:
     aliases:
@@ -3102,8 +2853,6 @@ slots:
     range: text value
     mappings:
       - MIxS:shading_device_cond
-    #domain: :
-    #examples: ['new']
 
   shading_device_loc:
     aliases:
@@ -3115,8 +2864,6 @@ slots:
     range: text value
     mappings:
       - MIxS:shading_device_loc
-    #domain: :
-    #examples: ['exterior']
 
   shading_device_mat:
     aliases:
@@ -3128,7 +2875,6 @@ slots:
     range: text value
     mappings:
       - MIxS:shading_device_mat
-    #domain: :
 
   shading_device_water_mold:
     aliases:
@@ -3140,8 +2886,6 @@ slots:
     range: text value
     mappings:
       - MIxS:shading_device_water_mold
-    #domain: :
-    #examples: ['no presence of mold visible']
 
   shading_device_type:
     aliases:
@@ -3153,8 +2897,6 @@ slots:
     range: text value
     mappings:
       - MIxS:shading_device_type
-    #domain: :
-    #examples: ['slatted aluminum awning']
 
   specific_humidity:
     aliases:
@@ -3166,8 +2908,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:specific_humidity
-    #domain: :
-    #examples: ['15 per kilogram of air']
 
   specific:
     aliases:
@@ -3179,8 +2919,6 @@ slots:
     range: text value
     mappings:
       - MIxS:specific
-    #domain: :
-    #examples: ['construction']
 
   temp_out:
     aliases:
@@ -3192,8 +2930,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:temp_out
-    #domain: :
-    #examples: ['5 degree Celsius']
 
   train_line:
     aliases:
@@ -3205,8 +2941,6 @@ slots:
     range: text value
     mappings:
       - MIxS:train_line
-    #domain: :
-    #examples: ['red']
 
   train_stat_loc:
     aliases:
@@ -3218,8 +2952,6 @@ slots:
     range: text value
     mappings:
       - MIxS:train_stat_loc
-    #domain: :
-    #examples: ['forest hills']
 
   train_stop_loc:
     aliases:
@@ -3231,8 +2963,6 @@ slots:
     range: text value
     mappings:
       - MIxS:train_stop_loc
-    #domain: :
-    #examples: ['end']
 
   vis_media:
     aliases:
@@ -3244,8 +2974,6 @@ slots:
     range: text value
     mappings:
       - MIxS:vis_media
-    #domain: :
-    #examples: ['3D scans']
 
   wall_area:
     aliases:
@@ -3257,7 +2985,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:wall_area
-    #domain: :
 
   wall_const_type:
     aliases:
@@ -3269,8 +2996,6 @@ slots:
     range: text value
     mappings:
       - MIxS:wall_const_type
-    #domain: :
-    #examples: ['fire resistive']
 
   wall_finish_mat:
     aliases:
@@ -3282,8 +3007,6 @@ slots:
     range: text value
     mappings:
       - MIxS:wall_finish_mat
-    #domain: :
-    #examples: ['wood']
 
   wall_height:
     aliases:
@@ -3295,7 +3018,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:wall_height
-    #domain: :
 
   wall_loc:
     aliases:
@@ -3307,8 +3029,6 @@ slots:
     range: text value
     mappings:
       - MIxS:wall_loc
-    #domain: :
-    #examples: ['north']
 
   wall_water_mold:
     aliases:
@@ -3320,8 +3040,6 @@ slots:
     range: text value
     mappings:
       - MIxS:wall_water_mold
-    #domain: :
-    #examples: ['no presence of mold visible']
 
   wall_surf_treatment:
     aliases:
@@ -3333,8 +3051,6 @@ slots:
     range: text value
     mappings:
       - MIxS:wall_surf_treatment
-    #domain: :
-    #examples: ['paneling']
 
   wall_texture:
     aliases:
@@ -3346,8 +3062,6 @@ slots:
     range: text value
     mappings:
       - MIxS:wall_texture
-    #domain: :
-    #examples: ['popcorn']
 
   wall_thermal_mass:
     aliases:
@@ -3359,7 +3073,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:wall_thermal_mass
-    #domain: :
 
   water_feat_size:
     aliases:
@@ -3371,7 +3084,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:water_feat_size
-    #domain: :
 
   water_feat_type:
     aliases:
@@ -3383,8 +3095,6 @@ slots:
     range: text value
     mappings:
       - MIxS:water_feat_type
-    #domain: :
-    #examples: ['stream']
 
   weekday:
     aliases:
@@ -3396,8 +3106,6 @@ slots:
     range: text value
     mappings:
       - MIxS:weekday
-    #domain: :
-    #examples: ['Sunday']
 
   window_size:
     aliases:
@@ -3409,7 +3117,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:window_size
-    #domain: :
 
   window_cond:
     aliases:
@@ -3421,8 +3128,6 @@ slots:
     range: text value
     mappings:
       - MIxS:window_cond
-    #domain: :
-    #examples: ['rupture']
 
   window_cover:
     aliases:
@@ -3434,8 +3139,6 @@ slots:
     range: text value
     mappings:
       - MIxS:window_cover
-    #domain: :
-    #examples: ['curtains']
 
   window_horiz_pos:
     aliases:
@@ -3447,8 +3150,6 @@ slots:
     range: text value
     mappings:
       - MIxS:window_horiz_pos
-    #domain: :
-    #examples: ['middle']
 
   window_loc:
     aliases:
@@ -3460,8 +3161,6 @@ slots:
     range: text value
     mappings:
       - MIxS:window_loc
-    #domain: :
-    #examples: ['west']
 
   window_mat:
     aliases:
@@ -3473,8 +3172,6 @@ slots:
     range: text value
     mappings:
       - MIxS:window_mat
-    #domain: :
-    #examples: ['wood']
 
   window_open_freq:
     aliases:
@@ -3486,7 +3183,6 @@ slots:
     range: text value
     mappings:
       - MIxS:window_open_freq
-    #domain: :
 
   window_water_mold:
     aliases:
@@ -3498,8 +3194,6 @@ slots:
     range: text value
     mappings:
       - MIxS:window_water_mold
-    #domain: :
-    #examples: ['no presence of mold visible']
 
   window_status:
     aliases:
@@ -3511,8 +3205,6 @@ slots:
     range: text value
     mappings:
       - MIxS:window_status
-    #domain: :
-    #examples: ['open']
 
   window_type:
     aliases:
@@ -3524,8 +3216,6 @@ slots:
     range: text value
     mappings:
       - MIxS:window_type
-    #domain: :
-    #examples: ['fixed window']
 
   window_vert_pos:
     aliases:
@@ -3537,8 +3227,6 @@ slots:
     range: text value
     mappings:
       - MIxS:window_vert_pos
-    #domain: :
-    #examples: ['middle']
 
   ances_data:
     aliases:
@@ -3550,8 +3238,6 @@ slots:
     range: text value
     mappings:
       - MIxS:ances_data
-    #domain: :
-    #examples: ['A/3*B']
 
   biol_stat:
     aliases:
@@ -3563,8 +3249,6 @@ slots:
     range: text value
     mappings:
       - MIxS:biol_stat
-    #domain: :
-    #examples: ['natural']
 
   genetic_mod:
     aliases:
@@ -3576,8 +3260,6 @@ slots:
     range: text value
     mappings:
       - MIxS:genetic_mod
-    #domain: :
-    #examples: ['aox1A transgenic ']
 
   host_common_name:
     aliases:
@@ -3589,8 +3271,6 @@ slots:
     range: text value
     mappings:
       - MIxS:host_common_name
-    #domain: :
-    #examples: ['mussel']
 
   samp_capt_status:
     aliases:
@@ -3602,8 +3282,6 @@ slots:
     range: text value
     mappings:
       - MIxS:samp_capt_status
-    #domain: :
-    #examples: ['farm sample']
 
   samp_dis_stage:
     aliases:
@@ -3615,8 +3293,6 @@ slots:
     range: text value
     mappings:
       - MIxS:samp_dis_stage
-    #domain: :
-    #examples: ['infection']
 
   host_taxid:
     aliases:
@@ -3628,8 +3304,6 @@ slots:
     range: text value
     mappings:
       - MIxS:host_taxid
-    #domain: :
-    #examples: ['7955']
 
   host_subject_id:
     aliases:
@@ -3641,8 +3315,6 @@ slots:
     range: text value
     mappings:
       - MIxS:host_subject_id
-    #domain: :
-    #examples: ['MPI123']
 
   host_age:
     aliases:
@@ -3654,8 +3326,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:host_age
-    #domain: :
-    #examples: ['10 days']
 
   host_life_stage:
     aliases:
@@ -3667,8 +3337,6 @@ slots:
     range: text value
     mappings:
       - MIxS:host_life_stage
-    #domain: :
-    #examples: ['adult']
 
   host_sex:
     aliases:
@@ -3680,8 +3348,6 @@ slots:
     range: text value
     mappings:
       - MIxS:host_sex
-    #domain: :
-    #examples: ['female']
 
   host_disease_stat:
     aliases:
@@ -3693,8 +3359,6 @@ slots:
     range: controlled term value
     mappings:
       - MIxS:host_disease_stat
-    #domain: :
-    #examples: ['rabies [DOID:11260]']
 
   host_body_habitat:
     aliases:
@@ -3706,8 +3370,6 @@ slots:
     range: text value
     mappings:
       - MIxS:host_body_habitat
-    #domain: :
-    #examples: ['nasopharynx']
 
   host_body_site:
     aliases:
@@ -3719,8 +3381,6 @@ slots:
     range: controlled term value
     mappings:
       - MIxS:host_body_site
-    #domain: :
-    #examples: ['gill [UBERON:0002535]']
 
   host_body_product:
     aliases:
@@ -3732,8 +3392,6 @@ slots:
     range: controlled term value
     mappings:
       - MIxS:host_body_product
-    #domain: :
-    #examples: ['Portion of mucus [fma66938]']
 
   host_tot_mass:
     aliases:
@@ -3745,8 +3403,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:host_tot_mass
-    #domain: :
-    #examples: ['2500 gram']
 
   host_height:
     aliases:
@@ -3758,8 +3414,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:host_height
-    #domain: :
-    #examples: ['0.1 meter']
 
   host_length:
     aliases:
@@ -3771,8 +3425,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:host_length
-    #domain: :
-    #examples: ['1 meter']
 
   host_diet:
     aliases:
@@ -3784,8 +3436,6 @@ slots:
     range: text value
     mappings:
       - MIxS:host_diet
-    #domain: :
-    #examples: ['herbivore']
 
   host_last_meal:
     aliases:
@@ -3797,8 +3447,6 @@ slots:
     range: text value
     mappings:
       - MIxS:host_last_meal
-    #domain: :
-    #examples: ['corn feed;P2H']
 
   host_growth_cond:
     aliases:
@@ -3810,8 +3458,6 @@ slots:
     range: text value
     mappings:
       - MIxS:host_growth_cond
-    #domain: :
-    #examples: ['https://academic.oup.com/icesjms/article/68/2/349/617247']
 
   host_substrate:
     aliases:
@@ -3823,8 +3469,6 @@ slots:
     range: text value
     mappings:
       - MIxS:host_substrate
-    #domain: :
-    #examples: ['rock']
 
   host_family_relationship:
     aliases:
@@ -3836,8 +3480,6 @@ slots:
     range: text value
     mappings:
       - MIxS:host_family_relationship
-    #domain: :
-    #examples: ['offspring;Mussel25']
 
   host_infra_specific_name:
     aliases:
@@ -3849,8 +3491,6 @@ slots:
     range: text value
     mappings:
       - MIxS:host_infra_specific_name
-    #domain: :
-    #examples: ['borealis']
 
   host_infra_specific_rank:
     aliases:
@@ -3862,8 +3502,6 @@ slots:
     range: text value
     mappings:
       - MIxS:host_infra_specific_rank
-    #domain: :
-    #examples: ['subspecies']
 
   host_genotype:
     aliases:
@@ -3875,8 +3513,6 @@ slots:
     range: text value
     mappings:
       - MIxS:host_genotype
-    #domain: :
-    #examples: ['C57BL/6']
 
   host_phenotype:
     aliases:
@@ -3888,8 +3524,6 @@ slots:
     range: controlled term value
     mappings:
       - MIxS:host_phenotype
-    #domain: :
-    #examples: ['elongated [PATO:0001154]']
 
   host_body_temp:
     aliases:
@@ -3901,8 +3535,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:host_body_temp
-    #domain: :
-    #examples: ['15 degree Celsius']
 
   host_dry_mass:
     aliases:
@@ -3914,8 +3546,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:host_dry_mass
-    #domain: :
-    #examples: ['500 gram']
 
   host_blood_press_diast:
     aliases:
@@ -3927,7 +3557,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:host_blood_press_diast
-    #domain: :
 
   host_blood_press_syst:
     aliases:
@@ -3939,7 +3568,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:host_blood_press_syst
-    #domain: :
 
   host_color:
     aliases:
@@ -3951,7 +3579,6 @@ slots:
     range: text value
     mappings:
       - MIxS:host_color
-    #domain: :
 
   host_shape:
     aliases:
@@ -3963,8 +3590,6 @@ slots:
     range: text value
     mappings:
       - MIxS:host_shape
-    #domain: :
-    #examples: ['round']
 
   gravidity:
     aliases:
@@ -3976,8 +3601,6 @@ slots:
     range: text value
     mappings:
       - MIxS:gravidity
-    #domain: :
-    #examples: ['yes;due date:2018-05-11']
 
   ihmc_medication_code:
     aliases:
@@ -3989,8 +3612,6 @@ slots:
     range: text value
     mappings:
       - MIxS:ihmc_medication_code
-    #domain: :
-    #examples: ['810']
 
   smoker:
     aliases:
@@ -4002,8 +3623,6 @@ slots:
     range: text value
     mappings:
       - MIxS:smoker
-    #domain: :
-    #examples: ['yes']
 
   host_hiv_stat:
     aliases:
@@ -4015,8 +3634,6 @@ slots:
     range: text value
     mappings:
       - MIxS:host_hiv_stat
-    #domain: :
-    #examples: ['yes;yes']
 
   drug_usage:
     aliases:
@@ -4028,8 +3645,6 @@ slots:
     range: text value
     mappings:
       - MIxS:drug_usage
-    #domain: :
-    #examples: ['Lipitor;2/day']
 
   host_body_mass_index:
     aliases:
@@ -4041,8 +3656,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:host_body_mass_index
-    #domain: :
-    #examples: ['22 kilogram per square meter']
 
   diet_last_six_month:
     aliases:
@@ -4054,8 +3667,6 @@ slots:
     range: text value
     mappings:
       - MIxS:diet_last_six_month
-    #domain: :
-    #examples: ['yes;vegetarian diet']
 
   weight_loss_3_month:
     aliases:
@@ -4067,8 +3678,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:weight_loss_3_month
-    #domain: :
-    #examples: ['yes;5 kilogram']
 
   ihmc_ethnicity:
     aliases:
@@ -4080,8 +3689,6 @@ slots:
     range: text value
     mappings:
       - MIxS:ihmc_ethnicity
-    #domain: :
-    #examples: ['caucasian']
 
   host_occupation:
     aliases:
@@ -4093,8 +3700,6 @@ slots:
     range: text value
     mappings:
       - MIxS:host_occupation
-    #domain: :
-    #examples: ['veterinary']
 
   pet_farm_animal:
     aliases:
@@ -4106,8 +3711,6 @@ slots:
     range: text value
     mappings:
       - MIxS:pet_farm_animal
-    #domain: :
-    #examples: ['yes; 5 cats']
 
   travel_out_six_month:
     aliases:
@@ -4119,7 +3722,6 @@ slots:
     range: text value
     mappings:
       - MIxS:travel_out_six_month
-    #domain: :
 
   twin_sibling:
     aliases:
@@ -4131,8 +3733,6 @@ slots:
     range: text value
     mappings:
       - MIxS:twin_sibling
-    #domain: :
-    #examples: ['yes']
 
   medic_hist_perform:
     aliases:
@@ -4144,8 +3744,6 @@ slots:
     range: text value
     mappings:
       - MIxS:medic_hist_perform
-    #domain: :
-    #examples: ['true']
 
   study_complt_stat:
     aliases:
@@ -4157,8 +3755,6 @@ slots:
     range: text value
     mappings:
       - MIxS:study_complt_stat
-    #domain: :
-    #examples: ['no;non-compliance']
 
   pulmonary_disord:
     aliases:
@@ -4170,7 +3766,6 @@ slots:
     range: text value
     mappings:
       - MIxS:pulmonary_disord
-    #domain: :
 
   nose_throat_disord:
     aliases:
@@ -4182,7 +3777,6 @@ slots:
     range: text value
     mappings:
       - MIxS:nose_throat_disord
-    #domain: :
 
   blood_blood_disord:
     aliases:
@@ -4194,7 +3788,6 @@ slots:
     range: text value
     mappings:
       - MIxS:blood_blood_disord
-    #domain: :
 
   host_pulse:
     aliases:
@@ -4206,8 +3799,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:host_pulse
-    #domain: :
-    #examples: ['65 beats per minute']
 
   gestation_state:
     aliases:
@@ -4219,7 +3810,6 @@ slots:
     range: text value
     mappings:
       - MIxS:gestation_state
-    #domain: :
 
   maternal_health_stat:
     aliases:
@@ -4231,7 +3821,6 @@ slots:
     range: text value
     mappings:
       - MIxS:maternal_health_stat
-    #domain: :
 
   foetal_health_stat:
     aliases:
@@ -4243,7 +3832,6 @@ slots:
     range: text value
     mappings:
       - MIxS:foetal_health_stat
-    #domain: :
 
   amniotic_fluid_color:
     aliases:
@@ -4255,7 +3843,6 @@ slots:
     range: text value
     mappings:
       - MIxS:amniotic_fluid_color
-    #domain: :
 
   kidney_disord:
     aliases:
@@ -4267,7 +3854,6 @@ slots:
     range: text value
     mappings:
       - MIxS:kidney_disord
-    #domain: :
 
   urogenit_tract_disor:
     aliases:
@@ -4279,7 +3865,6 @@ slots:
     range: text value
     mappings:
       - MIxS:urogenit_tract_disor
-    #domain: :
 
   urine_collect_meth:
     aliases:
@@ -4291,8 +3876,6 @@ slots:
     range: text value
     mappings:
       - MIxS:urine_collect_meth
-    #domain: :
-    #examples: ['catheter']
 
   gastrointest_disord:
     aliases:
@@ -4304,7 +3887,6 @@ slots:
     range: text value
     mappings:
       - MIxS:gastrointest_disord
-    #domain: :
 
   liver_disord:
     aliases:
@@ -4316,7 +3898,6 @@ slots:
     range: text value
     mappings:
       - MIxS:liver_disord
-    #domain: :
 
   special_diet:
     aliases:
@@ -4328,8 +3909,6 @@ slots:
     range: text value
     mappings:
       - MIxS:special_diet
-    #domain: :
-    #examples: ['other:vegan']
 
   nose_mouth_teeth_throat_disord:
     aliases:
@@ -4341,7 +3920,6 @@ slots:
     range: text value
     mappings:
       - MIxS:nose_mouth_teeth_throat_disord
-    #domain: :
 
   time_last_toothbrush:
     aliases:
@@ -4353,8 +3931,6 @@ slots:
     range: text value
     mappings:
       - MIxS:time_last_toothbrush
-    #domain: :
-    #examples: ['P2H45M']
 
   dermatology_disord:
     aliases:
@@ -4366,7 +3942,6 @@ slots:
     range: text value
     mappings:
       - MIxS:dermatology_disord
-    #domain: :
 
   time_since_last_wash:
     aliases:
@@ -4378,8 +3953,6 @@ slots:
     range: text value
     mappings:
       - MIxS:time_since_last_wash
-    #domain: :
-    #examples: ['P1D']
 
   dominant_hand:
     aliases:
@@ -4391,8 +3964,6 @@ slots:
     range: text value
     mappings:
       - MIxS:dominant_hand
-    #domain: :
-    #examples: ['right']
 
   menarche:
     aliases:
@@ -4404,8 +3975,6 @@ slots:
     range: timestamp value
     mappings:
       - MIxS:menarche
-    #domain: :
-    #examples: ['2018-05-11']
 
   sexual_act:
     aliases:
@@ -4417,7 +3986,6 @@ slots:
     range: text value
     mappings:
       - MIxS:sexual_act
-    #domain: :
 
   pregnancy:
     aliases:
@@ -4429,8 +3997,6 @@ slots:
     range: timestamp value
     mappings:
       - MIxS:pregnancy
-    #domain: :
-    #examples: ['2018-05-11']
 
   douche:
     aliases:
@@ -4442,8 +4008,6 @@ slots:
     range: timestamp value
     mappings:
       - MIxS:douche
-    #domain: :
-    #examples: ['2018-05-11']
 
   birth_control:
     aliases:
@@ -4455,7 +4019,6 @@ slots:
     range: text value
     mappings:
       - MIxS:birth_control
-    #domain: :
 
   menopause:
     aliases:
@@ -4467,8 +4030,6 @@ slots:
     range: timestamp value
     mappings:
       - MIxS:menopause
-    #domain: :
-    #examples: ['2018-05-11']
 
   hrt:
     aliases:
@@ -4480,8 +4041,6 @@ slots:
     range: timestamp value
     mappings:
       - MIxS:hrt
-    #domain: :
-    #examples: ['2018-05-11']
 
   hysterectomy:
     aliases:
@@ -4493,8 +4052,6 @@ slots:
     range: text value
     mappings:
       - MIxS:hysterectomy
-    #domain: :
-    #examples: ['no']
 
   gynecologic_disord:
     aliases:
@@ -4506,7 +4063,6 @@ slots:
     range: text value
     mappings:
       - MIxS:gynecologic_disord
-    #domain: :
 
   urogenit_disord:
     aliases:
@@ -4518,7 +4074,6 @@ slots:
     range: text value
     mappings:
       - MIxS:urogenit_disord
-    #domain: :
 
   hcr:
     aliases:
@@ -4530,8 +4085,6 @@ slots:
     range: text value
     mappings:
       - MIxS:hcr
-    #domain: :
-    #examples: ['Oil Sand']
 
   hc_produced:
     aliases:
@@ -4543,8 +4096,6 @@ slots:
     range: text value
     mappings:
       - MIxS:hc_produced
-    #domain: :
-    #examples: ['Gas']
 
   basin:
     aliases:
@@ -4556,7 +4107,6 @@ slots:
     range: text value
     mappings:
       - MIxS:basin
-    #domain: :
 
   field:
     aliases:
@@ -4568,7 +4118,6 @@ slots:
     range: text value
     mappings:
       - MIxS:field
-    #domain: :
 
   reservoir:
     aliases:
@@ -4580,7 +4129,6 @@ slots:
     range: text value
     mappings:
       - MIxS:reservoir
-    #domain: :
 
   hcr_temp:
     aliases:
@@ -4592,8 +4140,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:hcr_temp
-    #domain: :
-    #examples: ['150-295 degree Celsius']
 
   tvdss_of_hcr_temp:
     aliases:
@@ -4605,7 +4151,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:tvdss_of_hcr_temp
-    #domain: :
 
   hcr_pressure:
     aliases:
@@ -4617,7 +4162,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:hcr_pressure
-    #domain: :
 
   tvdss_of_hcr_pressure:
     aliases:
@@ -4629,7 +4173,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:tvdss_of_hcr_pressure
-    #domain: :
 
   permeability:
     aliases:
@@ -4641,7 +4184,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:permeability
-    #domain: :
 
   porosity:
     aliases:
@@ -4653,7 +4195,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:porosity
-    #domain: :
 
   lithology:
     aliases:
@@ -4665,8 +4206,6 @@ slots:
     range: text value
     mappings:
       - MIxS:lithology
-    #domain: :
-    #examples: ['Volcanic']
 
   depos_env:
     aliases:
@@ -4678,8 +4217,6 @@ slots:
     range: text value
     mappings:
       - MIxS:depos_env
-    #domain: :
-    #examples: ['Continental - Alluvial']
 
   hcr_geol_age:
     aliases:
@@ -4691,8 +4228,6 @@ slots:
     range: text value
     mappings:
       - MIxS:hcr_geol_age
-    #domain: :
-    #examples: ['Silurian']
 
   owc_tvdss:
     aliases:
@@ -4704,7 +4239,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:owc_tvdss
-    #domain: :
 
   hcr_fw_salinity:
     aliases:
@@ -4716,7 +4250,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:hcr_fw_salinity
-    #domain: :
 
   sulfate_fw:
     aliases:
@@ -4728,7 +4261,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:sulfate_fw
-    #domain: :
 
   vfa_fw:
     aliases:
@@ -4740,7 +4272,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:vfa_fw
-    #domain: :
 
   sr_kerog_type:
     aliases:
@@ -4752,8 +4283,6 @@ slots:
     range: text value
     mappings:
       - MIxS:sr_kerog_type
-    #domain: :
-    #examples: ['Type IV']
 
   sr_lithology:
     aliases:
@@ -4765,8 +4294,6 @@ slots:
     range: text value
     mappings:
       - MIxS:sr_lithology
-    #domain: :
-    #examples: ['Coal']
 
   sr_dep_env:
     aliases:
@@ -4778,8 +4305,6 @@ slots:
     range: text value
     mappings:
       - MIxS:sr_dep_env
-    #domain: :
-    #examples: ['Marine']
 
   sr_geol_age:
     aliases:
@@ -4791,8 +4316,6 @@ slots:
     range: text value
     mappings:
       - MIxS:sr_geol_age
-    #domain: :
-    #examples: ['Silurian']
 
   samp_well_name:
     aliases:
@@ -4804,7 +4327,6 @@ slots:
     range: text value
     mappings:
       - MIxS:samp_well_name
-    #domain: :
 
   win:
     aliases:
@@ -4816,7 +4338,6 @@ slots:
     range: text value
     mappings:
       - MIxS:win
-    #domain: :
 
   samp_type:
     aliases:
@@ -4828,8 +4349,6 @@ slots:
     range: text value
     mappings:
       - MIxS:samp_type
-    #domain: :
-    #examples: ['solid deposit']
 
   samp_subtype:
     aliases:
@@ -4841,8 +4360,6 @@ slots:
     range: text value
     mappings:
       - MIxS:samp_subtype
-    #domain: :
-    #examples: ['biofilm']
 
   pressure:
     aliases:
@@ -4854,8 +4371,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:pressure
-    #domain: :
-    #examples: ['50 atmosphere']
 
   samp_tvdss:
     aliases:
@@ -4867,7 +4382,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:samp_tvdss
-    #domain: :
 
   samp_md:
     aliases:
@@ -4879,8 +4393,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:samp_md
-    #domain: :
-    #examples: ['1534 meter;MSL']
 
   samp_transport_cond:
     aliases:
@@ -4892,8 +4404,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:samp_transport_cond
-    #domain: :
-    #examples: ['5 days;-20 degree Celsius']
 
   organism_count_qpcr_info:
     aliases:
@@ -4905,7 +4415,6 @@ slots:
     range: text value
     mappings:
       - MIxS:organism_count_qpcr_info
-    #domain: :
 
   ph:
     aliases:
@@ -4917,8 +4426,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:ph
-    #domain: :
-    #examples: ['7.2']
 
   alkalinity:
     aliases:
@@ -4930,8 +4437,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:alkalinity
-    #domain: :
-    #examples: ['50 milligram per liter']
 
   alkalinity_method:
     aliases:
@@ -4943,8 +4448,6 @@ slots:
     range: text value
     mappings:
       - MIxS:alkalinity_method
-    #domain: :
-    #examples: ['titration']
 
   sulfate:
     aliases:
@@ -4956,8 +4459,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:sulfate
-    #domain: :
-    #examples: ['5 micromole per liter']
 
   sulfide:
     aliases:
@@ -4969,8 +4470,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:sulfide
-    #domain: :
-    #examples: ['2 micromole per liter']
 
   tot_sulfur:
     aliases:
@@ -4982,7 +4481,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:tot_sulfur
-    #domain: :
 
   nitrate:
     aliases:
@@ -4994,8 +4492,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:nitrate
-    #domain: :
-    #examples: ['65 micromole per liter']
 
   nitrite:
     aliases:
@@ -5007,8 +4503,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:nitrite
-    #domain: :
-    #examples: ['0.5 micromole per liter']
 
   ammonium:
     aliases:
@@ -5020,8 +4514,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:ammonium
-    #domain: :
-    #examples: ['1.5 milligram per liter']
 
   tot_nitro:
     aliases:
@@ -5033,8 +4525,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:tot_nitro
-    #domain: :
-    #examples: ['50 micromole per liter']
 
   diss_iron:
     aliases:
@@ -5046,7 +4536,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:diss_iron
-    #domain: :
 
   sodium:
     aliases:
@@ -5058,8 +4547,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:sodium
-    #domain: :
-    #examples: ['10.5 milligram per liter']
 
   chloride:
     aliases:
@@ -5071,8 +4558,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:chloride
-    #domain: :
-    #examples: ['5000 milligram per liter']
 
   potassium:
     aliases:
@@ -5084,8 +4569,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:potassium
-    #domain: :
-    #examples: ['463 milligram per liter']
 
   magnesium:
     aliases:
@@ -5097,8 +4580,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:magnesium
-    #domain: :
-    #examples: ['52.8 micromole per kilogram']
 
   calcium:
     aliases:
@@ -5110,8 +4591,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:calcium
-    #domain: :
-    #examples: ['0.2 micromole per liter']
 
   tot_iron:
     aliases:
@@ -5123,7 +4602,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:tot_iron
-    #domain: :
 
   diss_org_carb:
     aliases:
@@ -5135,8 +4613,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:diss_org_carb
-    #domain: :
-    #examples: ['197 micromole per liter']
 
   diss_inorg_carb:
     aliases:
@@ -5148,8 +4624,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:diss_inorg_carb
-    #domain: :
-    #examples: ['2059 micromole per kilogram']
 
   diss_inorg_phosp:
     aliases:
@@ -5161,8 +4635,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:diss_inorg_phosp
-    #domain: :
-    #examples: ['56.5 micromole per liter']
 
   tot_phosp:
     aliases:
@@ -5174,8 +4646,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:tot_phosp
-    #domain: :
-    #examples: ['0.03 milligram per liter']
 
   suspend_solids:
     aliases:
@@ -5187,7 +4657,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:suspend_solids
-    #domain: :
 
   density:
     aliases:
@@ -5199,8 +4668,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:density
-    #domain: :
-    #examples: ['1000 kilogram per cubic meter']
 
   diss_carb_dioxide:
     aliases:
@@ -5212,8 +4679,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:diss_carb_dioxide
-    #domain: :
-    #examples: ['5 milligram per liter']
 
   diss_oxygen_fluid:
     aliases:
@@ -5225,7 +4690,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:diss_oxygen_fluid
-    #domain: :
 
   vfa:
     aliases:
@@ -5237,7 +4701,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:vfa
-    #domain: :
 
   benzene:
     aliases:
@@ -5249,7 +4712,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:benzene
-    #domain: :
 
   toluene:
     aliases:
@@ -5261,7 +4723,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:toluene
-    #domain: :
 
   ethylbenzene:
     aliases:
@@ -5273,7 +4734,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:ethylbenzene
-    #domain: :
 
   xylene:
     aliases:
@@ -5285,7 +4745,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:xylene
-    #domain: :
 
   api:
     aliases:
@@ -5297,7 +4756,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:api
-    #domain: :
 
   tan:
     aliases:
@@ -5309,7 +4767,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:tan
-    #domain: :
 
   viscosity:
     aliases:
@@ -5321,7 +4778,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:viscosity
-    #domain: :
 
   pour_point :
     aliases:
@@ -5333,7 +4789,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:pour_point 
-    #domain: :
 
   saturates_pc:
     aliases:
@@ -5345,7 +4800,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:saturates_pc
-    #domain: :
 
   aromatics_pc:
     aliases:
@@ -5357,7 +4811,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:aromatics_pc
-    #domain: :
 
   resins_pc:
     aliases:
@@ -5369,7 +4822,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:resins_pc
-    #domain: :
 
   asphaltenes_pc:
     aliases:
@@ -5381,7 +4833,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:asphaltenes_pc
-    #domain: :
 
   additional_info:
     aliases:
@@ -5393,7 +4844,6 @@ slots:
     range: text value
     mappings:
       - MIxS:additional_info
-    #domain: :
 
   prod_start_date:
     aliases:
@@ -5405,8 +4855,6 @@ slots:
     range: timestamp value
     mappings:
       - MIxS:prod_start_date
-    #domain: :
-    #examples: ['2018-05-11']
 
   prod_rate:
     aliases:
@@ -5418,7 +4866,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:prod_rate
-    #domain: :
 
   water_production_rate:
     aliases:
@@ -5430,7 +4877,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:water_production_rate
-    #domain: :
 
   water_cut:
     aliases:
@@ -5442,7 +4888,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:water_cut
-    #domain: :
 
   iwf:
     aliases:
@@ -5454,7 +4899,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:iwf
-    #domain: :
 
   add_recov_method:
     aliases:
@@ -5466,8 +4910,6 @@ slots:
     range: text value
     mappings:
       - MIxS:add_recov_method
-    #domain: :
-    #examples: ['Polymer Addition;2018-06-21T14:30Z']
 
   iw_bt_date_well:
     aliases:
@@ -5479,8 +4921,6 @@ slots:
     range: timestamp value
     mappings:
       - MIxS:iw_bt_date_well
-    #domain: :
-    #examples: ['2018-05-11']
 
   biocide:
     aliases:
@@ -5492,8 +4932,6 @@ slots:
     range: text value
     mappings:
       - MIxS:biocide
-    #domain: :
-    #examples: ['ALPHA 1427;Baker Hughes;2008-01-23']
 
   biocide_admin_method:
     aliases:
@@ -5505,7 +4943,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:biocide_admin_method
-    #domain: :
 
   chem_treatment:
     aliases:
@@ -5517,8 +4954,6 @@ slots:
     range: text value
     mappings:
       - MIxS:chem_treatment
-    #domain: :
-    #examples: ['ACCENT 1125;DOW;2010-11-17']
 
   chem_treatment_method:
     aliases:
@@ -5530,7 +4965,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:chem_treatment_method
-    #domain: :
 
   samp_loc_corr_rate:
     aliases:
@@ -5542,7 +4976,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:samp_loc_corr_rate
-    #domain: :
 
   samp_collection_point:
     aliases:
@@ -5554,8 +4987,6 @@ slots:
     range: text value
     mappings:
       - MIxS:samp_collection_point
-    #domain: :
-    #examples: ['well']
 
   samp_preserv:
     aliases:
@@ -5567,7 +4998,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:samp_preserv
-    #domain: :
 
   alkyl_diethers:
     aliases:
@@ -5579,8 +5009,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:alkyl_diethers
-    #domain: :
-    #examples: ['0.005 mole per liter']
 
   aminopept_act:
     aliases:
@@ -5592,8 +5020,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:aminopept_act
-    #domain: :
-    #examples: ['0.269 mole per liter per hour']
 
   bacteria_carb_prod:
     aliases:
@@ -5605,8 +5031,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:bacteria_carb_prod
-    #domain: :
-    #examples: ['2.53 microgram per liter per hour']
 
   biomass:
     aliases:
@@ -5618,8 +5042,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:biomass
-    #domain: :
-    #examples: ['total;20 gram']
 
   bishomohopanol:
     aliases:
@@ -5631,8 +5053,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:bishomohopanol
-    #domain: :
-    #examples: ['14 microgram per liter']
 
   bromide:
     aliases:
@@ -5644,8 +5064,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:bromide
-    #domain: :
-    #examples: ['0.05 parts per million']
 
   carb_nitro_ratio:
     aliases:
@@ -5657,8 +5075,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:carb_nitro_ratio
-    #domain: :
-    #examples: ['0.417361111']
 
   chlorophyll:
     aliases:
@@ -5670,8 +5086,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:chlorophyll
-    #domain: :
-    #examples: ['5 milligram per cubic meter']
 
   diether_lipids:
     aliases:
@@ -5683,8 +5097,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:diether_lipids
-    #domain: :
-    #examples: ['0.2 nanogram per liter']
 
   diss_hydrogen:
     aliases:
@@ -5696,8 +5108,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:diss_hydrogen
-    #domain: :
-    #examples: ['0.3 micromole per liter']
 
   diss_org_nitro:
     aliases:
@@ -5709,8 +5119,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:diss_org_nitro
-    #domain: :
-    #examples: ['0.05 micromole per liter']
 
   diss_oxygen:
     aliases:
@@ -5722,8 +5130,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:diss_oxygen
-    #domain: :
-    #examples: ['175 micromole per kilogram']
 
   glucosidase_act:
     aliases:
@@ -5735,8 +5141,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:glucosidase_act
-    #domain: :
-    #examples: ['5 mol per liter per hour']
 
   mean_frict_vel:
     aliases:
@@ -5748,8 +5152,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:mean_frict_vel
-    #domain: :
-    #examples: ['0.5 meter per second']
 
   mean_peak_frict_vel:
     aliases:
@@ -5761,8 +5163,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:mean_peak_frict_vel
-    #domain: :
-    #examples: ['1 meter per second']
 
   n_alkanes:
     aliases:
@@ -5774,8 +5174,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:n_alkanes
-    #domain: :
-    #examples: ['n-hexadecane;100 milligram per liter']
 
   nitro:
     aliases:
@@ -5787,8 +5185,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:nitro
-    #domain: :
-    #examples: ['4.2 micromole per liter']
 
   org_carb:
     aliases:
@@ -5800,8 +5196,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:org_carb
-    #domain: :
-    #examples: ['1.5 microgram per liter']
 
   org_matter:
     aliases:
@@ -5813,8 +5207,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:org_matter
-    #domain: :
-    #examples: ['1.75 milligram per cubic meter']
 
   org_nitro:
     aliases:
@@ -5826,8 +5218,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:org_nitro
-    #domain: :
-    #examples: ['4 micromole per liter']
 
   part_org_carb:
     aliases:
@@ -5839,8 +5229,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:part_org_carb
-    #domain: :
-    #examples: ['1.92 micromole per liter']
 
   petroleum_hydrocarb:
     aliases:
@@ -5852,8 +5240,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:petroleum_hydrocarb
-    #domain: :
-    #examples: ['0.05 micromole per liter']
 
   phaeopigments:
     aliases:
@@ -5865,8 +5251,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:phaeopigments
-    #domain: :
-    #examples: ['2.5 milligram per cubic meter']
 
   phosphate:
     aliases:
@@ -5878,8 +5262,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:phosphate
-    #domain: :
-    #examples: ['0.7 micromole per liter']
 
   phosplipid_fatt_acid:
     aliases:
@@ -5891,8 +5273,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:phosplipid_fatt_acid
-    #domain: :
-    #examples: ['2.98 milligram per liter']
 
   redox_potential:
     aliases:
@@ -5904,8 +5284,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:redox_potential
-    #domain: :
-    #examples: ['300 millivolt']
 
   salinity:
     aliases:
@@ -5917,8 +5295,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:salinity
-    #domain: :
-    #examples: ['25 practical salinity unit']
 
   silicate:
     aliases:
@@ -5930,8 +5306,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:silicate
-    #domain: :
-    #examples: ['0.05 micromole per liter']
 
   tot_carb:
     aliases:
@@ -5943,7 +5317,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:tot_carb
-    #domain: :
 
   tot_nitro_content:
     aliases:
@@ -5955,7 +5328,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:tot_nitro_content
-    #domain: :
 
   tot_org_carb:
     aliases:
@@ -5967,7 +5339,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:tot_org_carb
-    #domain: :
 
   turbidity:
     aliases:
@@ -5979,8 +5350,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:turbidity
-    #domain: :
-    #examples: ['0.3 nephelometric turbidity units']
 
   water_content:
     aliases:
@@ -5992,7 +5361,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:water_content
-    #domain: :
 
   water_current:
     aliases:
@@ -6004,8 +5372,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:water_current
-    #domain: :
-    #examples: ['10 cubic meter per second']
 
   air_temp_regm:
     aliases:
@@ -6017,8 +5383,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:air_temp_regm
-    #domain: :
-    #examples: ['25 degree Celsius;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   antibiotic_regm:
     aliases:
@@ -6030,8 +5394,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:antibiotic_regm
-    #domain: :
-    #examples: ['penicillin;5 milligram;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   biotic_regm:
     aliases:
@@ -6043,8 +5405,6 @@ slots:
     range: text value
     mappings:
       - MIxS:biotic_regm
-    #domain: :
-    #examples: ['sample inoculated with Rhizobium spp. Culture']
 
   chem_mutagen:
     aliases:
@@ -6056,8 +5416,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:chem_mutagen
-    #domain: :
-    #examples: ['nitrous acid;0.5 milligram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   climate_environment:
     aliases:
@@ -6069,8 +5427,6 @@ slots:
     range: text value
     mappings:
       - MIxS:climate_environment
-    #domain: :
-    #examples: ['tropical climate;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   cult_root_med:
     aliases:
@@ -6082,8 +5438,6 @@ slots:
     range: text value
     mappings:
       - MIxS:cult_root_med
-    #domain: :
-    #examples: ['http://himedialabs.com/TD/PT158.pdf']
 
   fertilizer_regm:
     aliases:
@@ -6095,8 +5449,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:fertilizer_regm
-    #domain: :
-    #examples: ['urea;0.6 milligram per liter;R2/2018-05-11:T14:30/2018-05-11T19:30/P1H30M']
 
   fungicide_regm:
     aliases:
@@ -6108,8 +5460,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:fungicide_regm
-    #domain: :
-    #examples: ['bifonazole;1 mole per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   gaseous_environment:
     aliases:
@@ -6121,8 +5471,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:gaseous_environment
-    #domain: :
-    #examples: ['nitric oxide;0.5 micromole per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   gravity:
     aliases:
@@ -6134,8 +5482,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:gravity
-    #domain: :
-    #examples: ['12 g;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   growth_facil:
     aliases:
@@ -6147,8 +5493,6 @@ slots:
     range: controlled term value
     mappings:
       - MIxS:growth_facil
-    #domain: :
-    #examples: ['Growth chamber [CO_715:0000189]']
 
   growth_habit:
     aliases:
@@ -6160,8 +5504,6 @@ slots:
     range: text value
     mappings:
       - MIxS:growth_habit
-    #domain: :
-    #examples: ['spreading']
 
   growth_hormone_regm:
     aliases:
@@ -6173,8 +5515,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:growth_hormone_regm
-    #domain: :
-    #examples: ['abscisic acid;0.5 milligram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   herbicide_regm:
     aliases:
@@ -6186,8 +5526,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:herbicide_regm
-    #domain: :
-    #examples: ['atrazine;10 milligram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   host_wet_mass:
     aliases:
@@ -6199,8 +5537,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:host_wet_mass
-    #domain: :
-    #examples: ['1500 gram']
 
   humidity_regm:
     aliases:
@@ -6212,8 +5548,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:humidity_regm
-    #domain: :
-    #examples: ['25 gram per cubic meter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   light_regm:
     aliases:
@@ -6225,8 +5559,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:light_regm
-    #domain: :
-    #examples: ['incandescant light;10 lux;450 nanometer']
 
   mechanical_damage:
     aliases:
@@ -6238,8 +5570,6 @@ slots:
     range: text value
     mappings:
       - MIxS:mechanical_damage
-    #domain: :
-    #examples: ['pruning;bark']
 
   mineral_nutr_regm:
     aliases:
@@ -6251,8 +5581,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:mineral_nutr_regm
-    #domain: :
-    #examples: ['potassium;15 gram;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   non_mineral_nutr_regm:
     aliases:
@@ -6264,8 +5592,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:non_mineral_nutr_regm
-    #domain: :
-    #examples: ['carbon dioxide;10 mole per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   ph_regm:
     aliases:
@@ -6277,8 +5603,6 @@ slots:
     range: text value
     mappings:
       - MIxS:ph_regm
-    #domain: :
-    #examples: ['7.6;R2/2018-05-11:T14:30/2018-05-11T19:30/P1H30M']
 
   pesticide_regm:
     aliases:
@@ -6290,8 +5614,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:pesticide_regm
-    #domain: :
-    #examples: ['pyrethrum;0.6 milligram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   plant_growth_med:
     aliases:
@@ -6303,8 +5625,6 @@ slots:
     range: controlled term value
     mappings:
       - MIxS:plant_growth_med
-    #domain: :
-    #examples: ['hydroponic plant culture media [EO:0007067]']
 
   plant_product:
     aliases:
@@ -6316,8 +5636,6 @@ slots:
     range: text value
     mappings:
       - MIxS:plant_product
-    #domain: :
-    #examples: ['xylem sap [PO:0025539]']
 
   plant_sex:
     aliases:
@@ -6329,8 +5647,6 @@ slots:
     range: text value
     mappings:
       - MIxS:plant_sex
-    #domain: :
-    #examples: ['Hermaphroditic']
 
   plant_struc:
     aliases:
@@ -6342,8 +5658,6 @@ slots:
     range: controlled term value
     mappings:
       - MIxS:plant_struc
-    #domain: :
-    #examples: ['epidermis [PO:0005679]']
 
   radiation_regm:
     aliases:
@@ -6355,8 +5669,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:radiation_regm
-    #domain: :
-    #examples: ['gamma radiation;60 gray;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   rainfall_regm:
     aliases:
@@ -6368,8 +5680,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:rainfall_regm
-    #domain: :
-    #examples: ['15 millimeter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   root_cond:
     aliases:
@@ -6381,8 +5691,6 @@ slots:
     range: text value
     mappings:
       - MIxS:root_cond
-    #domain: :
-    #examples: ['http://himedialabs.com/TD/PT158.pdf']
 
   root_med_carbon:
     aliases:
@@ -6394,8 +5702,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:root_med_carbon
-    #domain: :
-    #examples: ['sucrose']
 
   root_med_macronutr:
     aliases:
@@ -6407,8 +5713,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:root_med_macronutr
-    #domain: :
-    #examples: ['KH2PO4;170B milligram per liter']
 
   root_med_micronutr:
     aliases:
@@ -6420,8 +5724,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:root_med_micronutr
-    #domain: :
-    #examples: ['H3BO3;6.2B milligram per liter']
 
   root_med_suppl:
     aliases:
@@ -6433,8 +5735,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:root_med_suppl
-    #domain: :
-    #examples: ['nicotinic acid;0.5 milligram per liter']
 
   root_med_ph:
     aliases:
@@ -6446,8 +5746,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:root_med_ph
-    #domain: :
-    #examples: ['7.5']
 
   root_med_regl:
     aliases:
@@ -6459,8 +5757,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:root_med_regl
-    #domain: :
-    #examples: ['abscisic acid;0.75 milligram per liter']
 
   root_med_solid:
     aliases:
@@ -6472,8 +5768,6 @@ slots:
     range: text value
     mappings:
       - MIxS:root_med_solid
-    #domain: :
-    #examples: ['agar']
 
   salt_regm:
     aliases:
@@ -6485,8 +5779,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:salt_regm
-    #domain: :
-    #examples: ['NaCl;5 gram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   season_environment:
     aliases:
@@ -6498,8 +5790,6 @@ slots:
     range: text value
     mappings:
       - MIxS:season_environment
-    #domain: :
-    #examples: ['rainy;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   standing_water_regm:
     aliases:
@@ -6511,8 +5801,6 @@ slots:
     range: text value
     mappings:
       - MIxS:standing_water_regm
-    #domain: :
-    #examples: ['standing water;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   tiss_cult_growth_med:
     aliases:
@@ -6524,8 +5812,6 @@ slots:
     range: text value
     mappings:
       - MIxS:tiss_cult_growth_med
-    #domain: :
-    #examples: ['https://link.springer.com/content/pdf/10.1007/BF02796489.pdf']
 
   water_temp_regm:
     aliases:
@@ -6537,8 +5823,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:water_temp_regm
-    #domain: :
-    #examples: ['15 degree Celsius;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   watering_regm:
     aliases:
@@ -6550,8 +5834,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:watering_regm
-    #domain: :
-    #examples: ['1 liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M']
 
   particle_class:
     aliases:
@@ -6563,7 +5845,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:particle_class
-    #domain: :
 
   sediment_type:
     aliases:
@@ -6575,8 +5856,6 @@ slots:
     range: text value
     mappings:
       - MIxS:sediment_type
-    #domain: :
-    #examples: ['biogenous']
 
   tidal_stage:
     aliases:
@@ -6588,8 +5867,6 @@ slots:
     range: text value
     mappings:
       - MIxS:tidal_stage
-    #domain: :
-    #examples: ['high tide']
 
   tot_depth_water_col:
     aliases:
@@ -6601,8 +5878,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:tot_depth_water_col
-    #domain: :
-    #examples: ['500 meter']
 
   cur_land_use:
     aliases:
@@ -6614,8 +5889,6 @@ slots:
     range: text value
     mappings:
       - MIxS:cur_land_use
-    #domain: :
-    #examples: ['conifers']
 
   cur_vegetation:
     aliases:
@@ -6627,7 +5900,6 @@ slots:
     range: text value
     mappings:
       - MIxS:cur_vegetation
-    #domain: :
 
   cur_vegetation_meth:
     aliases:
@@ -6639,7 +5911,6 @@ slots:
     range: text value
     mappings:
       - MIxS:cur_vegetation_meth
-    #domain: :
 
   previous_land_use:
     aliases:
@@ -6651,7 +5922,6 @@ slots:
     range: text value
     mappings:
       - MIxS:previous_land_use
-    #domain: :
 
   previous_land_use_meth:
     aliases:
@@ -6663,7 +5933,6 @@ slots:
     range: text value
     mappings:
       - MIxS:previous_land_use_meth
-    #domain: :
 
   crop_rotation:
     aliases:
@@ -6675,8 +5944,6 @@ slots:
     range: text value
     mappings:
       - MIxS:crop_rotation
-    #domain: :
-    #examples: ['yes;R2/2017-01-01/2018-12-31/P6M']
 
   agrochem_addition:
     aliases:
@@ -6688,8 +5955,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:agrochem_addition
-    #domain: :
-    #examples: ['roundup;5 milligram per liter;2018-06-21']
 
   tillage:
     aliases:
@@ -6701,8 +5966,6 @@ slots:
     range: text value
     mappings:
       - MIxS:tillage
-    #domain: :
-    #examples: ['chisel']
 
   fire:
     aliases:
@@ -6714,7 +5977,6 @@ slots:
     range: timestamp value
     mappings:
       - MIxS:fire
-    #domain: :
 
   flooding:
     aliases:
@@ -6726,7 +5988,6 @@ slots:
     range: timestamp value
     mappings:
       - MIxS:flooding
-    #domain: :
 
   extreme_event:
     aliases:
@@ -6738,7 +5999,6 @@ slots:
     range: timestamp value
     mappings:
       - MIxS:extreme_event
-    #domain: :
 
   horizon:
     aliases:
@@ -6750,8 +6010,6 @@ slots:
     range: text value
     mappings:
       - MIxS:horizon
-    #domain: :
-    #examples: ['A horizon']
 
   horizon_meth:
     aliases:
@@ -6763,7 +6021,6 @@ slots:
     range: text value
     mappings:
       - MIxS:horizon_meth
-    #domain: :
 
   sieving:
     aliases:
@@ -6775,7 +6032,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:sieving
-    #domain: :
 
   water_content_soil_meth:
     aliases:
@@ -6787,7 +6043,6 @@ slots:
     range: text value
     mappings:
       - MIxS:water_content_soil_meth
-    #domain: :
 
   pool_dna_extracts:
     aliases:
@@ -6799,8 +6054,6 @@ slots:
     range: text value
     mappings:
       - MIxS:pool_dna_extracts
-    #domain: :
-    #examples: ['yes;5']
 
   store_cond:
     aliases:
@@ -6812,8 +6065,6 @@ slots:
     range: text value
     mappings:
       - MIxS:store_cond
-    #domain: :
-    #examples: ['-20 degree Celsius freezer;P2Y10D']
 
   link_climate_info:
     aliases:
@@ -6825,7 +6076,6 @@ slots:
     range: text value
     mappings:
       - MIxS:link_climate_info
-    #domain: :
 
   annual_temp:
     aliases:
@@ -6837,8 +6087,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:annual_temp
-    #domain: :
-    #examples: ['12.5 degree Celsius']
 
   season_temp:
     aliases:
@@ -6850,8 +6098,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:season_temp
-    #domain: :
-    #examples: ['18 degree Celsius']
 
   annual_precpt:
     aliases:
@@ -6863,7 +6109,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:annual_precpt
-    #domain: :
 
   season_precpt:
     aliases:
@@ -6875,7 +6120,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:season_precpt
-    #domain: :
 
   link_class_info:
     aliases:
@@ -6887,7 +6131,6 @@ slots:
     range: text value
     mappings:
       - MIxS:link_class_info
-    #domain: :
 
   fao_class:
     aliases:
@@ -6899,8 +6142,6 @@ slots:
     range: text value
     mappings:
       - MIxS:fao_class
-    #domain: :
-    #examples: ['Luvisols']
 
   local_class:
     aliases:
@@ -6912,7 +6153,6 @@ slots:
     range: text value
     mappings:
       - MIxS:local_class
-    #domain: :
 
   local_class_meth:
     aliases:
@@ -6924,7 +6164,6 @@ slots:
     range: text value
     mappings:
       - MIxS:local_class_meth
-    #domain: :
 
   soil_type:
     aliases:
@@ -6936,7 +6175,6 @@ slots:
     range: text value
     mappings:
       - MIxS:soil_type
-    #domain: :
 
   soil_type_meth:
     aliases:
@@ -6948,7 +6186,6 @@ slots:
     range: text value
     mappings:
       - MIxS:soil_type_meth
-    #domain: :
 
   slope_gradient:
     aliases:
@@ -6960,7 +6197,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:slope_gradient
-    #domain: :
 
   slope_aspect:
     aliases:
@@ -6972,7 +6208,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:slope_aspect
-    #domain: :
 
   profile_position:
     aliases:
@@ -6984,8 +6219,6 @@ slots:
     range: text value
     mappings:
       - MIxS:profile_position
-    #domain: :
-    #examples: ['summit']
 
   drainage_class:
     aliases:
@@ -6997,8 +6230,6 @@ slots:
     range: text value
     mappings:
       - MIxS:drainage_class
-    #domain: :
-    #examples: ['well']
 
   texture:
     aliases:
@@ -7010,7 +6241,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:texture
-    #domain: :
 
   texture_meth:
     aliases:
@@ -7022,7 +6252,6 @@ slots:
     range: text value
     mappings:
       - MIxS:texture_meth
-    #domain: :
 
   ph_meth:
     aliases:
@@ -7034,7 +6263,6 @@ slots:
     range: text value
     mappings:
       - MIxS:ph_meth
-    #domain: :
 
   tot_org_c_meth:
     aliases:
@@ -7046,7 +6274,6 @@ slots:
     range: text value
     mappings:
       - MIxS:tot_org_c_meth
-    #domain: :
 
   tot_nitro_content_meth:
     aliases:
@@ -7058,7 +6285,6 @@ slots:
     range: text value
     mappings:
       - MIxS:tot_nitro_content_meth
-    #domain: :
 
   microbial_biomass:
     aliases:
@@ -7070,7 +6296,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:microbial_biomass
-    #domain: :
 
   microbial_biomass_meth:
     aliases:
@@ -7082,7 +6307,6 @@ slots:
     range: text value
     mappings:
       - MIxS:microbial_biomass_meth
-    #domain: :
 
   link_addit_analys:
     aliases:
@@ -7094,7 +6318,6 @@ slots:
     range: text value
     mappings:
       - MIxS:link_addit_analys
-    #domain: :
 
   extreme_salinity:
     aliases:
@@ -7106,7 +6329,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:extreme_salinity
-    #domain: :
 
   salinity_meth:
     aliases:
@@ -7118,7 +6340,6 @@ slots:
     range: text value
     mappings:
       - MIxS:salinity_meth
-    #domain: :
 
   heavy_metals:
     aliases:
@@ -7130,7 +6351,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:heavy_metals
-    #domain: :
 
   heavy_metals_meth:
     aliases:
@@ -7142,7 +6362,6 @@ slots:
     range: text value
     mappings:
       - MIxS:heavy_metals_meth
-    #domain: :
 
   al_sat:
     aliases:
@@ -7154,7 +6373,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:al_sat
-    #domain: :
 
   al_sat_meth:
     aliases:
@@ -7166,7 +6384,6 @@ slots:
     range: text value
     mappings:
       - MIxS:al_sat_meth
-    #domain: :
 
   biochem_oxygen_dem:
     aliases:
@@ -7178,7 +6395,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:biochem_oxygen_dem
-    #domain: :
 
   chem_oxygen_dem:
     aliases:
@@ -7190,7 +6406,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:chem_oxygen_dem
-    #domain: :
 
   efficiency_percent:
     aliases:
@@ -7202,7 +6417,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:efficiency_percent
-    #domain: :
 
   emulsions:
     aliases:
@@ -7214,7 +6428,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:emulsions
-    #domain: :
 
   gaseous_substances:
     aliases:
@@ -7226,7 +6439,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:gaseous_substances
-    #domain: :
 
   indust_eff_percent:
     aliases:
@@ -7238,7 +6450,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:indust_eff_percent
-    #domain: :
 
   inorg_particles:
     aliases:
@@ -7250,7 +6461,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:inorg_particles
-    #domain: :
 
   org_particles:
     aliases:
@@ -7262,7 +6472,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:org_particles
-    #domain: :
 
   pre_treatment:
     aliases:
@@ -7274,7 +6483,6 @@ slots:
     range: text value
     mappings:
       - MIxS:pre_treatment
-    #domain: :
 
   primary_treatment:
     aliases:
@@ -7286,7 +6494,6 @@ slots:
     range: text value
     mappings:
       - MIxS:primary_treatment
-    #domain: :
 
   reactor_type:
     aliases:
@@ -7298,7 +6505,6 @@ slots:
     range: text value
     mappings:
       - MIxS:reactor_type
-    #domain: :
 
   secondary_treatment:
     aliases:
@@ -7310,7 +6516,6 @@ slots:
     range: text value
     mappings:
       - MIxS:secondary_treatment
-    #domain: :
 
   sewage_type:
     aliases:
@@ -7322,7 +6527,6 @@ slots:
     range: text value
     mappings:
       - MIxS:sewage_type
-    #domain: :
 
   sludge_retent_time:
     aliases:
@@ -7334,7 +6538,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:sludge_retent_time
-    #domain: :
 
   soluble_inorg_mat:
     aliases:
@@ -7346,7 +6549,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:soluble_inorg_mat
-    #domain: :
 
   soluble_org_mat:
     aliases:
@@ -7358,7 +6560,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:soluble_org_mat
-    #domain: :
 
   tertiary_treatment:
     aliases:
@@ -7370,7 +6571,6 @@ slots:
     range: text value
     mappings:
       - MIxS:tertiary_treatment
-    #domain: :
 
   tot_phosphate:
     aliases:
@@ -7382,7 +6582,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:tot_phosphate
-    #domain: :
 
   wastewater_type:
     aliases:
@@ -7394,7 +6593,6 @@ slots:
     range: text value
     mappings:
       - MIxS:wastewater_type
-    #domain: :
 
   atmospheric_data:
     aliases:
@@ -7406,8 +6604,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:atmospheric_data
-    #domain: :
-    #examples: ['wind speed;9 knots']
 
   bac_prod:
     aliases:
@@ -7419,8 +6615,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:bac_prod
-    #domain: :
-    #examples: ['5 milligram per cubic meter per day']
 
   bac_resp:
     aliases:
@@ -7432,8 +6626,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:bac_resp
-    #domain: :
-    #examples: ['300 micromole oxygen per liter per hour']
 
   conduc:
     aliases:
@@ -7445,8 +6637,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:conduc
-    #domain: :
-    #examples: ['10 milliSiemens per centimeter']
 
   diss_inorg_nitro:
     aliases:
@@ -7458,8 +6648,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:diss_inorg_nitro
-    #domain: :
-    #examples: ['761 micromole per liter']
 
   down_par:
     aliases:
@@ -7471,8 +6659,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:down_par
-    #domain: :
-    #examples: ['28.71 microEinstein per square meter per second']
 
   fluor:
     aliases:
@@ -7484,8 +6670,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:fluor
-    #domain: :
-    #examples: ['2.5 volts']
 
   light_intensity:
     aliases:
@@ -7497,8 +6681,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:light_intensity
-    #domain: :
-    #examples: ['0.3 lux']
 
   part_org_nitro:
     aliases:
@@ -7510,8 +6692,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:part_org_nitro
-    #domain: :
-    #examples: ['0.3 micromole per liter']
 
   photon_flux:
     aliases:
@@ -7523,8 +6703,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:photon_flux
-    #domain: :
-    #examples: ['3.926 micromole photons per second per square meter']
 
   primary_prod:
     aliases:
@@ -7536,8 +6714,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:primary_prod
-    #domain: :
-    #examples: ['100 milligram per cubic meter per day']
 
   size_frac_low:
     aliases:
@@ -7549,8 +6725,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:size_frac_low
-    #domain: :
-    #examples: ['0.2 micrometer']
 
   size_frac_up:
     aliases:
@@ -7562,8 +6736,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:size_frac_up
-    #domain: :
-    #examples: ['20 micrometer']
 
   soluble_react_phosp:
     aliases:
@@ -7575,8 +6747,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:soluble_react_phosp
-    #domain: :
-    #examples: ['0.1 milligram per liter']
 
   suspend_part_matter:
     aliases:
@@ -7588,8 +6758,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:suspend_part_matter
-    #domain: :
-    #examples: ['0.5 milligram per liter']
 
   tot_diss_nitro:
     aliases:
@@ -7601,8 +6769,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:tot_diss_nitro
-    #domain: :
-    #examples: ['40 microgram per liter']
 
   tot_inorg_nitro:
     aliases:
@@ -7614,8 +6780,6 @@ slots:
     range: quantity value
     mappings:
       - MIxS:tot_inorg_nitro
-    #domain: :
-    #examples: ['40 microgram per liter']
 
   tot_part_carb:
     aliases:
@@ -7627,6 +6791,4 @@ slots:
     range: quantity value
     mappings:
       - MIxS:tot_part_carb
-    #domain: :
-    #examples: ['35 micromole per liter']
 

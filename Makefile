@@ -16,9 +16,14 @@ build: python_dataclasses json_schema
 
 # The mixs subschema is not hand-authored; it is compiled
 # from a tsv saved from the mixs excel file
-schema/mixs.yaml: mixs5/mixs_v5.txt  mixs5/mixs_v5e.txt
+schema/mixs.yaml: mixs5/mixs_v5.txt mixs5/mixs_v5e.txt
 	scripts/mixs-to-blml.pl $^ > $@
 
+schema/mixs_meta.schema.json: schema/mixs_meta.yaml
+	pipenv run gen-json-schema -t template $<  > $@.tmp && mv $@.tmp $@
+
+schema/mixs_meta.py: schema/mixs_meta.yaml
+	pipenv run gen-py-classes $<  > $@.tmp && mv $@.tmp $@
 
 # -- Generated Artefacts --
 #

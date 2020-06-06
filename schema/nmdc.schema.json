@@ -60,6 +60,10 @@
             "env_medium": {
                "$ref": "#/definitions/ControlledTermValue"
             },
+            "env_package": {
+               "$ref": "#/definitions/TextValue",
+               "description": "\"MIxS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported\""
+            },
             "geo_loc_name": {
                "$ref": "#/definitions/TextValue",
                "description": "\"The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (v 1.512) (http://purl.bioontology.org/ontology/GAZ)\""
@@ -452,7 +456,7 @@
                "type": "string"
             },
             "language": {
-               "description": "Should use standard codes, e.g. \"en\"",
+               "description": "Should use ISO 639-1 code e.g. \"en\", \"fr\"",
                "type": "string"
             }
          },

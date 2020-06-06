@@ -25,9 +25,11 @@ emit_prefixes:
   - xsd
   - skos
 
+# This file organizes the main NMDC schema
 imports:
   - biolinkml:types
   - mixs
+  - core
   
 classes:
 
@@ -37,15 +39,6 @@ classes:
       - biosample set
       - data object set
   
-  named thing:
-    description: "a databased entity or concept/class"
-    abstract: true
-    slots:
-      - id
-      - name
-      - description
-      - alternate identifiers
-
   data object:
     is_a: named thing
     description: >-
@@ -61,10 +54,8 @@ classes:
       A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.  
       An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.  
     slots:
-      - depth
+      - env_package
       - lat_lon
-      - alt
-      - elev
       - geo_loc_name
       - collection_date
       - env_broad_scale
@@ -75,7 +66,10 @@ classes:
       - ecosystem_type
       - ecosystem_subtype
       - specific_ecosystem
+      - depth
       - tot_org_carb
+      - alt
+      - elev
     slot_usage:
       id:
         description: >-
@@ -164,100 +158,6 @@ classes:
         description: >-
           Should be an ORCID. Specify in CURIE format. E.g ORCID:0000-1111-...
     
-  attribute value:
-    description: >-
-      The value for any value of a attribute for a sample. This object can hold both the un-normalized atomic
-      value and the structured value
-    slots:
-      - has raw value
-    
-  quantity value:
-    is_a: attribute value
-    description: >-
-      A simple quantity, e.g. 2cm
-    slots:
-      - has unit
-      - has numeric value
-    slot_usage:
-      has raw value:
-        description: >-
-          Unnormalized atomic string representation, should in syntax {number} {unit}
-      has unit:
-        description: >-
-          The unit of the quantity
-      has numeric value:
-        description: >-
-          The number part of the quantity
-        range:
-          double
-
-  text value:
-    is_a: attribute value
-    description: >-
-      A basic string value
-    slots:
-      - language
-      
-  url value:
-    is_a: attribute value
-    description: >-
-      A value that is a string that conforms to URL syntax
-
-  timestamp value:
-    is_a: attribute value
-    description: >-
-      A value that is a timestamp. The range should be ISO-8601
-    #slots:
-    #  - year
-    #  - month
-    #  - day
-
-      
-  integer value:
-    is_a: attribute value
-    description: >-
-      A value that is an integer
-    slots:
-      - has numeric value
-
-  boolean value:
-    is_a: attribute value
-    description: >-
-      A value that is a boolean
-    slots:
-      - has boolean value
-      
-  controlled term value:
-    is_a: attribute value
-    description: >-
-      A controlled term or class from an ontology
-    # TODO: add fields for ontology, branch
-
-  geolocation value:
-    is_a: attribute value
-    description: >-
-      A normalized value for a location on the earth's surface
-    slots:
-      - latitude
-      - longitude
-    slot_usage:
-      has raw value:
-        description: >-
-          The raw value for a  geolocation should follow {lat} {long}
-        # to_str: {latitude} {longitude}
-
-  unit:
-    id_prefixes:
-      - UO
-    mappings:
-      - qud:Unit
-      - UO:0000000
-
-  ontology class:
-    is_a: named thing
-
-  environmental material term:
-    is_a: ontology class
 
 slots:
 
@@ -269,88 +169,6 @@ slots:
     domain: database
     range: data object
   
-  id:
-    identifier: false
-    multivalued: false
-    description: >-
-      A unique identifier for a thing.
-      Must be either a CURIE shorthand for a URI or a complete URI
-    required: false # for now we setting this to false until we develop an id template
-
-  name:
-    multivalued: false
-    range: string
-    description: >-
-      A human readable label for an entity
-
-  description:
-    range: string
-    multivalued: false
-    description: >-
-      a human-readable description of a thing
-    slot_uri: dcterms:description
-
-  # this will be obsoleted
-  annotations:
-    multivalued: true
-    
-  attribute:
-    aliases: ['field', 'property', 'template field', 'key', 'characteristic']
-    abstract: true
-    description: >-
-      A attribute of a biosample. Examples: depth, habitat, material.
-      For NMDC, attributes SHOULD be mapped to terms within a MIxS template
-    
-  has raw value:
-    description: >-
-      The value that was specified for an annotation in raw form, i.e. a string. E.g. "2 cm" or "2-4 cm"
-    multivalued: false
-    required: false
-    domain: attribute value
-    range: string
-    
-  has unit:
-    description: >-
-      Links a quantity value to a unit
-    range: unit
-    multivalued: true     ## workaround for https://github.com/biolink/biolinkml/issues/86
-    mappings:
-      - qud:unit
-
-  has numeric value:
-    description: >-
-      Links a quantity value to a number
-    multivalued: false
-    mappings:
-      - qud:quantityValue
-      
-  has boolean value:
-    description: >-
-      Links a quantity value to a boolean
-    range: boolean
-    multivalued: false
-      
-  alternate identifiers:
-    aliases: ['mappings', 'alt ids', 'xrefs']
-    description: >-
-      Non-primary identifiers
-    multivalued: true
-    range: string
-    required: false
-    
-  latitude:
-    domain: geolocation value
-    range: float
-    description: >-
-      latitude
-    slot_uri: wgs:lat
-
-  longitude:
-    domain: geolocation value
-    range: float
-    description: >-
-      longitude
-    slot_uri: wgs:long
 
   has input:
     aliases: ['input']
@@ -376,11 +194,6 @@ slots:
     slot_uri: http://purl.org/dc/terms/isPartOf
     description: >-
       Links a resource to another resource that either logically or physically includes it.
-
-  language:
-    range: string
-    description: >-
-      Should use standard codes, e.g. "en"
 
   ## DATA
 
