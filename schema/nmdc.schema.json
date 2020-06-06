@@ -36,15 +36,19 @@
                "type": "string"
             },
             "ecosystem": {
+               "description": "TODO",
                "type": "string"
             },
             "ecosystem_category": {
+               "description": "TODO",
                "type": "string"
             },
             "ecosystem_subtype": {
+               "description": "TODO",
                "type": "string"
             },
             "ecosystem_type": {
+               "description": "TODO",
                "type": "string"
             },
             "elev": {
@@ -86,6 +90,7 @@
                "type": "string"
             },
             "specific_ecosystem": {
+               "description": "TODO",
                "type": "string"
             },
             "tot_org_carb": {
@@ -201,13 +206,21 @@
          "type": "object"
       },
       "Database": {
-         "description": "top level holder class",
+         "description": "An abstract holder for any set of metadata and data. It does not need to correspond to an actual managed databse top level holder class. When translated to JSON-Schema this is the 'root' object. It should contain pointers to other objects of interest",
          "properties": {
             "biosample_set": {
-               "$ref": "#/definitions/Biosample"
+               "description": "This property links a database object to the set of samples within it.",
+               "items": {
+                  "$ref": "#/definitions/Biosample"
+               },
+               "type": "array"
             },
             "data_object_set": {
-               "$ref": "#/definitions/DataObject"
+               "description": "This property links a database object to the set of data objects within it.",
+               "items": {
+                  "$ref": "#/definitions/DataObject"
+               },
+               "type": "array"
             }
          },
          "required": [],
@@ -498,10 +511,18 @@
    },
    "properties": {
       "biosample_set": {
-         "$ref": "#/definitions/Biosample"
+         "description": "This property links a database object to the set of samples within it.",
+         "items": {
+            "$ref": "#/definitions/Biosample"
+         },
+         "type": "array"
       },
       "data_object_set": {
-         "$ref": "#/definitions/DataObject"
+         "description": "This property links a database object to the set of data objects within it.",
+         "items": {
+            "$ref": "#/definitions/DataObject"
+         },
+         "type": "array"
       }
    },
    "title": "NMDC Schema",

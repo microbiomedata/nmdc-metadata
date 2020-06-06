@@ -1,11 +1,18 @@
 id: https://microbiomedata/schema
 name: NMDC Schema
 description: >-
-  Schema for National Microbiome Data Collaborative (NMDC)
+  Schema for National Microbiome Data Collaborative (NMDC).
+  This schem is organized into 3 separate modules:
+    
+  * a set of core types for representing data values
+  * the mixs schema (auto-translated from mixs excel)
+  * the NMDC schema itself
+  
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
   nmdc: https://microbiomedata/meta/
+  GOLD: https://identifiers.org/gold/
   mixs: https://w3id.org/gensc/
   wgs: http://www.w3.org/2003/01/geo/wgs84_pos
   qud: http://qudt.org/1.1/schema/qudt#
@@ -25,7 +32,9 @@ emit_prefixes:
   - xsd
   - skos
 
-# This file organizes the main NMDC schema
+# This file organizes the main NMDC schema.
+# It brings in the mixs schema plus a schemaa
+# of core types
 imports:
   - biolinkml:types
   - mixs
@@ -34,7 +43,12 @@ imports:
 classes:
 
   database:
-    description: top level holder class
+    aliases:
+      - "NMDC metadata object"
+    description: >-
+      An abstract holder for any set of metadata and data. It does not need to correspond to an actual managed databse
+      top level holder class. When translated to JSON-Schema this is the 'root' object.
+      It should contain pointers to other objects of interest
     slots:
       - biosample set
       - data object set
@@ -46,14 +60,17 @@ classes:
       Files, records, and omics data are examples of data objects. 
     slots:
       - file_size
+    id_prefixes:
+      - GOLD
 
   biosample:
     is_a: named thing
     aliases: ['sample', 'material sample']
     description: >-
       A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.  
-      An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.  
+      An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.
     slots:
+      # any mixs slot can be added here
       - env_package
       - lat_lon
       - geo_loc_name
@@ -83,15 +100,23 @@ classes:
       lat_lon:
         required: true
         description: >-
-          This is a required field but it's not clear if this should be required for human hosts
+          This is currently a required field but it's not clear if this should be required for human hosts
       depth:
         required: false
       env_broad_scale:
         required: true
+        description: >-
+          formerly known as 'biome'
       env_local_scale:
         required: true
+        description: >-
+          formerly known as 'feature'
       env_medium:
         required: true
+        description: >-
+          formerly known as 'material'
+    id_prefixes:
+      - GOLD
 
         
   study:
@@ -153,6 +178,8 @@ classes:
     is_a: named thing
     description: >-
       represents a person, such as a researcher
+    comments:
+      - "not yet in use"
     slot_usage:
       id:
         description: >-
@@ -164,10 +191,18 @@ slots:
   biosample set:
     domain: database
     range: biosample
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of samples within it.
 
   data object set:
     domain: database
     range: data object
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of data objects within it.
   
 
   has input:
@@ -206,15 +241,28 @@ slots:
 
   gold_path_field:
     is_a: attribute
+    range: string
     abstract: true
+    description: >-
+      This is a grouping for any of the gold path fields
     
   ecosystem:
     is_a: gold_path_field
+    description: >-
+      TODO
   ecosystem_category:
     is_a: gold_path_field
+    description: >-
+      TODO
   ecosystem_type:
     is_a: gold_path_field
+    description: >-
+      TODO
   ecosystem_subtype:
     is_a: gold_path_field
+    description: >-
+      TODO
   specific_ecosystem:
     is_a: gold_path_field
+    description: >-
+      TODO
