@@ -87,17 +87,17 @@ classes:
         description: >-
           The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
       lat_lon:
-        required: false # changed for testing
+        required: false
         description: >-
           This is a required field but it's not clear if this should be required for human hosts
       depth:
         required: false
       env_broad_scale:
-        required: true # changed for testing
+        required: false
       env_local_scale:
-        required: false # changed for testing
+        required: false
       env_medium:
-        required: false # changed for testing
+        required: false
 
         
   study:
