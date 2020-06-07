@@ -12,6 +12,11 @@ env.lock:
 	pipenv install pyyaml biolinkml requests
 	cp /dev/null env.lock
 
+test: schema/test-nmdc-01.valid pytest
+
+pytest:
+	pipenv run python schema/nmdc.py
+
 build: python_dataclasses json_schema
 
 # The mixs subschema is not hand-authored; it is compiled
@@ -41,11 +46,11 @@ schema_uml: schema/nmdc_schema_uml.png
 
 # Python dataclasses
 schema/nmdc.py: schema/nmdc.yaml env.lock
-	pipenv run gen-py-classes $< > $@.tmp && mv $@.tmp $@
+	pipenv run gen-py-classes $< > $@.tmp && pipenv run python $@.tmp && mv $@.tmp $@
 
 # JSON Schema
 schema/nmdc.schema.json: schema/nmdc.yaml env.lock
-	pipenv run gen-json-schema -t database $<  > $@.tmp && mv $@.tmp $@
+	pipenv run gen-json-schema -t database $<  > $@.tmp && jsonschema $@.tmp && mv $@.tmp $@
 
 # OWL
 schema/nmdc.owl: schema/nmdc.yaml env.lock
@@ -65,6 +70,9 @@ schema/nmdc.proto: schema/nmdc.yaml env.lock
 
 #schema/nmdc.rdf: schema/nmdc.yaml env.lock
 #	pipenv run gen-rdf $< > $@.tmp && mv $@.tmp $@
+
+schema/test-%.valid: examples/%.json schema/nmdc.schema.json 
+	jsonschema -i $^
 
 docs: schema/nmdc.yaml env.lock
 	pipenv run gen-markdown --dir docs $<
