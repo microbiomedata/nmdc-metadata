@@ -2,11 +2,59 @@
    "$id": "https://microbiomedata/schema",
    "$schema": "http://json-schema.org/draft-07/schema#",
    "definitions": {
+      "Activity": {
+         "additionalProperties": false,
+         "description": "a provence-generating activity",
+         "properties": {
+            "activity_id": {
+               "type": "string"
+            },
+            "ended_at_time": {
+               "type": "string"
+            },
+            "started_at_time": {
+               "type": "string"
+            },
+            "used": {
+               "type": "string"
+            },
+            "was_associated_with": {
+               "$ref": "#/definitions/Agent"
+            },
+            "was_informed_by": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "activity_id"
+         ],
+         "title": "Activity",
+         "type": "object"
+      },
+      "Agent": {
+         "additionalProperties": false,
+         "description": "a provence-generating agent",
+         "properties": {
+            "acted_on_behalf_of": {
+               "$ref": "#/definitions/Agent"
+            },
+            "was_informed_by": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Agent",
+         "type": "object"
+      },
       "AttributeValue": {
+         "additionalProperties": false,
          "description": "The value for any value of a attribute for a sample. This object can hold both the un-normalized atomic value and the structured value",
          "properties": {
             "has_raw_value": {
                "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+               "type": "string"
+            },
+            "was_generated_by": {
                "type": "string"
             }
          },
@@ -15,6 +63,7 @@
          "type": "object"
       },
       "Biosample": {
+         "additionalProperties": false,
          "description": "A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.   An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.",
          "properties": {
             "alt": {
@@ -22,14 +71,17 @@
                "description": "\"Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets, atmospheric balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object which is above the earthbs surface. In this context, the altitude measurement is the vertical distance between the earth's surface above sea level and the sampled position in the air\""
             },
             "alternate_identifiers": {
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "collection_date": {
                "$ref": "#/definitions/TimestampValue",
                "description": "\"The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant\""
             },
             "depth": {
-               "$ref": "#/definitions/TextValue"
+               "$ref": "#/definitions/QuantityValue"
             },
             "description": {
                "description": "a human-readable description of a thing",
@@ -72,10 +124,6 @@
                "$ref": "#/definitions/TextValue",
                "description": "\"The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (v 1.512) (http://purl.bioontology.org/ontology/GAZ)\""
             },
-            "has_input": {
-               "description": "An input to a process.",
-               "type": "string"
-            },
             "id": {
                "type": "string"
             },
@@ -87,7 +135,10 @@
             },
             "part_of": {
                "description": "Links a resource to another resource that either logically or physically includes it.",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "specific_ecosystem": {
                "description": "TODO",
@@ -99,6 +150,7 @@
             }
          },
          "required": [
+            "id",
             "lat_lon",
             "env_broad_scale",
             "env_local_scale",
@@ -108,11 +160,15 @@
          "type": "object"
       },
       "BiosampleProcessing": {
+         "additionalProperties": false,
          "description": "A process that takes one or more biosamples as inputs and generates one or as outputs. Examples of outputs include samples cultivated from another sample or data objects created by instruments runs.",
          "properties": {
             "alternate_identifiers": {
                "description": "Non-primary identifiers",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "description": {
                "description": "a human-readable description of a thing",
@@ -120,7 +176,7 @@
             },
             "has_input": {
                "items": {
-                  "$ref": "#/definitions/Biosample"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -134,22 +190,31 @@
             },
             "part_of": {
                "description": "Links a resource to another resource that either logically or physically includes it.",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "BiosampleProcessing",
          "type": "object"
       },
       "BooleanValue": {
+         "additionalProperties": false,
          "description": "A value that is a boolean",
          "properties": {
             "has_boolean_value": {
                "description": "Links a quantity value to a boolean",
-               "type": "string"
+               "type": "boolean"
             },
             "has_raw_value": {
                "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+               "type": "string"
+            },
+            "was_generated_by": {
                "type": "string"
             }
          },
@@ -158,10 +223,18 @@
          "type": "object"
       },
       "ControlledTermValue": {
+         "additionalProperties": false,
          "description": "A controlled term or class from an ontology",
          "properties": {
             "has_raw_value": {
                "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+               "type": "string"
+            },
+            "term": {
+               "$ref": "#/definitions/OntologyClass",
+               "description": "pointer to an ontology class"
+            },
+            "was_generated_by": {
                "type": "string"
             }
          },
@@ -170,11 +243,15 @@
          "type": "object"
       },
       "DataObject": {
+         "additionalProperties": false,
          "description": "An object that primarily consists of symbols that represent information.   Files, records, and omics data are examples of data objects.",
          "properties": {
             "alternate_identifiers": {
                "description": "Non-primary identifiers",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "description": {
                "description": "a human-readable description of a thing",
@@ -182,10 +259,6 @@
             },
             "file_size": {
                "description": "units should be bytes.. may be overkill to allow different units",
-               "type": "string"
-            },
-            "has_input": {
-               "description": "An input to a process.",
                "type": "string"
             },
             "id": {
@@ -198,16 +271,29 @@
             },
             "part_of": {
                "description": "Links a resource to another resource that either logically or physically includes it.",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "DataObject",
          "type": "object"
       },
       "Database": {
+         "additionalProperties": false,
          "description": "An abstract holder for any set of metadata and data. It does not need to correspond to an actual managed databse top level holder class. When translated to JSON-Schema this is the 'root' object. It should contain pointers to other objects of interest",
          "properties": {
+            "activity_set": {
+               "description": "This property links a database object to the set of prov activities.",
+               "items": {
+                  "$ref": "#/definitions/Activity"
+               },
+               "type": "array"
+            },
             "biosample_set": {
                "description": "This property links a database object to the set of samples within it.",
                "items": {
@@ -228,18 +314,18 @@
          "type": "object"
       },
       "EnvironmentalMaterialTerm": {
+         "additionalProperties": false,
          "description": "",
          "properties": {
             "alternate_identifiers": {
                "description": "Non-primary identifiers",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "description": {
                "description": "a human-readable description of a thing",
-               "type": "string"
-            },
-            "has_input": {
-               "description": "An input to a process.",
                "type": "string"
             },
             "id": {
@@ -252,14 +338,20 @@
             },
             "part_of": {
                "description": "Links a resource to another resource that either logically or physically includes it.",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "EnvironmentalMaterialTerm",
          "type": "object"
       },
       "GeolocationValue": {
+         "additionalProperties": false,
          "description": "A normalized value for a location on the earth's surface",
          "properties": {
             "has_raw_value": {
@@ -267,10 +359,13 @@
             },
             "latitude": {
                "description": "latitude",
-               "type": "string"
+               "type": "number"
             },
             "longitude": {
                "description": "longitude",
+               "type": "number"
+            },
+            "was_generated_by": {
                "type": "string"
             }
          },
@@ -279,14 +374,18 @@
          "type": "object"
       },
       "IntegerValue": {
+         "additionalProperties": false,
          "description": "A value that is an integer",
          "properties": {
             "has_numeric_value": {
                "description": "Links a quantity value to a number",
-               "type": "string"
+               "type": "number"
             },
             "has_raw_value": {
                "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+               "type": "string"
+            },
+            "was_generated_by": {
                "type": "string"
             }
          },
@@ -295,10 +394,14 @@
          "type": "object"
       },
       "OmicsProcessing": {
+         "additionalProperties": false,
          "description": "The methods and processes used to generate omics data from a biosample or organism.",
          "properties": {
             "alternate_identifiers": {
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "description": {
                "description": "a human-readable description of a thing",
@@ -306,13 +409,13 @@
             },
             "has_input": {
                "items": {
-                  "$ref": "#/definitions/Biosample"
+                  "type": "string"
                },
                "type": "array"
             },
             "has_output": {
                "items": {
-                  "$ref": "#/definitions/DataObject"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -324,28 +427,30 @@
             },
             "part_of": {
                "items": {
-                  "$ref": "#/definitions/Study"
+                  "type": "string"
                },
                "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "OmicsProcessing",
          "type": "object"
       },
       "OntologyClass": {
+         "additionalProperties": false,
          "description": "",
          "properties": {
             "alternate_identifiers": {
                "description": "Non-primary identifiers",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "description": {
                "description": "a human-readable description of a thing",
-               "type": "string"
-            },
-            "has_input": {
-               "description": "An input to a process.",
                "type": "string"
             },
             "id": {
@@ -358,26 +463,31 @@
             },
             "part_of": {
                "description": "Links a resource to another resource that either logically or physically includes it.",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "OntologyClass",
          "type": "object"
       },
       "Person": {
+         "additionalProperties": false,
          "description": "represents a person, such as a researcher",
          "properties": {
             "alternate_identifiers": {
                "description": "Non-primary identifiers",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "description": {
                "description": "a human-readable description of a thing",
-               "type": "string"
-            },
-            "has_input": {
-               "description": "An input to a process.",
                "type": "string"
             },
             "id": {
@@ -389,27 +499,33 @@
             },
             "part_of": {
                "description": "Links a resource to another resource that either logically or physically includes it.",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "Person",
          "type": "object"
       },
       "QuantityValue": {
+         "additionalProperties": false,
          "description": "A simple quantity, e.g. 2cm",
          "properties": {
             "has_numeric_value": {
-               "type": "string"
+               "type": "number"
             },
             "has_raw_value": {
                "type": "string"
             },
             "has_unit": {
-               "items": {
-                  "$ref": "#/definitions/Unit"
-               },
-               "type": "array"
+               "$ref": "#/definitions/Unit"
+            },
+            "was_generated_by": {
+               "type": "string"
             }
          },
          "required": [],
@@ -417,10 +533,14 @@
          "type": "object"
       },
       "Study": {
+         "additionalProperties": false,
          "description": "A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.",
          "properties": {
             "alternate_identifiers": {
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "description": {
                "description": "a human-readable description of a thing",
@@ -429,10 +549,6 @@
             "experimental_factor": {
                "$ref": "#/definitions/ControlledTermValue",
                "description": "\"Experimental factors are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI\""
-            },
-            "has_input": {
-               "description": "An input to a process.",
-               "type": "string"
             },
             "id": {
                "type": "string"
@@ -446,22 +562,28 @@
             },
             "part_of": {
                "description": "Links a resource to another resource that either logically or physically includes it.",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "project_name": {
                "$ref": "#/definitions/TextValue",
                "description": "Name of the project within which the sequencing was organized"
             },
             "submitted_to_insdc": {
-               "$ref": "#/definitions/TextValue",
+               "$ref": "#/definitions/BooleanValue",
                "description": "\"Depending on the study (large-scale e.g. done with next generation sequencing technology, or small-scale) sequences have to be submitted to SRA (Sequence Read Archive), DRA (DDBJ Read Archive) or via the classical Webin/Sequin systems to Genbank, ENA and DDBJ. Although this field is mandatory, it is meant as a self-test field, therefore it is not necessary to include this field in contextual data submitted to databases\""
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "Study",
          "type": "object"
       },
       "TextValue": {
+         "additionalProperties": false,
          "description": "A basic string value",
          "properties": {
             "has_raw_value": {
@@ -471,6 +593,9 @@
             "language": {
                "description": "Should use ISO 639-1 code e.g. \"en\", \"fr\"",
                "type": "string"
+            },
+            "was_generated_by": {
+               "type": "string"
             }
          },
          "required": [],
@@ -478,10 +603,14 @@
          "type": "object"
       },
       "TimestampValue": {
+         "additionalProperties": false,
          "description": "A value that is a timestamp. The range should be ISO-8601",
          "properties": {
             "has_raw_value": {
                "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+               "type": "string"
+            },
+            "was_generated_by": {
                "type": "string"
             }
          },
@@ -490,6 +619,7 @@
          "type": "object"
       },
       "Unit": {
+         "additionalProperties": false,
          "description": "",
          "properties": {},
          "required": [],
@@ -497,10 +627,14 @@
          "type": "object"
       },
       "UrlValue": {
+         "additionalProperties": false,
          "description": "A value that is a string that conforms to URL syntax",
          "properties": {
             "has_raw_value": {
                "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+               "type": "string"
+            },
+            "was_generated_by": {
                "type": "string"
             }
          },
@@ -510,6 +644,13 @@
       }
    },
    "properties": {
+      "activity_set": {
+         "description": "This property links a database object to the set of prov activities.",
+         "items": {
+            "$ref": "#/definitions/Activity"
+         },
+         "type": "array"
+      },
       "biosample_set": {
          "description": "This property links a database object to the set of samples within it.",
          "items": {

@@ -63,11 +63,17 @@ while(<>) {
     if ($name eq 'lat_lon') {
         $range = 'geolocation value';
     }
+    if ($name eq 'depth') {
+        $range = 'quantity value';
+    }
     if ($value_syntax =~ m@\{termLabel\}@) {
         $range = "controlled term value";
     }
     if ($value_syntax =~ m@\{unit\}@) {
         $range = "quantity value";
+    }
+    if ($value_syntax eq '{boolean}') {
+        $range = "boolean value";
     }
     if ($expected eq 'measurement value') {
         $range = "quantity value";
@@ -90,10 +96,11 @@ while(<>) {
     print "       $def\n";
     print "    multivalued: false\n"; # TODO
     print "    is_a: attribute\n";
-    print "    range: $range\n";
+    print "    range: $range  ## syntax: $value_syntax\n";
     print "    mappings:\n";
     print "      - MIxS:$name\n";
     print "    in_subset:\n      - $section\n" if $section;
+    #print "    examples:\n      - value: $example\n" if $example;
     #print "    examples:\n      - value: $example\n" if $example;
     print "\n";
 }

@@ -3,6 +3,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX metatype: <https://w3id.org/biolink/biolinkml/type/>
+PREFIX rdf1: <http://example.org/UNKNOWN/rdf/>
 
 
 metatype:String xsd:string
@@ -31,9 +32,34 @@ metatype:Objectidentifier IRI
 
 metatype:Nodeidentifier NONLITERAL
 
+<DecimalDegree> xsd:decimal
+
+<LanguageCode> xsd:language
+
+<Activity> CLOSED {
+    (  $<Activity_tes> (  <started_at_time> @metatype:String ? ;
+          <ended_at_time> @metatype:String ? ;
+          <was_informed_by> @<Activity> ? ;
+          <was_associated_with> @<Agent> ? ;
+          <used> @metatype:String ?
+       ) ;
+       rdf:type [ <Activity> ]
+    )
+}
+
+<Agent> CLOSED {
+    (  $<Agent_tes> (  <acted_on_behalf_of> @<Agent> ? ;
+          <was_informed_by> @<Activity> ?
+       ) ;
+       rdf:type [ <Agent> ] ?
+    )
+}
+
 <AttributeValue>  (
     CLOSED {
-       (  $<AttributeValue_tes> <has_raw_value> @metatype:String ? ;
+       (  $<AttributeValue_tes> (  <has_raw_value> @metatype:String ? ;
+             <was_generated_by> @<Activity> ?
+          ) ;
           rdf:type [ <AttributeValue> ] ?
        )
     } OR @<BooleanValue> OR @<ControlledTermValue> OR @<GeolocationValue> OR @<IntegerValue> OR @<QuantityValue> OR @<TextValue> OR
@@ -43,13 +69,10 @@ metatype:Nodeidentifier NONLITERAL
 <Biosample> CLOSED {
     (  $<Biosample_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
-          <id> @metatype:String ? ;
           <name> @metatype:String ? ;
           <alternate_identifiers> @metatype:String * ;
-          <depth> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/env_package> @<TextValue> ? ;
           <lat_lon> @<GeolocationValue> ;
-          <https://microbiomedata/schema/mixs/alt> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/elev> @<QuantityValue> ? ;
           <https://microbiomedata/schema/mixs/geo_loc_name> @<TextValue> ? ;
           <https://microbiomedata/schema/mixs/collection_date> @<TimestampValue> ? ;
           <env_broad_scale> @<ControlledTermValue> ;
@@ -59,9 +82,13 @@ metatype:Nodeidentifier NONLITERAL
           <ecosystem_category> @metatype:String ? ;
           <ecosystem_type> @metatype:String ? ;
           <ecosystem_subtype> @metatype:String ? ;
-          <specific_ecosystem> @metatype:String ?
+          <specific_ecosystem> @metatype:String ? ;
+          <depth> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/tot_org_carb> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/alt> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/elev> @<QuantityValue> ?
        ) ;
-       rdf:type [ <Biosample> ] ?
+       rdf:type [ <Biosample> ]
     )
 }
 
@@ -71,7 +98,7 @@ metatype:Nodeidentifier NONLITERAL
              rdf:type [ <NamedThing> ] ? ;
              <has_input> @<Biosample> *
           ) ;
-          rdf:type [ <BiosampleProcessing> ] ?
+          rdf:type [ <BiosampleProcessing> ]
        )
     } OR @<OmicsProcessing>
 )
@@ -87,7 +114,8 @@ metatype:Nodeidentifier NONLITERAL
 
 <ControlledTermValue> CLOSED {
     (  $<ControlledTermValue_tes> (  &<AttributeValue_tes> ;
-          rdf:type [ <AttributeValue> ] ?
+          rdf:type [ <AttributeValue> ] ? ;
+          rdf1:type @<OntologyClass> ?
        ) ;
        rdf:type [ <ControlledTermValue> ] ?
     )
@@ -98,13 +126,14 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <NamedThing> ] ? ;
           <file_size> @metatype:String ?
        ) ;
-       rdf:type [ <DataObject> ] ?
+       rdf:type [ <DataObject> ]
     )
 }
 
 <Database> CLOSED {
-    (  $<Database_tes> (  <biosample_set> @<Biosample> ? ;
-          <data_object_set> @<DataObject> ?
+    (  $<Database_tes> (  <biosample_set> @<Biosample> * ;
+          <data_object_set> @<DataObject> * ;
+          <activity_set> @<Activity> *
        ) ;
        rdf:type [ <Database> ] ?
     )
@@ -114,7 +143,7 @@ metatype:Nodeidentifier NONLITERAL
     (  $<EnvironmentalMaterialTerm_tes> (  &<OntologyClass_tes> ;
           rdf:type [ <OntologyClass> ] ?
        ) ;
-       rdf:type [ <EnvironmentalMaterialTerm> ] ?
+       rdf:type [ <EnvironmentalMaterialTerm> ]
     )
 }
 
@@ -122,8 +151,8 @@ metatype:Nodeidentifier NONLITERAL
     (  $<GeolocationValue_tes> (  &<AttributeValue_tes> ;
           rdf:type [ <AttributeValue> ] ? ;
           <has_raw_value> @metatype:String ? ;
-          <http://www.w3.org/2003/01/geo/wgs84_poslat> @metatype:Float ? ;
-          <http://www.w3.org/2003/01/geo/wgs84_poslong> @metatype:Float ?
+          <http://www.w3.org/2003/01/geo/wgs84_poslat> @<DecimalDegree> ? ;
+          <http://www.w3.org/2003/01/geo/wgs84_poslong> @<DecimalDegree> ?
        ) ;
        rdf:type [ <GeolocationValue> ] ?
     )
@@ -132,7 +161,7 @@ metatype:Nodeidentifier NONLITERAL
 <IntegerValue> CLOSED {
     (  $<IntegerValue_tes> (  &<AttributeValue_tes> ;
           rdf:type [ <AttributeValue> ] ? ;
-          <has_numeric_value> @metatype:String ?
+          <has_numeric_value> @metatype:Float ?
        ) ;
        rdf:type [ <IntegerValue> ] ?
     )
@@ -143,27 +172,24 @@ metatype:Nodeidentifier NONLITERAL
 )
 
 <NamedThing_struct> {
-    (  $<NamedThing_tes> (  <id> @metatype:String ? ;
-          <name> @metatype:String ? ;
+    (  $<NamedThing_tes> (  <name> @metatype:String ? ;
           dcterms:description @metatype:String ? ;
           <alternate_identifiers> @metatype:String * ;
-          <has_input> @metatype:String * ;
           dcterms:isPartOf @metatype:String *
        ) ;
-       rdf:type [ <NamedThing> ] ?
+       rdf:type [ <NamedThing> ]
     )
 }
 
 <OmicsProcessing> CLOSED {
     (  $<OmicsProcessing_tes> (  &<BiosampleProcessing_tes> ;
           rdf:type [ <BiosampleProcessing> ] ? ;
-          <id> @metatype:String ? ;
           <name> @metatype:String ? ;
           <alternate_identifiers> @metatype:String * ;
           <part_of> @<Study> * ;
           <has_output> @<DataObject> *
        ) ;
-       rdf:type [ <OmicsProcessing> ] ?
+       rdf:type [ <OmicsProcessing> ]
     )
 }
 
@@ -172,17 +198,16 @@ metatype:Nodeidentifier NONLITERAL
        (  $<OntologyClass_tes> (  &<NamedThing_tes> ;
              rdf:type [ <NamedThing> ] ?
           ) ;
-          rdf:type [ <OntologyClass> ] ?
+          rdf:type [ <OntologyClass> ]
        )
     } OR @<EnvironmentalMaterialTerm>
 )
 
 <Person> CLOSED {
     (  $<Person_tes> (  &<NamedThing_tes> ;
-          rdf:type [ <NamedThing> ] ? ;
-          <id> @metatype:String ?
+          rdf:type [ <NamedThing> ] ?
        ) ;
-       rdf:type [ <Person> ] ?
+       rdf:type [ <Person> ]
     )
 }
 
@@ -190,7 +215,7 @@ metatype:Nodeidentifier NONLITERAL
     (  $<QuantityValue_tes> (  &<AttributeValue_tes> ;
           rdf:type [ <AttributeValue> ] ? ;
           <has_raw_value> @metatype:String ? ;
-          <has_unit> @<Unit> * ;
+          <has_unit> @<Unit> ? ;
           <has_numeric_value> @metatype:Double ?
        ) ;
        rdf:type [ <QuantityValue> ] ?
@@ -200,22 +225,21 @@ metatype:Nodeidentifier NONLITERAL
 <Study> CLOSED {
     (  $<Study_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
-          <id> @metatype:String ? ;
           <name> @metatype:String ? ;
           <alternate_identifiers> @metatype:String * ;
-          <https://microbiomedata/schema/mixs/submitted_to_insdc> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/submitted_to_insdc> @<BooleanValue> ? ;
           <https://microbiomedata/schema/mixs/investigation_type> @<TextValue> ? ;
           <https://microbiomedata/schema/mixs/project_name> @<TextValue> ? ;
           <https://microbiomedata/schema/mixs/experimental_factor> @<ControlledTermValue> ?
        ) ;
-       rdf:type [ <Study> ] ?
+       rdf:type [ <Study> ]
     )
 }
 
 <TextValue> CLOSED {
     (  $<TextValue_tes> (  &<AttributeValue_tes> ;
           rdf:type [ <AttributeValue> ] ? ;
-          <language> @metatype:String ?
+          <language> @<LanguageCode> ?
        ) ;
        rdf:type [ <TextValue> ] ?
     )

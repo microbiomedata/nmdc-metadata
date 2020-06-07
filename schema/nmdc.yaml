@@ -9,6 +9,7 @@ description: >-
   * the NMDC schema itself
   
 license: https://creativecommons.org/publicdomain/zero/1.0/
+version: 0.1.1
 
 prefixes:
   nmdc: https://microbiomedata/meta/
@@ -39,6 +40,7 @@ imports:
   - biolinkml:types
   - mixs
   - core
+  - prov
   
 classes:
 
@@ -52,6 +54,7 @@ classes:
     slots:
       - biosample set
       - data object set
+      - activity set
   
   data object:
     is_a: named thing
@@ -204,10 +207,17 @@ slots:
     description: >-
       This property links a database object to the set of data objects within it.
   
+  activity set:
+    domain: database
+    range: activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of prov activities.
+  
 
   has input:
     aliases: ['input']
-    domain: named thing
     # range: named thing
     multivalued: true
     description: >-

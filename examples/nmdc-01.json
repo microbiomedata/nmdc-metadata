@@ -1,0 +1,48 @@
+{
+    "biosample_set": [
+        {
+            "id": "S1",
+            "description": "...",
+            "lat_lon": {
+                "has_raw_value": "5 -20",
+                "latitude": 5,
+                "longitude": -20,
+                "was_generated_by": "uuid:d392fcba605d12d5f9b3b31f6d0c620b6a89cdcc"
+            },
+            "env_broad_scale": {
+                "has_raw_value": "tropical moist broadleaf forest biome [ENVO:01000228]",
+                "term": {
+                    "id": "ENVO:01000228",
+                    "name": "tropical moist broadleaf forest biome"
+                }
+            },
+            "env_local_scale": {
+                "has_raw_value": "understory [ENVO:01000335]",
+                "term": {
+                    "id": "ENVO:01000335",
+                    "name": "understory"
+                }
+            },
+            "env_medium": {
+                "has_raw_value": "plant matter [ENVO:01001121]",
+                "term": {
+                    "id": "ENVO:01001121",
+                    "name": "plant matter"
+                }
+            }
+        }
+    ],
+    "activity set": [
+        {
+            "activity_id": "uuid:d392fcba605d12d5f9b3b31f6d0c620b6a89cdcc",
+            "started_at_time": "2020-01-01",
+            "was_associated_with": "ornl-identify",
+            "used": "ornl-daac-layer-1"
+        },
+        {
+            "activity_id": "uuid:345a04a8633d593b5a400b559d533a6b4595f490",
+            "started_at_time": "2020-03-01",
+            "used": "gold-to-envo-mappings"
+        }
+    ]
+}
