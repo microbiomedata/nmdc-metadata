@@ -1,20 +1,34 @@
+type Activity
+  {
+    activityId: String!
+    startedAtTime: String
+    endedAtTime: String
+    wasInformedBy: Activity
+    wasAssociatedWith: Agent
+    used: String
+  }
+
+type Agent
+  {
+    actedOnBehalfOf: Agent
+    wasInformedBy: Activity
+  }
+
 type AttributeValue
   {
     hasRawValue: String
+    wasGeneratedBy: Activity
   }
 
 type Biosample
   {
-    id: String
+    id: String!
     name: String
     description: String
     alternateIdentifiers: [String]
-    hasInput: [String]
     partOf: [String]
-    depth: TextValue
+    envPackage: TextValue
     latLon: GeolocationValue!
-    alt: QuantityValue
-    elev: QuantityValue
     geoLocName: TextValue
     collectionDate: TimestampValue
     envBroadScale: ControlledTermValue!
@@ -25,11 +39,15 @@ type Biosample
     ecosystemType: String
     ecosystemSubtype: String
     specificEcosystem: String
+    depth: QuantityValue
+    totOrgCarb: QuantityValue
+    alt: QuantityValue
+    elev: QuantityValue
   }
 
 type BiosampleProcessing
   {
-    id: String
+    id: String!
     name: String
     description: String
     alternateIdentifiers: [String]
@@ -40,67 +58,70 @@ type BiosampleProcessing
 type BooleanValue
   {
     hasRawValue: String
+    wasGeneratedBy: Activity
     hasBooleanValue: Boolean
   }
 
 type ControlledTermValue
   {
     hasRawValue: String
+    wasGeneratedBy: Activity
+    term: OntologyClass
   }
 
 type DataObject
   {
-    id: String
+    id: String!
     name: String
     description: String
     alternateIdentifiers: [String]
-    hasInput: [String]
     partOf: [String]
     fileSize: String
   }
 
 type Database
   {
-    biosampleSet: Biosample
-    dataObjectSet: DataObject
+    biosampleSet: [Biosample]
+    dataObjectSet: [DataObject]
+    activitySet: [Activity]
   }
 
 type EnvironmentalMaterialTerm
   {
-    id: String
+    id: String!
     name: String
     description: String
     alternateIdentifiers: [String]
-    hasInput: [String]
     partOf: [String]
   }
 
 type GeolocationValue
   {
     hasRawValue: String
-    latitude: Float
-    longitude: Float
+    wasGeneratedBy: Activity
+    latitude: DecimalDegree
+    longitude: DecimalDegree
   }
 
 type IntegerValue
   {
     hasRawValue: String
-    hasNumericValue: String
+    wasGeneratedBy: Activity
+    hasNumericValue: Float
   }
 
 interface NamedThing
   {
-    id: String
+    id: String!
     name: String
     description: String
     alternateIdentifiers: [String]
-    hasInput: [String]
     partOf: [String]
   }
 
 type OmicsProcessing
   {
-    id: String
+    id: String!
     name: String
     description: String
     alternateIdentifiers: [String]
@@ -111,40 +132,38 @@ type OmicsProcessing
 
 type OntologyClass
   {
-    id: String
+    id: String!
     name: String
     description: String
     alternateIdentifiers: [String]
-    hasInput: [String]
     partOf: [String]
   }
 
 type Person
   {
-    id: String
+    id: String!
     name: String
     description: String
     alternateIdentifiers: [String]
-    hasInput: [String]
     partOf: [String]
   }
 
 type QuantityValue
   {
     hasRawValue: String
-    hasUnit: [Unit]
+    wasGeneratedBy: Activity
+    hasUnit: Unit
     hasNumericValue: Double
   }
 
 type Study
   {
-    id: String
+    id: String!
     name: String
     description: String
     alternateIdentifiers: [String]
-    hasInput: [String]
     partOf: [String]
-    submittedToInsdc: TextValue
+    submittedToInsdc: BooleanValue
     investigationType: TextValue
     projectName: TextValue
     experimentalFactor: ControlledTermValue
@@ -153,12 +172,14 @@ type Study
 type TextValue
   {
     hasRawValue: String
-    language: String
+    wasGeneratedBy: Activity
+    language: LanguageCode
   }
 
 type TimestampValue
   {
     hasRawValue: String
+    wasGeneratedBy: Activity
   }
 
 type Unit
@@ -168,6 +189,7 @@ type Unit
 type UrlValue
   {
     hasRawValue: String
+    wasGeneratedBy: Activity
   }
 
 
