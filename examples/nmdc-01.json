@@ -9,6 +9,12 @@
                 "longitude": -20,
                 "was_generated_by": "uuid:d392fcba605d12d5f9b3b31f6d0c620b6a89cdcc"
             },
+            "depth": {
+                "has_raw_value": "5 cm",
+                "has_unit": "cm",
+                "has_numeric_value": 5,
+                "was_generated_by": "uuid:d392fcba605d12d5f9b3b31f6d0c620b6a89cdcc"
+            },
             "env_broad_scale": {
                 "has_raw_value": "tropical moist broadleaf forest biome [ENVO:01000228]",
                 "term": {
