@@ -8,22 +8,14 @@
 <https://microbiomedata/schema> a owl:Ontology ;
     rdfs:label "NMDC Schema" ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-    skos:definition "Schema for National Microbiome Data Collaborative (NMDC)" ;
-    meta:generation_date "2020-06-05 22:22" ;
+    skos:definition """Schema for National Microbiome Data Collaborative (NMDC). This schem is organized into 3 separate modules:
+  
+* a set of core types for representing data values * the mixs schema (auto-translated from mixs excel) * the NMDC schema itself""" ;
+    meta:generation_date "2020-06-07 21:47" ;
     meta:metamodel_version "1.4.3" ;
     meta:source_file "nmdc.yaml" ;
-    meta:source_file_date "Fri Jun  5 21:57:15 2020" ;
-    meta:source_file_size 5571 .
-
-meta:BooleanValue a owl:Class,
-        meta:ClassDefinition ;
-    rdfs:label "boolean value" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:boolean ;
-            owl:onProperty meta:has_boolean_value ],
-        meta:AttributeValue ;
-    skos:definition "A value that is a boolean" .
+    meta:source_file_date "Sun Jun  7 18:09:12 2020" ;
+    meta:source_file_size 7288 .
 
 meta:EnvironmentalMaterialTerm a owl:Class,
         meta:ClassDefinition ;
@@ -35,7 +27,7 @@ meta:IntegerValue a owl:Class,
     rdfs:label "integer value" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:string ;
+            owl:onClass meta:float ;
             owl:onProperty meta:has_numeric_value ],
         meta:AttributeValue ;
     skos:definition "A value that is an integer" .
@@ -53,7 +45,7 @@ meta:UrlValue a owl:Class,
 meta:_16s_recover a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "_16s_recover" ;
-    rdfs:range meta:TextValue ;
+    rdfs:range meta:BooleanValue ;
     rdfs:subPropertyOf meta:attribute ;
     skos:definition "Can a 16S gene be recovered from the submitted SAG or MAG?" .
 
@@ -425,7 +417,7 @@ meta:biosample_depth a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "biosample_depth" ;
     rdfs:domain meta:Biosample ;
-    rdfs:range meta:TextValue ;
+    rdfs:range meta:QuantityValue ;
     rdfs:subPropertyOf meta:depth .
 
 meta:biosample_env_broad_scale a owl:ObjectProperty,
@@ -1836,7 +1828,7 @@ meta:humidity_regm a owl:ObjectProperty,
 meta:hysterectomy a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "hysterectomy" ;
-    rdfs:range meta:TextValue ;
+    rdfs:range meta:BooleanValue ;
     rdfs:subPropertyOf meta:attribute ;
     skos:definition "Specification of whether hysterectomy was performed" .
 
@@ -2104,7 +2096,7 @@ meta:mechanical_damage a owl:ObjectProperty,
 meta:medic_hist_perform a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "medic_hist_perform" ;
-    rdfs:range meta:TextValue ;
+    rdfs:range meta:BooleanValue ;
     rdfs:subPropertyOf meta:attribute ;
     skos:definition "Whether full medical history was collected" .
 
@@ -2769,7 +2761,7 @@ meta:reactor_type a owl:ObjectProperty,
 meta:reassembly_bin a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "reassembly_bin" ;
-    rdfs:range meta:TextValue ;
+    rdfs:range meta:BooleanValue ;
     rdfs:subPropertyOf meta:attribute ;
     skos:definition "Has an assembly been performed on a genome bin extracted from a metagenomic assembly?" .
 
@@ -3413,7 +3405,7 @@ meta:sludge_retent_time a owl:ObjectProperty,
 meta:smoker a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "smoker" ;
-    rdfs:range meta:TextValue ;
+    rdfs:range meta:BooleanValue ;
     rdfs:subPropertyOf meta:attribute ;
     skos:definition "Specification of smoking status" .
 
@@ -3976,7 +3968,7 @@ meta:tvdss_of_hcr_temp a owl:ObjectProperty,
 meta:twin_sibling a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "twin_sibling" ;
-    rdfs:range meta:TextValue ;
+    rdfs:range meta:BooleanValue ;
     rdfs:subPropertyOf meta:attribute ;
     skos:definition "Specification of twin sibling presence" .
 
@@ -4383,20 +4375,33 @@ meta:xylene a owl:ObjectProperty,
     rdfs:subPropertyOf meta:attribute ;
     skos:definition "Concentration of xylene in the sample" .
 
-meta:OntologyClass a owl:Class,
-        meta:ClassDefinition ;
-    rdfs:label "ontology class" ;
-    rdfs:subClassOf meta:NamedThing .
-
 meta:Person a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "person" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass meta:string ;
-            owl:onProperty meta:id ],
+            owl:onProperty meta:id ;
+            owl:qualifiedCardinality 1 ],
         meta:NamedThing ;
-    skos:definition "represents a person, such as a researcher" .
+    skos:definition "represents a person, such as a researcher" ;
+    skos:note "not yet in use" .
+
+meta:acted_on_behalf_of a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "acted on behalf of" ;
+    rdfs:range meta:Agent .
+
+meta:activity_id a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "activity id" ;
+    rdfs:range meta:string .
+
+meta:activity_set a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "activity set" ;
+    rdfs:domain meta:Database ;
+    rdfs:range meta:Activity ;
+    skos:definition "This property links a database object to the set of prov activities." .
 
 meta:alt a owl:ObjectProperty,
         meta:SlotDefinition ;
@@ -4409,7 +4414,8 @@ meta:biosample_set a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "biosample set" ;
     rdfs:domain meta:Database ;
-    rdfs:range meta:Biosample .
+    rdfs:range meta:Biosample ;
+    skos:definition "This property links a database object to the set of samples within it." .
 
 meta:collection_date a owl:ObjectProperty,
         meta:SlotDefinition ;
@@ -4422,7 +4428,8 @@ meta:data_object_set a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "data object set" ;
     rdfs:domain meta:Database ;
-    rdfs:range meta:DataObject .
+    rdfs:range meta:DataObject ;
+    skos:definition "This property links a database object to the set of data objects within it." .
 
 meta:description a owl:ObjectProperty,
         meta:SlotDefinition ;
@@ -4434,25 +4441,29 @@ meta:ecosystem a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "ecosystem" ;
     rdfs:range meta:string ;
-    rdfs:subPropertyOf meta:gold_path_field .
+    rdfs:subPropertyOf meta:gold_path_field ;
+    skos:definition "TODO" .
 
 meta:ecosystem_category a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "ecosystem_category" ;
     rdfs:range meta:string ;
-    rdfs:subPropertyOf meta:gold_path_field .
+    rdfs:subPropertyOf meta:gold_path_field ;
+    skos:definition "TODO" .
 
 meta:ecosystem_subtype a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "ecosystem_subtype" ;
     rdfs:range meta:string ;
-    rdfs:subPropertyOf meta:gold_path_field .
+    rdfs:subPropertyOf meta:gold_path_field ;
+    skos:definition "TODO" .
 
 meta:ecosystem_type a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "ecosystem_type" ;
     rdfs:range meta:string ;
-    rdfs:subPropertyOf meta:gold_path_field .
+    rdfs:subPropertyOf meta:gold_path_field ;
+    skos:definition "TODO" .
 
 meta:elev a owl:ObjectProperty,
         meta:SlotDefinition ;
@@ -4460,6 +4471,11 @@ meta:elev a owl:ObjectProperty,
     rdfs:range meta:QuantityValue ;
     rdfs:subPropertyOf meta:attribute ;
     skos:definition "\"Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level. Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above the surface, such as an aircraft in flight or a spacecraft in orbit\"" .
+
+meta:ended_at_time a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "ended at time" ;
+    rdfs:range meta:string .
 
 meta:env_package a owl:ObjectProperty,
         meta:SlotDefinition ;
@@ -4505,22 +4521,21 @@ meta:investigation_type a owl:ObjectProperty,
 meta:language a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "language" ;
-    rdfs:range meta:string ;
-    rdfs:seeAlso "https://en.wikipedia.org/wiki/ISO_639-1" ;
+    rdfs:range meta:language_code ;
     skos:definition "Should use ISO 639-1 code e.g. \"en\", \"fr\"" .
 
 meta:latitude a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "latitude" ;
     rdfs:domain meta:GeolocationValue ;
-    rdfs:range meta:float ;
+    rdfs:range meta:decimal_degree ;
     skos:definition "latitude" .
 
 meta:longitude a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "longitude" ;
     rdfs:domain meta:GeolocationValue ;
-    rdfs:range meta:float ;
+    rdfs:range meta:decimal_degree ;
     skos:definition "longitude" .
 
 meta:project_name a owl:ObjectProperty,
@@ -4534,14 +4549,27 @@ meta:specific_ecosystem a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "specific_ecosystem" ;
     rdfs:range meta:string ;
-    rdfs:subPropertyOf meta:gold_path_field .
+    rdfs:subPropertyOf meta:gold_path_field ;
+    skos:definition "TODO" .
+
+meta:started_at_time a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "started at time" ;
+    rdfs:range meta:string .
 
 meta:submitted_to_insdc a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "submitted_to_insdc" ;
-    rdfs:range meta:TextValue ;
+    rdfs:range meta:BooleanValue ;
     rdfs:subPropertyOf meta:attribute ;
     skos:definition "\"Depending on the study (large-scale e.g. done with next generation sequencing technology, or small-scale) sequences have to be submitted to SRA (Sequence Read Archive), DRA (DDBJ Read Archive) or via the classical Webin/Sequin systems to Genbank, ENA and DDBJ. Although this field is mandatory, it is meant as a self-test field, therefore it is not necessary to include this field in contextual data submitted to databases\"" .
+
+meta:term a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "term" ;
+    rdfs:domain meta:ControlledTermValue ;
+    rdfs:range meta:OntologyClass ;
+    skos:definition "pointer to an ontology class" .
 
 meta:tot_org_carb a owl:ObjectProperty,
         meta:SlotDefinition ;
@@ -4549,6 +4577,22 @@ meta:tot_org_carb a owl:ObjectProperty,
     rdfs:range meta:QuantityValue ;
     rdfs:subPropertyOf meta:attribute ;
     skos:definition "\"Definition for soil: total organic carbon content of the soil, definition otherwise: total organic carbon content\"" .
+
+meta:used a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "used" ;
+    rdfs:domain meta:Activity ;
+    rdfs:range meta:string .
+
+meta:was_associated_with a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "was associated with" ;
+    rdfs:range meta:Agent .
+
+meta:was_generated_by a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "was generated by" ;
+    rdfs:range meta:Activity .
 
 meta:BiosampleProcessing a owl:Class,
         meta:ClassDefinition ;
@@ -4558,19 +4602,6 @@ meta:BiosampleProcessing a owl:Class,
             owl:onProperty meta:has_input ],
         meta:NamedThing ;
     skos:definition "A process that takes one or more biosamples as inputs and generates one or as outputs. Examples of outputs include samples cultivated from another sample or data objects created by instruments runs." .
-
-meta:Database a owl:Class,
-        meta:ClassDefinition ;
-    rdfs:label "database" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:Biosample ;
-            owl:onProperty meta:biosample_set ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:DataObject ;
-            owl:onProperty meta:data_object_set ] ;
-    skos:definition "top level holder class" .
 
 meta:boolean a owl:Class,
         meta:TypeDefinition ;
@@ -4584,7 +4615,7 @@ meta:boolean a owl:Class,
 meta:depth a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "depth" ;
-    rdfs:range meta:TextValue ;
+    rdfs:range meta:QuantityValue ;
     rdfs:subPropertyOf meta:attribute ;
     skos:definition "Please refer to the definitions of depth in the environmental packages" .
 
@@ -4618,6 +4649,21 @@ meta:env_medium a owl:ObjectProperty,
     rdfs:subPropertyOf meta:attribute ;
     skos:definition "\"In this field, report which environmental material or materials (pipe separated) immediately surrounded your sample or specimen prior to sampling, using one or more subclasses of ENVOUs environmental material class: http://purl.obolibrary.org/obo/ENVO_00010483. Format (one term): termLabel [termID]; Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a fish swimming in the upper 100 m of the Atlantic Ocean, consider: ocean water [ENVO:00002151]. Example: Annotating a duck on a pond consider: pond water [ENVO:00002228]|air ENVO_00002005. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html\"" .
 
+meta:float a owl:Class,
+        meta:TypeDefinition ;
+    rdfs:label "float" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:float ;
+            owl:onProperty meta:topValue ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "A real number that conforms to the xsd:float specification" .
+
+meta:has_input a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "has input" ;
+    rdfs:range meta:string ;
+    skos:definition "An input to a process." .
+
 meta:has_output a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "has output" ;
@@ -4630,6 +4676,16 @@ meta:has_unit a owl:ObjectProperty,
     rdfs:range meta:Unit ;
     skos:definition "Links a quantity value to a unit" .
 
+meta:language_code a owl:Class,
+        meta:TypeDefinition ;
+    rdfs:label "language code" ;
+    rdfs:seeAlso "https://en.wikipedia.org/wiki/ISO_639-1" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:language ;
+            owl:onProperty meta:topValue ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "A language code conforming to ISO_639-1" .
+
 meta:lat_lon a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "lat_lon" ;
@@ -4637,21 +4693,38 @@ meta:lat_lon a owl:ObjectProperty,
     rdfs:subPropertyOf meta:attribute ;
     skos:definition "The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system" .
 
+meta:was_informed_by a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "was informed by" ;
+    rdfs:range meta:Activity .
+
+meta:Database a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "database" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom meta:DataObject ;
+            owl:onProperty meta:data_object_set ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:Activity ;
+            owl:onProperty meta:activity_set ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:Biosample ;
+            owl:onProperty meta:biosample_set ] ;
+    skos:definition "An abstract holder for any set of metadata and data. It does not need to correspond to an actual managed databse top level holder class. When translated to JSON-Schema this is the 'root' object. It should contain pointers to other objects of interest" .
+
+meta:OntologyClass a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "ontology class" ;
+    rdfs:subClassOf meta:NamedThing .
+
 meta:Unit a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "unit" .
 
-meta:has_input a owl:ObjectProperty,
-        meta:SlotDefinition ;
-    rdfs:label "has input" ;
-    rdfs:domain meta:NamedThing ;
-    rdfs:range meta:string ;
-    skos:definition "An input to a process." .
-
 meta:has_numeric_value a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "has numeric value" ;
-    rdfs:range meta:string ;
+    rdfs:range meta:float ;
     skos:definition "Links a quantity value to a number" .
 
 meta:part_of a owl:ObjectProperty,
@@ -4660,6 +4733,19 @@ meta:part_of a owl:ObjectProperty,
     rdfs:domain meta:NamedThing ;
     rdfs:range meta:string ;
     skos:definition "Links a resource to another resource that either logically or physically includes it." .
+
+meta:Agent a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "agent" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:Activity ;
+            owl:onProperty meta:was_informed_by ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:Agent ;
+            owl:onProperty meta:acted_on_behalf_of ] ;
+    skos:definition "a provence-generating agent" .
 
 meta:DataObject a owl:Class,
         meta:ClassDefinition ;
@@ -4671,35 +4757,36 @@ meta:DataObject a owl:Class,
         meta:NamedThing ;
     skos:definition "An object that primarily consists of symbols that represent information.   Files, records, and omics data are examples of data objects. " .
 
-meta:float a owl:Class,
+meta:decimal_degree a owl:Class,
         meta:TypeDefinition ;
-    rdfs:label "float" ;
+    rdfs:label "decimal degree" ;
+    rdfs:seeAlso "https://en.wikipedia.org/wiki/Decimal_degrees" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:float ;
+            owl:onDataRange xsd:decimal ;
             owl:onProperty meta:topValue ;
             owl:qualifiedCardinality 1 ] ;
-    skos:definition "A real number that conforms to the xsd:float specification" .
+    skos:definition "A decimal degree expresses latitude or longitude as decimal fractions." .
 
 meta:OmicsProcessing a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "omics processing" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom meta:string ;
-            owl:onProperty meta:alternate_identifiers ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:DataObject ;
-            owl:onProperty meta:has_output ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass meta:string ;
             owl:onProperty meta:name ],
         [ a owl:Restriction ;
+            owl:allValuesFrom meta:DataObject ;
+            owl:onProperty meta:has_output ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:string ;
+            owl:onProperty meta:alternate_identifiers ],
+        [ a owl:Restriction ;
             owl:allValuesFrom meta:Study ;
             owl:onProperty meta:part_of ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass meta:string ;
-            owl:onProperty meta:id ],
+            owl:onProperty meta:id ;
+            owl:qualifiedCardinality 1 ],
         meta:BiosampleProcessing ;
     skos:definition "The methods and processes used to generate omics data from a biosample or organism." .
 
@@ -4707,32 +4794,32 @@ meta:Study a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "study" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass meta:string ;
-            owl:onProperty meta:id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:string ;
-            owl:onProperty meta:alternate_identifiers ],
+            owl:onProperty meta:id ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass meta:TextValue ;
             owl:onProperty meta:investigation_type ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:ControlledTermValue ;
-            owl:onProperty meta:experimental_factor ],
+            owl:onClass meta:BooleanValue ;
+            owl:onProperty meta:submitted_to_insdc ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:string ;
+            owl:onProperty meta:alternate_identifiers ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass meta:TextValue ;
             owl:onProperty meta:project_name ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:TextValue ;
-            owl:onProperty meta:submitted_to_insdc ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:string ;
-            owl:onProperty meta:name ],
+            owl:onClass meta:ControlledTermValue ;
+            owl:onProperty meta:experimental_factor ],
         meta:NamedThing ;
     skos:definition "A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.  " .
 
@@ -4740,7 +4827,8 @@ meta:gold_path_field a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "gold_path_field" ;
     rdfs:range meta:string ;
-    rdfs:subPropertyOf meta:attribute .
+    rdfs:subPropertyOf meta:attribute ;
+    skos:definition "This is a grouping for any of the gold path fields" .
 
 meta:has_raw_value a owl:ObjectProperty,
         meta:SlotDefinition ;
@@ -4754,18 +4842,41 @@ meta:GeolocationValue a owl:Class,
     rdfs:label "geolocation value" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:float ;
-            owl:onProperty meta:latitude ],
+            owl:onClass meta:string ;
+            owl:onProperty meta:has_raw_value ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:float ;
+            owl:onClass meta:decimal_degree ;
             owl:onProperty meta:longitude ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:string ;
-            owl:onProperty meta:has_raw_value ],
+            owl:onClass meta:decimal_degree ;
+            owl:onProperty meta:latitude ],
         meta:AttributeValue ;
     skos:definition "A normalized value for a location on the earth's surface" .
+
+meta:NamedThing a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "named thing" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:string ;
+            owl:onProperty meta:alternate_identifiers ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:string ;
+            owl:onProperty meta:part_of ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:description ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:name ] ;
+    skos:definition "a databased entity or concept/class" .
 
 meta:alternate_identifiers a owl:ObjectProperty,
         meta:SlotDefinition ;
@@ -4779,36 +4890,53 @@ meta:name a owl:ObjectProperty,
     rdfs:range meta:string ;
     skos:definition "A human readable label for an entity" .
 
-meta:NamedThing a owl:Class,
+meta:Activity a owl:Class,
         meta:ClassDefinition ;
-    rdfs:label "named thing" ;
+    rdfs:label "activity" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass meta:string ;
-            owl:onProperty meta:description ],
+            owl:onProperty meta:ended_at_time ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass meta:string ;
-            owl:onProperty meta:id ],
+            owl:onProperty meta:used ],
         [ a owl:Restriction ;
-            owl:allValuesFrom meta:string ;
-            owl:onProperty meta:alternate_identifiers ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:string ;
-            owl:onProperty meta:has_input ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:string ;
-            owl:onProperty meta:part_of ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:Agent ;
+            owl:onProperty meta:was_associated_with ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass meta:string ;
-            owl:onProperty meta:name ] ;
-    skos:definition "a databased entity or concept/class" .
+            owl:onProperty meta:started_at_time ],
+        [ a owl:Restriction ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:activity_id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:Activity ;
+            owl:onProperty meta:was_informed_by ] ;
+    skos:definition "a provence-generating activity" .
+
+meta:BooleanValue a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "boolean value" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:boolean ;
+            owl:onProperty meta:has_boolean_value ],
+        meta:AttributeValue ;
+    skos:definition "A value that is a boolean" .
 
 meta:AttributeValue a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "attribute value" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:Activity ;
+            owl:onProperty meta:was_generated_by ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass meta:string ;
             owl:onProperty meta:has_raw_value ] ;
@@ -4824,12 +4952,32 @@ meta:Biosample a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "biosample" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass meta:GeolocationValue ;
-            owl:onProperty meta:lat_lon ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass meta:ControlledTermValue ;
             owl:onProperty meta:env_broad_scale ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:ecosystem ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:specific_ecosystem ],
+        [ a owl:Restriction ;
+            owl:onClass meta:ControlledTermValue ;
+            owl:onProperty meta:env_local_scale ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:QuantityValue ;
+            owl:onProperty meta:depth ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:TimestampValue ;
+            owl:onProperty meta:collection_date ],
+        [ a owl:Restriction ;
+            owl:onClass meta:GeolocationValue ;
+            owl:onProperty meta:lat_lon ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
@@ -4837,47 +4985,15 @@ meta:Biosample a owl:Class,
             owl:onProperty meta:alt ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:TimestampValue ;
-            owl:onProperty meta:collection_date ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:string ;
-            owl:onProperty meta:ecosystem ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:TextValue ;
-            owl:onProperty meta:depth ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:string ;
-            owl:onProperty meta:ecosystem_type ],
-        [ a owl:Restriction ;
-            owl:onClass meta:ControlledTermValue ;
-            owl:onProperty meta:env_medium ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:string ;
-            owl:onProperty meta:alternate_identifiers ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:string ;
-            owl:onProperty meta:name ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:string ;
-            owl:onProperty meta:ecosystem_subtype ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass meta:QuantityValue ;
             owl:onProperty meta:tot_org_carb ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:string ;
-            owl:onProperty meta:ecosystem_category ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass meta:TextValue ;
             owl:onProperty meta:env_package ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:string ;
+            owl:onProperty meta:alternate_identifiers ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass meta:TextValue ;
@@ -4885,7 +5001,7 @@ meta:Biosample a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass meta:string ;
-            owl:onProperty meta:specific_ecosystem ],
+            owl:onProperty meta:ecosystem_category ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass meta:QuantityValue ;
@@ -4893,13 +5009,31 @@ meta:Biosample a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass meta:string ;
-            owl:onProperty meta:id ],
+            owl:onProperty meta:ecosystem_subtype ],
         [ a owl:Restriction ;
             owl:onClass meta:ControlledTermValue ;
-            owl:onProperty meta:env_local_scale ;
+            owl:onProperty meta:env_medium ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:ecosystem_type ],
+        [ a owl:Restriction ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:name ],
         meta:NamedThing ;
-    skos:definition "A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.   An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.  " .
+    skos:definition "A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.   An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample." .
+
+meta:TimestampValue a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "timestamp value" ;
+    rdfs:subClassOf meta:AttributeValue ;
+    skos:definition "A value that is a timestamp. The range should be ISO-8601" .
 
 meta:TypeDefinition a owl:Class ;
     rdfs:label "type_definition" ;
@@ -4908,12 +5042,6 @@ meta:TypeDefinition a owl:Class ;
 meta:topValue a owl:DatatypeProperty ;
     rdfs:label "value" .
 
-meta:TimestampValue a owl:Class,
-        meta:ClassDefinition ;
-    rdfs:label "timestamp value" ;
-    rdfs:subClassOf meta:AttributeValue ;
-    skos:definition "A value that is a timestamp. The range should be ISO-8601" .
-
 meta:ClassDefinition a owl:Class ;
     rdfs:label "class_definition" ;
     skos:definition "the definition of a class or interface" .
@@ -4921,7 +5049,11 @@ meta:ClassDefinition a owl:Class ;
 meta:ControlledTermValue a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "controlled term value" ;
-    rdfs:subClassOf meta:AttributeValue ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:OntologyClass ;
+            owl:onProperty meta:term ],
+        meta:AttributeValue ;
     skos:definition "A controlled term or class from an ontology" .
 
 meta:string a owl:Class,
@@ -4938,15 +5070,16 @@ meta:QuantityValue a owl:Class,
     rdfs:label "quantity value" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:double ;
-            owl:onProperty meta:has_numeric_value ],
+            owl:onClass meta:string ;
+            owl:onProperty meta:has_raw_value ],
         [ a owl:Restriction ;
-            owl:allValuesFrom meta:Unit ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:Unit ;
             owl:onProperty meta:has_unit ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:string ;
-            owl:onProperty meta:has_raw_value ],
+            owl:onClass meta:double ;
+            owl:onProperty meta:has_numeric_value ],
         meta:AttributeValue ;
     skos:definition "A simple quantity, e.g. 2cm" .
 
@@ -4955,7 +5088,7 @@ meta:TextValue a owl:Class,
     rdfs:label "text value" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass meta:string ;
+            owl:onClass meta:language_code ;
             owl:onProperty meta:language ],
         meta:AttributeValue ;
     skos:definition "A basic string value" .
