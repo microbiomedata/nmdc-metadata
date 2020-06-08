@@ -21,6 +21,14 @@ The [NMDC schema](./schema) is used during the [translation process](./metadata-
 
 ![img](https://raw.githubusercontent.com/microbiomedata/nmdc-metadata/master/schema/nmdc_schema_uml.png)
 
+The schema is also available as:
+
+ * [JSON Schema](schema/nmdc.schema.json)
+ * [Protobuf](schema/nmdc.proto)
+ * [GraphQL](schema/nmdc.graphql)
+ * [OWL](schema/nmdc.owl)
+ * [ShEx](schema/nmdc.shex)
+
 ## Documentation
 [Documentation](https://microbiomedata.github.io/nmdc-metadata/) for the [NMDC schema](./schema) can be browsed here:
 * https://microbiomedata.github.io/nmdc-metadata/

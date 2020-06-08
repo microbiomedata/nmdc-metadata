@@ -522,7 +522,7 @@
                "type": "string"
             },
             "has_unit": {
-               "$ref": "#/definitions/Unit"
+               "type": "string"
             },
             "was_generated_by": {
                "type": "string"
@@ -616,14 +616,6 @@
          },
          "required": [],
          "title": "TimestampValue",
-         "type": "object"
-      },
-      "Unit": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {},
-         "required": [],
-         "title": "Unit",
          "type": "object"
       },
       "UrlValue": {

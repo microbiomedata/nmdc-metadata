@@ -14,8 +14,8 @@ env.lock:
 
 test: schema/test-nmdc-01.valid pytest
 
-pytest:
-	pipenv run python schema/nmdc.py
+pytest: schema/nmdc.py
+	pipenv run python $<
 
 build: python_dataclasses json_schema
 
@@ -63,6 +63,9 @@ schema/nmdc.graphql: schema/nmdc.yaml env.lock
 # ShEx
 schema/nmdc.shex: schema/nmdc.yaml env.lock
 	pipenv run gen-shex $< > $@.tmp && mv $@.tmp $@
+
+schema/nmdc.csv: schema/nmdc.yaml env.lock
+	pipenv run gen-csv $< > $@.tmp && mv $@.tmp $@
 
 # ProtoBuf
 schema/nmdc.proto: schema/nmdc.yaml env.lock

@@ -7,7 +7,7 @@ verify_ssl = true
 
 [packages]
 pyyaml = "*"
-biolinkml = "*"
+biolinkml = {path = "./../biolinkml"}
 requests = "*"
 cli = "*"
 click = "*"

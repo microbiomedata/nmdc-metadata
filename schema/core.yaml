@@ -46,7 +46,15 @@ types:
       - https://en.wikipedia.org/wiki/ISO_639-1
     base: str
     uri: xsd:language
-      
+
+  unit:
+    base: str
+    uri: xsd:string
+    mappings:
+      - qud:Unit
+      - UO:0000000
+
+    
 classes:
 
   named thing:
@@ -142,13 +150,6 @@ classes:
         description: >-
           The raw value for a  geolocation should follow {lat} {long}
         # to_str: {latitude} {longitude}
-
-  unit:
-    id_prefixes:
-      - UO
-    mappings:
-      - qud:Unit
-      - UO:0000000
 
   ontology class:
     is_a: named thing

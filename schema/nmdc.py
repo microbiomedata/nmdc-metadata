@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-06-07 14:46
+# Generation date: 2020-06-08 12:58
 # Schema: NMDC Schema
 #
 # id: https://microbiomedata/schema
@@ -33,7 +33,6 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 # Namespaces
 GOLD = CurieNamespace('GOLD', 'https://identifiers.org/gold/')
 MIXS = CurieNamespace('MIxS', 'http://example.org/UNKNOWN/MIxS/')
-UO = CurieNamespace('UO', 'http://purl.obolibrary.org/obo/UO_')
 BIOLINKML = CurieNamespace('biolinkml', 'https://w3id.org/biolink/biolinkml/')
 DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
 MIXS = CurieNamespace('mixs', 'https://w3id.org/gensc/')
@@ -62,6 +61,13 @@ class LanguageCode(str):
     type_class_curie = "xsd:language"
     type_name = "language code"
     type_model_uri = NMDC.LanguageCode
+
+
+class Unit(str):
+    type_class_uri = XSD.string
+    type_class_curie = "xsd:string"
+    type_name = "unit"
+    type_model_uri = NMDC.Unit
 
 
 # Class references
@@ -370,6 +376,7 @@ class Person(NamedThing):
             self.id = PersonId(self.id)
         super().__post_init__(**kwargs)
 
+    id: Union[str, PersonId] = None
 
 @dataclass
 class AttributeValue(YAMLRoot):
@@ -406,14 +413,8 @@ class QuantityValue(AttributeValue):
     class_model_uri: ClassVar[URIRef] = NMDC.QuantityValue
 
     has_raw_value: Optional[str] = None
-    has_unit: Optional[Union[dict, "Unit"]] = None
+    has_unit: Optional[str] = None
     has_numeric_value: Optional[float] = None
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.has_unit is not None and not isinstance(self.has_unit, Unit):
-            self.has_unit = Unit()
-        super().__post_init__(**kwargs)
-
 
 @dataclass
 class TextValue(AttributeValue):
@@ -516,15 +517,6 @@ class GeolocationValue(AttributeValue):
     has_raw_value: Optional[str] = None
     latitude: Optional[float] = None
     longitude: Optional[float] = None
-
-class Unit(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = NMDC.Unit
-    class_class_curie: ClassVar[str] = "nmdc:Unit"
-    class_name: ClassVar[str] = "unit"
-    class_model_uri: ClassVar[URIRef] = NMDC.Unit
-
 
 @dataclass
 class OntologyClass(NamedThing):
@@ -2481,7 +2473,7 @@ slots.has_raw_value = Slot(uri=NMDC.has_raw_value, name="has raw value", curie=N
                       model_uri=NMDC.has_raw_value, domain=AttributeValue, range=Optional[str])
 
 slots.has_unit = Slot(uri=NMDC.has_unit, name="has unit", curie=NMDC.curie('has_unit'),
-                      model_uri=NMDC.has_unit, domain=None, range=Optional[Union[dict, Unit]], mappings = [QUD.unit])
+                      model_uri=NMDC.has_unit, domain=None, range=Optional[str], mappings = [QUD.unit])
 
 slots.has_numeric_value = Slot(uri=NMDC.has_numeric_value, name="has numeric value", curie=NMDC.curie('has_numeric_value'),
                       model_uri=NMDC.has_numeric_value, domain=None, range=Optional[float], mappings = [QUD.quantityValue])
@@ -2580,7 +2572,7 @@ slots.quantity_value_has_raw_value = Slot(uri=NMDC.has_raw_value, name="quantity
                       model_uri=NMDC.quantity_value_has_raw_value, domain=QuantityValue, range=Optional[str])
 
 slots.quantity_value_has_unit = Slot(uri=NMDC.has_unit, name="quantity value_has unit", curie=NMDC.curie('has_unit'),
-                      model_uri=NMDC.quantity_value_has_unit, domain=QuantityValue, range=Optional[Union[dict, "Unit"]])
+                      model_uri=NMDC.quantity_value_has_unit, domain=QuantityValue, range=Optional[str])
 
 slots.quantity_value_has_numeric_value = Slot(uri=NMDC.has_numeric_value, name="quantity value_has numeric value", curie=NMDC.curie('has_numeric_value'),
                       model_uri=NMDC.quantity_value_has_numeric_value, domain=QuantityValue, range=Optional[float])
