@@ -376,7 +376,6 @@ class Person(NamedThing):
             self.id = PersonId(self.id)
         super().__post_init__(**kwargs)
 
-    id: Union[str, PersonId] = None
 
 @dataclass
 class AttributeValue(YAMLRoot):
