@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-06-03 11:04
+# Generation date: 2020-06-08 14:10
 # Schema: NMDC Schema
 #
 # id: https://microbiomedata/schema
@@ -118,18 +118,18 @@ class Biosample(NamedThing):
     class_name: ClassVar[str] = "biosample"
     class_model_uri: ClassVar[URIRef] = NMDC.Biosample
 
-    lat_lon: Union[dict, "GeolocationValue"] = None
-    env_broad_scale: Union[dict, "ControlledTermValue"] = None
-    env_local_scale: Union[dict, "ControlledTermValue"] = None
-    env_medium: Union[dict, "ControlledTermValue"] = None
     id: Optional[str] = None
     name: Optional[str] = None
     alternate_identifiers: List[str] = empty_list()
     depth: Optional[Union[dict, "TextValue"]] = None
+    lat_lon: Optional[Union[dict, "GeolocationValue"]] = None
     alt: Optional[Union[dict, "QuantityValue"]] = None
     elev: Optional[Union[dict, "QuantityValue"]] = None
     geo_loc_name: Optional[Union[dict, "TextValue"]] = None
     collection_date: Optional[Union[dict, "TimestampValue"]] = None
+    env_broad_scale: Optional[Union[dict, "ControlledTermValue"]] = None
+    env_local_scale: Optional[Union[dict, "ControlledTermValue"]] = None
+    env_medium: Optional[Union[dict, "ControlledTermValue"]] = None
     ecosystem: Optional[str] = None
     ecosystem_category: Optional[str] = None
     ecosystem_type: Optional[str] = None
@@ -140,9 +140,7 @@ class Biosample(NamedThing):
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.depth is not None and not isinstance(self.depth, TextValue):
             self.depth = TextValue(**self.depth)
-        if self.lat_lon is None:
-            raise ValueError(f"lat_lon must be supplied")
-        if not isinstance(self.lat_lon, GeolocationValue):
+        if self.lat_lon is not None and not isinstance(self.lat_lon, GeolocationValue):
             self.lat_lon = GeolocationValue(**self.lat_lon)
         if self.alt is not None and not isinstance(self.alt, QuantityValue):
             self.alt = QuantityValue(**self.alt)
@@ -152,17 +150,11 @@ class Biosample(NamedThing):
             self.geo_loc_name = TextValue(**self.geo_loc_name)
         if self.collection_date is not None and not isinstance(self.collection_date, TimestampValue):
             self.collection_date = TimestampValue(**self.collection_date)
-        if self.env_broad_scale is None:
-            raise ValueError(f"env_broad_scale must be supplied")
-        if not isinstance(self.env_broad_scale, ControlledTermValue):
+        if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, ControlledTermValue):
             self.env_broad_scale = ControlledTermValue(**self.env_broad_scale)
-        if self.env_local_scale is None:
-            raise ValueError(f"env_local_scale must be supplied")
-        if not isinstance(self.env_local_scale, ControlledTermValue):
+        if self.env_local_scale is not None and not isinstance(self.env_local_scale, ControlledTermValue):
             self.env_local_scale = ControlledTermValue(**self.env_local_scale)
-        if self.env_medium is None:
-            raise ValueError(f"env_medium must be supplied")
-        if not isinstance(self.env_medium, ControlledTermValue):
+        if self.env_medium is not None and not isinstance(self.env_medium, ControlledTermValue):
             self.env_medium = ControlledTermValue(**self.env_medium)
         if self.tot_org_carb is not None and not isinstance(self.tot_org_carb, QuantityValue):
             self.tot_org_carb = QuantityValue(**self.tot_org_carb)
@@ -2311,19 +2303,19 @@ slots.biosample_alternate_identifiers = Slot(uri=NMDC.alternate_identifiers, nam
                       model_uri=NMDC.biosample_alternate_identifiers, domain=Biosample, range=List[str])
 
 slots.biosample_lat_lon = Slot(uri=NMDC.lat_lon, name="biosample_lat_lon", curie=NMDC.curie('lat_lon'),
-                      model_uri=NMDC.biosample_lat_lon, domain=Biosample, range=Union[dict, "GeolocationValue"])
+                      model_uri=NMDC.biosample_lat_lon, domain=Biosample, range=Optional[Union[dict, "GeolocationValue"]])
 
 slots.biosample_depth = Slot(uri=NMDC.depth, name="biosample_depth", curie=NMDC.curie('depth'),
                       model_uri=NMDC.biosample_depth, domain=Biosample, range=Optional[Union[dict, "TextValue"]])
 
 slots.biosample_env_broad_scale = Slot(uri=NMDC.env_broad_scale, name="biosample_env_broad_scale", curie=NMDC.curie('env_broad_scale'),
-                      model_uri=NMDC.biosample_env_broad_scale, domain=Biosample, range=Union[dict, "ControlledTermValue"])
+                      model_uri=NMDC.biosample_env_broad_scale, domain=Biosample, range=Optional[Union[dict, "ControlledTermValue"]])
 
 slots.biosample_env_local_scale = Slot(uri=NMDC.env_local_scale, name="biosample_env_local_scale", curie=NMDC.curie('env_local_scale'),
-                      model_uri=NMDC.biosample_env_local_scale, domain=Biosample, range=Union[dict, "ControlledTermValue"])
+                      model_uri=NMDC.biosample_env_local_scale, domain=Biosample, range=Optional[Union[dict, "ControlledTermValue"]])
 
 slots.biosample_env_medium = Slot(uri=NMDC.env_medium, name="biosample_env_medium", curie=NMDC.curie('env_medium'),
-                      model_uri=NMDC.biosample_env_medium, domain=Biosample, range=Union[dict, "ControlledTermValue"])
+                      model_uri=NMDC.biosample_env_medium, domain=Biosample, range=Optional[Union[dict, "ControlledTermValue"]])
 
 slots.study_id = Slot(uri=NMDC.id, name="study_id", curie=NMDC.curie('id'),
                       model_uri=NMDC.study_id, domain=Study, range=Optional[str])
