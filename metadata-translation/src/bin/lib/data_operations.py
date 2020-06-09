@@ -173,16 +173,23 @@ def make_dataframe_dictionary(file_name, subset_cols=[], exclude_cols=[], nrows=
 #     return convert_dict_list_to_json_list(dict_list)
 
 
+# def make_json_string_list (dictionary,
+#                            nmdc_class,
+#                            id_key, name_key="",
+#                            description_key="",
+#                            part_of_key = "",
+#                            has_input_key="",
+#                            has_output_key="",
+#                            attribute_fields=[],
+#                            remove_key_attributes=True,
+#                            add_attribute=True):
 def make_json_string_list (dictionary,
                            nmdc_class,
-                           id_key, name_key="",
-                           description_key="",
-                           part_of_key = "",
-                           has_input_key="",
-                           has_output_key="",
+                           constructor_map={},
                            attribute_fields=[],
                            remove_key_attributes=True,
                            add_attribute=True):
+
     """
     Takes a dictionary in which each item is a record and returns a list of json strings build from each record.
     Args:
@@ -200,19 +207,27 @@ def make_json_string_list (dictionary,
         A list in which each item is a json string.
       
     """
+    # dict_list = \
+    #     make_nmdc_dict_list (dictionary,
+    #                          nmdc_class,
+    #                          id_key,
+    #                          name_key=name_key,
+    #                          description_key=description_key,
+    #                          part_of_key=part_of_key,
+    #                          has_input_key=has_input_key,
+    #                          has_output_key=has_output_key,
+    #                          attribute_fields=attribute_fields,
+    #                          remove_key_attributes=remove_key_attributes,
+    #                          add_attribute=add_attribute)
+
     dict_list = \
         make_nmdc_dict_list (dictionary,
                              nmdc_class,
-                             id_key,
-                             name_key=name_key,
-                             description_key=description_key,
-                             part_of_key=part_of_key,
-                             has_input_key=has_input_key,
-                             has_output_key=has_output_key,
+                             constructor_map=constructor_map,
                              attribute_fields=attribute_fields,
                              remove_key_attributes=remove_key_attributes,
                              add_attribute=add_attribute)
-
+        
     return convert_dict_list_to_json_list(dict_list)
 
 
@@ -309,9 +324,25 @@ def convert_dict_list_to_json_list(dict_list):
 #     ## return final list
 #     return dict_list
 
+# def make_nmdc_dict_list (dictionary,
+#                          nmdc_class,
+#                          id_key, name_key="",
+#                          description_key="",
+#                          part_of_key = "",
+#                          has_input_key="",
+#                          has_output_key="",
+#                          attribute_fields=[],
+#                          constructor_map={},
+#                          remove_key_attributes=True,
+#                          add_attribute=True):
+   
 
-def make_nmdc_dict_list (dictionary, nmdc_class, id_key, name_key="", description_key="", part_of_key = "",
-                         has_input_key="", has_output_key="", attribute_fields=[], remove_key_attributes=True, add_attribute=True):
+def make_nmdc_dict_list (dictionary,
+                         nmdc_class,
+                         constructor_map={},
+                         attribute_fields=[],
+                         remove_key_attributes=True,
+                         add_attribute=True):
     """
     Takes a dictionary in which each item is a record and returns a list of dictionaries that conform to the nmdc schema.
     Args:
@@ -330,6 +361,14 @@ def make_nmdc_dict_list (dictionary, nmdc_class, id_key, name_key="", descriptio
         A list in which each item is a dictionary that conforms to the nmdc schema
       
     """
+    def make_constructor_args(constructor_map, record):
+        ## for every mapping between a key and data field create a dict of
+        ## the constructors needed to instantiate the class
+        constructor_dict = {}
+        for key, field in constructor_map.items():
+            constructor_dict[key] = record[field]
+        return constructor_dict
+    
     def make_lat_lon(latitude, longitude):
             latitude = "" if pds.isnull(latitude) else str(latitude).strip().replace('\n', '')
             longitude = "" if pds.isnull(longitude) else str(longitude).strip().replace('\n', '')
@@ -353,35 +392,45 @@ def make_nmdc_dict_list (dictionary, nmdc_class, id_key, name_key="", descriptio
         
     ## by default, we don't want the attribute keys (e.g, id_key, part_of_key, etc.)
     ## to also be attributes of the object, these keys link objects other objects
-    if remove_key_attributes:
-        if id_key in attribute_fields: attribute_fields.remove(id_key)
-        if name_key in attribute_fields: attribute_fields.remove(name_key)
-        if description_key in attribute_fields: attribute_fields.remove(description_key)
-        if part_of_key in attribute_fields: attribute_fields.remove(part_of_key)
-        if has_input_key in attribute_fields: attribute_fields.remove(has_input_key)
-        if has_output_key in attribute_fields: attribute_fields.remove(has_output_key)
+    # if remove_key_attributes:
+    #     if id_key in attribute_fields: attribute_fields.remove(id_key)
+    #     if name_key in attribute_fields: attribute_fields.remove(name_key)
+    #     if description_key in attribute_fields: attribute_fields.remove(description_key)
+    #     if part_of_key in attribute_fields: attribute_fields.remove(part_of_key)
+    #     if has_input_key in attribute_fields: attribute_fields.remove(has_input_key)
+    #     if has_output_key in attribute_fields: attribute_fields.remove(has_output_key)
+
+    for key in constructor_map.keys():
+        if key in attribute_fields:
+            attribute_fields.remove(key)
     
     dict_list = [] # list to hold individual dictionary objects
     
     ## for each record in the dictionary, create an object of type nmdc_class,
     ## and put the object into the list
     for record in dictionary:
-        ##  create object with id, name, , description, part of, input, and output info
-        obj = nmdc_class(id=record[id_key])
-        obj.id = record[id_key]
-        # print ('id: ', record[id_key])
+        # ##  create object with id, name, , description, part of, input, and output info
+        # obj = nmdc_class(id=record[id_key])
+        # obj.id = record[id_key]
+        # # print ('id: ', record[id_key])
         
-        if len(name_key.strip()) > 0:
-            obj.name = record[name_key]
-        if len(description_key.strip()) > 0:
-            obj.description = record[description_key]
-        if len(part_of_key.strip()) > 0:
-            obj.part_of = record[part_of_key].split(",")
-        if len(has_input_key.strip()) > 0:
-            obj.has_input = record[has_input_key].split(",")
-        if len(has_output_key.strip()) > 0:
-            obj.has_output = record[has_output_key].split(",")
+        # if len(name_key.strip()) > 0:
+        #     obj.name = record[name_key]
+        # if len(description_key.strip()) > 0:
+        #     obj.description = record[description_key]
+        # if len(part_of_key.strip()) > 0:
+        #     obj.part_of = record[part_of_key].split(",")
+        # if len(has_input_key.strip()) > 0:
+        #     obj.has_input = record[has_input_key].split(",")
+        # if len(has_output_key.strip()) > 0:
+        #     obj.has_output = record[has_output_key].split(",")
 
+        ## using the constructor_map create a dictionary containing the
+        ## param names and field values necessary to instantiate the class
+        if len(constructor_map) > 0:
+            constructor_args = make_constructor_args(constructor_map, record)
+            obj = nmdc_class(**constructor_args)
+        
         for key, data_value in record.items():
             if (not pds.isnull(data_value)) and ('' != data_value) and not(data_value is None) and (key in attribute_fields):
                 av = make_attribute_value(data_value)
