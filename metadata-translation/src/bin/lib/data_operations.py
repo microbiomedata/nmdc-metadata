@@ -330,6 +330,11 @@ def make_nmdc_dict_list (dictionary, nmdc_class, id_key, name_key="", descriptio
         A list in which each item is a dictionary that conforms to the nmdc schema
       
     """
+    def make_lat_lon(latitude, longitude):
+            latitude = "" if pds.isnull(latitude) else str(latitude).strip().replace('\n', '')
+            longitude = "" if pds.isnull(longitude) else str(longitude).strip().replace('\n', '')
+            return f"{latitude} {longitude}".strip()
+        
     def make_attribute_value(data_value):
         """
         Local function used to create attribute_value object linked the the raw value.
@@ -362,8 +367,10 @@ def make_nmdc_dict_list (dictionary, nmdc_class, id_key, name_key="", descriptio
     ## and put the object into the list
     for record in dictionary:
         ##  create object with id, name, , description, part of, input, and output info
-        obj = nmdc_class()
+        obj = nmdc_class(id=record[id_key])
         obj.id = record[id_key]
+        # print ('id: ', record[id_key])
+        
         if len(name_key.strip()) > 0:
             obj.name = record[name_key]
         if len(description_key.strip()) > 0:
