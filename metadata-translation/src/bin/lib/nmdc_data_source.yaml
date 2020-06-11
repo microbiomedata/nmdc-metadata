@@ -30,9 +30,10 @@ classes:
     part_of_key: project_gold_id
     schema_slots: "../../schema/nmdc.yaml"
     data_sources:
-      - biosample_table
-      - project_table
-      - project_biosample_table
+      gold:
+        - biosample_table
+        - project_table
+        - project_biosample_table
 
         
   data object:
@@ -243,5 +244,3 @@ data_sources:
     append_columns:
       - name: processing_institution
         value: Environmental Molecular Sciences Lab        
-
-
