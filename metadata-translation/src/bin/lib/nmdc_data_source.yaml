@@ -53,7 +53,7 @@ data_sources:
     data_source:
       file_name: "export.sql/STUDY_DATA_TABLE.dsv"
       file_type: tsv
-      file_archive_name: "../src/data/nmdc-version2.zip"
+      file_archive_name: "../src/data/nmdc-version5.zip"
     data_slots:
       - contact_id
     filters:
@@ -79,7 +79,7 @@ data_sources:
     data_source:
       file_name: "export.sql/CONTACT_DATA_TABLE.dsv"
       file_type: tsv
-      file_archive_name: "../src/data/nmdc-version2.zip"
+      file_archive_name: "../src/data/nmdc-version5.zip"
     data_slots:
       - name
       - contact_id
@@ -103,7 +103,7 @@ data_sources:
     data_source:
       file_name: "export.sql/PROJECT_DATA_TABLE.dsv"
       file_type: tsv
-      file_archive_name: "../src/data/nmdc-version2.zip"
+      file_archive_name: "../src/data/nmdc-version5.zip"
     data_slots:
       - master_study_id
       - pi_id
@@ -117,7 +117,7 @@ data_sources:
     data_source:
       file_name: "export.sql/PROJECT_BIOSAMPLE_DATA_TABLE.dsv"
       file_type: tsv
-      file_archive_name: "../src/data/nmdc-version2.zip"
+      file_archive_name: "../src/data/nmdc-version5.zip"
     data_slots:
       - biosample_id
       - project_id
@@ -127,9 +127,16 @@ data_sources:
     data_source:
       file_name: "export.sql/BIOSAMPLE_DATA_TABLE.dsv" 
       file_type: tsv
-      file_archive_name: "../src/data/nmdc-version2.zip"
+      file_archive_name: "../src/data/nmdc-version5.zip"
     filters:              
       - {field: active, values: ['Yes']}
+    rename_slots:
+      - old_name: envo_biome_id
+        new_name: env_broad_scale
+      - old_name: envo_feature_id
+        new_name: env_local_scale
+      - old_name: envo_material_id
+        new_name: env_medium
     subset_cols:
       - biosample_id
       - gold_id
@@ -161,11 +168,11 @@ data_sources:
       - depth
       - subsurface_depth
       - altitude
-      - temperature_range
+      #- temperature_range # removed in version 5
       - proport_woa_temperature
       - biogas_temperature
       - growth_temperature
-      - soil_annual_season_temp
+      #- soil_annual_season_temp # removed in verion 5
       - water_samp_store_temp
       - biogas_retention_time
       - salinity
@@ -175,6 +182,9 @@ data_sources:
       - nitrate_concentration
       - oxygen_concentration
       - salinity_concentration
+      - env_broad_scale
+      - env_local_scale
+      - env_medium
 
 
   ficus_faa_table:
