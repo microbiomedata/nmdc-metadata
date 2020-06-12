@@ -43,7 +43,7 @@ classes:
     data_sources:
       - ficus_faa_table
       - ficus_fna_table
-      - ficus_fasq_table
+      - ficus_fastq_table
     
 
 data_sources:
@@ -215,7 +215,7 @@ data_sources:
       - name: processing_institution
         value: Environmental Molecular Sciences Lab          
 
-  ficus_fasq_table:
+  ficus_fastq_table:
     id_key: file_id
     data_source:
       file_name: "../src/data/ficus_project_fastq.tsv"

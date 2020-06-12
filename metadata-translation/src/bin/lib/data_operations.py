@@ -558,15 +558,57 @@ def make_biosample_dataframe (biosample_table, project_biosample_table, project_
         return temp3_df
 
 
-def make_data_objects_datafame (data_objects_table, project_table, result_cols=[]):
+def  make_jgi_emsl_datafame(jgi_emsl_table, study_table, result_cols=[]):
     ## subset data
-    project_table_splice = project_table[['gold_id']].copy()
+    study_table_splice = study_table[['study_id', 'gold_id']].copy()
     
-    ## inner joing data objects (e.g., faa, fna, fasq) to projects
-    temp1_df = pds.merge(data_objects_table, project_table_splice, how='inner', left_on='gold_project_id',
-                         right_on='gold_id')
+    ## inner join jgi-emsl data on study (must be part of study)
+    temp1_df = pds.merge(jgi_emsl_table, study_table_splice, how='inner', left_on='gold_study_id', right_on='gold_id')
     
     if len(result_cols) > 0:
         return temp1_df[result_cols]
     else:
-        return temp1_df[data_objects_table.columns]
+        return temp1_df
+
+
+def make_emsl_datafame (emsl_table, jgi_emsl_table, study_table, result_cols=[]):
+    ## subset data
+    study_table_splice = study_table[['study_id', 'gold_id']].copy()
+    jgi_emsl_table_splice = jgi_emsl_table[['gold_study_id', 'emsl_proposal_id']]
+    
+    ## inner join jgi-emsl data on study (must be part of study)
+    temp1_df = \
+        pds.merge(jgi_emsl_table_splice, study_table_splice, how='inner', left_on='gold_study_id', right_on='gold_id')
+    
+    ## inner join emsl data on jgi-emsl proposal ids
+    temp2_df = pds.merge(emsl_table, temp1_df, how='inner', on='emsl_proposal_id')
+    
+    ## add data obect id column
+    temp2_df["data_object_id"] = "output_"
+    temp2_df["data_object_id"] = temp2_df["data_object_id"] + temp2_df["dataset_id"].map(str) # build data object id
+    
+    ## add data object name column
+    temp2_df["data_object_name"] = "output: "
+    temp2_df["data_object_name"] = temp2_df["data_object_name"] + temp2_df["dataset_name"].map(str)  # build data object id
+    
+    if len(result_cols) > 0:
+        return temp2_df[result_cols]
+    else:
+        return temp2_df
+
+
+def make_data_objects_datafame (faa_table, fna_table, fastq_table, project_table, result_cols=[]):
+    ## subset data
+    project_table_splice = project_table[['gold_id']].copy()
+    
+    ## merge tables
+    data_objects = pds.concat([faa_table, fna_table, fastq_table], axis=0)
+    
+    ## inner joing data objects (e.g., faa, fna, fasq) to projects
+    temp1_df = \
+        pds.merge(data_objects, project_table_splice, how='inner', left_on='gold_project_id', right_on='gold_id')
+    
+    if len(result_cols) > 0:
+        return temp1_df[result_cols]
+    else:
+        return temp1_df[data_objects.columns]
