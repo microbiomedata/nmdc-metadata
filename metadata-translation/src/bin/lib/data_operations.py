@@ -239,11 +239,15 @@ def make_nmdc_dict_list (dictionary,
         param_dict = slot_value[0]
         nmdc_class = slot_value[1]
         id_field = param_dict['id']
-    
+
+        if pds.isnull(record[id_field]):
+            return None
+        
         if slot_name in ['part_of', 'has_input', 'has_output']:
             id_values = record[id_field].split(',')
             referenced_entity = [nmdc_class(**{'id':id_val}) for id_val in id_values]
-            for r in referenced_entity: setattr(r, 'type', nmdc_class.class_class_curie) # add type info
+            for r in referenced_entity:
+                setattr(r, 'type', nmdc_class.class_class_curie) # add type info
         else:
             referenced_entity = nmdc_class(**{'id':record[id_field]})
             setattr(referenced_entity, 'type', nmdc_class.class_class_curie)
@@ -504,19 +508,31 @@ def make_study_dataframe (study_table, contact_table, proposals_table, result_co
         return temp2_df
 
 
-def make_project_dataframe (project_table, study_table, contact_table, result_cols=[]):
+def make_project_dataframe (project_table, study_table, contact_table, data_object_table=None, result_cols=[]):
     ## subset data
     study_table_splice = study_table[['study_id', 'gold_id']].copy()
     contact_table_splice = contact_table[['contact_id', 'principal_investigator_name']].copy()
     
     ## rename study.gold_id to study_gold_id
-    study_table_splice.rename(columns={'gold_id':'study_gold_id'}, inplace=True)
+    study_table_splice.rename(columns={'gold_id': 'study_gold_id'}, inplace=True)
     
     ## inner join on study (project must be part of study)
     temp1_df = pds.merge(project_table, study_table_splice, how='inner', left_on='master_study_id', right_on='study_id')
     
     ## left join contact data
     temp2_df = pds.merge(temp1_df, contact_table_splice, how='left', left_on='pi_id', right_on='contact_id')
+    
+    ## check for data objects that are outputs of the projedt which need to be joined
+    if not (data_object_table is None):
+        ## create a group concat for all file ids in the data objects
+        groups = data_object_table.groupby('gold_project_id')['file_id']
+        output_files = \
+            pds.DataFrame(groups.apply(lambda x:','.join(filter(None, x)))).drop_duplicates().reset_index()
+        output_files.rename(columns={'file_id': 'output_file_ids'}, inplace=True)
+        output_files['output_file_ids'] = output_files['output_file_ids'].astype(str)
+        
+        ## join project and output files
+        temp2_df = pds.merge(temp2_df, output_files, how='left', left_on='gold_id', right_on='gold_project_id')
     
     if len(result_cols) > 0:
         return temp2_df[result_cols]
@@ -541,8 +557,8 @@ def make_biosample_dataframe (biosample_table, project_biosample_table, project_
     ## biosample might belong to more than one project; so do the equivalent of a group_cat
     ## see: https://queirozf.com/entries/pandas-dataframe-groupby-examples
     ## see: https://stackoverflow.com/questions/18138693/replicating-group-concat-for-pandas-dataframe
-    groups = temp2_df.groupby('biosample_id')['project_gold_id'].apply(
-        lambda pid:','.join(filter(None, pid))).reset_index()
+    groups = \
+        temp2_df.groupby('biosample_id')['project_gold_id'].apply(lambda pid:','.join(filter(None, pid))).reset_index()
     groups.rename(columns={'project_gold_id':'project_gold_ids'}, inplace=True)
     
     # join concat groups to dataframe
