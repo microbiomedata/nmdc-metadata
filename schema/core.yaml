@@ -10,6 +10,7 @@ prefixes:
   wgs: http://www.w3.org/2003/01/geo/wgs84_pos
   qud: http://qudt.org/1.1/schema/qudt#
   dcterms: http://purl.org/dc/terms/
+  schema: http://schema.org/
   biolinkml: https://w3id.org/biolink/biolinkml/
   
 default_prefix: nmdc
@@ -93,7 +94,23 @@ classes:
           The number part of the quantity
         range:
           double
+    mappings:
+      - schema:QuantityValue
 
+  person value:
+    is_a: attribute value
+    description: >-
+      An attribute value representing a person
+    slots:
+      - orcid
+    todos:
+      - add additional fields e.g for institution
+    slot_usage:
+      has raw value:
+        description: >-
+          the full name of the Investgator in format FIRST LAST
+          
+      
   text value:
     is_a: attribute value
     description: >-
@@ -150,6 +167,8 @@ classes:
         description: >-
           The raw value for a  geolocation should follow {lat} {long}
         # to_str: {latitude} {longitude}
+    mappings:
+      - schema:GeoCoordinates
 
   ontology class:
     is_a: named thing
@@ -214,6 +233,7 @@ slots:
     range: unit
     mappings:
       - qud:unit
+      - schema:unitCode
 
   has numeric value:
     description: >-
@@ -222,6 +242,7 @@ slots:
     range: float
     mappings:
       - qud:quantityValue
+      - schema:value
       
   has boolean value:
     description: >-
@@ -235,6 +256,8 @@ slots:
     description: >-
       latitude
     slot_uri: wgs:lat
+    mappings:
+      - schema:latitude
 
   longitude:
     domain: geolocation value
@@ -242,6 +265,8 @@ slots:
     description: >-
       longitude
     slot_uri: wgs:long
+    mappings:
+      - schema:longitude
 
   term:
     domain: controlled term value
@@ -251,3 +276,6 @@ slots:
     slot_uri: rdf:type
     inlined: true
     
+  orcid:
+    domain: person value
+    range: string
