@@ -43,7 +43,7 @@ jobs:
     - name: Install and Build
       run: |
         pip install pipenv
-        # make
+        make
         make docs
 
     - name: Deploy
