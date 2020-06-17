@@ -1,5 +1,6 @@
 # Metadata management for the [National Microbiome Data Collaborative](https://microbiomedata.org/)
 [![Build Status](https://travis-ci.org/microbiomedata/nmdc-metadata.svg?branch=master)](https://travis-ci.org/microbiomedata/nmdc-metadata)
+![Deploy Documentation](https://github.com/microbiomedata/nmdc-metadata/workflows/Deploy%20Documentation/badge.svg?branch=master)
 ![GitHub last commit](https://img.shields.io/github/last-commit/microbiomedata/nmdc-metadata?branch=master&kill_cache=1)
 ![GitHub issues](https://img.shields.io/github/issues/microbiomedata/nmdc-metadata?branch=master&kill_cache=1)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/microbiomedata/nmdc-metadata?branch=master&kill_cache=1)
