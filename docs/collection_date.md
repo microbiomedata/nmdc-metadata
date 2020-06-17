@@ -9,7 +9,7 @@ URI: [nmdc:collection_date](https://microbiomedata/meta/collection_date)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [TimestampValue](TimestampValue.md)
+None ->  <sub>OPT</sub> [TimestampValue](TimestampValue.md)
 
 ## Parents
 
@@ -20,7 +20,7 @@ URI: [nmdc:collection_date](https://microbiomedata/meta/collection_date)
 
 ## Used by
 
- * [NamedThing](NamedThing.md)
+ * [Biosample](Biosample.md)
 
 ## Other properties
 
@@ -28,4 +28,5 @@ URI: [nmdc:collection_date](https://microbiomedata/meta/collection_date)
 | --- | --- | --- |
 | **Aliases:** | | collection date |
 | **Mappings:** | | MIxS:collection_date |
+| **In Subsets:** | | environment |
 

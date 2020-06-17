@@ -9,7 +9,7 @@ URI: [nmdc:experimental_factor](https://microbiomedata/meta/experimental_factor)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [ControlledTermValue](ControlledTermValue.md)
+None ->  <sub>OPT</sub> [ControlledTermValue](ControlledTermValue.md)
 
 ## Parents
 
@@ -20,7 +20,7 @@ URI: [nmdc:experimental_factor](https://microbiomedata/meta/experimental_factor)
 
 ## Used by
 
- * [NamedThing](NamedThing.md)
+ * [Study](Study.md)
 
 ## Other properties
 
@@ -28,4 +28,5 @@ URI: [nmdc:experimental_factor](https://microbiomedata/meta/experimental_factor)
 | --- | --- | --- |
 | **Aliases:** | | experimental factor |
 | **Mappings:** | | MIxS:experimental_factor |
+| **In Subsets:** | | investigation |
 

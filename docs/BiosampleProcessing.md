@@ -7,7 +7,7 @@ A process that takes one or more biosamples as inputs and generates one or as ou
 URI: [nmdc:BiosampleProcessing](https://microbiomedata/meta/BiosampleProcessing)
 
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Biosample]<has%20input%200..*-++\[BiosampleProcessing&#124;id(i):string%20%3F;name(i):string%20%3F;description(i):string%20%3F;alternate_identifiers(i):string%20*],%20\[BiosampleProcessing]^-\[OmicsProcessing],%20\[NamedThing]^-\[BiosampleProcessing])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Biosample]<has%20input%200..*-%20\[BiosampleProcessing&#124;id(i):string;name(i):string%20%3F;description(i):string%20%3F;alternate_identifiers(i):string%20*],%20\[BiosampleProcessing]^-\[OmicsProcessing],%20\[NamedThing]^-\[BiosampleProcessing])
 
 ## Parents
 
@@ -30,7 +30,7 @@ URI: [nmdc:BiosampleProcessing](https://microbiomedata/meta/BiosampleProcessing)
 
 ### Inherited from named thing:
 
- * [id](id.md)  <sub>OPT</sub>
+ * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [String](types/String.md)
     * inherited from: None

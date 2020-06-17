@@ -2,14 +2,14 @@
 # Type: ecosystem_subtype
 
 
-
+TODO
 
 URI: [nmdc:ecosystem_subtype](https://microbiomedata/meta/ecosystem_subtype)
 
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](types/String.md)
+None ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 
@@ -20,4 +20,5 @@ URI: [nmdc:ecosystem_subtype](https://microbiomedata/meta/ecosystem_subtype)
 
 ## Used by
 
- * [NamedThing](NamedThing.md)
+ * [Biosample](Biosample.md)
+ * [Study](Study.md)

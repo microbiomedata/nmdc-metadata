@@ -7,7 +7,7 @@ represents a person, such as a researcher
 URI: [nmdc:Person](https://microbiomedata/meta/Person)
 
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]^-\[Person&#124;id:string%20%3F;name(i):string%20%3F;description(i):string%20%3F;alternate_identifiers(i):string%20*])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]^-\[Person&#124;id:string;name(i):string%20%3F;description(i):string%20%3F;alternate_identifiers(i):string%20*])
 
 ## Parents
 
@@ -21,12 +21,12 @@ URI: [nmdc:Person](https://microbiomedata/meta/Person)
 
 ### Own
 
- * [person➞id](person_id.md)  <sub>OPT</sub>
+ * [person➞id](person_id.md)  <sub>REQ</sub>
     * range: [String](types/String.md)
 
 ### Inherited from named thing:
 
- * [id](id.md)  <sub>OPT</sub>
+ * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [String](types/String.md)
     * inherited from: None
@@ -45,5 +45,12 @@ URI: [nmdc:Person](https://microbiomedata/meta/Person)
 
 ### Domain for slot:
 
- * [person➞id](person_id.md)  <sub>OPT</sub>
+ * [person➞id](person_id.md)  <sub>REQ</sub>
     * range: [String](types/String.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Comments:** | | not yet in use |
+

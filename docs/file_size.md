@@ -2,14 +2,14 @@
 # Type: file_size
 
 
-units should be bytes.. may be overkill to allow different units
+units should be bytes
 
 URI: [nmdc:file_size](https://microbiomedata/meta/file_size)
 
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](types/String.md)
+None ->  <sub>OPT</sub> [Integer](types/Integer.md)
 
 ## Parents
 
@@ -21,4 +21,3 @@ URI: [nmdc:file_size](https://microbiomedata/meta/file_size)
 ## Used by
 
  * [DataObject](DataObject.md)
- * [NamedThing](NamedThing.md)

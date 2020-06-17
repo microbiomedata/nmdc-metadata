@@ -7,7 +7,7 @@
 URI: [nmdc:OntologyClass](https://microbiomedata/meta/OntologyClass)
 
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OntologyClass&#124;id(i):string%20%3F;name(i):string%20%3F;description(i):string%20%3F;alternate_identifiers(i):string%20*]^-\[EnvironmentalMaterialTerm],%20\[NamedThing]^-\[OntologyClass])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ControlledTermValue]++-%20term%200..1>\[OntologyClass&#124;id(i):string;name(i):string%20%3F;description(i):string%20%3F;alternate_identifiers(i):string%20*],%20\[OntologyClass]^-\[EnvironmentalMaterialTerm],%20\[NamedThing]^-\[OntologyClass])
 
 ## Parents
 
@@ -19,13 +19,14 @@ URI: [nmdc:OntologyClass](https://microbiomedata/meta/OntologyClass)
 
 ## Referenced by class
 
+ *  **[ControlledTermValue](ControlledTermValue.md)** *[term](term.md)*  <sub>OPT</sub>  **[OntologyClass](OntologyClass.md)**
 
 ## Attributes
 
 
 ### Inherited from named thing:
 
- * [id](id.md)  <sub>OPT</sub>
+ * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [String](types/String.md)
     * inherited from: None

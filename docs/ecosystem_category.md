@@ -2,14 +2,14 @@
 # Type: ecosystem_category
 
 
-
+TODO
 
 URI: [nmdc:ecosystem_category](https://microbiomedata/meta/ecosystem_category)
 
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](types/String.md)
+None ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 
@@ -20,4 +20,5 @@ URI: [nmdc:ecosystem_category](https://microbiomedata/meta/ecosystem_category)
 
 ## Used by
 
- * [NamedThing](NamedThing.md)
+ * [Biosample](Biosample.md)
+ * [Study](Study.md)

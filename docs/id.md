@@ -9,7 +9,7 @@ URI: [nmdc:id](https://microbiomedata/meta/id)
 
 ## Domain and Range
 
-None ->  <sub>OPT</sub> [String](types/String.md)
+None ->  <sub>REQ</sub> [String](types/String.md)
 
 ## Parents
 

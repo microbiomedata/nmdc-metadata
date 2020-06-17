@@ -9,7 +9,7 @@ URI: [nmdc:investigation_type](https://microbiomedata/meta/investigation_type)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [TextValue](TextValue.md)
+None ->  <sub>OPT</sub> [TextValue](TextValue.md)
 
 ## Parents
 
@@ -20,7 +20,7 @@ URI: [nmdc:investigation_type](https://microbiomedata/meta/investigation_type)
 
 ## Used by
 
- * [NamedThing](NamedThing.md)
+ * [Study](Study.md)
 
 ## Other properties
 
@@ -28,4 +28,5 @@ URI: [nmdc:investigation_type](https://microbiomedata/meta/investigation_type)
 | --- | --- | --- |
 | **Aliases:** | | investigation type |
 | **Mappings:** | | MIxS:investigation_type |
+| **In Subsets:** | | investigation |
 

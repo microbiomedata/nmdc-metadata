@@ -7,7 +7,7 @@ The methods and processes used to generate omics data from a biosample or organi
 URI: [nmdc:OmicsProcessing](https://microbiomedata/meta/OmicsProcessing)
 
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Biosample]<has%20input(i)%200..*-++\[OmicsProcessing&#124;id:string%20%3F;name:string%20%3F;alternate_identifiers:string%20*;description(i):string%20%3F],%20\[DataObject]<has%20output%200..*-++\[OmicsProcessing],%20\[Study]<part%20of%200..*-++\[OmicsProcessing],%20\[BiosampleProcessing]^-\[OmicsProcessing])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Biosample]<has%20input(i)%200..*-%20\[OmicsProcessing&#124;id:string;name:string%20%3F;alternate_identifiers:string%20*;description(i):string%20%3F],%20\[DataObject]<has%20output%200..*-%20\[OmicsProcessing],%20\[Study]<part%20of%200..*-%20\[OmicsProcessing],%20\[BiosampleProcessing]^-\[OmicsProcessing])
 
 ## Parents
 
@@ -25,7 +25,7 @@ URI: [nmdc:OmicsProcessing](https://microbiomedata/meta/OmicsProcessing)
     * range: [String](types/String.md)
  * [omics processing➞has output](omics_processing_has_output.md)  <sub>0..*</sub>
     * range: [DataObject](DataObject.md)
- * [omics processing➞id](omics_processing_id.md)  <sub>OPT</sub>
+ * [omics processing➞id](omics_processing_id.md)  <sub>REQ</sub>
     * range: [String](types/String.md)
  * [omics processing➞name](omics_processing_name.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
@@ -40,7 +40,7 @@ URI: [nmdc:OmicsProcessing](https://microbiomedata/meta/OmicsProcessing)
 
 ### Inherited from named thing:
 
- * [id](id.md)  <sub>OPT</sub>
+ * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [String](types/String.md)
     * inherited from: None
@@ -63,7 +63,7 @@ URI: [nmdc:OmicsProcessing](https://microbiomedata/meta/OmicsProcessing)
     * range: [String](types/String.md)
  * [omics processing➞has output](omics_processing_has_output.md)  <sub>0..*</sub>
     * range: [DataObject](DataObject.md)
- * [omics processing➞id](omics_processing_id.md)  <sub>OPT</sub>
+ * [omics processing➞id](omics_processing_id.md)  <sub>REQ</sub>
     * range: [String](types/String.md)
  * [omics processing➞name](omics_processing_name.md)  <sub>OPT</sub>
     * range: [String](types/String.md)

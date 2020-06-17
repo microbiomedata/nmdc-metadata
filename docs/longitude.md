@@ -9,7 +9,7 @@ URI: [nmdc:longitude](https://microbiomedata/meta/longitude)
 
 ## Domain and Range
 
-[GeolocationValue](GeolocationValue.md) ->  <sub>OPT</sub> [Float](types/Float.md)
+[GeolocationValue](GeolocationValue.md) ->  <sub>OPT</sub> [DecimalDegree](types/DecimalDegree.md)
 
 ## Parents
 
@@ -26,4 +26,5 @@ URI: [nmdc:longitude](https://microbiomedata/meta/longitude)
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | wgs:long |
+|  | | schema:longitude |
 

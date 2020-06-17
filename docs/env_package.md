@@ -9,7 +9,7 @@ URI: [nmdc:env_package](https://microbiomedata/meta/env_package)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [TextValue](TextValue.md)
+None ->  <sub>OPT</sub> [TextValue](TextValue.md)
 
 ## Parents
 
@@ -20,7 +20,7 @@ URI: [nmdc:env_package](https://microbiomedata/meta/env_package)
 
 ## Used by
 
- * [NamedThing](NamedThing.md)
+ * [Biosample](Biosample.md)
 
 ## Other properties
 
@@ -28,4 +28,5 @@ URI: [nmdc:env_package](https://microbiomedata/meta/env_package)
 | --- | --- | --- |
 | **Aliases:** | | environmental package |
 | **Mappings:** | | MIxS:env_package |
+| **In Subsets:** | | mixs extension |
 

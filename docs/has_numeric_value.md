@@ -9,17 +9,17 @@ URI: [nmdc:has_numeric_value](https://microbiomedata/meta/has_numeric_value)
 
 ## Domain and Range
 
-None ->  <sub>OPT</sub> [Double](types/Double.md)
+None ->  <sub>OPT</sub> [Float](types/Float.md)
 
 ## Parents
 
 
 ## Children
 
+ *  [quantity value➞has numeric value](quantity_value_has_numeric_value.md)
 
 ## Used by
 
- * [BooleanValue](BooleanValue.md)
  * [IntegerValue](IntegerValue.md)
  * [QuantityValue](QuantityValue.md)
 
@@ -28,4 +28,5 @@ None ->  <sub>OPT</sub> [Double](types/Double.md)
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | qud:quantityValue |
+|  | | schema:value |
 

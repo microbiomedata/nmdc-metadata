@@ -9,7 +9,7 @@ URI: [nmdc:elev](https://microbiomedata/meta/elev)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [QuantityValue](QuantityValue.md)
+None ->  <sub>OPT</sub> [QuantityValue](QuantityValue.md)
 
 ## Parents
 
@@ -20,7 +20,7 @@ URI: [nmdc:elev](https://microbiomedata/meta/elev)
 
 ## Used by
 
- * [NamedThing](NamedThing.md)
+ * [Biosample](Biosample.md)
 
 ## Other properties
 
@@ -28,4 +28,5 @@ URI: [nmdc:elev](https://microbiomedata/meta/elev)
 | --- | --- | --- |
 | **Aliases:** | | elevation |
 | **Mappings:** | | MIxS:elev |
+| **In Subsets:** | | environment |
 

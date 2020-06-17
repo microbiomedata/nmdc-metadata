@@ -9,7 +9,7 @@ URI: [nmdc:submitted_to_insdc](https://microbiomedata/meta/submitted_to_insdc)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [TextValue](TextValue.md)
+None ->  <sub>OPT</sub> [BooleanValue](BooleanValue.md)
 
 ## Parents
 
@@ -20,7 +20,7 @@ URI: [nmdc:submitted_to_insdc](https://microbiomedata/meta/submitted_to_insdc)
 
 ## Used by
 
- * [NamedThing](NamedThing.md)
+ * [Study](Study.md)
 
 ## Other properties
 
@@ -28,4 +28,5 @@ URI: [nmdc:submitted_to_insdc](https://microbiomedata/meta/submitted_to_insdc)
 | --- | --- | --- |
 | **Aliases:** | | submitted to insdc |
 | **Mappings:** | | MIxS:submitted_to_insdc |
+| **In Subsets:** | | investigation |
 

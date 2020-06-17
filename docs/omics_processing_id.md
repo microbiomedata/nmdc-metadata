@@ -9,7 +9,7 @@ URI: [nmdc:omics_processing_id](https://microbiomedata/meta/omics_processing_id)
 
 ## Domain and Range
 
-[OmicsProcessing](OmicsProcessing.md) ->  <sub>OPT</sub> [String](types/String.md)
+[OmicsProcessing](OmicsProcessing.md) ->  <sub>REQ</sub> [String](types/String.md)
 
 ## Parents
 

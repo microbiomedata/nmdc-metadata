@@ -17,6 +17,8 @@ URI: [nmdc:has_raw_value](https://microbiomedata/meta/has_raw_value)
 ## Children
 
  *  [geolocation value➞has raw value](geolocation_value_has_raw_value.md)
+ *  [person value➞has raw value](person_value_has_raw_value.md)
+ *  [quantity value➞has raw value](quantity_value_has_raw_value.md)
 
 ## Used by
 
@@ -25,6 +27,7 @@ URI: [nmdc:has_raw_value](https://microbiomedata/meta/has_raw_value)
  * [ControlledTermValue](ControlledTermValue.md)
  * [GeolocationValue](GeolocationValue.md)
  * [IntegerValue](IntegerValue.md)
+ * [PersonValue](PersonValue.md)
  * [QuantityValue](QuantityValue.md)
  * [TextValue](TextValue.md)
  * [TimestampValue](TimestampValue.md)

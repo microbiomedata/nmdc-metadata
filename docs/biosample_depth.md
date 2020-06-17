@@ -9,7 +9,7 @@ URI: [nmdc:biosample_depth](https://microbiomedata/meta/biosample_depth)
 
 ## Domain and Range
 
-[Biosample](Biosample.md) ->  <sub>OPT</sub> [TextValue](TextValue.md)
+[Biosample](Biosample.md) ->  <sub>OPT</sub> [QuantityValue](QuantityValue.md)
 
 ## Parents
 

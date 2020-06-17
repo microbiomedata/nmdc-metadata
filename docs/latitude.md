@@ -9,7 +9,7 @@ URI: [nmdc:latitude](https://microbiomedata/meta/latitude)
 
 ## Domain and Range
 
-[GeolocationValue](GeolocationValue.md) ->  <sub>OPT</sub> [Float](types/Float.md)
+[GeolocationValue](GeolocationValue.md) ->  <sub>OPT</sub> [DecimalDegree](types/DecimalDegree.md)
 
 ## Parents
 
@@ -26,4 +26,5 @@ URI: [nmdc:latitude](https://microbiomedata/meta/latitude)
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | wgs:lat |
+|  | | schema:latitude |
 

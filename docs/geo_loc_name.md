@@ -9,7 +9,7 @@ URI: [nmdc:geo_loc_name](https://microbiomedata/meta/geo_loc_name)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [TextValue](TextValue.md)
+None ->  <sub>OPT</sub> [TextValue](TextValue.md)
 
 ## Parents
 
@@ -20,7 +20,7 @@ URI: [nmdc:geo_loc_name](https://microbiomedata/meta/geo_loc_name)
 
 ## Used by
 
- * [NamedThing](NamedThing.md)
+ * [Biosample](Biosample.md)
 
 ## Other properties
 
@@ -28,4 +28,5 @@ URI: [nmdc:geo_loc_name](https://microbiomedata/meta/geo_loc_name)
 | --- | --- | --- |
 | **Aliases:** | | geographic location (country and/or sea,region) |
 | **Mappings:** | | MIxS:geo_loc_name |
+| **In Subsets:** | | environment |
 

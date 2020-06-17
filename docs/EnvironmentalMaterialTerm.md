@@ -7,7 +7,7 @@
 URI: [nmdc:EnvironmentalMaterialTerm](https://microbiomedata/meta/EnvironmentalMaterialTerm)
 
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OntologyClass]^-\[EnvironmentalMaterialTerm&#124;id(i):string%20%3F;name(i):string%20%3F;description(i):string%20%3F;alternate_identifiers(i):string%20*])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OntologyClass]^-\[EnvironmentalMaterialTerm&#124;id(i):string;name(i):string%20%3F;description(i):string%20%3F;alternate_identifiers(i):string%20*])
 
 ## Parents
 
@@ -18,7 +18,7 @@ URI: [nmdc:EnvironmentalMaterialTerm](https://microbiomedata/meta/EnvironmentalM
 
 ### Inherited from named thing:
 
- * [id](id.md)  <sub>OPT</sub>
+ * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [String](types/String.md)
     * inherited from: None

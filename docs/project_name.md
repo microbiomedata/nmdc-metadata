@@ -9,7 +9,7 @@ URI: [nmdc:project_name](https://microbiomedata/meta/project_name)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [TextValue](TextValue.md)
+None ->  <sub>OPT</sub> [TextValue](TextValue.md)
 
 ## Parents
 
@@ -20,7 +20,7 @@ URI: [nmdc:project_name](https://microbiomedata/meta/project_name)
 
 ## Used by
 
- * [NamedThing](NamedThing.md)
+ * [Study](Study.md)
 
 ## Other properties
 
@@ -28,4 +28,5 @@ URI: [nmdc:project_name](https://microbiomedata/meta/project_name)
 | --- | --- | --- |
 | **Aliases:** | | project name |
 | **Mappings:** | | MIxS:project_name |
+| **In Subsets:** | | investigation |
 

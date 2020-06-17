@@ -2,14 +2,14 @@
 # Type: language
 
 
-Should use standard codes, e.g. "en"
+Should use ISO 639-1 code e.g. "en", "fr"
 
 URI: [nmdc:language](https://microbiomedata/meta/language)
 
 
 ## Domain and Range
 
-None ->  <sub>OPT</sub> [String](types/String.md)
+None ->  <sub>OPT</sub> [LanguageCode](types/LanguageCode.md)
 
 ## Parents
 

@@ -9,7 +9,7 @@ URI: [nmdc:person_id](https://microbiomedata/meta/person_id)
 
 ## Domain and Range
 
-[Person](Person.md) ->  <sub>OPT</sub> [String](types/String.md)
+[Person](Person.md) ->  <sub>REQ</sub> [String](types/String.md)
 
 ## Parents
 
