@@ -491,16 +491,70 @@ def extract_table (merged_df, table_name):
     return df
 
 
+
+def get_gold_biosample_mixs_term(dataframe, field):
+    return get_mixs_term(dataframe, "gold", "biosample", field)
+
+
+def get_mixs_term(datafame, database, table, field):
+    return_val = \
+        datafame[database.database.lower() == database.lower(),
+                 database.table.lower() == table.lower(),
+                 database.field.lower() == field.lower()]
+    
+    return return_val['mixs_term'].values[0] # if more than one match is found, only the first is returned
+    
+    
+def make_collection_date(year_val, month_val, day_val, hour_val="", minute_val=""):
+    def pad_value(val, pad_len=2):
+        s = str(val)
+        return s.zfill(pad_len)
+    
+    return_val = ""
+    year_val = year_val.strip()
+    month_val = month_val.strip()
+    day_val = day_val.strip()
+    hour_val = hour_val.strip()
+    minute_val = minute_val.strip()
+    return_val = ""
+    
+    ## if a year isn't provided simply return the empty string
+    if len(year_val) < 1:
+        return ""
+    else:
+        return_val = pad_value(year_val, 4)
+    
+    if len(month_val) > 0:
+        return_val = return_val + "-" + pad_value(month_val)
+    
+    ## we only days that have months assocated with them
+    if (len(month_val) > 0) and (len(day_val) > 0):
+        return_val = return_val + "-" + pad_value(day_val)
+
+    ## we only want times with months and days associated with them
+    if (len(month_val) > 0) and (len(day_val) > 0):
+        if (len(hour_val) > 0) and (len(minute_val) > 0):
+            return_val = return_val + "T" + pad_value(hour_val) + ":" + minute_val
+        elif len(hour_val) > 0:
+            return_val = return_val + "T" + pad_value(hour_val) + "00" # case for when no minute val is given
+    
+    return return_val
+
+
 def make_study_dataframe (study_table, contact_table, proposals_table, result_cols=[]):
     ## subset dataframes
     contact_table_splice = contact_table[['contact_id', 'principal_investigator_name']].copy()
     proposals_table_splice = proposals_table[['gold_study', 'doi']].copy()
     
-    ## left join data from contact 
-    temp1_df = pds.merge(study_table, contact_table_splice, how='left', on='contact_id')
+    ## left join data from contact
+    temp1_df = pds.merge(study_table.copy(), contact_table_splice, how='left', on='contact_id')
     
     ## left join data from proposals
     temp2_df = pds.merge(temp1_df, proposals_table_splice, how='left', left_on='gold_id', right_on='gold_study')
+    
+    ## add prefix
+    temp2_df.gold_id = "gold:" + temp2_df.gold_id
+    temp2_df.gold_study = "gold:" + temp2_df.gold_study
     
     if len(result_cols) > 0:
         return temp2_df[result_cols]
@@ -512,7 +566,7 @@ def make_project_dataframe (project_table, study_table, contact_table, data_obje
     ## subset data
     study_table_splice = study_table[['study_id', 'gold_id']].copy()
     contact_table_splice = contact_table[['contact_id', 'principal_investigator_name']].copy()
-    
+  
     ## rename study.gold_id to study_gold_id
     study_table_splice.rename(columns={'gold_id': 'study_gold_id'}, inplace=True)
     
@@ -522,12 +576,20 @@ def make_project_dataframe (project_table, study_table, contact_table, data_obje
     ## left join contact data
     temp2_df = pds.merge(temp1_df, contact_table_splice, how='left', left_on='pi_id', right_on='contact_id')
     
-    ## check for data objects that are outputs of the projedt which need to be joined
+    ## add prefix
+    temp2_df.gold_id = "gold:" + temp2_df.gold_id
+    temp2_df.study_gold_id = "gold:" + temp2_df.study_gold_id
+
     if not (data_object_table is None):
+        ## make copy and add prefix
+        data_object_table = data_object_table.copy()
+        data_object_table.gold_project_id = \
+            data_object_table.gold_project_id.map(lambda x: x if 'gold:' == x[0:5] else 'gold:' + x)
+        
         ## create a group concat for all file ids in the data objects
         groups = data_object_table.groupby('gold_project_id')['file_id']
         output_files = \
-            pds.DataFrame(groups.apply(lambda x:','.join(filter(None, x)))).drop_duplicates().reset_index()
+            pds.DataFrame(groups.apply(lambda x: ','.join(filter(None, x)))).drop_duplicates().reset_index()
         output_files.rename(columns={'file_id': 'output_file_ids'}, inplace=True)
         output_files['output_file_ids'] = output_files['output_file_ids'].astype(str)
         
@@ -541,18 +603,43 @@ def make_project_dataframe (project_table, study_table, contact_table, data_obje
 
 
 def make_biosample_dataframe (biosample_table, project_biosample_table, project_table, result_cols=[]):
+    def make_collection_date_from_row(row):
+        def _format_date_part_value(val):
+            if pds.isnull(val): return ""
+            
+            if type("") == type(val):
+                if '.' in val:
+                    return val[0: val.find('.')].strip()
+                else:
+                    return val.strip()
+            else:
+                return str(int(val)).strip()
+            
+        year_val = _format_date_part_value(row['sample_collection_year'])
+        month_val = _format_date_part_value(row['sample_collection_month'])
+        day_val = _format_date_part_value(row['sample_collection_day'])
+        hour_val = _format_date_part_value(row['sample_collection_hour'])
+        minute_val = _format_date_part_value(row['sample_collection_minute'])
+        
+        return make_collection_date(year_val, month_val, day_val, hour_val, minute_val)
+        
     ## subset data
     project_biosample_table_splice = project_biosample_table[['biosample_id', 'project_id']].copy()
     project_table_splice = project_table[['project_id', 'gold_id']].copy()
     
+    ## add prefix
+    project_table_splice.gold_id = "gold:" + project_table_splice.gold_id
+    
     ## rename columns
-    #project_biosample_table_splice.rename(columns={'project_id':'xref_project_id', 'biosample_id':'xref_biosample_id'}, inplace=True)
-    #project_table_splice.rename(columns={'project_id':'project_project_id', 'gold_id':'project_gold_id'}, inplace=True)
-    project_table_splice.rename(columns={'gold_id':'project_gold_id'}, inplace=True)
+    project_table_splice.rename(columns={'gold_id': 'project_gold_id'}, inplace=True)
     
     ## inner join on project_biosample and project; i.e., biosamples must be linked to project
     temp1_df = pds.merge(biosample_table, project_biosample_table_splice, how='inner', on='biosample_id')
     temp2_df = pds.merge(temp1_df, project_table_splice, how='inner', on='project_id')
+    
+    ## add collection date and lat_lon columns
+    temp2_df['collection_date'] = temp2_df.apply(lambda row: make_collection_date_from_row(row), axis=1)
+    temp2_df['lat_lon'] = temp2_df.apply(lambda row: make_lat_lon(row.latitude, row.longitude), axis=1)
     
     ## biosample might belong to more than one project; so do the equivalent of a group_cat
     ## see: https://queirozf.com/entries/pandas-dataframe-groupby-examples
@@ -580,7 +667,11 @@ def  make_jgi_emsl_datafame(jgi_emsl_table, study_table, result_cols=[]):
     
     ## inner join jgi-emsl data on study (must be part of study)
     temp1_df = pds.merge(jgi_emsl_table, study_table_splice, how='inner', left_on='gold_study_id', right_on='gold_id')
-    
+
+    ## add prefix
+    temp1_df.gold_id = "gold:" + temp1_df.gold_id
+    temp1_df.gold_study_id = "gold:" + temp1_df.gold_study_id
+
     if len(result_cols) > 0:
         return temp1_df[result_cols]
     else:
@@ -607,6 +698,12 @@ def make_emsl_datafame (emsl_table, jgi_emsl_table, study_table, result_cols=[])
     temp2_df["data_object_name"] = "output: "
     temp2_df["data_object_name"] = temp2_df["data_object_name"] + temp2_df["dataset_name"].map(str)  # build data object id
     
+    ## add prefix
+    temp2_df.gold_id = "gold:" + temp2_df.gold_id
+    temp2_df.gold_study_id = "gold:" + temp2_df.gold_study_id
+    temp2_df.dataset_id = "emsl:" + temp2_df.dataset_id
+    temp2_df.data_object_id = "emsl:" + temp2_df.data_object_id
+    
     if len(result_cols) > 0:
         return temp2_df[result_cols]
     else:
@@ -623,6 +720,11 @@ def make_data_objects_datafame (faa_table, fna_table, fastq_table, project_table
     ## inner joing data objects (e.g., faa, fna, fasq) to projects
     temp1_df = \
         pds.merge(data_objects, project_table_splice, how='inner', left_on='gold_project_id', right_on='gold_id')
+    
+    ## add prefix
+    temp1_df.file_id = "emsl:" + temp1_df.file_id
+    temp1_df.gold_project_id = "gold:" + temp1_df.gold_project_id
+    temp1_df.gold_id = "gold:" + temp1_df.gold_id
     
     if len(result_cols) > 0:
         return temp1_df[result_cols]

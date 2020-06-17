@@ -86,8 +86,6 @@ data_sources:
     rename_slots:
       - old_name: name
         new_name: principal_investigator_name
-      - old_name: dataset_file_size_bytes
-        new_name: file_size          
             
   proposals_table:
     id_key: jgi_id
@@ -200,9 +198,12 @@ data_sources:
     append_columns:
       - name: processing_institution
         value: Environmental Molecular Sciences Lab
-          
+    rename_slots:
+      - old_name: file_size
+        new_name: file_size_bytes
+
   ficus_fna_table:
-    id_key: file_id    
+    id_key: file_id
     data_source:
       file_name: "../src/data/ficus_project_fna.tsv"
       file_type: tsv      
@@ -213,7 +214,10 @@ data_sources:
       - file_size
     append_columns:
       - name: processing_institution
-        value: Environmental Molecular Sciences Lab          
+        value: Environmental Molecular Sciences Lab
+    rename_slots:
+      - old_name: file_size
+        new_name: file_size_bytes
 
   ficus_fastq_table:
     id_key: file_id
@@ -228,6 +232,9 @@ data_sources:
     append_columns:
       - name: processing_institution
         value: Environmental Molecular Sciences Lab
+    rename_slots:
+      - old_name: file_size
+        new_name: file_size_bytes
 
   ficus_jgi_emsl:
     id_key: gold_study_id
@@ -250,7 +257,7 @@ data_sources:
       - old_name: experimental_data_type
         new_name: omics_type
       - old_name: dataset_file_size_bytes
-        new_name: file_size
+        new_name: file_size_bytes
     append_columns:
       - name: processing_institution
-        value: Environmental Molecular Sciences Lab        
+        value: Environmental Molecular Sciences Lab
