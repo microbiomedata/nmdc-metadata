@@ -1,0 +1,65 @@
+{
+    "study_set": [
+        {
+            "id": "GOLD:Gs0110115",
+            "name": "Avena fatua rhizosphere microbial communities from Hopland, California, USA, for root-enhanced decomposition of organic matter studies",
+            "description": "Using analytical expertise at both the JGI and EMSL, we plan to follow successional patterns of protein expression by root-associated microorganisms. This work builds on foundational research we are conducting with the common California grassland plant, Avena fatua, grown in Hopland, CA soil (FOA DE-PS02-09ER09-25). Using our 16-chamber 13C labeling facility at UC Berkeley, we have shown that elevated CO2 increased the amount of C allocated belowground, and increased the yield of root biomass. The rhizosphere microbial community undergoes a succession as the root grows, senesces, and dies. In elevated CO2 treatments, we also detect a greater amount of root-derived 13C in the mineral-associated heavy fraction of the soil, which is commonly assumed to reflect longer term stabilization. \\n \\nIn our JGI-EMSL project, we will follow over time how roots impact the functional capacity of the rhizosphere microbiome to enzymatically mediate decomposition processes. We hypothesize that root-exudate stimulation of soil microbial populations results in elevated expression of biomolecules (transcripts, enzymes, metabolites) for the decomposition of macromolecular C compounds.",
+            "ecosystem": "Host-associated",
+            "ecosystem_category": "Plants",
+            "ecosystem_subtype": "Soil",
+            "ecosystem_type": "Rhizosphere"
+        }
+    ],
+    "biosample_set": [
+        {
+            "id": "S1",
+            "description": "...",
+            "lat_lon": {
+                "has_raw_value": "5 -20",
+                "latitude": 5,
+                "longitude": -20,
+                "was_generated_by": "uuid:d392fcba605d12d5f9b3b31f6d0c620b6a89cdcc"
+            },
+            "depth": {
+                "has_raw_value": "5 cm",
+                "has_unit": "cm",
+                "has_numeric_value": 5,
+                "was_generated_by": "uuid:d392fcba605d12d5f9b3b31f6d0c620b6a89cdcc"
+            },
+            "env_broad_scale": {
+                "has_raw_value": "tropical moist broadleaf forest biome [ENVO:01000228]",
+                "term": {
+                    "id": "ENVO:01000228",
+                    "name": "tropical moist broadleaf forest biome"
+                }
+            },
+            "env_local_scale": {
+                "has_raw_value": "understory [ENVO:01000335]",
+                "term": {
+                    "id": "ENVO:01000335",
+                    "name": "understory"
+                }
+            },
+            "env_medium": {
+                "has_raw_value": "plant matter [ENVO:01001121]",
+                "term": {
+                    "id": "ENVO:01001121",
+                    "name": "plant matter"
+                }
+            }
+        }
+    ],
+    "activity set": [
+        {
+            "activity_id": "uuid:d392fcba605d12d5f9b3b31f6d0c620b6a89cdcc",
+            "started_at_time": "2020-01-01",
+            "was_associated_with": "ornl-identify",
+            "used": "ornl-daac-layer-1"
+        },
+        {
+            "activity_id": "uuid:345a04a8633d593b5a400b559d533a6b4595f490",
+            "started_at_time": "2020-03-01",
+            "used": "gold-to-envo-mappings"
+        }
+    ]
+}

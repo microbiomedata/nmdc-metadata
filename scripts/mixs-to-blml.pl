@@ -1,10 +1,26 @@
 #!/usr/bin/perl -w
 use strict;
 
-print "id: https://microbiomedata/schema/mixs\n";
+# THIS WILL BE REWRITTEN IN PYTHON!
+
+print "id: https://microbiomedata/schema/mixs\n\n";
+
+print "imports:\n";
+print "  - core\n\n";
+
 print "slots:\n";
 
+my %done = ();
+
+my $file_no = 1;
+
 while(<>) {
+    if (m@Environmental package@) {
+        # move onto mixs5e
+        $file_no = 2;
+        next;
+    }
+    
     next if m@^Structured comment name@;
 
         # delete 8th bit
@@ -20,8 +36,19 @@ while(<>) {
     
     chomp;
     my @vals = split(/\t/,$_);
-    my ($name, $item, $def, $expected, $value_syntax, $example, $section) = @vals;
+    my ($package_name, $name, $item, $def, $expected, $value_syntax, $example, $section, $req);
+    $section = '';
+    if ($file_no == 1) {
+        ($name, $item, $def, $expected, $value_syntax, $example, $section) = @vals;
+    }
+    else {
+        ($package_name, $name, $item, $def, $expected, $value_syntax, $example, $req) = @vals;
+    }
+
     next unless $name;
+    
+    next if $done{$name};
+    
     my $unit = $vals[18];
 
     my $range = "text value";
@@ -36,16 +63,31 @@ while(<>) {
     if ($name eq 'lat_lon') {
         $range = 'geolocation value';
     }
+    if ($name eq 'depth') {
+        $range = 'quantity value';
+    }
     if ($value_syntax =~ m@\{termLabel\}@) {
         $range = "controlled term value";
     }
     if ($value_syntax =~ m@\{unit\}@) {
         $range = "quantity value";
     }
+    if ($value_syntax eq '{boolean}') {
+        $range = "boolean value";
+    }
+    if ($expected eq 'measurement value') {
+        $range = "quantity value";
+    }
 
     if ($example =~ m@\'@) {
         $example = ''; # TODO escap
     }
+
+    # escape
+    if ($name =~ m@^[^a-zA-z_]@) {
+        $name = '_'.$name;
+    }
+    $done{$name} = 1;
     
     print "  $name:\n";
     print "    aliases:\n";
@@ -54,10 +96,11 @@ while(<>) {
     print "       $def\n";
     print "    multivalued: false\n"; # TODO
     print "    is_a: attribute\n";
-    print "    range: $range\n";
+    print "    range: $range  ## syntax: $value_syntax\n";
     print "    mappings:\n";
     print "      - MIxS:$name\n";
-    print "    #domain: $section:\n";
-    print "    #examples: ['$example']\n" if $example;
+    print "    in_subset:\n      - $section\n" if $section;
+    #print "    examples:\n      - value: $example\n" if $example;
+    #print "    examples:\n      - value: $example\n" if $example;
     print "\n";
 }

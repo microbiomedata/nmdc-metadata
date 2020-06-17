@@ -1,11 +1,19 @@
 id: https://microbiomedata/schema
-name: nmdc_schema
+name: NMDC Schema
 description: >-
-  Schema for National Microbiome Data Collaborative (NMDC)
+  Schema for National Microbiome Data Collaborative (NMDC).
+  This schem is organized into 3 separate modules:
+    
+  * a set of core types for representing data values
+  * the mixs schema (auto-translated from mixs excel)
+  * the NMDC schema itself
+  
 license: https://creativecommons.org/publicdomain/zero/1.0/
+version: 0.1.1
 
 prefixes:
   nmdc: https://microbiomedata/meta/
+  GOLD: https://identifiers.org/gold/
   mixs: https://w3id.org/gensc/
   wgs: http://www.w3.org/2003/01/geo/wgs84_pos
   qud: http://qudt.org/1.1/schema/qudt#
@@ -25,20 +33,30 @@ emit_prefixes:
   - xsd
   - skos
 
+# This file organizes the main NMDC schema.
+# It brings in the mixs schema plus a schemaa
+# of core types
 imports:
   - biolinkml:types
   - mixs
+  - core
+  - prov
   
 classes:
 
-  named thing:
-    description: "a databased entity or concept/class"
+  database:
+    aliases:
+      - "NMDC metadata object"
+    description: >-
+      An abstract holder for any set of metadata and data. It does not need to correspond to an actual managed databse
+      top level holder class. When translated to JSON-Schema this is the 'root' object.
+      It should contain pointers to other objects of interest
     slots:
-      - id
-      - name
-      - description
-      - alternate identifiers
-
+      - biosample set
+      - study set
+      - data object set
+      - activity set
+  
   data object:
     is_a: named thing
     description: >-
@@ -46,19 +64,33 @@ classes:
       Files, records, and omics data are examples of data objects. 
     slots:
       - file_size
-      
+    id_prefixes:
+      - GOLD
+
   biosample:
     is_a: named thing
     aliases: ['sample', 'material sample']
     description: >-
       A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.  
-      An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.  
+      An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.
     slots:
+      # any mixs slot can be added here
+      - env_package
       - lat_lon
-      - depth
+      - geo_loc_name
+      - collection_date
       - env_broad_scale
       - env_local_scale
       - env_medium
+      - ecosystem
+      - ecosystem_category
+      - ecosystem_type
+      - ecosystem_subtype
+      - specific_ecosystem
+      - depth
+      - tot_org_carb
+      - alt
+      - elev
     slot_usage:
       id:
         description: >-
@@ -71,23 +103,42 @@ classes:
           The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
       lat_lon:
         required: true
+        description: >-
+          This is currently a required field but it's not clear if this should be required for human hosts
       depth:
         required: false
       env_broad_scale:
         required: true
+        description: >-
+          formerly known as 'biome'
       env_local_scale:
         required: true
+        description: >-
+          formerly known as 'feature'
       env_medium:
         required: true
- 
+        description: >-
+          formerly known as 'material'
+    id_prefixes:
+      - GOLD
+
+        
   study:
     is_a: named thing
-    aliases: ['proposal', 'research proposal', 'research study']
+    aliases: ['proposal', 'research proposal', 'research study', 'investigation']
     description: >-
       A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.  
     slots:
-      - annotations
-#      - PI name
+      - submitted_to_insdc
+      - investigation_type
+      - project_name
+      - experimental_factor
+      - ecosystem
+      - ecosystem_category
+      - ecosystem_type
+      - ecosystem_subtype
+      - specific_ecosystem
+      - principal investigator
     slot_usage:
       id:
         description: >-
@@ -136,178 +187,51 @@ classes:
     is_a: named thing
     description: >-
       represents a person, such as a researcher
+    comments:
+      - "not yet in use"
     slot_usage:
       id:
         description: >-
           Should be an ORCID. Specify in CURIE format. E.g ORCID:0000-1111-...
     
-  attribute value:
-    description: >-
-      The value for any value of a attribute for a sample. This object can hold both the un-normalized atomic
-      value and the structured value
-    slots:
-      - has raw value
-    
-  quantity value:
-    is_a: attribute value
-    description: >-
-      A simple quantity, e.g. 2cm
-    slots:
-      - has unit
-      - has numeric value
-
-  text value:
-    is_a: attribute value
-    description: >-
-      A basic string value
-    slots:
-      - language
-      
-  url value:
-    is_a: attribute value
-    description: >-
-      A value that is a string that conforms to URL syntax
-
-  timestamp value:
-    is_a: attribute value
-    description: >-
-      A value that is a timestamp. The range should be ISO-8601
-    #slots:
-    #  - year
-    #  - month
-    #  - day
-
-      
-  integer value:
-    is_a: attribute value
-    description: >-
-      A value that is an integer
-    slots:
-      - has numeric value
-
-  boolean value:
-    is_a: attribute value
-    description: >-
-      A value that is a boolean
-    slots:
-      - has numeric value
-      
-  controlled term value:
-    is_a: attribute value
-    description: >-
-      A controlled term or class from an ontology
-    # TODO: add fields for ontology, branch
-
-  geolocation value:
-    is_a: attribute value
-    description: >-
-      A normalized value for a location on the earth's surface
-    slots:
-      - latitude
-      - longitude
-    slot_usage:
-      has raw value:
-        description: >-
-          The raw value for a  geolocation should follow {lat} {long}
-        # to_str: {latitude} {longitude}
-
-  unit:
-    id_prefixes:
-      - UO
-    mappings:
-      - qud:Unit
-      - UO:0000000
-
-  ontology class:
-    is_a: named thing
-
-  environmental material term:
-    is_a: ontology class
 
 slots:
 
-  id:
-    identifier: false
-    multivalued: false
-    description: >-
-      A unique identifier for a thing.
-      Must be either a CURIE shorthand for a URI or a complete URI
-    required: false # for now we setting this to false until we develop an id template
-
-  name:
-    multivalued: false
-    range: string
-    description: >-
-      A human readable label for an entity
-
-  description:
-    range: string
-    multivalued: false
-    description: >-
-      a human-readable description of a thing
-    slot_uri: dcterms:description
-
-  # this will be obsoleted
-  annotations:
+  biosample set:
+    domain: database
+    range: biosample
     multivalued: true
-    
-  attribute:
-    aliases: ['field', 'property', 'template field', 'key', 'characteristic']
-    abstract: true
-    domain: named thing
+    inlined: true
     description: >-
-      A attribute of a biosample. Examples: depth, habitat, material.
-      For NMDC, attributes SHOULD be mapped to terms within a MIxS template
-    
-  has raw value:
-    description: >-
-      The value that was specified for an annotation in raw form, i.e. a string. E.g. "2 cm" or "2-4 cm"
-    multivalued: false
-    required: false
-    domain: attribute value
-    range: string
-    
-  has unit:
-    description: >-
-      Links a quantity value to a unit
-    range: unit
-    multivalued: true     ## workaround for https://github.com/biolink/biolinkml/issues/86
-    mappings:
-      - qud:unit
+      This property links a database object to the set of samples within it.
 
-  has numeric value:
-    description: >-
-      Links a quantity value to a number
-    range: double
-    multivalued: false
-    mappings:
-      - qud:quantityValue
-      
-  alternate identifiers:
-    aliases: ['mappings', 'alt ids', 'xrefs']
-    description: >-
-      Non-primary identifiers
+  study set:
+    domain: database
+    range: study
     multivalued: true
-    range: string
-    required: false
-    
-  latitude:
-    domain: geolocation value
-    range: float
+    inlined: true
     description: >-
-      latitude
-    slot_uri: wgs:lat
+      This property links a database object to the set of studies within it.
 
-  longitude:
-    domain: geolocation value
-    range: float
+  data object set:
+    domain: database
+    range: data object
+    multivalued: true
+    inlined: true
     description: >-
-      longitude
-    slot_uri: wgs:long
+      This property links a database object to the set of data objects within it.
+  
+  activity set:
+    domain: database
+    range: activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of prov activities.
+  
 
   has input:
     aliases: ['input']
-    domain: named thing
     # range: named thing
     multivalued: true
     description: >-
@@ -321,7 +245,6 @@ slots:
     description: >-
       An output biosample to a processing step
 
-  
   part of:
     aliases: ['is part of']
     domain: named thing
@@ -330,31 +253,53 @@ slots:
     description: >-
       Links a resource to another resource that either logically or physically includes it.
 
-  language:
-    range: string
-    description: >-
-      Should use standard codes, e.g. "en"
-
   ## DATA
 
   file_size:
     is_a: attribute
+    range: integer
     description: >-
-      units should be bytes.. may be overkill to allow different units
+      units should be bytes
+    todos:
+      - rename to file_size_bytes
     
+  ## GOLD SPECIFIC
+
+  principal investigator:
+    aliases:
+      - PI
+      - principal investigator
+    is_a: attribute
+    range: person value
+    description: >-
+      represents the PI
+  
   ## GOLD PATHS
 
   gold_path_field:
     is_a: attribute
+    range: string
     abstract: true
+    description: >-
+      This is a grouping for any of the gold path fields
     
   ecosystem:
     is_a: gold_path_field
+    description: >-
+      TODO
   ecosystem_category:
     is_a: gold_path_field
+    description: >-
+      TODO
   ecosystem_type:
     is_a: gold_path_field
+    description: >-
+      TODO
   ecosystem_subtype:
     is_a: gold_path_field
+    description: >-
+      TODO
   specific_ecosystem:
     is_a: gold_path_field
+    description: >-
+      TODO
