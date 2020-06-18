@@ -312,26 +312,7 @@ def make_nmdc_dict_list (dictionary,
             obj = nmdc_class(**constructor_args)
         else:
             obj = nmdc_class()
-        
-#        ## some enities (e.g., project) reference other entities (e.g., project part of study)
-#        ## these are stored in a dictionary in constructor dict; e.g.:
-#        ## 'part_of': {'id': 'study_gold_id', 'nmdc_entity_type': nmdc.Study.class_class_curie}
-#        ## check for these cases and link entity to referrenced entity
-#        for slot_name, slot_value in constructor_map.items():
-#            if type({}) == type(slot_value):
-#                id_field = slot_value['id']
-#                entity_type = slot_value['nmdc_entity_type']
-#
-#                if slot_name in ['part_of', 'has_input', 'has_output']:
-#                    id_values = record[id_field].split(',')
-#                    referenced_obj = [{'id':id_val, 'nmdc_entity_type':entity_type} for id_val in id_values]
-#                else:
-#                    referenced_obj = {'id':record[id_field], 'nmdc_entity_type':entity_type}
-#
-#                if 'part_of' == slot_name: obj.part_of = referenced_obj
-#                if 'has_input' == slot_name: obj.has_input = referenced_obj
-#                if 'has_output' == slot_name: obj.has_ouput = referenced_obj
-        
+
         obj.type = nmdc_class.class_class_curie  ## add info about the type of entity it is
         
         for key, item in record.items():
@@ -491,18 +472,36 @@ def extract_table (merged_df, table_name):
     return df
 
 
-
-def get_gold_biosample_mixs_term(dataframe, field):
-    return get_mixs_term(dataframe, "gold", "biosample", field)
-
-
-def get_mixs_term(datafame, database, table, field):
-    return_val = \
-        datafame[database.database.lower() == database.lower(),
-                 database.table.lower() == table.lower(),
-                 database.field.lower() == field.lower()]
+def make_gold_to_mixs_list(source_list, dataframe, table_name):
+    target_list = []
+    for item in source_list:
+        ## check for special condition fo using dicts for linking objects
+        if type({}) != type(item):
+            ## check for gold to mixs mapping
+            target_item = \
+                get_mapped_term(dataframe, database='gold', table_name=table_name, source_field=item, target_field='mixs_term')
+            
+            if len(target_item) > 0:
+                target_list.append(target_item)
+            else:
+                target_list.append(item)
     
-    return return_val['mixs_term'].values[0] # if more than one match is found, only the first is returned
+    return target_list
+
+def get_gold_biosample_mixs_term(dataframe, source_field):
+    return get_mapped_term(dataframe, 'gold', 'biosample',source_field, 'mixs_term')
+
+
+def get_mapped_term(dataframe, database, table_name, source_field, target_field):
+    return_val = \
+        dataframe[(dataframe['database'].str.lower() == database.lower())
+                   & (dataframe['table'].str.lower() == table_name.lower())
+                   & (dataframe['field'].str.lower() == source_field.lower())]
+    
+    if len(return_val) > 0:
+        return return_val[target_field].values[0] # if more than one match is found, only the first is returned
+    else:
+        return ""
     
     
 def make_collection_date(year_val, month_val, day_val, hour_val="", minute_val=""):
@@ -661,7 +660,7 @@ def make_biosample_dataframe (biosample_table, project_biosample_table, project_
         return temp3_df
 
 
-def  make_jgi_emsl_datafame(jgi_emsl_table, study_table, result_cols=[]):
+def  make_jgi_emsl_dataframe(jgi_emsl_table, study_table, result_cols=[]):
     ## subset data
     study_table_splice = study_table[['study_id', 'gold_id']].copy()
     
@@ -678,7 +677,7 @@ def  make_jgi_emsl_datafame(jgi_emsl_table, study_table, result_cols=[]):
         return temp1_df
 
 
-def make_emsl_datafame (emsl_table, jgi_emsl_table, study_table, result_cols=[]):
+def make_emsl_dataframe (emsl_table, jgi_emsl_table, study_table, result_cols=[]):
     ## subset data
     study_table_splice = study_table[['study_id', 'gold_id']].copy()
     jgi_emsl_table_splice = jgi_emsl_table[['gold_study_id', 'emsl_proposal_id']]
@@ -710,7 +709,7 @@ def make_emsl_datafame (emsl_table, jgi_emsl_table, study_table, result_cols=[])
         return temp2_df
 
 
-def make_data_objects_datafame (faa_table, fna_table, fastq_table, project_table, result_cols=[]):
+def make_data_objects_dataframe (faa_table, fna_table, fastq_table, project_table, result_cols=[]):
     ## subset data
     project_table_splice = project_table[['gold_id']].copy()
     
