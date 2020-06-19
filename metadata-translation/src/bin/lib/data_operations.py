@@ -229,28 +229,47 @@ def make_nmdc_dict_list (dictionary,
 
     def map_slot_to_entity (slot_map, record):
         """
-        Connects a slot to an entity whose type is specified in a map/dict. For example, the map:
+        Connects a slot to an entity whose type is specified in a map/dict. 
+        Example 2, the map: 
+            {'part_of': project_gold_ids'}
+        specifies that the part_of slot connects to the record's project_ids values.
+
+        Example 1, the map:
            {'part_of': ({'id': 'project_gold_ids'}, nmdc.OmicsProcessing)}
-        speficfies that the part of slot (in this case) connects to an nmdc.OmicsProcessing entity.
+        speficfies that the part_of slot (in this case) connects to an nmdc.OmicsProcessing entity.
         The enity (which I call the 'referenced entity') is identified by project_gold_ids field in the record.
         """
         slot_name = list(slot_map.keys())[0]
         slot_value = list(slot_map.values())[0]
-        param_dict = slot_value[0]
-        nmdc_class = slot_value[1]
-        id_field = param_dict['id']
-
-        if pds.isnull(record[id_field]):
-            return None
+        referenced_entity = None
         
-        if slot_name in ['part_of', 'has_input', 'has_output']:
-            id_values = record[id_field].split(',')
-            referenced_entity = [nmdc_class(**{'id':id_val}) for id_val in id_values]
-            for r in referenced_entity:
-                setattr(r, 'type', nmdc_class.class_class_curie) # add type info
-        else:
-            referenced_entity = nmdc_class(**{'id':record[id_field]})
-            setattr(referenced_entity, 'type', nmdc_class.class_class_curie)
+        ## if the slot values is not a tuple, return record's values
+        if type(()) != type(slot_value):
+            ## if no value found in the record, simply return none
+            if pds.isnull(record[slot_value]): return None
+
+            if slot_name in ['part_of', 'has_input', 'has_output']:
+                referenced_entity = record[slot_value].split(',')
+            else:
+                referenced_entity = record[slot_value]
+        
+        ## if the slot value is a tuple, then construct an object
+        if type(()) == type(slot_value):
+            param_dict = slot_value[0]
+            nmdc_class = slot_value[1]
+            id_field = param_dict['id']
+
+            ## if no value found in the record, simply return none
+            if pds.isnull(record[id_field]): return None
+
+            if slot_name in ['part_of', 'has_input', 'has_output']:
+                id_values = record[id_field].split(',')
+                referenced_entity = [nmdc_class(**{'id': id_val}) for id_val in id_values]
+                for r in referenced_entity:
+                    setattr(r, 'type', nmdc_class.class_class_curie) # add type info
+            else:
+                referenced_entity = nmdc_class(**{'id':record[id_field]})
+                setattr(referenced_entity, 'type', nmdc_class.class_class_curie)
 
         return referenced_entity
 
@@ -263,7 +282,11 @@ def make_nmdc_dict_list (dictionary,
             ## if the fields is a tuple, index 0 is param dict, index 1 is the class
             ## e.g., lat_lon': ('lat_lon', nmdc.GeolocationValue)
             if type(()) == type(field):
-                params = {key: record[value] for key, value in  field[0].items()}
+                params = \
+                    {
+                        key: "" if pds.isnull(record[value]) else record[value] # we don't want null/NaN to be a value in the constructor
+                        for key, value in  field[0].items()
+                    }
                 constructor_obj = field[1](**params)
                 constructor_obj.type = field[1].class_class_curie
                 constructor_dict[key] = constructor_obj
@@ -288,6 +311,12 @@ def make_nmdc_dict_list (dictionary,
     ## this allows us to easily inspect the type of entity in the json
     setattr(nmdc_class, 'type', None)
     
+    ## by default, we don't want the constructors for the class
+    ## to also be attributes of the object, these keys link objects other objects
+    for key in constructor_map.keys():
+        if key in attribute_fields:
+            attribute_fields.remove(key)
+
     ## add attribute to the nmdc class if not present
     if add_attribute:
         for af in attribute_fields:
@@ -295,16 +324,9 @@ def make_nmdc_dict_list (dictionary,
             if not hasattr(nmdc_class, af): setattr(nmdc_class, af, None)
             ## ! throw a a warning
     
-    ## by default, we don't want the constructors for the class
-    ## to also be attributes of the object, these keys link objects other objects
-    for key in constructor_map.keys():
-        if key in attribute_fields:
-            attribute_fields.remove(key)
     
+    ## for each record in the dictionary, create an object of type nmdc_class and put the object into the list
     dict_list = []  # list to hold individual dictionary objects
-    
-    ## for each record in the dictionary, create an object of type nmdc_class,
-    ## and put the object into the list
     for record in dictionary:
         ## check for constructor_map  containing the paramaters necessary to instantiate the class
         if len(constructor_map) > 0:
@@ -469,6 +491,9 @@ def unpivot_dataframe (df, index='nmdc_record_id', columns='attribute', value='v
 
 def extract_table (merged_df, table_name):
     df = unpivot_dataframe(merged_df[merged_df.nmdc_data_source == table_name])
+
+    ## replace an NaN values with None
+    df = df.where(pds.notnull(df), None)
     return df
 
 
@@ -639,6 +664,9 @@ def make_biosample_dataframe (biosample_table, project_biosample_table, project_
     ## add collection date and lat_lon columns
     temp2_df['collection_date'] = temp2_df.apply(lambda row: make_collection_date_from_row(row), axis=1)
     temp2_df['lat_lon'] = temp2_df.apply(lambda row: make_lat_lon(row.latitude, row.longitude), axis=1)
+    
+    ## add gold prefix
+    temp2_df['gold_id'] = 'gold:' + temp2_df['gold_id']
     
     ## biosample might belong to more than one project; so do the equivalent of a group_cat
     ## see: https://queirozf.com/entries/pandas-dataframe-groupby-examples

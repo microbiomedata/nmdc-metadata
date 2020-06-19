@@ -45,33 +45,36 @@ shex: schema/nmdc.shex
 schema_uml: schema/nmdc_schema_uml.png
 
 # Python dataclasses
-schema/nmdc.py: schema/nmdc.yaml env.lock
+schema/%.py: schema/%.yaml env.lock
 	pipenv run gen-py-classes $< > $@.tmp && pipenv run python $@.tmp && mv $@.tmp $@
 
 # JSON Schema
 schema/nmdc.schema.json: schema/nmdc.yaml env.lock
 	pipenv run gen-json-schema -t database $<  > $@.tmp && jsonschema $@.tmp && mv $@.tmp $@
 
+schema/kbase.schema.json: schema/kbase.yaml env.lock
+	pipenv run gen-json-schema -t SESAR $<  > $@.tmp && jsonschema $@.tmp && mv $@.tmp $@
+
 # OWL
-schema/nmdc.owl: schema/nmdc.yaml env.lock
-	pipenv run gen-owl $< > $@.tmp && mv $@.tmp $@
+schema/%.owl: schema/%.yaml env.lock
+	pipenv run gen-owl $< > $@.tmp && mv $@.tmp $@ && perl -pi -ne 's@prefix meta: <https://w3id.org/biolink/biolinkml/meta/>@prefix meta: <https://w3id.org/$*/>@' $@
 
 # GraphQL
-schema/nmdc.graphql: schema/nmdc.yaml env.lock
+schema/%.graphql: schema/%.yaml env.lock
 	pipenv run gen-graphql $< > $@.tmp && mv $@.tmp $@
 
 # ShEx
-schema/nmdc.shex: schema/nmdc.yaml env.lock
+schema/%.shex: schema/%.yaml env.lock
 	pipenv run gen-shex $< > $@.tmp && mv $@.tmp $@
 
-schema/nmdc.csv: schema/nmdc.yaml env.lock
+schema/%.csv: schema/%.yaml env.lock
 	pipenv run gen-csv $< > $@.tmp && mv $@.tmp $@
 
 # ProtoBuf
-schema/nmdc.proto: schema/nmdc.yaml env.lock
+schema/%.proto: schema/%.yaml env.lock
 	pipenv run gen-proto $< > $@.tmp && mv $@.tmp $@
 
-#schema/nmdc.rdf: schema/nmdc.yaml env.lock
+#schema/%.rdf: schema/%.yaml env.lock
 #	pipenv run gen-rdf $< > $@.tmp && mv $@.tmp $@
 
 schema/test-%.valid: examples/%.json schema/nmdc.schema.json 
@@ -83,6 +86,12 @@ docs: schema/nmdc.yaml env.lock
 schema/nmdc_schema_uml.png: schema/nmdc.yaml
 	pipenv run python schema/generate_uml.py $< $@
 
+# -- Mappings --
+
+all_mappings: mappings/nmdc-to-kbase.tsv
+mappings/nmdc-to-%.tsv: schema/%.ttl
+	rdfmatch -p nmdc -i mappings/prefixes.ttl -i schema/nmdc.ttl -i $< match > $@
+
 # -- Slides --
 docs/%-slides.pdf: docs/%-slides.md
 	pandoc $< -t beamer -o $@
@@ -90,3 +99,4 @@ docs/%-slides.pptx: docs/%-slides.md
 	pandoc $< -o $@
 docs/%-slides.html: docs/%-slides.md
 	pandoc $< -s -t slidy -o $@
+
