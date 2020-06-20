@@ -148,6 +148,7 @@ def make_json_string_list (dictionary,
                            nmdc_class,
                            constructor_map={},
                            attribute_fields=[],
+                           attribute_map={},
                            remove_key_attributes=True,
                            add_attribute=True):
     """
@@ -172,6 +173,7 @@ def make_json_string_list (dictionary,
                             nmdc_class,
                             constructor_map=constructor_map,
                             attribute_fields=attribute_fields,
+                            attribute_map=attribute_map,
                             remove_key_attributes=remove_key_attributes,
                             add_attribute=add_attribute)
     
@@ -206,6 +208,7 @@ def make_nmdc_dict_list (dictionary,
                          nmdc_class,
                          constructor_map={},
                          attribute_fields=[],
+                         attribute_map={},
                          remove_key_attributes=True,
                          add_attribute=True):
     """
@@ -322,8 +325,11 @@ def make_nmdc_dict_list (dictionary,
         for af in attribute_fields:
             if type({}) == type(af): af = list(af.keys())[0] # needed for attributes given as a dict
             if not hasattr(nmdc_class, af): setattr(nmdc_class, af, None)
-            ## ! throw a a warning
-    
+            ## TODO ! throw a a warning
+
+        if attribute_map:
+            for af in attribute_map.values():
+                if not hasattr(nmdc_class, af): setattr(nmdc_class, af, None)
     
     ## for each record in the dictionary, create an object of type nmdc_class and put the object into the list
     dict_list = []  # list to hold individual dictionary objects
@@ -340,7 +346,16 @@ def make_nmdc_dict_list (dictionary,
         for key, item in record.items():
             if (not pds.isnull(item)) and ('' != item) and not (item is None) and (key in attribute_fields):
                 av = make_attribute_value(item)
-                setattr(obj, key, av)
+
+                ## check if attribute has been mapped to a mixs term
+                if attribute_map:
+                    if key in attribute_map.keys():
+                        mapped_attr = attribute_map[key]
+                        setattr(obj, mapped_attr, av)
+                    else:
+                        setattr(obj, key, av)
+                else:
+                    setattr(obj, key, av)
         
         ## go though the attribute list and link slots to entities specified in slot map/dict
         ## for example: {'part_of': ({'id': 'project_gold_ids'}, nmdc.OmicsProcessing)}
@@ -512,6 +527,22 @@ def make_gold_to_mixs_list(source_list, dataframe, table_name):
                 target_list.append(item)
     
     return target_list
+
+
+def make_gold_to_mixs_map(source_list, dataframe, table_name):
+    gold_to_mixs = {}
+    for item in source_list:
+        ## check for special condition fo using dicts for linking objects
+        if type({}) != type(item):
+            ## check for gold to mixs mapping
+            mapped_item = \
+                get_mapped_term(dataframe, database='gold', table_name=table_name, source_field=item, target_field='mixs_term')
+            
+            if len(mapped_item) > 0:
+                gold_to_mixs[item] = mapped_item
+            
+    return gold_to_mixs
+
 
 def get_gold_biosample_mixs_term(dataframe, source_field):
     return get_mapped_term(dataframe, 'gold', 'biosample',source_field, 'mixs_term')
