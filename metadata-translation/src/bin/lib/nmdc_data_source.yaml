@@ -142,35 +142,35 @@ data_sources:
       - description
       - add_date
       - mod_date
-      - ecosystem_path_id
-      - ecosystem
-      - ecosystem_category
-      - ecosystem_type
-      - ecosystem_subtype
-      - specific_ecosystem
-      - habitat
-      - location
-      - community
-      - ncbi_taxonomy_name
-      - geographic_location
-      - latitude
-      - longitude
-      - sample_collection_site
-      - identifier
       - sample_collection_year
       - sample_collection_month
       - sample_collection_day
       - sample_collection_hour
       - sample_collection_minute
+      - latitude
+      - longitude
+      - ecosystem
+      - ecosystem_category
+      - ecosystem_type
+      - ecosystem_subtype
+      - specific_ecosystem
+      - env_broad_scale
+      - env_local_scale
+      - env_medium
+      - habitat
+      - location
+      - community
+      - ncbi_taxonomy_name
+      - geographic_location
+      - sample_collection_site
+      - identifier
       - host_name
       - depth
       - subsurface_depth
       - altitude
-      #- temperature_range # removed in version 5
       - proport_woa_temperature
       - biogas_temperature
       - growth_temperature
-      #- soil_annual_season_temp # removed in verion 5
       - water_samp_store_temp
       - biogas_retention_time
       - salinity
@@ -180,10 +180,66 @@ data_sources:
       - nitrate_concentration
       - oxygen_concentration
       - salinity_concentration
-      - env_broad_scale
-      - env_local_scale
-      - env_medium
-
+      - sample_volume
+      - sample_weight_dna_ext
+      - sampling_strategy
+      - soil_link_climate_info
+      - soil_misc_param
+      - soil_water_content
+      - soluble_iron_micromol
+      - subsurface_depth2
+      - tot_nitrogen
+      - tot_org_carbon
+      - water_alkalinity
+      - water_alkalinity_method
+      - water_alkyl_diethers
+      - water_aminopept_act
+      - water_ammonium
+      - water_bacterial_carbon_prod
+      - water_bishomohopanol
+      - water_bromide
+      - water_calcium
+      - water_carbon_nitrog_ratio
+      - water_chem_administration
+      - water_chloride
+      - water_density
+      - water_diether_lipids
+      - water_diss_carbon_dioxide
+      - water_diss_hydrogen
+      - water_diss_inorg_carbon
+      - water_diss_inorg_phosphorus
+      - water_diss_org_carbon
+      - water_diss_org_nitrogen
+      - water_glucosidase_activity
+      - water_magnesium
+      - water_mean_frict_vel
+      - water_mean_peak_frict_vel
+      - water_misc_parameter
+      - water_n_alkanes
+      - water_nitrite
+      - water_org_matter
+      - water_org_nitrogen
+      - water_organism_count
+      - water_oxy_stat_sample
+      - water_part_org_carbon
+      - water_perturbation
+      - water_petroleum_hydrocarbon
+      - water_phaeopigments
+      - water_phosplipid_fatt_acid
+      - water_potassium
+      - water_redox_potential
+      - water_samp_store_dur
+      - water_samp_store_loc
+      - water_size_frac_low
+      - water_size_frac_up
+      - water_sodium
+      - water_sulfate
+      - water_sulfide
+      - water_tidal_stage
+      - water_tot_depth_water_col
+      - water_tot_diss_nitro
+      - water_tot_phosphorus
+      - water_turbidity
 
   ficus_faa_table:
     id_key: file_id
