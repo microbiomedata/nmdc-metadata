@@ -1,0 +1,279 @@
+id: https://microbiomedata/schema
+name: NMDC Schema
+description: >-
+  Schema for National Microbiome Data Collaborative (NMDC).
+  This schem is organized into 3 separate modules:
+    
+  * a set of core types for representing data values
+  * the mixs schema (auto-translated from mixs excel)
+  * the NMDC schema itself
+  
+license: https://creativecommons.org/publicdomain/zero/1.0/
+version: 0.1.1
+
+prefixes:
+  nmdc: https://microbiomedata/meta/
+  GOLD: https://identifiers.org/gold/
+  mixs: https://w3id.org/gensc/
+  wgs: http://www.w3.org/2003/01/geo/wgs84_pos
+  qud: http://qudt.org/1.1/schema/qudt#
+  dcterms: http://purl.org/dc/terms/
+  biolinkml: https://w3id.org/biolink/biolinkml/
+  
+default_prefix: nmdc
+default_range: string
+
+default_curi_maps:
+  - obo_context
+  - idot_context
+
+emit_prefixes:
+  - rdf
+  - rdfs
+  - xsd
+  - skos
+
+# This file organizes the main NMDC schema.
+# It brings in the mixs schema plus a schemaa
+# of core types
+imports:
+  - biolinkml:types
+  - mixs
+  - core
+  - prov
+  
+classes:
+
+  database:
+    aliases:
+      - "NMDC metadata object"
+    description: >-
+      An abstract holder for any set of metadata and data. It does not need to correspond to an actual managed databse
+      top level holder class. When translated to JSON-Schema this is the 'root' object.
+      It should contain pointers to other objects of interest
+    slots:
+      - biosample set
+      - data object set
+      - activity set
+  
+  data object:
+    is_a: named thing
+    description: >-
+      An object that primarily consists of symbols that represent information.  
+      Files, records, and omics data are examples of data objects. 
+    slots:
+      - file_size
+    id_prefixes:
+      - GOLD
+
+  biosample:
+    is_a: named thing
+    aliases: ['sample', 'material sample']
+    description: >-
+      A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.  
+      An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.
+    slots:
+      # any mixs slot can be added here
+      - env_package
+      - lat_lon
+      - geo_loc_name
+      - collection_date
+      - env_broad_scale
+      - env_local_scale
+      - env_medium
+      - ecosystem
+      - ecosystem_category
+      - ecosystem_type
+      - ecosystem_subtype
+      - specific_ecosystem
+      - depth
+      - tot_org_carb
+      - alt
+      - elev
+    slot_usage:
+      id:
+        description: >-
+          The primary identifier for the biosample. Example: GOLD:Gb0205609
+      name:
+        description: >-
+          A human readable name or description of the biosample
+      alternate identifiers:
+        description: >-
+          The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
+      lat_lon:
+        required: true
+        description: >-
+          This is currently a required field but it's not clear if this should be required for human hosts
+      depth:
+        required: false
+      env_broad_scale:
+        required: true
+        description: >-
+          formerly known as 'biome'
+      env_local_scale:
+        required: true
+        description: >-
+          formerly known as 'feature'
+      env_medium:
+        required: true
+        description: >-
+          formerly known as 'material'
+    id_prefixes:
+      - GOLD
+
+        
+  study:
+    is_a: named thing
+    aliases: ['proposal', 'research proposal', 'research study', 'investigation']
+    description: >-
+      A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.  
+    slots:
+      - submitted_to_insdc
+      - investigation_type
+      - project_name
+      - experimental_factor
+#      - PI name
+    slot_usage:
+      id:
+        description: >-
+          The primary identifier for the study.
+      name:
+        description: >-
+          A human readable name or description of the study.
+      alternate identifiers:
+        description: >-
+          The same study may have distinct identifiers in different databases (e.g. GOLD and EMSL)
+
+  biosample processing:
+    is_a: named thing
+    description: >-
+      A process that takes one or more biosamples as inputs and generates one or as outputs.
+      Examples of outputs include samples cultivated from another sample or data objects created by instruments runs.
+    slots:
+      - has input
+    slot_usage:
+      has input:
+        range: biosample
+
+  omics processing:
+    is_a: biosample processing
+    description: >-
+      The methods and processes used to generate omics data from a biosample or organism.
+    slots:
+      - part of
+      - has output
+    slot_usage:
+      id:
+        description: >-
+          The primary identifier for the omics processing. E.g. GOLD:GpNNNN
+      name:
+        description: >-
+          A human readable name or description of the omics processing.
+      alternate identifiers:
+        description: >-
+          The same omics processing may have distinct identifiers in different databases (e.g. GOLD and EMSL)
+      part of:
+        range: study
+      has output:
+        range: data object
+
+  person:
+    is_a: named thing
+    description: >-
+      represents a person, such as a researcher
+    comments:
+      - "not yet in use"
+    slot_usage:
+      id:
+        description: >-
+          Should be an ORCID. Specify in CURIE format. E.g ORCID:0000-1111-...
+    
+
+slots:
+
+  biosample set:
+    domain: database
+    range: biosample
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of samples within it.
+
+  data object set:
+    domain: database
+    range: data object
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of data objects within it.
+  
+  activity set:
+    domain: database
+    range: activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of prov activities.
+  
+
+  has input:
+    aliases: ['input']
+    # range: named thing
+    multivalued: true
+    description: >-
+      An input to a process.
+    
+  has output:
+    aliases: ['output']
+    #domain: named thing
+    #range: named thing
+    multivalued: true
+    description: >-
+      An output biosample to a processing step
+
+  
+  part of:
+    aliases: ['is part of']
+    domain: named thing
+    multivalued: true
+    slot_uri: http://purl.org/dc/terms/isPartOf
+    description: >-
+      Links a resource to another resource that either logically or physically includes it.
+
+  ## DATA
+
+  file_size:
+    is_a: attribute
+    description: >-
+      units should be bytes.. may be overkill to allow different units
+    
+  ## GOLD PATHS
+
+  gold_path_field:
+    is_a: attribute
+    range: string
+    abstract: true
+    description: >-
+      This is a grouping for any of the gold path fields
+    
+  ecosystem:
+    is_a: gold_path_field
+    description: >-
+      TODO
+  ecosystem_category:
+    is_a: gold_path_field
+    description: >-
+      TODO
+  ecosystem_type:
+    is_a: gold_path_field
+    description: >-
+      TODO
+  ecosystem_subtype:
+    is_a: gold_path_field
+    description: >-
+      TODO
+  specific_ecosystem:
+    is_a: gold_path_field
+    description: >-
+      TODO
+
