@@ -53,6 +53,7 @@ classes:
       It should contain pointers to other objects of interest
     slots:
       - biosample set
+      - study set
       - data object set
       - activity set
   
@@ -132,7 +133,12 @@ classes:
       - investigation_type
       - project_name
       - experimental_factor
-#      - PI name
+      - ecosystem
+      - ecosystem_category
+      - ecosystem_type
+      - ecosystem_subtype
+      - specific_ecosystem
+      - principal investigator
     slot_usage:
       id:
         description: >-
@@ -199,6 +205,14 @@ slots:
     description: >-
       This property links a database object to the set of samples within it.
 
+  study set:
+    domain: database
+    range: study
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of studies within it.
+
   data object set:
     domain: database
     range: data object
@@ -231,7 +245,6 @@ slots:
     description: >-
       An output biosample to a processing step
 
-  
   part of:
     aliases: ['is part of']
     domain: named thing
@@ -244,9 +257,23 @@ slots:
 
   file_size:
     is_a: attribute
+    range: integer
     description: >-
-      units should be bytes.. may be overkill to allow different units
+      units should be bytes
+    todos:
+      - rename to file_size_bytes
     
+  ## GOLD SPECIFIC
+
+  principal investigator:
+    aliases:
+      - PI
+      - principal investigator
+    is_a: attribute
+    range: person value
+    description: >-
+      represents the PI
+  
   ## GOLD PATHS
 
   gold_path_field:

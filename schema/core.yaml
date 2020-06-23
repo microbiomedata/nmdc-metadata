@@ -23,6 +23,7 @@ default_curi_maps:
 
 imports:
   - biolinkml:types
+  - prov
 
 subsets:
   environment: {}
@@ -231,6 +232,8 @@ slots:
   has unit:
     description: >-
       Links a quantity value to a unit
+    aliases:
+      - scale
     range: unit
     mappings:
       - qud:unit
