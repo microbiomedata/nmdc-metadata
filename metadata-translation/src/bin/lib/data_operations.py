@@ -364,7 +364,7 @@ def make_nmdc_dict_list (dictionary,
                 slot_name = list(af.keys())[0]
                 if 'part_of' == slot_name: obj.part_of = map_slot_to_entity (af, record)
                 if 'has_input' == slot_name: obj.has_input = map_slot_to_entity(af, record)
-                if 'has_output' == slot_name: obj.has_ouput = map_slot_to_entity(af, record)
+                if 'has_output' == slot_name: obj.has_output = map_slot_to_entity(af, record)
                 
         dict_obj = json.loads(jsonasobj.as_json(obj))  # in order to not save empty values you need to convert to json
         dict_list.append(dict_obj)  # and then loads json to get dict; this may be a bug
