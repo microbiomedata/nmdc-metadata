@@ -772,15 +772,24 @@ def make_data_objects_dataframe (faa_table, fna_table, fastq_table, project_tabl
     ## subset data
     project_table_splice = project_table[['gold_id']].copy()
     
+    ## copy tables
+    faa_df = faa_table.copy()
+    fna_df = fna_table.copy()
+    fastq_df = fastq_table.copy()
+
+    ## add prefixes for faa, fna, and fastq files
+    faa_df.file_id = "nmdc:" + faa_df.file_id 
+    fna_df.file_id = "nmdc:" + fna_df.file_id 
+    fastq_df.file_id = "jgi:" + fastq_df.file_id
+
     ## merge tables
-    data_objects = pds.concat([faa_table, fna_table, fastq_table], axis=0)
+    data_objects = pds.concat([faa_df, fna_df, fastq_df], axis=0)
     
     ## inner joing data objects (e.g., faa, fna, fasq) to projects
     temp1_df = \
         pds.merge(data_objects, project_table_splice, how='inner', left_on='gold_project_id', right_on='gold_id')
     
-    ## add prefix
-    temp1_df.file_id = "emsl:" + temp1_df.file_id
+    ## add prefix for gold
     temp1_df.gold_project_id = "gold:" + temp1_df.gold_project_id
     temp1_df.gold_id = "gold:" + temp1_df.gold_id
     
