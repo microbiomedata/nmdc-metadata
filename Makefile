@@ -9,13 +9,14 @@ clean:
 install: env.lock
 
 env.lock:
-	pipenv install pyyaml biolinkml requests
+	pip install --upgrade pip
+	pip install -r requirements.txt
 	cp /dev/null env.lock
 
 test: schema/test-nmdc-01.valid pytest
 
 pytest: schema/nmdc.py
-	pipenv run python $<
+	python $<
 
 build: python_dataclasses json_schema
 
@@ -25,10 +26,10 @@ schema/mixs.yaml: mixs5/mixs_v5.txt mixs5/mixs_v5e.txt
 	scripts/mixs-to-blml.pl $^ > $@
 
 schema/mixs_meta.schema.json: schema/mixs_meta.yaml
-	pipenv run gen-json-schema -t template $<  > $@.tmp && mv $@.tmp $@
+	gen-json-schema -t template $<  > $@.tmp && mv $@.tmp $@
 
 schema/mixs_meta.py: schema/mixs_meta.yaml
-	pipenv run gen-py-classes $<  > $@.tmp && mv $@.tmp $@
+	gen-py-classes $<  > $@.tmp && mv $@.tmp $@
 
 # -- Generated Artefacts --
 #
@@ -46,45 +47,45 @@ schema_uml: schema/nmdc_schema_uml.png
 
 # Python dataclasses
 schema/%.py: schema/%.yaml env.lock
-	pipenv run gen-py-classes $< > $@.tmp && pipenv run python $@.tmp && mv $@.tmp $@
+	gen-py-classes $< > $@.tmp && python $@.tmp && mv $@.tmp $@
 
 # JSON Schema
 schema/nmdc.schema.json: schema/nmdc.yaml env.lock
-	pipenv run gen-json-schema -t database $<  > $@.tmp && jsonschema $@.tmp && mv $@.tmp $@
+	gen-json-schema -t database $<  > $@.tmp && jsonschema $@.tmp && mv $@.tmp $@
 
 schema/kbase.schema.json: schema/kbase.yaml env.lock
-	pipenv run gen-json-schema -t SESAR $<  > $@.tmp && jsonschema $@.tmp && mv $@.tmp $@
+	gen-json-schema -t SESAR $<  > $@.tmp && jsonschema $@.tmp && mv $@.tmp $@
 
 # OWL
 schema/%.owl: schema/%.yaml env.lock
-	pipenv run gen-owl $< > $@.tmp && mv $@.tmp $@ && perl -pi -ne 's@prefix meta: <https://w3id.org/biolink/biolinkml/meta/>@prefix meta: <https://w3id.org/$*/>@' $@
+	gen-owl $< > $@.tmp && mv $@.tmp $@ && perl -pi -ne 's@prefix meta: <https://w3id.org/biolink/biolinkml/meta/>@prefix meta: <https://w3id.org/$*/>@' $@
 
 # GraphQL
 schema/%.graphql: schema/%.yaml env.lock
-	pipenv run gen-graphql $< > $@.tmp && mv $@.tmp $@
+	gen-graphql $< > $@.tmp && mv $@.tmp $@
 
 # ShEx
 schema/%.shex: schema/%.yaml env.lock
-	pipenv run gen-shex $< > $@.tmp && mv $@.tmp $@
+	gen-shex $< > $@.tmp && mv $@.tmp $@
 
 schema/%.csv: schema/%.yaml env.lock
-	pipenv run gen-csv $< > $@.tmp && mv $@.tmp $@
+	gen-csv $< > $@.tmp && mv $@.tmp $@
 
 # ProtoBuf
 schema/%.proto: schema/%.yaml env.lock
-	pipenv run gen-proto $< > $@.tmp && mv $@.tmp $@
+	gen-proto $< > $@.tmp && mv $@.tmp $@
 
 #schema/%.rdf: schema/%.yaml env.lock
-#	pipenv run gen-rdf $< > $@.tmp && mv $@.tmp $@
+#	gen-rdf $< > $@.tmp && mv $@.tmp $@
 
 schema/test-%.valid: examples/%.json schema/nmdc.schema.json 
 	jsonschema -i $^
 
 docs: schema/nmdc.yaml env.lock
-	pipenv run gen-markdown --dir docs $<
+	gen-markdown --dir docs $<
 
 schema/nmdc_schema_uml.png: schema/nmdc.yaml
-	pipenv run python schema/generate_uml.py $< $@
+	python schema/generate_uml.py $< $@
 
 # -- Mappings --
 

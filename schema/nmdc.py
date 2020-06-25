@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-06-15 11:15
+# Generation date: 2020-06-25 16:00
 # Schema: NMDC Schema
 #
 # id: https://microbiomedata/schema
@@ -130,6 +130,7 @@ class Database(YAMLRoot):
     study_set: Dict[Union[str, StudyId], Union[dict, "Study"]] = empty_dict()
     data_object_set: Dict[Union[str, DataObjectId], Union[dict, "DataObject"]] = empty_dict()
     activity_set: Dict[Union[str, ActivityActivityId], Union[dict, "Activity"]] = empty_dict()
+    omics_processing_set: Dict[Union[str, OmicsProcessingId], Union[dict, "OmicsProcessing"]] = empty_dict()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         for k, v in self.biosample_set.items():
@@ -144,6 +145,9 @@ class Database(YAMLRoot):
         for k, v in self.activity_set.items():
             if not isinstance(v, Activity):
                 self.activity_set[k] = Activity(activity_id=k, **({} if v is None else v))
+        for k, v in self.omics_processing_set.items():
+            if not isinstance(v, OmicsProcessing):
+                self.omics_processing_set[k] = OmicsProcessing(id=k, **({} if v is None else v))
         super().__post_init__(**kwargs)
 
 
@@ -645,6 +649,9 @@ slots.data_object_set = Slot(uri=NMDC.data_object_set, name="data object set", c
 
 slots.activity_set = Slot(uri=NMDC.activity_set, name="activity set", curie=NMDC.curie('activity_set'),
                       model_uri=NMDC.activity_set, domain=Database, range=Dict[Union[str, ActivityActivityId], Union[dict, "Activity"]])
+
+slots.omics_processing_set = Slot(uri=NMDC.omics_processing_set, name="omics processing set", curie=NMDC.curie('omics_processing_set'),
+                      model_uri=NMDC.omics_processing_set, domain=Database, range=Dict[Union[str, OmicsProcessingId], Union[dict, "OmicsProcessing"]])
 
 slots.has_input = Slot(uri=NMDC.has_input, name="has input", curie=NMDC.curie('has_input'),
                       model_uri=NMDC.has_input, domain=None, range=List[str])

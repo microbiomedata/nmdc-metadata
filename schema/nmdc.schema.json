@@ -308,6 +308,13 @@
                },
                "type": "array"
             },
+            "omics_processing_set": {
+               "description": "This property links a database object to the set of omics processings within it.",
+               "items": {
+                  "$ref": "#/definitions/OmicsProcessing"
+               },
+               "type": "array"
+            },
             "study_set": {
                "description": "This property links a database object to the set of studies within it.",
                "items": {
@@ -703,6 +710,13 @@
          "description": "This property links a database object to the set of data objects within it.",
          "items": {
             "$ref": "#/definitions/DataObject"
+         },
+         "type": "array"
+      },
+      "omics_processing_set": {
+         "description": "This property links a database object to the set of omics processings within it.",
+         "items": {
+            "$ref": "#/definitions/OmicsProcessing"
          },
          "type": "array"
       },
