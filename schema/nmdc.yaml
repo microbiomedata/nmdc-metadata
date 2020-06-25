@@ -56,6 +56,7 @@ classes:
       - study set
       - data object set
       - activity set
+      - omics processing set
   
   data object:
     is_a: named thing
@@ -229,7 +230,14 @@ slots:
     description: >-
       This property links a database object to the set of prov activities.
   
-
+  omics processing set:
+    domain: database
+    range: omics processing
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of omics processings within it.
+  
   has input:
     aliases: ['input']
     # range: named thing
