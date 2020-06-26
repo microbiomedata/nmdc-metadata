@@ -286,7 +286,7 @@ slots:
 
   gold_path_field:
     is_a: attribute
-    range: string
+    range: attribute value
     abstract: true
     description: >-
       This is a grouping for any of the gold path fields
