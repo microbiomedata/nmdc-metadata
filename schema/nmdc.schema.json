@@ -88,20 +88,20 @@
                "type": "string"
             },
             "ecosystem": {
-               "description": "TODO",
-               "type": "string"
+               "$ref": "#/definitions/AttributeValue",
+               "description": "TODO"
             },
             "ecosystem_category": {
-               "description": "TODO",
-               "type": "string"
+               "$ref": "#/definitions/AttributeValue",
+               "description": "TODO"
             },
             "ecosystem_subtype": {
-               "description": "TODO",
-               "type": "string"
+               "$ref": "#/definitions/AttributeValue",
+               "description": "TODO"
             },
             "ecosystem_type": {
-               "description": "TODO",
-               "type": "string"
+               "$ref": "#/definitions/AttributeValue",
+               "description": "TODO"
             },
             "elev": {
                "$ref": "#/definitions/QuantityValue",
@@ -141,8 +141,8 @@
                "type": "array"
             },
             "specific_ecosystem": {
-               "description": "TODO",
-               "type": "string"
+               "$ref": "#/definitions/AttributeValue",
+               "description": "TODO"
             },
             "tot_org_carb": {
                "$ref": "#/definitions/QuantityValue",
@@ -579,20 +579,20 @@
                "type": "string"
             },
             "ecosystem": {
-               "description": "TODO",
-               "type": "string"
+               "$ref": "#/definitions/AttributeValue",
+               "description": "TODO"
             },
             "ecosystem_category": {
-               "description": "TODO",
-               "type": "string"
+               "$ref": "#/definitions/AttributeValue",
+               "description": "TODO"
             },
             "ecosystem_subtype": {
-               "description": "TODO",
-               "type": "string"
+               "$ref": "#/definitions/AttributeValue",
+               "description": "TODO"
             },
             "ecosystem_type": {
-               "description": "TODO",
-               "type": "string"
+               "$ref": "#/definitions/AttributeValue",
+               "description": "TODO"
             },
             "experimental_factor": {
                "$ref": "#/definitions/ControlledTermValue",
@@ -624,8 +624,8 @@
                "description": "Name of the project within which the sequencing was organized"
             },
             "specific_ecosystem": {
-               "description": "TODO",
-               "type": "string"
+               "$ref": "#/definitions/AttributeValue",
+               "description": "TODO"
             },
             "submitted_to_insdc": {
                "$ref": "#/definitions/BooleanValue",

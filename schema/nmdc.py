@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-06-25 16:00
+# Generation date: 2020-06-26 15:05
 # Schema: NMDC Schema
 #
 # id: https://microbiomedata/schema
@@ -286,11 +286,11 @@ class Study(NamedThing):
     investigation_type: Optional[Union[dict, "TextValue"]] = None
     project_name: Optional[Union[dict, "TextValue"]] = None
     experimental_factor: Optional[Union[dict, "ControlledTermValue"]] = None
-    ecosystem: Optional[str] = None
-    ecosystem_category: Optional[str] = None
-    ecosystem_type: Optional[str] = None
-    ecosystem_subtype: Optional[str] = None
-    specific_ecosystem: Optional[str] = None
+    ecosystem: Optional[Union[dict, "AttributeValue"]] = None
+    ecosystem_category: Optional[Union[dict, "AttributeValue"]] = None
+    ecosystem_type: Optional[Union[dict, "AttributeValue"]] = None
+    ecosystem_subtype: Optional[Union[dict, "AttributeValue"]] = None
+    specific_ecosystem: Optional[Union[dict, "AttributeValue"]] = None
     principal_investigator: Optional[Union[dict, "PersonValue"]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
@@ -306,6 +306,16 @@ class Study(NamedThing):
             self.project_name = TextValue(**self.project_name)
         if self.experimental_factor is not None and not isinstance(self.experimental_factor, ControlledTermValue):
             self.experimental_factor = ControlledTermValue(**self.experimental_factor)
+        if self.ecosystem is not None and not isinstance(self.ecosystem, AttributeValue):
+            self.ecosystem = AttributeValue(**self.ecosystem)
+        if self.ecosystem_category is not None and not isinstance(self.ecosystem_category, AttributeValue):
+            self.ecosystem_category = AttributeValue(**self.ecosystem_category)
+        if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, AttributeValue):
+            self.ecosystem_type = AttributeValue(**self.ecosystem_type)
+        if self.ecosystem_subtype is not None and not isinstance(self.ecosystem_subtype, AttributeValue):
+            self.ecosystem_subtype = AttributeValue(**self.ecosystem_subtype)
+        if self.specific_ecosystem is not None and not isinstance(self.specific_ecosystem, AttributeValue):
+            self.specific_ecosystem = AttributeValue(**self.specific_ecosystem)
         if self.principal_investigator is not None and not isinstance(self.principal_investigator, PersonValue):
             self.principal_investigator = PersonValue(**self.principal_investigator)
         super().__post_init__(**kwargs)
@@ -669,22 +679,22 @@ slots.principal_investigator = Slot(uri=NMDC.principal_investigator, name="princ
                       model_uri=NMDC.principal_investigator, domain=None, range=Optional[Union[dict, PersonValue]])
 
 slots.gold_path_field = Slot(uri=NMDC.gold_path_field, name="gold_path_field", curie=NMDC.curie('gold_path_field'),
-                      model_uri=NMDC.gold_path_field, domain=None, range=Optional[str])
+                      model_uri=NMDC.gold_path_field, domain=None, range=Optional[Union[dict, AttributeValue]])
 
 slots.ecosystem = Slot(uri=NMDC.ecosystem, name="ecosystem", curie=NMDC.curie('ecosystem'),
-                      model_uri=NMDC.ecosystem, domain=None, range=Optional[str])
+                      model_uri=NMDC.ecosystem, domain=None, range=Optional[Union[dict, AttributeValue]])
 
 slots.ecosystem_category = Slot(uri=NMDC.ecosystem_category, name="ecosystem_category", curie=NMDC.curie('ecosystem_category'),
-                      model_uri=NMDC.ecosystem_category, domain=None, range=Optional[str])
+                      model_uri=NMDC.ecosystem_category, domain=None, range=Optional[Union[dict, AttributeValue]])
 
 slots.ecosystem_type = Slot(uri=NMDC.ecosystem_type, name="ecosystem_type", curie=NMDC.curie('ecosystem_type'),
-                      model_uri=NMDC.ecosystem_type, domain=None, range=Optional[str])
+                      model_uri=NMDC.ecosystem_type, domain=None, range=Optional[Union[dict, AttributeValue]])
 
 slots.ecosystem_subtype = Slot(uri=NMDC.ecosystem_subtype, name="ecosystem_subtype", curie=NMDC.curie('ecosystem_subtype'),
-                      model_uri=NMDC.ecosystem_subtype, domain=None, range=Optional[str])
+                      model_uri=NMDC.ecosystem_subtype, domain=None, range=Optional[Union[dict, AttributeValue]])
 
 slots.specific_ecosystem = Slot(uri=NMDC.specific_ecosystem, name="specific_ecosystem", curie=NMDC.curie('specific_ecosystem'),
-                      model_uri=NMDC.specific_ecosystem, domain=None, range=Optional[str])
+                      model_uri=NMDC.specific_ecosystem, domain=None, range=Optional[Union[dict, AttributeValue]])
 
 slots.submitted_to_insdc = Slot(uri="str(uriorcurie)", name="submitted_to_insdc", curie=None,
                       model_uri=NMDC.submitted_to_insdc, domain=None, range=Optional[Union[dict, BooleanValue]], mappings = [MIXS.submitted_to_insdc])

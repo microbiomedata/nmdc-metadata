@@ -199,9 +199,15 @@ def convert_dict_list_to_json_list (dict_list):
 
 
 def make_lat_lon (latitude, longitude):
-    latitude = "" if pds.isnull(latitude) else str(latitude).strip().replace('\n', '')
-    longitude = "" if pds.isnull(longitude) else str(longitude).strip().replace('\n', '')
-    return f"{latitude} {longitude}".strip()
+    # latitude = "" if pds.isnull(latitude) else str(latitude).strip().replace('\n', '')
+    # longitude = "" if pds.isnull(longitude) else str(longitude).strip().replace('\n', '')
+    latitude = None if pds.isnull(latitude) else float(latitude)
+    longitude = None if pds.isnull(longitude) else float(longitude)
+
+    if (not (latitude is None)) and (not (longitude is None)):
+        return f"{latitude} {longitude}".strip()
+    else:
+        return None
 
 
 def make_nmdc_dict_list (dictionary,
@@ -695,6 +701,10 @@ def make_biosample_dataframe (biosample_table, project_biosample_table, project_
     ## add collection date and lat_lon columns
     temp2_df['collection_date'] = temp2_df.apply(lambda row: make_collection_date_from_row(row), axis=1)
     temp2_df['lat_lon'] = temp2_df.apply(lambda row: make_lat_lon(row.latitude, row.longitude), axis=1)
+    
+    ## convert latitude and longitute columns to floats
+    temp2_df['latitude'] = temp2_df['latitude'].map(lambda x: None if pds.isnull(x) else float(x))
+    temp2_df['longitude'] = temp2_df['longitude'].map(lambda x: None if pds.isnull(x) else float(x))
     
     ## add gold prefix
     temp2_df['gold_id'] = 'gold:' + temp2_df['gold_id']
