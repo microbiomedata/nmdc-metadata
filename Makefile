@@ -13,7 +13,7 @@ env.lock:
 	pip install -r requirements.txt
 	cp /dev/null env.lock
 
-test: schema/test-nmdc-01.valid pytest
+test: schema/test-nmdc-01.valid schema/test-nmdc-02.valid pytest
 
 pytest: schema/nmdc.py
 	python $<
