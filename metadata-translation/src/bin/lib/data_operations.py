@@ -1,11 +1,12 @@
 ## add ./lib directory to sys.path so that local modules can be found
-import os, sys;
+import os, sys
 
 sys.path.append(os.path.abspath("."))
 # print(sys.path)
 
 ## system level modules
 import pandas as pds
+import jq
 import jsonasobj
 import json
 import zipfile
@@ -288,16 +289,22 @@ def make_nmdc_dict_list (dictionary,
         ## of the parameters needed to instantiate the class
         constructor_dict = {}
         for key, field in constructor_map.items():
-            ## if the fields is a tuple, index 0 is param dict, index 1 is the class
-            ## e.g., lat_lon': ('lat_lon', nmdc.GeolocationValue)
-            if type(()) == type(field):
+            ## if the fields is a list, index 0 is param dict, index 1 is the class
+            ## e.g., lat_lon': ['lat_lon', 'GeolocationValue'], or lat_lon': ['lat_lon', nmdc.GeolocationValue]
+            if type([]) == type(field):
                 params = \
                     {
                         key: "" if pds.isnull(record[value]) else record[value] # we don't want null/NaN to be a value in the constructor
                         for key, value in  field[0].items()
                     }
-                constructor_obj = field[1](**params)
-                constructor_obj.type = field[1].class_class_curie
+                ## check if nmdc class is being passed as a string e.g., lat_lon': ['lat_lon', 'GeolocationValue']
+                if type('') == type(field[1]):
+                    constructor_type = getattr(nmdc, field[1])
+                else:
+                    constructor_type = field[1]
+
+                constructor_obj = constructor_type(**params) # create object from type
+                constructor_obj.type = constructor_type.class_class_curie
                 constructor_dict[key] = constructor_obj
             else:
                 # print(field)
@@ -330,10 +337,10 @@ def make_nmdc_dict_list (dictionary,
     if add_attribute:
         for af in attribute_fields:
             if type({}) == type(af): af = list(af.keys())[0] # needed for attributes given as a dict
-            if not hasattr(nmdc_class, af): setattr(nmdc_class, af, None)
+            if not hasattr(nmdc_class, str(af)): setattr(nmdc_class, str(af), None)
             ## TODO ! throw a a warning
 
-        if attribute_map:
+        if len(attribute_map) > 0:
             for af in attribute_map.values():
                 if not hasattr(nmdc_class, af): setattr(nmdc_class, af, None)
     
@@ -354,7 +361,7 @@ def make_nmdc_dict_list (dictionary,
                 av = make_attribute_value(item)
 
                 ## check if attribute has been mapped to a mixs term
-                if attribute_map:
+                if len(attribute_map) > 0:
                     if key in attribute_map.keys():
                         mapped_attr = attribute_map[key]
                         setattr(obj, mapped_attr, av)
@@ -390,9 +397,9 @@ def save_json_string_list (file_name, json_list):
     """
     ## merge json list into a single string
     json_str = "[\n" + ", ".join(json_list) + "\n]"
-    
     with open(file_name, "w") as f:
-        f.write(json_str)
+        # f.write(json_str)
+        json.dump(json.loads(json_str), f, indent=2)
 
 
 def load_dict_from_json_file (file_name):
