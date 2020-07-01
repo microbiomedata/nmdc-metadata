@@ -1,5 +1,5 @@
 import os, sys
-sys.path.append(os.path.abspath('../../../schema')) # add path nmdc.py
+sys.path.append(os.path.abspath('../../../schema')) # add path nmdc schema files and modules
 
 import yaml
 import json
@@ -10,6 +10,7 @@ import pandas as pds
 import jsonasobj
 import nmdc
 import lib.data_operations as dop
+import align_nmdc_datatypes
 
 def make_merged_data_source(spec_file='lib/nmdc_data_source.yaml', save_path='../data/nmdc_merged_data.tsv'):
     """Create a new data source containing the merged data sources"""
@@ -47,8 +48,8 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
                       'gold_omics_processing', 
                       'gold_biosample', 
                       'emsl_omics_processing', 
-                      'emsl_data_objects', 
-                      'jgi_data_objects']):
+                      'emsl_data_object', 
+                      'jgi_data_object']):
 
     # build merbed data frame (mdf) from saved file
     mdf = pds.read_csv(data_file, sep='\t', dtype=str)
@@ -93,15 +94,19 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
         emsl_json_op = make_json_etl(emsl, nmdc.OmicsProcessing, 'emsl_omics_processing')
         dop.save_json_string_list("output/nmdc_etl/emsl_omics_processing.json", emsl_json_op)
     
-    if 'emsl_data_objects' in etl_modules:
+    if 'emsl_data_object' in etl_modules:
         emsl_json_do = make_json_etl(emsl, nmdc.DataObject, 'emsl_data_object')
         dop.save_json_string_list("output/nmdc_etl/emsl_data_objects.json", emsl_json_do)
+        align_nmdc_datatypes.align_emsl_data_object()
         
-    if 'jgi_data_objects' in etl_modules:
+    if 'jgi_data_object' in etl_modules:
         jgi_json_do = make_json_etl(data_objects, nmdc.DataObject, 'jgi_data_object')
         dop.save_json_string_list("output/nmdc_etl/faa_fna_fastq_data_objects.json", jgi_json_do)
+        align_nmdc_datatypes.align_jgi_data_object()
 
 
 if __name__ == '__main__':
-    main(etl_modules=['gold_biosample']) # test biosample etl
+    # main(etl_modules=['gold_biosample']) # test biosample etl
+    main(etl_modules=['jgi_data_object']) # test data object
+    main(etl_modules=['emsl_data_object']) # test data object
     # main()
