@@ -12,6 +12,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: boolean value  ## syntax: {boolean}
+    pattern: "[true|false]"
     mappings:
       - MIxS:submitted_to_insdc
     in_subset:
@@ -25,6 +26,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|metatranscriptome|mimarks-survey|mimarks-specimen|misag|mimag|miuvig]
+    pattern: "[eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|metatranscriptome|mimarks-survey|mimarks-specimen|misag|mimag|miuvig]"
     mappings:
       - MIxS:investigation_type
     in_subset:
@@ -64,6 +66,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: geolocation value  ## syntax: {float} {float}
+    pattern: "\d+[.\d+] \d+[.\d+]"
+    string_serialization: "{float} {float}"
     mappings:
       - MIxS:lat_lon
     in_subset:
@@ -90,6 +94,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:alt
     in_subset:
@@ -103,6 +109,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:elev
     in_subset:
@@ -142,6 +150,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}
+    pattern: ".* \S+:\S+"
     mappings:
       - MIxS:env_broad_scale
     in_subset:
@@ -155,6 +164,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}
+    pattern: ".* \S+:\S+"
     mappings:
       - MIxS:env_local_scale
     in_subset:
@@ -168,6 +178,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}
+    pattern: ".* \S+:\S+"
     mappings:
       - MIxS:env_medium
     in_subset:
@@ -181,6 +192,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [air|built environment|host-associated|human-associated|human-skin|human-oral|human-gut|human-vaginal|hydrocarbon resources-cores|hydrocarbon resources-fluids/swabs|microbial mat/biofilm|misc environment|plant-associated|sediment|soil|wastewater/sludge|water]
+    pattern: "[air|built environment|host-associated|human-associated|human-skin|human-oral|human-gut|human-vaginal|hydrocarbon resources-cores|hydrocarbon resources-fluids/swabs|microbial mat/biofilm|misc environment|plant-associated|sediment|soil|wastewater/sludge|water]"
     mappings:
       - MIxS:env_package
     in_subset:
@@ -207,6 +219,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}
+    pattern: ".* \S+:\S+"
     mappings:
       - MIxS:ploidy
     in_subset:
@@ -298,6 +311,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [free living|parasitism|commensalism|symbiotic|mutualism]
+    pattern: "[free living|parasitism|commensalism|symbiotic|mutualism]"
     mappings:
       - MIxS:biotic_relationship
     in_subset:
@@ -337,6 +351,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [healthy|diseased|dead|disease-free|undetermined|recovering|resolving|pre-existing condition|pathological|life threatening|congenital]
+    pattern: "[healthy|diseased|dead|disease-free|undetermined|recovering|resolving|pre-existing condition|pathological|life threatening|congenital]"
     mappings:
       - MIxS:health_disease_stat
     in_subset:
@@ -350,6 +365,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]
+    pattern: "[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]"
     mappings:
       - MIxS:trophic_level
     in_subset:
@@ -389,6 +405,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [aerobe|anaerobe|facultative|microaerophilic|microanaerobe|obligate aerobe|obligate anaerobe]
+    pattern: "[aerobe|anaerobe|facultative|microaerophilic|microanaerobe|obligate aerobe|obligate anaerobe]"
     mappings:
       - MIxS:rel_to_oxygen
     in_subset:
@@ -441,6 +458,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float}-{float} {unit}
+    pattern: "\d+[.\d+]-\d+[.\d+] \S+"
+    string_serialization: "{float}-{float} {unit}"
     mappings:
       - MIxS:size_frac
     in_subset:
@@ -454,6 +473,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:samp_size
     in_subset:
@@ -467,6 +488,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [metagenome (not viral targeted)|viral fraction metagenome (virome)|sequence-targeted metagenome|metatranscriptome (not viral targeted)|viral fraction RNA metagenome (RNA virome)|sequence-targeted RNA metagenome|microbial single amplified genome (SAG)|viral single amplified genome (vSAG)|isolate microbial genome|other]
+    pattern: "[metagenome (not viral targeted)|viral fraction metagenome (virome)|sequence-targeted metagenome|metatranscriptome (not viral targeted)|viral fraction RNA metagenome (RNA virome)|sequence-targeted RNA metagenome|microbial single amplified genome (SAG)|viral single amplified genome (vSAG)|isolate microbial genome|other]"
     mappings:
       - MIxS:source_uvig
     in_subset:
@@ -480,6 +502,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [filtration|ultrafiltration|centrifugation|ultracentrifugation|PEG Precipitation|FeCl Precipitation|CsCl density gradient|DNAse|RNAse|targeted sequence capture|other|none]
+    pattern: "[filtration|ultrafiltration|centrifugation|ultracentrifugation|PEG Precipitation|FeCl Precipitation|CsCl density gradient|DNAse|RNAse|targeted sequence capture|other|none]"
     mappings:
       - MIxS:virus_enrich_appr
     in_subset:
@@ -545,6 +568,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [paired|single|vector|other]
+    pattern: "[paired|single|vector|other]"
     mappings:
       - MIxS:lib_layout
     in_subset:
@@ -649,6 +673,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles
+    pattern: "initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles"
     mappings:
       - MIxS:pcr_cond
     in_subset:
@@ -662,6 +687,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [MinION|GridION|PromethION|454 GS|454 GS 20|454 GS FLX|454 GS FLX+|454 GS FLX Titanium|454 GS Junior|Illumina Genome Analyzer|Illumina Genome Analyzer II|Illumina Genome Analyzer IIx|Illumina HiSeq 4000|Illumina HiSeq 3000|Illumina HiSeq 2500|Illumina HiSeq 2000|Illumina HiSeq 1500|Illumina HiSeq 1000|Illumina HiScanSQ|Illumina MiSeq|Illumina HiSeq X Five|Illumina HiSeq X Ten|Illumina NextSeq 500|Illumina NextSeq 550|AB SOLiD System|AB SOLiD System 2.0|AB SOLiD System 3.0|AB SOLiD 3 Plus System|AB SOLiD 4 System|AB SOLiD 4hq System|AB SOLiD PI System|AB 5500 Genetic Analyzer|AB 5500xl Genetic Analyzer|AB 5500xl-W Genetic Analysis System|Ion Torrent PGM|Ion Torrent Proton|Ion Torrent S5|Ion Torrent S5 XL|PacBio RS|PacBio RS II|Sequel|AB 3730xL Genetic Analyzer|AB 3730 Genetic Analyzer|AB 3500xL Genetic Analyzer|AB 3500 Genetic Analyzer|AB 3130xL Genetic Analyzer|AB 3130 Genetic Analyzer|AB 310 Genetic Analyzer|BGISEQ-500]
+    pattern: "[MinION|GridION|PromethION|454 GS|454 GS 20|454 GS FLX|454 GS FLX+|454 GS FLX Titanium|454 GS Junior|Illumina Genome Analyzer|Illumina Genome Analyzer II|Illumina Genome Analyzer IIx|Illumina HiSeq 4000|Illumina HiSeq 3000|Illumina HiSeq 2500|Illumina HiSeq 2000|Illumina HiSeq 1500|Illumina HiSeq 1000|Illumina HiScanSQ|Illumina MiSeq|Illumina HiSeq X Five|Illumina HiSeq X Ten|Illumina NextSeq 500|Illumina NextSeq 550|AB SOLiD System|AB SOLiD System 2.0|AB SOLiD System 3.0|AB SOLiD 3 Plus System|AB SOLiD 4 System|AB SOLiD 4hq System|AB SOLiD PI System|AB 5500 Genetic Analyzer|AB 5500xl Genetic Analyzer|AB 5500xl-W Genetic Analysis System|Ion Torrent PGM|Ion Torrent Proton|Ion Torrent S5|Ion Torrent S5 XL|PacBio RS|PacBio RS II|Sequel|AB 3730xL Genetic Analyzer|AB 3730 Genetic Analyzer|AB 3500xL Genetic Analyzer|AB 3500 Genetic Analyzer|AB 3130xL Genetic Analyzer|AB 3130 Genetic Analyzer|AB 310 Genetic Analyzer|BGISEQ-500]"
     mappings:
       - MIxS:seq_meth
     in_subset:
@@ -675,6 +701,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [none|manually edited]
+    pattern: "[none|manually edited]"
     mappings:
       - MIxS:seq_quality_check
     in_subset:
@@ -701,6 +728,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [16S rRNA gene|multi-marker approach|other]
+    pattern: "[16S rRNA gene|multi-marker approach|other]"
     mappings:
       - MIxS:tax_ident
     in_subset:
@@ -714,6 +742,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [Finished genome|High-quality draft genome|Medium-quality draft genome|Low-quality draft genome|Genome fragment(s)]
+    pattern: "[Finished genome|High-quality draft genome|Medium-quality draft genome|Low-quality draft genome|Genome fragment(s)]"
     mappings:
       - MIxS:assembly_qual
     in_subset:
@@ -831,6 +860,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: boolean value  ## syntax: {boolean}
+    pattern: "[true|false]"
     mappings:
       - MIxS:_16s_recover
     in_subset:
@@ -909,6 +939,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [marker gene|reference based|other]
+    pattern: "[marker gene|reference based|other]"
     mappings:
       - MIxS:compl_appr
     in_subset:
@@ -922,6 +953,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: {float} percentage
+    pattern: "\d+[.\d+] percentage"
     mappings:
       - MIxS:contam_score
     in_subset:
@@ -935,6 +967,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [reads| contigs]
+    pattern: "[reads| contigs]"
     mappings:
       - MIxS:contam_screen_input
     in_subset:
@@ -961,6 +994,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [checkm/refinem|anvi'o|prodege|bbtools:decontaminate.sh|acdc|combination]
+    pattern: "[checkm/refinem|anvi'o|prodege|bbtools:decontaminate.sh|acdc|combination]"
     mappings:
       - MIxS:decontam_software
     in_subset:
@@ -974,6 +1008,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [flow cytometric cell sorting|microfluidics|lazer-tweezing|optical manipulation|micromanipulation|other]
+    pattern: "[flow cytometric cell sorting|microfluidics|lazer-tweezing|optical manipulation|micromanipulation|other]"
     mappings:
       - MIxS:sort_tech
     in_subset:
@@ -987,6 +1022,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [chemical|enzymatic|physical|combination]
+    pattern: "[chemical|enzymatic|physical|combination]"
     mappings:
       - MIxS:single_cell_lysis_appr
     in_subset:
@@ -1013,6 +1049,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [pcr based|mda based]
+    pattern: "[pcr based|mda based]"
     mappings:
       - MIxS:wga_amp_appr
     in_subset:
@@ -1039,6 +1076,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [homology search|kmer|coverage|codon usage|combination]
+    pattern: "[homology search|kmer|coverage|codon usage|combination]"
     mappings:
       - MIxS:bin_param
     in_subset:
@@ -1052,6 +1090,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [metabat|maxbin|concoct|groupm|esom|metawatt|combination|other]
+    pattern: "[metabat|maxbin|concoct|groupm|esom|metawatt|combination|other]"
     mappings:
       - MIxS:bin_software
     in_subset:
@@ -1065,6 +1104,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: boolean value  ## syntax: {boolean}
+    pattern: "[true|false]"
     mappings:
       - MIxS:reassembly_bin
     in_subset:
@@ -1078,6 +1118,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [bwa|bbmap|bowtie|other]
+    pattern: "[bwa|bbmap|bowtie|other]"
     mappings:
       - MIxS:mag_cov_software
     in_subset:
@@ -1104,6 +1145,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [DNA|dsDNA|ssDNA|RNA|dsRNA|ssRNA|ssRNA (+)|ssRNA (-)|mixed|uncharacterized]
+    pattern: "[DNA|dsDNA|ssDNA|RNA|dsRNA|ssRNA|ssRNA (+)|ssRNA (-)|mixed|uncharacterized]"
     mappings:
       - MIxS:pred_genome_type
     in_subset:
@@ -1117,6 +1159,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [segmented|non-segmented|undetermined]
+    pattern: "[segmented|non-segmented|undetermined]"
     mappings:
       - MIxS:pred_genome_struc
     in_subset:
@@ -1130,6 +1173,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [independent sequence (UViG)|provirus (UpViG)]
+    pattern: "[independent sequence (UViG)|provirus (UpViG)]"
     mappings:
       - MIxS:detec_type
     in_subset:
@@ -1182,6 +1226,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [provirus|host sequence similarity|CRISPR spacer match|kmer similarity|co-occurrence|combination|other]
+    pattern: "[provirus|host sequence similarity|CRISPR spacer match|kmer similarity|co-occurrence|combination|other]"
     mappings:
       - MIxS:host_pred_appr
     in_subset:
@@ -1234,6 +1279,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:barometric_press
 
@@ -1245,6 +1292,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:carb_dioxide
 
@@ -1256,6 +1305,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:carb_monoxide
 
@@ -1278,6 +1329,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:humidity
 
@@ -1289,6 +1342,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:methane
 
@@ -1300,6 +1355,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:misc_param
 
@@ -1311,6 +1367,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit};[qPCR|ATP|MPN|other]
+    string_serialization: "{text};{float} {unit};[qPCR|ATP|MPN|other]"
     mappings:
       - MIxS:organism_count
 
@@ -1322,6 +1379,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:oxygen
 
@@ -1333,6 +1392,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [aerobic|anaerobic|other]
+    pattern: "[aerobic|anaerobic|other]"
     mappings:
       - MIxS:oxy_stat_samp
 
@@ -1355,6 +1415,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:pollutants
 
@@ -1366,6 +1427,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:resp_part_matter
 
@@ -1377,6 +1439,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:samp_salinity
 
@@ -1410,6 +1474,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:samp_store_temp
 
@@ -1421,6 +1487,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:samp_vol_we_dna_ext
 
@@ -1432,6 +1500,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:solar_irradiance
 
@@ -1443,6 +1513,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:temp
 
@@ -1454,6 +1526,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:ventilation_rate
 
@@ -1476,6 +1550,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:volatile_org_comp
 
@@ -1498,6 +1573,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:wind_speed
 
@@ -1509,6 +1586,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [concrete|wood|stone|tile|plastic|glass|vinyl|metal|carpet|stainless steel|paint|cinder blocks|hay bales|stucco|adobe]
+    pattern: "[concrete|wood|stone|tile|plastic|glass|vinyl|metal|carpet|stainless steel|paint|cinder blocks|hay bales|stucco|adobe]"
     mappings:
       - MIxS:surf_material
 
@@ -1520,6 +1598,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [dust|organic matter|particulate matter|volatile organic compounds|biological contaminants|radon|nutrients|biocides]
+    pattern: "[dust|organic matter|particulate matter|volatile organic compounds|biological contaminants|radon|nutrients|biocides]"
     mappings:
       - MIxS:surf_air_cont
 
@@ -1531,6 +1610,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:rel_air_humidity
 
@@ -1542,6 +1623,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:abs_air_humidity
 
@@ -1553,6 +1636,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:surf_humidity
 
@@ -1564,6 +1649,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:air_temp
 
@@ -1575,6 +1662,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:surf_temp
 
@@ -1586,6 +1675,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float}
+    pattern: "\d+[.\d+]"
     mappings:
       - MIxS:surf_moisture_ph
 
@@ -1597,6 +1687,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [office|market|restaurant|residence|school|residential|commercial|low rise|high rise|wood framed|office|health care|school|airport|sports complex]
+    pattern: "[office|market|restaurant|residence|school|residential|commercial|low rise|high rise|wood framed|office|health care|school|airport|sports complex]"
     mappings:
       - MIxS:build_occup_type
 
@@ -1608,6 +1699,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:surf_moisture
 
@@ -1619,6 +1712,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:dew_point
 
@@ -1630,6 +1725,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [bedroom|office|bathroom|foyer|kitchen|locker room|hallway|elevator]
+    pattern: "[bedroom|office|bathroom|foyer|kitchen|locker room|hallway|elevator]"
     mappings:
       - MIxS:indoor_space
 
@@ -1641,6 +1737,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [counter top|window|wall|cabinet|ceiling|door|shelving|vent cover]
+    pattern: "[counter top|window|wall|cabinet|ceiling|door|shelving|vent cover]"
     mappings:
       - MIxS:indoor_surf
 
@@ -1652,6 +1749,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [particulate air filter|chemical air filter|low-MERV pleated media|HEPA|electrostatic|gas-phase or ultraviolet air treatments]
+    pattern: "[particulate air filter|chemical air filter|low-MERV pleated media|HEPA|electrostatic|gas-phase or ultraviolet air treatments]"
     mappings:
       - MIxS:filter_type
 
@@ -1663,6 +1761,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [radiant system|heat pump|forced air system|steam forced heat|wood stove]
+    pattern: "[radiant system|heat pump|forced air system|steam forced heat|wood stove]"
     mappings:
       - MIxS:heat_cool_type
 
@@ -1674,6 +1773,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [crawlspace|slab on grade|basement]
+    pattern: "[crawlspace|slab on grade|basement]"
     mappings:
       - MIxS:substructure_type
 
@@ -1685,6 +1785,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [urban|suburban|exurban|rural]
+    pattern: "[urban|suburban|exurban|rural]"
     mappings:
       - MIxS:building_setting
 
@@ -1696,6 +1797,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [natural light|electric light|desk lamp|flourescent lights|natural light|none]
+    pattern: "[natural light|electric light|desk lamp|flourescent lights|natural light|none]"
     mappings:
       - MIxS:light_type
 
@@ -1718,6 +1820,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [typically occupied|typically unoccupied]
+    pattern: "[typically occupied|typically unoccupied]"
     mappings:
       - MIxS:space_typ_state
 
@@ -1729,6 +1832,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float}
+    pattern: "\d+[.\d+]"
     mappings:
       - MIxS:typ_occup_density
 
@@ -1751,6 +1855,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float}
+    pattern: "\d+[.\d+]"
     mappings:
       - MIxS:occup_density_samp
 
@@ -1784,6 +1889,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [plane|glider]
+    pattern: "[plane|glider]"
     mappings:
       - MIxS:aero_struc
 
@@ -1795,6 +1901,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:amount_light
 
@@ -1806,6 +1914,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [building|shed|home]
+    pattern: "[building|shed|home]"
     mappings:
       - MIxS:arch_struc
 
@@ -1817,6 +1926,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: {float}
+    pattern: "\d+[.\d+]"
     mappings:
       - MIxS:avg_occup
 
@@ -1828,6 +1938,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:avg_dew_point
 
@@ -1839,6 +1951,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:avg_temp
 
@@ -1872,6 +1986,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:built_struc_age
 
@@ -1883,6 +1999,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [urban|rural]
+    pattern: "[urban|rural]"
     mappings:
       - MIxS:built_struc_set
 
@@ -1905,6 +2022,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:ceil_area
 
@@ -1916,6 +2035,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [new|visible wear|needs repair|damaged|rupture]
+    pattern: "[new|visible wear|needs repair|damaged|rupture]"
     mappings:
       - MIxS:ceil_cond
 
@@ -1927,6 +2047,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [drywall|mineral fibre|tiles|PVC|plasterboard|metal|fiberglass|stucco|mineral wool/calcium silicate|wood]
+    pattern: "[drywall|mineral fibre|tiles|PVC|plasterboard|metal|fiberglass|stucco|mineral wool/calcium silicate|wood]"
     mappings:
       - MIxS:ceil_finish_mat
 
@@ -1938,6 +2059,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [presence of mold visible|no presence of mold visible]
+    pattern: "[presence of mold visible|no presence of mold visible]"
     mappings:
       - MIxS:ceil_water_mold
 
@@ -1949,6 +2071,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [wood frame|concrete]
+    pattern: "[wood frame|concrete]"
     mappings:
       - MIxS:ceil_struc
 
@@ -1960,6 +2083,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [crows feet|crows-foot stomp|double skip|hawk and trowel|knockdown|popcorn|orange peel|rosebud stomp|Santa-Fe texture|skip trowel|smooth|stomp knockdown|swirl]
+    pattern: "[crows feet|crows-foot stomp|double skip|hawk and trowel|knockdown|popcorn|orange peel|rosebud stomp|Santa-Fe texture|skip trowel|smooth|stomp knockdown|swirl]"
     mappings:
       - MIxS:ceil_texture
 
@@ -1971,6 +2095,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:ceil_thermal_mass
 
@@ -1982,6 +2108,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [cathedral|dropped|concave|barrel-shaped|coffered|cove|stretched]
+    pattern: "[cathedral|dropped|concave|barrel-shaped|coffered|cove|stretched]"
     mappings:
       - MIxS:ceil_type
 
@@ -2015,6 +2142,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [building information model|commissioning report|complaint logs|contract administration|cost estimate|janitorial schedules or logs|maintenance plans|schedule|sections|shop drawings|submittals|ventilation system|windows] 
+    pattern: "[building information model|commissioning report|complaint logs|contract administration|cost estimate|janitorial schedules or logs|maintenance plans|schedule|sections|shop drawings|submittals|ventilation system|windows] "
     mappings:
       - MIxS:build_docs
 
@@ -2026,6 +2154,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:door_size
 
@@ -2037,6 +2167,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [damaged|needs repair|new|rupture|visible wear]
+    pattern: "[damaged|needs repair|new|rupture|visible wear]"
     mappings:
       - MIxS:door_cond
 
@@ -2048,6 +2179,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [inward|outward|sideways]
+    pattern: "[inward|outward|sideways]"
     mappings:
       - MIxS:door_direct
 
@@ -2059,6 +2191,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [north|south|east|west]
+    pattern: "[north|south|east|west]"
     mappings:
       - MIxS:door_loc
 
@@ -2070,6 +2203,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [aluminum|cellular PVC|engineered plastic|fiberboard|fiberglass|metal|thermoplastic alloy|vinyl|wood|wood/plastic composite]
+    pattern: "[aluminum|cellular PVC|engineered plastic|fiberboard|fiberglass|metal|thermoplastic alloy|vinyl|wood|wood/plastic composite]"
     mappings:
       - MIxS:door_mat
 
@@ -2081,6 +2215,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [collapsible|folding|revolving|rolling shutter|sliding|swinging] 
+    pattern: "[collapsible|folding|revolving|rolling shutter|sliding|swinging] "
     mappings:
       - MIxS:door_move
 
@@ -2092,6 +2227,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [presence of mold visible|no presence of mold visible]
+    pattern: "[presence of mold visible|no presence of mold visible]"
     mappings:
       - MIxS:door_water_mold
 
@@ -2103,6 +2239,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [composite|metal|wooden]
+    pattern: "[composite|metal|wooden]"
     mappings:
       - MIxS:door_type
 
@@ -2114,6 +2251,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [metal covered|revolving|sliding|telescopic]
+    pattern: "[metal covered|revolving|sliding|telescopic]"
     mappings:
       - MIxS:door_comp_type
 
@@ -2125,6 +2263,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [collapsible|corrugated steel|hollow|rolling shutters|steel plate]
+    pattern: "[collapsible|corrugated steel|hollow|rolling shutters|steel plate]"
     mappings:
       - MIxS:door_type_metal
 
@@ -2136,6 +2275,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: "[bettened and ledged|battened|ledged and braced|battened|ledged and framed|battened|ledged, braced and frame|framed and paneled|glashed or sash|flush|louvered|wire gauged]"
+    pattern: ""[bettened and ledged|battened|ledged and braced|battened|ledged and framed|battened|ledged, braced and frame|framed and paneled|glashed or sash|flush|louvered|wire gauged]""
     mappings:
       - MIxS:door_type_wood
 
@@ -2147,6 +2287,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [operation|as built|construction|bid|design|building navigation map|diagram|sketch]
+    pattern: "[operation|as built|construction|bid|design|building navigation map|diagram|sketch]"
     mappings:
       - MIxS:drawings
 
@@ -2180,6 +2321,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:exp_duct
 
@@ -2213,6 +2356,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [gas burning|wood burning]
+    pattern: "[gas burning|wood burning]"
     mappings:
       - MIxS:fireplace_type
 
@@ -2224,6 +2368,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:floor_age
 
@@ -2235,6 +2381,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:floor_area
 
@@ -2246,6 +2394,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [new|visible wear|needs repair|damaged|rupture]
+    pattern: "[new|visible wear|needs repair|damaged|rupture]"
     mappings:
       - MIxS:floor_cond
 
@@ -2268,6 +2417,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [tile|wood strip or parquet|carpet|rug|laminate wood|lineoleum|vinyl composition tile|sheet vinyl|stone|bamboo|cork|terrazo|concrete|none;specify unfinished|sealed|clear finish|paint]
+    pattern: "[tile|wood strip or parquet|carpet|rug|laminate wood|lineoleum|vinyl composition tile|sheet vinyl|stone|bamboo|cork|terrazo|concrete|none;specify unfinished|sealed|clear finish|paint]"
     mappings:
       - MIxS:floor_finish_mat
 
@@ -2279,6 +2429,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [mold odor|wet floor|water stains|wall discoloration|floor discoloration|ceiling discoloration|peeling paint or wallpaper|bulging walls|condensation]
+    pattern: "[mold odor|wet floor|water stains|wall discoloration|floor discoloration|ceiling discoloration|peeling paint or wallpaper|bulging walls|condensation]"
     mappings:
       - MIxS:floor_water_mold
 
@@ -2290,6 +2441,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [balcony|floating floor|glass floor|raised floor|sprung floor|wood-framed|concrete]
+    pattern: "[balcony|floating floor|glass floor|raised floor|sprung floor|wood-framed|concrete]"
     mappings:
       - MIxS:floor_struc
 
@@ -2301,6 +2453,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:floor_thermal_mass
 
@@ -2334,6 +2488,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [cabinet|chair|desks]
+    pattern: "[cabinet|chair|desks]"
     mappings:
       - MIxS:furniture
 
@@ -2345,6 +2500,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [male|female]
+    pattern: "[male|female]"
     mappings:
       - MIxS:gender_restroom
 
@@ -2367,6 +2523,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [ambidexterity|left handedness|mixed-handedness|right handedness]
+    pattern: "[ambidexterity|left handedness|mixed-handedness|right handedness]"
     mappings:
       - MIxS:handidness
 
@@ -2378,6 +2535,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [north|south|east|west]
+    pattern: "[north|south|east|west]"
     mappings:
       - MIxS:heat_deliv_loc
 
@@ -2389,6 +2547,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [conductive|radiant]
+    pattern: "[conductive|radiant]"
     mappings:
       - MIxS:heat_system_deliv_meth
 
@@ -2411,6 +2570,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:height_carper_fiber
 
@@ -2422,6 +2583,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:inside_lux
 
@@ -2433,6 +2596,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [new|visible wear|needs repair|damaged|rupture]
+    pattern: "[new|visible wear|needs repair|damaged|rupture]"
     mappings:
       - MIxS:int_wall_cond
 
@@ -2466,6 +2630,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [subway|coach|carriage|elevator|escalator|boat|train|car|bus]
+    pattern: "[subway|coach|carriage|elevator|escalator|boat|train|car|bus]"
     mappings:
       - MIxS:mech_struc
 
@@ -2510,6 +2675,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [automated count|estimate|manual count|videos]
+    pattern: "[automated count|estimate|manual count|videos]"
     mappings:
       - MIxS:occup_document
 
@@ -2521,6 +2687,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [north|south|east|west|northeast|southeast|southwest|northwest]
+    pattern: "[north|south|east|west|northeast|southeast|southwest|northwest]"
     mappings:
       - MIxS:ext_wall_orient
 
@@ -2532,6 +2699,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [north|south|east|west|northeast|southeast|southwest|northwest]
+    pattern: "[north|south|east|west|northeast|southeast|southwest|northwest]"
     mappings:
       - MIxS:ext_window_orient
 
@@ -2543,6 +2711,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:rel_humidity_out
 
@@ -2565,6 +2735,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [North side|West side|South side|East side]
+    pattern: "[North side|West side|South side|East side]"
     mappings:
       - MIxS:quad_pos
 
@@ -2576,6 +2747,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [edge of car|center of car|under a seat]
+    pattern: "[edge of car|center of car|under a seat]"
     mappings:
       - MIxS:rel_samp_loc
 
@@ -2587,6 +2759,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:room_air_exch_rate
 
@@ -2609,6 +2783,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [new|visible wear|needs repair|damaged|rupture|visible signs of mold/mildew]
+    pattern: "[new|visible wear|needs repair|damaged|rupture|visible signs of mold/mildew]"
     mappings:
       - MIxS:room_condt
 
@@ -2631,6 +2806,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {integer} {unit} x {integer} {unit} x {integer} {unit}
+    string_serialization: "{integer} {unit} x {integer} {unit} x {integer} {unit}"
     mappings:
       - MIxS:room_dim
 
@@ -2642,6 +2818,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {integer} {unit}
+    string_serialization: "{integer} {unit}"
     mappings:
       - MIxS:room_door_dist
 
@@ -2653,6 +2830,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [corner room|interior room|exterior wall]
+    pattern: "[corner room|interior room|exterior wall]"
     mappings:
       - MIxS:room_loc
 
@@ -2675,6 +2853,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {integer} {unit}
+    string_serialization: "{integer} {unit}"
     mappings:
       - MIxS:room_net_area
 
@@ -2697,6 +2876,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [north corner|south corner|west corner|east corner|northeast corner|northwest corner|southeast corner|southwest corner|center]
+    pattern: "[north corner|south corner|west corner|east corner|northeast corner|northwest corner|southeast corner|southwest corner|center]"
     mappings:
       - MIxS:room_samp_pos
 
@@ -2708,6 +2888,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: "[attic|bathroom|closet|conference room|elevator|examining room|hallway|kitchen|mail room|private office|open office|stairwell|,restroom|lobby|vestibule|mechanical or electrical room|data center|laboratory_wet|laboratory_dry|gymnasium|natatorium|auditorium|lockers|cafe|warehouse] "
+    pattern: ""[attic|bathroom|closet|conference room|elevator|examining room|hallway|kitchen|mail room|private office|open office|stairwell|,restroom|lobby|vestibule|mechanical or electrical room|data center|laboratory_wet|laboratory_dry|gymnasium|natatorium|auditorium|lockers|cafe|warehouse] ""
     mappings:
       - MIxS:room_type
 
@@ -2719,6 +2900,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {integer} {unit}
+    string_serialization: "{integer} {unit}"
     mappings:
       - MIxS:room_vol
 
@@ -2741,6 +2923,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [attic|bathroom|closet|conference room|elevator|examining room|hallway|kitchen|mail room|office|stairwell]
+    pattern: "[attic|bathroom|closet|conference room|elevator|examining room|hallway|kitchen|mail room|office|stairwell]"
     mappings:
       - MIxS:room_connected
 
@@ -2785,6 +2968,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [clear sky|cloudy|foggy|hail|rain|snow|sleet|sunny|windy]
+    pattern: "[clear sky|cloudy|foggy|hail|rain|snow|sleet|sunny|windy]"
     mappings:
       - MIxS:samp_weather
 
@@ -2818,6 +3002,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: {float}
+    pattern: "\d+[.\d+]"
     mappings:
       - MIxS:samp_time_out
 
@@ -2829,6 +3014,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [Spring|Summer|Fall|Winter]
+    pattern: "[Spring|Summer|Fall|Winter]"
     mappings:
       - MIxS:season
 
@@ -2840,6 +3026,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [Spring|Summer|Fall|Winter]
+    pattern: "[Spring|Summer|Fall|Winter]"
     mappings:
       - MIxS:season_use
 
@@ -2851,6 +3038,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [damaged|needs repair|new|rupture|visible wear]
+    pattern: "[damaged|needs repair|new|rupture|visible wear]"
     mappings:
       - MIxS:shading_device_cond
 
@@ -2862,6 +3050,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [exterior|interior]
+    pattern: "[exterior|interior]"
     mappings:
       - MIxS:shading_device_loc
 
@@ -2884,6 +3073,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [presence of mold visible|no presence of mold visible]
+    pattern: "[presence of mold visible|no presence of mold visible]"
     mappings:
       - MIxS:shading_device_water_mold
 
@@ -2895,6 +3085,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [bahama shutters|exterior roll blind|gambrel awning|hood awning|porchroller awning|sarasota shutters|slatted aluminum|solid aluminum awning|sun screen|tree|trellis|venetian awning]
+    pattern: "[bahama shutters|exterior roll blind|gambrel awning|hood awning|porchroller awning|sarasota shutters|slatted aluminum|solid aluminum awning|sun screen|tree|trellis|venetian awning]"
     mappings:
       - MIxS:shading_device_type
 
@@ -2906,6 +3097,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:specific_humidity
 
@@ -2917,6 +3110,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [operation|as built|construction|bid|design|photos]
+    pattern: "[operation|as built|construction|bid|design|photos]"
     mappings:
       - MIxS:specific
 
@@ -2928,6 +3122,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:temp_out
 
@@ -2939,6 +3135,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [red|green|orange]
+    pattern: "[red|green|orange]"
     mappings:
       - MIxS:train_line
 
@@ -2950,6 +3147,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [south station above ground|south station underground|south station amtrak|forest hills|riverside]
+    pattern: "[south station above ground|south station underground|south station amtrak|forest hills|riverside]"
     mappings:
       - MIxS:train_stat_loc
 
@@ -2961,6 +3159,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [end|mid|downtown]
+    pattern: "[end|mid|downtown]"
     mappings:
       - MIxS:train_stop_loc
 
@@ -2972,6 +3171,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: "[photos|videos|commonly of the building|site context (adjacent buildings, vegetation, terrain, streets)|interiors|equipment|3D scans]"
+    pattern: ""[photos|videos|commonly of the building|site context (adjacent buildings, vegetation, terrain, streets)|interiors|equipment|3D scans]""
     mappings:
       - MIxS:vis_media
 
@@ -2983,6 +3183,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:wall_area
 
@@ -2994,6 +3196,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [frame construction|joisted masonry|light noncombustible|masonry noncombustible|modified fire resistive|fire resistive]
+    pattern: "[frame construction|joisted masonry|light noncombustible|masonry noncombustible|modified fire resistive|fire resistive]"
     mappings:
       - MIxS:wall_const_type
 
@@ -3005,6 +3208,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [plaster|gypsum plaster|veneer plaster|gypsum board|tile|terrazzo|stone facing|acoustical treatment|wood|metal|masonry]
+    pattern: "[plaster|gypsum plaster|veneer plaster|gypsum board|tile|terrazzo|stone facing|acoustical treatment|wood|metal|masonry]"
     mappings:
       - MIxS:wall_finish_mat
 
@@ -3016,6 +3220,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:wall_height
 
@@ -3027,6 +3233,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [north|south|east|west]
+    pattern: "[north|south|east|west]"
     mappings:
       - MIxS:wall_loc
 
@@ -3038,6 +3245,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [presence of mold visible|no presence of mold visible]
+    pattern: "[presence of mold visible|no presence of mold visible]"
     mappings:
       - MIxS:wall_water_mold
 
@@ -3049,6 +3257,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [painted|wall paper|no treatment|paneling|stucco|fabric]
+    pattern: "[painted|wall paper|no treatment|paneling|stucco|fabric]"
     mappings:
       - MIxS:wall_surf_treatment
 
@@ -3060,6 +3269,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [crows feet|crows-foot stomp||double skip|hawk and trowel|knockdown|popcorn|orange peel|rosebud stomp|Santa-Fe texture|skip trowel|smooth|stomp knockdown|swirl]
+    pattern: "[crows feet|crows-foot stomp||double skip|hawk and trowel|knockdown|popcorn|orange peel|rosebud stomp|Santa-Fe texture|skip trowel|smooth|stomp knockdown|swirl]"
     mappings:
       - MIxS:wall_texture
 
@@ -3071,6 +3281,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:wall_thermal_mass
 
@@ -3082,6 +3294,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:water_feat_size
 
@@ -3093,6 +3307,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [fountain|pool|standing feature|stream|waterfall]
+    pattern: "[fountain|pool|standing feature|stream|waterfall]"
     mappings:
       - MIxS:water_feat_type
 
@@ -3104,6 +3319,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday]
+    pattern: "[Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday]"
     mappings:
       - MIxS:weekday
 
@@ -3115,6 +3331,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit} x {float} {unit}
+    pattern: "\d+[.\d+] \S+ x \d+[.\d+] \S+"
+    string_serialization: "{float} {unit} x {float} {unit}"
     mappings:
       - MIxS:window_size
 
@@ -3126,6 +3344,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [damaged|needs repair|new|rupture|visible wear]
+    pattern: "[damaged|needs repair|new|rupture|visible wear]"
     mappings:
       - MIxS:window_cond
 
@@ -3137,6 +3356,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [blinds|curtains|none]
+    pattern: "[blinds|curtains|none]"
     mappings:
       - MIxS:window_cover
 
@@ -3148,6 +3368,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [left|middle|right]
+    pattern: "[left|middle|right]"
     mappings:
       - MIxS:window_horiz_pos
 
@@ -3159,6 +3380,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [north|south|east|west]
+    pattern: "[north|south|east|west]"
     mappings:
       - MIxS:window_loc
 
@@ -3170,6 +3392,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [clad|fiberglass|metal|vinyl|wood]
+    pattern: "[clad|fiberglass|metal|vinyl|wood]"
     mappings:
       - MIxS:window_mat
 
@@ -3192,6 +3415,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [presence of mold visible|no presence of mold visible]
+    pattern: "[presence of mold visible|no presence of mold visible]"
     mappings:
       - MIxS:window_water_mold
 
@@ -3203,6 +3427,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [closed|open]
+    pattern: "[closed|open]"
     mappings:
       - MIxS:window_status
 
@@ -3214,6 +3439,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [single-hung sash window|horizontal sash window|fixed window] 
+    pattern: "[single-hung sash window|horizontal sash window|fixed window] "
     mappings:
       - MIxS:window_type
 
@@ -3225,6 +3451,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [bottom|middle|top|low|middle|high]
+    pattern: "[bottom|middle|top|low|middle|high]"
     mappings:
       - MIxS:window_vert_pos
 
@@ -3247,6 +3474,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [wild|natural|semi-natural|inbred line|breeder's line|hybrid|clonal selection|mutant]
+    pattern: "[wild|natural|semi-natural|inbred line|breeder's line|hybrid|clonal selection|mutant]"
     mappings:
       - MIxS:biol_stat
 
@@ -3280,6 +3508,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [active surveillance in response to an outbreak|active surveillance not initiated by an outbreak|farm sample|market sample|other]
+    pattern: "[active surveillance in response to an outbreak|active surveillance not initiated by an outbreak|farm sample|market sample|other]"
     mappings:
       - MIxS:samp_capt_status
 
@@ -3324,6 +3553,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_age
 
@@ -3346,6 +3577,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [male|female|neuter|hermaphrodite|not determined]
+    pattern: "[male|female|neuter|hermaphrodite|not determined]"
     mappings:
       - MIxS:host_sex
 
@@ -3379,6 +3611,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}
+    pattern: ".* \S+:\S+"
     mappings:
       - MIxS:host_body_site
 
@@ -3390,6 +3623,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}
+    pattern: ".* \S+:\S+"
     mappings:
       - MIxS:host_body_product
 
@@ -3401,6 +3635,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_tot_mass
 
@@ -3412,6 +3648,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_height
 
@@ -3423,6 +3661,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_length
 
@@ -3522,6 +3762,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}
+    pattern: ".* \S+:\S+"
     mappings:
       - MIxS:host_phenotype
 
@@ -3533,6 +3774,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_body_temp
 
@@ -3544,6 +3787,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_dry_mass
 
@@ -3555,6 +3800,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_blood_press_diast
 
@@ -3566,6 +3813,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_blood_press_syst
 
@@ -3621,6 +3870,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: boolean value  ## syntax: {boolean}
+    pattern: "[true|false]"
     mappings:
       - MIxS:smoker
 
@@ -3632,6 +3882,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: {boolean};{boolean}
+    pattern: "[true|false];[true|false]"
     mappings:
       - MIxS:host_hiv_stat
 
@@ -3654,6 +3905,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_body_mass_index
 
@@ -3676,6 +3929,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {boolean};{float} {unit}
+    pattern: "[true|false];\d+[.\d+] \S+"
+    string_serialization: "{boolean};{float} {unit}"
     mappings:
       - MIxS:weight_loss_3_month
 
@@ -3731,6 +3986,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: boolean value  ## syntax: {boolean}
+    pattern: "[true|false]"
     mappings:
       - MIxS:twin_sibling
 
@@ -3742,6 +3998,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: boolean value  ## syntax: {boolean}
+    pattern: "[true|false]"
     mappings:
       - MIxS:medic_hist_perform
 
@@ -3753,6 +4010,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: {boolean};[adverse event|non-compliance|lost to follow up|other-specify]
+    pattern: "[true|false];[adverse event|non-compliance|lost to follow up|other-specify]"
     mappings:
       - MIxS:study_complt_stat
 
@@ -3797,6 +4055,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_pulse
 
@@ -3874,6 +4134,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [clean catch|catheter]
+    pattern: "[clean catch|catheter]"
     mappings:
       - MIxS:urine_collect_meth
 
@@ -3907,6 +4168,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [low carb|reduced calorie|vegetarian|other(to be specified)]
+    pattern: "[low carb|reduced calorie|vegetarian|other(to be specified)]"
     mappings:
       - MIxS:special_diet
 
@@ -3962,6 +4224,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [left|right|ambidextrous]
+    pattern: "[left|right|ambidextrous]"
     mappings:
       - MIxS:dominant_hand
 
@@ -4050,6 +4313,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: boolean value  ## syntax: {boolean}
+    pattern: "[true|false]"
     mappings:
       - MIxS:hysterectomy
 
@@ -4083,6 +4347,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [Oil Reservoir|Gas Reservoir|Oil Sand|Coalbed|Shale|Tight Oil Reservoir|Tight Gas Reservoir|other]
+    pattern: "[Oil Reservoir|Gas Reservoir|Oil Sand|Coalbed|Shale|Tight Oil Reservoir|Tight Gas Reservoir|other]"
     mappings:
       - MIxS:hcr
 
@@ -4094,6 +4359,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [Oil|Gas-Condensate|Gas|Bitumen|Coalbed Methane|other]
+    pattern: "[Oil|Gas-Condensate|Gas|Bitumen|Coalbed Methane|other]"
     mappings:
       - MIxS:hc_produced
 
@@ -4138,6 +4404,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} - {float} {unit}
+    pattern: "\d+[.\d+] - \d+[.\d+] \S+"
+    string_serialization: "{float} - {float} {unit}"
     mappings:
       - MIxS:hcr_temp
 
@@ -4149,6 +4417,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tvdss_of_hcr_temp
 
@@ -4160,6 +4430,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} - {float} {unit}
+    pattern: "\d+[.\d+] - \d+[.\d+] \S+"
+    string_serialization: "{float} - {float} {unit}"
     mappings:
       - MIxS:hcr_pressure
 
@@ -4171,6 +4443,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tvdss_of_hcr_pressure
 
@@ -4182,6 +4456,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {integer} - {integer} {unit}
+    string_serialization: "{integer} - {integer} {unit}"
     mappings:
       - MIxS:permeability
 
@@ -4193,6 +4468,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} - {float} {unit}
+    pattern: "\d+[.\d+] - \d+[.\d+] \S+"
+    string_serialization: "{float} - {float} {unit}"
     mappings:
       - MIxS:porosity
 
@@ -4204,6 +4481,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [Basement|Chalk|Chert|Coal|Conglomerate|Diatomite|Dolomite|Limestone|Sandstone|Shale|Siltstone|Volcanic|other]
+    pattern: "[Basement|Chalk|Chert|Coal|Conglomerate|Diatomite|Dolomite|Limestone|Sandstone|Shale|Siltstone|Volcanic|other]"
     mappings:
       - MIxS:lithology
 
@@ -4215,6 +4493,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [Continental - Alluvial|Continental - Aeolian|Continental - Fluvial|Continental - Lacustrine|Transitional - Deltaic|Transitional - Tidal|Transitional - Lagoonal|Transitional - Beach|Transitional - Lake|Marine - Shallow|Marine - Deep|Marine - Reef|Other - Evaporite|Other - Glacial|Other - Volcanic|other]
+    pattern: "[Continental - Alluvial|Continental - Aeolian|Continental - Fluvial|Continental - Lacustrine|Transitional - Deltaic|Transitional - Tidal|Transitional - Lagoonal|Transitional - Beach|Transitional - Lake|Marine - Shallow|Marine - Deep|Marine - Reef|Other - Evaporite|Other - Glacial|Other - Volcanic|other]"
     mappings:
       - MIxS:depos_env
 
@@ -4226,6 +4505,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [Archean|Cambrian|Carboniferous|Cenozoic|Cretaceous|Devonian|Jurassic|Mesozoic|Neogene|Ordovician|Paleogene|Paleozoic|Permian|Precambrian|Proterozoic|Silurian|Triassic|other]
+    pattern: "[Archean|Cambrian|Carboniferous|Cenozoic|Cretaceous|Devonian|Jurassic|Mesozoic|Neogene|Ordovician|Paleogene|Paleozoic|Permian|Precambrian|Proterozoic|Silurian|Triassic|other]"
     mappings:
       - MIxS:hcr_geol_age
 
@@ -4237,6 +4517,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:owc_tvdss
 
@@ -4248,6 +4530,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:hcr_fw_salinity
 
@@ -4259,6 +4543,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:sulfate_fw
 
@@ -4270,6 +4556,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:vfa_fw
 
@@ -4281,6 +4569,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [Type I|Type II|Type III|Type IV|other]
+    pattern: "[Type I|Type II|Type III|Type IV|other]"
     mappings:
       - MIxS:sr_kerog_type
 
@@ -4292,6 +4581,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [Clastic|Carbonate|Coal|Biosilicieous|other]
+    pattern: "[Clastic|Carbonate|Coal|Biosilicieous|other]"
     mappings:
       - MIxS:sr_lithology
 
@@ -4303,6 +4593,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [Lacustine|Fluvioldeltaic|Fluviomarine|Marine|other]
+    pattern: "[Lacustine|Fluvioldeltaic|Fluviomarine|Marine|other]"
     mappings:
       - MIxS:sr_dep_env
 
@@ -4314,6 +4605,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [Archean|Cambrian|Carboniferous|Cenozoic|Cretaceous|Devonian|Jurassic|Mesozoic|Neogene|Ordovician|Paleogene|Paleozoic|Permian|Precambrian|Proterozoic|Silurian|Triassic|other]
+    pattern: "[Archean|Cambrian|Carboniferous|Cenozoic|Cretaceous|Devonian|Jurassic|Mesozoic|Neogene|Ordovician|Paleogene|Paleozoic|Permian|Precambrian|Proterozoic|Silurian|Triassic|other]"
     mappings:
       - MIxS:sr_geol_age
 
@@ -4347,6 +4639,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [core|rock trimmings|drill cuttings|piping section|coupon|pigging debris|solid deposit|produced fluid|produced water|injected water|water from treatment plant|fresh water|sea water|drilling fluid|procedural blank|positive control|negative control|other]
+    pattern: "[core|rock trimmings|drill cuttings|piping section|coupon|pigging debris|solid deposit|produced fluid|produced water|injected water|water from treatment plant|fresh water|sea water|drilling fluid|procedural blank|positive control|negative control|other]"
     mappings:
       - MIxS:samp_type
 
@@ -4358,6 +4651,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [oil phase|water phase|biofilm|not applicable|other]
+    pattern: "[oil phase|water phase|biofilm|not applicable|other]"
     mappings:
       - MIxS:samp_subtype
 
@@ -4369,6 +4663,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:pressure
 
@@ -4380,6 +4676,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float}-{float} {unit}
+    pattern: "\d+[.\d+]-\d+[.\d+] \S+"
+    string_serialization: "{float}-{float} {unit}"
     mappings:
       - MIxS:samp_tvdss
 
@@ -4391,6 +4689,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit};[GL|DF|RT|KB|MSL|other]
+    pattern: "\d+[.\d+] \S+;[GL|DF|RT|KB|MSL|other]"
+    string_serialization: "{float} {unit};[GL|DF|RT|KB|MSL|other]"
     mappings:
       - MIxS:samp_md
 
@@ -4402,6 +4702,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit};{float} {unit}
+    pattern: "\d+[.\d+] \S+;\d+[.\d+] \S+"
+    string_serialization: "{float} {unit};{float} {unit}"
     mappings:
       - MIxS:samp_transport_cond
 
@@ -4424,6 +4726,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float}
+    pattern: "\d+[.\d+]"
     mappings:
       - MIxS:ph
 
@@ -4435,6 +4738,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:alkalinity
 
@@ -4457,6 +4762,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:sulfate
 
@@ -4468,6 +4775,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:sulfide
 
@@ -4479,6 +4788,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_sulfur
 
@@ -4490,6 +4801,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:nitrate
 
@@ -4501,6 +4814,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:nitrite
 
@@ -4512,6 +4827,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:ammonium
 
@@ -4523,6 +4840,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_nitro
 
@@ -4534,6 +4853,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_iron
 
@@ -4545,6 +4866,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:sodium
 
@@ -4556,6 +4879,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:chloride
 
@@ -4567,6 +4892,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:potassium
 
@@ -4578,6 +4905,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:magnesium
 
@@ -4589,6 +4918,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:calcium
 
@@ -4600,6 +4931,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_iron
 
@@ -4611,6 +4944,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_org_carb
 
@@ -4622,6 +4957,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_inorg_carb
 
@@ -4633,6 +4970,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_inorg_phosp
 
@@ -4644,6 +4983,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_phosp
 
@@ -4655,6 +4996,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:suspend_solids
 
@@ -4666,6 +5008,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:density
 
@@ -4677,6 +5021,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_carb_dioxide
 
@@ -4688,6 +5034,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_oxygen_fluid
 
@@ -4699,6 +5047,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:vfa
 
@@ -4710,6 +5060,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:benzene
 
@@ -4721,6 +5073,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:toluene
 
@@ -4732,6 +5086,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:ethylbenzene
 
@@ -4743,6 +5099,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:xylene
 
@@ -4754,6 +5112,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:api
 
@@ -4765,6 +5125,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tan
 
@@ -4776,6 +5138,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit};{float} {unit}
+    pattern: "\d+[.\d+] \S+;\d+[.\d+] \S+"
+    string_serialization: "{float} {unit};{float} {unit}"
     mappings:
       - MIxS:viscosity
 
@@ -4787,6 +5151,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:pour_point 
 
@@ -4798,6 +5164,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:saturates_pc
 
@@ -4809,6 +5176,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:aromatics_pc
 
@@ -4820,6 +5188,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:resins_pc
 
@@ -4831,6 +5200,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:asphaltenes_pc
 
@@ -4864,6 +5234,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:prod_rate
 
@@ -4875,6 +5247,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:water_production_rate
 
@@ -4886,6 +5260,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:water_cut
 
@@ -4897,6 +5273,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:iwf
 
@@ -4941,6 +5319,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit};{Rn/start_time/end_time/duration};{duration}
+    string_serialization: "{float} {unit};{Rn/start_time/end_time/duration};{duration}"
     mappings:
       - MIxS:biocide_admin_method
 
@@ -4963,6 +5342,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit};{Rn/start_time/end_time/duration};{duration};{duration}
+    string_serialization: "{float} {unit};{Rn/start_time/end_time/duration};{duration};{duration}"
     mappings:
       - MIxS:chem_treatment_method
 
@@ -4974,6 +5354,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} - {float} {unit}
+    pattern: "\d+[.\d+] - \d+[.\d+] \S+"
+    string_serialization: "{float} - {float} {unit}"
     mappings:
       - MIxS:samp_loc_corr_rate
 
@@ -4985,6 +5367,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [well|test well|drilling rig|wellhead|separator|storage tank|other]
+    pattern: "[well|test well|drilling rig|wellhead|separator|storage tank|other]"
     mappings:
       - MIxS:samp_collection_point
 
@@ -4996,6 +5379,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:samp_preserv
 
@@ -5007,6 +5391,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:alkyl_diethers
 
@@ -5018,6 +5404,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:aminopept_act
 
@@ -5029,6 +5417,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:bacteria_carb_prod
 
@@ -5040,6 +5430,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:biomass
 
@@ -5051,6 +5442,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:bishomohopanol
 
@@ -5062,6 +5455,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:bromide
 
@@ -5073,6 +5468,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:carb_nitro_ratio
 
@@ -5084,6 +5481,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:chlorophyll
 
@@ -5095,6 +5494,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:diether_lipids
 
@@ -5106,6 +5506,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_hydrogen
 
@@ -5117,6 +5519,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_org_nitro
 
@@ -5128,6 +5532,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_oxygen
 
@@ -5139,6 +5545,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:glucosidase_act
 
@@ -5150,6 +5558,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:mean_frict_vel
 
@@ -5161,6 +5571,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:mean_peak_frict_vel
 
@@ -5172,6 +5584,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:n_alkanes
 
@@ -5183,6 +5596,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:nitro
 
@@ -5194,6 +5609,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:org_carb
 
@@ -5205,6 +5622,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:org_matter
 
@@ -5216,6 +5635,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:org_nitro
 
@@ -5227,6 +5648,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:part_org_carb
 
@@ -5238,6 +5661,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:petroleum_hydrocarb
 
@@ -5249,6 +5674,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:phaeopigments
 
@@ -5260,6 +5686,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:phosphate
 
@@ -5271,6 +5699,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:phosplipid_fatt_acid
 
@@ -5282,6 +5711,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:redox_potential
 
@@ -5293,6 +5724,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:salinity
 
@@ -5304,6 +5737,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:silicate
 
@@ -5315,6 +5750,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_carb
 
@@ -5326,6 +5763,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_nitro_content
 
@@ -5337,6 +5776,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_org_carb
 
@@ -5348,6 +5789,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:turbidity
 
@@ -5359,6 +5802,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:water_content
 
@@ -5370,6 +5815,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:water_current
 
@@ -5381,6 +5828,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit};{Rn/start_time/end_time/duration}
+    string_serialization: "{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
       - MIxS:air_temp_regm
 
@@ -5392,6 +5840,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
+    string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
       - MIxS:antibiotic_regm
 
@@ -5414,6 +5863,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
+    string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
       - MIxS:chem_mutagen
 
@@ -5447,6 +5897,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
+    string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
       - MIxS:fertilizer_regm
 
@@ -5458,6 +5909,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
+    string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
       - MIxS:fungicide_regm
 
@@ -5469,6 +5921,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
+    string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
       - MIxS:gaseous_environment
 
@@ -5480,6 +5933,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit};{Rn/start_time/end_time/duration}
+    string_serialization: "{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
       - MIxS:gravity
 
@@ -5502,6 +5956,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [erect|semi-erect|spreading|prostrate] 
+    pattern: "[erect|semi-erect|spreading|prostrate] "
     mappings:
       - MIxS:growth_habit
 
@@ -5513,6 +5968,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
+    string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
       - MIxS:growth_hormone_regm
 
@@ -5524,6 +5980,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
+    string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
       - MIxS:herbicide_regm
 
@@ -5535,6 +5992,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_wet_mass
 
@@ -5546,6 +6005,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit};{Rn/start_time/end_time/duration}
+    string_serialization: "{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
       - MIxS:humidity_regm
 
@@ -5557,6 +6017,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit};{float} {unit}
+    string_serialization: "{text};{float} {unit};{float} {unit}"
     mappings:
       - MIxS:light_regm
 
@@ -5579,6 +6040,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
+    string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
       - MIxS:mineral_nutr_regm
 
@@ -5590,6 +6052,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
+    string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
       - MIxS:non_mineral_nutr_regm
 
@@ -5612,6 +6075,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
+    string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
       - MIxS:pesticide_regm
 
@@ -5623,6 +6087,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}
+    pattern: ".* \S+:\S+"
     mappings:
       - MIxS:plant_growth_med
 
@@ -5645,6 +6110,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [Androdioecious|Androecious|Androgynous|Androgynomonoecious|Andromonoecious|Bisexual|Dichogamous|Diclinous|Dioecious|Gynodioecious|Gynoecious|Gynomonoecious|Hermaphroditic|Imperfect|Monoclinous|Monoecious|Perfect|Polygamodioecious|Polygamomonoecious|Polygamous|Protandrous|Protogynous|Subandroecious|Subdioecious|Subgynoecious|Synoecious|Trimonoecious|Trioecious|Unisexual]
+    pattern: "[Androdioecious|Androecious|Androgynous|Androgynomonoecious|Andromonoecious|Bisexual|Dichogamous|Diclinous|Dioecious|Gynodioecious|Gynoecious|Gynomonoecious|Hermaphroditic|Imperfect|Monoclinous|Monoecious|Perfect|Polygamodioecious|Polygamomonoecious|Polygamous|Protandrous|Protogynous|Subandroecious|Subdioecious|Subgynoecious|Synoecious|Trimonoecious|Trioecious|Unisexual]"
     mappings:
       - MIxS:plant_sex
 
@@ -5656,6 +6122,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}
+    pattern: ".* \S+:\S+"
     mappings:
       - MIxS:plant_struc
 
@@ -5667,6 +6134,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
+    string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
       - MIxS:radiation_regm
 
@@ -5678,6 +6146,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit};{Rn/start_time/end_time/duration}
+    string_serialization: "{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
       - MIxS:rainfall_regm
 
@@ -5700,6 +6169,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:root_med_carbon
 
@@ -5711,6 +6181,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:root_med_macronutr
 
@@ -5722,6 +6193,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:root_med_micronutr
 
@@ -5733,6 +6205,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:root_med_suppl
 
@@ -5744,6 +6217,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float}
+    pattern: "\d+[.\d+]"
     mappings:
       - MIxS:root_med_ph
 
@@ -5755,6 +6229,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:root_med_regl
 
@@ -5777,6 +6252,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
+    string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
       - MIxS:salt_regm
 
@@ -5821,6 +6297,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit};{Rn/start_time/end_time/duration}
+    string_serialization: "{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
       - MIxS:water_temp_regm
 
@@ -5832,6 +6309,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit};{Rn/start_time/end_time/duration}
+    string_serialization: "{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
       - MIxS:watering_regm
 
@@ -5843,6 +6321,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:particle_class
 
@@ -5854,6 +6333,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [biogenous|cosmogenous|hydrogenous|lithogenous]
+    pattern: "[biogenous|cosmogenous|hydrogenous|lithogenous]"
     mappings:
       - MIxS:sediment_type
 
@@ -5865,6 +6345,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [low tide|ebb tide|flood tide|high tide]
+    pattern: "[low tide|ebb tide|flood tide|high tide]"
     mappings:
       - MIxS:tidal_stage
 
@@ -5876,6 +6357,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_depth_water_col
 
@@ -5887,6 +6370,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: "[cities|farmstead|industrial areas|roads/railroads|rock|sand|gravel|mudflats|salt flats|badlands|permanent snow or ice|saline seeps|mines/quarries|oil waste areas|small grains|row crops|vegetable crops|horticultural plants (e.g. tulips)|marshlands (grass,sedges,rushes)|tundra (mosses,lichens)|rangeland|pastureland (grasslands used for livestock grazing)|hayland|meadows (grasses,alfalfa,fescue,bromegrass,timothy)|shrub land (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus)|successional shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)|shrub crops (blueberries,nursery ornamentals,filberts)|vine crops (grapes)|conifers (e.g. pine,spruce,fir,cypress)|hardwoods (e.g. oak,hickory,elm,aspen)|intermixed hardwood and conifers|tropical (e.g. mangrove,palms)|rainforest (evergreen forest receiving >406 cm annual rainfall)|swamp (permanent or semi-permanent water body dominated by woody plants)|crop trees (nuts,fruit,christmas trees,nursery trees)]"
+    pattern: ""[cities|farmstead|industrial areas|roads/railroads|rock|sand|gravel|mudflats|salt flats|badlands|permanent snow or ice|saline seeps|mines/quarries|oil waste areas|small grains|row crops|vegetable crops|horticultural plants (e.g. tulips)|marshlands (grass,sedges,rushes)|tundra (mosses,lichens)|rangeland|pastureland (grasslands used for livestock grazing)|hayland|meadows (grasses,alfalfa,fescue,bromegrass,timothy)|shrub land (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus)|successional shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)|shrub crops (blueberries,nursery ornamentals,filberts)|vine crops (grapes)|conifers (e.g. pine,spruce,fir,cypress)|hardwoods (e.g. oak,hickory,elm,aspen)|intermixed hardwood and conifers|tropical (e.g. mangrove,palms)|rainforest (evergreen forest receiving >406 cm annual rainfall)|swamp (permanent or semi-permanent water body dominated by woody plants)|crop trees (nuts,fruit,christmas trees,nursery trees)]""
     mappings:
       - MIxS:cur_land_use
 
@@ -5953,6 +6437,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit};{timestamp}
+    string_serialization: "{text};{float} {unit};{timestamp}"
     mappings:
       - MIxS:agrochem_addition
 
@@ -5964,6 +6449,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [drill|cutting disc|ridge till|strip tillage|zonal tillage|chisel|tined|mouldboard|disc plough]
+    pattern: "[drill|cutting disc|ridge till|strip tillage|zonal tillage|chisel|tined|mouldboard|disc plough]"
     mappings:
       - MIxS:tillage
 
@@ -6008,6 +6494,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [O horizon|A horizon|E horizon|B horizon|C horizon|R layer|Permafrost]
+    pattern: "[O horizon|A horizon|E horizon|B horizon|C horizon|R layer|Permafrost]"
     mappings:
       - MIxS:horizon
 
@@ -6030,6 +6517,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {{text}|{float} {unit}};{float} {unit}
+    string_serialization: "{{text}|{float} {unit}};{float} {unit}"
     mappings:
       - MIxS:sieving
 
@@ -6085,6 +6573,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:annual_temp
 
@@ -6096,6 +6586,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:season_temp
 
@@ -6107,6 +6599,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:annual_precpt
 
@@ -6118,6 +6612,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:season_precpt
 
@@ -6140,6 +6636,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [Acrisols|Andosols|Arenosols|Cambisols|Chernozems|Ferralsols|Fluvisols|Gleysols|Greyzems|Gypsisols|Histosols|Kastanozems|Lithosols|Luvisols|Nitosols|Phaeozems|Planosols|Podzols|Podzoluvisols|Rankers|Regosols|Rendzinas|Solonchaks|Solonetz|Vertisols|Yermosols]
+    pattern: "[Acrisols|Andosols|Arenosols|Cambisols|Chernozems|Ferralsols|Fluvisols|Gleysols|Greyzems|Gypsisols|Histosols|Kastanozems|Lithosols|Luvisols|Nitosols|Phaeozems|Planosols|Podzols|Podzoluvisols|Rankers|Regosols|Rendzinas|Solonchaks|Solonetz|Vertisols|Yermosols]"
     mappings:
       - MIxS:fao_class
 
@@ -6195,6 +6692,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:slope_gradient
 
@@ -6206,6 +6705,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:slope_aspect
 
@@ -6217,6 +6718,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [summit|shoulder|backslope|footslope|toeslope]
+    pattern: "[summit|shoulder|backslope|footslope|toeslope]"
     mappings:
       - MIxS:profile_position
 
@@ -6228,6 +6730,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [very poorly|poorly|somewhat poorly|moderately well|well|excessively drained]
+    pattern: "[very poorly|poorly|somewhat poorly|moderately well|well|excessively drained]"
     mappings:
       - MIxS:drainage_class
 
@@ -6239,6 +6742,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:texture
 
@@ -6294,6 +6799,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:microbial_biomass
 
@@ -6327,6 +6834,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:extreme_salinity
 
@@ -6349,6 +6858,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:heavy_metals
 
@@ -6371,6 +6881,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:al_sat
 
@@ -6393,6 +6905,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:biochem_oxygen_dem
 
@@ -6404,6 +6918,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:chem_oxygen_dem
 
@@ -6415,6 +6931,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:efficiency_percent
 
@@ -6426,6 +6944,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:emulsions
 
@@ -6437,6 +6956,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:gaseous_substances
 
@@ -6448,6 +6968,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:indust_eff_percent
 
@@ -6459,6 +6981,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:inorg_particles
 
@@ -6470,6 +6993,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:org_particles
 
@@ -6536,6 +7060,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:sludge_retent_time
 
@@ -6547,6 +7073,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:soluble_inorg_mat
 
@@ -6558,6 +7085,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:soluble_org_mat
 
@@ -6580,6 +7108,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_phosphate
 
@@ -6602,6 +7132,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {text};{float} {unit}
+    string_serialization: "{text};{float} {unit}"
     mappings:
       - MIxS:atmospheric_data
 
@@ -6613,6 +7144,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:bac_prod
 
@@ -6624,6 +7157,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:bac_resp
 
@@ -6635,6 +7170,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:conduc
 
@@ -6646,6 +7183,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_inorg_nitro
 
@@ -6657,6 +7196,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:down_par
 
@@ -6668,6 +7209,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:fluor
 
@@ -6679,6 +7222,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:light_intensity
 
@@ -6690,6 +7235,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:part_org_nitro
 
@@ -6701,6 +7248,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:photon_flux
 
@@ -6712,6 +7261,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:primary_prod
 
@@ -6723,6 +7274,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:size_frac_low
 
@@ -6734,6 +7287,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:size_frac_up
 
@@ -6745,6 +7300,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:soluble_react_phosp
 
@@ -6756,6 +7313,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:suspend_part_matter
 
@@ -6767,6 +7326,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_diss_nitro
 
@@ -6778,6 +7339,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_inorg_nitro
 
@@ -6789,6 +7352,8 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
+    pattern: "\d+[.\d+] \S+"
+    string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_part_carb
 
