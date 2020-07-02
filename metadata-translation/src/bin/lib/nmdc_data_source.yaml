@@ -1,51 +1,170 @@
 classes:
   
-  study:
-    id_key: gold_id
-    name_key: study_name
-    description_key: description
-    schema_source: "../../schema/nmdc.yaml"
-    data_sources:
-      - study_table
-      - contact_table
-      - proposals_table
+  gold_study:
+    type: study
+    constructor:
+      id: gold_id
+      name: study_name
+      description: description
+    attributes:
+      - principal_investigator_name
+      - ecosystem
+      - ecosystem_category
+      - ecosystem_type
+      - ecosystem_subtype
+      - specific_ecosystem
+      - doi
+  
+  gold_omics_processing:
+    type: omics processing
+    constructor:
+      id: gold_id
+      name: project_name
+      description: description
+    attributes:
+      - {part_of: study_gold_id}
+      - {has_output: output_file_ids}
+      - add_date 
+      - mod_date
+      - completion_date 
+      - ncbi_project_name 
+      - omics_type 
+      - principal_investigator_name
+      - processing_institution
             
-  omics processing:
-    id_key: dataset_id
-    name_key: dataset_name
-    description_key: dataset_type_description
-    part_of_key: gold_study_id
-    has_output_key: data_object_id
-    schema_source: "../../schema/nmdc.yaml"
-    data_sources:
-      - project_table
-      - study_table
-      - contact_table
+  emsl_omics_processing:
+    type: omics processing
+    constructor:
+      id: dataset_id
+      name: dataset_name
+      description: dataset_type_description
+    attributes:
+      - {part_of: gold_study_id}
+      - {has_output: data_object_id}
+      
+  emsl_data_object:
+    type: data object
+    constructor:
+      id: data_object_id
+      name: data_object_name
+      description: dataset_type_description
+    attributes:
+      - file_size_bytes
+  
+  jgi_data_object:
+    type: data object
+    constructor:
+      id: file_id
+      name: file_name
+      description: file_type_description
+    attributes:
+      - file_size_bytes
 
-        
-  biosample:
-    id_key: gold_id
-    name_key: biosample_name
-    description_key: description
-    part_of_key: project_gold_id
-    schema_slots: "../../schema/nmdc.yaml"
-    data_sources:
-      gold:
-        - biosample_table
-        - project_table
-        - project_biosample_table
-
-        
-  data object:
-    id_key: data_object_id
-    name_key: data_object_name
-    schema_source: "../../schema/nmdc.yaml"
-    data_sources:
-      - ficus_faa_table
-      - ficus_fna_table
-      - ficus_fastq_table
-    
-
+  gold_biosample:
+    type: biosample
+    constructor:
+      id: 'gold_id'
+      name: 'biosample_name'
+      description: 'description'
+      env_broad_scale: [{has_raw_value: 'env_broad_scale'}, 'ControlledTermValue']
+      env_local_scale: [{has_raw_value: 'env_local_scale'}, ControlledTermValue]
+      env_medium: [{has_raw_value: 'env_medium'}, 'ControlledTermValue']
+      lat_lon: [{latitude: 'latitude', longitude: 'longitude', has_raw_value: 'lat_lon'}, 'GeolocationValue']
+    attributes:
+      - add_date
+      - mod_date
+      - collection_date
+      - ecosystem
+      - ecosystem_dcategory
+      - ecosystem_type
+      - ecosystem_subtype
+      - specific_ecosystem
+      - habitat
+      - location
+      - community
+      - ncbi_taxonomy_name
+      - geographic_location
+      - sample_collection_site
+      - identifier
+      - host_name
+      - depth
+      - subsurface_depth
+      - altitude
+      - proport_woa_temperature
+      - biogas_temperature
+      - growth_temperature
+      - water_samp_store_temp
+      - biogas_retention_time
+      - salinity
+      - pressure
+      - ph
+      - chlorophyll_concentration
+      - nitrate_concentration
+      - oxygen_concentration
+      - salinity_concentration
+      - sample_volume
+      - sample_weight_dna_ext
+      - sampling_strategy
+      - soil_link_climate_info
+      - soil_misc_param
+      - soil_misc_param 
+      - soil_water_content
+      - soluble_iron_micromol
+      - subsurface_depth2
+      - tot_nitrogen
+      - tot_org_carbon
+      - water_alkalinity
+      - water_alkalinity_method
+      - water_alkyl_diethers
+      - water_aminopept_act
+      - water_ammonium
+      - water_bacterial_carbon_prod
+      - water_bishomohopanol
+      - water_bromide
+      - water_calcium
+      - water_carbon_nitrog_ratio
+      - water_chem_administration
+      - water_chloride
+      - water_density
+      - water_diether_lipids
+      - water_diss_carbon_dioxide
+      - water_diss_hydrogen
+      - water_diss_inorg_carbon
+      - water_diss_inorg_phosphorus
+      - water_diss_org_carbon
+      - water_diss_org_nitrogen
+      - water_glucosidase_activity
+      - water_magnesium
+      - water_mean_frict_vel
+      - water_mean_peak_frict_vel
+      - water_misc_parameter
+      - water_n_alkanes
+      - water_nitrite
+      - water_org_matter
+      - water_org_nitrogen
+      - water_organism_count
+      - water_oxy_stat_sample
+      - water_part_org_carbon
+      - water_perturbation
+      - water_petroleum_hydrocarbon
+      - water_phaeopigments
+      - water_phosplipid_fatt_acid
+      - water_potassium
+      - water_redox_potential
+      - water_samp_store_dur
+      - water_samp_store_loc
+      - water_size_frac_low
+      - water_size_frac_up
+      - water_sodium
+      - water_sulfate
+      - water_sulfide
+      - water_tidal_stage
+      - water_tot_depth_water_col
+      - water_tot_diss_nitro
+      - water_tot_phosphorus
+      - water_turbidity
+      - {part_of: project_gold_ids}
+  
 data_sources:
 
   study_table:
@@ -54,8 +173,6 @@ data_sources:
       file_name: "export.sql/STUDY_DATA_TABLE.dsv"
       file_type: tsv
       file_archive_name: "../src/data/nmdc-version5.zip"
-    data_slots:
-      - contact_id
     filters:
       - field: gold_id
         values:
@@ -80,9 +197,6 @@ data_sources:
       file_name: "export.sql/CONTACT_DATA_TABLE.dsv"
       file_type: tsv
       file_archive_name: "../src/data/nmdc-version5.zip"
-    data_slots:
-      - name
-      - contact_id
     rename_slots:
       - old_name: name
         new_name: principal_investigator_name
@@ -92,19 +206,13 @@ data_sources:
     data_source:
       file_name: "../src/data/JGI-EMSL-FICUS-proposals.fnl.tsv"
       file_type: tsv
-      data_slots:
-        - doi
-        - gold_study
-
+ 
   project_table:
     id_key: project_id
     data_source:
       file_name: "export.sql/PROJECT_DATA_TABLE.dsv"
       file_type: tsv
       file_archive_name: "../src/data/nmdc-version5.zip"
-    data_slots:
-      - master_study_id
-      - pi_id
     rename_slots:
       - old_name: sequencing_strategy
         new_name: omics_type
@@ -116,10 +224,7 @@ data_sources:
       file_name: "export.sql/PROJECT_BIOSAMPLE_DATA_TABLE.dsv"
       file_type: tsv
       file_archive_name: "../src/data/nmdc-version5.zip"
-    data_slots:
-      - biosample_id
-      - project_id
-        
+    
   biosample_table:
     id_key: biosample_id
     data_source:
@@ -246,11 +351,6 @@ data_sources:
     data_source:
       file_name: "../src/data/ficus_project_faa.tsv"
       file_type: tsv      
-    data_slots:
-      - file_id
-      - gold_project_id
-      - file_type_description
-      - file_size
     append_columns:
       - name: processing_institution
         value: Environmental Molecular Sciences Lab
@@ -262,12 +362,7 @@ data_sources:
     id_key: file_id
     data_source:
       file_name: "../src/data/ficus_project_fna.tsv"
-      file_type: tsv      
-    data_slots:
-      - file_id
-      - gold_project_id
-      - file_type_description
-      - file_size
+      file_type: tsv 
     append_columns:
       - name: processing_institution
         value: Environmental Molecular Sciences Lab
@@ -280,11 +375,6 @@ data_sources:
     data_source:
       file_name: "../src/data/ficus_project_fastq.tsv"
       file_type: tsv      
-    data_slots:
-      - file_id
-      - gold_project_id
-      - file_type_description
-      - file_size
     append_columns:
       - name: processing_institution
         value: Environmental Molecular Sciences Lab
@@ -297,18 +387,12 @@ data_sources:
     data_source:
       file_name: "../src/data/FICUS - JGI-EMSL Proposal - Gold Study - ID mapping and PI.xlsx"
       file_type: excel
-    data_slots:
-      - emsl_proposal_id
-      - gold_study_id
-        
+
   ficus_emsl:
     id_key: dataset_id
     data_source: 
       file_name: "../src/data/EMSL_FICUS_project_process_data_export.xlsx"
       file_type: multi-sheet-excel
-    data_slots:
-      - experimental_data_type
-      - instrument_name
     rename_slots:
       - old_name: experimental_data_type
         new_name: omics_type

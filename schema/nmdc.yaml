@@ -64,7 +64,7 @@ classes:
       An object that primarily consists of symbols that represent information.  
       Files, records, and omics data are examples of data objects. 
     slots:
-      - file_size
+      - file_size_bytes
     id_prefixes:
       - GOLD
 
@@ -130,16 +130,22 @@ classes:
     description: >-
       A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.  
     slots:
-      - submitted_to_insdc
-      - investigation_type
-      - project_name
-      - experimental_factor
+      #- submitted_to_insdc
+      #- investigation_type
+      #- project_name
+      #- experimental_factor
       - ecosystem
       - ecosystem_category
       - ecosystem_type
       - ecosystem_subtype
       - specific_ecosystem
       - principal investigator
+      - doi
+    todos:
+      - determine how to get data values for submitted_to_insdc, investigation_type, experimental_factor
+      - project_name is redundant with name, so excluding it
+      
+        
     slot_usage:
       id:
         description: >-
@@ -263,14 +269,12 @@ slots:
 
   ## DATA
 
-  file_size:
+  file_size_bytes:
     is_a: attribute
     range: integer
     description: >-
       units should be bytes
-    todos:
-      - rename to file_size_bytes
-    
+  
   ## GOLD SPECIFIC
 
   principal investigator:
@@ -281,7 +285,11 @@ slots:
     range: person value
     description: >-
       represents the PI
-  
+
+  doi:
+    is_a: attribute
+    range: attribute value
+    
   ## GOLD PATHS
 
   gold_path_field:

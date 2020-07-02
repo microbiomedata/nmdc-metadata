@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-06-26 15:05
+# Generation date: 2020-06-30 20:48
 # Schema: NMDC Schema
 #
 # id: https://microbiomedata/schema
@@ -190,7 +190,7 @@ class DataObject(NamedThing):
     class_model_uri: ClassVar[URIRef] = NMDC.DataObject
 
     id: Union[str, DataObjectId] = None
-    file_size: Optional[int] = None
+    file_size_bytes: Optional[int] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -282,30 +282,19 @@ class Study(NamedThing):
     id: Union[str, StudyId] = None
     name: Optional[str] = None
     alternate_identifiers: List[str] = empty_list()
-    submitted_to_insdc: Optional[Union[dict, "BooleanValue"]] = None
-    investigation_type: Optional[Union[dict, "TextValue"]] = None
-    project_name: Optional[Union[dict, "TextValue"]] = None
-    experimental_factor: Optional[Union[dict, "ControlledTermValue"]] = None
     ecosystem: Optional[Union[dict, "AttributeValue"]] = None
     ecosystem_category: Optional[Union[dict, "AttributeValue"]] = None
     ecosystem_type: Optional[Union[dict, "AttributeValue"]] = None
     ecosystem_subtype: Optional[Union[dict, "AttributeValue"]] = None
     specific_ecosystem: Optional[Union[dict, "AttributeValue"]] = None
     principal_investigator: Optional[Union[dict, "PersonValue"]] = None
+    doi: Optional[Union[dict, "AttributeValue"]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, StudyId):
             self.id = StudyId(self.id)
-        if self.submitted_to_insdc is not None and not isinstance(self.submitted_to_insdc, BooleanValue):
-            self.submitted_to_insdc = BooleanValue(**self.submitted_to_insdc)
-        if self.investigation_type is not None and not isinstance(self.investigation_type, TextValue):
-            self.investigation_type = TextValue(**self.investigation_type)
-        if self.project_name is not None and not isinstance(self.project_name, TextValue):
-            self.project_name = TextValue(**self.project_name)
-        if self.experimental_factor is not None and not isinstance(self.experimental_factor, ControlledTermValue):
-            self.experimental_factor = ControlledTermValue(**self.experimental_factor)
         if self.ecosystem is not None and not isinstance(self.ecosystem, AttributeValue):
             self.ecosystem = AttributeValue(**self.ecosystem)
         if self.ecosystem_category is not None and not isinstance(self.ecosystem_category, AttributeValue):
@@ -318,6 +307,8 @@ class Study(NamedThing):
             self.specific_ecosystem = AttributeValue(**self.specific_ecosystem)
         if self.principal_investigator is not None and not isinstance(self.principal_investigator, PersonValue):
             self.principal_investigator = PersonValue(**self.principal_investigator)
+        if self.doi is not None and not isinstance(self.doi, AttributeValue):
+            self.doi = AttributeValue(**self.doi)
         super().__post_init__(**kwargs)
 
 
@@ -672,11 +663,14 @@ slots.has_output = Slot(uri=NMDC.has_output, name="has output", curie=NMDC.curie
 slots.part_of = Slot(uri=DCTERMS.isPartOf, name="part of", curie=DCTERMS.curie('isPartOf'),
                       model_uri=NMDC.part_of, domain=NamedThing, range=List[str])
 
-slots.file_size = Slot(uri=NMDC.file_size, name="file_size", curie=NMDC.curie('file_size'),
-                      model_uri=NMDC.file_size, domain=None, range=Optional[int])
+slots.file_size_bytes = Slot(uri=NMDC.file_size_bytes, name="file_size_bytes", curie=NMDC.curie('file_size_bytes'),
+                      model_uri=NMDC.file_size_bytes, domain=None, range=Optional[int])
 
 slots.principal_investigator = Slot(uri=NMDC.principal_investigator, name="principal investigator", curie=NMDC.curie('principal_investigator'),
                       model_uri=NMDC.principal_investigator, domain=None, range=Optional[Union[dict, PersonValue]])
+
+slots.doi = Slot(uri=NMDC.doi, name="doi", curie=NMDC.curie('doi'),
+                      model_uri=NMDC.doi, domain=None, range=Optional[Union[dict, AttributeValue]])
 
 slots.gold_path_field = Slot(uri=NMDC.gold_path_field, name="gold_path_field", curie=NMDC.curie('gold_path_field'),
                       model_uri=NMDC.gold_path_field, domain=None, range=Optional[Union[dict, AttributeValue]])
