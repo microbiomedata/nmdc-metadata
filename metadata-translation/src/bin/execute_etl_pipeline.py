@@ -12,6 +12,21 @@ import nmdc
 import lib.data_operations as dop
 import align_nmdc_datatypes
 
+
+def get_json(file_path):
+    ## load json
+    with open(file_path, 'r') as in_file:
+        json_list =  json.load(in_file)
+    return json_list
+
+
+def save_json(json_list, file_path):
+    ## save json with changed data types
+    with open(file_path, 'w') as out_file:
+        json.dump(json_list, out_file, indent=2)
+    return json_list
+
+
 def make_merged_data_source(spec_file='lib/nmdc_data_source.yaml', save_path='../data/nmdc_merged_data.tsv'):
     """Create a new data source containing the merged data sources"""
 
@@ -41,6 +56,25 @@ def make_json_etl(dataframe, nmdc_class, spec_class_name, spec_file='lib/nmdc_da
     
     ## return json
     return data_json_list
+
+
+def make_nmdc_database():
+    gold_study = get_json("output/nmdc_etl/gold_study.json")
+    gold_biosample = get_json("output/nmdc_etl/gold_biosample.json")
+    gold_project = get_json("output/nmdc_etl/gold_omics_processing.json")
+    emsl_project = get_json("output/nmdc_etl/emsl_omics_processing.json")
+    emsl_data_object = get_json("output/nmdc_etl/emsl_data_objects.json")
+    jgi_data_object = get_json("output/nmdc_etl/faa_fna_fastq_data_objects.json")
+
+    database = \
+    {
+        "study_set": [*gold_study], 
+        "omics_processing_set": [*gold_project, *emsl_project], 
+        "biosample_set": [*gold_biosample], 
+        "data_object_set": [*jgi_data_object, *emsl_data_object]
+    }
+
+    save_json(database, "output/nmdc_database.json" )
 
 
 def main(data_file='../data/nmdc_merged_data.tsv.zip',
@@ -107,7 +141,8 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
 
 
 if __name__ == '__main__':
-    main(etl_modules=['gold_biosample']) # test biosample etl
+    # main(etl_modules=['gold_biosample']) # test biosample etl
     # main(etl_modules=['jgi_data_object']) # test data object
     # main(etl_modules=['emsl_data_object']) # test data object
     # main()
+    make_nmdc_database()
