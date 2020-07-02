@@ -11,6 +11,7 @@ import jsonasobj
 import nmdc
 import lib.data_operations as dop
 import align_nmdc_datatypes
+import jq
 
 
 def get_json(file_path):
@@ -77,6 +78,48 @@ def make_nmdc_database():
     save_json(database, "output/nmdc_database.json" )
 
 
+def make_nmdc_example_database():
+    ## load biosample json
+    biosample_json = get_json('output/nmdc_etl/gold_biosample.json')
+    biosample_test = json.loads(jq.compile('.[0:5]').input(biosample_json).text())
+
+    ## get list of associted projects from biosample
+    projects_list = jq.compile('.[] | .part_of[]').input(biosample_test).text().replace('\n', ', ')
+
+    ## load projects (omics processing)
+    projects_json = get_json('output/nmdc_etl/gold_omics_processing.json')
+    projects_test = jq.compile('.[] | select(.id == (' + projects_list + '))').input(projects_json).text()
+    projects_test = json.loads('[' + projects_test.replace('\n', ',') + ']') # put into correct json
+
+    ## get list of studies
+    study_list = jq.compile('.[] | .part_of[]').input(projects_test).text().replace('\n', ', ')
+    study_list = ','.join(set(study_list.replace(' ', '').split(','))) # get unique list of study ids
+
+    ## load study json
+    study_json = get_json('output/nmdc_etl/gold_study.json')
+    study_test = jq.compile('.[] | select(.id == (' + study_list + '))').input(study_json).text()
+    study_test = json.loads('[' + study_test.replace('\n', ',') + ']') # put into correct json
+
+    ## get outputs of projects
+    data_objects_list = jq.compile('.[] | .has_output[]').input(projects_test).text().replace('\n', ', ')
+
+    ## load data objects
+    data_objects_json = get_json('output/nmdc_etl/faa_fna_fastq_data_objects.json')
+    data_objects_test = jq.compile('.[] | select(.id == (' + data_objects_list + '))').input(data_objects_json).text().replace('\n', ', ')
+    data_objects_test = json.loads('[' + data_objects_test.replace('\n', ',') + ']') # put into correct json
+
+    ## compile into database object
+    database = \
+    {
+      "study_set": [*study_test], 
+      "omics_processing_set": [*projects_test], 
+      "biosample_set": [*biosample_test], 
+      "data_object_set": [*data_objects_test]
+    }
+
+    save_json(database, 'output/nmdc-03.json')
+
+    
 def main(data_file='../data/nmdc_merged_data.tsv.zip',
          etl_modules=['gold_study', 
                       'gold_omics_processing', 
@@ -144,5 +187,6 @@ if __name__ == '__main__':
     # main(etl_modules=['gold_biosample']) # test biosample etl
     # main(etl_modules=['jgi_data_object']) # test data object
     # main(etl_modules=['emsl_data_object']) # test data object
-    main()
-    make_nmdc_database()
+    # main()
+    # make_nmdc_database()
+    make_nmdc_example_database()
