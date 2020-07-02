@@ -34,15 +34,68 @@ type Biosample
     envBroadScale: ControlledTermValue!
     envLocalScale: ControlledTermValue!
     envMedium: ControlledTermValue!
-    ecosystem: String
-    ecosystemCategory: String
-    ecosystemType: String
-    ecosystemSubtype: String
-    specificEcosystem: String
+    ecosystem: AttributeValue
+    ecosystemCategory: AttributeValue
+    ecosystemType: AttributeValue
+    ecosystemSubtype: AttributeValue
+    specificEcosystem: AttributeValue
     depth: QuantityValue
     totOrgCarb: QuantityValue
     alt: QuantityValue
     elev: QuantityValue
+    salinity: QuantityValue
+    dissOxygen: QuantityValue
+    nitrate: QuantityValue
+    chlorophyll: QuantityValue
+    curLandUse: TextValue
+    curVegetation: TextValue
+    curVegetationMeth: TextValue
+    previousLandUse: TextValue
+    previousLandUseMeth: TextValue
+    cropRotation: TextValue
+    agrochemAddition: QuantityValue
+    tillage: TextValue
+    fire: TimestampValue
+    flooding: TimestampValue
+    extremeEvent: TimestampValue
+    horizon: TextValue
+    horizonMeth: TextValue
+    sieving: QuantityValue
+    waterContent: QuantityValue
+    waterContentSoilMeth: TextValue
+    sampVolWeDnaExt: QuantityValue
+    poolDnaExtracts: TextValue
+    storeCond: TextValue
+    linkClimateInfo: TextValue
+    seasonTemp: QuantityValue
+    annualTemp: QuantityValue
+    seasonPrecpt: QuantityValue
+    annualPrecpt: QuantityValue
+    linkClassInfo: TextValue
+    faoClass: TextValue
+    localClass: TextValue
+    localClassMeth: TextValue
+    soilType: TextValue
+    soilTypeMeth: TextValue
+    slopeGradient: QuantityValue
+    slopeAspect: QuantityValue
+    profilePosition: TextValue
+    drainageClass: TextValue
+    texture: QuantityValue
+    textureMeth: TextValue
+    phMeth: TextValue
+    totOrgCMeth: TextValue
+    totNitroContent: QuantityValue
+    totNitroContentMeth: TextValue
+    microbialBiomass: QuantityValue
+    microbialBiomassMeth: TextValue
+    linkAdditAnalys: TextValue
+    salinityMeth: TextValue
+    heavyMetals: QuantityValue
+    heavyMetalsMeth: TextValue
+    alSat: QuantityValue
+    alSatMeth: TextValue
+    miscParam: QuantityValue
   }
 
 type BiosampleProcessing
@@ -76,14 +129,16 @@ type DataObject
     description: String
     alternateIdentifiers: [String]
     partOf: [String]
-    fileSize: String
+    fileSize: Integer
   }
 
 type Database
   {
     biosampleSet: [Biosample]
+    studySet: [Study]
     dataObjectSet: [DataObject]
     activitySet: [Activity]
+    omicsProcessingSet: [OmicsProcessing]
   }
 
 type EnvironmentalMaterialTerm
@@ -148,6 +203,13 @@ type Person
     partOf: [String]
   }
 
+type PersonValue
+  {
+    hasRawValue: String
+    wasGeneratedBy: Activity
+    orcid: String
+  }
+
 type QuantityValue
   {
     hasRawValue: String
@@ -167,6 +229,12 @@ type Study
     investigationType: TextValue
     projectName: TextValue
     experimentalFactor: ControlledTermValue
+    ecosystem: AttributeValue
+    ecosystemCategory: AttributeValue
+    ecosystemType: AttributeValue
+    ecosystemSubtype: AttributeValue
+    specificEcosystem: AttributeValue
+    principalInvestigator: PersonValue
   }
 
 type TextValue
@@ -180,10 +248,6 @@ type TimestampValue
   {
     hasRawValue: String
     wasGeneratedBy: Activity
-  }
-
-type Unit
-  {
   }
 
 type UrlValue
