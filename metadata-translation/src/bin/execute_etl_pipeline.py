@@ -89,6 +89,7 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
                                             spec_class_name='gold_biosample', 
                                             attribute_map_file='../data/GOLD-to-mixs-map.tsv')
         dop.save_json_string_list("output/nmdc_etl/gold_biosample.json", gold_biosample_json)
+        # align_nmdc_datatypes.align_gold_biosample() # currently broken
 
     if 'emsl_omics_processing' in etl_modules:
         emsl_json_op = make_json_etl(emsl, nmdc.OmicsProcessing, 'emsl_omics_processing')
@@ -106,7 +107,7 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
 
 
 if __name__ == '__main__':
-    # main(etl_modules=['gold_biosample']) # test biosample etl
-    main(etl_modules=['jgi_data_object']) # test data object
-    main(etl_modules=['emsl_data_object']) # test data object
+    main(etl_modules=['gold_biosample']) # test biosample etl
+    # main(etl_modules=['jgi_data_object']) # test data object
+    # main(etl_modules=['emsl_data_object']) # test data object
     # main()
