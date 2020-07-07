@@ -14,7 +14,7 @@ gold	biosample	soil_crop_rotation	crop_rotation
 gold	biosample	soil_agrochem_addition	agrochem_addition
 gold	biosample	soil_tillage	tillage
 gold	biosample	soil_fire	fire
-gold	biosample	soil_flodding	flooding
+gold	biosample	soil_flooding	flooding
 gold	biosample	soil_extreme_event	extreme_event
 gold	biosample	soil_horizon	horizon
 gold	biosample	soil_horizon_method	horizon_meth
@@ -25,8 +25,10 @@ gold	biosample	sample_weight_dna_ext	samp_vol_we_dna_ext
 gold	biosample	soil_pool_dna_extracts	pool_dna_extracts
 gold	biosample	soil_store_condition	store_cond
 gold	biosample	soil_link_climate_info	link_climate_info
-gold	biosample	soil_annual_season_temp	season_temp or annual_temp?
-gold	biosample	soil_annual_season_precpt 	season_precpt or annual_precpt?
+gold	biosample	soil_annual_season_temp	season_temp
+gold	biosample	soil_annual_season_temp	annual_temp
+gold	biosample	soil_annual_season_precpt	season_precpt
+gold	biosample	soil_annual_season_precpt	annual_precpt
 gold	biosample	soil_link_class_info	link_class_info
 gold	biosample	soil_fao_class	fao_class
 gold	biosample	soil_local_class	local_class
