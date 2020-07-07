@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-07-01 15:34
+# Generation date: 2020-07-06 18:00
 # Schema: NMDC Schema
 #
 # id: https://microbiomedata/schema
@@ -23,7 +23,7 @@ from biolinkml.utils.formatutils import camelcase, underscore, sfx
 from rdflib import Namespace, URIRef
 from biolinkml.utils.curienamespace import CurieNamespace
 from biolinkml.utils.metamodelcore import Bool
-from includes.types import Boolean, Double, Float, Integer, String
+from includes.types import Boolean, Double, Float, String
 
 metamodel_version = "1.4.3"
 
@@ -37,6 +37,7 @@ BIOLINKML = CurieNamespace('biolinkml', 'https://w3id.org/biolink/biolinkml/')
 DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
 MIXS = CurieNamespace('mixs', 'https://w3id.org/gensc/')
 NMDC = CurieNamespace('nmdc', 'https://microbiomedata/meta/')
+PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
 QUD = CurieNamespace('qud', 'http://qudt.org/1.1/schema/qudt#')
 RDF = CurieNamespace('rdf', 'http://example.org/UNKNOWN/rdf/')
 RDFS = CurieNamespace('rdfs', 'http://example.org/UNKNOWN/rdfs/')
@@ -48,6 +49,14 @@ DEFAULT_ = NMDC
 
 
 # Types
+class Bytes(int):
+    """ An integer value that corresponds to a size in bytes """
+    type_class_uri = XSD.int
+    type_class_curie = "xsd:int"
+    type_name = "bytes"
+    type_model_uri = NMDC.Bytes
+
+
 class DecimalDegree(float):
     """ A decimal degree expresses latitude or longitude as decimal fractions. """
     type_class_uri = XSD.decimal
@@ -109,6 +118,34 @@ class EnvironmentalMaterialTermId(OntologyClassId):
 
 
 class ActivityActivityId(extended_str):
+    pass
+
+
+class WorkflowExecutionActivityActivityId(ActivityActivityId):
+    pass
+
+
+class MetagenomeAssemblyActivityId(WorkflowExecutionActivityActivityId):
+    pass
+
+
+class MetagenomeAlignmentActivityId(WorkflowExecutionActivityActivityId):
+    pass
+
+
+class AnnotationActivityActivityId(WorkflowExecutionActivityActivityId):
+    pass
+
+
+class ReadAnalysisActivityActivityId(WorkflowExecutionActivityActivityId):
+    pass
+
+
+class MetabolomicsAnalysisActivityActivityId(WorkflowExecutionActivityActivityId):
+    pass
+
+
+class MetaproteomicsAnalysisActivityActivityId(WorkflowExecutionActivityActivityId):
     pass
 
 
@@ -191,12 +228,20 @@ class DataObject(NamedThing):
 
     id: Union[str, DataObjectId] = None
     file_size_bytes: Optional[int] = None
+    md5_checksum: Optional[str] = None
+    data_object_type: Optional[Union[dict, "ControlledTermValue"]] = None
+    compression_type: Optional[str] = None
+    was_generated_by: Optional[Union[dict, "WorkflowExecutionActivity"]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, DataObjectId):
             self.id = DataObjectId(self.id)
+        if self.data_object_type is not None and not isinstance(self.data_object_type, ControlledTermValue):
+            self.data_object_type = ControlledTermValue(**self.data_object_type)
+        if self.was_generated_by is not None and not isinstance(self.was_generated_by, WorkflowExecutionActivity):
+            self.was_generated_by = WorkflowExecutionActivity(self.was_generated_by)
         super().__post_init__(**kwargs)
 
 
@@ -518,6 +563,7 @@ class OmicsProcessing(BiosampleProcessing):
     alternate_identifiers: List[str] = empty_list()
     part_of: List[Union[str, StudyId]] = empty_list()
     has_output: List[Union[str, DataObjectId]] = empty_list()
+    omics_type: Optional[Union[dict, "ControlledTermValue"]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -528,6 +574,8 @@ class OmicsProcessing(BiosampleProcessing):
                         else StudyId(v) for v in self.part_of]
         self.has_output = [v if isinstance(v, DataObjectId)
                            else DataObjectId(v) for v in self.has_output]
+        if self.omics_type is not None and not isinstance(self.omics_type, ControlledTermValue):
+            self.omics_type = ControlledTermValue(**self.omics_type)
         super().__post_init__(**kwargs)
 
 
@@ -775,6 +823,148 @@ class Activity(YAMLRoot):
 
 
 @dataclass
+class WorkflowExecutionActivity(Activity):
+    """
+    Represents an instance of an execution of a particular workflow
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC.WorkflowExecutionActivity
+    class_class_curie: ClassVar[str] = "nmdc:WorkflowExecutionActivity"
+    class_name: ClassVar[str] = "workflow execution activity"
+    class_model_uri: ClassVar[URIRef] = NMDC.WorkflowExecutionActivity
+
+    activity_id: Union[str, WorkflowExecutionActivityActivityId] = None
+    execution_resource: Optional[str] = None
+    git_url: Optional[str] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.activity_id is None:
+            raise ValueError(f"activity_id must be supplied")
+        if not isinstance(self.activity_id, WorkflowExecutionActivityActivityId):
+            self.activity_id = WorkflowExecutionActivityActivityId(self.activity_id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class MetagenomeAssembly(WorkflowExecutionActivity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC.MetagenomeAssembly
+    class_class_curie: ClassVar[str] = "nmdc:MetagenomeAssembly"
+    class_name: ClassVar[str] = "metagenome assembly"
+    class_model_uri: ClassVar[URIRef] = NMDC.MetagenomeAssembly
+
+    activity_id: Union[str, MetagenomeAssemblyActivityId] = None
+    ctg_L50: Optional[str] = None
+    n_scaffolds: Optional[str] = None
+    gc_std: Optional[str] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.activity_id is None:
+            raise ValueError(f"activity_id must be supplied")
+        if not isinstance(self.activity_id, MetagenomeAssemblyActivityId):
+            self.activity_id = MetagenomeAssemblyActivityId(self.activity_id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class MetagenomeAlignment(WorkflowExecutionActivity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC.MetagenomeAlignment
+    class_class_curie: ClassVar[str] = "nmdc:MetagenomeAlignment"
+    class_name: ClassVar[str] = "metagenome alignment"
+    class_model_uri: ClassVar[URIRef] = NMDC.MetagenomeAlignment
+
+    activity_id: Union[str, MetagenomeAlignmentActivityId] = None
+    num_aligned_reads: Optional[str] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.activity_id is None:
+            raise ValueError(f"activity_id must be supplied")
+        if not isinstance(self.activity_id, MetagenomeAlignmentActivityId):
+            self.activity_id = MetagenomeAlignmentActivityId(self.activity_id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class AnnotationActivity(WorkflowExecutionActivity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC.AnnotationActivity
+    class_class_curie: ClassVar[str] = "nmdc:AnnotationActivity"
+    class_name: ClassVar[str] = "annotation activity"
+    class_model_uri: ClassVar[URIRef] = NMDC.AnnotationActivity
+
+    activity_id: Union[str, AnnotationActivityActivityId] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.activity_id is None:
+            raise ValueError(f"activity_id must be supplied")
+        if not isinstance(self.activity_id, AnnotationActivityActivityId):
+            self.activity_id = AnnotationActivityActivityId(self.activity_id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ReadAnalysisActivity(WorkflowExecutionActivity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC.ReadAnalysisActivity
+    class_class_curie: ClassVar[str] = "nmdc:ReadAnalysisActivity"
+    class_name: ClassVar[str] = "read analysis activity"
+    class_model_uri: ClassVar[URIRef] = NMDC.ReadAnalysisActivity
+
+    activity_id: Union[str, ReadAnalysisActivityActivityId] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.activity_id is None:
+            raise ValueError(f"activity_id must be supplied")
+        if not isinstance(self.activity_id, ReadAnalysisActivityActivityId):
+            self.activity_id = ReadAnalysisActivityActivityId(self.activity_id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class MetabolomicsAnalysisActivity(WorkflowExecutionActivity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC.MetabolomicsAnalysisActivity
+    class_class_curie: ClassVar[str] = "nmdc:MetabolomicsAnalysisActivity"
+    class_name: ClassVar[str] = "metabolomics analysis activity"
+    class_model_uri: ClassVar[URIRef] = NMDC.MetabolomicsAnalysisActivity
+
+    activity_id: Union[str, MetabolomicsAnalysisActivityActivityId] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.activity_id is None:
+            raise ValueError(f"activity_id must be supplied")
+        if not isinstance(self.activity_id, MetabolomicsAnalysisActivityActivityId):
+            self.activity_id = MetabolomicsAnalysisActivityActivityId(self.activity_id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class MetaproteomicsAnalysisActivity(WorkflowExecutionActivity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC.MetaproteomicsAnalysisActivity
+    class_class_curie: ClassVar[str] = "nmdc:MetaproteomicsAnalysisActivity"
+    class_name: ClassVar[str] = "metaproteomics analysis activity"
+    class_model_uri: ClassVar[URIRef] = NMDC.MetaproteomicsAnalysisActivity
+
+    activity_id: Union[str, MetaproteomicsAnalysisActivityActivityId] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.activity_id is None:
+            raise ValueError(f"activity_id must be supplied")
+        if not isinstance(self.activity_id, MetaproteomicsAnalysisActivityActivityId):
+            self.activity_id = MetaproteomicsAnalysisActivityActivityId(self.activity_id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class Agent(YAMLRoot):
     """
     a provence-generating agent
@@ -817,6 +1007,15 @@ slots.activity_set = Slot(uri=NMDC.activity_set, name="activity set", curie=NMDC
 slots.omics_processing_set = Slot(uri=NMDC.omics_processing_set, name="omics processing set", curie=NMDC.curie('omics_processing_set'),
                       model_uri=NMDC.omics_processing_set, domain=Database, range=Dict[Union[str, OmicsProcessingId], Union[dict, "OmicsProcessing"]])
 
+slots.omics_type = Slot(uri=NMDC.omics_type, name="omics type", curie=NMDC.curie('omics_type'),
+                      model_uri=NMDC.omics_type, domain=None, range=Optional[Union[dict, ControlledTermValue]])
+
+slots.data_object_type = Slot(uri=NMDC.data_object_type, name="data object type", curie=NMDC.curie('data_object_type'),
+                      model_uri=NMDC.data_object_type, domain=None, range=Optional[Union[dict, ControlledTermValue]])
+
+slots.compression_type = Slot(uri=NMDC.compression_type, name="compression type", curie=NMDC.curie('compression_type'),
+                      model_uri=NMDC.compression_type, domain=None, range=Optional[str])
+
 slots.has_input = Slot(uri=NMDC.has_input, name="has input", curie=NMDC.curie('has_input'),
                       model_uri=NMDC.has_input, domain=None, range=List[str])
 
@@ -826,8 +1025,35 @@ slots.has_output = Slot(uri=NMDC.has_output, name="has output", curie=NMDC.curie
 slots.part_of = Slot(uri=DCTERMS.isPartOf, name="part of", curie=DCTERMS.curie('isPartOf'),
                       model_uri=NMDC.part_of, domain=NamedThing, range=List[str])
 
-slots.file_size_bytes = Slot(uri=NMDC.file_size_bytes, name="file_size_bytes", curie=NMDC.curie('file_size_bytes'),
+slots.execution_resource = Slot(uri=NMDC.execution_resource, name="execution resource", curie=NMDC.curie('execution_resource'),
+                      model_uri=NMDC.execution_resource, domain=None, range=Optional[str])
+
+slots.git_url = Slot(uri=NMDC.git_url, name="git url", curie=NMDC.curie('git_url'),
+                      model_uri=NMDC.git_url, domain=None, range=Optional[str])
+
+slots.file_size_bytes = Slot(uri=NMDC.file_size_bytes, name="file size bytes", curie=NMDC.curie('file_size_bytes'),
                       model_uri=NMDC.file_size_bytes, domain=None, range=Optional[int])
+
+slots.md5_checksum = Slot(uri=NMDC.md5_checksum, name="md5 checksum", curie=NMDC.curie('md5_checksum'),
+                      model_uri=NMDC.md5_checksum, domain=None, range=Optional[str])
+
+slots.metagenome_assembly_parameter = Slot(uri=NMDC.metagenome_assembly_parameter, name="metagenome assembly parameter", curie=NMDC.curie('metagenome_assembly_parameter'),
+                      model_uri=NMDC.metagenome_assembly_parameter, domain=None, range=Optional[str])
+
+slots.ctg_L50 = Slot(uri=NMDC.ctg_L50, name="ctg_L50", curie=NMDC.curie('ctg_L50'),
+                      model_uri=NMDC.ctg_L50, domain=None, range=Optional[str])
+
+slots.n_scaffolds = Slot(uri=NMDC.n_scaffolds, name="n_scaffolds", curie=NMDC.curie('n_scaffolds'),
+                      model_uri=NMDC.n_scaffolds, domain=None, range=Optional[str])
+
+slots.gc_std = Slot(uri=NMDC.gc_std, name="gc_std", curie=NMDC.curie('gc_std'),
+                      model_uri=NMDC.gc_std, domain=None, range=Optional[str])
+
+slots.metagenome_alignment_parameter = Slot(uri=NMDC.metagenome_alignment_parameter, name="metagenome alignment parameter", curie=NMDC.curie('metagenome_alignment_parameter'),
+                      model_uri=NMDC.metagenome_alignment_parameter, domain=None, range=Optional[str])
+
+slots.num_aligned_reads = Slot(uri=NMDC.num_aligned_reads, name="num_aligned_reads", curie=NMDC.curie('num_aligned_reads'),
+                      model_uri=NMDC.num_aligned_reads, domain=None, range=Optional[str])
 
 slots.principal_investigator = Slot(uri=NMDC.principal_investigator, name="principal investigator", curie=NMDC.curie('principal_investigator'),
                       model_uri=NMDC.principal_investigator, domain=None, range=Optional[Union[dict, PersonValue]])
@@ -2699,25 +2925,28 @@ slots.activity_id = Slot(uri=NMDC.activity_id, name="activity id", curie=NMDC.cu
                       model_uri=NMDC.activity_id, domain=None, range=URIRef)
 
 slots.started_at_time = Slot(uri=NMDC.started_at_time, name="started at time", curie=NMDC.curie('started_at_time'),
-                      model_uri=NMDC.started_at_time, domain=None, range=Optional[str])
+                      model_uri=NMDC.started_at_time, domain=None, range=Optional[str], mappings = [PROV.startedAtTime])
 
 slots.ended_at_time = Slot(uri=NMDC.ended_at_time, name="ended at time", curie=NMDC.curie('ended_at_time'),
-                      model_uri=NMDC.ended_at_time, domain=None, range=Optional[str])
+                      model_uri=NMDC.ended_at_time, domain=None, range=Optional[str], mappings = [PROV.endedAtTime])
 
 slots.was_informed_by = Slot(uri=NMDC.was_informed_by, name="was informed by", curie=NMDC.curie('was_informed_by'),
-                      model_uri=NMDC.was_informed_by, domain=None, range=Optional[Union[str, ActivityActivityId]])
+                      model_uri=NMDC.was_informed_by, domain=None, range=Optional[Union[str, ActivityActivityId]], mappings = [PROV.wasInformedBy])
 
 slots.was_associated_with = Slot(uri=NMDC.was_associated_with, name="was associated with", curie=NMDC.curie('was_associated_with'),
-                      model_uri=NMDC.was_associated_with, domain=None, range=Optional[Union[dict, Agent]])
+                      model_uri=NMDC.was_associated_with, domain=None, range=Optional[Union[dict, Agent]], mappings = [PROV.wasAssociatedWith])
 
 slots.acted_on_behalf_of = Slot(uri=NMDC.acted_on_behalf_of, name="acted on behalf of", curie=NMDC.curie('acted_on_behalf_of'),
-                      model_uri=NMDC.acted_on_behalf_of, domain=None, range=Optional[Union[dict, Agent]])
+                      model_uri=NMDC.acted_on_behalf_of, domain=None, range=Optional[Union[dict, Agent]], mappings = [PROV.actedOnBehalfOf])
 
 slots.was_generated_by = Slot(uri=NMDC.was_generated_by, name="was generated by", curie=NMDC.curie('was_generated_by'),
-                      model_uri=NMDC.was_generated_by, domain=None, range=Optional[Union[str, ActivityActivityId]])
+                      model_uri=NMDC.was_generated_by, domain=None, range=Optional[Union[str, ActivityActivityId]], mappings = [PROV.wasGeneratedBy])
 
 slots.used = Slot(uri=NMDC.used, name="used", curie=NMDC.curie('used'),
-                      model_uri=NMDC.used, domain=Activity, range=Optional[str])
+                      model_uri=NMDC.used, domain=Activity, range=Optional[str], mappings = [PROV.used])
+
+slots.data_object_was_generated_by = Slot(uri=NMDC.was_generated_by, name="data object_was generated by", curie=NMDC.curie('was_generated_by'),
+                      model_uri=NMDC.data_object_was_generated_by, domain=DataObject, range=Optional[Union[dict, "WorkflowExecutionActivity"]])
 
 slots.biosample_id = Slot(uri=NMDC.id, name="biosample_id", curie=NMDC.curie('id'),
                       model_uri=NMDC.biosample_id, domain=Biosample, range=Union[str, BiosampleId])

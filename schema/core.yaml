@@ -34,6 +34,15 @@ subsets:
   soil: {}
 
 types:
+
+  bytes:
+    description: >-
+      An integer value that corresponds to a size in bytes
+    base: int
+    uri: xsd:int
+    see_also:
+      - UO:0000233
+  
   decimal degree:
     description: >-
       A decimal degree expresses latitude or longitude as decimal fractions.

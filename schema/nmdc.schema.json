@@ -46,6 +46,50 @@
          "title": "Agent",
          "type": "object"
       },
+      "AnnotationActivity": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "activity_id": {
+               "type": "string"
+            },
+            "ended_at_time": {
+               "type": "string"
+            },
+            "execution_resource": {
+               "description": "Example: NERSC-Cori",
+               "type": "string"
+            },
+            "git_url": {
+               "description": "Example: https://github.com/microbiomedata/mg_annotation/releases/tag/0.1",
+               "type": "string"
+            },
+            "has_input": {
+               "description": "An input to a process.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "started_at_time": {
+               "type": "string"
+            },
+            "used": {
+               "type": "string"
+            },
+            "was_associated_with": {
+               "$ref": "#/definitions/Agent"
+            },
+            "was_informed_by": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "activity_id"
+         ],
+         "title": "AnnotationActivity",
+         "type": "object"
+      },
       "AttributeValue": {
          "additionalProperties": false,
          "description": "The value for any value of a attribute for a sample. This object can hold both the un-normalized atomic value and the structured value",
@@ -465,16 +509,28 @@
                },
                "type": "array"
             },
+            "compression_type": {
+               "description": "If provided, specifies the compression type",
+               "type": "string"
+            },
+            "data_object_type": {
+               "$ref": "#/definitions/ControlledTermValue",
+               "description": "The type of data object"
+            },
             "description": {
                "description": "a human-readable description of a thing",
                "type": "string"
             },
             "file_size_bytes": {
-               "description": "units should be bytes",
+               "description": "Size of the file in bytes",
                "type": "integer"
             },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "md5_checksum": {
+               "description": "MD5 checksum of file (pre-compressed)",
                "type": "string"
             },
             "name": {
@@ -487,6 +543,9 @@
                   "type": "string"
                },
                "type": "array"
+            },
+            "was_generated_by": {
+               "$ref": "#/definitions/WorkflowExecutionActivity"
             }
          },
          "required": [
@@ -619,6 +678,194 @@
          "title": "IntegerValue",
          "type": "object"
       },
+      "MetabolomicsAnalysisActivity": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "activity_id": {
+               "type": "string"
+            },
+            "ended_at_time": {
+               "type": "string"
+            },
+            "execution_resource": {
+               "description": "Example: NERSC-Cori",
+               "type": "string"
+            },
+            "git_url": {
+               "description": "Example: https://github.com/microbiomedata/mg_annotation/releases/tag/0.1",
+               "type": "string"
+            },
+            "has_input": {
+               "description": "An input to a process.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "started_at_time": {
+               "type": "string"
+            },
+            "used": {
+               "type": "string"
+            },
+            "was_associated_with": {
+               "$ref": "#/definitions/Agent"
+            },
+            "was_informed_by": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "activity_id"
+         ],
+         "title": "MetabolomicsAnalysisActivity",
+         "type": "object"
+      },
+      "MetagenomeAlignment": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "activity_id": {
+               "type": "string"
+            },
+            "ended_at_time": {
+               "type": "string"
+            },
+            "execution_resource": {
+               "description": "Example: NERSC-Cori",
+               "type": "string"
+            },
+            "git_url": {
+               "description": "Example: https://github.com/microbiomedata/mg_annotation/releases/tag/0.1",
+               "type": "string"
+            },
+            "has_input": {
+               "description": "An input to a process.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "num_aligned_reads": {
+               "type": "string"
+            },
+            "started_at_time": {
+               "type": "string"
+            },
+            "used": {
+               "type": "string"
+            },
+            "was_associated_with": {
+               "$ref": "#/definitions/Agent"
+            },
+            "was_informed_by": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "activity_id"
+         ],
+         "title": "MetagenomeAlignment",
+         "type": "object"
+      },
+      "MetagenomeAssembly": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "activity_id": {
+               "type": "string"
+            },
+            "ctg_L50": {
+               "type": "string"
+            },
+            "ended_at_time": {
+               "type": "string"
+            },
+            "execution_resource": {
+               "description": "Example: NERSC-Cori",
+               "type": "string"
+            },
+            "gc_std": {
+               "type": "string"
+            },
+            "git_url": {
+               "description": "Example: https://github.com/microbiomedata/mg_annotation/releases/tag/0.1",
+               "type": "string"
+            },
+            "has_input": {
+               "description": "An input to a process.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "n_scaffolds": {
+               "type": "string"
+            },
+            "started_at_time": {
+               "type": "string"
+            },
+            "used": {
+               "type": "string"
+            },
+            "was_associated_with": {
+               "$ref": "#/definitions/Agent"
+            },
+            "was_informed_by": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "activity_id"
+         ],
+         "title": "MetagenomeAssembly",
+         "type": "object"
+      },
+      "MetaproteomicsAnalysisActivity": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "activity_id": {
+               "type": "string"
+            },
+            "ended_at_time": {
+               "type": "string"
+            },
+            "execution_resource": {
+               "description": "Example: NERSC-Cori",
+               "type": "string"
+            },
+            "git_url": {
+               "description": "Example: https://github.com/microbiomedata/mg_annotation/releases/tag/0.1",
+               "type": "string"
+            },
+            "has_input": {
+               "description": "An input to a process.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "started_at_time": {
+               "type": "string"
+            },
+            "used": {
+               "type": "string"
+            },
+            "was_associated_with": {
+               "$ref": "#/definitions/Agent"
+            },
+            "was_informed_by": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "activity_id"
+         ],
+         "title": "MetaproteomicsAnalysisActivity",
+         "type": "object"
+      },
       "OmicsProcessing": {
          "additionalProperties": false,
          "description": "The methods and processes used to generate omics data from a biosample or organism.",
@@ -650,6 +897,10 @@
             },
             "name": {
                "type": "string"
+            },
+            "omics_type": {
+               "$ref": "#/definitions/ControlledTermValue",
+               "description": "The type of omics data"
             },
             "part_of": {
                "items": {
@@ -776,6 +1027,50 @@
          "title": "QuantityValue",
          "type": "object"
       },
+      "ReadAnalysisActivity": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "activity_id": {
+               "type": "string"
+            },
+            "ended_at_time": {
+               "type": "string"
+            },
+            "execution_resource": {
+               "description": "Example: NERSC-Cori",
+               "type": "string"
+            },
+            "git_url": {
+               "description": "Example: https://github.com/microbiomedata/mg_annotation/releases/tag/0.1",
+               "type": "string"
+            },
+            "has_input": {
+               "description": "An input to a process.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "started_at_time": {
+               "type": "string"
+            },
+            "used": {
+               "type": "string"
+            },
+            "was_associated_with": {
+               "$ref": "#/definitions/Agent"
+            },
+            "was_informed_by": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "activity_id"
+         ],
+         "title": "ReadAnalysisActivity",
+         "type": "object"
+      },
       "Study": {
          "additionalProperties": false,
          "description": "A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.",
@@ -887,6 +1182,50 @@
          },
          "required": [],
          "title": "UrlValue",
+         "type": "object"
+      },
+      "WorkflowExecutionActivity": {
+         "additionalProperties": false,
+         "description": "Represents an instance of an execution of a particular workflow",
+         "properties": {
+            "activity_id": {
+               "type": "string"
+            },
+            "ended_at_time": {
+               "type": "string"
+            },
+            "execution_resource": {
+               "description": "Example: NERSC-Cori",
+               "type": "string"
+            },
+            "git_url": {
+               "description": "Example: https://github.com/microbiomedata/mg_annotation/releases/tag/0.1",
+               "type": "string"
+            },
+            "has_input": {
+               "description": "An input to a process.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "started_at_time": {
+               "type": "string"
+            },
+            "used": {
+               "type": "string"
+            },
+            "was_associated_with": {
+               "$ref": "#/definitions/Agent"
+            },
+            "was_informed_by": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "activity_id"
+         ],
+         "title": "WorkflowExecutionActivity",
          "type": "object"
       }
    },
