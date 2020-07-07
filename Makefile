@@ -68,6 +68,10 @@ schema/%.graphql: schema/%.yaml env.lock
 schema/%.shex: schema/%.yaml env.lock
 	gen-shex $< > $@.tmp && mv $@.tmp $@
 
+# JSONLD Context
+schema/%.context.jsonld: schema/%.yaml env.lock
+	gen-jsonld-context $< > $@.tmp && mv $@.tmp $@
+
 schema/%.csv: schema/%.yaml env.lock
 	gen-csv $< > $@.tmp && mv $@.tmp $@
 
