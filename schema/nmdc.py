@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-06-30 20:48
+# Generation date: 2020-07-01 15:34
 # Schema: NMDC Schema
 #
 # id: https://microbiomedata/schema
@@ -227,6 +227,59 @@ class Biosample(NamedThing):
     tot_org_carb: Optional[Union[dict, "QuantityValue"]] = None
     alt: Optional[Union[dict, "QuantityValue"]] = None
     elev: Optional[Union[dict, "QuantityValue"]] = None
+    salinity: Optional[Union[dict, "QuantityValue"]] = None
+    diss_oxygen: Optional[Union[dict, "QuantityValue"]] = None
+    nitrate: Optional[Union[dict, "QuantityValue"]] = None
+    chlorophyll: Optional[Union[dict, "QuantityValue"]] = None
+    cur_land_use: Optional[Union[dict, "TextValue"]] = None
+    cur_vegetation: Optional[Union[dict, "TextValue"]] = None
+    cur_vegetation_meth: Optional[Union[dict, "TextValue"]] = None
+    previous_land_use: Optional[Union[dict, "TextValue"]] = None
+    previous_land_use_meth: Optional[Union[dict, "TextValue"]] = None
+    crop_rotation: Optional[Union[dict, "TextValue"]] = None
+    agrochem_addition: Optional[Union[dict, "QuantityValue"]] = None
+    tillage: Optional[Union[dict, "TextValue"]] = None
+    fire: Optional[Union[dict, "TimestampValue"]] = None
+    flooding: Optional[Union[dict, "TimestampValue"]] = None
+    extreme_event: Optional[Union[dict, "TimestampValue"]] = None
+    horizon: Optional[Union[dict, "TextValue"]] = None
+    horizon_meth: Optional[Union[dict, "TextValue"]] = None
+    sieving: Optional[Union[dict, "QuantityValue"]] = None
+    water_content: Optional[Union[dict, "QuantityValue"]] = None
+    water_content_soil_meth: Optional[Union[dict, "TextValue"]] = None
+    samp_vol_we_dna_ext: Optional[Union[dict, "QuantityValue"]] = None
+    pool_dna_extracts: Optional[Union[dict, "TextValue"]] = None
+    store_cond: Optional[Union[dict, "TextValue"]] = None
+    link_climate_info: Optional[Union[dict, "TextValue"]] = None
+    season_temp: Optional[Union[dict, "QuantityValue"]] = None
+    annual_temp: Optional[Union[dict, "QuantityValue"]] = None
+    season_precpt: Optional[Union[dict, "QuantityValue"]] = None
+    annual_precpt: Optional[Union[dict, "QuantityValue"]] = None
+    link_class_info: Optional[Union[dict, "TextValue"]] = None
+    fao_class: Optional[Union[dict, "TextValue"]] = None
+    local_class: Optional[Union[dict, "TextValue"]] = None
+    local_class_meth: Optional[Union[dict, "TextValue"]] = None
+    soil_type: Optional[Union[dict, "TextValue"]] = None
+    soil_type_meth: Optional[Union[dict, "TextValue"]] = None
+    slope_gradient: Optional[Union[dict, "QuantityValue"]] = None
+    slope_aspect: Optional[Union[dict, "QuantityValue"]] = None
+    profile_position: Optional[Union[dict, "TextValue"]] = None
+    drainage_class: Optional[Union[dict, "TextValue"]] = None
+    texture: Optional[Union[dict, "QuantityValue"]] = None
+    texture_meth: Optional[Union[dict, "TextValue"]] = None
+    ph_meth: Optional[Union[dict, "TextValue"]] = None
+    tot_org_c_meth: Optional[Union[dict, "TextValue"]] = None
+    tot_nitro_content: Optional[Union[dict, "QuantityValue"]] = None
+    tot_nitro_content_meth: Optional[Union[dict, "TextValue"]] = None
+    microbial_biomass: Optional[Union[dict, "QuantityValue"]] = None
+    microbial_biomass_meth: Optional[Union[dict, "TextValue"]] = None
+    link_addit_analys: Optional[Union[dict, "TextValue"]] = None
+    salinity_meth: Optional[Union[dict, "TextValue"]] = None
+    heavy_metals: Optional[Union[dict, "QuantityValue"]] = None
+    heavy_metals_meth: Optional[Union[dict, "TextValue"]] = None
+    al_sat: Optional[Union[dict, "QuantityValue"]] = None
+    al_sat_meth: Optional[Union[dict, "TextValue"]] = None
+    misc_param: Optional[Union[dict, "QuantityValue"]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -263,6 +316,116 @@ class Biosample(NamedThing):
             self.alt = QuantityValue(**self.alt)
         if self.elev is not None and not isinstance(self.elev, QuantityValue):
             self.elev = QuantityValue(**self.elev)
+        if self.salinity is not None and not isinstance(self.salinity, QuantityValue):
+            self.salinity = QuantityValue(**self.salinity)
+        if self.diss_oxygen is not None and not isinstance(self.diss_oxygen, QuantityValue):
+            self.diss_oxygen = QuantityValue(**self.diss_oxygen)
+        if self.geo_loc_name is not None and not isinstance(self.geo_loc_name, TextValue):
+            self.geo_loc_name = TextValue(**self.geo_loc_name)
+        if self.nitrate is not None and not isinstance(self.nitrate, QuantityValue):
+            self.nitrate = QuantityValue(**self.nitrate)
+        if self.chlorophyll is not None and not isinstance(self.chlorophyll, QuantityValue):
+            self.chlorophyll = QuantityValue(**self.chlorophyll)
+        if self.cur_land_use is not None and not isinstance(self.cur_land_use, TextValue):
+            self.cur_land_use = TextValue(**self.cur_land_use)
+        if self.cur_vegetation is not None and not isinstance(self.cur_vegetation, TextValue):
+            self.cur_vegetation = TextValue(**self.cur_vegetation)
+        if self.cur_vegetation_meth is not None and not isinstance(self.cur_vegetation_meth, TextValue):
+            self.cur_vegetation_meth = TextValue(**self.cur_vegetation_meth)
+        if self.previous_land_use is not None and not isinstance(self.previous_land_use, TextValue):
+            self.previous_land_use = TextValue(**self.previous_land_use)
+        if self.previous_land_use_meth is not None and not isinstance(self.previous_land_use_meth, TextValue):
+            self.previous_land_use_meth = TextValue(**self.previous_land_use_meth)
+        if self.crop_rotation is not None and not isinstance(self.crop_rotation, TextValue):
+            self.crop_rotation = TextValue(**self.crop_rotation)
+        if self.agrochem_addition is not None and not isinstance(self.agrochem_addition, QuantityValue):
+            self.agrochem_addition = QuantityValue(**self.agrochem_addition)
+        if self.tillage is not None and not isinstance(self.tillage, TextValue):
+            self.tillage = TextValue(**self.tillage)
+        if self.fire is not None and not isinstance(self.fire, TimestampValue):
+            self.fire = TimestampValue(**self.fire)
+        if self.flooding is not None and not isinstance(self.flooding, TimestampValue):
+            self.flooding = TimestampValue(**self.flooding)
+        if self.extreme_event is not None and not isinstance(self.extreme_event, TimestampValue):
+            self.extreme_event = TimestampValue(**self.extreme_event)
+        if self.horizon is not None and not isinstance(self.horizon, TextValue):
+            self.horizon = TextValue(**self.horizon)
+        if self.horizon_meth is not None and not isinstance(self.horizon_meth, TextValue):
+            self.horizon_meth = TextValue(**self.horizon_meth)
+        if self.sieving is not None and not isinstance(self.sieving, QuantityValue):
+            self.sieving = QuantityValue(**self.sieving)
+        if self.water_content is not None and not isinstance(self.water_content, QuantityValue):
+            self.water_content = QuantityValue(**self.water_content)
+        if self.water_content_soil_meth is not None and not isinstance(self.water_content_soil_meth, TextValue):
+            self.water_content_soil_meth = TextValue(**self.water_content_soil_meth)
+        if self.samp_vol_we_dna_ext is not None and not isinstance(self.samp_vol_we_dna_ext, QuantityValue):
+            self.samp_vol_we_dna_ext = QuantityValue(**self.samp_vol_we_dna_ext)
+        if self.pool_dna_extracts is not None and not isinstance(self.pool_dna_extracts, TextValue):
+            self.pool_dna_extracts = TextValue(**self.pool_dna_extracts)
+        if self.store_cond is not None and not isinstance(self.store_cond, TextValue):
+            self.store_cond = TextValue(**self.store_cond)
+        if self.link_climate_info is not None and not isinstance(self.link_climate_info, TextValue):
+            self.link_climate_info = TextValue(**self.link_climate_info)
+        if self.season_temp is not None and not isinstance(self.season_temp, QuantityValue):
+            self.season_temp = QuantityValue(**self.season_temp)
+        if self.annual_temp is not None and not isinstance(self.annual_temp, QuantityValue):
+            self.annual_temp = QuantityValue(**self.annual_temp)
+        if self.season_precpt is not None and not isinstance(self.season_precpt, QuantityValue):
+            self.season_precpt = QuantityValue(**self.season_precpt)
+        if self.annual_precpt is not None and not isinstance(self.annual_precpt, QuantityValue):
+            self.annual_precpt = QuantityValue(**self.annual_precpt)
+        if self.link_class_info is not None and not isinstance(self.link_class_info, TextValue):
+            self.link_class_info = TextValue(**self.link_class_info)
+        if self.fao_class is not None and not isinstance(self.fao_class, TextValue):
+            self.fao_class = TextValue(**self.fao_class)
+        if self.local_class is not None and not isinstance(self.local_class, TextValue):
+            self.local_class = TextValue(**self.local_class)
+        if self.local_class_meth is not None and not isinstance(self.local_class_meth, TextValue):
+            self.local_class_meth = TextValue(**self.local_class_meth)
+        if self.soil_type is not None and not isinstance(self.soil_type, TextValue):
+            self.soil_type = TextValue(**self.soil_type)
+        if self.soil_type_meth is not None and not isinstance(self.soil_type_meth, TextValue):
+            self.soil_type_meth = TextValue(**self.soil_type_meth)
+        if self.slope_gradient is not None and not isinstance(self.slope_gradient, QuantityValue):
+            self.slope_gradient = QuantityValue(**self.slope_gradient)
+        if self.slope_aspect is not None and not isinstance(self.slope_aspect, QuantityValue):
+            self.slope_aspect = QuantityValue(**self.slope_aspect)
+        if self.profile_position is not None and not isinstance(self.profile_position, TextValue):
+            self.profile_position = TextValue(**self.profile_position)
+        if self.drainage_class is not None and not isinstance(self.drainage_class, TextValue):
+            self.drainage_class = TextValue(**self.drainage_class)
+        if self.texture is not None and not isinstance(self.texture, QuantityValue):
+            self.texture = QuantityValue(**self.texture)
+        if self.texture_meth is not None and not isinstance(self.texture_meth, TextValue):
+            self.texture_meth = TextValue(**self.texture_meth)
+        if self.ph_meth is not None and not isinstance(self.ph_meth, TextValue):
+            self.ph_meth = TextValue(**self.ph_meth)
+        if self.tot_org_carb is not None and not isinstance(self.tot_org_carb, QuantityValue):
+            self.tot_org_carb = QuantityValue(**self.tot_org_carb)
+        if self.tot_org_c_meth is not None and not isinstance(self.tot_org_c_meth, TextValue):
+            self.tot_org_c_meth = TextValue(**self.tot_org_c_meth)
+        if self.tot_nitro_content is not None and not isinstance(self.tot_nitro_content, QuantityValue):
+            self.tot_nitro_content = QuantityValue(**self.tot_nitro_content)
+        if self.tot_nitro_content_meth is not None and not isinstance(self.tot_nitro_content_meth, TextValue):
+            self.tot_nitro_content_meth = TextValue(**self.tot_nitro_content_meth)
+        if self.microbial_biomass is not None and not isinstance(self.microbial_biomass, QuantityValue):
+            self.microbial_biomass = QuantityValue(**self.microbial_biomass)
+        if self.microbial_biomass_meth is not None and not isinstance(self.microbial_biomass_meth, TextValue):
+            self.microbial_biomass_meth = TextValue(**self.microbial_biomass_meth)
+        if self.link_addit_analys is not None and not isinstance(self.link_addit_analys, TextValue):
+            self.link_addit_analys = TextValue(**self.link_addit_analys)
+        if self.salinity_meth is not None and not isinstance(self.salinity_meth, TextValue):
+            self.salinity_meth = TextValue(**self.salinity_meth)
+        if self.heavy_metals is not None and not isinstance(self.heavy_metals, QuantityValue):
+            self.heavy_metals = QuantityValue(**self.heavy_metals)
+        if self.heavy_metals_meth is not None and not isinstance(self.heavy_metals_meth, TextValue):
+            self.heavy_metals_meth = TextValue(**self.heavy_metals_meth)
+        if self.al_sat is not None and not isinstance(self.al_sat, QuantityValue):
+            self.al_sat = QuantityValue(**self.al_sat)
+        if self.al_sat_meth is not None and not isinstance(self.al_sat_meth, TextValue):
+            self.al_sat_meth = TextValue(**self.al_sat_meth)
+        if self.misc_param is not None and not isinstance(self.misc_param, QuantityValue):
+            self.misc_param = QuantityValue(**self.misc_param)
         super().__post_init__(**kwargs)
 
 
