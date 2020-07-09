@@ -172,7 +172,7 @@ data_sources:
     data_source:
       file_name: "export.sql/STUDY_DATA_TABLE.dsv"
       file_type: tsv
-      file_archive_name: "../src/data/nmdc-version5.zip"
+      file_archive_name: "../data/nmdc-version5.zip"
     filters:
       - field: gold_id
         values:
@@ -196,7 +196,7 @@ data_sources:
     data_source:
       file_name: "export.sql/CONTACT_DATA_TABLE.dsv"
       file_type: tsv
-      file_archive_name: "../src/data/nmdc-version5.zip"
+      file_archive_name: "../data/nmdc-version5.zip"
     rename_slots:
       - old_name: name
         new_name: principal_investigator_name
@@ -204,7 +204,7 @@ data_sources:
   proposals_table:
     id_key: jgi_id
     data_source:
-      file_name: "../src/data/JGI-EMSL-FICUS-proposals.fnl.tsv"
+      file_name: "../data/JGI-EMSL-FICUS-proposals.fnl.tsv"
       file_type: tsv
  
   project_table:
@@ -212,7 +212,7 @@ data_sources:
     data_source:
       file_name: "export.sql/PROJECT_DATA_TABLE.dsv"
       file_type: tsv
-      file_archive_name: "../src/data/nmdc-version5.zip"
+      file_archive_name: "../data/nmdc-version5.zip"
     rename_slots:
       - old_name: sequencing_strategy
         new_name: omics_type
@@ -223,14 +223,14 @@ data_sources:
     data_source:
       file_name: "export.sql/PROJECT_BIOSAMPLE_DATA_TABLE.dsv"
       file_type: tsv
-      file_archive_name: "../src/data/nmdc-version5.zip"
+      file_archive_name: "../data/nmdc-version5.zip"
     
   biosample_table:
     id_key: biosample_id
     data_source:
       file_name: "export.sql/BIOSAMPLE_DATA_TABLE.dsv" 
       file_type: tsv
-      file_archive_name: "../src/data/nmdc-version5.zip"
+      file_archive_name: "../data/nmdc-version5.zip"
     filters:              
       - {field: active, values: ['Yes']}
     rename_slots:
@@ -349,7 +349,7 @@ data_sources:
   ficus_faa_table:
     id_key: file_id
     data_source:
-      file_name: "../src/data/ficus_project_faa.tsv"
+      file_name: "../data/ficus_project_faa.tsv"
       file_type: tsv      
     append_columns:
       - name: processing_institution
@@ -361,7 +361,7 @@ data_sources:
   ficus_fna_table:
     id_key: file_id
     data_source:
-      file_name: "../src/data/ficus_project_fna.tsv"
+      file_name: "../data/ficus_project_fna.tsv"
       file_type: tsv 
     append_columns:
       - name: processing_institution
@@ -373,7 +373,7 @@ data_sources:
   ficus_fastq_table:
     id_key: file_id
     data_source:
-      file_name: "../src/data/ficus_project_fastq.tsv"
+      file_name: "../data/ficus_project_fastq.tsv"
       file_type: tsv      
     append_columns:
       - name: processing_institution
@@ -385,13 +385,13 @@ data_sources:
   ficus_jgi_emsl:
     id_key: gold_study_id
     data_source:
-      file_name: "../src/data/FICUS - JGI-EMSL Proposal - Gold Study - ID mapping and PI.xlsx"
+      file_name: "../data/FICUS - JGI-EMSL Proposal - Gold Study - ID mapping and PI.xlsx"
       file_type: excel
 
   ficus_emsl:
     id_key: dataset_id
     data_source: 
-      file_name: "../src/data/EMSL_FICUS_project_process_data_export.xlsx"
+      file_name: "../data/EMSL_FICUS_project_process_data_export.xlsx"
       file_type: multi-sheet-excel
     rename_slots:
       - old_name: experimental_data_type

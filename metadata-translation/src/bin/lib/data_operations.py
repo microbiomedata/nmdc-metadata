@@ -450,7 +450,7 @@ def make_dataframe_from_spec_file (data_spec_file, nrows=None):
         ## filter rows by specific values
         if 'filters' in data.keys():
             for fltr in data.filters: df = df[df[fltr.field].isin(fltr.values)]
-        
+
         ## select a subset of the columns
         if 'subset_cols' in data.keys():
             df = df[data.subset_cols]
@@ -476,6 +476,7 @@ def make_dataframe_from_spec_file (data_spec_file, nrows=None):
         df = make_df(source)
         ds = Data_source(df, source[0])
         dataframes.append(ds)
+        # print(source[0], len(df))
     
     merged_df = merge_dataframes(dataframes)
     return merged_df
@@ -495,8 +496,8 @@ def merge_dataframes (dataframes, data_source_names=[]):
         ## convert data into an EAV structure
         eavdf = data.melt(id_vars=['nmdc_record_id'], var_name='attribute')
         eavdf['nmdc_data_source'] = data_source_name
-        
-        #merged_df = merged_df.append(eavdf, ignore_index=True)
+        # print(data_source_name, len(eavdf))
+
         merged_df = merged_df.append(eavdf, ignore_index=True)
     
     return merged_df
