@@ -79,16 +79,19 @@ def make_nmdc_database():
 
 
 def make_nmdc_example_database():
-    ## load biosample json
+    ## load biosample json and get list of biosamples
     biosample_json = get_json('output/nmdc_etl/gold_biosample.json')
     biosample_test = json.loads(jq.compile('.[0:5]').input(biosample_json).text())
-
-    ## get list of associted projects from biosample
-    projects_list = jq.compile('.[] | .part_of[]').input(biosample_test).text().replace('\n', ', ')
+    biosample_list = jq.compile('.[0:5]| .[] | .id').input(biosample_json).text().replace('\n', ', ')
 
     ## load projects (omics processing)
     projects_json = get_json('output/nmdc_etl/gold_omics_processing.json')
-    projects_test = jq.compile('.[] | select(.id == (' + projects_list + '))').input(projects_json).text()
+
+    ## get list of associated projects from biosample
+    # projects_list = jq.compile('.[] | .has_input[]').input(biosample_test).text().replace('\n', ', ')
+
+    # projects_test = jq.compile('.[] | select(.id == (' + projects_list + '))').input(projects_json).text()
+    projects_test = jq.compile('.[] | select(.has_input[]? == (' + biosample_list + '))').input(projects_json).text()
     projects_test = json.loads('[' + projects_test.replace('\n', ',') + ']') # put into correct json
 
     ## get list of studies
@@ -148,9 +151,8 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
     study = dop.make_study_dataframe(study_table, contact_table, proposals_table) # gold studies
     emsl = dop.make_emsl_dataframe(emsl_table, jgi_emsl_table, study_table) # emsl projects / data objects
     data_objects = dop.make_data_objects_dataframe(faa_table, fna_table, fastq_table, project_table) # jgi data objects
-    project = dop.make_project_dataframe(project_table, study_table, contact_table, data_objects) # gold projects
     biosample = dop.make_biosample_dataframe(biosample_table, project_biosample_table, project_table) # gold biosamples
-    
+    project = dop.make_project_dataframe(project_table, study_table, contact_table, data_objects, project_biosample_table, biosample) # gold projects
 
     if 'gold_study' in etl_modules:
         gold_study_json = make_json_etl(study, nmdc.Study, 'gold_study')
@@ -184,9 +186,10 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
 
 
 if __name__ == '__main__':
-    # main(etl_modules=['gold_biosample']) # test biosample etl
-    # main(etl_modules=['jgi_data_object']) # test data object
-    # main(etl_modules=['emsl_data_object']) # test data object
-    # main()
-    # make_nmdc_database()
-    make_nmdc_example_database()
+    # main(etl_modules=['gold_biosample']) # test gold biosample etl
+    # main(etl_modules=['gold_omics_processing']) # test gold project etl
+    # main(etl_modules=['jgi_data_object']) # test jgi data object etl
+    # main(etl_modules=['emsl_data_object']) # test emsl data object etl
+    main() # run etl on all files
+    make_nmdc_database() # combines output into database json format
+    make_nmdc_example_database() # make example data

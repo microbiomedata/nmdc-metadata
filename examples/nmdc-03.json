@@ -32,6 +32,9 @@
     {
       "id": "gold:Gp0108335",
       "name": "Thawing permafrost microbial communities from the Arctic, studying carbon transformations - Permafrost 712P3D",
+      "has_input": [
+        "gold:Gb0108335"
+      ],
       "part_of": [
         "gold:Gs0112340"
       ],
@@ -40,6 +43,9 @@
         "nmdc:5af44fd264d0b33747747dd9",
         "jgi:551a20d30d878525404e90d5"
       ],
+      "omics_type": {
+        "has_raw_value": "Metagenome"
+      },
       "type": "nmdc:OmicsProcessing",
       "add_date": {
         "has_raw_value": "30-OCT-14 12.00.00.000000000 AM"
@@ -50,9 +56,6 @@
       "ncbi_project_name": {
         "has_raw_value": "Thawing permafrost microbial communities from the Arctic, studying carbon transformations - Permafrost 712P3D"
       },
-      "omics_type": {
-        "has_raw_value": "Metagenome"
-      },
       "principal_investigator_name": {
         "has_raw_value": "Virginia Rich"
       }
@@ -60,6 +63,9 @@
     {
       "id": "gold:Gp0108340",
       "name": "Thawing permafrost microbial communities from the Arctic, studying carbon transformations - Permafrost 612S3M",
+      "has_input": [
+        "gold:Gb0108340"
+      ],
       "part_of": [
         "gold:Gs0112340"
       ],
@@ -68,6 +74,9 @@
         "nmdc:5af0d91764d0b3374773e078",
         "jgi:551a20d50d878525404e90d7"
       ],
+      "omics_type": {
+        "has_raw_value": "Metagenome"
+      },
       "type": "nmdc:OmicsProcessing",
       "add_date": {
         "has_raw_value": "30-OCT-14 12.00.00.000000000 AM"
@@ -78,9 +87,6 @@
       "ncbi_project_name": {
         "has_raw_value": "Thawing permafrost microbial communities from the Arctic, studying carbon transformations - Permafrost 612S3M"
       },
-      "omics_type": {
-        "has_raw_value": "Metagenome"
-      },
       "principal_investigator_name": {
         "has_raw_value": "Virginia Rich"
       }
@@ -88,6 +94,9 @@
     {
       "id": "gold:Gp0108341",
       "name": "Thawing permafrost microbial communities from the Arctic, studying carbon transformations - Permafrost 712S3S",
+      "has_input": [
+        "gold:Gb0108341"
+      ],
       "part_of": [
         "gold:Gs0112340"
       ],
@@ -96,6 +105,9 @@
         "nmdc:5af6f6bc64d0b3374774f9a5",
         "jgi:551a20d90d878525404e90e1"
       ],
+      "omics_type": {
+        "has_raw_value": "Metagenome"
+      },
       "type": "nmdc:OmicsProcessing",
       "add_date": {
         "has_raw_value": "30-OCT-14 12.00.00.000000000 AM"
@@ -106,9 +118,6 @@
       "ncbi_project_name": {
         "has_raw_value": "Thawing permafrost microbial communities from the Arctic, studying carbon transformations - Permafrost 712S3S"
       },
-      "omics_type": {
-        "has_raw_value": "Metagenome"
-      },
       "principal_investigator_name": {
         "has_raw_value": "Virginia Rich"
       }
@@ -116,6 +125,9 @@
     {
       "id": "gold:Gp0108342",
       "name": "Thawing permafrost microbial communities from the Arctic, studying carbon transformations - Permafrost 812E2M",
+      "has_input": [
+        "gold:Gb0108342"
+      ],
       "part_of": [
         "gold:Gs0112340"
       ],
@@ -124,6 +136,9 @@
         "nmdc:5af0d80264d0b3374773e064",
         "jgi:551a20d60d878525404e90d9"
       ],
+      "omics_type": {
+        "has_raw_value": "Metagenome"
+      },
       "type": "nmdc:OmicsProcessing",
       "add_date": {
         "has_raw_value": "30-OCT-14 12.00.00.000000000 AM"
@@ -134,9 +149,6 @@
       "ncbi_project_name": {
         "has_raw_value": "Thawing permafrost microbial communities from the Arctic, studying carbon transformations - Permafrost 812E2M"
       },
-      "omics_type": {
-        "has_raw_value": "Metagenome"
-      },
       "principal_investigator_name": {
         "has_raw_value": "Virginia Rich"
       }
@@ -144,6 +156,9 @@
     {
       "id": "gold:Gp0108344",
       "name": "Thawing permafrost microbial communities from the Arctic, studying carbon transformations - Permafrost 812P2M",
+      "has_input": [
+        "gold:Gb0108344"
+      ],
       "part_of": [
         "gold:Gs0112340"
       ],
@@ -152,6 +167,9 @@
         "nmdc:5af65c0764d0b3374774e559",
         "jgi:551a20da0d878525404e90e4"
       ],
+      "omics_type": {
+        "has_raw_value": "Metagenome"
+      },
       "type": "nmdc:OmicsProcessing",
       "add_date": {
         "has_raw_value": "30-OCT-14 12.00.00.000000000 AM"
@@ -161,9 +179,6 @@
       },
       "ncbi_project_name": {
         "has_raw_value": "Thawing permafrost microbial communities from the Arctic, studying carbon transformations - Permafrost 812P2M"
-      },
-      "omics_type": {
-        "has_raw_value": "Metagenome"
       },
       "principal_investigator_name": {
         "has_raw_value": "Virginia Rich"
@@ -243,10 +258,7 @@
       },
       "specific_ecosystem": {
         "has_raw_value": "Permafrost"
-      },
-      "part_of": [
-        "gold:Gp0108335"
-      ]
+      }
     },
     {
       "id": "gold:Gb0108340",
@@ -321,10 +333,7 @@
       },
       "specific_ecosystem": {
         "has_raw_value": "Permafrost"
-      },
-      "part_of": [
-        "gold:Gp0108340"
-      ]
+      }
     },
     {
       "id": "gold:Gb0108341",
@@ -399,10 +408,7 @@
       },
       "specific_ecosystem": {
         "has_raw_value": "Permafrost"
-      },
-      "part_of": [
-        "gold:Gp0108341"
-      ]
+      }
     },
     {
       "id": "gold:Gb0108342",
@@ -477,10 +483,7 @@
       },
       "specific_ecosystem": {
         "has_raw_value": "Permafrost"
-      },
-      "part_of": [
-        "gold:Gp0108342"
-      ]
+      }
     },
     {
       "id": "gold:Gb0108344",
@@ -554,10 +557,7 @@
       },
       "specific_ecosystem": {
         "has_raw_value": "Permafrost"
-      },
-      "part_of": [
-        "gold:Gp0108344"
-      ]
+      }
     }
   ],
   "data_object_set": [

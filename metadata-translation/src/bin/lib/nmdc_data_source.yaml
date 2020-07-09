@@ -31,6 +31,7 @@ classes:
       - omics_type 
       - principal_investigator_name
       - processing_institution
+      - {has_input: biosample_gold_id}
             
   emsl_omics_processing:
     type: omics processing
@@ -163,7 +164,8 @@ classes:
       - water_tot_diss_nitro
       - water_tot_phosphorus
       - water_turbidity
-      - {part_of: project_gold_ids}
+      # - {part_of: project_gold_ids}
+
   
 data_sources:
 
