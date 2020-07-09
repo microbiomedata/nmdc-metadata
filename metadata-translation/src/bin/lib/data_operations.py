@@ -631,7 +631,13 @@ def make_study_dataframe (study_table, contact_table, proposals_table, result_co
         return temp2_df
 
 
-def make_project_dataframe (project_table, study_table, contact_table, data_object_table=None, result_cols=[]):
+def make_project_dataframe (project_table, 
+                            study_table, 
+                            contact_table, 
+                            data_object_table=None, 
+                            project_biosample_table=None, 
+                            biosample_table=None, 
+                            result_cols=[]):
     ## subset data
     study_table_splice = study_table[['study_id', 'gold_id']].copy()
     contact_table_splice = contact_table[['contact_id', 'principal_investigator_name']].copy()
@@ -649,7 +655,8 @@ def make_project_dataframe (project_table, study_table, contact_table, data_obje
     temp2_df.gold_id = "gold:" + temp2_df.gold_id
     temp2_df.study_gold_id = "gold:" + temp2_df.study_gold_id
 
-    if not (data_object_table is None):
+    ## if present join data objects as output of project
+    if (not (data_object_table is None)):
         ## make copy and add prefix
         data_object_table = data_object_table.copy()
         data_object_table.gold_project_id = \
@@ -664,6 +671,21 @@ def make_project_dataframe (project_table, study_table, contact_table, data_obje
         
         ## join project and output files
         temp2_df = pds.merge(temp2_df, output_files, how='left', left_on='gold_id', right_on='gold_project_id')
+    
+    ## if present join biosamples as inputs to project
+    if (not (project_biosample_table is None)) and (not (biosample_table is None)):
+        ## make local copies & rename column
+        project_biosample_table = project_biosample_table.copy()
+        biosample_table = biosample_table[['biosample_id', 'gold_id']].copy()
+        biosample_table.rename(columns={'gold_id': 'biosample_gold_id'}, inplace=True)
+
+        ## add prefix
+        biosample_table['biosample_gold_id'] = \
+            biosample_table['biosample_gold_id'].map(lambda x: x if 'gold:' == x[0:5] else 'gold:' + x)
+        
+        ## join project biosamples to biosamples
+        input_samples = pds.merge(project_biosample_table, biosample_table, how='inner', on='biosample_id')
+        temp2_df = pds.merge(temp2_df, input_samples, how='left', on='project_id')
     
     if len(result_cols) > 0:
         return temp2_df[result_cols]
