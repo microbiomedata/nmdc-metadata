@@ -348,29 +348,29 @@ data_sources:
       - water_tot_phosphorus
       - water_turbidity
 
-  ficus_faa_table:
-    id_key: file_id
-    data_source:
-      file_name: "../data/ficus_project_faa.tsv"
-      file_type: tsv      
-    append_columns:
-      - name: processing_institution
-        value: Environmental Molecular Sciences Lab
-    rename_slots:
-      - old_name: file_size
-        new_name: file_size_bytes
+  # ficus_faa_table:
+  #   id_key: file_id
+  #   data_source:
+  #     file_name: "../data/ficus_project_faa.tsv"
+  #     file_type: tsv      
+  #   append_columns:
+  #     - name: processing_institution
+  #       value: Environmental Molecular Sciences Lab
+  #   rename_slots:
+  #     - old_name: file_size
+  #       new_name: file_size_bytes
 
-  ficus_fna_table:
-    id_key: file_id
-    data_source:
-      file_name: "../data/ficus_project_fna.tsv"
-      file_type: tsv 
-    append_columns:
-      - name: processing_institution
-        value: Environmental Molecular Sciences Lab
-    rename_slots:
-      - old_name: file_size
-        new_name: file_size_bytes
+  # ficus_fna_table:
+  #   id_key: file_id
+  #   data_source:
+  #     file_name: "../data/ficus_project_fna.tsv"
+  #     file_type: tsv 
+  #   append_columns:
+  #     - name: processing_institution
+  #       value: Environmental Molecular Sciences Lab
+  #   rename_slots:
+  #     - old_name: file_size
+  #       new_name: file_size_bytes
 
   ficus_fastq_table:
     id_key: file_id

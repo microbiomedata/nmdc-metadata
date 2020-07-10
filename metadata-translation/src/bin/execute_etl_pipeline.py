@@ -141,8 +141,8 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
     project_table = dop.extract_table(mdf, 'project_table')
     jgi_emsl_table = dop.extract_table(mdf, 'ficus_jgi_emsl')
     emsl_table = dop.extract_table(mdf, 'ficus_emsl')
-    faa_table = dop.extract_table(mdf, 'ficus_faa_table')
-    fna_table = dop.extract_table(mdf, 'ficus_fna_table')
+    # faa_table = dop.extract_table(mdf, 'ficus_faa_table')
+    # fna_table = dop.extract_table(mdf, 'ficus_fna_table')
     fastq_table = dop.extract_table(mdf, 'ficus_fastq_table')
     project_biosample_table = dop.extract_table(mdf, 'project_biosample_table')
     biosample_table = dop.extract_table(mdf, 'biosample_table')
@@ -150,9 +150,10 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
     ## build dataframes from tables
     study = dop.make_study_dataframe(study_table, contact_table, proposals_table) # gold studies
     emsl = dop.make_emsl_dataframe(emsl_table, jgi_emsl_table, study_table) # emsl projects / data objects
-    data_objects = dop.make_data_objects_dataframe(faa_table, fna_table, fastq_table, project_table) # jgi data objects
+    # data_objects = dop.make_data_objects_dataframe(faa_table, fna_table, fastq_table, project_table) # jgi data objects
+    fastq = dop.make_jgi_fastq_dataframe(fastq_table, project_table)
     biosample = dop.make_biosample_dataframe(biosample_table, project_biosample_table, project_table) # gold biosamples
-    project = dop.make_project_dataframe(project_table, study_table, contact_table, data_objects, project_biosample_table, biosample) # gold projects
+    project = dop.make_project_dataframe(project_table, study_table, contact_table, fastq, project_biosample_table, biosample) # gold projects
 
     if 'gold_study' in etl_modules:
         gold_study_json = make_json_etl(study, nmdc.Study, 'gold_study')
@@ -180,7 +181,7 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
         align_nmdc_datatypes.align_emsl_data_object()
         
     if 'jgi_data_object' in etl_modules:
-        jgi_json_do = make_json_etl(data_objects, nmdc.DataObject, 'jgi_data_object')
+        jgi_json_do = make_json_etl(fastq, nmdc.DataObject, 'jgi_data_object')
         dop.save_json_string_list("output/nmdc_etl/faa_fna_fastq_data_objects.json", jgi_json_do)
         align_nmdc_datatypes.align_jgi_data_object()
 
