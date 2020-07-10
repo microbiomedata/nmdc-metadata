@@ -837,3 +837,27 @@ def make_data_objects_dataframe (faa_table, fna_table, fastq_table, project_tabl
         return temp1_df[result_cols]
     else:
         return temp1_df[data_objects.columns]
+
+
+def make_jgi_fastq_dataframe (fastq_table, project_table, result_cols=[]):
+    ## subset data
+    project_table_splice = project_table[['gold_id']].copy()
+    
+    ## copy tables
+    fastq_df = fastq_table.copy()
+
+    ## add prefixes for fastq file id
+    fastq_df.file_id = "jgi:" + fastq_df.file_id
+    
+    ## inner join to projects
+    temp1_df = \
+        pds.merge(fastq_df, project_table_splice, how='inner', left_on='gold_project_id', right_on='gold_id')
+    
+    ## add prefix for gold
+    temp1_df.gold_project_id = "gold:" + temp1_df.gold_project_id
+    temp1_df.gold_id = "gold:" + temp1_df.gold_id
+    
+    if len(result_cols) > 0:
+        return temp1_df[result_cols]
+    else:
+        return temp1_df[fastq_df.columns]
