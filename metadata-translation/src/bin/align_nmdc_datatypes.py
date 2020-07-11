@@ -75,7 +75,7 @@ def align_emsl_data_object():
 
 
 def align_jgi_data_object():
-    align_data_object('output/nmdc_etl/faa_fna_fastq_data_objects.json')
+    align_data_object('output/nmdc_etl/jgi_fastq_data_objects.json')
 
 
 def align_biosample(file_path):

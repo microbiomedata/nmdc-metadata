@@ -33,6 +33,8 @@ def make_merged_data_source(spec_file='lib/nmdc_data_source.yaml', save_path='..
 
     mdf = dop.make_dataframe_from_spec_file (spec_file) # build merged data frame (mdf)
     mdf.to_csv(save_path, sep='\t', index=False) # save merged data
+    print ('merged data frame length: ', len(mdf))
+
     return mdf
 
 
@@ -65,7 +67,7 @@ def make_nmdc_database():
     gold_project = get_json("output/nmdc_etl/gold_omics_processing.json")
     emsl_project = get_json("output/nmdc_etl/emsl_omics_processing.json")
     emsl_data_object = get_json("output/nmdc_etl/emsl_data_objects.json")
-    jgi_data_object = get_json("output/nmdc_etl/faa_fna_fastq_data_objects.json")
+    jgi_data_object = get_json("output/nmdc_etl/jgi_fastq_data_objects.json")
 
     database = \
     {
@@ -107,7 +109,7 @@ def make_nmdc_example_database():
     data_objects_list = jq.compile('.[] | .has_output[]').input(projects_test).text().replace('\n', ', ')
 
     ## load data objects
-    data_objects_json = get_json('output/nmdc_etl/faa_fna_fastq_data_objects.json')
+    data_objects_json = get_json('output/nmdc_etl/jgi_fastq_data_objects.json')
     data_objects_test = jq.compile('.[] | select(.id == (' + data_objects_list + '))').input(data_objects_json).text().replace('\n', ', ')
     data_objects_test = json.loads('[' + data_objects_test.replace('\n', ',') + ']') # put into correct json
 
@@ -127,7 +129,7 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
          etl_modules=['gold_study', 
                       'gold_omics_processing', 
                       'gold_biosample', 
-                      'emsl_omics_processing', 
+                      'emsl_omics_processing',
                       'emsl_data_object', 
                       'jgi_data_object']):
 
@@ -141,15 +143,14 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
     project_table = dop.extract_table(mdf, 'project_table')
     jgi_emsl_table = dop.extract_table(mdf, 'ficus_jgi_emsl')
     emsl_table = dop.extract_table(mdf, 'ficus_emsl')
-    # faa_table = dop.extract_table(mdf, 'ficus_faa_table')
-    # fna_table = dop.extract_table(mdf, 'ficus_fna_table')
+    emsl_biosample_table = dop.extract_table(mdf, 'ficus_emsl_biosample')
     fastq_table = dop.extract_table(mdf, 'ficus_fastq_table')
     project_biosample_table = dop.extract_table(mdf, 'project_biosample_table')
     biosample_table = dop.extract_table(mdf, 'biosample_table')
 
     ## build dataframes from tables
     study = dop.make_study_dataframe(study_table, contact_table, proposals_table) # gold studies
-    emsl = dop.make_emsl_dataframe(emsl_table, jgi_emsl_table, study_table) # emsl projects / data objects
+    emsl = dop.make_emsl_dataframe(emsl_table, jgi_emsl_table, study_table, emsl_biosample_table) # emsl projects / data objects
     # data_objects = dop.make_data_objects_dataframe(faa_table, fna_table, fastq_table, project_table) # jgi data objects
     fastq = dop.make_jgi_fastq_dataframe(fastq_table, project_table)
     biosample = dop.make_biosample_dataframe(biosample_table, project_biosample_table, project_table) # gold biosamples
@@ -182,11 +183,12 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
         
     if 'jgi_data_object' in etl_modules:
         jgi_json_do = make_json_etl(fastq, nmdc.DataObject, 'jgi_data_object')
-        dop.save_json_string_list("output/nmdc_etl/faa_fna_fastq_data_objects.json", jgi_json_do)
+        dop.save_json_string_list("output/nmdc_etl/jgi_fastq_data_objects.json", jgi_json_do)
         align_nmdc_datatypes.align_jgi_data_object()
 
 
 if __name__ == '__main__':
+    # make_merged_data_source() # consolidates all nmdc data into a single tsv
     # main(etl_modules=['gold_biosample']) # test gold biosample etl
     # main(etl_modules=['gold_omics_processing']) # test gold project etl
     # main(etl_modules=['jgi_data_object']) # test jgi data object etl
