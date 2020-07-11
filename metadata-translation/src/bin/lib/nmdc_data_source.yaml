@@ -42,6 +42,7 @@ classes:
     attributes:
       - {part_of: gold_study_id}
       - {has_output: data_object_id}
+      - {has_input: biosample_gold_ids}
       
   emsl_data_object:
     type: data object
@@ -403,3 +404,12 @@ data_sources:
     append_columns:
       - name: processing_institution
         value: Environmental Molecular Sciences Lab
+  
+  ficus_emsl_biosample:
+    # id_key: dataset_id # since the key is the same as ficus_emsl don't use it
+    data_source: 
+      file_name: "../data/EMSL_Hess_Stegen_Blanchard_DatasetToMetagenomeMapping.tsv"
+      file_type: tsv
+    rename_slots:
+      - old_name: gold_biosample_id
+        new_name: biosample_gold_id

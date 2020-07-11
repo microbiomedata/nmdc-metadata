@@ -513,6 +513,7 @@ def unpivot_dataframe (df, index='nmdc_record_id', columns='attribute', value='v
         df = df.pivot(index=index, columns=columns)
     
     if len(df) > 0: df = df[value].reset_index()  # drop value hierarchical index
+    if len(df) > 0: df = df.where(pds.notnull(df), None) # replace an NaN values with None
     df.columns.name = None  # remove column name attribute
     
     return df
@@ -520,9 +521,6 @@ def unpivot_dataframe (df, index='nmdc_record_id', columns='attribute', value='v
 
 def extract_table (merged_df, table_name):
     df = unpivot_dataframe(merged_df[merged_df.nmdc_data_source == table_name])
-
-    ## replace an NaN values with None
-    df = df.where(pds.notnull(df), None)
     return df
 
 
@@ -776,10 +774,12 @@ def  make_jgi_emsl_dataframe(jgi_emsl_table, study_table, result_cols=[]):
         return temp1_df
 
 
-def make_emsl_dataframe (emsl_table, jgi_emsl_table, study_table, result_cols=[]):
+def make_emsl_dataframe (emsl_table, jgi_emsl_table, study_table, emsl_biosample_table, result_cols=[]):
     ## subset data
     study_table_splice = study_table[['study_id', 'gold_id']].copy()
-    jgi_emsl_table_splice = jgi_emsl_table[['gold_study_id', 'emsl_proposal_id']]
+    jgi_emsl_table_splice = jgi_emsl_table[['gold_study_id', 'emsl_proposal_id']].copy()
+    biosample_slice = emsl_biosample_table[['dataset_id', 'biosample_gold_id']].copy()
+    biosample_slice['biosample_gold_id'] = 'gold:' + biosample_slice['biosample_gold_id'] # add prefix
     
     ## inner join jgi-emsl data on study (must be part of study)
     temp1_df = \
@@ -795,12 +795,23 @@ def make_emsl_dataframe (emsl_table, jgi_emsl_table, study_table, result_cols=[]
     ## add data object name column
     temp2_df["data_object_name"] = "output: "
     temp2_df["data_object_name"] = temp2_df["data_object_name"] + temp2_df["dataset_name"].map(str)  # build data object id
+
+    ## group concat & join the biosample ids that are inputs to the omics process
+    groups = biosample_slice.groupby('dataset_id')['biosample_gold_id']
+    input_biosamples = \
+        pds.DataFrame(groups.apply(lambda x: ','.join(filter(None, x)))).drop_duplicates().reset_index()
+    input_biosamples.rename(columns={'biosample_gold_id': 'biosample_gold_ids'}, inplace=True)
+    input_biosamples['biosample_gold_ids'] = input_biosamples['biosample_gold_ids'].astype(str)
+    temp2_df = pds.merge(temp2_df, input_biosamples, how='left', on='dataset_id')
     
     ## add prefix
     temp2_df.gold_id = "gold:" + temp2_df.gold_id
     temp2_df.gold_study_id = "gold:" + temp2_df.gold_study_id
     temp2_df.dataset_id = "emsl:" + temp2_df.dataset_id
     temp2_df.data_object_id = "emsl:" + temp2_df.data_object_id
+
+    ## drop duplicates
+    temp2_df.drop_duplicates(inplace=True)
     
     if len(result_cols) > 0:
         return temp2_df[result_cols]
