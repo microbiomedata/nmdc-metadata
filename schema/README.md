@@ -1,4 +1,5 @@
 # Schema
+
 The [NMDC](https://microbiomedata.org/) schema specifies how metadata elements are related. The main elements are:
 * [Study](https://microbiomedata.github.io/nmdc-metadata/docs/Study.html): Summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.
 * [Biosample](https://microbiomedata.github.io/nmdc-metadata/docs/Biosample.html): A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.  
