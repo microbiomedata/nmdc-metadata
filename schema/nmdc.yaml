@@ -434,6 +434,20 @@ slots:
   
   num_aligned_reads:
     is_a: metagenome alignment parameter
+
+  read analysis statistic: {}
+
+  input read count:
+    is_a: read analysis statistic
+
+  input base count:
+    is_a: read analysis statistic
+
+  output read count:
+    is_a: read analysis statistic
+
+  output base count:
+    is_a: read analysis statistic
     
   ## GOLD SPECIFIC
 
