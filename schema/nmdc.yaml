@@ -99,10 +99,10 @@ classes:
     slots:
       - num_aligned_reads
 
-  annotation activity:
+  metagenome annotation activity:
     is_a: workflow execution activity
 
-  read analysis activity:
+  read QC analysis activity:
     is_a: workflow execution activity
 
   metabolomics analysis activity:
@@ -420,34 +420,109 @@ slots:
   ## Workflow specific
 
   metagenome assembly parameter: {}
-  
-  ctg_L50:
+
+  asm_score:
     is_a: metagenome assembly parameter
-    
+      
   n_scaffolds:
     is_a: metagenome assembly parameter
-    
+
+  scaffolds:
+    is_a: metagenome assembly parameter
+
+  scaf_logsum:
+    is_a: metagenome assembly parameter
+
+  scaf_powsum:
+    is_a: metagenome assembly parameter
+
+  scaf_max:
+    is_a: metagenome assembly parameter
+      
+  scaf_bp:
+    is_a: metagenome assembly parameter
+
+  scaf_N50:
+    is_a: metagenome assembly parameter
+      
+  scaf_N90:
+    is_a: metagenome assembly parameter
+
+  scaf_L50:
+    is_a: metagenome assembly parameter
+
+  scaf_L90:
+    is_a: metagenome assembly parameter
+
+  scaf_n_gt50K:
+    is_a: metagenome assembly parameter
+
+  scaf_l_gt50K:
+    is_a: metagenome assembly parameter      
+
+  scaf_pct_gt50K:
+    is_a: metagenome assembly parameter
+      
+  contigs:
+    is_a: metagenome assembly parameter
+
+  contig_bp:
+    is_a: metagenome assembly parameter
+      
+  ctg_N50:
+    is_a: metagenome assembly parameter
+
+  ctg_L50:
+    is_a: metagenome assembly parameter
+
+  ctg_N90:
+    is_a: metagenome assembly parameter
+
+  ctg_L90:
+    is_a: metagenome assembly parameter     
+
+  ctg_logsum:
+    is_a: metagenome assembly parameter
+
+  ctg_powsum:
+    is_a: metagenome assembly parameter
+
+  ctg_max:
+    is_a: metagenome assembly parameter
+      
+  gap_pct:
+    is_a: metagenome assembly parameter
+      
   gc_std:
     is_a: metagenome assembly parameter
 
+  gc_avg:
+    is_a: metagenome assembly parameter
+
+  num_input_reads:
+    is_a: metagenome assembly parameter    
+
+  num_aligned_reads:
+    is_a: metagenome assembly parameter
+      
   metagenome alignment parameter: {}
   
   num_aligned_reads:
     is_a: metagenome alignment parameter
 
-  read analysis statistic: {}
+  read QC analysis statistic: {}
 
   input read count:
-    is_a: read analysis statistic
+    is_a: read QC analysis statistic
 
   input base count:
-    is_a: read analysis statistic
+    is_a: read QC analysis statistic
 
   output read count:
-    is_a: read analysis statistic
+    is_a: read QC analysis statistic
 
   output base count:
-    is_a: read analysis statistic
+    is_a: read QC analysis statistic
     
   ## GOLD SPECIFIC
 
