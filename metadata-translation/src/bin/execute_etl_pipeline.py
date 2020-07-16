@@ -69,12 +69,24 @@ def make_nmdc_database():
     emsl_data_object = get_json("output/nmdc_etl/emsl_data_objects.json")
     jgi_data_object = get_json("output/nmdc_etl/jgi_fastq_data_objects.json")
 
+
+    ## load aim 2 json files
+    mg_annotation_activities = get_json('../data/aim-2-workflows/metagenome_annotation_activities.json')
+    mg_annotation_data_objects = get_json('../data/aim-2-workflows/metagenome_annotation_data_objects.json')
+
+    mg_assembly_activities = get_json('../data/aim-2-workflows/metagenome_assembly_activities.json')
+    mg_assembly_data_objects = get_json('../data/aim-2-workflows/metagenome_assembly_data_objects.json')
+
+    readQ_annotation_activities = get_json('../data/aim-2-workflows/readQC_activities.json')
+    readQ_annotation_data_objects = get_json('../data/aim-2-workflows/readQC_data_objects.json')
+
     database = \
     {
         "study_set": [*gold_study], 
         "omics_processing_set": [*gold_project, *emsl_project], 
         "biosample_set": [*gold_biosample], 
-        "data_object_set": [*jgi_data_object, *emsl_data_object]
+        "data_object_set": [*jgi_data_object, *emsl_data_object, *mg_annotation_data_objects, *mg_assembly_data_objects, *readQ_annotation_data_objects],
+        "activity_set": [*mg_annotation_activities, *mg_assembly_activities, *readQ_annotation_activities]
     }
 
     save_json(database, "output/nmdc_database.json" )
@@ -112,6 +124,7 @@ def make_nmdc_example_database():
     data_objects_json = get_json('output/nmdc_etl/jgi_fastq_data_objects.json')
     data_objects_test = jq.compile('.[] | select(.id == (' + data_objects_list + '))').input(data_objects_json).text().replace('\n', ', ')
     data_objects_test = json.loads('[' + data_objects_test.replace('\n', ',') + ']') # put into correct json
+
 
     ## compile into database object
     database = \
@@ -193,6 +206,6 @@ if __name__ == '__main__':
     # main(etl_modules=['gold_omics_processing']) # test gold project etl
     # main(etl_modules=['jgi_data_object']) # test jgi data object etl
     # main(etl_modules=['emsl_data_object']) # test emsl data object etl
-    main() # run etl on all files
+    # main() # run etl on all files
     make_nmdc_database() # combines output into database json format
-    make_nmdc_example_database() # make example data
+    # make_nmdc_example_database() # make example data
