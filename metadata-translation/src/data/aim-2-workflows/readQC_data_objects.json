@@ -1920,14 +1920,14 @@
   {
     "id": "nmdc:8b9a332df37547f2c1f2beefca91c49a",
     "name": "filterStats.txt",
-    "description": "Filtered read data stats for gold:Gp0146713",
+    "description": "Filtered read data stats for gold:Gp0146713 qa2",
     "file_size_bytes": 290,
     "type": "nmdc:DataObject"
   },
   {
     "id": "nmdc:e4017db75c12687edec74627e3308629",
     "name": "1780_122528.filtered.fastq.gz",
-    "description": "Filtered read data for gold:Gp0146713",
+    "description": "Filtered read data for gold:Gp0146713 qa2",
     "file_size_bytes": 3983639854,
     "type": "nmdc:DataObject"
   },
@@ -3012,14 +3012,14 @@
   {
     "id": "nmdc:e146ab1ace444578f3b02e8e22f5caa9",
     "name": "filterStats.txt",
-    "description": "Filtered read data stats for gold:Gp0255840",
+    "description": "Filtered read data stats for gold:Gp0255840 qa2",
     "file_size_bytes": 290,
     "type": "nmdc:DataObject"
   },
   {
     "id": "nmdc:473344e237a2f2ea3fb16e8e7fc5c810",
     "name": "503125_164753.filtered.fastq.gz",
-    "description": "Filtered read data for gold:Gp0255840",
+    "description": "Filtered read data for gold:Gp0255840 qa2",
     "file_size_bytes": 12381509407,
     "type": "nmdc:DataObject"
   },
@@ -5639,6 +5639,34 @@
     "name": "503568_212410.filtered.fastq.gz",
     "description": "Filtered read data for gold:Gp0396401",
     "file_size_bytes": 5150047328,
+    "type": "nmdc:DataObject"
+  },
+  {
+    "id": "nmdc:8d23c95a2ec52192478379e558bed026",
+    "name": "filterStats.txt",
+    "description": "Filtered read data stats for gold:Gp0255840",
+    "file_size_bytes": 289,
+    "type": "nmdc:DataObject"
+  },
+  {
+    "id": "nmdc:7977dbf7c5e883dec263fe8f23922313",
+    "name": "503125_164753.filtered.fastq.gz",
+    "description": "Filtered read data for gold:Gp0255840",
+    "file_size_bytes": 9526427542,
+    "type": "nmdc:DataObject"
+  },
+  {
+    "id": "nmdc:56a10842285cfe56534eeaf60fa829bf",
+    "name": "filterStats.txt",
+    "description": "Filtered read data stats for gold:Gp0146713",
+    "file_size_bytes": 290,
+    "type": "nmdc:DataObject"
+  },
+  {
+    "id": "nmdc:9e529a9d01aec09f0401e806e71bfa2a",
+    "name": "1780_122528.filtered.fastq.gz",
+    "description": "Filtered read data for gold:Gp0146713",
+    "file_size_bytes": 3737695843,
     "type": "nmdc:DataObject"
   }
 ]
