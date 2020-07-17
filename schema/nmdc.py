@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-07-06 18:00
+# Generation date: 2020-07-16 21:39
 # Schema: NMDC Schema
 #
 # id: https://microbiomedata/schema
@@ -129,15 +129,11 @@ class MetagenomeAssemblyActivityId(WorkflowExecutionActivityActivityId):
     pass
 
 
-class MetagenomeAlignmentActivityId(WorkflowExecutionActivityActivityId):
+class MetagenomeAnnotationActivityActivityId(WorkflowExecutionActivityActivityId):
     pass
 
 
-class AnnotationActivityActivityId(WorkflowExecutionActivityActivityId):
-    pass
-
-
-class ReadAnalysisActivityActivityId(WorkflowExecutionActivityActivityId):
+class ReadQCAnalysisActivityActivityId(WorkflowExecutionActivityActivityId):
     pass
 
 
@@ -856,9 +852,33 @@ class MetagenomeAssembly(WorkflowExecutionActivity):
     class_model_uri: ClassVar[URIRef] = NMDC.MetagenomeAssembly
 
     activity_id: Union[str, MetagenomeAssemblyActivityId] = None
+    asm_score: Optional[str] = None
+    scaffolds: Optional[str] = None
+    scaf_logsum: Optional[str] = None
+    scaf_powsum: Optional[str] = None
+    scaf_max: Optional[str] = None
+    scaf_bp: Optional[str] = None
+    scaf_N50: Optional[str] = None
+    scaf_N90: Optional[str] = None
+    scaf_L50: Optional[str] = None
+    scaf_L90: Optional[str] = None
+    scaf_n_gt50K: Optional[str] = None
+    scaf_l_gt50K: Optional[str] = None
+    scaf_pct_gt50K: Optional[str] = None
+    contigs: Optional[str] = None
+    contig_bp: Optional[str] = None
+    ctg_N50: Optional[str] = None
     ctg_L50: Optional[str] = None
-    n_scaffolds: Optional[str] = None
+    ctg_N90: Optional[str] = None
+    ctg_L90: Optional[str] = None
+    ctg_logsum: Optional[str] = None
+    ctg_powsum: Optional[str] = None
+    ctg_max: Optional[str] = None
+    gap_pct: Optional[str] = None
     gc_std: Optional[str] = None
+    gc_avg: Optional[str] = None
+    num_input_reads: Optional[str] = None
+    num_aligned_reads: Optional[str] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.activity_id is None:
@@ -869,60 +889,44 @@ class MetagenomeAssembly(WorkflowExecutionActivity):
 
 
 @dataclass
-class MetagenomeAlignment(WorkflowExecutionActivity):
+class MetagenomeAnnotationActivity(WorkflowExecutionActivity):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMDC.MetagenomeAlignment
-    class_class_curie: ClassVar[str] = "nmdc:MetagenomeAlignment"
-    class_name: ClassVar[str] = "metagenome alignment"
-    class_model_uri: ClassVar[URIRef] = NMDC.MetagenomeAlignment
+    class_class_uri: ClassVar[URIRef] = NMDC.MetagenomeAnnotationActivity
+    class_class_curie: ClassVar[str] = "nmdc:MetagenomeAnnotationActivity"
+    class_name: ClassVar[str] = "metagenome annotation activity"
+    class_model_uri: ClassVar[URIRef] = NMDC.MetagenomeAnnotationActivity
 
-    activity_id: Union[str, MetagenomeAlignmentActivityId] = None
-    num_aligned_reads: Optional[str] = None
+    activity_id: Union[str, MetagenomeAnnotationActivityActivityId] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.activity_id is None:
             raise ValueError(f"activity_id must be supplied")
-        if not isinstance(self.activity_id, MetagenomeAlignmentActivityId):
-            self.activity_id = MetagenomeAlignmentActivityId(self.activity_id)
+        if not isinstance(self.activity_id, MetagenomeAnnotationActivityActivityId):
+            self.activity_id = MetagenomeAnnotationActivityActivityId(self.activity_id)
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class AnnotationActivity(WorkflowExecutionActivity):
+class ReadQCAnalysisActivity(WorkflowExecutionActivity):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMDC.AnnotationActivity
-    class_class_curie: ClassVar[str] = "nmdc:AnnotationActivity"
-    class_name: ClassVar[str] = "annotation activity"
-    class_model_uri: ClassVar[URIRef] = NMDC.AnnotationActivity
+    class_class_uri: ClassVar[URIRef] = NMDC.ReadQCAnalysisActivity
+    class_class_curie: ClassVar[str] = "nmdc:ReadQCAnalysisActivity"
+    class_name: ClassVar[str] = "read QC analysis activity"
+    class_model_uri: ClassVar[URIRef] = NMDC.ReadQCAnalysisActivity
 
-    activity_id: Union[str, AnnotationActivityActivityId] = None
+    activity_id: Union[str, ReadQCAnalysisActivityActivityId] = None
+    input_read_count: Optional[str] = None
+    input_base_count: Optional[str] = None
+    output_read_count: Optional[str] = None
+    output_base_count: Optional[str] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.activity_id is None:
             raise ValueError(f"activity_id must be supplied")
-        if not isinstance(self.activity_id, AnnotationActivityActivityId):
-            self.activity_id = AnnotationActivityActivityId(self.activity_id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ReadAnalysisActivity(WorkflowExecutionActivity):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = NMDC.ReadAnalysisActivity
-    class_class_curie: ClassVar[str] = "nmdc:ReadAnalysisActivity"
-    class_name: ClassVar[str] = "read analysis activity"
-    class_model_uri: ClassVar[URIRef] = NMDC.ReadAnalysisActivity
-
-    activity_id: Union[str, ReadAnalysisActivityActivityId] = None
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.activity_id is None:
-            raise ValueError(f"activity_id must be supplied")
-        if not isinstance(self.activity_id, ReadAnalysisActivityActivityId):
-            self.activity_id = ReadAnalysisActivityActivityId(self.activity_id)
+        if not isinstance(self.activity_id, ReadQCAnalysisActivityActivityId):
+            self.activity_id = ReadQCAnalysisActivityActivityId(self.activity_id)
         super().__post_init__(**kwargs)
 
 
@@ -1040,20 +1044,104 @@ slots.md5_checksum = Slot(uri=NMDC.md5_checksum, name="md5 checksum", curie=NMDC
 slots.metagenome_assembly_parameter = Slot(uri=NMDC.metagenome_assembly_parameter, name="metagenome assembly parameter", curie=NMDC.curie('metagenome_assembly_parameter'),
                       model_uri=NMDC.metagenome_assembly_parameter, domain=None, range=Optional[str])
 
-slots.ctg_L50 = Slot(uri=NMDC.ctg_L50, name="ctg_L50", curie=NMDC.curie('ctg_L50'),
-                      model_uri=NMDC.ctg_L50, domain=None, range=Optional[str])
+slots.asm_score = Slot(uri=NMDC.asm_score, name="asm_score", curie=NMDC.curie('asm_score'),
+                      model_uri=NMDC.asm_score, domain=None, range=Optional[str])
 
 slots.n_scaffolds = Slot(uri=NMDC.n_scaffolds, name="n_scaffolds", curie=NMDC.curie('n_scaffolds'),
                       model_uri=NMDC.n_scaffolds, domain=None, range=Optional[str])
 
+slots.scaffolds = Slot(uri=NMDC.scaffolds, name="scaffolds", curie=NMDC.curie('scaffolds'),
+                      model_uri=NMDC.scaffolds, domain=None, range=Optional[str])
+
+slots.scaf_logsum = Slot(uri=NMDC.scaf_logsum, name="scaf_logsum", curie=NMDC.curie('scaf_logsum'),
+                      model_uri=NMDC.scaf_logsum, domain=None, range=Optional[str])
+
+slots.scaf_powsum = Slot(uri=NMDC.scaf_powsum, name="scaf_powsum", curie=NMDC.curie('scaf_powsum'),
+                      model_uri=NMDC.scaf_powsum, domain=None, range=Optional[str])
+
+slots.scaf_max = Slot(uri=NMDC.scaf_max, name="scaf_max", curie=NMDC.curie('scaf_max'),
+                      model_uri=NMDC.scaf_max, domain=None, range=Optional[str])
+
+slots.scaf_bp = Slot(uri=NMDC.scaf_bp, name="scaf_bp", curie=NMDC.curie('scaf_bp'),
+                      model_uri=NMDC.scaf_bp, domain=None, range=Optional[str])
+
+slots.scaf_N50 = Slot(uri=NMDC.scaf_N50, name="scaf_N50", curie=NMDC.curie('scaf_N50'),
+                      model_uri=NMDC.scaf_N50, domain=None, range=Optional[str])
+
+slots.scaf_N90 = Slot(uri=NMDC.scaf_N90, name="scaf_N90", curie=NMDC.curie('scaf_N90'),
+                      model_uri=NMDC.scaf_N90, domain=None, range=Optional[str])
+
+slots.scaf_L50 = Slot(uri=NMDC.scaf_L50, name="scaf_L50", curie=NMDC.curie('scaf_L50'),
+                      model_uri=NMDC.scaf_L50, domain=None, range=Optional[str])
+
+slots.scaf_L90 = Slot(uri=NMDC.scaf_L90, name="scaf_L90", curie=NMDC.curie('scaf_L90'),
+                      model_uri=NMDC.scaf_L90, domain=None, range=Optional[str])
+
+slots.scaf_n_gt50K = Slot(uri=NMDC.scaf_n_gt50K, name="scaf_n_gt50K", curie=NMDC.curie('scaf_n_gt50K'),
+                      model_uri=NMDC.scaf_n_gt50K, domain=None, range=Optional[str])
+
+slots.scaf_l_gt50K = Slot(uri=NMDC.scaf_l_gt50K, name="scaf_l_gt50K", curie=NMDC.curie('scaf_l_gt50K'),
+                      model_uri=NMDC.scaf_l_gt50K, domain=None, range=Optional[str])
+
+slots.scaf_pct_gt50K = Slot(uri=NMDC.scaf_pct_gt50K, name="scaf_pct_gt50K", curie=NMDC.curie('scaf_pct_gt50K'),
+                      model_uri=NMDC.scaf_pct_gt50K, domain=None, range=Optional[str])
+
+slots.contigs = Slot(uri=NMDC.contigs, name="contigs", curie=NMDC.curie('contigs'),
+                      model_uri=NMDC.contigs, domain=None, range=Optional[str])
+
+slots.contig_bp = Slot(uri=NMDC.contig_bp, name="contig_bp", curie=NMDC.curie('contig_bp'),
+                      model_uri=NMDC.contig_bp, domain=None, range=Optional[str])
+
+slots.ctg_N50 = Slot(uri=NMDC.ctg_N50, name="ctg_N50", curie=NMDC.curie('ctg_N50'),
+                      model_uri=NMDC.ctg_N50, domain=None, range=Optional[str])
+
+slots.ctg_L50 = Slot(uri=NMDC.ctg_L50, name="ctg_L50", curie=NMDC.curie('ctg_L50'),
+                      model_uri=NMDC.ctg_L50, domain=None, range=Optional[str])
+
+slots.ctg_N90 = Slot(uri=NMDC.ctg_N90, name="ctg_N90", curie=NMDC.curie('ctg_N90'),
+                      model_uri=NMDC.ctg_N90, domain=None, range=Optional[str])
+
+slots.ctg_L90 = Slot(uri=NMDC.ctg_L90, name="ctg_L90", curie=NMDC.curie('ctg_L90'),
+                      model_uri=NMDC.ctg_L90, domain=None, range=Optional[str])
+
+slots.ctg_logsum = Slot(uri=NMDC.ctg_logsum, name="ctg_logsum", curie=NMDC.curie('ctg_logsum'),
+                      model_uri=NMDC.ctg_logsum, domain=None, range=Optional[str])
+
+slots.ctg_powsum = Slot(uri=NMDC.ctg_powsum, name="ctg_powsum", curie=NMDC.curie('ctg_powsum'),
+                      model_uri=NMDC.ctg_powsum, domain=None, range=Optional[str])
+
+slots.ctg_max = Slot(uri=NMDC.ctg_max, name="ctg_max", curie=NMDC.curie('ctg_max'),
+                      model_uri=NMDC.ctg_max, domain=None, range=Optional[str])
+
+slots.gap_pct = Slot(uri=NMDC.gap_pct, name="gap_pct", curie=NMDC.curie('gap_pct'),
+                      model_uri=NMDC.gap_pct, domain=None, range=Optional[str])
+
 slots.gc_std = Slot(uri=NMDC.gc_std, name="gc_std", curie=NMDC.curie('gc_std'),
                       model_uri=NMDC.gc_std, domain=None, range=Optional[str])
 
-slots.metagenome_alignment_parameter = Slot(uri=NMDC.metagenome_alignment_parameter, name="metagenome alignment parameter", curie=NMDC.curie('metagenome_alignment_parameter'),
-                      model_uri=NMDC.metagenome_alignment_parameter, domain=None, range=Optional[str])
+slots.gc_avg = Slot(uri=NMDC.gc_avg, name="gc_avg", curie=NMDC.curie('gc_avg'),
+                      model_uri=NMDC.gc_avg, domain=None, range=Optional[str])
+
+slots.num_input_reads = Slot(uri=NMDC.num_input_reads, name="num_input_reads", curie=NMDC.curie('num_input_reads'),
+                      model_uri=NMDC.num_input_reads, domain=None, range=Optional[str])
 
 slots.num_aligned_reads = Slot(uri=NMDC.num_aligned_reads, name="num_aligned_reads", curie=NMDC.curie('num_aligned_reads'),
                       model_uri=NMDC.num_aligned_reads, domain=None, range=Optional[str])
+
+slots.read_QC_analysis_statistic = Slot(uri=NMDC.read_QC_analysis_statistic, name="read QC analysis statistic", curie=NMDC.curie('read_QC_analysis_statistic'),
+                      model_uri=NMDC.read_QC_analysis_statistic, domain=None, range=Optional[str])
+
+slots.input_read_count = Slot(uri=NMDC.input_read_count, name="input read count", curie=NMDC.curie('input_read_count'),
+                      model_uri=NMDC.input_read_count, domain=None, range=Optional[str])
+
+slots.input_base_count = Slot(uri=NMDC.input_base_count, name="input base count", curie=NMDC.curie('input_base_count'),
+                      model_uri=NMDC.input_base_count, domain=None, range=Optional[str])
+
+slots.output_read_count = Slot(uri=NMDC.output_read_count, name="output read count", curie=NMDC.curie('output_read_count'),
+                      model_uri=NMDC.output_read_count, domain=None, range=Optional[str])
+
+slots.output_base_count = Slot(uri=NMDC.output_base_count, name="output base count", curie=NMDC.curie('output_base_count'),
+                      model_uri=NMDC.output_base_count, domain=None, range=Optional[str])
 
 slots.principal_investigator = Slot(uri=NMDC.principal_investigator, name="principal investigator", curie=NMDC.curie('principal_investigator'),
                       model_uri=NMDC.principal_investigator, domain=None, range=Optional[Union[dict, PersonValue]])

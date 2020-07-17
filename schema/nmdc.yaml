@@ -86,24 +86,50 @@ classes:
       - execution resource
       - git url
       - has input
+      - has output
 
   metagenome assembly:
     is_a: workflow execution activity
     slots:
+      - asm_score
+      - scaffolds
+      - scaf_logsum
+      - scaf_powsum
+      - scaf_max
+      - scaf_bp
+      - scaf_N50
+      - scaf_N90
+      - scaf_L50
+      - scaf_L90
+      - scaf_n_gt50K
+      - scaf_l_gt50K
+      - scaf_pct_gt50K
+      - contigs
+      - contig_bp
+      - ctg_N50
       - ctg_L50
-      - n_scaffolds
+      - ctg_N90
+      - ctg_L90
+      - ctg_logsum
+      - ctg_powsum
+      - ctg_max
+      - gap_pct
       - gc_std
-
-  metagenome alignment:
-    is_a: workflow execution activity
-    slots:
+      - gc_avg
+      - num_input_reads
       - num_aligned_reads
+
 
   metagenome annotation activity:
     is_a: workflow execution activity
 
   read QC analysis activity:
     is_a: workflow execution activity
+    slots:
+      - input read count
+      - input base count
+      - output read count
+      - output base count
 
   metabolomics analysis activity:
     is_a: workflow execution activity
@@ -505,11 +531,6 @@ slots:
   num_aligned_reads:
     is_a: metagenome assembly parameter
       
-  metagenome alignment parameter: {}
-  
-  num_aligned_reads:
-    is_a: metagenome alignment parameter
-
   read QC analysis statistic: {}
 
   input read count:
