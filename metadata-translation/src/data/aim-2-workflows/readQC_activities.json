@@ -2877,8 +2877,8 @@
     "output_read_bases": 9045845844
   },
   {
-    "id": "nmdc:f289238604e30ce43a735d47f027e086",
-    "name": "ReadQC activiity 1780_122528",
+    "id": "nmdc:b23fdd2b142037e6c34c3a688685f7ed",
+    "name": "ReadQC activiity 1780_122528 qa2",
     "was_informed_by": "gold:Gp0146713",
     "started_at_time": "2020-03-20",
     "ended_at_time": "2020-03-20",
@@ -4515,8 +4515,8 @@
     "output_read_bases": 27023506875
   },
   {
-    "id": "nmdc:d8aef565dc0a18a0a17ebeb77a3a7153",
-    "name": "ReadQC activiity 503125_164753",
+    "id": "nmdc:7e97c45a89df72f4b9fb79c785b6096d",
+    "name": "ReadQC activiity 503125_164753 qa2",
     "was_informed_by": "gold:Gp0255840",
     "started_at_time": "2020-03-22",
     "ended_at_time": "2020-03-22",
