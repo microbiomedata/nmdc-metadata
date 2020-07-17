@@ -14,10 +14,14 @@ import align_nmdc_datatypes
 import jq
 
 
-def get_json(file_path):
+def get_json(file_path, replace_single_quote=False):
     ## load json
     with open(file_path, 'r') as in_file:
-        json_list =  json.load(in_file)
+        if replace_single_quote: # json
+            text = in_file.read()
+            json_list = json.loads(text.replace("'", '"'))
+        else:
+            json_list =  json.load(in_file)
     return json_list
 
 
@@ -80,13 +84,29 @@ def make_nmdc_database():
     readQ_annotation_activities = get_json('../data/aim-2-workflows/readQC_activities.json')
     readQ_annotation_data_objects = get_json('../data/aim-2-workflows/readQC_data_objects.json')
 
+    ## metaproteomic files
+    hess_mp_analysis_activities = get_json('../data/aim-2-workflows/Hess_metaproteomic_analysis_activities.json')
+    hess_mp_data_objects = get_json('../data/aim-2-workflows/Hess_emsl_analysis_data_objects.json')
+    stegen_mp_analysis_activities = get_json('../data/aim-2-workflows/Stegen_metaproteomic_analysis_activities.json')
+    stegen_mp_data_objects = get_json('../data/aim-2-workflows/Stegen_emsl_analysis_data_objects.json')
+
     database = \
     {
         "study_set": [*gold_study], 
         "omics_processing_set": [*gold_project, *emsl_project], 
         "biosample_set": [*gold_biosample], 
-        "data_object_set": [*jgi_data_object, *emsl_data_object, *mg_annotation_data_objects, *mg_assembly_data_objects, *readQ_annotation_data_objects],
-        "activity_set": [*mg_annotation_activities, *mg_assembly_activities, *readQ_annotation_activities]
+        "data_object_set": [*jgi_data_object, 
+                            *emsl_data_object, 
+                            *mg_annotation_data_objects, 
+                            *mg_assembly_data_objects, 
+                            *readQ_annotation_data_objects,
+                            *hess_mp_data_objects,
+                            *stegen_mp_data_objects],
+        "activity_set": [*mg_annotation_activities, 
+                         *mg_assembly_activities, 
+                         *readQ_annotation_activities,
+                         *hess_mp_analysis_activities,
+                         *stegen_mp_analysis_activities]
     }
 
     save_json(database, "output/nmdc_database.json" )
