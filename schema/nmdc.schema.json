@@ -46,50 +46,6 @@
          "title": "Agent",
          "type": "object"
       },
-      "AnnotationActivity": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "activity_id": {
-               "type": "string"
-            },
-            "ended_at_time": {
-               "type": "string"
-            },
-            "execution_resource": {
-               "description": "Example: NERSC-Cori",
-               "type": "string"
-            },
-            "git_url": {
-               "description": "Example: https://github.com/microbiomedata/mg_annotation/releases/tag/0.1",
-               "type": "string"
-            },
-            "has_input": {
-               "description": "An input to a process.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "started_at_time": {
-               "type": "string"
-            },
-            "used": {
-               "type": "string"
-            },
-            "was_associated_with": {
-               "$ref": "#/definitions/Agent"
-            },
-            "was_informed_by": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "activity_id"
-         ],
-         "title": "AnnotationActivity",
-         "type": "object"
-      },
       "AttributeValue": {
          "additionalProperties": false,
          "description": "The value for any value of a attribute for a sample. This object can hold both the un-normalized atomic value and the structured value",
@@ -703,6 +659,13 @@
                },
                "type": "array"
             },
+            "has_output": {
+               "description": "An output biosample to a processing step",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "started_at_time": {
                "type": "string"
             },
@@ -722,7 +685,7 @@
          "title": "MetabolomicsAnalysisActivity",
          "type": "object"
       },
-      "MetagenomeAlignment": {
+      "MetagenomeAnnotationActivity": {
          "additionalProperties": false,
          "description": "",
          "properties": {
@@ -747,8 +710,12 @@
                },
                "type": "array"
             },
-            "num_aligned_reads": {
-               "type": "string"
+            "has_output": {
+               "description": "An output biosample to a processing step",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "started_at_time": {
                "type": "string"
@@ -766,7 +733,7 @@
          "required": [
             "activity_id"
          ],
-         "title": "MetagenomeAlignment",
+         "title": "MetagenomeAnnotationActivity",
          "type": "object"
       },
       "MetagenomeAssembly": {
@@ -776,7 +743,34 @@
             "activity_id": {
                "type": "string"
             },
+            "asm_score": {
+               "type": "string"
+            },
+            "contig_bp": {
+               "type": "string"
+            },
+            "contigs": {
+               "type": "string"
+            },
             "ctg_L50": {
+               "type": "string"
+            },
+            "ctg_L90": {
+               "type": "string"
+            },
+            "ctg_N50": {
+               "type": "string"
+            },
+            "ctg_N90": {
+               "type": "string"
+            },
+            "ctg_logsum": {
+               "type": "string"
+            },
+            "ctg_max": {
+               "type": "string"
+            },
+            "ctg_powsum": {
                "type": "string"
             },
             "ended_at_time": {
@@ -784,6 +778,12 @@
             },
             "execution_resource": {
                "description": "Example: NERSC-Cori",
+               "type": "string"
+            },
+            "gap_pct": {
+               "type": "string"
+            },
+            "gc_avg": {
                "type": "string"
             },
             "gc_std": {
@@ -800,7 +800,53 @@
                },
                "type": "array"
             },
-            "n_scaffolds": {
+            "has_output": {
+               "description": "An output biosample to a processing step",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "num_aligned_reads": {
+               "type": "string"
+            },
+            "num_input_reads": {
+               "type": "string"
+            },
+            "scaf_L50": {
+               "type": "string"
+            },
+            "scaf_L90": {
+               "type": "string"
+            },
+            "scaf_N50": {
+               "type": "string"
+            },
+            "scaf_N90": {
+               "type": "string"
+            },
+            "scaf_bp": {
+               "type": "string"
+            },
+            "scaf_l_gt50K": {
+               "type": "string"
+            },
+            "scaf_logsum": {
+               "type": "string"
+            },
+            "scaf_max": {
+               "type": "string"
+            },
+            "scaf_n_gt50K": {
+               "type": "string"
+            },
+            "scaf_pct_gt50K": {
+               "type": "string"
+            },
+            "scaf_powsum": {
+               "type": "string"
+            },
+            "scaffolds": {
                "type": "string"
             },
             "started_at_time": {
@@ -842,6 +888,13 @@
             },
             "has_input": {
                "description": "An input to a process.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_output": {
+               "description": "An output biosample to a processing step",
                "items": {
                   "type": "string"
                },
@@ -1027,7 +1080,7 @@
          "title": "QuantityValue",
          "type": "object"
       },
-      "ReadAnalysisActivity": {
+      "ReadQCAnalysisActivity": {
          "additionalProperties": false,
          "description": "",
          "properties": {
@@ -1052,6 +1105,25 @@
                },
                "type": "array"
             },
+            "has_output": {
+               "description": "An output biosample to a processing step",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "input_base_count": {
+               "type": "string"
+            },
+            "input_read_count": {
+               "type": "string"
+            },
+            "output_base_count": {
+               "type": "string"
+            },
+            "output_read_count": {
+               "type": "string"
+            },
             "started_at_time": {
                "type": "string"
             },
@@ -1068,7 +1140,7 @@
          "required": [
             "activity_id"
          ],
-         "title": "ReadAnalysisActivity",
+         "title": "ReadQCAnalysisActivity",
          "type": "object"
       },
       "Study": {
@@ -1204,6 +1276,13 @@
             },
             "has_input": {
                "description": "An input to a process.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_output": {
+               "description": "An output biosample to a processing step",
                "items": {
                   "type": "string"
                },
