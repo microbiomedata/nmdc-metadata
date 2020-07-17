@@ -14,7 +14,6 @@ jsonasobj==1.2.1
 jsonschema==3.2.0
 pathtools==0.1.2
 pbr==5.4.5
-post==2019.4.13
 prefixcommons==0.1.9
 prologterms==0.0.6
 public==2019.4.13
