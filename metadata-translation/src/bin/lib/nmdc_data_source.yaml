@@ -80,7 +80,7 @@ classes:
       - mod_date
       - collection_date
       - ecosystem
-      - ecosystem_dcategory
+      - ecosystem_category
       - ecosystem_type
       - ecosystem_subtype
       - specific_ecosystem

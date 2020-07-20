@@ -222,6 +222,9 @@
       "ecosystem": {
         "has_raw_value": "Environmental"
       },
+      "ecosystem_category": {
+        "has_raw_value": "Terrestrial"
+      },
       "ecosystem_subtype": {
         "has_raw_value": "Wetlands"
       },
@@ -296,6 +299,9 @@
       },
       "ecosystem": {
         "has_raw_value": "Environmental"
+      },
+      "ecosystem_category": {
+        "has_raw_value": "Terrestrial"
       },
       "ecosystem_subtype": {
         "has_raw_value": "Wetlands"
@@ -372,6 +378,9 @@
       "ecosystem": {
         "has_raw_value": "Environmental"
       },
+      "ecosystem_category": {
+        "has_raw_value": "Terrestrial"
+      },
       "ecosystem_subtype": {
         "has_raw_value": "Wetlands"
       },
@@ -447,6 +456,9 @@
       "ecosystem": {
         "has_raw_value": "Environmental"
       },
+      "ecosystem_category": {
+        "has_raw_value": "Terrestrial"
+      },
       "ecosystem_subtype": {
         "has_raw_value": "Wetlands"
       },
@@ -520,6 +532,9 @@
       },
       "ecosystem": {
         "has_raw_value": "Environmental"
+      },
+      "ecosystem_category": {
+        "has_raw_value": "Terrestrial"
       },
       "ecosystem_subtype": {
         "has_raw_value": "Wetlands"
