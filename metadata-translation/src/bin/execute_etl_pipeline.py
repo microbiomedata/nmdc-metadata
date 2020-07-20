@@ -226,6 +226,6 @@ if __name__ == '__main__':
     # main(etl_modules=['gold_omics_processing']) # test gold project etl
     # main(etl_modules=['jgi_data_object']) # test jgi data object etl
     # main(etl_modules=['emsl_data_object']) # test emsl data object etl
-    # main() # run etl on all files
+    main() # run etl on all files
     make_nmdc_database() # combines output into database json format
-    # make_nmdc_example_database() # make example data
+    make_nmdc_example_database() # make example data
