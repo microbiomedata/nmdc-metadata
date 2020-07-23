@@ -249,13 +249,6 @@
                "$ref": "#/definitions/QuantityValue",
                "description": "Concentration of nitrate in the sample"
             },
-            "part_of": {
-               "description": "Links a resource to another resource that either logically or physically includes it.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "ph_meth": {
                "$ref": "#/definitions/TextValue",
                "description": "Reference or method used in determining ph"
@@ -399,13 +392,6 @@
             "name": {
                "description": "A human readable label for an entity",
                "type": "string"
-            },
-            "part_of": {
-               "description": "Links a resource to another resource that either logically or physically includes it.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
             }
          },
          "required": [
@@ -493,13 +479,6 @@
                "description": "A human readable label for an entity",
                "type": "string"
             },
-            "part_of": {
-               "description": "Links a resource to another resource that either logically or physically includes it.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "was_generated_by": {
                "$ref": "#/definitions/WorkflowExecutionActivity"
             }
@@ -576,13 +555,6 @@
             "name": {
                "description": "A human readable label for an entity",
                "type": "string"
-            },
-            "part_of": {
-               "description": "Links a resource to another resource that either logically or physically includes it.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
             }
          },
          "required": [
@@ -990,13 +962,6 @@
             "name": {
                "description": "A human readable label for an entity",
                "type": "string"
-            },
-            "part_of": {
-               "description": "Links a resource to another resource that either logically or physically includes it.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
             }
          },
          "required": [
@@ -1026,13 +991,6 @@
             "name": {
                "description": "A human readable label for an entity",
                "type": "string"
-            },
-            "part_of": {
-               "description": "Links a resource to another resource that either logically or physically includes it.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
             }
          },
          "required": [
@@ -1181,13 +1139,6 @@
             },
             "name": {
                "type": "string"
-            },
-            "part_of": {
-               "description": "Links a resource to another resource that either logically or physically includes it.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
             },
             "principal_investigator": {
                "$ref": "#/definitions/PersonValue",

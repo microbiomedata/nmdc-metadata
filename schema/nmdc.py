@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-07-16 21:39
+# Generation date: 2020-07-22 23:46
 # Schema: NMDC Schema
 #
 # id: https://microbiomedata/schema
@@ -25,7 +25,7 @@ from biolinkml.utils.curienamespace import CurieNamespace
 from biolinkml.utils.metamodelcore import Bool
 from includes.types import Boolean, Double, Float, String
 
-metamodel_version = "1.4.3"
+metamodel_version = "1.5.1"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -264,6 +264,11 @@ class Biosample(NamedThing):
     env_package: Optional[Union[dict, "TextValue"]] = None
     geo_loc_name: Optional[Union[dict, "TextValue"]] = None
     collection_date: Optional[Union[dict, "TimestampValue"]] = None
+    ecosystem: Optional[Union[dict, "AttributeValue"]] = None
+    ecosystem_category: Optional[Union[dict, "AttributeValue"]] = None
+    ecosystem_type: Optional[Union[dict, "AttributeValue"]] = None
+    ecosystem_subtype: Optional[Union[dict, "AttributeValue"]] = None
+    specific_ecosystem: Optional[Union[dict, "AttributeValue"]] = None
     depth: Optional[Union[dict, "QuantityValue"]] = None
     tot_org_carb: Optional[Union[dict, "QuantityValue"]] = None
     alt: Optional[Union[dict, "QuantityValue"]] = None
@@ -349,6 +354,16 @@ class Biosample(NamedThing):
             raise ValueError(f"env_medium must be supplied")
         if not isinstance(self.env_medium, ControlledTermValue):
             self.env_medium = ControlledTermValue(**self.env_medium)
+        if self.ecosystem is not None and not isinstance(self.ecosystem, AttributeValue):
+            self.ecosystem = AttributeValue(**self.ecosystem)
+        if self.ecosystem_category is not None and not isinstance(self.ecosystem_category, AttributeValue):
+            self.ecosystem_category = AttributeValue(**self.ecosystem_category)
+        if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, AttributeValue):
+            self.ecosystem_type = AttributeValue(**self.ecosystem_type)
+        if self.ecosystem_subtype is not None and not isinstance(self.ecosystem_subtype, AttributeValue):
+            self.ecosystem_subtype = AttributeValue(**self.ecosystem_subtype)
+        if self.specific_ecosystem is not None and not isinstance(self.specific_ecosystem, AttributeValue):
+            self.specific_ecosystem = AttributeValue(**self.specific_ecosystem)
         if self.depth is not None and not isinstance(self.depth, QuantityValue):
             self.depth = QuantityValue(**self.depth)
         if self.tot_org_carb is not None and not isinstance(self.tot_org_carb, QuantityValue):
@@ -805,6 +820,7 @@ class Activity(YAMLRoot):
     activity_id: Union[str, ActivityActivityId]
     started_at_time: Optional[str] = None
     ended_at_time: Optional[str] = None
+    was_informed_by: Optional[Union[str, ActivityActivityId]] = None
     was_associated_with: Optional[Union[dict, "Agent"]] = None
     used: Optional[str] = None
 
@@ -813,6 +829,8 @@ class Activity(YAMLRoot):
             raise ValueError(f"activity_id must be supplied")
         if not isinstance(self.activity_id, ActivityActivityId):
             self.activity_id = ActivityActivityId(self.activity_id)
+        if self.was_informed_by is not None and not isinstance(self.was_informed_by, ActivityActivityId):
+            self.was_informed_by = ActivityActivityId(self.was_informed_by)
         if self.was_associated_with is not None and not isinstance(self.was_associated_with, Agent):
             self.was_associated_with = Agent(**self.was_associated_with)
         super().__post_init__(**kwargs)
@@ -833,6 +851,8 @@ class WorkflowExecutionActivity(Activity):
     activity_id: Union[str, WorkflowExecutionActivityActivityId] = None
     execution_resource: Optional[str] = None
     git_url: Optional[str] = None
+    has_input: List[str] = empty_list()
+    has_output: List[str] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.activity_id is None:
