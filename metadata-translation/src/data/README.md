@@ -15,7 +15,7 @@ Data from EMSL is contained in the spreadsheets listed below.
 - EMSL omics processing metadata and the processing output: [EMSL_FICUS_project_process_data_export.xlsx](EMSL_FICUS_project_process_data_export.xlsx) ([source](https://docs.google.com/spreadsheets/d/1VMJ_Tvld3cZYh9NJHdItVWpV0DmOUYH4/edit#gid=969785947))
 - Mappings between the omics processing and GOLD biosamples: [EMSL_Hess_Stegen_Blanchard_DatasetToMetagenomeMapping.tsv](EMSL_FICUS_project_process_data_export.xlsx) ([source](https://docs.google.com/spreadsheets/d/1Vx1X7APaqSVHoRJRhZEMf1WnkCQ85tkQ2PZzUR_uXj4/edit#gid=0))
 
-## Jiont Genome Institute (JGI)
+## Joint Genome Institute (JGI)
 - Mappings between FICUS study and EMSL proposal: [FICUS - JGI-EMSL Proposal - Gold Study - ID mapping and PI.xlsx](FICUS\ -\ JGI-EMSL\ Proposal\ -\ Gold\ Study\ -\ ID\ mapping\ and\ PI.xlsx) ([source](https://docs.google.com/spreadsheets/d/1BX35JZsRkA5cZ-3Y6x217T3Aif30Ptxe_SjIC7JqPx4/edit#gid=0))  
 - Links a GOLD study to a DOI: [JGI-EMSL-FICUS-proposals.fnl.tsv](JGI-EMSL-FICUS-proposals.fnl.tsv) ([source](https://docs.google.com/spreadsheets/d/1sowTCYooDrOMq0ErD4s3xtgH3PLoxwa7/edit#gid=1363834365))
 
