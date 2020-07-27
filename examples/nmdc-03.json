@@ -209,6 +209,21 @@
       "collection_date": {
         "has_raw_value": "2012-07-20"
       },
+      "ecosystem": {
+        "has_raw_value": "Environmental"
+      },
+      "ecosystem_category": {
+        "has_raw_value": "Terrestrial"
+      },
+      "ecosystem_type": {
+        "has_raw_value": "Soil"
+      },
+      "ecosystem_subtype": {
+        "has_raw_value": "Wetlands"
+      },
+      "specific_ecosystem": {
+        "has_raw_value": "Permafrost"
+      },
       "depth": {
         "has_raw_value": "0.0 m"
       },
@@ -218,18 +233,6 @@
       },
       "community": {
         "has_raw_value": "microbial communities"
-      },
-      "ecosystem": {
-        "has_raw_value": "Environmental"
-      },
-      "ecosystem_category": {
-        "has_raw_value": "Terrestrial"
-      },
-      "ecosystem_subtype": {
-        "has_raw_value": "Wetlands"
-      },
-      "ecosystem_type": {
-        "has_raw_value": "Soil"
       },
       "habitat": {
         "has_raw_value": "Thawing permafrost"
@@ -248,9 +251,6 @@
       },
       "sample_collection_site": {
         "has_raw_value": "Palsa"
-      },
-      "specific_ecosystem": {
-        "has_raw_value": "Permafrost"
       }
     },
     {
@@ -287,6 +287,21 @@
       "collection_date": {
         "has_raw_value": "2012-06-03"
       },
+      "ecosystem": {
+        "has_raw_value": "Environmental"
+      },
+      "ecosystem_category": {
+        "has_raw_value": "Terrestrial"
+      },
+      "ecosystem_type": {
+        "has_raw_value": "Soil"
+      },
+      "ecosystem_subtype": {
+        "has_raw_value": "Wetlands"
+      },
+      "specific_ecosystem": {
+        "has_raw_value": "Permafrost"
+      },
       "depth": {
         "has_raw_value": "0.0 m"
       },
@@ -296,18 +311,6 @@
       },
       "community": {
         "has_raw_value": "microbial communities"
-      },
-      "ecosystem": {
-        "has_raw_value": "Environmental"
-      },
-      "ecosystem_category": {
-        "has_raw_value": "Terrestrial"
-      },
-      "ecosystem_subtype": {
-        "has_raw_value": "Wetlands"
-      },
-      "ecosystem_type": {
-        "has_raw_value": "Soil"
       },
       "habitat": {
         "has_raw_value": "Thawing permafrost"
@@ -326,9 +329,6 @@
       },
       "sample_collection_site": {
         "has_raw_value": "permafrost soil where Sphagnum dominantly present"
-      },
-      "specific_ecosystem": {
-        "has_raw_value": "Permafrost"
       }
     },
     {
@@ -365,6 +365,21 @@
       "collection_date": {
         "has_raw_value": "2012-07-20"
       },
+      "ecosystem": {
+        "has_raw_value": "Environmental"
+      },
+      "ecosystem_category": {
+        "has_raw_value": "Terrestrial"
+      },
+      "ecosystem_type": {
+        "has_raw_value": "Soil"
+      },
+      "ecosystem_subtype": {
+        "has_raw_value": "Wetlands"
+      },
+      "specific_ecosystem": {
+        "has_raw_value": "Permafrost"
+      },
       "depth": {
         "has_raw_value": "0.0 m"
       },
@@ -374,18 +389,6 @@
       },
       "community": {
         "has_raw_value": "microbial communities"
-      },
-      "ecosystem": {
-        "has_raw_value": "Environmental"
-      },
-      "ecosystem_category": {
-        "has_raw_value": "Terrestrial"
-      },
-      "ecosystem_subtype": {
-        "has_raw_value": "Wetlands"
-      },
-      "ecosystem_type": {
-        "has_raw_value": "Soil"
       },
       "habitat": {
         "has_raw_value": "Thawing permafrost"
@@ -404,9 +407,6 @@
       },
       "sample_collection_site": {
         "has_raw_value": "permafrost soil where Sphagnum dominantly present"
-      },
-      "specific_ecosystem": {
-        "has_raw_value": "Permafrost"
       }
     },
     {
@@ -443,6 +443,21 @@
       "collection_date": {
         "has_raw_value": "2012-08-23"
       },
+      "ecosystem": {
+        "has_raw_value": "Environmental"
+      },
+      "ecosystem_category": {
+        "has_raw_value": "Terrestrial"
+      },
+      "ecosystem_type": {
+        "has_raw_value": "Soil"
+      },
+      "ecosystem_subtype": {
+        "has_raw_value": "Wetlands"
+      },
+      "specific_ecosystem": {
+        "has_raw_value": "Permafrost"
+      },
       "depth": {
         "has_raw_value": "0.0 m"
       },
@@ -452,18 +467,6 @@
       },
       "community": {
         "has_raw_value": "microbial communities"
-      },
-      "ecosystem": {
-        "has_raw_value": "Environmental"
-      },
-      "ecosystem_category": {
-        "has_raw_value": "Terrestrial"
-      },
-      "ecosystem_subtype": {
-        "has_raw_value": "Wetlands"
-      },
-      "ecosystem_type": {
-        "has_raw_value": "Soil"
       },
       "habitat": {
         "has_raw_value": "Thawing permafrost"
@@ -482,9 +485,6 @@
       },
       "sample_collection_site": {
         "has_raw_value": "permafrost soil where Eriophorum dominanatly present."
-      },
-      "specific_ecosystem": {
-        "has_raw_value": "Permafrost"
       }
     },
     {
@@ -520,6 +520,21 @@
       "collection_date": {
         "has_raw_value": "2012-08-23"
       },
+      "ecosystem": {
+        "has_raw_value": "Environmental"
+      },
+      "ecosystem_category": {
+        "has_raw_value": "Terrestrial"
+      },
+      "ecosystem_type": {
+        "has_raw_value": "Soil"
+      },
+      "ecosystem_subtype": {
+        "has_raw_value": "Wetlands"
+      },
+      "specific_ecosystem": {
+        "has_raw_value": "Permafrost"
+      },
       "depth": {
         "has_raw_value": "0.0 m"
       },
@@ -529,18 +544,6 @@
       },
       "community": {
         "has_raw_value": "microbial communities"
-      },
-      "ecosystem": {
-        "has_raw_value": "Environmental"
-      },
-      "ecosystem_category": {
-        "has_raw_value": "Terrestrial"
-      },
-      "ecosystem_subtype": {
-        "has_raw_value": "Wetlands"
-      },
-      "ecosystem_type": {
-        "has_raw_value": "Soil"
       },
       "habitat": {
         "has_raw_value": "Thawing permafrost"
@@ -559,9 +562,6 @@
       },
       "sample_collection_site": {
         "has_raw_value": "Palsa"
-      },
-      "specific_ecosystem": {
-        "has_raw_value": "Permafrost"
       }
     }
   ],
