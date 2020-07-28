@@ -224,6 +224,9 @@ data_sources:
         new_name: omics_type
     filters:              
       - {field: active, values: ['Yes']}
+    append_columns:
+      - name: processing_institution
+        value: Joint Genome Institute
 
   project_biosample_table:
     data_source:
