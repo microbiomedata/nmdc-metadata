@@ -54,6 +54,9 @@
       "ncbi_project_name": {
         "has_raw_value": "Thawing permafrost microbial communities from the Arctic, studying carbon transformations - Permafrost 712P3D"
       },
+      "processing_institution": {
+        "has_raw_value": "Joint Genome Institute"
+      },
       "principal_investigator_name": {
         "has_raw_value": "Virginia Rich"
       }
@@ -82,6 +85,9 @@
       },
       "ncbi_project_name": {
         "has_raw_value": "Thawing permafrost microbial communities from the Arctic, studying carbon transformations - Permafrost 612S3M"
+      },
+      "processing_institution": {
+        "has_raw_value": "Joint Genome Institute"
       },
       "principal_investigator_name": {
         "has_raw_value": "Virginia Rich"
@@ -112,6 +118,9 @@
       "ncbi_project_name": {
         "has_raw_value": "Thawing permafrost microbial communities from the Arctic, studying carbon transformations - Permafrost 712S3S"
       },
+      "processing_institution": {
+        "has_raw_value": "Joint Genome Institute"
+      },
       "principal_investigator_name": {
         "has_raw_value": "Virginia Rich"
       }
@@ -141,6 +150,9 @@
       "ncbi_project_name": {
         "has_raw_value": "Thawing permafrost microbial communities from the Arctic, studying carbon transformations - Permafrost 812E2M"
       },
+      "processing_institution": {
+        "has_raw_value": "Joint Genome Institute"
+      },
       "principal_investigator_name": {
         "has_raw_value": "Virginia Rich"
       }
@@ -169,6 +181,9 @@
       },
       "ncbi_project_name": {
         "has_raw_value": "Thawing permafrost microbial communities from the Arctic, studying carbon transformations - Permafrost 812P2M"
+      },
+      "processing_institution": {
+        "has_raw_value": "Joint Genome Institute"
       },
       "principal_investigator_name": {
         "has_raw_value": "Virginia Rich"
