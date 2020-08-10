@@ -18,7 +18,7 @@ test: schema/test-nmdc-01.valid schema/test-nmdc-02.valid pytest
 pytest: schema/nmdc.py
 	python $<
 
-build: python_dataclasses json_schema
+build: python_dataclasses json_schema shex
 
 # The mixs subschema is not hand-authored; it is compiled
 # from a tsv saved from the mixs excel file
