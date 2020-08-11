@@ -1,6 +1,6 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-07-22 23:46
-# Schema: NMDC Schema
+# Generation date: 2020-08-11 14:57
+# Schema: NMDC
 #
 # id: https://microbiomedata/schema
 # description: Schema for National Microbiome Data Collaborative (NMDC). This schem is organized into 3 separate
@@ -25,7 +25,7 @@ from biolinkml.utils.curienamespace import CurieNamespace
 from biolinkml.utils.metamodelcore import Bool
 from includes.types import Boolean, Double, Float, String
 
-metamodel_version = "1.5.1"
+metamodel_version = "1.5.3"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -259,8 +259,6 @@ class Biosample(NamedThing):
     env_broad_scale: Union[dict, "ControlledTermValue"] = None
     env_local_scale: Union[dict, "ControlledTermValue"] = None
     env_medium: Union[dict, "ControlledTermValue"] = None
-    name: Optional[str] = None
-    alternate_identifiers: List[str] = empty_list()
     env_package: Optional[Union[dict, "TextValue"]] = None
     geo_loc_name: Optional[Union[dict, "TextValue"]] = None
     collection_date: Optional[Union[dict, "TimestampValue"]] = None
@@ -326,6 +324,8 @@ class Biosample(NamedThing):
     al_sat: Optional[Union[dict, "QuantityValue"]] = None
     al_sat_meth: Optional[Union[dict, "TextValue"]] = None
     misc_param: Optional[Union[dict, "QuantityValue"]] = None
+    name: Optional[str] = None
+    alternate_identifiers: List[str] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -499,8 +499,6 @@ class Study(NamedThing):
     class_model_uri: ClassVar[URIRef] = NMDC.Study
 
     id: Union[str, StudyId] = None
-    name: Optional[str] = None
-    alternate_identifiers: List[str] = empty_list()
     ecosystem: Optional[Union[dict, "AttributeValue"]] = None
     ecosystem_category: Optional[Union[dict, "AttributeValue"]] = None
     ecosystem_type: Optional[Union[dict, "AttributeValue"]] = None
@@ -508,6 +506,8 @@ class Study(NamedThing):
     specific_ecosystem: Optional[Union[dict, "AttributeValue"]] = None
     principal_investigator: Optional[Union[dict, "PersonValue"]] = None
     doi: Optional[Union[dict, "AttributeValue"]] = None
+    name: Optional[str] = None
+    alternate_identifiers: List[str] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -553,7 +553,7 @@ class BiosampleProcessing(NamedThing):
         if not isinstance(self.id, BiosampleProcessingId):
             self.id = BiosampleProcessingId(self.id)
         self.has_input = [v if isinstance(v, BiosampleId)
-                          else BiosampleId(v) for v in self.has_input]
+                          else BiosampleId(v) for v in ([self.has_input] if isinstance(self.has_input, str) else self.has_input)]
         super().__post_init__(**kwargs)
 
 
@@ -570,11 +570,11 @@ class OmicsProcessing(BiosampleProcessing):
     class_model_uri: ClassVar[URIRef] = NMDC.OmicsProcessing
 
     id: Union[str, OmicsProcessingId] = None
-    name: Optional[str] = None
-    alternate_identifiers: List[str] = empty_list()
     part_of: List[Union[str, StudyId]] = empty_list()
     has_output: List[Union[str, DataObjectId]] = empty_list()
     omics_type: Optional[Union[dict, "ControlledTermValue"]] = None
+    name: Optional[str] = None
+    alternate_identifiers: List[str] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -582,9 +582,9 @@ class OmicsProcessing(BiosampleProcessing):
         if not isinstance(self.id, OmicsProcessingId):
             self.id = OmicsProcessingId(self.id)
         self.part_of = [v if isinstance(v, StudyId)
-                        else StudyId(v) for v in self.part_of]
+                        else StudyId(v) for v in ([self.part_of] if isinstance(self.part_of, str) else self.part_of)]
         self.has_output = [v if isinstance(v, DataObjectId)
-                           else DataObjectId(v) for v in self.has_output]
+                           else DataObjectId(v) for v in ([self.has_output] if isinstance(self.has_output, str) else self.has_output)]
         if self.omics_type is not None and not isinstance(self.omics_type, ControlledTermValue):
             self.omics_type = ControlledTermValue(**self.omics_type)
         super().__post_init__(**kwargs)
@@ -646,9 +646,9 @@ class QuantityValue(AttributeValue):
     class_name: ClassVar[str] = "quantity value"
     class_model_uri: ClassVar[URIRef] = NMDC.QuantityValue
 
-    has_raw_value: Optional[str] = None
     has_unit: Optional[str] = None
     has_numeric_value: Optional[float] = None
+    has_raw_value: Optional[str] = None
 
 @dataclass
 class PersonValue(AttributeValue):
@@ -662,8 +662,8 @@ class PersonValue(AttributeValue):
     class_name: ClassVar[str] = "person value"
     class_model_uri: ClassVar[URIRef] = NMDC.PersonValue
 
-    has_raw_value: Optional[str] = None
     orcid: Optional[str] = None
+    has_raw_value: Optional[str] = None
 
 @dataclass
 class TextValue(AttributeValue):
@@ -763,9 +763,9 @@ class GeolocationValue(AttributeValue):
     class_name: ClassVar[str] = "geolocation value"
     class_model_uri: ClassVar[URIRef] = NMDC.GeolocationValue
 
-    has_raw_value: Optional[str] = None
     latitude: Optional[float] = None
     longitude: Optional[float] = None
+    has_raw_value: Optional[str] = None
 
 @dataclass
 class OntologyClass(NamedThing):

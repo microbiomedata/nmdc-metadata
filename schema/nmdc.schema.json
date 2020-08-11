@@ -83,6 +83,7 @@
                "description": "\"Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets, atmospheric balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object which is above the earthbs surface. In this context, the altitude measurement is the vertical distance between the earth's surface above sea level and the sampled position in the air\""
             },
             "alternate_identifiers": {
+               "description": "The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)",
                "items": {
                   "type": "string"
                },
@@ -156,13 +157,16 @@
                "description": "\"Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level. Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above the surface, such as an aircraft in flight or a spacecraft in orbit\""
             },
             "env_broad_scale": {
-               "$ref": "#/definitions/ControlledTermValue"
+               "$ref": "#/definitions/ControlledTermValue",
+               "description": "formerly known as 'biome'"
             },
             "env_local_scale": {
-               "$ref": "#/definitions/ControlledTermValue"
+               "$ref": "#/definitions/ControlledTermValue",
+               "description": "formerly known as 'feature'"
             },
             "env_medium": {
-               "$ref": "#/definitions/ControlledTermValue"
+               "$ref": "#/definitions/ControlledTermValue",
+               "description": "formerly known as 'material'"
             },
             "env_package": {
                "$ref": "#/definitions/TextValue",
@@ -205,10 +209,12 @@
                "description": "Reference or method used in determining the horizon"
             },
             "id": {
+               "description": "The primary identifier for the biosample. Example: GOLD:Gb0205609",
                "type": "string"
             },
             "lat_lon": {
-               "$ref": "#/definitions/GeolocationValue"
+               "$ref": "#/definitions/GeolocationValue",
+               "description": "This is currently a required field but it's not clear if this should be required for human hosts"
             },
             "link_addit_analys": {
                "$ref": "#/definitions/TextValue",
@@ -243,6 +249,7 @@
                "description": "\"Any other measurement performed or parameter collected, that is not listed here\""
             },
             "name": {
+               "description": "A human readable name or description of the biosample",
                "type": "string"
             },
             "nitrate": {
@@ -355,11 +362,11 @@
             }
          },
          "required": [
-            "id",
             "lat_lon",
             "env_broad_scale",
             "env_local_scale",
-            "env_medium"
+            "env_medium",
+            "id"
          ],
          "title": "Biosample",
          "type": "object"
@@ -480,7 +487,8 @@
                "type": "string"
             },
             "was_generated_by": {
-               "$ref": "#/definitions/WorkflowExecutionActivity"
+               "$ref": "#/definitions/WorkflowExecutionActivity",
+               "description": "the activity that generated the file"
             }
          },
          "required": [
@@ -568,6 +576,7 @@
          "description": "A normalized value for a location on the earth's surface",
          "properties": {
             "has_raw_value": {
+               "description": "The raw value for a  geolocation should follow {lat} {long}",
                "type": "string"
             },
             "latitude": {
@@ -896,6 +905,7 @@
          "description": "The methods and processes used to generate omics data from a biosample or organism.",
          "properties": {
             "alternate_identifiers": {
+               "description": "The same omics processing may have distinct identifiers in different databases (e.g. GOLD and EMSL, as well as NCBI)",
                "items": {
                   "type": "string"
                },
@@ -918,9 +928,11 @@
                "type": "array"
             },
             "id": {
+               "description": "The primary identifier for the omics processing. E.g. GOLD:GpNNNN",
                "type": "string"
             },
             "name": {
+               "description": "A human readable name or description of the omics processing.",
                "type": "string"
             },
             "omics_type": {
@@ -986,6 +998,7 @@
                "type": "string"
             },
             "id": {
+               "description": "Should be an ORCID. Specify in CURIE format. E.g ORCID:0000-1111-...",
                "type": "string"
             },
             "name": {
@@ -1004,6 +1017,7 @@
          "description": "An attribute value representing a person",
          "properties": {
             "has_raw_value": {
+               "description": "the full name of the Investgator in format FIRST LAST",
                "type": "string"
             },
             "orcid": {
@@ -1022,12 +1036,15 @@
          "description": "A simple quantity, e.g. 2cm",
          "properties": {
             "has_numeric_value": {
+               "description": "The number part of the quantity",
                "type": "number"
             },
             "has_raw_value": {
+               "description": "Unnormalized atomic string representation, should in syntax {number} {unit}",
                "type": "string"
             },
             "has_unit": {
+               "description": "The unit of the quantity",
                "type": "string"
             },
             "was_generated_by": {
@@ -1106,6 +1123,7 @@
          "description": "A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.",
          "properties": {
             "alternate_identifiers": {
+               "description": "The same study may have distinct identifiers in different databases (e.g. GOLD and EMSL)",
                "items": {
                   "type": "string"
                },
@@ -1135,9 +1153,11 @@
                "description": "TODO"
             },
             "id": {
+               "description": "The primary identifier for the study.",
                "type": "string"
             },
             "name": {
+               "description": "A human readable name or description of the study.",
                "type": "string"
             },
             "principal_investigator": {
@@ -1296,7 +1316,7 @@
          "type": "array"
       }
    },
-   "title": "NMDC Schema",
+   "title": "NMDC",
    "type": "object"
 }
 
