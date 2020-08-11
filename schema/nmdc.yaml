@@ -1,5 +1,7 @@
 id: https://microbiomedata/schema
-name: NMDC Schema
+name: NMDC
+title: NMDC Schema
+
 description: >-
   Schema for National Microbiome Data Collaborative (NMDC).
   This schem is organized into 3 separate modules:

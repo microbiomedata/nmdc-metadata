@@ -1,5 +1,6 @@
 id: https://microbiomedata/schema/core
-name: NMDC Schema Core Types
+name: NMDC-Core
+title: NMDC Schema Core Types
 description: >-
   Schema for National Microbiome Data Collaborative (NMDC), Core Types
 license: https://creativecommons.org/publicdomain/zero/1.0/

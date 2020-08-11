@@ -1,5 +1,6 @@
 id: https://microbiomedata/schema/prov
-name: NMDC Rendering of prov schema
+name: NMDC-PROV
+title: NMDC Rendering of prov schema
 description: >-
   See https://www.w3.org/TR/prov-o/
 license: https://creativecommons.org/publicdomain/zero/1.0/
