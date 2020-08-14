@@ -18,6 +18,9 @@ Tasks managed by the repository are:
 The NMDC [Introduction to metadata and ontologies](https://microbiomedata.org/introduction-to-metadata-and-ontologies/) primer describes the context for this project.
 
 ## Schema
+
+See the [slides](https://microbiomedata.github.io/nmdc-metadata/docs/schema-slides) describing the schema
+
 The [NMDC schema](./schema) is used during the [translation process](./metadata-translation/notebooks) to specify how metadata elements are related.
 
 ![img](https://raw.githubusercontent.com/microbiomedata/nmdc-metadata/master/schema/nmdc_schema_uml.png)

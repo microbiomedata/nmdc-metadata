@@ -99,14 +99,15 @@ Chris Mungall
 <ul>
 <li>schema.yaml</li>
 </ul></li>
-<li>The modeling language is BiolinkML</li>
+<li>The modeling language is <a href="https://github.com/biolink/biolinkml/">BiolinkML</a></li>
 <li>Can compile down to other forms
 <ul>
-<li>json-schema</li>
-<li>rdf</li>
-<li>shex</li>
+<li>JSON-Schema</li>
 <li>python dataclasses</li>
-<li>graphql</li>
+<li>Markdown/HTML + UML diagrams</li>
+<li>OWL</li>
+<li>ShEx</li>
+<li>GraphQL</li>
 </ul></li>
 </ul>
 </div>
@@ -119,6 +120,7 @@ Chris Mungall
 <li>omics_processing …</li>
 </ul>
 <h2 id="fields">Fields</h2>
+<p>(called <em>slots</em> in the yaml)</p>
 <ul>
 <li>generic fields
 <ul>
@@ -136,6 +138,10 @@ Chris Mungall
 <li>fields describing study info
 <ul>
 <li>project_name</li>
+</ul></li>
+<li>other fields
+<ul>
+<li>e.g workflow/input/output fields</li>
 </ul></li>
 </ul>
 </div>
@@ -344,6 +350,10 @@ Chris Mungall
 <a class="sourceLine" id="cb10-34" title="34">        <span class="co"># to_str: {latitude} {longitude}</span></a></code></pre></div>
 </div>
 </div>
+</div>
+<div id="mandatory-fields" class="slide section level1">
+<h1>Mandatory Fields</h1>
+<p>TBD: separate biosample classes for each package?</p>
 </div>
 </body>
 </html>

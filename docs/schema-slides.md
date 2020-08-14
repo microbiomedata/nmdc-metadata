@@ -8,13 +8,14 @@
 
  - Schema source is in a yaml file
     - schema.yaml
- - The modeling language is BiolinkML
+ - The modeling language is [BiolinkML](https://github.com/biolink/biolinkml/)
  - Can compile down to other forms
-     - json-schema
-     - rdf
-     - shex
+     - JSON-Schema
      - python dataclasses
-     - graphql
+     - Markdown/HTML + UML diagrams
+     - OWL
+     - ShEx
+     - GraphQL
 
 # Basic Structure
 
@@ -27,6 +28,8 @@
 
 ## Fields
 
+(called *slots* in the yaml)
+
  - generic fields
     - id
     - name
@@ -38,6 +41,8 @@
     - alt
  - fields describing study info
     - project_name
+ - other fields
+    - e.g workflow/input/output fields
 
 # JSON as primary exchange format
 
