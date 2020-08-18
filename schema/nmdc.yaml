@@ -43,7 +43,22 @@ imports:
   - mixs
   - core
   - prov
+
+subsets:
+  workflow subset:
+    description: >-
+      Subset consisting of just the workflow exectution activities
+
+  sample subset:
+    description: >-
+      Subset consisting of entities linked to the processing of samples. 
+      Currently, this subset consists of study, omics process, and biosample.
   
+  data object subset:
+    description: >-
+      Subset consisting of the data objects that either inputs or outputs of processes or workflows.
+
+
 classes:
 
   database:
@@ -62,6 +77,8 @@ classes:
   
   data object:
     is_a: named thing
+    in_subset:
+      - data object subset
     description: >-
       An object that primarily consists of symbols that represent information.  
       Files, records, and omics data are examples of data objects. 
@@ -82,6 +99,8 @@ classes:
 
   workflow execution activity:
     is_a: activity
+    in_subset: 
+      - workflow subset
     description: >-
       Represents an instance of an execution of a particular workflow
     slots:
@@ -92,6 +111,8 @@ classes:
 
   metagenome assembly:
     is_a: workflow execution activity
+    in_subset: 
+      - workflow subset
     slots:
       - asm_score
       - scaffolds
@@ -124,9 +145,13 @@ classes:
 
   metagenome annotation activity:
     is_a: workflow execution activity
+    in_subset: 
+      - workflow subset
 
   read QC analysis activity:
     is_a: workflow execution activity
+    in_subset: 
+      - workflow subset
     slots:
       - input read count
       - input base count
@@ -135,12 +160,18 @@ classes:
 
   metabolomics analysis activity:
     is_a: workflow execution activity
+    in_subset: 
+      - workflow subset
 
   metaproteomics analysis activity:
     is_a: workflow execution activity
+    in_subset: 
+      - workflow subset
       
   biosample:
     is_a: named thing
+    in_subset: 
+      - sample subset
     aliases: ['sample', 'material sample']
     description: >-
       A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.  
@@ -252,6 +283,8 @@ classes:
         
   study:
     is_a: named thing
+    in_subset: 
+      - sample subset
     aliases: ['proposal', 'research proposal', 'research study', 'investigation']
     description: >-
       A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.  
@@ -296,6 +329,8 @@ classes:
 
   omics processing:
     is_a: biosample processing
+    in_subset: 
+      - sample subset
     description: >-
       The methods and processes used to generate omics data from a biosample or organism.
     comments:
