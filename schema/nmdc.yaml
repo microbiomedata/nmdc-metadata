@@ -77,7 +77,7 @@ classes:
   
   data object:
     is_a: named thing
-    in_subsdet:
+    in_subset:
       - data object subset
     description: >-
       An object that primarily consists of symbols that represent information.  
