@@ -52,7 +52,7 @@ jobs:
           git config --global user.name "$GITHUB_NAME"
           git config --global user.email "$GITHUB_EMAIL"
           git add schema/nmdc.*
-          git add nmdc_schema_uml.png
+          git add schema/nmdc_schema_uml.png
           git commit -m "Regenerate artifacts from nmdc.yaml"
           git push
         else
