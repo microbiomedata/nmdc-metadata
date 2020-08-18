@@ -3,9 +3,18 @@ name: Deploy Documentation
 # Controls when the action will run. Triggers the workflow on push
 on:
   push:
-    branches: [ master ]
-#   pull_request:
-#     branches: [ master ]
+    branches:
+    - master
+    paths:
+    - 'README.md'
+    - 'docs/*'
+    - 'schema/nmdc.py'
+    - 'schema/nmdc.schema.json'
+    - 'schema/nmdc.context.jsonld'
+    - 'schema/nmdc_schema_uml.png'
+
+  repository_dispatch:
+    types: trigger-build-documentation
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
