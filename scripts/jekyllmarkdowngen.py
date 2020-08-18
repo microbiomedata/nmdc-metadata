@@ -197,7 +197,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 simple_name = slot_curie.split(':', 1)[1]
                 self.header(1, f"Type: {simple_name}" + (f" _(deprecated)_" if slot.deprecated else ""))
                 for s in slot.in_subset:
-                    self.badges(s, f'{s}-subset-label')
+                    self.badges(s, f'subset-label')
 
                 self.para(be(slot.description))
                 print(f'URI: [{slot_curie}]({slot_uri})')
