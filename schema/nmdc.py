@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-08-18 23:21
+# Generation date: 2020-08-19 21:35
 # Schema: NMDC
 #
 # id: https://microbiomedata/schema
@@ -895,7 +895,7 @@ class MetagenomeAssembly(WorkflowExecutionActivity):
     ctg_powsum: Optional[str] = None
     ctg_max: Optional[str] = None
     gap_pct: Optional[str] = None
-    gc_std: Optional[str] = None
+    gc_std: Optional[float] = None
     gc_avg: Optional[str] = None
     num_input_reads: Optional[str] = None
     num_aligned_reads: Optional[str] = None
@@ -1137,7 +1137,7 @@ slots.gap_pct = Slot(uri=NMDC.gap_pct, name="gap_pct", curie=NMDC.curie('gap_pct
                       model_uri=NMDC.gap_pct, domain=None, range=Optional[str])
 
 slots.gc_std = Slot(uri=NMDC.gc_std, name="gc_std", curie=NMDC.curie('gc_std'),
-                      model_uri=NMDC.gc_std, domain=None, range=Optional[str])
+                      model_uri=NMDC.gc_std, domain=None, range=Optional[float])
 
 slots.gc_avg = Slot(uri=NMDC.gc_avg, name="gc_avg", curie=NMDC.curie('gc_avg'),
                       model_uri=NMDC.gc_avg, domain=None, range=Optional[str])

@@ -768,7 +768,8 @@
                "type": "string"
             },
             "gc_std": {
-               "type": "string"
+               "description": "Standard deviation of GC content of all contigs.",
+               "type": "number"
             },
             "git_url": {
                "description": "Example: https://github.com/microbiomedata/mg_annotation/releases/tag/0.1",

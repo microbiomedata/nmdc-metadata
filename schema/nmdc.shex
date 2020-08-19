@@ -274,7 +274,7 @@ metatype:Nodeidentifier NONLITERAL
           <ctg_powsum> @metatype:String ? ;
           <ctg_max> @metatype:String ? ;
           <gap_pct> @metatype:String ? ;
-          <gc_std> @metatype:String ? ;
+          <gc_std> @metatype:Float ? ;
           <gc_avg> @metatype:String ? ;
           <num_input_reads> @metatype:String ? ;
           <num_aligned_reads> @metatype:String ?
