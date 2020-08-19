@@ -3,7 +3,6 @@ from contextlib import redirect_stdout
 from io import StringIO
 from typing import Union, TextIO, Optional, Set, List, Any, Callable, Dict
 
-import click
 from biolinkml.generators.markdowngen import MarkdownGenerator
 
 from biolinkml.generators.yumlgen import YumlGenerator
