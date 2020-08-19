@@ -1,3 +1,7 @@
+---
+nav_order: 3
+---
+
 # Identifiers in NMDC
 
 Identifiers are crucial for the NMDC, both for any data objects *created* and for any external objects *referenced*

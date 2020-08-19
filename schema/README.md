@@ -1,3 +1,7 @@
+---
+nav_order: 1
+---
+
 # NMDC Schema
 
 The [NMDC](https://microbiomedata.org/) schema specifies how metadata elements are related. The main elements are:
