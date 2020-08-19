@@ -53,7 +53,7 @@ jobs:
       run: |
         pip install pipenv
         make
-        make docs
+        make jekyll-docs
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
