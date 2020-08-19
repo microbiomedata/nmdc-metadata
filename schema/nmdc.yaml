@@ -558,6 +558,9 @@ slots:
       
   gc_std:
     is_a: metagenome assembly parameter
+    description: >-
+      Standard deviation of GC content of all contigs.
+    range: float
 
   gc_avg:
     is_a: metagenome assembly parameter
