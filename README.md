@@ -1,8 +1,3 @@
----
-title: Metadata management for the National Microbiome Data Collaborative
-nav_order: 1
----
-
 # Metadata management for the [National Microbiome Data Collaborative](https://microbiomedata.org/)
 [![Build Status](https://travis-ci.org/microbiomedata/nmdc-metadata.svg?branch=master)](https://travis-ci.org/microbiomedata/nmdc-metadata)
 ![Deploy Documentation](https://github.com/microbiomedata/nmdc-metadata/workflows/Deploy%20Documentation/badge.svg?branch=master)
