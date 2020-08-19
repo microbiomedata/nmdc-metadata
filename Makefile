@@ -89,7 +89,7 @@ docs: schema/nmdc.yaml env.lock
 	gen-markdown --dir docs $<
 
 jekyll-docs: schema/nmdc.yaml env.lock
-	pipenv run python scripts/jekyllmarkdowngen.py --yaml $< --dir docs
+	python scripts/jekyllmarkdowngen.py --yaml $< --dir docs
 
 schema/nmdc_schema_uml.png: schema/nmdc.yaml
 	python schema/generate_uml.py $< $@
