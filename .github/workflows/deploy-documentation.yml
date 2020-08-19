@@ -52,7 +52,6 @@ jobs:
     - name: Install and Build
       run: |
         pip install pipenv
-        make
         make jekyll-docs
 
     - name: Deploy
