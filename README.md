@@ -1,6 +1,6 @@
 ---
 title: Metadata management for the National Microbiome Data Collaborative
-nav_order: 0
+nav_order: 1
 ---
 
 # Metadata management for the [National Microbiome Data Collaborative](https://microbiomedata.org/)
