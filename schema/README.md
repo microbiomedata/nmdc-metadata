@@ -1,4 +1,5 @@
 ---
+title: NMDC Schema
 nav_order: 1
 ---
 

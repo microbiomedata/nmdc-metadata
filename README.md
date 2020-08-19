@@ -1,4 +1,5 @@
 ---
+title: Metadata management for the National Microbiome Data Collaborative
 nav_order: 0
 ---
 
