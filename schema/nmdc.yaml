@@ -599,18 +599,22 @@ slots:
     is_a: gold_path_field
     description: >-
       TODO
+
   ecosystem_category:
     is_a: gold_path_field
     description: >-
       TODO
+
   ecosystem_type:
     is_a: gold_path_field
     description: >-
       TODO
+
   ecosystem_subtype:
     is_a: gold_path_field
     description: >-
       TODO
+      
   specific_ecosystem:
     is_a: gold_path_field
     description: >-
