@@ -695,9 +695,7 @@ slots:
     
   soil_annual_season_temp:
     range: string
-    mappings:
-      -  gold.vocab:soil_annual_season_temp
-
+    
   water_samp_store_temp:
     range: string
     

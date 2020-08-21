@@ -1280,7 +1280,43 @@
          "type": "object"
       }
    },
-   "properties": {},
+   "properties": {
+      "activity_set": {
+         "description": "This property links a database object to the set of prov activities.",
+         "items": {
+            "$ref": "#/definitions/Activity"
+         },
+         "type": "array"
+      },
+      "biosample_set": {
+         "description": "This property links a database object to the set of samples within it.",
+         "items": {
+            "$ref": "#/definitions/Biosample"
+         },
+         "type": "array"
+      },
+      "data_object_set": {
+         "description": "This property links a database object to the set of data objects within it.",
+         "items": {
+            "$ref": "#/definitions/DataObject"
+         },
+         "type": "array"
+      },
+      "omics_processing_set": {
+         "description": "This property links a database object to the set of omics processings within it.",
+         "items": {
+            "$ref": "#/definitions/OmicsProcessing"
+         },
+         "type": "array"
+      },
+      "study_set": {
+         "description": "This property links a database object to the set of studies within it.",
+         "items": {
+            "$ref": "#/definitions/Study"
+         },
+         "type": "array"
+      }
+   },
    "title": "NMDC",
    "type": "object"
 }

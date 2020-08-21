@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-08-19 21:35
+# Generation date: 2020-08-21 14:38
 # Schema: NMDC
 #
 # id: https://microbiomedata/schema
@@ -23,7 +23,7 @@ from biolinkml.utils.formatutils import camelcase, underscore, sfx
 from rdflib import Namespace, URIRef
 from biolinkml.utils.curienamespace import CurieNamespace
 from biolinkml.utils.metamodelcore import Bool
-from includes.types import Boolean, Double, Float, String
+from includes.types import Boolean, Double, Float, Integer, String
 
 metamodel_version = "1.5.3"
 
@@ -1163,12 +1163,6 @@ slots.output_read_count = Slot(uri=NMDC.output_read_count, name="output read cou
 slots.output_base_count = Slot(uri=NMDC.output_base_count, name="output base count", curie=NMDC.curie('output_base_count'),
                       model_uri=NMDC.output_base_count, domain=None, range=Optional[str])
 
-slots.principal_investigator = Slot(uri=NMDC.principal_investigator, name="principal investigator", curie=NMDC.curie('principal_investigator'),
-                      model_uri=NMDC.principal_investigator, domain=None, range=Optional[Union[dict, PersonValue]])
-
-slots.doi = Slot(uri=NMDC.doi, name="doi", curie=NMDC.curie('doi'),
-                      model_uri=NMDC.doi, domain=None, range=Optional[Union[dict, AttributeValue]])
-
 slots.gold_path_field = Slot(uri=NMDC.gold_path_field, name="gold_path_field", curie=NMDC.curie('gold_path_field'),
                       model_uri=NMDC.gold_path_field, domain=None, range=Optional[Union[dict, AttributeValue]])
 
@@ -1186,6 +1180,90 @@ slots.ecosystem_subtype = Slot(uri=NMDC.ecosystem_subtype, name="ecosystem_subty
 
 slots.specific_ecosystem = Slot(uri=NMDC.specific_ecosystem, name="specific_ecosystem", curie=NMDC.curie('specific_ecosystem'),
                       model_uri=NMDC.specific_ecosystem, domain=None, range=Optional[Union[dict, AttributeValue]])
+
+slots.principal_investigator = Slot(uri=NMDC.principal_investigator, name="principal investigator", curie=NMDC.curie('principal_investigator'),
+                      model_uri=NMDC.principal_investigator, domain=None, range=Optional[Union[dict, PersonValue]])
+
+slots.doi = Slot(uri=NMDC.doi, name="doi", curie=NMDC.curie('doi'),
+                      model_uri=NMDC.doi, domain=None, range=Optional[Union[dict, AttributeValue]])
+
+slots.add_date = Slot(uri=NMDC.add_date, name="add_date", curie=NMDC.curie('add_date'),
+                      model_uri=NMDC.add_date, domain=None, range=Optional[str])
+
+slots.mod_date = Slot(uri=NMDC.mod_date, name="mod_date", curie=NMDC.curie('mod_date'),
+                      model_uri=NMDC.mod_date, domain=None, range=Optional[str])
+
+slots.ecosystem_path_id = Slot(uri=NMDC.ecosystem_path_id, name="ecosystem_path_id", curie=NMDC.curie('ecosystem_path_id'),
+                      model_uri=NMDC.ecosystem_path_id, domain=None, range=Optional[str])
+
+slots.habitat = Slot(uri=NMDC.habitat, name="habitat", curie=NMDC.curie('habitat'),
+                      model_uri=NMDC.habitat, domain=None, range=Optional[str])
+
+slots.location = Slot(uri=NMDC.location, name="location", curie=NMDC.curie('location'),
+                      model_uri=NMDC.location, domain=None, range=Optional[str])
+
+slots.community = Slot(uri=NMDC.community, name="community", curie=NMDC.curie('community'),
+                      model_uri=NMDC.community, domain=None, range=Optional[str])
+
+slots.ncbi_taxonomy_name = Slot(uri=NMDC.ncbi_taxonomy_name, name="ncbi_taxonomy_name", curie=NMDC.curie('ncbi_taxonomy_name'),
+                      model_uri=NMDC.ncbi_taxonomy_name, domain=None, range=Optional[str])
+
+slots.sample_collection_site = Slot(uri=NMDC.sample_collection_site, name="sample_collection_site", curie=NMDC.curie('sample_collection_site'),
+                      model_uri=NMDC.sample_collection_site, domain=None, range=Optional[str])
+
+slots.identifier = Slot(uri=NMDC.identifier, name="identifier", curie=NMDC.curie('identifier'),
+                      model_uri=NMDC.identifier, domain=None, range=Optional[str])
+
+slots.sample_collection_year = Slot(uri=NMDC.sample_collection_year, name="sample_collection_year", curie=NMDC.curie('sample_collection_year'),
+                      model_uri=NMDC.sample_collection_year, domain=None, range=Optional[int])
+
+slots.sample_collection_month = Slot(uri=NMDC.sample_collection_month, name="sample_collection_month", curie=NMDC.curie('sample_collection_month'),
+                      model_uri=NMDC.sample_collection_month, domain=None, range=Optional[int])
+
+slots.sample_collection_day = Slot(uri=NMDC.sample_collection_day, name="sample_collection_day", curie=NMDC.curie('sample_collection_day'),
+                      model_uri=NMDC.sample_collection_day, domain=None, range=Optional[int])
+
+slots.sample_collection_hour = Slot(uri=NMDC.sample_collection_hour, name="sample_collection_hour", curie=NMDC.curie('sample_collection_hour'),
+                      model_uri=NMDC.sample_collection_hour, domain=None, range=Optional[int])
+
+slots.sample_collection_minute = Slot(uri=NMDC.sample_collection_minute, name="sample_collection_minute", curie=NMDC.curie('sample_collection_minute'),
+                      model_uri=NMDC.sample_collection_minute, domain=None, range=Optional[int])
+
+slots.host_name = Slot(uri=NMDC.host_name, name="host_name", curie=NMDC.curie('host_name'),
+                      model_uri=NMDC.host_name, domain=None, range=Optional[str])
+
+slots.subsurface_depth = Slot(uri=NMDC.subsurface_depth, name="subsurface_depth", curie=NMDC.curie('subsurface_depth'),
+                      model_uri=NMDC.subsurface_depth, domain=None, range=Optional[Union[dict, QuantityValue]])
+
+slots.proport_woa_temperature = Slot(uri=NMDC.proport_woa_temperature, name="proport_woa_temperature", curie=NMDC.curie('proport_woa_temperature'),
+                      model_uri=NMDC.proport_woa_temperature, domain=None, range=Optional[str])
+
+slots.biogas_temperature = Slot(uri=NMDC.biogas_temperature, name="biogas_temperature", curie=NMDC.curie('biogas_temperature'),
+                      model_uri=NMDC.biogas_temperature, domain=None, range=Optional[str])
+
+slots.growth_temperature = Slot(uri=NMDC.growth_temperature, name="growth_temperature", curie=NMDC.curie('growth_temperature'),
+                      model_uri=NMDC.growth_temperature, domain=None, range=Optional[str])
+
+slots.soil_annual_season_temp = Slot(uri=NMDC.soil_annual_season_temp, name="soil_annual_season_temp", curie=NMDC.curie('soil_annual_season_temp'),
+                      model_uri=NMDC.soil_annual_season_temp, domain=None, range=Optional[str])
+
+slots.water_samp_store_temp = Slot(uri=NMDC.water_samp_store_temp, name="water_samp_store_temp", curie=NMDC.curie('water_samp_store_temp'),
+                      model_uri=NMDC.water_samp_store_temp, domain=None, range=Optional[str])
+
+slots.biogas_retention_time = Slot(uri=NMDC.biogas_retention_time, name="biogas_retention_time", curie=NMDC.curie('biogas_retention_time'),
+                      model_uri=NMDC.biogas_retention_time, domain=None, range=Optional[str])
+
+slots.ncbi_project_name = Slot(uri=NMDC.ncbi_project_name, name="ncbi_project_name", curie=NMDC.curie('ncbi_project_name'),
+                      model_uri=NMDC.ncbi_project_name, domain=None, range=Optional[str])
+
+slots.processing_institution = Slot(uri=NMDC.processing_institution, name="processing_institution", curie=NMDC.curie('processing_institution'),
+                      model_uri=NMDC.processing_institution, domain=None, range=Optional[str])
+
+slots.omics_type = Slot(uri=NMDC.omics_type, name="omics_type", curie=NMDC.curie('omics_type'),
+                      model_uri=NMDC.omics_type, domain=None, range=Optional[str])
+
+slots.completion_date = Slot(uri=NMDC.completion_date, name="completion_date", curie=NMDC.curie('completion_date'),
+                      model_uri=NMDC.completion_date, domain=None, range=Optional[str])
 
 slots.submitted_to_insdc = Slot(uri="str(uriorcurie)", name="submitted_to_insdc", curie=None,
                       model_uri=NMDC.submitted_to_insdc, domain=None, range=Optional[Union[dict, BooleanValue]], mappings = [MIXS.submitted_to_insdc])
