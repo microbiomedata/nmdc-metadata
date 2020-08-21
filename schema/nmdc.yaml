@@ -685,9 +685,8 @@ slots:
     range: quantity value
     
   proport_woa_temperature:
-    mappings:
-      -  gold.vocab:proport_woa_temperature
-
+    range: string
+    
   biogas_temperature:
     range: string
     
