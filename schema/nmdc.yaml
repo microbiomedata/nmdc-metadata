@@ -585,20 +585,6 @@ slots:
   output base count:
     is_a: read QC analysis statistic
     
-  ## GOLD SPECIFIC
-
-  principal investigator:
-    aliases:
-      - PI
-      - principal investigator
-    is_a: attribute
-    range: person value
-    description: >-
-      represents the PI
-
-  doi:
-    is_a: attribute
-    range: attribute value
     
   ## GOLD PATHS
 
@@ -629,3 +615,104 @@ slots:
     is_a: gold_path_field
     description: >-
       TODO
+
+## GOLD DATABASE SPECFIC FIELDS
+  principal investigator:
+    aliases:
+      - PI
+      - principal investigator
+    is_a: attribute
+    range: person value
+    description: >-
+      represents the PI
+
+  doi:
+    is_a: attribute
+    range: attribute value
+
+  add_date:
+    range: string
+    description: >-
+      The date on which the information was added to the database.
+
+  mod_date:
+    range: string
+    description: >-
+      The last date on which the database information was modified.
+
+  ecosystem_path_id:
+    range: string
+    description: >-
+      A unique id representing the GOLD classifers associated with a sample.
+
+  habitat:
+    range: string
+    
+  location:
+    range: string
+    
+  community:
+    range: string
+    
+  ncbi_taxonomy_name:
+    range: string
+  
+  sample_collection_site:
+    range: string
+    
+  identifier:
+    range: string
+    
+  sample_collection_year:
+    range: integer
+    
+  sample_collection_month:
+    range: integer
+    
+  sample_collection_day:
+    range: integer
+    
+  sample_collection_hour:
+    range: integer
+    
+  sample_collection_minute:
+    range: integer
+    
+  host_name:
+    range: string
+    
+  subsurface_depth:
+    range: quantity value
+    
+  proport_woa_temperature:
+    mappings:
+      -  gold.vocab:proport_woa_temperature
+
+  biogas_temperature:
+    range: string
+    
+  growth_temperature:
+    range: string
+    
+  soil_annual_season_temp:
+    range: string
+    mappings:
+      -  gold.vocab:soil_annual_season_temp
+
+  water_samp_store_temp:
+    range: string
+    
+  biogas_retention_time:
+    range: string
+
+  ncbi_project_name:
+    range: string
+  
+  processing_institution:
+    range: string
+  
+  omics_type:
+    range: string
+  
+  completion_date:
+    range: string
