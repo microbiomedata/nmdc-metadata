@@ -486,75 +486,141 @@ slots:
 
   asm_score:
     is_a: metagenome assembly parameter
-      
-  n_scaffolds:
-    is_a: metagenome assembly parameter
+    description: >-
+      A score for comparing metagenomic assembly quality from same sample.
+    range: float
 
   scaffolds:
     is_a: metagenome assembly parameter
+    description: >-
+      Total sequence count of all scaffolds.
+    range: float
 
   scaf_logsum:
     is_a: metagenome assembly parameter
+    description: >-
+      The sum of the (length*log(length)) of all scaffolds, times some constant.  Increase the contiguity, the score will increase
+    range: float
 
   scaf_powsum:
     is_a: metagenome assembly parameter
+    description: >-
+      Powersum of all scaffolds is the same as logsum except that it uses the sum of (length*(length^P)) for some power P (default P=0.25).
+    range: float 
 
   scaf_max:
     is_a: metagenome assembly parameter
+    description: >-
+      Maximum scaffold length.
+    range: float
       
   scaf_bp:
     is_a: metagenome assembly parameter
+    description: >-
+      Total size in bp of all scaffolds.
+    range: float
 
   scaf_N50:
     is_a: metagenome assembly parameter
+    description: >-
+      Given a set of scaffolds, each with its own length, the L50 count is defined as the smallest number of scaffolds whose length sum makes up half of genome size.
+    range: float
       
   scaf_N90:
     is_a: metagenome assembly parameter
+    description: >-
+      Given a set of scaffolds, each with its own length, the L90 count is defined as the smallest number of scaffolds whose length sum makes up 90% of genome size.
+    range: float
 
   scaf_L50:
     is_a: metagenome assembly parameter
+    description: >-
+      Given a set of scaffolds, the N50 is defined as the sequence length of the shortest scaffold at 50% of the total genome length.
+    range: float
 
   scaf_L90:
     is_a: metagenome assembly parameter
+    description: >-
+      The L90 statistic is less than or equal to the L50 statistic; it is the length for which the collection of all scaffolds of that length or longer contains at least 90% of the sum of the lengths of all scaffolds.
+    range: float
 
   scaf_n_gt50K:
     is_a: metagenome assembly parameter
+    description: >-
+      Total sequence count of scaffolds greater than 50 KB.
+    range: float
 
   scaf_l_gt50K:
-    is_a: metagenome assembly parameter      
+    is_a: metagenome assembly parameter
+    description: >-
+      Total size in bp of all scaffolds greater than 50 KB.
+    range: float
 
   scaf_pct_gt50K:
     is_a: metagenome assembly parameter
+    description: >-
+      Total sequence size percentage of scaffolds greater than 50 KB.
+    range: float
       
   contigs:
     is_a: metagenome assembly parameter
+    description: >-
+      The sum of the (length*log(length)) of all contigs, times some constant.  Increase the contiguity, the score will increase
+    range: float
 
   contig_bp:
     is_a: metagenome assembly parameter
+    description: >-
+      Total size in bp of all contigs.
+    range: float
       
   ctg_N50:
     is_a: metagenome assembly parameter
+    description: >-
+      Given a set of contigs, each with its own length, the L50 count is defined as the smallest number of contigs whose length sum makes up half of genome size.
+    range: float
 
   ctg_L50:
     is_a: metagenome assembly parameter
+    description: >-
+      Given a set of contigs, the N50 is defined as the sequence length of the shortest contig at 50% of the total genome length.
+    range: float
 
   ctg_N90:
     is_a: metagenome assembly parameter
+    description: >-
+      Given a set of contigs, each with its own length, the L90 count is defined as the smallest number of contigs whose length sum makes up 90% of genome size.
+    range: float
 
   ctg_L90:
-    is_a: metagenome assembly parameter     
+    is_a: metagenome assembly parameter
+    description: >-
+      The L90 statistic is less than or equal to the L50 statistic; it is the length for which the collection of all contigs of that length or longer contains at least 90% of the sum of the lengths of all contigs.
+    range: float
 
   ctg_logsum:
     is_a: metagenome assembly parameter
+    description: >-
+      Maximum contig length.
+    range: float
 
   ctg_powsum:
     is_a: metagenome assembly parameter
+    description: >-
+      Powersum of all contigs is the same as logsum except that it uses the sum of (length*(length^P)) for some power P (default P=0.25).
+    range: float 
 
   ctg_max:
     is_a: metagenome assembly parameter
+    description: >-
+      Maximum contig length.
+    range: float
       
   gap_pct:
     is_a: metagenome assembly parameter
+    description: >-
+      The gap size percentage of all scaffolds.
+    range: float
       
   gc_std:
     is_a: metagenome assembly parameter
@@ -564,26 +630,47 @@ slots:
 
   gc_avg:
     is_a: metagenome assembly parameter
+    description: >-
+      Average of GC content of all contigs.
+    range: float
 
   num_input_reads:
-    is_a: metagenome assembly parameter    
+    is_a: metagenome assembly parameter
+    description: >-
+      The sequence count number of input reads for assembly.
+    range: float
 
   num_aligned_reads:
     is_a: metagenome assembly parameter
+    description: >-
+      The sequence count number of input reads aligned to assembled contigs.
+    range: float
       
   read QC analysis statistic: {}
 
   input read count:
     is_a: read QC analysis statistic
-
+    description: >-
+      The sequence count number of input reads for QC analysis.
+    range: float
+    
   input base count:
     is_a: read QC analysis statistic
+    description: >-
+      The nucleotide base count number of input reads for QC analysis.
+    range: float
 
   output read count:
     is_a: read QC analysis statistic
+    description: >-
+      After QC analysis sequence count number. 
+    range: float
 
   output base count:
     is_a: read QC analysis statistic
+    description: >-
+      After QC analysis nucleotide base count number.
+    range: float
     
   ## GOLD SPECIFIC
 
