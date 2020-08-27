@@ -251,33 +251,33 @@ metatype:Nodeidentifier NONLITERAL
 <MetagenomeAssembly> CLOSED {
     (  $<MetagenomeAssembly_tes> (  &<WorkflowExecutionActivity_tes> ;
           rdf:type [ <WorkflowExecutionActivity> ] ? ;
-          <asm_score> @metatype:String ? ;
-          <scaffolds> @metatype:String ? ;
-          <scaf_logsum> @metatype:String ? ;
-          <scaf_powsum> @metatype:String ? ;
-          <scaf_max> @metatype:String ? ;
-          <scaf_bp> @metatype:String ? ;
-          <scaf_N50> @metatype:String ? ;
-          <scaf_N90> @metatype:String ? ;
-          <scaf_L50> @metatype:String ? ;
-          <scaf_L90> @metatype:String ? ;
-          <scaf_n_gt50K> @metatype:String ? ;
-          <scaf_l_gt50K> @metatype:String ? ;
-          <scaf_pct_gt50K> @metatype:String ? ;
-          <contigs> @metatype:String ? ;
-          <contig_bp> @metatype:String ? ;
-          <ctg_N50> @metatype:String ? ;
-          <ctg_L50> @metatype:String ? ;
-          <ctg_N90> @metatype:String ? ;
-          <ctg_L90> @metatype:String ? ;
-          <ctg_logsum> @metatype:String ? ;
-          <ctg_powsum> @metatype:String ? ;
-          <ctg_max> @metatype:String ? ;
-          <gap_pct> @metatype:String ? ;
+          <asm_score> @metatype:Float ? ;
+          <scaffolds> @metatype:Float ? ;
+          <scaf_logsum> @metatype:Float ? ;
+          <scaf_powsum> @metatype:Float ? ;
+          <scaf_max> @metatype:Float ? ;
+          <scaf_bp> @metatype:Float ? ;
+          <scaf_N50> @metatype:Float ? ;
+          <scaf_N90> @metatype:Float ? ;
+          <scaf_L50> @metatype:Float ? ;
+          <scaf_L90> @metatype:Float ? ;
+          <scaf_n_gt50K> @metatype:Float ? ;
+          <scaf_l_gt50K> @metatype:Float ? ;
+          <scaf_pct_gt50K> @metatype:Float ? ;
+          <contigs> @metatype:Float ? ;
+          <contig_bp> @metatype:Float ? ;
+          <ctg_N50> @metatype:Float ? ;
+          <ctg_L50> @metatype:Float ? ;
+          <ctg_N90> @metatype:Float ? ;
+          <ctg_L90> @metatype:Float ? ;
+          <ctg_logsum> @metatype:Float ? ;
+          <ctg_powsum> @metatype:Float ? ;
+          <ctg_max> @metatype:Float ? ;
+          <gap_pct> @metatype:Float ? ;
           <gc_std> @metatype:Float ? ;
-          <gc_avg> @metatype:String ? ;
-          <num_input_reads> @metatype:String ? ;
-          <num_aligned_reads> @metatype:String ?
+          <gc_avg> @metatype:Float ? ;
+          <num_input_reads> @metatype:Float ? ;
+          <num_aligned_reads> @metatype:Float ?
        ) ;
        rdf:type [ <MetagenomeAssembly> ]
     )
@@ -359,10 +359,10 @@ metatype:Nodeidentifier NONLITERAL
 <ReadQCAnalysisActivity> CLOSED {
     (  $<ReadQCAnalysisActivity_tes> (  &<WorkflowExecutionActivity_tes> ;
           rdf:type [ <WorkflowExecutionActivity> ] ? ;
-          <input_read_count> @metatype:String ? ;
-          <input_base_count> @metatype:String ? ;
-          <output_read_count> @metatype:String ? ;
-          <output_base_count> @metatype:String ?
+          <input_read_count> @metatype:Float ? ;
+          <input_base_count> @metatype:Float ? ;
+          <output_read_count> @metatype:Float ? ;
+          <output_base_count> @metatype:Float ?
        ) ;
        rdf:type [ <ReadQCAnalysisActivity> ]
     )

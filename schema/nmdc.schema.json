@@ -725,34 +725,44 @@
                "type": "string"
             },
             "asm_score": {
-               "type": "string"
+               "description": "A score for comparing metagenomic assembly quality from same sample.",
+               "type": "number"
             },
             "contig_bp": {
-               "type": "string"
+               "description": "Total size in bp of all contigs.",
+               "type": "number"
             },
             "contigs": {
-               "type": "string"
+               "description": "The sum of the (length*log(length)) of all contigs, times some constant.  Increase the contiguity, the score will increase",
+               "type": "number"
             },
             "ctg_L50": {
-               "type": "string"
+               "description": "Given a set of contigs, the N50 is defined as the sequence length of the shortest contig at 50% of the total genome length.",
+               "type": "number"
             },
             "ctg_L90": {
-               "type": "string"
+               "description": "The L90 statistic is less than or equal to the L50 statistic; it is the length for which the collection of all contigs of that length or longer contains at least 90% of the sum of the lengths of all contigs.",
+               "type": "number"
             },
             "ctg_N50": {
-               "type": "string"
+               "description": "Given a set of contigs, each with its own length, the L50 count is defined as the smallest number of contigs whose length sum makes up half of genome size.",
+               "type": "number"
             },
             "ctg_N90": {
-               "type": "string"
+               "description": "Given a set of contigs, each with its own length, the L90 count is defined as the smallest number of contigs whose length sum makes up 90% of genome size.",
+               "type": "number"
             },
             "ctg_logsum": {
-               "type": "string"
+               "description": "Maximum contig length.",
+               "type": "number"
             },
             "ctg_max": {
-               "type": "string"
+               "description": "Maximum contig length.",
+               "type": "number"
             },
             "ctg_powsum": {
-               "type": "string"
+               "description": "Powersum of all contigs is the same as logsum except that it uses the sum of (length*(length^P)) for some power P (default P=0.25).",
+               "type": "number"
             },
             "ended_at_time": {
                "type": "string"
@@ -762,10 +772,12 @@
                "type": "string"
             },
             "gap_pct": {
-               "type": "string"
+               "description": "The gap size percentage of all scaffolds.",
+               "type": "number"
             },
             "gc_avg": {
-               "type": "string"
+               "description": "Average of GC content of all contigs.",
+               "type": "number"
             },
             "gc_std": {
                "description": "Standard deviation of GC content of all contigs.",
@@ -790,46 +802,60 @@
                "type": "array"
             },
             "num_aligned_reads": {
-               "type": "string"
+               "description": "The sequence count number of input reads aligned to assembled contigs.",
+               "type": "number"
             },
             "num_input_reads": {
-               "type": "string"
+               "description": "The sequence count number of input reads for assembly.",
+               "type": "number"
             },
             "scaf_L50": {
-               "type": "string"
+               "description": "Given a set of scaffolds, the N50 is defined as the sequence length of the shortest scaffold at 50% of the total genome length.",
+               "type": "number"
             },
             "scaf_L90": {
-               "type": "string"
+               "description": "The L90 statistic is less than or equal to the L50 statistic; it is the length for which the collection of all scaffolds of that length or longer contains at least 90% of the sum of the lengths of all scaffolds.",
+               "type": "number"
             },
             "scaf_N50": {
-               "type": "string"
+               "description": "Given a set of scaffolds, each with its own length, the L50 count is defined as the smallest number of scaffolds whose length sum makes up half of genome size.",
+               "type": "number"
             },
             "scaf_N90": {
-               "type": "string"
+               "description": "Given a set of scaffolds, each with its own length, the L90 count is defined as the smallest number of scaffolds whose length sum makes up 90% of genome size.",
+               "type": "number"
             },
             "scaf_bp": {
-               "type": "string"
+               "description": "Total size in bp of all scaffolds.",
+               "type": "number"
             },
             "scaf_l_gt50K": {
-               "type": "string"
+               "description": "Total size in bp of all scaffolds greater than 50 KB.",
+               "type": "number"
             },
             "scaf_logsum": {
-               "type": "string"
+               "description": "The sum of the (length*log(length)) of all scaffolds, times some constant.  Increase the contiguity, the score will increase",
+               "type": "number"
             },
             "scaf_max": {
-               "type": "string"
+               "description": "Maximum scaffold length.",
+               "type": "number"
             },
             "scaf_n_gt50K": {
-               "type": "string"
+               "description": "Total sequence count of scaffolds greater than 50 KB.",
+               "type": "number"
             },
             "scaf_pct_gt50K": {
-               "type": "string"
+               "description": "Total sequence size percentage of scaffolds greater than 50 KB.",
+               "type": "number"
             },
             "scaf_powsum": {
-               "type": "string"
+               "description": "Powersum of all scaffolds is the same as logsum except that it uses the sum of (length*(length^P)) for some power P (default P=0.25).",
+               "type": "number"
             },
             "scaffolds": {
-               "type": "string"
+               "description": "Total sequence count of all scaffolds.",
+               "type": "number"
             },
             "started_at_time": {
                "type": "string"
@@ -1089,16 +1115,20 @@
                "type": "array"
             },
             "input_base_count": {
-               "type": "string"
+               "description": "The nucleotide base count number of input reads for QC analysis.",
+               "type": "number"
             },
             "input_read_count": {
-               "type": "string"
+               "description": "The sequence count number of input reads for QC analysis.",
+               "type": "number"
             },
             "output_base_count": {
-               "type": "string"
+               "description": "After QC analysis nucleotide base count number.",
+               "type": "number"
             },
             "output_read_count": {
-               "type": "string"
+               "description": "After QC analysis sequence count number. ",
+               "type": "number"
             },
             "started_at_time": {
                "type": "string"
