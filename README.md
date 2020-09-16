@@ -36,7 +36,10 @@ The schema is also available as:
 ## Documentation
 [Documentation](https://microbiomedata.github.io/nmdc-metadata/) for the [NMDC schema](./schema) can be browsed here:
 * https://microbiomedata.github.io/nmdc-metadata/
- 
+
+## NMDC Data
+A zipped file of the NMDC can be downloaded [here](metadata-translation/src/data/nmdc_database.json.zip) (JSON format).
+
 ## Standardization of characteristics
 Entities in the schema are annotated with characteristics. When possible, we use standard terminologies and ontologies to define these characteristics. These standards include:
 * [Minimum Information about any (x) Sequence (MIxS)](https://gensc.org/mixs/)
