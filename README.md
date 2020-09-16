@@ -37,8 +37,11 @@ The schema is also available as:
 [Documentation](https://microbiomedata.github.io/nmdc-metadata/) for the [NMDC schema](./schema) can be browsed here:
 * https://microbiomedata.github.io/nmdc-metadata/
 
-## NMDC Data
+## NMDC data
 A zipped file of the NMDC can be downloaded [here](metadata-translation/src/data/nmdc_database.json.zip) (JSON format).
+
+## Mapping resource
+We use [SSSOM](https://github.com/OBOFoundry/SSSOM) to map fields in primary data sources to standard terms. The mapping between the GOLD data and MIxS terms this [SSSOM file](schema/mappings/gold-to-mixs.sssom.tsv).
 
 ## Standardization of characteristics
 Entities in the schema are annotated with characteristics. When possible, we use standard terminologies and ontologies to define these characteristics. These standards include:
