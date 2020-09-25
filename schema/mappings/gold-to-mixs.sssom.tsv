@@ -35,8 +35,10 @@ gold.vocab:sample_weight_dna_ext	sample_weight_dna_ext	skos:exactMatch	mixs:samp
 gold.vocab:soil_pool_dna_extracts	soil_pool_dna_extracts	skos:exactMatch	mixs:pool_dna_extracts	pool_dna_extracts	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_store_condition	soil_store_condition	skos:exactMatch	mixs:store_cond	store_cond	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_link_climate_info	soil_link_climate_info	skos:exactMatch	mixs:link_climate_info	link_climate_info	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
-gold.vocab:soil_annual_season_temp	soil_annual_season_temp	skos:exactMatch	mixs:season_temp or annual_temp?	season_temp or annual_temp?	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
-gold.vocab:soil_annual_season_precpt 	soil_annual_season_precpt 	skos:exactMatch	mixs:season_precpt or annual_precpt?	season_precpt or annual_precpt?	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
+gold.vocab:soil_annual_season_temp	soil_annual_season_temp	skos:closeMatch	mixs:annual_temp	annual_temp	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
+gold.vocab:soil_annual_season_temp	soil_annual_season_temp	skos:closeMatch	mixs:season_temp	season_temp	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
+gold.vocab:soil_annual_season_precpt	soil_annual_season_precpt 	skos:closeMatch	mixs:season_precpt	season_precpt	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
+gold.vocab:soil_annual_season_precpt	soil_annual_season_precpt 	skos:closeMatch	mixs:annual_precpt	annual_precpt	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_link_class_info	soil_link_class_info	skos:exactMatch	mixs:link_class_info	link_class_info	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_fao_class	soil_fao_class	skos:exactMatch	mixs:fao_class	fao_class	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_local_class	soil_local_class	skos:exactMatch	mixs:local_class	local_class	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
