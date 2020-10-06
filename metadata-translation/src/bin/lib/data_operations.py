@@ -51,9 +51,9 @@ def make_dataframe (file_name, subset_cols=[], exclude_cols=[], nrows=None, lowe
     ## load data from file
     if "tsv" == file_type.lower() or "csv" == file_type.lower():
         if None != file_archive:
-            df = pds.read_csv(file_archive.open(file_name), sep=delimiter, nrows=nrows)
+            df = pds.read_csv(file_archive.open(file_name), sep=delimiter, nrows=nrows, comment='#')
         else:
-            df = pds.read_csv(file_name, sep=delimiter, nrows=nrows)
+            df = pds.read_csv(file_name, sep=delimiter, nrows=nrows, comment='#')
     elif "excel" == file_type.lower():
         if None != file_archive:
             df = pds.read_excel(file_archive.open(file_name), sheet_name=sheet_name, nrows=nrows)
@@ -338,7 +338,7 @@ def make_nmdc_dict_list (dictionary,
         for af in attribute_fields:
             if type({}) == type(af): af = list(af.keys())[0] # needed for attributes given as a dict
             if not hasattr(nmdc_class, str(af)): setattr(nmdc_class, str(af), None)
-            ## TODO ! throw a a warning
+            ### TODO ! throw a a warning ###
 
         if len(attribute_map) > 0:
             for af in attribute_map.values():
@@ -357,7 +357,7 @@ def make_nmdc_dict_list (dictionary,
         obj.type = nmdc_class.class_class_curie  ## add info about the type of entity it is
         
         for key, item in record.items():
-            if (not pds.isnull(item)) and ('' != item) and not (item is None) and (key in attribute_fields):
+            if (not pds.isnull(item)) and ('' != item) and (not (item is None)) and (key in attribute_fields):
                 av = make_attribute_value(item)
 
                 ## check if attribute has been mapped to a mixs term

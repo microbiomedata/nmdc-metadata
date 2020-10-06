@@ -12,7 +12,7 @@ import nmdc
 import lib.data_operations as dop
 import align_nmdc_datatypes
 import jq
-
+from git_root import git_root
 
 def get_json(file_path, replace_single_quote=False):
     ## load json
@@ -42,7 +42,7 @@ def make_merged_data_source(spec_file='lib/nmdc_data_source.yaml', save_path='..
     return mdf
 
 
-def make_json_etl(dataframe, nmdc_class, spec_class_name, spec_file='lib/nmdc_data_source.yaml', attribute_map_file=''):
+def make_json_etl(dataframe, nmdc_class, spec_class_name, spec_file='lib/nmdc_data_source.yaml', sssom_map_file=''):
     with open(spec_file, 'r') as input_file: # load data specificaiton info
         spec = yaml.load(input_file, Loader=Loader)
     
@@ -51,10 +51,10 @@ def make_json_etl(dataframe, nmdc_class, spec_class_name, spec_file='lib/nmdc_da
     constructor = spec['classes'][spec_class_name]['constructor']
 
     attr_map = {}
-    if len(attribute_map_file) > 0:
-        ## create map betweeen gold fields and mixs terms
-        mapping_df = dop.make_dataframe(attribute_map_file)
-        attr_map = dop.make_gold_to_mixs_map(attributes, mapping_df, 'biosample')
+    if len(sssom_map_file) > 0:
+        ## load sssom mapping file and subset to skos:exactMatch
+        mapping_df = dop.make_dataframe(sssom_map_file).query("predicate_id == 'skos:exactMatch'")
+        attr_map = {subj:obj for idx, subj, obj in mapping_df[['subject_label', 'object_label']].itertuples()} # build attribute dict
 
     ## build json
     data_dictdf = dataframe.to_dict(orient="records") # transorm dataframe to dictionary
@@ -201,7 +201,7 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
         gold_biosample_json = make_json_etl(dataframe=biosample, 
                                             nmdc_class=nmdc.Biosample, 
                                             spec_class_name='gold_biosample', 
-                                            attribute_map_file='../data/GOLD-to-mixs-map.tsv')
+                                            sssom_map_file=git_root('schema/mappings/gold-to-mixs.sssom.tsv'))
         dop.save_json_string_list("output/nmdc_etl/gold_biosample.json", gold_biosample_json)
         align_nmdc_datatypes.align_gold_biosample() # currently broken
 
