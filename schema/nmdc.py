@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-08-27 17:06
+# Generation date: 2020-10-06 19:42
 # Schema: NMDC
 #
 # id: https://microbiomedata/schema
@@ -1033,6 +1033,9 @@ slots.omics_processing_set = Slot(uri=NMDC.omics_processing_set, name="omics pro
 
 slots.omics_type = Slot(uri=NMDC.omics_type, name="omics type", curie=NMDC.curie('omics_type'),
                       model_uri=NMDC.omics_type, domain=None, range=Optional[Union[dict, ControlledTermValue]])
+
+slots.type = Slot(uri=NMDC.type, name="type", curie=NMDC.curie('type'),
+                      model_uri=NMDC.type, domain=None, range=Optional[str])
 
 slots.data_object_type = Slot(uri=NMDC.data_object_type, name="data object type", curie=NMDC.curie('data_object_type'),
                       model_uri=NMDC.data_object_type, domain=None, range=Optional[Union[dict, ControlledTermValue]])
