@@ -35,3 +35,4 @@ watchdog==0.10.2
 zipp==3.1.0; python_version >= '3.6'
 wget>=3.2
 click>=7.1.2
+git_root
