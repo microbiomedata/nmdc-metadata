@@ -1,5 +1,28 @@
-classes:
+## author: Bill Duncan
+## summary: 
+## The yaml file contains metadata about the data sources used during the NMDC ETL process.
+## The classes section provided metadata needed to create a BiolinkML class used during ETL.
+## The data_sources section gives metadata needed to load an NMDC data source.
+## See details in each section.
   
+classes:
+  ## The keys for classes are used as follows:
+  ## - type: 
+  ##      provides the type of entity the class represents 
+  ##      maps to the class in the NMDC yaml file 
+  ## - constructor: 
+  ##      provides a dictionary of the paramaters (keys) and values necessary to
+  ##      instantiate the class
+  ##      when the value is a list; e.g. env_broad_scale: [{has_raw_value: 'env_broad_scale'}, 'ControlledTermValue']
+  ##      the constructor takes a complex object; the first item is a dictionary that holds the slot/value pairs 
+  ##      the second item is type of object
+  ## - attributes:
+  ##     provides a list the attributes/propeties that the class has
+  ##     when the property is a dictionary (e.g, {part_of: study_gold_id}) this
+  ##     describes a complex property in which the key is the attribute and the value
+  ##     refers to the name of data field that holds value; e.g {part_of: study_gold_id}
+  ##     means that the 'part_of' attribute of the object has the value in study_gold_id field
+
   gold_study:
     type: study
     constructor:
@@ -43,9 +66,10 @@ classes:
       - omics_type
       - instrument_name
       - processing_institution
-      - {part_of: gold_study_id}
-      - {has_output: data_object_id}
-      - {has_input: biosample_gold_ids}
+      # - {part_of: gold_study_id}
+      - part_of: gold_study_id
+      - has_output: data_object_id
+      - has_input: biosample_gold_ids
       
   emsl_data_object:
     type: data object
@@ -68,13 +92,15 @@ classes:
   gold_biosample:
     type: biosample
     constructor:
-      id: 'gold_id'
-      name: 'biosample_name'
-      description: 'description'
-      env_broad_scale: [{has_raw_value: 'env_broad_scale'}, 'ControlledTermValue']
-      env_local_scale: [{has_raw_value: 'env_local_scale'}, ControlledTermValue]
-      env_medium: [{has_raw_value: 'env_medium'}, 'ControlledTermValue']
-      lat_lon: [{latitude: 'latitude', longitude: 'longitude', has_raw_value: 'lat_lon'}, 'GeolocationValue']
+      id: gold_id
+      name: biosample_name
+      description: description
+      # env_broad_scale: [{has_raw_value: 'env_broad_scale'}, 'ControlledTermValue']
+      env_broad_scale: {init: {has_raw_value: env_broad_scale}, class_type: ControlledTermValue}
+      # env_local_scale: [{has_raw_value: 'env_local_scale'}, ControlledTermValue]
+      env_local_scale: {init: {has_raw_value: env_local_scale}, class_type: ControlledTermValue}
+      env_medium: {init: {has_raw_value: env_medium}, class_type: ControlledTermValue}
+      lat_lon: {init: {latitude: latitude, longitude: longitude, has_raw_value: lat_lon}, class_type: GeolocationValue}
     attributes:
       - add_date
       - mod_date
@@ -172,7 +198,23 @@ classes:
 
   
 data_sources:
-
+  ## The keys for the data sources are used as follows:
+  ## id_key: 
+  ##   defines the field in the data that is used as an id for the record
+  ## data_source:
+  ##   defines where the data is located
+  ##     - file_name: the name of a file
+  ##     - file_type: how the file formated; e.g. tsv, csv, excel
+  ##     - file_archive_name: define a zip or other compressed file that
+  ##                          may contain the file
+  ##   filters:
+  ##     define how the original data source should be filtered (records included/exclued)
+  ##     when the data source is extracted
+  ##  rename_slots:
+  ##     defines fields that will be renamed as part of the data extraction process
+  ##     this is often necessary for harmonizing data
+  ##  append_columns:
+  ##     defines new columns to append to the extracted dataset
   study_table:
     id_key: study_id
     data_source:

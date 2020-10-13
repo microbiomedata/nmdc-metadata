@@ -166,7 +166,7 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
                       'emsl_data_object', 
                       'jgi_data_object']):
 
-    # build merbed data frame (mdf) from saved file
+    # build merged data frame (mdf) from saved file
     mdf = pds.read_csv(data_file, sep='\t', dtype=str)
     
     ## Extract tables from merged dataset
