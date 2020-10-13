@@ -250,37 +250,27 @@ def dataframe_to_json(nmdc_df: pds.DataFrame,
         nmdc_obj.type = nmdc_class.class_class_curie  ## add info about the type of entity it is
         
         ## get mappings for attribute fields
-        for field in nmdc_record._fields:
+        for af in attribute_fields:
+            ## check if attribute is a dict; e.g. part_of: gold_study_id
+            if type({}) == type(af): 
+                field = list(af.keys())[0]
+            else:
+                field = af
+
+            ## create attribute value
             av = make_attribute_value(getattr(nmdc_record, field))
 
             ## check if attribute has been mapped in the sssom file
-            if len(attribute_map) > 0:
-                if field in attribute_map.keys():
-                    mapped_attr = attribute_map[field]
-                    setattr(nmdc_obj, mapped_attr, av)
-                else:
-                    setattr(nmdc_obj, field, av)
+            if af in attribute_map.keys(): af = attribute_map[af]
+            
+            ## check if attribute has been mapped in the sssom file
+            if (len(attribute_map) > 0) and (field in attribute_map.keys()):
+                setattr(nmdc_obj, attribute_map[field], av)
             else:
                 setattr(nmdc_obj, field, av)
-        
-        ## go though the attribute list and link slots to entities specified in slot map/dict
-        ## e.g.: {part_of: study_gold_id}
-        # #      {'part_of': [{'id': 'project_gold_ids'}, nmdc.OmicsProcessing]}
-        for af in attribute_fields:
-            if type({}) == type(af):
-                slot_name = list(af.keys())[0]
-                if 'part_of' == slot_name: nmdc_obj.part_of = map_slot_to_entity (af, record)
-                if 'has_input' == slot_name: nmdc_obj.has_input = map_slot_to_entity(af, record)
-                if 'has_output' == slot_name: nmdc_obj.has_output = map_slot_to_entity(af, record)
-        
-        for af in attribute_fields:
-            ## check if field has been mapped
-            if (len(attribute_map) > 0) and (af in attribute_map.keys()):
-                af = attribute_map[af]
-                
+
         return nmdc_obj
-    
-    
+
     nmdc_class = \
         config_nmdc_class(nmdc_class, constructor_map, attribute_fields, attribute_map, remove_key_attributes, add_attribute)
     
@@ -291,9 +281,8 @@ def dataframe_to_json(nmdc_df: pds.DataFrame,
         nmdc_obj = make_nmdc_object(record, nmdc_class)
         nmdc_objs.append(nmdc_obj)
 
-    # data_json_list = make_json_string_list \
-    #     (data_dictDf, nmdc_class, constructor_map=constructor_map, attribute_fields=attribute_fields, attribute_map=attribute_map)
-
+    return nmdc_objs
+    
 
 
 def make_nmdc_dict_list (dictionary:dict,
