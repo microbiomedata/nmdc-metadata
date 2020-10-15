@@ -66,7 +66,6 @@ classes:
       - omics_type
       - instrument_name
       - processing_institution
-      # - {part_of: gold_study_id}
       - part_of: gold_study_id
       - has_output: data_object_id
       - has_input: biosample_gold_ids
@@ -95,9 +94,7 @@ classes:
       id: gold_id
       name: biosample_name
       description: description
-      # env_broad_scale: [{has_raw_value: 'env_broad_scale'}, 'ControlledTermValue']
       env_broad_scale: {init: {has_raw_value: env_broad_scale}, class_type: ControlledTermValue}
-      # env_local_scale: [{has_raw_value: 'env_local_scale'}, ControlledTermValue]
       env_local_scale: {init: {has_raw_value: env_local_scale}, class_type: ControlledTermValue}
       env_medium: {init: {has_raw_value: env_medium}, class_type: ControlledTermValue}
       lat_lon: {init: {latitude: latitude, longitude: longitude, has_raw_value: lat_lon}, class_type: GeolocationValue}
@@ -207,6 +204,8 @@ data_sources:
   ##     - file_type: how the file formated; e.g. tsv, csv, excel
   ##     - file_archive_name: define a zip or other compressed file that
   ##                          may contain the file
+  ##   sub_cols:
+  ##      defines a set of columns that will returned
   ##   filters:
   ##     define how the original data source should be filtered (records included/exclued)
   ##     when the data source is extracted

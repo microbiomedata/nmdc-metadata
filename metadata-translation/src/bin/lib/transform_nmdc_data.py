@@ -70,6 +70,9 @@ def convert_dict_list_to_json_list (dict_list:list):
     
     ## iterate over dict list
     for d in dict_list:
+        # print(d)
+        # print(jsonasobj.as_json(d))
+        # print(json.dumps(d))
         json_list.append(json.dumps(d))
     
     ## return final list
@@ -84,7 +87,7 @@ def config_nmdc_class(nmdc_class,
                       add_attribute=True):
     ## add a 'type' slot to the nmdc class
     ## this allows us to easily inspect the type of entity in the json
-    setattr(nmdc_class, 'type', None)
+    # setattr(nmdc_class, 'type', None)
     
     ## by default, we don't want the constructors for the class
     ## to also be attributes of the object, these keys link objects other objects
@@ -122,6 +125,7 @@ def make_constructor_args (constructor_map, nmdc_record):
     
     return constructor_dict
 
+
 def make_object_from_dict(nmdc_record:namedtuple, object_dict:dict):
     ## using the data from an nmdc record, create an object from a dict with two keys:
     ## - init 
@@ -144,19 +148,20 @@ def make_object_from_dict(nmdc_record:namedtuple, object_dict:dict):
         class_type = object_dict['class_type']
 
     obj = class_type(**constructor_args) # create object from type
-    obj.type = class_type.class_class_curie
+    obj.uriorcurie = class_type.class_class_curie
     return obj
 
 
-def make_attribute_value (data_value):
+def make_attribute_value (nmdc_record:namedtuple, field):
     """
     Local function used to create attribute_value object linked the the raw value.
     """
-    #print(obj, key, value)
     av = nmdc.AttributeValue()
-    av.has_raw_value = data_value
+    av.has_raw_value = getattr(nmdc_record, field)
     
-    return av
+    return \
+        {k:v for k, v in av.__dict__.items() 
+             if pds.notnull(v) and len(v) > 0 } # don't return null or empty values
 
 
 def make_object_from_list(nmdc_record:namedtuple, nmdc_list:list):
@@ -230,7 +235,7 @@ def map_slot_to_entity (slot_map, record):
         return referenced_entity
 
 
-def dataframe_to_json(nmdc_df: pds.DataFrame, 
+def dataframe_to_dict(nmdc_df:pds.DataFrame, 
                       nmdc_class,
                       constructor_map={},
                       attribute_fields=[],
@@ -247,22 +252,21 @@ def dataframe_to_json(nmdc_df: pds.DataFrame,
         else:
             nmdc_obj = nmdc_class()
 
-        nmdc_obj.type = nmdc_class.class_class_curie  ## add info about the type of entity it is
+        # nmdc_obj.type = nmdc_class.class_class_curie  ## add info about the type of entity it is
+        nmdc_obj.uriorcurie = nmdc_class.class_class_curie  ## add info about the type of entity it is
         
         ## get mappings for attribute fields
         for af in attribute_fields:
             ## check if attribute is a dict; e.g. part_of: gold_study_id
             if type({}) == type(af): 
-                field = list(af.keys())[0]
+                field, val = list(af.items())[0] # get the field and value parts from dict
+                if type({}) == type(val):
+                    av = make_object_from_dict(nmdc_record, val) # val is a dict
+                else:
+                    av = make_attribute_value(nmdc_record, val) # val names the field in the record
             else:
-                field = af
+                field = af; av = make_attribute_value(nmdc_record, field) 
 
-            ## create attribute value
-            av = make_attribute_value(getattr(nmdc_record, field))
-
-            ## check if attribute has been mapped in the sssom file
-            if af in attribute_map.keys(): af = attribute_map[af]
-            
             ## check if attribute has been mapped in the sssom file
             if (len(attribute_map) > 0) and (field in attribute_map.keys()):
                 setattr(nmdc_obj, attribute_map[field], av)
@@ -279,11 +283,11 @@ def dataframe_to_json(nmdc_df: pds.DataFrame,
     nmdc_objs = []
     for record in nmdc_df.itertuples(index=False):
         nmdc_obj = make_nmdc_object(record, nmdc_class)
+        nmdc_obj =\
+            {k:v for k, v in nmdc_obj.__dict__.items() 
+                 if pds.notnull(v) and len(v) > 0 } # don't return null or empty values
         nmdc_objs.append(nmdc_obj)
-
     return nmdc_objs
-    
-
 
 def make_nmdc_dict_list (dictionary:dict,
                          nmdc_class,
