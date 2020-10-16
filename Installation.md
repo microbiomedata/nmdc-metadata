@@ -39,7 +39,7 @@ pip install -r requirements-dev.txt
 
 ### Building artifacts
 
-You can individually generate each artiact or let the [Makefile](Makefile) do it for you.
+You can individually generate each artifact or let the [Makefile](Makefile) do it for you.
 
 ### Running Jupyter notebooks
 
@@ -77,7 +77,7 @@ pip install pipenv
 pipenv install
 ```
 
-This tells pipenv to install all core packages listed [Pipfile](Pipfile), via the `[packages]` directive.
+This tells pipenv to install all core packages listed in [Pipfile](Pipfile), via the `[packages]` directive.
 
 If you would like to install both the core packages and dev packages (required for running notebooks that are bundled as part of this repository) then, 
 
@@ -94,11 +94,11 @@ You can individually generate each artifact or let the Makefile do it for you.
 
 ### Running Jupyter notebooks
 
-> If you haven't already, make sure you install all the dev packages from the Pipfile,
-> 
-> ```
-> pip install --dev
-> ```
+If you haven't already, make sure you install all the dev packages from the Pipfile,
+
+```
+pip install --dev
+```
 
 
 Start Jupyter via pipenv,
