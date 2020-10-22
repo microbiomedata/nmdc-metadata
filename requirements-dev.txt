@@ -10,8 +10,12 @@
 # `Pipfile.lock` and then regenerate `requirements*.txt`.
 ################################################################################
 
-biolinkml
-click
-pipenv-to-requirements
-pyyaml
-requests
+jq
+matplotlib
+networkx
+pandas
+pandasql
+seaborn
+tabulate
+xlrd
+xlsxwriter
