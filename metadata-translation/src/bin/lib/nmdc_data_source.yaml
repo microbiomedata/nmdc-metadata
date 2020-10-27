@@ -45,7 +45,7 @@ classes:
       name: project_name
       description: description
     attributes:
-      - {part_of: study_gold_id}
+      - {part_of: {init: {id: study_gold_id}, class_type: Study}}
       - {has_output: output_file_ids}
       - add_date 
       - mod_date

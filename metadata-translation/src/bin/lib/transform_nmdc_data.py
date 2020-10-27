@@ -152,6 +152,40 @@ def make_object_from_dict(nmdc_record:namedtuple, object_dict:dict):
     return obj
 
 
+def make_nmdc_dict(nmdc_obj):
+        ## transform object into a dict
+        nmdc_dict =\
+            {k:v for k, v in nmdc_obj.__dict__.items() 
+                 if pds.notnull(v) and len(v) > 0 } # don't return null or empty values
+        return nmdc_dict
+
+
+def set_nmdc_object(nmdc_obj, 
+                    nmdc_record:namedtuple,
+                    attribute_map:dict,
+                    attribute_field):
+
+    ## check if attribute is a dict; e.g. part_of: gold_study_id
+    if type({}) == type(attribute_field): 
+        field, val = list(attribute_field.items())[0] # get the field and value parts from dict
+        if type({}) == type(val):
+            av = make_object_from_dict(nmdc_record, val) # val is a dict
+            av = make_nmdc_dict(av)
+        else:
+            av = make_attribute_value(nmdc_record, val) # val names the field in the record
+    else:
+        field = attribute_field 
+        av = make_attribute_value(nmdc_record, field) 
+
+    ## check if attribute has been mapped in the sssom file
+    if (len(attribute_map) > 0) and (field in attribute_map.keys()):
+        setattr(nmdc_obj, attribute_map[field], av)
+    else:
+        setattr(nmdc_obj, field, av)
+
+    return nmdc_obj
+
+
 def make_attribute_value (nmdc_record:namedtuple, field):
     """
     Local function used to create attribute_value object linked the the raw value.
@@ -252,41 +286,23 @@ def dataframe_to_dict(nmdc_df:pds.DataFrame,
         else:
             nmdc_obj = nmdc_class()
 
-        # nmdc_obj.type = nmdc_class.class_class_curie  ## add info about the type of entity it is
         nmdc_obj.uriorcurie = nmdc_class.class_class_curie  ## add info about the type of entity it is
         
         ## get mappings for attribute fields
         for af in attribute_fields:
-            ## check if attribute is a dict; e.g. part_of: gold_study_id
-            if type({}) == type(af): 
-                field, val = list(af.items())[0] # get the field and value parts from dict
-                if type({}) == type(val):
-                    av = make_object_from_dict(nmdc_record, val) # val is a dict
-                else:
-                    av = make_attribute_value(nmdc_record, val) # val names the field in the record
-            else:
-                field = af; av = make_attribute_value(nmdc_record, field) 
-
-            ## check if attribute has been mapped in the sssom file
-            if (len(attribute_map) > 0) and (field in attribute_map.keys()):
-                setattr(nmdc_obj, attribute_map[field], av)
-            else:
-                setattr(nmdc_obj, field, av)
-
+            nmdc_obj = set_nmdc_object(nmdc_obj, nmdc_record, attribute_map, af)
+            
         return nmdc_obj
 
     nmdc_class = \
         config_nmdc_class(nmdc_class, constructor_map, attribute_fields, attribute_map, remove_key_attributes, add_attribute)
     
-    ## transform each record into an nmdc object to type nmdc class
-    ## and store in list
+    ## transform each record into an nmdc dict and store in list
     nmdc_objs = []
     for record in nmdc_df.itertuples(index=False):
-        nmdc_obj = make_nmdc_object(record, nmdc_class)
-        nmdc_obj =\
-            {k:v for k, v in nmdc_obj.__dict__.items() 
-                 if pds.notnull(v) and len(v) > 0 } # don't return null or empty values
-        nmdc_objs.append(nmdc_obj)
+        nmdc_obj = make_nmdc_object(record, nmdc_class) # create individual object
+        nmdc_dict = make_nmdc_dict(nmdc_obj) # transform object into a dict
+        nmdc_objs.append(nmdc_dict) # add object to list
     return nmdc_objs
 
 def make_nmdc_dict_list (dictionary:dict,
