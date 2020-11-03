@@ -189,9 +189,7 @@ classes:
       - water_tot_diss_nitro
       - water_tot_phosphorus
       - water_turbidity
-      # - {part_of: project_gold_ids}
 
-  
 data_sources:
   ## The keys for the data sources are used as follows:
   ## id_key: 
@@ -218,22 +216,25 @@ data_sources:
       file_type: tsv
       file_archive_name: "../data/nmdc-version5.zip"
     filters:
-      - field: gold_id
-        values:
-          - Gs0110115
-          - Gs0110132
-          - Gs0112340
-          - Gs0114675
-          - Gs0128849
-          - Gs0130354
-          - Gs0114298
-          - Gs0114663
-          - Gs0120351
-          - Gs0134277
-          - Gs0133461
-          - Gs0135152
-          - Gs0135149
-      - {field: active, values: ['Yes']}
+      - include:
+          field: gold_id
+          values:
+            - Gs0110115
+            - Gs0110132
+            - Gs0112340
+            - Gs0114675
+            - Gs0128849
+            - Gs0130354
+            - Gs0114298
+            - Gs0114663
+            - Gs0120351
+            - Gs0134277
+            - Gs0133461
+            - Gs0135152
+            - Gs0135149
+      - include:
+          field: active
+          values: ['Yes']
               
   contact_table:
     id_key: contact_id
@@ -261,7 +262,9 @@ data_sources:
       - old_name: sequencing_strategy
         new_name: omics_type
     filters:              
-      - {field: active, values: ['Yes']}
+      - include:
+          field: active
+          values: ['Yes']
     append_columns:
       - name: processing_institution
         value: Joint Genome Institute
@@ -279,7 +282,9 @@ data_sources:
       file_type: tsv
       file_archive_name: "../data/nmdc-version5.zip"
     filters:              
-      - {field: active, values: ['Yes']}
+      - include:
+          field: active
+          values: ['Yes']
     rename_slots:
       - old_name: envo_biome_id
         new_name: env_broad_scale
