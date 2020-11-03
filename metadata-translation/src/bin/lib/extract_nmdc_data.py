@@ -23,6 +23,7 @@ def extract_table (merged_df, table_name):
     df = unpivot_dataframe(merged_df[merged_df.nmdc_data_source == table_name])
     return df
 
+
 def unpivot_dataframe (df, index='nmdc_record_id', columns='attribute', value='value',
                        splice=['nmdc_record_id', 'attribute', 'value']):
     ## reshape eav structure to row-column structure

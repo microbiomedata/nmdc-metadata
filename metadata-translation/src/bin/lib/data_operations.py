@@ -240,11 +240,11 @@ def make_nmdc_dict_list (dictionary,
     def map_slot_to_entity (slot_map, record):
         """
         Connects a slot to an entity whose type is specified in a map/dict. 
-        Example 1, the map: 
+        Example 2, the map: 
             {'part_of': project_gold_ids'}
         specifies that the part_of slot connects to the record's project_ids values.
 
-        Example 2, the map:
+        Example 1, the map:
            {'part_of': ({'id': 'project_gold_ids'}, nmdc.OmicsProcessing)}
         speficfies that the part_of slot (in this case) connects to an nmdc.OmicsProcessing entity.
         The enity (which I call the 'referenced entity') is identified by project_gold_ids field in the record.
@@ -371,7 +371,7 @@ def make_nmdc_dict_list (dictionary,
                     setattr(obj, key, av)
         
         ## go though the attribute list and link slots to entities specified in slot map/dict
-        ## for example: {part_of: study_gold_id} ####{'part_of': ({'id': 'project_gold_ids'}, nmdc.OmicsProcessing)}
+        ## for example: {'part_of': ({'id': 'project_gold_ids'}, nmdc.OmicsProcessing)}
         for af in attribute_fields:
             if type({}) == type(af):
                 slot_name = list(af.keys())[0]
@@ -524,6 +524,54 @@ def extract_table (merged_df, table_name):
     return df
 
 
+def make_gold_to_mixs_list(source_list, dataframe, table_name):
+    target_list = []
+    for item in source_list:
+        ## check for special condition fo using dicts for linking objects
+        if type({}) != type(item):
+            ## check for gold to mixs mapping
+            target_item = \
+                get_mapped_term(dataframe, database='gold', table_name=table_name, source_field=item, target_field='mixs_term')
+            
+            if len(target_item) > 0:
+                target_list.append(target_item)
+            else:
+                target_list.append(item)
+    
+    return target_list
+
+
+def make_gold_to_mixs_map(source_list, dataframe, table_name):
+    gold_to_mixs = {}
+    for item in source_list:
+        ## check for special condition fo using dicts for linking objects
+        if type({}) != type(item):
+            ## check for gold to mixs mapping
+            mapped_item = \
+                get_mapped_term(dataframe, database='gold', table_name=table_name, source_field=item, target_field='mixs_term')
+            
+            if len(mapped_item) > 0:
+                gold_to_mixs[item] = mapped_item
+            
+    return gold_to_mixs
+
+
+def get_gold_biosample_mixs_term(dataframe, source_field):
+    return get_mapped_term(dataframe, 'gold', 'biosample',source_field, 'mixs_term')
+
+
+def get_mapped_term(dataframe, database, table_name, source_field, target_field):
+    return_val = \
+        dataframe[(dataframe['database'].str.lower() == database.lower())
+                   & (dataframe['table'].str.lower() == table_name.lower())
+                   & (dataframe['field'].str.lower() == source_field.lower())]
+    
+    if len(return_val) > 0:
+        return return_val[target_field].values[0] # if more than one match is found, only the first is returned
+    else:
+        return ""
+    
+    
 def make_collection_date(year_val, month_val, day_val, hour_val="", minute_val=""):
     def pad_value(val, pad_len=2):
         s = str(val)
