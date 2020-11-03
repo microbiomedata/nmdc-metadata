@@ -265,6 +265,9 @@ data_sources:
       - include:
           field: active
           values: ['Yes']
+      - exclude:
+          field: omics_type
+          values: ['Whole Genome Sequencing']
     append_columns:
       - name: processing_institution
         value: Joint Genome Institute
