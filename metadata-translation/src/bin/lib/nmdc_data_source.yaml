@@ -11,17 +11,15 @@ classes:
   ##      provides the type of entity the class represents 
   ##      maps to the class in the NMDC yaml file 
   ## - constructor: 
-  ##      provides a dictionary of the paramaters (keys) and values necessary to
-  ##      instantiate the class
-  ##      when the value is a list; e.g. env_broad_scale: [{has_raw_value: 'env_broad_scale'}, 'ControlledTermValue']
-  ##      the constructor takes a complex object; the first item is a dictionary that holds the slot/value pairs 
-  ##      the second item is type of object
+  ##      provides a dictionary of the paramaters (keys) and values necessary to instantiate the class
   ## - attributes:
-  ##     provides a list the attributes/propeties that the class has
-  ##     when the property is a dictionary (e.g, {part_of: study_gold_id}) this
-  ##     describes a complex property in which the key is the attribute and the value
-  ##     refers to the name of data field that holds value; e.g {part_of: study_gold_id}
-  ##     means that the 'part_of' attribute of the object has the value in study_gold_id field
+  ##     provides a list the attributes/propeties associated with the class
+  ##     when the property is a dictionary the key is the attriube/slot, and the value is either a string, dictionary, or list
+  ##       if string (e.g., {part_of: study_gold_id}), the slot's range is the corresponding attribute value in the field named by the string
+  ##       if dictionary (e.g, {part_of: {init: {id: study_gold_id}, class_type: Study}}), slot's range is an object built from the dictionary
+  ##          - the init key contains a dict of key/value pairs needed to initialize the object
+  ##          - the class_type key refers to the type of object to create
+  ##       if list, the slot's range is list of attribute values or complex objects built from the dictionar
 
   gold_study:
     type: study
@@ -45,8 +43,8 @@ classes:
       name: project_name
       description: description
     attributes:
-      - {part_of: {init: {id: study_gold_id}, class_type: Study}}
-      - {has_output: output_file_ids}
+      - {part_of: [{init: {id: study_gold_id}, class_type: Study}]}
+      - {has_output: [{init: {id: output_file_ids}, class_type: DataObject}]}
       - add_date 
       - mod_date
       - completion_date 
@@ -54,7 +52,7 @@ classes:
       - omics_type 
       - principal_investigator_name
       - processing_institution
-      - {has_input: biosample_gold_id}
+      - {has_input: [{id: biosample_gold_id, uriorcurie: nmdc:Biosample}]}
             
   emsl_omics_processing:
     type: omics processing
@@ -67,8 +65,8 @@ classes:
       - instrument_name
       - processing_institution
       - part_of: gold_study_id
-      - has_output: data_object_id
-      - has_input: biosample_gold_ids
+      - has_output: [data_object_id]
+      - has_input: [biosample_gold_ids]
       
   emsl_data_object:
     type: data object
@@ -202,8 +200,7 @@ data_sources:
   ##   defines where the data is located
   ##     - file_name: the name of a file
   ##     - file_type: how the file formated; e.g. tsv, csv, excel
-  ##     - file_archive_name: define a zip or other compressed file that
-  ##                          may contain the file
+  ##     - file_archive_name: define a zip or other compressed file that contains the file
   ##   sub_cols:
   ##      defines a set of columns that will returned
   ##   filters:
