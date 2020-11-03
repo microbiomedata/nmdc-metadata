@@ -196,11 +196,6 @@ def make_project_dataframe (project_table,
     study_table_splice = study_table[['study_id', 'gold_id']].copy()
     contact_table_splice = contact_table[['contact_id', 'principal_investigator_name']].copy()
     
-    ####### HACK ###########
-    ## remove "Whole Genome Sequencing" records ##
-    project_table = project_table[project_table['omics_type'] != "Whole Genome Sequencing"]
-    #########################
-
     ## rename study.gold_id to study_gold_id
     study_table_splice.rename(columns={'gold_id': 'study_gold_id'}, inplace=True)
     
