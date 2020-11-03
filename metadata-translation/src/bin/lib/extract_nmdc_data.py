@@ -1,5 +1,5 @@
 ## author: Bill Duncan
-## summary:
+## summary: Contians methods for extracting data for the NMDC ETL pipeline.
 
 ## add ./lib directory to sys.path so that local modules can be found
 import os, sys
