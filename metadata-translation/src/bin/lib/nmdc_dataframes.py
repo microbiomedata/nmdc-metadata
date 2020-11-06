@@ -164,6 +164,54 @@ def make_dataframe_dictionary (file_name, subset_cols=[], exclude_cols=[], nrows
     return df.to_dict(orient="records")
 
 
+def make_collection_date(year_val, month_val, day_val, hour_val="", minute_val=""):
+    def pad_value(val, pad_len=2):
+        s = str(val)
+        return s.zfill(pad_len)
+    
+    return_val = ""
+    year_val = year_val.strip()
+    month_val = month_val.strip()
+    day_val = day_val.strip()
+    hour_val = hour_val.strip()
+    minute_val = minute_val.strip()
+    return_val = ""
+    
+    ## if a year isn't provided simply return the empty string
+    if len(year_val) < 1:
+        return ""
+    else:
+        return_val = pad_value(year_val, 4)
+    
+    if len(month_val) > 0:
+        return_val = return_val + "-" + pad_value(month_val)
+    
+    ## we only days that have months assocated with them
+    if (len(month_val) > 0) and (len(day_val) > 0):
+        return_val = return_val + "-" + pad_value(day_val)
+
+    ## we only want times with months and days associated with them
+    if (len(month_val) > 0) and (len(day_val) > 0):
+        if (len(hour_val) > 0) and (len(minute_val) > 0):
+            return_val = return_val + "T" + pad_value(hour_val) + ":" + minute_val
+        elif len(hour_val) > 0:
+            return_val = return_val + "T" + pad_value(hour_val) + "00" # case for when no minute val is given
+    
+    return return_val
+
+
+def make_lat_lon (latitude, longitude):
+    # latitude = "" if pds.isnull(latitude) else str(latitude).strip().replace('\n', '')
+    # longitude = "" if pds.isnull(longitude) else str(longitude).strip().replace('\n', '')
+    latitude = None if pds.isnull(latitude) else float(latitude)
+    longitude = None if pds.isnull(longitude) else float(longitude)
+
+    if (not (latitude is None)) and (not (longitude is None)):
+        return f"{latitude} {longitude}".strip()
+    else:
+        return None
+
+        
 def make_study_dataframe (study_table, contact_table, proposals_table, result_cols=[]):
     ## subset dataframes
     contact_table_splice = contact_table[['contact_id', 'principal_investigator_name']].copy()

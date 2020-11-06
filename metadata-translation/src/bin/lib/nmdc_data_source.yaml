@@ -29,7 +29,8 @@ classes:
       description: description
     attributes:
       - principal_investigator_name
-      - ecosystem
+      - {ecosystem: {has_raw_value: ecosystem, uriorcurie: gold:ecosystem}} # example using just the raw value
+      # - ecosystem
       - ecosystem_category
       - ecosystem_type
       - ecosystem_subtype
@@ -133,7 +134,6 @@ classes:
       - sampling_strategy
       - soil_link_climate_info
       - soil_misc_param
-      - soil_misc_param 
       - soil_water_content
       - soluble_iron_micromol
       - subsurface_depth2
