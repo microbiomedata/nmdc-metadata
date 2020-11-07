@@ -29,8 +29,8 @@ classes:
       description: description
     attributes:
       - principal_investigator_name
-      - {ecosystem: {has_raw_value: ecosystem, uriorcurie: gold:ecosystem}} # example using just the raw value
-      # - ecosystem
+      # - {ecosystem: {has_raw_value: ecosystem, uriorcurie: gold:ecosystem}} # example using just the raw value
+      - ecosystem
       - ecosystem_category
       - ecosystem_type
       - ecosystem_subtype

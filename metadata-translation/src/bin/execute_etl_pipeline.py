@@ -1,6 +1,7 @@
 import os, sys
 sys.path.append(os.path.abspath('../../../schema')) # add path nmdc schema files and modules
 
+from lib.nmdc_etl_class import NMDC_ETL
 import yaml
 import json
 from yaml import CLoader as Loader, CDumper as Dumper
@@ -164,46 +165,29 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
                       'gold_biosample', 
                       'emsl_omics_processing',
                       'emsl_data_object', 
-                      'jgi_data_object']):
+                      'jgi_data_object'],
+         sssom_map_file=git_root('schema/mappings/gold-to-mixs.sssom.tsv'),
+         spec_file='lib/nmdc_data_source.yaml'):
 
-    # build merged data frame (mdf) from saved file
-    mdf = pds.read_csv(data_file, sep='\t', dtype=str)
     
-    ## Extract tables from merged dataset
-    study_table = dop.extract_table(mdf, 'study_table')
-    contact_table = dop.extract_table(mdf, 'contact_table')
-    proposals_table = dop.extract_table(mdf, 'proposals_table')
-    project_table = dop.extract_table(mdf, 'project_table')
-    jgi_emsl_table = dop.extract_table(mdf, 'ficus_jgi_emsl')
-    emsl_table = dop.extract_table(mdf, 'ficus_emsl')
-    emsl_biosample_table = dop.extract_table(mdf, 'ficus_emsl_biosample')
-    fastq_table = dop.extract_table(mdf, 'ficus_fastq_table')
-    project_biosample_table = dop.extract_table(mdf, 'project_biosample_table')
-    biosample_table = dop.extract_table(mdf, 'biosample_table')
-
-    ## build dataframes from tables
-    study = dop.make_study_dataframe(study_table, contact_table, proposals_table) # gold studies
-    emsl = dop.make_emsl_dataframe(emsl_table, jgi_emsl_table, study_table, emsl_biosample_table) # emsl projects / data objects
-    # data_objects = dop.make_data_objects_dataframe(faa_table, fna_table, fastq_table, project_table) # jgi data objects
-    fastq = dop.make_jgi_fastq_dataframe(fastq_table, project_table)
-    biosample = dop.make_biosample_dataframe(biosample_table, project_biosample_table, project_table) # gold biosamples
-    project = dop.make_project_dataframe(project_table, study_table, contact_table, fastq, project_biosample_table, biosample) # gold projects
-
+    nmdc_etl = NMDC_ETL(merged_data_file=data_file, data_source_spec_file=spec_file, sssom_file=sssom_map_file)
+    
     if 'gold_study' in etl_modules:
-        gold_study_json = make_json_etl(study, nmdc.Study, 'gold_study')
-        dop.save_json_string_list("output/nmdc_etl/gold_study.json", gold_study_json)
+        nmdc_etl.transform_study()
+        # nmdc_etl.transform_study(test_rows=1, print_df=True, print_dict=True)
+        nmdc_etl.save_study(file_path='output/nmdc_etl/gold_study.json')
     
     if 'gold_omics_processing' in etl_modules:
-        gold_json_op = make_json_etl(project, nmdc.OmicsProcessing, 'gold_omics_processing')
-        dop.save_json_string_list("output/nmdc_etl/gold_omics_processing.json", gold_json_op)
+        nmdc_etl.transform_omics_proccessing()
+        # nmdc_etl.transform_omics_proccessing(test_rows=1, print_df=True, print_dict=True)
+        nmdc_etl.save_omics_proccessing(file_path='output/nmdc_etl/gold_omics_processing.json')
 
     if 'gold_biosample' in etl_modules:
-        gold_biosample_json = make_json_etl(dataframe=biosample, 
-                                            nmdc_class=nmdc.Biosample, 
-                                            spec_class_name='gold_biosample', 
-                                            sssom_map_file=git_root('schema/mappings/gold-to-mixs.sssom.tsv'))
-        dop.save_json_string_list("output/nmdc_etl/gold_biosample.json", gold_biosample_json)
-        align_nmdc_datatypes.align_gold_biosample() # currently broken
+        nmdc_etl.transform_biosample()
+        # nmdc_etl.transform_biosample(test_rows=1, print_df=True, print_dict=True)
+        nmdc_etl.save_biosample('output/nmdc_etl/gold_biosample.json')
+        
+        # align_nmdc_datatypes.align_gold_biosample() ########### currently broken
 
     if 'emsl_omics_processing' in etl_modules:
         emsl_json_op = make_json_etl(emsl, nmdc.OmicsProcessing, 'emsl_omics_processing')
