@@ -65,9 +65,11 @@ classes:
       - omics_type
       - instrument_name
       - processing_institution
-      - part_of: gold_study_id
-      - has_output: [data_object_id]
-      - has_input: [biosample_gold_ids]
+      - {part_of: [{init: {id: gold_study_id}, class_type: Study}]}
+      # - has_output: [data_object_id]
+      - {has_output: [{init: {id: data_object_id}, class_type: DataObject}]}
+      # - has_input: [biosample_gold_ids]
+      - {has_input: [{id: biosample_gold_ids, uriorcurie: nmdc:Biosample}]}
       
   emsl_data_object:
     type: data object

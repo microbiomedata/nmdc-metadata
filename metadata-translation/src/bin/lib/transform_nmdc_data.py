@@ -143,18 +143,49 @@ def make_constructor_args_from_record(constructor_map:dict, nmdc_record:namedtup
 
 
 def make_dict_from_nmdc_obj(nmdc_obj):
-        def is_val(val):
-            if val: # checks that v is not None
-                if type([]) == type(val) and len(val) > 0: # check for empty list
-                    return True
-                elif type({}) == type(val) and len(val) > 0: # check for null values and empty dict
-                    return True
-                elif type('') == type(val) and len(val) > 0:
-                    return True
-                else:
-                    return True # default case
+        def is_value(variable):
+            ## check if variable is None
+            if (not variable): return False 
+            
+            ## check for zero len variable
+            if (type([]) == type(variable) 
+                or type({}) == type(variable)
+                or type('') == type(variable)):
+                if len(variable) == 0:
+                    return False
             else:
+                if pds.isnull(variable): return False  ## check for null
+            
+            ## if variable is a dict, make sure it has an id or raw value
+            if type({}) == type(variable):
+                if 'id' in variable.keys():
+                    return is_value(variable['id']) # check if id has a value
+                elif 'has_raw_value' in variable.keys():
+                    return is_value(variable['has_raw_value']) # check if has_raw_value has a value
+                else:
+                    return False # if it makes it here, there wasn't an id or has_raw_value
+            
+            return True # if it makes it here, all good
+        
+        #def is_valid(val):
+            # print('**val:', val, '\n')
+            
+            ## check that val is not None/null and has len > 0
+            if not is_value(val):
                 return False
+            
+            if type([]) == type(val):
+                # return True
+                return len([v for v in val if is_value(val)]) > 0
+            elif type({}) == type(val):
+                if 'id' in val.keys():
+                    return is_value(val['id']) # check if id has a value
+                elif 'has_raw_value' in val.keys():
+                    return is_value(val['has_raw_value']) # check if has_raw_value has a value
+                else:
+                    return False # if it makes it here, there wasn't an id or has_raw_value
+            else:
+                return True # default case
                             
         def make_dict(obj):
             """
@@ -162,21 +193,31 @@ def make_dict_from_nmdc_obj(nmdc_obj):
             """
             if obj == None: return # make sure the object has a value
             
-            temp_dict = jsonasobj.as_dict(obj) # convert obj dict
+            # temp_dict = jsonasobj.as_dict(obj) # convert obj dict
+            temp_dict = {}
             obj_dict = {} 
             
-            # remove [], {} values for obj (i.e, temp_dict)
-            for key, val in temp_dict.items():    
-                if is_val(val): # checks that v is not None
-                    if type({}) == type(val): # check values in dict
-                        obj_dict[key] = {k:v for k,v in val.items() if is_val(v)}
-                    else:
-                        obj_dict[key] = val
+            ## include only valid values in lists and dicts
+            for key, val in jsonasobj.as_dict(obj).items():
+                # print('key:', key, '\n', ' val:', val, '\n')
+                if type({}) == type(val): # check values in dict
+                    temp_dict[key] = {k:v for k,v in val.items() if is_value(v)}
+                elif type([]) == type(val): # check values in list
+                    temp_dict[key] = [element for element in val if is_value(element)]
+                else:
+                    temp_dict[key] = val
+            
+            ## check for {} or [] that may resulted from prevous loop
+            for key, val in temp_dict.items():
+                if is_value(val):
+                    obj_dict[key] = val
                     
             return obj_dict
-
+        
         if type([]) == type(nmdc_obj):
-            nmdc_dict = [make_dict(o) for o in nmdc_obj]
+            # print('nndc_obj:', nmdc_obj)
+            nmdc_dict = [make_dict(o) for o in nmdc_obj if is_value(o)]
+            # print('nmdc_dict:', nmdc_dict)
         else:
             nmdc_dict = make_dict(nmdc_obj)
 

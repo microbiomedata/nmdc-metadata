@@ -54,6 +54,7 @@ class NMDC_ETL():
     study_dict = None
     omics_processing_dict = None
     biosample_dict = None
+    emsl_omics_processing_dict = None
     
     # dict to hold the datasource spec
     data_source_spec = None
@@ -175,24 +176,35 @@ class NMDC_ETL():
         constructor = self.data_source_spec['classes'][data_source_class]['constructor']
         attributes = self.data_source_spec['classes'][data_source_class]['attributes']
         
-        nmdc_df = self.biosample
-        
-        ## used for testing
-        if test_rows != 0: 
-            nmdc_df = nmdc_df.head(test_rows)
-        if print_df:
-            print(nmdc_df)
-            
-        self.biosample_dict = \
-            tx.dataframe_to_dict(nmdc_df, nmdc.Biosample, constructor_map=constructor, attribute_fields=attributes, attribute_map=self.sssom_map)
-        
-        ## used for testing    
-        if print_dict:
-            print(self.biosample_dict)
-            
+        self.biosample_dict = NMDC_ETL.transform_dataframe(nmdc_df=self.biosample, 
+                                                           nmdc_class=nmdc.Biosample,
+                                                           constructor_map=constructor,
+                                                           attribute_fields=attributes,
+                                                           test_rows=test_rows,
+                                                           print_df=print_df,
+                                                           print_dict=print_dict)
         return self.biosample_dict
 
     
     def save_biosample(self, file_path='output/nmdc_etl/gold_biosample.json', data_format='json'):
         return lx.save_nmdc_dict(self.biosample_dict, file_path, data_format)
     
+    
+    def transform_emsl_omics_processing(self, data_source_class='emsl_omics_processing', test_rows=0, print_df=False, print_dict=False):
+        ## specify constructor args adn attributes
+        constructor = self.data_source_spec['classes'][data_source_class]['constructor']
+        attributes = self.data_source_spec['classes'][data_source_class]['attributes']
+        
+        self.emsl_omics_processing_dict = NMDC_ETL.transform_dataframe(nmdc_df=self.emsl, 
+                                                                       nmdc_class=nmdc.OmicsProcessing,
+                                                                       constructor_map=constructor,
+                                                                       attribute_fields=attributes,
+                                                                       test_rows=test_rows,
+                                                                       print_df=print_df,
+                                                                       print_dict=print_dict)
+        
+        return self.emsl_omics_processing_dict
+        
+    
+    def save_emsl_omics_processing(self, file_path='output/nmdc_etl/emsl_omics_processing.json', data_format='json'):
+        return lx.save_nmdc_dict(self.emsl_omics_processing_dict, file_path, data_format)
