@@ -189,19 +189,25 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
         
         # align_nmdc_datatypes.align_gold_biosample() ########### currently broken
 
+
     if 'emsl_omics_processing' in etl_modules:
-        emsl_json_op = make_json_etl(emsl, nmdc.OmicsProcessing, 'emsl_omics_processing')
-        dop.save_json_string_list("output/nmdc_etl/emsl_omics_processing.json", emsl_json_op)
-    
+        nmdc_etl.transform_emsl_omics_processing()
+        # nmdc_etl.transform_emsl_omics_processing(test_rows=1, print_df=True, print_dict=True)
+        nmdc_etl.save_emsl_data_object('output/nmdc_etl/emsl_omics_processing.json')
+        
     if 'emsl_data_object' in etl_modules:
-        emsl_json_do = make_json_etl(emsl, nmdc.DataObject, 'emsl_data_object')
-        dop.save_json_string_list("output/nmdc_etl/emsl_data_objects.json", emsl_json_do)
-        align_nmdc_datatypes.align_emsl_data_object()
+        nmdc_etl.transform_emsl_data_object()
+        # nmdc_etl.transform_emsl_data_object(test_rows=1, print_df=True, print_dict=True)
+        nmdc_etl.save_emsl_data_object('output/nmdc_etl/emsl_data_objects.json')
+        
+        # align_nmdc_datatypes.align_emsl_data_object() ########### currently broken
         
     if 'jgi_data_object' in etl_modules:
-        jgi_json_do = make_json_etl(fastq, nmdc.DataObject, 'jgi_data_object')
-        dop.save_json_string_list("output/nmdc_etl/jgi_fastq_data_objects.json", jgi_json_do)
-        align_nmdc_datatypes.align_jgi_data_object()
+        nmdc_etl.transform_jgi_data_object()
+        # nmdc_etl.transform_jgi_data_object(test_rows=1, print_df=True, print_dict=True)
+        nmdc_etl.save_jgi_data_object('output/nmdc_etl/jgi_fastq_data_objects.json')
+        
+        # align_nmdc_datatypes.align_jgi_data_object() ########### currently broken
 
 
 if __name__ == '__main__':
