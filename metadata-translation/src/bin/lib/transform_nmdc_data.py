@@ -166,26 +166,6 @@ def make_dict_from_nmdc_obj(nmdc_obj):
                     return False # if it makes it here, there wasn't an id or has_raw_value
             
             return True # if it makes it here, all good
-        
-        #def is_valid(val):
-            # print('**val:', val, '\n')
-            
-            ## check that val is not None/null and has len > 0
-            if not is_value(val):
-                return False
-            
-            if type([]) == type(val):
-                # return True
-                return len([v for v in val if is_value(val)]) > 0
-            elif type({}) == type(val):
-                if 'id' in val.keys():
-                    return is_value(val['id']) # check if id has a value
-                elif 'has_raw_value' in val.keys():
-                    return is_value(val['has_raw_value']) # check if has_raw_value has a value
-                else:
-                    return False # if it makes it here, there wasn't an id or has_raw_value
-            else:
-                return True # default case
                             
         def make_dict(obj):
             """

@@ -56,6 +56,7 @@ class NMDC_ETL():
     biosample_dict = None
     emsl_omics_processing_dict = None
     emsl_data_object_dict = None
+    jgi_data_object_dict = None
     
     # dict to hold the datasource spec
     data_source_spec = None
@@ -234,3 +235,24 @@ class NMDC_ETL():
     
     def save_emsl_data_object(self, file_path='output/nmdc_etl/emsl_data_objects.json', data_format='json'):
         return lx.save_nmdc_dict(self.emsl_data_object_dict, file_path, data_format)
+    
+    
+    def transform_jgi_data_object(self, data_source_class='jgi_data_object', test_rows=0, print_df=False, print_dict=False):
+        ## specify constructor args adn attributes
+        constructor = self.data_source_spec['classes'][data_source_class]['constructor']
+        attributes = self.data_source_spec['classes'][data_source_class]['attributes']
+        
+        self.jgi_data_object_dict = \
+            NMDC_ETL.transform_dataframe(nmdc_df=self.fastq, 
+                                         nmdc_class=nmdc.DataObject,
+                                         constructor_map=constructor,
+                                         attribute_fields=attributes,
+                                         test_rows=test_rows,
+                                         print_df=print_df,
+                                         print_dict=print_dict)
+        
+        return self.jgi_data_object_dict
+        
+    
+    def save_jgi_data_object(self, file_path='output/nmdc_etl/jgi_fastq_data_objects.json', data_format='json'):
+        return lx.save_nmdc_dict(self.jgi_data_object_dict, file_path, data_format)
