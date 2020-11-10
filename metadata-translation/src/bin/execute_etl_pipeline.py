@@ -114,38 +114,35 @@ def make_nmdc_database():
 
 
 def make_nmdc_example_database():
-    ## load biosample json and get list of biosamples
+    ## load json files
     biosample_json = get_json('output/nmdc_etl/gold_biosample.json')
-    biosample_test = json.loads(jq.compile('.[0:5]').input(biosample_json).text())
+    projects_json = get_json('output/nmdc_etl/gold_omics_processing.json')
+    study_json = get_json('output/nmdc_etl/gold_study.json')
+    data_objects_json = get_json('output/nmdc_etl/jgi_fastq_data_objects.json')
+    
+    ## get subset of biosamples and list of biosample ids
+    # biosample_test = json.loads(jq.compile('.[0:5]').input(biosample_json).text())
+    biosample_test = jq.compile('.[0:5]').input(biosample_json).all() # all() returns a list
     biosample_list = jq.compile('.[0:5]| .[] | .id').input(biosample_json).text().replace('\n', ', ')
 
-    ## load projects (omics processing)
-    projects_json = get_json('output/nmdc_etl/gold_omics_processing.json')
+    ## get subset of projects and list of project ids based on biosamples list
+    # projects_test = jq.compile('.[] | select(.has_input[]?| .id == (' + biosample_list + '))').input(projects_json).text()
+    projects_test = jq.compile('.[] | select(.has_input[]?| .id == (' + biosample_list + '))').input(projects_json).all() # all() returns a list
+    # projects_test = json.loads('[' + projects_test.replace('\n', ',') + ']') # put into correct json
+    
 
-    ## get list of associated projects from biosample
-    # projects_list = jq.compile('.[] | .has_input[]').input(biosample_test).text().replace('\n', ', ')
+    ## get list of studies that projects are part of
+    study_list = jq.compile('.[] | .part_of[]| .id').input(projects_test).text()
+    study_list = ','.join(set(study_list.split('\n'))) # get unique list of study ids
 
-    # projects_test = jq.compile('.[] | select(.id == (' + projects_list + '))').input(projects_json).text()
-    projects_test = jq.compile('.[] | select(.has_input[]? == (' + biosample_list + '))').input(projects_json).text()
-    projects_test = json.loads('[' + projects_test.replace('\n', ',') + ']') # put into correct json
-
-    ## get list of studies
-    study_list = jq.compile('.[] | .part_of[]').input(projects_test).text().replace('\n', ', ')
-    study_list = ','.join(set(study_list.replace(' ', '').split(','))) # get unique list of study ids
-
-    ## load study json
-    study_json = get_json('output/nmdc_etl/gold_study.json')
-    study_test = jq.compile('.[] | select(.id == (' + study_list + '))').input(study_json).text()
-    study_test = json.loads('[' + study_test.replace('\n', ',') + ']') # put into correct json
+    ## get subset of studeis
+    study_test = jq.compile('.[] | select(.id == (' + study_list + '))').input(study_json).all()
 
     ## get outputs of projects
-    data_objects_list = jq.compile('.[] | .has_output[]').input(projects_test).text().replace('\n', ', ')
+    data_objects_list = jq.compile('.[] | .has_output[] | .id').input(projects_test).text().replace('\n', ', ')
 
-    ## load data objects
-    data_objects_json = get_json('output/nmdc_etl/jgi_fastq_data_objects.json')
-    data_objects_test = jq.compile('.[] | select(.id == (' + data_objects_list + '))').input(data_objects_json).text().replace('\n', ', ')
-    data_objects_test = json.loads('[' + data_objects_test.replace('\n', ',') + ']') # put into correct json
-
+    # create subset of data object outputs
+    data_objects_test = jq.compile('.[] | select(.id == (' + data_objects_list + '))').input(data_objects_json).all()
 
     ## compile into database object
     database = \
@@ -156,7 +153,7 @@ def make_nmdc_example_database():
       "data_object_set": [*data_objects_test]
     }
 
-    save_json(database, 'output/nmdc-03.json')
+    save_json(database, 'output/nmdc-04.json')
 
     
 def main(data_file='../data/nmdc_merged_data.tsv.zip',
@@ -193,7 +190,7 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
     if 'emsl_omics_processing' in etl_modules:
         nmdc_etl.transform_emsl_omics_processing()
         # nmdc_etl.transform_emsl_omics_processing(test_rows=1, print_df=True, print_dict=True)
-        nmdc_etl.save_emsl_data_object('output/nmdc_etl/emsl_omics_processing.json')
+        nmdc_etl.save_emsl_omics_processing('output/nmdc_etl/emsl_omics_processing.json')
         
     if 'emsl_data_object' in etl_modules:
         nmdc_etl.transform_emsl_data_object()
@@ -216,6 +213,6 @@ if __name__ == '__main__':
     # main(etl_modules=['gold_omics_processing']) # test gold project etl
     # main(etl_modules=['jgi_data_object']) # test jgi data object etl
     # main(etl_modules=['emsl_data_object']) # test emsl data object etl
-    main() # run etl on all files
-    make_nmdc_database() # combines output into database json format
+    # main() # run etl on all files
+    # make_nmdc_database() # combines output into database json format
     make_nmdc_example_database() # make example data
