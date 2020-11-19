@@ -121,15 +121,11 @@ def make_nmdc_example_database():
     data_objects_json = get_json('output/nmdc_etl/jgi_fastq_data_objects.json')
     
     ## get subset of biosamples and list of biosample ids
-    # biosample_test = json.loads(jq.compile('.[0:5]').input(biosample_json).text())
     biosample_test = jq.compile('.[0:5]').input(biosample_json).all() # all() returns a list
     biosample_list = jq.compile('.[0:5]| .[] | .id').input(biosample_json).text().replace('\n', ', ')
 
     ## get subset of projects and list of project ids based on biosamples list
-    # projects_test = jq.compile('.[] | select(.has_input[]?| .id == (' + biosample_list + '))').input(projects_json).text()
     projects_test = jq.compile('.[] | select(.has_input[]?| .id == (' + biosample_list + '))').input(projects_json).all() # all() returns a list
-    # projects_test = json.loads('[' + projects_test.replace('\n', ',') + ']') # put into correct json
-    
 
     ## get list of studies that projects are part of
     study_list = jq.compile('.[] | .part_of[]| .id').input(projects_test).text()
@@ -186,7 +182,6 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
         
         # align_nmdc_datatypes.align_gold_biosample() ########### currently broken
 
-
     if 'emsl_omics_processing' in etl_modules:
         nmdc_etl.transform_emsl_omics_processing()
         # nmdc_etl.transform_emsl_omics_processing(test_rows=1, print_df=True, print_dict=True)
@@ -197,15 +192,10 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
         # nmdc_etl.transform_emsl_data_object(test_rows=1, print_df=True, print_dict=True)
         nmdc_etl.save_emsl_data_object('output/nmdc_etl/emsl_data_objects.json')
         
-        # align_nmdc_datatypes.align_emsl_data_object() ########### currently broken
-        
     if 'jgi_data_object' in etl_modules:
         nmdc_etl.transform_jgi_data_object()
         # nmdc_etl.transform_jgi_data_object(test_rows=1, print_df=True, print_dict=True)
         nmdc_etl.save_jgi_data_object('output/nmdc_etl/jgi_fastq_data_objects.json')
-        
-        # align_nmdc_datatypes.align_jgi_data_object() ########### currently broken
-
 
 if __name__ == '__main__':
     # make_merged_data_source() # consolidates all nmdc data into a single tsv
@@ -213,6 +203,6 @@ if __name__ == '__main__':
     # main(etl_modules=['gold_omics_processing']) # test gold project etl
     # main(etl_modules=['jgi_data_object']) # test jgi data object etl
     # main(etl_modules=['emsl_data_object']) # test emsl data object etl
-    # main() # run etl on all files
-    # make_nmdc_database() # combines output into database json format
+    main() # run etl on all files
+    make_nmdc_database() # combines output into database json format
     make_nmdc_example_database() # make example data

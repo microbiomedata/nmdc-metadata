@@ -173,6 +173,9 @@ def make_dict_from_nmdc_obj(nmdc_obj):
             """
             if obj == None: return # make sure the object has a value
             
+            ## check if obj can convert to dict
+            if not hasattr(obj, '_as_dict'): return obj
+            
             # temp_dict = jsonasobj.as_dict(obj) # convert obj dict
             temp_dict = {}
             obj_dict = {} 
@@ -208,7 +211,7 @@ def set_nmdc_object(nmdc_obj,
                     nmdc_record:namedtuple,
                     attribute_map:dict,
                     attribute_field):
-
+    
     ## check if attribute is a dict; e.g. part_of: gold_study_id
     if type({}) == type(attribute_field): 
         field, val = list(attribute_field.items())[0] # get the field and value parts from dict
@@ -218,6 +221,9 @@ def set_nmdc_object(nmdc_obj,
             av = make_object_from_dict(nmdc_record, val) # val is a dict
         else:
             av = make_attribute_value_from_record(nmdc_record, val) # val names the field in the record
+    elif type("") == type(attribute_field) and "," in attribute_field:
+        field = attribute_field.split(",")[0].strip() # e.g., "file_size_bytes, int"
+        av = make_value_from_string(nmdc_record, attribute_field)
     else:
         field = attribute_field 
         av = make_attribute_value_from_record(nmdc_record, field)
@@ -376,6 +382,22 @@ def make_object_from_list(nmdc_record:namedtuple, nmdc_list:list):
                     obj_list.append(av)
 
         return obj_list
+
+
+def make_value_from_string(nmdc_record:namedtuple, attribute_string: str):
+
+    ## e.g., "file_size_bytes, int"
+    ## get field and datatype from attribute string and strip spaces
+    field, dtype = attribute_string.split(",")
+    field, dtype = field.strip(), dtype.strip()
+    
+    ## get value from record
+    val = getattr(nmdc_record, field)
+    
+    if pds.notnull(val):
+        return eval(f"""{dtype}("{val}")""") # convert value to specified datatype
+    else:
+        return None
 
 
 def dataframe_to_dict(nmdc_df:pds.DataFrame, 

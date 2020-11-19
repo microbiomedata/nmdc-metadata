@@ -13,14 +13,61 @@ classes:
   ## - constructor: 
   ##      provides a dictionary of the paramaters (keys) and values necessary to instantiate the class
   ## - attributes:
-  ##     provides a list the attributes/propeties associated with the class
-  ##     when the property is a dictionary the key is the attriube/slot, and the value is either a string, dictionary, or list
-  ##       if string (e.g., {part_of: study_gold_id}), the slot's range is the corresponding attribute value in the field named by the string
-  ##       if dictionary (e.g, {part_of: {init: {id: study_gold_id}, class_type: Study}}), slot's range is an object built from the dictionary
+  ##     provides a list the attributes/propeties associated with the class 
+  ##
+  ##     When the attribute is a simple name (e.g., principal_investigator_name) the ETL output is an attibute value object whose
+  ##     has_raw_value property is the record's value for that field. E.g.: 
+  ##
+  ##        "principal_investigator_name": {
+  ##           "has_raw_value": "Matthias Hess",
+  ##           "uriorcurie": "nmdc:AttributeValue"
+  ##        }
+  ##
+  ##     When the attribute is a string that includes a comma and a datatype (e.g., file_size_bytes, int), the ETL output
+  ##     is a simple key/value pair. E.g.:
+  ##
+  ##       "file_size_bytes": 12060043683
+  ##
+  ##     When the attribute is a dictionary, the result of the ETL output depends on the datatype of the key's value
+  ##       If the value is a simple string (e.g., {has_input: biosample_gold_id}), the ETL output is an attribute value object. E.g.:
+  ##
+  ##         "has_input": {
+  ##                "id": "gold:Gb0108335",
+  ##                "uriorcurie": "nmdc:AttributeValue"
+  ##              }
+  ##        
+  ##      The uriorcurie value can also be overriden as needed. E.g., {has_input: biosample_gold_id, uriorcurie: nmdc:Biosample} produces:
+  ##
+  ##          "has_input": {
+  ##                  "id": "gold:Gb0108335",
+  ##                  "uriorcurie": "nmdc:Biosample"
+  ##                }
+  ##
+  ##       If the value is dictionary (e.g, {part_of: {init: {id: study_gold_id}, class_type: Study}}), the ETL output is an an object built from the dictionary
   ##          - the init key contains a dict of key/value pairs needed to initialize the object
   ##          - the class_type key refers to the type of object to create
-  ##       if list, the slot's range is list of attribute values or complex objects built from the dictionar
-
+  ##       E.g.: {part_of: {init: {id: study_gold_id}, class_type: Study}]} outputs:
+  ##
+  ##          "part_of": {
+  ##                "id": "gold:Gs0112340",
+  ##                "uriorcurie": "nmdc:Study"
+  ##              }
+  ## 
+  ##       In many cases, an attribute will have a one-to-many relation. For these cases, the value of the attribute is a a list. 
+  ##       E.g.: {has_output: [{init: {id: output_file_ids}, class_type: DataObject}]} outputs
+  ##
+  ##          "has_output": [
+  ##              {
+  ##                "id": "jgi:551a20d30d878525404e90d5",
+  ##                "uriorcurie": "nmdc:DataObject"
+  ##              },
+  ##              {
+  ##                "id": "jgi:551a20d90d878525404e90e1",
+  ##                "uriorcurie": "nmdc:DataObject"
+  ##              }
+  ##            ]
+  ##
+  
   gold_study:
     type: study
     constructor:
@@ -78,7 +125,7 @@ classes:
       name: data_object_name
       description: dataset_type_description
     attributes:
-      - file_size_bytes
+      - file_size_bytes, int
   
   jgi_data_object:
     type: data object
@@ -87,7 +134,7 @@ classes:
       name: file_name
       description: file_type_description
     attributes:
-      - file_size_bytes
+      - file_size_bytes, int
 
   gold_biosample:
     type: biosample
