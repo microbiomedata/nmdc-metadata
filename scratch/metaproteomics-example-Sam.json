@@ -1,291 +1,292 @@
-
-"rawfile": "FECB_21_5093B_Run1_23Dec14_Tiger_14-11-12"
-"fasta": "1393_65601.faa"
-"stats": {
-     "from_collapsed_fasta": [
-          {
-              "entry_count": "62127"
-          }
-     ],
-     "from_resultant_file": [
-         {
-              "total_protein_count": "62127"
-         }
-     ],
-     "from_data_out_table": [
-         {
-              "PSM_count": "5992"
-         },
-         {
-              "PSM_identification_rate": "136"
-         },
-         {
-              "unique_peptide_seq_count": "4406"
-         },
-         {
-              "BestProtein_count": "1201"
-         },
-         {
-              "mean_peptide_count": "366.86"
-     ]
-}
-"peptide_report: {
-     "PeptideSequence": "NNPVLIGEPGVGK" [
-          "BestProtein": "1393_65601_scf_59_c2_46633_49125" {
-               "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
-               "EC_Number": "",
-               "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
-               "KO": "KO:K03696",
-               "COG": "COG0542"
-          },
-          "GeneCount": "8",
-          "FullGeneList": {
-               "1393_65601_scf_109_c1_59956_62409",
-               "1393_65601_scf_17_c1_71310_73940",
-               "1393_65601_scf_1708_c1_380_1240",
-               "1393_65601_scf_3_c1_77856_80456",
-               "1393_65601_scf_37_c1_11804_14470",
-               "1393_65601_scf_53_c1_49944_52544",
-               "1393_65601_scf_59_c2_46633_49125",
-               "1393_65601_scf_84_c1_69460_72078"
-          },
-          "AnnotationList": [
-               "Gene": "1393_65601_scf_109_c1_59956_62409" {
+{
+    "rawfile": "FECB_21_5093B_Run1_23Dec14_Tiger_14-11-12",
+    "fasta": "1393_65601.faa",
+    "stats": {
+        "from_collapsed_fasta": [
+            {
+                "entry_count": "62127"
+            }
+        ],
+        "from_resultant_file": [
+            {
+                "total_protein_count": "62127"
+            }
+        ],
+        "from_data_out_table": [
+            {
+                "PSM_count": "5992"
+            },
+            {
+                "PSM_identification_rate": "136"
+            },
+            {
+                "unique_peptide_seq_count": "4406"
+            },
+            {
+                "BestProtein_count": "1201"
+            },
+            {
+                "mean_peptide_count": "366.86"
+            ]
+        }
+        "peptide_report": {
+            "PeptideSequence": "NNPVLIGEPGVGK" [
+                "BestProtein": "1393_65601_scf_59_c2_46633_49125" {
                     "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
                     "EC_Number": "",
                     "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
                     "KO": "KO:K03696",
                     "COG": "COG0542"
+                },
+                "GeneCount": "8",
+                "FullGeneList": {
+                    "1393_65601_scf_109_c1_59956_62409",
+                    "1393_65601_scf_17_c1_71310_73940",
+                    "1393_65601_scf_1708_c1_380_1240",
+                    "1393_65601_scf_3_c1_77856_80456",
+                    "1393_65601_scf_37_c1_11804_14470",
+                    "1393_65601_scf_53_c1_49944_52544",
+                    "1393_65601_scf_59_c2_46633_49125",
+                    "1393_65601_scf_84_c1_69460_72078"
+                },
+                "AnnotationList": [
+                    "Gene": "1393_65601_scf_109_c1_59956_62409" {
+                        "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
+                        "EC_Number": "",
+                        "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
+                        "KO": "KO:K03696",
+                        "COG": "COG0542"
                     },
-               "Gene": "1393_65601_scf_109_c1_59956_62409" {
-	            "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
-	            "EC_Number": "",
-	            "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
-	            "KO": "KO:K03696",
-	            "COG": "COG0542"
+                    "Gene": "1393_65601_scf_109_c1_59956_62409" {
+	                "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
+	                "EC_Number": "",
+	                "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
+	                "KO": "KO:K03696",
+	                "COG": "COG0542"
                     },
-               "Gene": "1393_65601_scf_17_c1_71310_73940" {
-	            "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
-	            "EC_Number": "",
-	            "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
-	            "KO": "KO:K03696",
-	            "COG": "COG0542"
+                    "Gene": "1393_65601_scf_17_c1_71310_73940" {
+	                "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
+	                "EC_Number": "",
+	                "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
+	                "KO": "KO:K03696",
+	                "COG": "COG0542"
                     },
-               "Gene": "1393_65601_scf_1708_c1_380_1240" {
-	            "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
-	            "EC_Number": "",
-	            "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
-	            "KO": "KO:K03696",
-	            "COG": "COG0542"
+                    "Gene": "1393_65601_scf_1708_c1_380_1240" {
+	                "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
+	                "EC_Number": "",
+	                "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
+	                "KO": "KO:K03696",
+	                "COG": "COG0542"
                     },
-               "Gene": "1393_65601_scf_3_c1_77856_80456" {
-	            "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
-	            "EC_Number": "",
-	            "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
-	            "KO": "KO:K03696",
-	            "COG": "COG0542"
+                    "Gene": "1393_65601_scf_3_c1_77856_80456" {
+	                "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
+	                "EC_Number": "",
+	                "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
+	                "KO": "KO:K03696",
+	                "COG": "COG0542"
                     },
-               "Gene": "1393_65601_scf_37_c1_11804_14470" {
-	            "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
-	            "EC_Number": "",
-	            "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
-	            "KO": "KO:K03696",
-	            "COG": "COG0542"
+                    "Gene": "1393_65601_scf_37_c1_11804_14470" {
+	                "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
+	                "EC_Number": "",
+	                "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
+	                "KO": "KO:K03696",
+	                "COG": "COG0542"
                     },
-               "Gene": "1393_65601_scf_53_c1_49944_52544" {
-	            "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
-	            "EC_Number": "",
-	            "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
-	            "KO": "KO:K03696",
-	            "COG": "COG0542"
+                    "Gene": "1393_65601_scf_53_c1_49944_52544" {
+	                "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
+	                "EC_Number": "",
+	                "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
+	                "KO": "KO:K03696",
+	                "COG": "COG0542"
                     },
-               "Gene": "1393_65601_scf_59_c2_46633_49125" {
-	            "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
-	            "EC_Number": "",
-	            "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
-	            "KO": "KO:K03696",
-	            "COG": "COG0542"
+                    "Gene": "1393_65601_scf_59_c2_46633_49125" {
+	                "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
+	                "EC_Number": "",
+	                "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
+	                "KO": "KO:K03696",
+	                "COG": "COG0542"
                     },
-               "Gene": "1393_65601_scf_84_c1_69460_72078" {
-	            "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
-	            "EC_Number": "",
-	            "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
-	            "KO": "KO:K03696",
-	            "COG": "COG0542"
+                    "Gene": "1393_65601_scf_84_c1_69460_72078" {
+	                "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
+	                "EC_Number": "",
+	                "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
+	                "KO": "KO:K03696",
+	                "COG": "COG0542"
                     }
-          ],
-          "min(QValue)": "0.014666",
-          "SpectralCount": "1",
-          "sum(MASICAbundance)": "114240000"
-     ],
-     "PeptideSequence": "NMITGAAQM*D" [
-          "BestProtein": "1393_65601_scf_23_c1_142583_143812" {
-               "Product": "elongation factor Tu",
-               "EC_Number": "",
-               "pfam": "GTP_EFT,GTP_EFTU_D,MMR_HSR",
-               "KO": "KO:K02358",
-               "COG": "COG0050"
-          },
-          "GeneCount": "8",
-          "FullGeneList": {
-               "1393_65601_scf_119_c1_49569_50759",
-               "1393_65601_scf_154_c1_19971_21164",
-               "1393_65601_scf_154_c1_3425_4618",
-               "1393_65601_scf_22_c1_232852_234042",
-               "1393_65601_scf_22_c1_251751_252941",
-               "1393_65601_scf_22862_c1_1_366",
-               "1393_65601_scf_23_c1_142583_143812",
-               "1393_65601_scf_5_c1_455434_456624"
-          },
-          "AnnotationList": [
-               "Gene": "1393_65601_scf_119_c1_49569_50759" {
+                ],
+                "min(QValue)": "0.014666",
+                "SpectralCount": "1",
+                "sum(MASICAbundance)": "114240000"
+            ],
+            "PeptideSequence": "NMITGAAQM*D" [
+                "BestProtein": "1393_65601_scf_23_c1_142583_143812" {
                     "Product": "elongation factor Tu",
                     "EC_Number": "",
                     "pfam": "GTP_EFT,GTP_EFTU_D,MMR_HSR",
                     "KO": "KO:K02358",
                     "COG": "COG0050"
+                },
+                "GeneCount": "8",
+                "FullGeneList": {
+                    "1393_65601_scf_119_c1_49569_50759",
+                    "1393_65601_scf_154_c1_19971_21164",
+                    "1393_65601_scf_154_c1_3425_4618",
+                    "1393_65601_scf_22_c1_232852_234042",
+                    "1393_65601_scf_22_c1_251751_252941",
+                    "1393_65601_scf_22862_c1_1_366",
+                    "1393_65601_scf_23_c1_142583_143812",
+                    "1393_65601_scf_5_c1_455434_456624"
+                },
+                "AnnotationList": [
+                    "Gene": "1393_65601_scf_119_c1_49569_50759" {
+                        "Product": "elongation factor Tu",
+                        "EC_Number": "",
+                        "pfam": "GTP_EFT,GTP_EFTU_D,MMR_HSR",
+                        "KO": "KO:K02358",
+                        "COG": "COG0050"
                     },
-               "Gene": "1393_65601_scf_154_c1_19971_21164" {
-                    "Product": "elongation factor Tu",
-                    "EC_Number": "",
-                    "pfam": "GTP_EFT,GTP_EFTU_D,MMR_HSR",
-                    "KO": "KO:K02358",
-                    "COG": "COG0050"
+                    "Gene": "1393_65601_scf_154_c1_19971_21164" {
+                        "Product": "elongation factor Tu",
+                        "EC_Number": "",
+                        "pfam": "GTP_EFT,GTP_EFTU_D,MMR_HSR",
+                        "KO": "KO:K02358",
+                        "COG": "COG0050"
                     },
-               "Gene": "1393_65601_scf_154_c1_3425_4618" {
-                    "Product": "elongation factor Tu",
-                    "EC_Number": "",
-                    "pfam": "GTP_EFT,GTP_EFTU_D,MMR_HSR",
-                    "KO": "KO:K02358",
-                    "COG": "COG0050"
+                    "Gene": "1393_65601_scf_154_c1_3425_4618" {
+                        "Product": "elongation factor Tu",
+                        "EC_Number": "",
+                        "pfam": "GTP_EFT,GTP_EFTU_D,MMR_HSR",
+                        "KO": "KO:K02358",
+                        "COG": "COG0050"
                     },
-               "Gene": "1393_65601_scf_22_c1_232852_234042" {
-                    "Product": "elongation factor Tu",
-                    "EC_Number": "",
-                    "pfam": "GTP_EFT,GTP_EFTU_D,MMR_HSR",
-                    "KO": "KO:K02358",
-                    "COG": "COG0050"
+                    "Gene": "1393_65601_scf_22_c1_232852_234042" {
+                        "Product": "elongation factor Tu",
+                        "EC_Number": "",
+                        "pfam": "GTP_EFT,GTP_EFTU_D,MMR_HSR",
+                        "KO": "KO:K02358",
+                        "COG": "COG0050"
                     },
-               "Gene": "1393_65601_scf_22_c1_251751_252941" {
-                    "Product": "elongation factor Tu",
-                    "EC_Number": "",
-                    "pfam": "GTP_EFT,GTP_EFTU_D,MMR_HSR",
-                    "KO": "KO:K02358",
-                    "COG": "COG0050"
+                    "Gene": "1393_65601_scf_22_c1_251751_252941" {
+                        "Product": "elongation factor Tu",
+                        "EC_Number": "",
+                        "pfam": "GTP_EFT,GTP_EFTU_D,MMR_HSR",
+                        "KO": "KO:K02358",
+                        "COG": "COG0050"
                     },
-               "Gene": "1393_65601_scf_22862_c1_1_366" {
-                    "Product": "elongation factor Tu",
-                    "EC_Number": "",
-                    "pfam": "GTP_EFT,GTP_EFTU_D,MMR_HSR",
-                    "KO": "KO:K02358",
-                    "COG": "COG0050"
+                    "Gene": "1393_65601_scf_22862_c1_1_366" {
+                        "Product": "elongation factor Tu",
+                        "EC_Number": "",
+                        "pfam": "GTP_EFT,GTP_EFTU_D,MMR_HSR",
+                        "KO": "KO:K02358",
+                        "COG": "COG0050"
                     },
-               "Gene": "1393_65601_scf_23_c1_142583_143812" {
-                    "Product": "elongation factor Tu",
-                    "EC_Number": "",
-                    "pfam": "GTP_EFT,GTP_EFTU_D,MMR_HSR",
-                    "KO": "KO:K02358",
-                    "COG": "COG0050"
+                    "Gene": "1393_65601_scf_23_c1_142583_143812" {
+                        "Product": "elongation factor Tu",
+                        "EC_Number": "",
+                        "pfam": "GTP_EFT,GTP_EFTU_D,MMR_HSR",
+                        "KO": "KO:K02358",
+                        "COG": "COG0050"
                     },
-               "Gene": "1393_65601_scf_5_c1_455434_456624" {
-                    "Product": "elongation factor Tu",
-                    "EC_Number": "",
-                    "pfam": "GTP_EFT,GTP_EFTU_D,MMR_HSR",
-                    "KO": "KO:K02358",
-                    "COG": "COG0050"
+                    "Gene": "1393_65601_scf_5_c1_455434_456624" {
+                        "Product": "elongation factor Tu",
+                        "EC_Number": "",
+                        "pfam": "GTP_EFT,GTP_EFTU_D,MMR_HSR",
+                        "KO": "KO:K02358",
+                        "COG": "COG0050"
                     }
-          ],
-          "min(QValue)": "0",
-          "SpectralCount": "1",
-          "sum(MASICAbundance)": "23390000"
-          }
-     ]
-}
-"protein_report": { 
-     "BestProtein": "1393_65601_scf_59_c2_46633_49125" [
-          "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
-          "EC_Number": "",
-          "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
-          "KO": "KO:K03696",
-          "COG": "COG0542",
-          "GeneCount": "8",
-          "FullGeneList": {
-               "1393_65601_scf_109_c1_59956_62409",
-               "1393_65601_scf_17_c1_71310_73940",
-               "1393_65601_scf_1708_c1_380_1240",
-               "1393_65601_scf_3_c1_77856_80456",
-               "1393_65601_scf_37_c1_11804_14470",
-               "1393_65601_scf_53_c1_49944_52544",
-               "1393_65601_scf_59_c2_46633_49125",
-               "1393_65601_scf_84_c1_69460_72078"
-               },
-          "AnnotationList": [
-               "Gene": "1393_65601_scf_109_c1_59956_62409" {
+                ],
+                "min(QValue)": "0",
+                "SpectralCount": "1",
+                "sum(MASICAbundance)": "23390000"
+            }
+        ]
+    }
+    "protein_report": { 
+        "BestProtein": "1393_65601_scf_59_c2_46633_49125" [
+            "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
+            "EC_Number": "",
+            "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
+            "KO": "KO:K03696",
+            "COG": "COG0542",
+            "GeneCount": "8",
+            "FullGeneList": {
+                "1393_65601_scf_109_c1_59956_62409",
+                "1393_65601_scf_17_c1_71310_73940",
+                "1393_65601_scf_1708_c1_380_1240",
+                "1393_65601_scf_3_c1_77856_80456",
+                "1393_65601_scf_37_c1_11804_14470",
+                "1393_65601_scf_53_c1_49944_52544",
+                "1393_65601_scf_59_c2_46633_49125",
+                "1393_65601_scf_84_c1_69460_72078"
+            },
+            "AnnotationList": [
+                "Gene": "1393_65601_scf_109_c1_59956_62409" {
                     "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
                     "EC_Number": "",
                     "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
                     "KO": "KO:K03696",
                     "COG": "COG0542"
-                    },
-               "Gene": "1393_65601_scf_109_c1_59956_62409" {
+                },
+                "Gene": "1393_65601_scf_109_c1_59956_62409" {
                     "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
                     "EC_Number": "",
                     "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
                     "KO": "KO:K03696",
                     "COG": "COG0542"
-                    },
-               "Gene": "1393_65601_scf_17_c1_71310_73940" {
+                },
+                "Gene": "1393_65601_scf_17_c1_71310_73940" {
                     "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
                     "EC_Number": "",
                     "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
                     "KO": "KO:K03696",
                     "COG": "COG0542"
-                    },
-               "Gene": "1393_65601_scf_1708_c1_380_1240" {
+                },
+                "Gene": "1393_65601_scf_1708_c1_380_1240" {
                     "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
                     "EC_Number": "",
                     "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
                     "KO": "KO:K03696",
                     "COG": "COG0542"
-                    },
-               "Gene": "1393_65601_scf_3_c1_77856_80456" {
+                },
+                "Gene": "1393_65601_scf_3_c1_77856_80456" {
                     "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
                     "EC_Number": "",
                     "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
                     "KO": "KO:K03696",
                     "COG": "COG0542"
-                    },
-               "Gene": "1393_65601_scf_37_c1_11804_14470" {
+                },
+                "Gene": "1393_65601_scf_37_c1_11804_14470" {
                     "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
                     "EC_Number": "",
                     "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
                     "KO": "KO:K03696",
                     "COG": "COG0542"
-                    },
-               "Gene": "1393_65601_scf_53_c1_49944_52544" {
+                },
+                "Gene": "1393_65601_scf_53_c1_49944_52544" {
                     "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
                     "EC_Number": "",
                     "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
                     "KO": "KO:K03696",
                     "COG": "COG0542"
-                    },
-               "Gene": "1393_65601_scf_59_c2_46633_49125" {
+                },
+                "Gene": "1393_65601_scf_59_c2_46633_49125" {
                     "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
                     "EC_Number": "",
                     "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
                     "KO": "KO:K03696",
                     "COG": "COG0542"
-                    },
-               "Gene": "1393_65601_scf_84_c1_69460_72078" {
+                },
+                "Gene": "1393_65601_scf_84_c1_69460_72078" {
                     "Product": "ATP-dependent Clp protease ATP-binding subunit ClpC",
                     "EC_Number": "",
                     "pfam": "AA,AAA_,ClpB_D2-smal,Clp_,Sigma54_activa,UV",
                     "KO": "KO:K03696",
                     "COG": "COG0542"
-                    }
-          ],
-     "UniquePeptideCount": "9",
-     "SummedSpectraCounts": "10",
-     "SummedPeptideMASICAbundances": "420791900"
-     ]                   
+                }
+            ],
+            "UniquePeptideCount": "9",
+            "SummedSpectraCounts": "10",
+            "SummedPeptideMASICAbundances": "420791900"
+        ]                   
+    }
 }
