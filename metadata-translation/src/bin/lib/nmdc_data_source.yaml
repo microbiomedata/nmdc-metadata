@@ -1,4 +1,72 @@
+## author: Bill Duncan
+## summary: 
+## The yaml file contains metadata about the data sources used during the NMDC ETL process.
+## The classes section provided metadata needed to create a BiolinkML class used during ETL.
+## The data_sources section gives metadata needed to load an NMDC data source.
+## See details in each section.
+  
 classes:
+  ## The keys for classes are used as follows:
+  ## - type: 
+  ##      provides the type of entity the class represents 
+  ##      maps to the class in the NMDC yaml file 
+  ## - constructor: 
+  ##      provides a dictionary of the paramaters (keys) and values necessary to instantiate the class
+  ## - attributes:
+  ##     provides a list the attributes/propeties associated with the class 
+  ##
+  ##     When the attribute is a simple name (e.g., principal_investigator_name) the ETL output is an attibute value object whose
+  ##     has_raw_value property is the record's value for that field. E.g.: 
+  ##
+  ##        "principal_investigator_name": {
+  ##           "has_raw_value": "Matthias Hess",
+  ##           "uriorcurie": "nmdc:AttributeValue"
+  ##        }
+  ##
+  ##     When the attribute is a string that includes a comma and a datatype (e.g., file_size_bytes, int), the ETL output
+  ##     is a simple key/value pair. E.g.:
+  ##
+  ##       "file_size_bytes": 12060043683
+  ##
+  ##     When the attribute is a dictionary, the result of the ETL output depends on the datatype of the key's value
+  ##       If the value is a simple string (e.g., {has_input: biosample_gold_id}), the ETL output is an attribute value object. E.g.:
+  ##
+  ##         "has_input": {
+  ##                "id": "gold:Gb0108335",
+  ##                "uriorcurie": "nmdc:AttributeValue"
+  ##              }
+  ##        
+  ##      The uriorcurie value can also be overriden as needed. E.g., {has_input: biosample_gold_id, uriorcurie: nmdc:Biosample} produces:
+  ##
+  ##          "has_input": {
+  ##                  "id": "gold:Gb0108335",
+  ##                  "uriorcurie": "nmdc:Biosample"
+  ##                }
+  ##
+  ##       If the value is dictionary (e.g, {part_of: {init: {id: study_gold_id}, class_type: Study}}), the ETL output is an an object built from the dictionary
+  ##          - the init key contains a dict of key/value pairs needed to initialize the object
+  ##          - the class_type key refers to the type of object to create
+  ##       E.g.: {part_of: {init: {id: study_gold_id}, class_type: Study}]} outputs:
+  ##
+  ##          "part_of": {
+  ##                "id": "gold:Gs0112340",
+  ##                "uriorcurie": "nmdc:Study"
+  ##              }
+  ## 
+  ##       In many cases, an attribute will have a one-to-many relation. For these cases, the value of the attribute is a a list. 
+  ##       E.g.: {has_output: [{init: {id: output_file_ids}, class_type: DataObject}]} outputs
+  ##
+  ##          "has_output": [
+  ##              {
+  ##                "id": "jgi:551a20d30d878525404e90d5",
+  ##                "uriorcurie": "nmdc:DataObject"
+  ##              },
+  ##              {
+  ##                "id": "jgi:551a20d90d878525404e90e1",
+  ##                "uriorcurie": "nmdc:DataObject"
+  ##              }
+  ##            ]
+  ##
   
   gold_study:
     type: study
@@ -8,6 +76,7 @@ classes:
       description: description
     attributes:
       - principal_investigator_name
+      # - {ecosystem: {has_raw_value: ecosystem, uriorcurie: gold:ecosystem}} # example using just the raw value
       - ecosystem
       - ecosystem_category
       - ecosystem_type
@@ -22,8 +91,8 @@ classes:
       name: project_name
       description: description
     attributes:
-      - {part_of: study_gold_id}
-      - {has_output: output_file_ids}
+      - {part_of: [{init: {id: study_gold_id}, class_type: Study}]}
+      - {has_output: [{init: {id: output_file_ids}, class_type: DataObject}]}
       - add_date 
       - mod_date
       - completion_date 
@@ -31,7 +100,7 @@ classes:
       - omics_type 
       - principal_investigator_name
       - processing_institution
-      - {has_input: biosample_gold_id}
+      - {has_input: [{id: biosample_gold_id, uriorcurie: nmdc:Biosample}]}
             
   emsl_omics_processing:
     type: omics processing
@@ -43,9 +112,11 @@ classes:
       - omics_type
       - instrument_name
       - processing_institution
-      - {part_of: gold_study_id}
-      - {has_output: data_object_id}
-      - {has_input: biosample_gold_ids}
+      - {part_of: [{init: {id: gold_study_id}, class_type: Study}]}
+      # - has_output: [data_object_id]
+      - {has_output: [{init: {id: data_object_id}, class_type: DataObject}]}
+      # - has_input: [biosample_gold_ids]
+      - {has_input: [{id: biosample_gold_ids, uriorcurie: nmdc:Biosample}]}
       
   emsl_data_object:
     type: data object
@@ -54,7 +125,7 @@ classes:
       name: data_object_name
       description: dataset_type_description
     attributes:
-      - file_size_bytes
+      - file_size_bytes, int
   
   jgi_data_object:
     type: data object
@@ -63,18 +134,18 @@ classes:
       name: file_name
       description: file_type_description
     attributes:
-      - file_size_bytes
+      - file_size_bytes, int
 
   gold_biosample:
     type: biosample
     constructor:
-      id: 'gold_id'
-      name: 'biosample_name'
-      description: 'description'
-      env_broad_scale: [{has_raw_value: 'env_broad_scale'}, 'ControlledTermValue']
-      env_local_scale: [{has_raw_value: 'env_local_scale'}, ControlledTermValue]
-      env_medium: [{has_raw_value: 'env_medium'}, 'ControlledTermValue']
-      lat_lon: [{latitude: 'latitude', longitude: 'longitude', has_raw_value: 'lat_lon'}, 'GeolocationValue']
+      id: gold_id
+      name: biosample_name
+      description: description
+      env_broad_scale: {init: {has_raw_value: env_broad_scale}, class_type: ControlledTermValue}
+      env_local_scale: {init: {has_raw_value: env_local_scale}, class_type: ControlledTermValue}
+      env_medium: {init: {has_raw_value: env_medium}, class_type: ControlledTermValue}
+      lat_lon: {init: {latitude: latitude, longitude: longitude, has_raw_value: lat_lon}, class_type: GeolocationValue}
     attributes:
       - add_date
       - mod_date
@@ -112,7 +183,6 @@ classes:
       - sampling_strategy
       - soil_link_climate_info
       - soil_misc_param
-      - soil_misc_param 
       - soil_water_content
       - soluble_iron_micromol
       - subsurface_depth2
@@ -168,11 +238,26 @@ classes:
       - water_tot_diss_nitro
       - water_tot_phosphorus
       - water_turbidity
-      # - {part_of: project_gold_ids}
 
-  
 data_sources:
-
+  ## The keys for the data sources are used as follows:
+  ## id_key: 
+  ##   defines the field in the data that is used as an id for the record
+  ## data_source:
+  ##   defines where the data is located
+  ##     - file_name: the name of a file
+  ##     - file_type: how the file formated; e.g. tsv, csv, excel
+  ##     - file_archive_name: define a zip or other compressed file that contains the file
+  ##   sub_cols:
+  ##      defines a set of columns that will returned
+  ##   filters:
+  ##     define how the original data source should be filtered (records included/exclued)
+  ##     when the data source is extracted
+  ##  rename_slots:
+  ##     defines fields that will be renamed as part of the data extraction process
+  ##     this is often necessary for harmonizing data
+  ##  append_columns:
+  ##     defines new columns to append to the extracted dataset
   study_table:
     id_key: study_id
     data_source:
@@ -180,22 +265,25 @@ data_sources:
       file_type: tsv
       file_archive_name: "../data/nmdc-version5.zip"
     filters:
-      - field: gold_id
-        values:
-          - Gs0110115
-          - Gs0110132
-          - Gs0112340
-          - Gs0114675
-          - Gs0128849
-          - Gs0130354
-          - Gs0114298
-          - Gs0114663
-          - Gs0120351
-          - Gs0134277
-          - Gs0133461
-          - Gs0135152
-          - Gs0135149
-      - {field: active, values: ['Yes']}
+      - include:
+          field: gold_id
+          values:
+            - Gs0110115
+            - Gs0110132
+            - Gs0112340
+            - Gs0114675
+            - Gs0128849
+            - Gs0130354
+            - Gs0114298
+            - Gs0114663
+            - Gs0120351
+            - Gs0134277
+            - Gs0133461
+            - Gs0135152
+            - Gs0135149
+      - include:
+          field: active
+          values: ['Yes']
               
   contact_table:
     id_key: contact_id
@@ -223,7 +311,12 @@ data_sources:
       - old_name: sequencing_strategy
         new_name: omics_type
     filters:              
-      - {field: active, values: ['Yes']}
+      - include:
+          field: active
+          values: ['Yes']
+      - exclude:
+          field: omics_type
+          values: ['Whole Genome Sequencing']
     append_columns:
       - name: processing_institution
         value: Joint Genome Institute
@@ -241,7 +334,9 @@ data_sources:
       file_type: tsv
       file_archive_name: "../data/nmdc-version5.zip"
     filters:              
-      - {field: active, values: ['Yes']}
+      - include:
+          field: active
+          values: ['Yes']
     rename_slots:
       - old_name: envo_biome_id
         new_name: env_broad_scale

@@ -65,7 +65,7 @@ def align_data_object(file_path):
 
     ## change file size bytes to int
     for item in json_list:
-        item['file_size_bytes'] = attribute_value_to_int(item['file_size_bytes'])
+        item['file_size_bytes']['has_raw_value'] = attribute_value_to_int(item['file_size_bytes'])
 
     save_json(json_list, file_path) # save json
 
