@@ -43,6 +43,7 @@ imports:
   - mixs
   - core
   - prov
+  - annotation
 
 subsets:
   workflow subset:
