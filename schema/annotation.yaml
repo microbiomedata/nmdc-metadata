@@ -38,6 +38,12 @@ classes:
     is_a: functional annotation term
     description: >-
       A pathway is a sequence of steps/reactions carried out by an organism or community of organisms
+    slot_usage:
+      has_part:
+        range: reaction
+        multivalued: true
+        description: >-
+          A pathway can be broken down to a series of reaction step
     id_prefixes:
       - KEGG.PATHWAY
       - COG
@@ -49,15 +55,53 @@ classes:
     description: >-
       An individual biochemical transformation carried out by a functional unit of an organism, in which a collection of substrates are transformed into a collection of products.
       Can also represent transporters
+    slot_usage:
+      left participants:
+        is_a: has participants
+        multivalued: true
+        range: reaction participant
+      right participants:
+        is_a: has participants
+        multivalued: true
+        range: reaction participant
+      direction:
+        description: >-
+          One of l->r, r->l, bidirectional, neutral
+      smarts string:
+        range: string
+      is diastereoselective:
+        range: boolean
+      is stereo:
+        range: boolean
+      is balanced:
+        range: boolean
+      is transport:
+        range: boolean
+      is fully characterized:
+        range: boolean
+        description: >-
+          False if includes R-groups
     id_prefixes:
       - KEGG.REACTION
       - RHEA
       - MetaCyc
       - EC
       - GO
+      - MetaNetX
+      - SEED
+      - RetroRules
     exact_mappings:
       - biolink:MolecularActivity
     
+  reaction participant:
+    description: >-
+      Instances of this link a reaction to a chemical entity participant
+    slot_usage:
+      chemical:
+        range: chemical entity
+      stoichiometry:
+        range: integer
+        
   orthology group:
     is_a: functional annotation term
     description: >-
@@ -140,3 +184,9 @@ classes:
     narrow_mappings:
       - biolink:GeneToGoTermAssociation
     
+slots:
+
+  has participants:
+    abstract: true
+    exact_mappings:
+      - RO:0000057
