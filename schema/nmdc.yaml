@@ -163,6 +163,16 @@ classes:
     is_a: workflow execution activity
     in_subset: 
       - workflow subset
+    slot_usage:
+      used:
+        range: instrument
+        multivalued: false
+        description: >-
+          The instrument used to collect the data used in the analysis
+      has metabolite quantifications:
+        range: metabolite quantification
+        multivalued: true
+      
 
   metaproteomics analysis activity:
     is_a: workflow execution activity
@@ -354,6 +364,26 @@ classes:
         range: study
       has output:
         range: data object
+
+  instrument:
+    is_a: named thing
+    aliases:
+      - device
+    description: >-
+      A material entity that is designed to perform a function in a scientific investigation, but is not a reagent[OBI].
+    exact_mappings:
+      - OBI:0000485
+
+  metabolite quantification:
+    slot_usage:
+      metabolite quantified:
+        description: >-
+          the specific metabolite identifier
+        range: chemical entity
+      highest similarity score:
+        description: >-
+          TODO: Yuri to fill in
+        range: float
 
   person:
     is_a: named thing
