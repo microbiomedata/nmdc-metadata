@@ -27,9 +27,6 @@ classes:
     see_also:
       - https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md
     slot_usage:
-      id:
-        description: identifier for the feature
-        required: false
       seqid:
         description: The ID of the landmark used to establish the coordinate system for the current feature.
         range: string ## make this an object
@@ -40,13 +37,13 @@ classes:
           A type from the sequence ontology
         slot_uri: rdf:type
       start:
-        is_a: gff_coordinate
+        is_a: gff coordinate
         description: The start of the feature in positive 1-based integer coordinates
         required: true
         close_mappings:
           - biolink:start_interbase_coordinate
       end:
-        is_a: gff_coordinate
+        is_a: gff coordinate
         description: The end of the feature in positive 1-based integer coordinates
         comments: >-
           - "constraint: end > start"
