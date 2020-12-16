@@ -18,6 +18,63 @@ imports:
   - prov
 
 classes:
+
+  genome feature:
+    description: >-
+      A feature localized to an interval along a genome
+    comments:
+      - corresponds to an entry in GFF3
+    see_also:
+      - https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md
+    slot_usage:
+      id:
+        description: identifier for the feature
+        required: false
+      seqid:
+        description: The ID of the landmark used to establish the coordinate system for the current feature.
+        range: string ## make this an object
+        required: true
+      type:
+        range: controlled term value
+        description: >-
+          A type from the sequence ontology
+        slot_uri: rdf:type
+      start:
+        is_a: gff_coordinate
+        description: The start of the feature in positive 1-based integer coordinates
+        required: true
+        close_mappings:
+          - biolink:start_interbase_coordinate
+      end:
+        is_a: gff_coordinate
+        description: The end of the feature in positive 1-based integer coordinates
+        comments: >-
+          - "constraint: end > start"
+          - "For features that cross the origin of a circular feature,  end = the position of the end + the length of the landmark feature."
+        required: true
+        close_mappings:
+          - biolink:end_interbase_coordinate
+      strand:
+        ## TODO: enum
+        description: >-
+          The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
+        exact_mappings:
+          - biolink:strand
+      phase:
+        range: integer
+        minimum_value: 0
+        maximum_value: 0
+        description: >-
+          The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2.
+        exact_mappings:
+          - biolink:phase
+      encodes:
+        range: gene product
+        description: >-
+          The gene product encoded by this feature.
+          Typically this is used for a CDS feature or gene feature which will encode a protein.
+          It can also be used by a nc transcript ot gene feature that encoded a ncRNA
+        required: false
   
   functional annotation term:
     aliases:
@@ -190,3 +247,10 @@ slots:
     abstract: true
     exact_mappings:
       - RO:0000057
+
+  gff coordinate:
+    range: integer
+    minimum_value: 1
+    description: A positive 1-based integer coordinate indicating start or end
+    comments:
+      - "For features that cross the origin of a circular feature (e.g. most bacterial genomes, plasmids, and some viral genomes), the requirement for start to be less than or equal to end is satisfied by making end = the position of the end + the length of the landmark feature."
