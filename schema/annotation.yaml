@@ -161,7 +161,7 @@ classes:
     description: >-
       A set of genes or gene products in which all members are orthologous
     id_prefixes:
-      - KEGG.ORTHOLOGY
+      - KEGG.ORTHOLOGY  ## KO number
       - EGGNOG
       - PFAM
       - TIGRFAM
@@ -184,13 +184,22 @@ classes:
       inchi:
         key: true
         multivalued: false
+        range: string
       inchi key:
         key: false # rare; Pletnev I, Erin A, McNaught A, Blinov K, Tchekhovskoi D, Heller S (2012) InChIKey collision resistance: an experimental testing. J Cheminform. 4:12
         multivalued: false
+        range: string
       smiles:
         description: >-
           A string encoding of a molecular graph, no chiral or isotopic information. There are usually a large number of valid SMILES which represent a given structure. For example, CCO, OCC and C(O)C all specify the structure of ethanol.
         multivalued: true
+        range: string
+      chemical formula:
+        description: >-
+          A generic grouping for miolecular formulae and empirican formulae
+        multivalued: false
+        key: false
+        range: string
     see_also:
       - https://bioconductor.org/packages/devel/data/annotation/vignettes/metaboliteIDmapping/inst/doc/metaboliteIDmapping.html
     id_prefixes:
