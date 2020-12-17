@@ -10,7 +10,7 @@
 # `Pipfile.lock` and then regenerate `requirements*.txt`.
 ################################################################################
 
-biolinkml
+biolinkml >= 1.6.0
 click
 pipenv-to-requirements
 pyyaml
