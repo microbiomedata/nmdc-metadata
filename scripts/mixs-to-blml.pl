@@ -125,13 +125,20 @@ sub translate_re {
     s@\{unit\}@\\S+@g;
     s@\{termLabel\}@.*@g;
     s@\{\[termID\]\}@\\S+:\\S+@g;
+    if ($_ eq '-') {
+        return ;
+    }
+    s@([\'\-\/])@\\$1@g;
+
+    # See: https://github.com/GenomicsStandardsConsortium/mixs/issues/94
+    # some mixs regexes are incorrectly quoted
     if (m@^".*"$@) {
         s@^"\s*@@;
         s@\s*"@@;
     }
-    if ($_ eq '-') {
-        return ;
-    }
+    # some mixs regexes have double ||s:
+    s@\|\|@\|@g;
+    
     if (m@\{@) {
         return;
     }

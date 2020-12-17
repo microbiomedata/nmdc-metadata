@@ -26,7 +26,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|metatranscriptome|mimarks-survey|mimarks-specimen|misag|mimag|miuvig]
-    pattern: "[eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|metatranscriptome|mimarks-survey|mimarks-specimen|misag|mimag|miuvig]"
+    pattern: "[eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|metatranscriptome|mimarks\\-survey|mimarks\\-specimen|misag|mimag|miuvig]"
     mappings:
       - MIxS:investigation_type
     in_subset:
@@ -192,7 +192,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [air|built environment|host-associated|human-associated|human-skin|human-oral|human-gut|human-vaginal|hydrocarbon resources-cores|hydrocarbon resources-fluids/swabs|microbial mat/biofilm|misc environment|plant-associated|sediment|soil|wastewater/sludge|water]
-    pattern: "[air|built environment|host-associated|human-associated|human-skin|human-oral|human-gut|human-vaginal|hydrocarbon resources-cores|hydrocarbon resources-fluids/swabs|microbial mat/biofilm|misc environment|plant-associated|sediment|soil|wastewater/sludge|water]"
+    pattern: "[air|built environment|host\\-associated|human\\-associated|human\\-skin|human\\-oral|human\\-gut|human\\-vaginal|hydrocarbon resources\\-cores|hydrocarbon resources\\-fluids\\/swabs|microbial mat\\/biofilm|misc environment|plant\\-associated|sediment|soil|wastewater\\/sludge|water]"
     mappings:
       - MIxS:env_package
     in_subset:
@@ -351,7 +351,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [healthy|diseased|dead|disease-free|undetermined|recovering|resolving|pre-existing condition|pathological|life threatening|congenital]
-    pattern: "[healthy|diseased|dead|disease-free|undetermined|recovering|resolving|pre-existing condition|pathological|life threatening|congenital]"
+    pattern: "[healthy|diseased|dead|disease\\-free|undetermined|recovering|resolving|pre\\-existing condition|pathological|life threatening|congenital]"
     mappings:
       - MIxS:health_disease_stat
     in_subset:
@@ -458,7 +458,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float}-{float} {unit}
-    pattern: "\\d+[.\\d+]-\\d+[.\\d+] \\S+"
+    pattern: "\\d+[.\\d+]\\-\\d+[.\\d+] \\S+"
     string_serialization: "{float}-{float} {unit}"
     mappings:
       - MIxS:size_frac
@@ -488,7 +488,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [metagenome (not viral targeted)|viral fraction metagenome (virome)|sequence-targeted metagenome|metatranscriptome (not viral targeted)|viral fraction RNA metagenome (RNA virome)|sequence-targeted RNA metagenome|microbial single amplified genome (SAG)|viral single amplified genome (vSAG)|isolate microbial genome|other]
-    pattern: "[metagenome (not viral targeted)|viral fraction metagenome (virome)|sequence-targeted metagenome|metatranscriptome (not viral targeted)|viral fraction RNA metagenome (RNA virome)|sequence-targeted RNA metagenome|microbial single amplified genome (SAG)|viral single amplified genome (vSAG)|isolate microbial genome|other]"
+    pattern: "[metagenome (not viral targeted)|viral fraction metagenome (virome)|sequence\\-targeted metagenome|metatranscriptome (not viral targeted)|viral fraction RNA metagenome (RNA virome)|sequence\\-targeted RNA metagenome|microbial single amplified genome (SAG)|viral single amplified genome (vSAG)|isolate microbial genome|other]"
     mappings:
       - MIxS:source_uvig
     in_subset:
@@ -687,7 +687,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [MinION|GridION|PromethION|454 GS|454 GS 20|454 GS FLX|454 GS FLX+|454 GS FLX Titanium|454 GS Junior|Illumina Genome Analyzer|Illumina Genome Analyzer II|Illumina Genome Analyzer IIx|Illumina HiSeq 4000|Illumina HiSeq 3000|Illumina HiSeq 2500|Illumina HiSeq 2000|Illumina HiSeq 1500|Illumina HiSeq 1000|Illumina HiScanSQ|Illumina MiSeq|Illumina HiSeq X Five|Illumina HiSeq X Ten|Illumina NextSeq 500|Illumina NextSeq 550|AB SOLiD System|AB SOLiD System 2.0|AB SOLiD System 3.0|AB SOLiD 3 Plus System|AB SOLiD 4 System|AB SOLiD 4hq System|AB SOLiD PI System|AB 5500 Genetic Analyzer|AB 5500xl Genetic Analyzer|AB 5500xl-W Genetic Analysis System|Ion Torrent PGM|Ion Torrent Proton|Ion Torrent S5|Ion Torrent S5 XL|PacBio RS|PacBio RS II|Sequel|AB 3730xL Genetic Analyzer|AB 3730 Genetic Analyzer|AB 3500xL Genetic Analyzer|AB 3500 Genetic Analyzer|AB 3130xL Genetic Analyzer|AB 3130 Genetic Analyzer|AB 310 Genetic Analyzer|BGISEQ-500]
-    pattern: "[MinION|GridION|PromethION|454 GS|454 GS 20|454 GS FLX|454 GS FLX+|454 GS FLX Titanium|454 GS Junior|Illumina Genome Analyzer|Illumina Genome Analyzer II|Illumina Genome Analyzer IIx|Illumina HiSeq 4000|Illumina HiSeq 3000|Illumina HiSeq 2500|Illumina HiSeq 2000|Illumina HiSeq 1500|Illumina HiSeq 1000|Illumina HiScanSQ|Illumina MiSeq|Illumina HiSeq X Five|Illumina HiSeq X Ten|Illumina NextSeq 500|Illumina NextSeq 550|AB SOLiD System|AB SOLiD System 2.0|AB SOLiD System 3.0|AB SOLiD 3 Plus System|AB SOLiD 4 System|AB SOLiD 4hq System|AB SOLiD PI System|AB 5500 Genetic Analyzer|AB 5500xl Genetic Analyzer|AB 5500xl-W Genetic Analysis System|Ion Torrent PGM|Ion Torrent Proton|Ion Torrent S5|Ion Torrent S5 XL|PacBio RS|PacBio RS II|Sequel|AB 3730xL Genetic Analyzer|AB 3730 Genetic Analyzer|AB 3500xL Genetic Analyzer|AB 3500 Genetic Analyzer|AB 3130xL Genetic Analyzer|AB 3130 Genetic Analyzer|AB 310 Genetic Analyzer|BGISEQ-500]"
+    pattern: "[MinION|GridION|PromethION|454 GS|454 GS 20|454 GS FLX|454 GS FLX+|454 GS FLX Titanium|454 GS Junior|Illumina Genome Analyzer|Illumina Genome Analyzer II|Illumina Genome Analyzer IIx|Illumina HiSeq 4000|Illumina HiSeq 3000|Illumina HiSeq 2500|Illumina HiSeq 2000|Illumina HiSeq 1500|Illumina HiSeq 1000|Illumina HiScanSQ|Illumina MiSeq|Illumina HiSeq X Five|Illumina HiSeq X Ten|Illumina NextSeq 500|Illumina NextSeq 550|AB SOLiD System|AB SOLiD System 2.0|AB SOLiD System 3.0|AB SOLiD 3 Plus System|AB SOLiD 4 System|AB SOLiD 4hq System|AB SOLiD PI System|AB 5500 Genetic Analyzer|AB 5500xl Genetic Analyzer|AB 5500xl\\-W Genetic Analysis System|Ion Torrent PGM|Ion Torrent Proton|Ion Torrent S5|Ion Torrent S5 XL|PacBio RS|PacBio RS II|Sequel|AB 3730xL Genetic Analyzer|AB 3730 Genetic Analyzer|AB 3500xL Genetic Analyzer|AB 3500 Genetic Analyzer|AB 3130xL Genetic Analyzer|AB 3130 Genetic Analyzer|AB 310 Genetic Analyzer|BGISEQ\\-500]"
     mappings:
       - MIxS:seq_meth
     in_subset:
@@ -728,7 +728,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [16S rRNA gene|multi-marker approach|other]
-    pattern: "[16S rRNA gene|multi-marker approach|other]"
+    pattern: "[16S rRNA gene|multi\\-marker approach|other]"
     mappings:
       - MIxS:tax_ident
     in_subset:
@@ -742,7 +742,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [Finished genome|High-quality draft genome|Medium-quality draft genome|Low-quality draft genome|Genome fragment(s)]
-    pattern: "[Finished genome|High-quality draft genome|Medium-quality draft genome|Low-quality draft genome|Genome fragment(s)]"
+    pattern: "[Finished genome|High\\-quality draft genome|Medium\\-quality draft genome|Low\\-quality draft genome|Genome fragment(s)]"
     mappings:
       - MIxS:assembly_qual
     in_subset:
@@ -994,7 +994,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [checkm/refinem|anvi'o|prodege|bbtools:decontaminate.sh|acdc|combination]
-    pattern: "[checkm/refinem|anvi'o|prodege|bbtools:decontaminate.sh|acdc|combination]"
+    pattern: "[checkm\\/refinem|anvi\\'o|prodege|bbtools:decontaminate.sh|acdc|combination]"
     mappings:
       - MIxS:decontam_software
     in_subset:
@@ -1008,7 +1008,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [flow cytometric cell sorting|microfluidics|lazer-tweezing|optical manipulation|micromanipulation|other]
-    pattern: "[flow cytometric cell sorting|microfluidics|lazer-tweezing|optical manipulation|micromanipulation|other]"
+    pattern: "[flow cytometric cell sorting|microfluidics|lazer\\-tweezing|optical manipulation|micromanipulation|other]"
     mappings:
       - MIxS:sort_tech
     in_subset:
@@ -1145,7 +1145,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [DNA|dsDNA|ssDNA|RNA|dsRNA|ssRNA|ssRNA (+)|ssRNA (-)|mixed|uncharacterized]
-    pattern: "[DNA|dsDNA|ssDNA|RNA|dsRNA|ssRNA|ssRNA (+)|ssRNA (-)|mixed|uncharacterized]"
+    pattern: "[DNA|dsDNA|ssDNA|RNA|dsRNA|ssRNA|ssRNA (+)|ssRNA (\\-)|mixed|uncharacterized]"
     mappings:
       - MIxS:pred_genome_type
     in_subset:
@@ -1159,7 +1159,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [segmented|non-segmented|undetermined]
-    pattern: "[segmented|non-segmented|undetermined]"
+    pattern: "[segmented|non\\-segmented|undetermined]"
     mappings:
       - MIxS:pred_genome_struc
     in_subset:
@@ -1226,7 +1226,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [provirus|host sequence similarity|CRISPR spacer match|kmer similarity|co-occurrence|combination|other]
-    pattern: "[provirus|host sequence similarity|CRISPR spacer match|kmer similarity|co-occurrence|combination|other]"
+    pattern: "[provirus|host sequence similarity|CRISPR spacer match|kmer similarity|co\\-occurrence|combination|other]"
     mappings:
       - MIxS:host_pred_appr
     in_subset:
@@ -1749,7 +1749,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [particulate air filter|chemical air filter|low-MERV pleated media|HEPA|electrostatic|gas-phase or ultraviolet air treatments]
-    pattern: "[particulate air filter|chemical air filter|low-MERV pleated media|HEPA|electrostatic|gas-phase or ultraviolet air treatments]"
+    pattern: "[particulate air filter|chemical air filter|low\\-MERV pleated media|HEPA|electrostatic|gas\\-phase or ultraviolet air treatments]"
     mappings:
       - MIxS:filter_type
 
@@ -2047,7 +2047,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [drywall|mineral fibre|tiles|PVC|plasterboard|metal|fiberglass|stucco|mineral wool/calcium silicate|wood]
-    pattern: "[drywall|mineral fibre|tiles|PVC|plasterboard|metal|fiberglass|stucco|mineral wool/calcium silicate|wood]"
+    pattern: "[drywall|mineral fibre|tiles|PVC|plasterboard|metal|fiberglass|stucco|mineral wool\\/calcium silicate|wood]"
     mappings:
       - MIxS:ceil_finish_mat
 
@@ -2083,7 +2083,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [crows feet|crows-foot stomp|double skip|hawk and trowel|knockdown|popcorn|orange peel|rosebud stomp|Santa-Fe texture|skip trowel|smooth|stomp knockdown|swirl]
-    pattern: "[crows feet|crows-foot stomp|double skip|hawk and trowel|knockdown|popcorn|orange peel|rosebud stomp|Santa-Fe texture|skip trowel|smooth|stomp knockdown|swirl]"
+    pattern: "[crows feet|crows\\-foot stomp|double skip|hawk and trowel|knockdown|popcorn|orange peel|rosebud stomp|Santa\\-Fe texture|skip trowel|smooth|stomp knockdown|swirl]"
     mappings:
       - MIxS:ceil_texture
 
@@ -2108,7 +2108,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [cathedral|dropped|concave|barrel-shaped|coffered|cove|stretched]
-    pattern: "[cathedral|dropped|concave|barrel-shaped|coffered|cove|stretched]"
+    pattern: "[cathedral|dropped|concave|barrel\\-shaped|coffered|cove|stretched]"
     mappings:
       - MIxS:ceil_type
 
@@ -2203,7 +2203,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [aluminum|cellular PVC|engineered plastic|fiberboard|fiberglass|metal|thermoplastic alloy|vinyl|wood|wood/plastic composite]
-    pattern: "[aluminum|cellular PVC|engineered plastic|fiberboard|fiberglass|metal|thermoplastic alloy|vinyl|wood|wood/plastic composite]"
+    pattern: "[aluminum|cellular PVC|engineered plastic|fiberboard|fiberglass|metal|thermoplastic alloy|vinyl|wood|wood\\/plastic composite]"
     mappings:
       - MIxS:door_mat
 
@@ -2441,7 +2441,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [balcony|floating floor|glass floor|raised floor|sprung floor|wood-framed|concrete]
-    pattern: "[balcony|floating floor|glass floor|raised floor|sprung floor|wood-framed|concrete]"
+    pattern: "[balcony|floating floor|glass floor|raised floor|sprung floor|wood\\-framed|concrete]"
     mappings:
       - MIxS:floor_struc
 
@@ -2523,7 +2523,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [ambidexterity|left handedness|mixed-handedness|right handedness]
-    pattern: "[ambidexterity|left handedness|mixed-handedness|right handedness]"
+    pattern: "[ambidexterity|left handedness|mixed\\-handedness|right handedness]"
     mappings:
       - MIxS:handidness
 
@@ -2783,7 +2783,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [new|visible wear|needs repair|damaged|rupture|visible signs of mold/mildew]
-    pattern: "[new|visible wear|needs repair|damaged|rupture|visible signs of mold/mildew]"
+    pattern: "[new|visible wear|needs repair|damaged|rupture|visible signs of mold\\/mildew]"
     mappings:
       - MIxS:room_condt
 
@@ -3269,7 +3269,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [crows feet|crows-foot stomp||double skip|hawk and trowel|knockdown|popcorn|orange peel|rosebud stomp|Santa-Fe texture|skip trowel|smooth|stomp knockdown|swirl]
-    pattern: "[crows feet|crows-foot stomp||double skip|hawk and trowel|knockdown|popcorn|orange peel|rosebud stomp|Santa-Fe texture|skip trowel|smooth|stomp knockdown|swirl]"
+    pattern: "[crows feet|crows\\-foot stomp|double skip|hawk and trowel|knockdown|popcorn|orange peel|rosebud stomp|Santa\\-Fe texture|skip trowel|smooth|stomp knockdown|swirl]"
     mappings:
       - MIxS:wall_texture
 
@@ -3439,7 +3439,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [single-hung sash window|horizontal sash window|fixed window] 
-    pattern: "[single-hung sash window|horizontal sash window|fixed window] "
+    pattern: "[single\\-hung sash window|horizontal sash window|fixed window] "
     mappings:
       - MIxS:window_type
 
@@ -3474,7 +3474,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [wild|natural|semi-natural|inbred line|breeder's line|hybrid|clonal selection|mutant]
-    pattern: "[wild|natural|semi-natural|inbred line|breeder's line|hybrid|clonal selection|mutant]"
+    pattern: "[wild|natural|semi\\-natural|inbred line|breeder\\'s line|hybrid|clonal selection|mutant]"
     mappings:
       - MIxS:biol_stat
 
@@ -4010,7 +4010,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: {boolean};[adverse event|non-compliance|lost to follow up|other-specify]
-    pattern: "[true|false];[adverse event|non-compliance|lost to follow up|other-specify]"
+    pattern: "[true|false];[adverse event|non\\-compliance|lost to follow up|other\\-specify]"
     mappings:
       - MIxS:study_complt_stat
 
@@ -4359,7 +4359,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [Oil|Gas-Condensate|Gas|Bitumen|Coalbed Methane|other]
-    pattern: "[Oil|Gas-Condensate|Gas|Bitumen|Coalbed Methane|other]"
+    pattern: "[Oil|Gas\\-Condensate|Gas|Bitumen|Coalbed Methane|other]"
     mappings:
       - MIxS:hc_produced
 
@@ -4404,7 +4404,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} - {float} {unit}
-    pattern: "\\d+[.\\d+] - \\d+[.\\d+] \\S+"
+    pattern: "\\d+[.\\d+] \\- \\d+[.\\d+] \\S+"
     string_serialization: "{float} - {float} {unit}"
     mappings:
       - MIxS:hcr_temp
@@ -4430,7 +4430,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} - {float} {unit}
-    pattern: "\\d+[.\\d+] - \\d+[.\\d+] \\S+"
+    pattern: "\\d+[.\\d+] \\- \\d+[.\\d+] \\S+"
     string_serialization: "{float} - {float} {unit}"
     mappings:
       - MIxS:hcr_pressure
@@ -4468,7 +4468,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} - {float} {unit}
-    pattern: "\\d+[.\\d+] - \\d+[.\\d+] \\S+"
+    pattern: "\\d+[.\\d+] \\- \\d+[.\\d+] \\S+"
     string_serialization: "{float} - {float} {unit}"
     mappings:
       - MIxS:porosity
@@ -4493,7 +4493,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [Continental - Alluvial|Continental - Aeolian|Continental - Fluvial|Continental - Lacustrine|Transitional - Deltaic|Transitional - Tidal|Transitional - Lagoonal|Transitional - Beach|Transitional - Lake|Marine - Shallow|Marine - Deep|Marine - Reef|Other - Evaporite|Other - Glacial|Other - Volcanic|other]
-    pattern: "[Continental - Alluvial|Continental - Aeolian|Continental - Fluvial|Continental - Lacustrine|Transitional - Deltaic|Transitional - Tidal|Transitional - Lagoonal|Transitional - Beach|Transitional - Lake|Marine - Shallow|Marine - Deep|Marine - Reef|Other - Evaporite|Other - Glacial|Other - Volcanic|other]"
+    pattern: "[Continental \\- Alluvial|Continental \\- Aeolian|Continental \\- Fluvial|Continental \\- Lacustrine|Transitional \\- Deltaic|Transitional \\- Tidal|Transitional \\- Lagoonal|Transitional \\- Beach|Transitional \\- Lake|Marine \\- Shallow|Marine \\- Deep|Marine \\- Reef|Other \\- Evaporite|Other \\- Glacial|Other \\- Volcanic|other]"
     mappings:
       - MIxS:depos_env
 
@@ -4676,7 +4676,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float}-{float} {unit}
-    pattern: "\\d+[.\\d+]-\\d+[.\\d+] \\S+"
+    pattern: "\\d+[.\\d+]\\-\\d+[.\\d+] \\S+"
     string_serialization: "{float}-{float} {unit}"
     mappings:
       - MIxS:samp_tvdss
@@ -5354,7 +5354,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} - {float} {unit}
-    pattern: "\\d+[.\\d+] - \\d+[.\\d+] \\S+"
+    pattern: "\\d+[.\\d+] \\- \\d+[.\\d+] \\S+"
     string_serialization: "{float} - {float} {unit}"
     mappings:
       - MIxS:samp_loc_corr_rate
@@ -5956,7 +5956,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: [erect|semi-erect|spreading|prostrate] 
-    pattern: "[erect|semi-erect|spreading|prostrate] "
+    pattern: "[erect|semi\\-erect|spreading|prostrate] "
     mappings:
       - MIxS:growth_habit
 
@@ -6370,7 +6370,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: "[cities|farmstead|industrial areas|roads/railroads|rock|sand|gravel|mudflats|salt flats|badlands|permanent snow or ice|saline seeps|mines/quarries|oil waste areas|small grains|row crops|vegetable crops|horticultural plants (e.g. tulips)|marshlands (grass,sedges,rushes)|tundra (mosses,lichens)|rangeland|pastureland (grasslands used for livestock grazing)|hayland|meadows (grasses,alfalfa,fescue,bromegrass,timothy)|shrub land (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus)|successional shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)|shrub crops (blueberries,nursery ornamentals,filberts)|vine crops (grapes)|conifers (e.g. pine,spruce,fir,cypress)|hardwoods (e.g. oak,hickory,elm,aspen)|intermixed hardwood and conifers|tropical (e.g. mangrove,palms)|rainforest (evergreen forest receiving >406 cm annual rainfall)|swamp (permanent or semi-permanent water body dominated by woody plants)|crop trees (nuts,fruit,christmas trees,nursery trees)]"
-    pattern: "[cities|farmstead|industrial areas|roads/railroads|rock|sand|gravel|mudflats|salt flats|badlands|permanent snow or ice|saline seeps|mines/quarries|oil waste areas|small grains|row crops|vegetable crops|horticultural plants (e.g. tulips)|marshlands (grass,sedges,rushes)|tundra (mosses,lichens)|rangeland|pastureland (grasslands used for livestock grazing)|hayland|meadows (grasses,alfalfa,fescue,bromegrass,timothy)|shrub land (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus)|successional shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)|shrub crops (blueberries,nursery ornamentals,filberts)|vine crops (grapes)|conifers (e.g. pine,spruce,fir,cypress)|hardwoods (e.g. oak,hickory,elm,aspen)|intermixed hardwood and conifers|tropical (e.g. mangrove,palms)|rainforest (evergreen forest receiving >406 cm annual rainfall)|swamp (permanent or semi-permanent water body dominated by woody plants)|crop trees (nuts,fruit,christmas trees,nursery trees)]"
+    pattern: "[cities|farmstead|industrial areas|roads\\/railroads|rock|sand|gravel|mudflats|salt flats|badlands|permanent snow or ice|saline seeps|mines\\/quarries|oil waste areas|small grains|row crops|vegetable crops|horticultural plants (e.g. tulips)|marshlands (grass,sedges,rushes)|tundra (mosses,lichens)|rangeland|pastureland (grasslands used for livestock grazing)|hayland|meadows (grasses,alfalfa,fescue,bromegrass,timothy)|shrub land (e.g. mesquite,sage\\-brush,creosote bush,shrub oak,eucalyptus)|successional shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)|shrub crops (blueberries,nursery ornamentals,filberts)|vine crops (grapes)|conifers (e.g. pine,spruce,fir,cypress)|hardwoods (e.g. oak,hickory,elm,aspen)|intermixed hardwood and conifers|tropical (e.g. mangrove,palms)|rainforest (evergreen forest receiving >406 cm annual rainfall)|swamp (permanent or semi\\-permanent water body dominated by woody plants)|crop trees (nuts,fruit,christmas trees,nursery trees)]"
     mappings:
       - MIxS:cur_land_use
 
