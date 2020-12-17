@@ -45,6 +45,7 @@ imports:
   - mixs
   - core
   - prov
+  - annotation
 
 subsets:
   workflow subset:
@@ -164,11 +165,29 @@ classes:
     is_a: workflow execution activity
     in_subset: 
       - workflow subset
-
+    slot_usage:
+      used:
+        range: instrument
+        multivalued: false
+        description: >-
+          The instrument used to collect the data used in the analysis
+      has metabolite quantifications:
+        range: metabolite quantification
+        multivalued: true
+      
   metaproteomics analysis activity:
     is_a: workflow execution activity
     in_subset: 
       - workflow subset
+    slot_usage:
+      used:
+        range: instrument
+        multivalued: false
+        description: >-
+          The instrument used to collect the data used in the analysis
+      has peptide quantifications:
+        range: peptide quantification
+        multivalued: true
       
   biosample:
     is_a: named thing
@@ -366,6 +385,56 @@ classes:
     broad_mappings:
       - OBI:0000070 ## assay: https://github.com/microbiomedata/nmdc-metadata/issues/171
 
+  instrument:
+    is_a: named thing
+    aliases:
+      - device
+    description: >-
+      A material entity that is designed to perform a function in a scientific investigation, but is not a reagent[OBI].
+    exact_mappings:
+      - OBI:0000485
+
+  metabolite quantification:
+    description: >-
+      This is used to link a metabolomics analysis workflow to a specific metabolite
+    slot_usage:
+      metabolite quantified:
+        description: >-
+          the specific metabolite identifier
+        range: chemical entity
+      highest similarity score:
+        description: >-
+          TODO: Yuri to fill in
+        range: float
+
+  peptide quantification:
+    description: >-
+      This is used to link a metabolomics analysis workflow to a specific protein
+    slot_usage:
+      peptide sequence:
+        range: string
+      best protein:
+        description: >-
+          the specific protein identifier
+        range: gene product
+      all proteins:
+        description: >-
+          the specific protein identifier
+        range: gene product
+        multivalued: true
+      min_q_value:
+        description: >-
+          TODO: Sam to fill in
+        range: integer
+      spectral_count:
+        description: >-
+          TODO: Sam to fill in
+        range: integer
+      sum_masic_abundance:
+        description: >-
+          TODO: Sam to fill in
+        range: integer
+        
   person:
     is_a: named thing
     description: >-
