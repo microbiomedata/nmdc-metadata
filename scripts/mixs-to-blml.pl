@@ -125,6 +125,10 @@ sub translate_re {
     s@\{unit\}@\\S+@g;
     s@\{termLabel\}@.*@g;
     s@\{\[termID\]\}@\\S+:\\S+@g;
+    if (m@^".*"$@) {
+        s@^"\s*@@;
+        s@\s*"@@;
+    }
     if ($_ eq '-') {
         return ;
     }
