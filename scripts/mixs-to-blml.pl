@@ -94,6 +94,9 @@ while(<>) {
     $done{$name} = 1;
 
     my $re = translate_re($value_syntax);
+    if ($re) {
+        $re =~ s@\\@\\\\@g;
+    }
     
     print "  $name:\n";
     print "    aliases:\n";

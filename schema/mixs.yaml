@@ -66,7 +66,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: geolocation value  ## syntax: {float} {float}
-    pattern: "\d+[.\d+] \d+[.\d+]"
+    pattern: "\\d+[.\\d+] \\d+[.\\d+]"
     string_serialization: "{float} {float}"
     mappings:
       - MIxS:lat_lon
@@ -94,7 +94,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:alt
@@ -109,7 +109,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:elev
@@ -150,7 +150,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}
-    pattern: ".* \S+:\S+"
+    pattern: ".* \\S+:\\S+"
     mappings:
       - MIxS:env_broad_scale
     in_subset:
@@ -164,7 +164,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}
-    pattern: ".* \S+:\S+"
+    pattern: ".* \\S+:\\S+"
     mappings:
       - MIxS:env_local_scale
     in_subset:
@@ -178,7 +178,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}
-    pattern: ".* \S+:\S+"
+    pattern: ".* \\S+:\\S+"
     mappings:
       - MIxS:env_medium
     in_subset:
@@ -219,7 +219,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}
-    pattern: ".* \S+:\S+"
+    pattern: ".* \\S+:\\S+"
     mappings:
       - MIxS:ploidy
     in_subset:
@@ -458,7 +458,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float}-{float} {unit}
-    pattern: "\d+[.\d+]-\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+]-\\d+[.\\d+] \\S+"
     string_serialization: "{float}-{float} {unit}"
     mappings:
       - MIxS:size_frac
@@ -473,7 +473,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:samp_size
@@ -953,7 +953,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: {float} percentage
-    pattern: "\d+[.\d+] percentage"
+    pattern: "\\d+[.\\d+] percentage"
     mappings:
       - MIxS:contam_score
     in_subset:
@@ -1279,7 +1279,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:barometric_press
@@ -1292,7 +1292,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:carb_dioxide
@@ -1305,7 +1305,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:carb_monoxide
@@ -1329,7 +1329,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:humidity
@@ -1342,7 +1342,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:methane
@@ -1379,7 +1379,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:oxygen
@@ -1439,7 +1439,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:samp_salinity
@@ -1474,7 +1474,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:samp_store_temp
@@ -1487,7 +1487,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:samp_vol_we_dna_ext
@@ -1500,7 +1500,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:solar_irradiance
@@ -1513,7 +1513,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:temp
@@ -1526,7 +1526,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:ventilation_rate
@@ -1573,7 +1573,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:wind_speed
@@ -1610,7 +1610,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:rel_air_humidity
@@ -1623,7 +1623,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:abs_air_humidity
@@ -1636,7 +1636,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:surf_humidity
@@ -1649,7 +1649,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:air_temp
@@ -1662,7 +1662,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:surf_temp
@@ -1675,7 +1675,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float}
-    pattern: "\d+[.\d+]"
+    pattern: "\\d+[.\\d+]"
     mappings:
       - MIxS:surf_moisture_ph
 
@@ -1699,7 +1699,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:surf_moisture
@@ -1712,7 +1712,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:dew_point
@@ -1832,7 +1832,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float}
-    pattern: "\d+[.\d+]"
+    pattern: "\\d+[.\\d+]"
     mappings:
       - MIxS:typ_occup_density
 
@@ -1855,7 +1855,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float}
-    pattern: "\d+[.\d+]"
+    pattern: "\\d+[.\\d+]"
     mappings:
       - MIxS:occup_density_samp
 
@@ -1901,7 +1901,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:amount_light
@@ -1926,7 +1926,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: {float}
-    pattern: "\d+[.\d+]"
+    pattern: "\\d+[.\\d+]"
     mappings:
       - MIxS:avg_occup
 
@@ -1938,7 +1938,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:avg_dew_point
@@ -1951,7 +1951,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:avg_temp
@@ -1986,7 +1986,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:built_struc_age
@@ -2022,7 +2022,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:ceil_area
@@ -2095,7 +2095,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:ceil_thermal_mass
@@ -2154,7 +2154,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:door_size
@@ -2321,7 +2321,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:exp_duct
@@ -2368,7 +2368,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:floor_age
@@ -2381,7 +2381,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:floor_area
@@ -2453,7 +2453,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:floor_thermal_mass
@@ -2570,7 +2570,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:height_carper_fiber
@@ -2583,7 +2583,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:inside_lux
@@ -2711,7 +2711,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:rel_humidity_out
@@ -2759,7 +2759,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:room_air_exch_rate
@@ -3002,7 +3002,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: text value  ## syntax: {float}
-    pattern: "\d+[.\d+]"
+    pattern: "\\d+[.\\d+]"
     mappings:
       - MIxS:samp_time_out
 
@@ -3097,7 +3097,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:specific_humidity
@@ -3122,7 +3122,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:temp_out
@@ -3183,7 +3183,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:wall_area
@@ -3220,7 +3220,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:wall_height
@@ -3281,7 +3281,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:wall_thermal_mass
@@ -3294,7 +3294,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:water_feat_size
@@ -3331,7 +3331,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit} x {float} {unit}
-    pattern: "\d+[.\d+] \S+ x \d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+ x \\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit} x {float} {unit}"
     mappings:
       - MIxS:window_size
@@ -3553,7 +3553,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_age
@@ -3611,7 +3611,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}
-    pattern: ".* \S+:\S+"
+    pattern: ".* \\S+:\\S+"
     mappings:
       - MIxS:host_body_site
 
@@ -3623,7 +3623,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}
-    pattern: ".* \S+:\S+"
+    pattern: ".* \\S+:\\S+"
     mappings:
       - MIxS:host_body_product
 
@@ -3635,7 +3635,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_tot_mass
@@ -3648,7 +3648,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_height
@@ -3661,7 +3661,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_length
@@ -3762,7 +3762,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}
-    pattern: ".* \S+:\S+"
+    pattern: ".* \\S+:\\S+"
     mappings:
       - MIxS:host_phenotype
 
@@ -3774,7 +3774,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_body_temp
@@ -3787,7 +3787,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_dry_mass
@@ -3800,7 +3800,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_blood_press_diast
@@ -3813,7 +3813,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_blood_press_syst
@@ -3905,7 +3905,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_body_mass_index
@@ -3929,7 +3929,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {boolean};{float} {unit}
-    pattern: "[true|false];\d+[.\d+] \S+"
+    pattern: "[true|false];\\d+[.\\d+] \\S+"
     string_serialization: "{boolean};{float} {unit}"
     mappings:
       - MIxS:weight_loss_3_month
@@ -4055,7 +4055,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_pulse
@@ -4404,7 +4404,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} - {float} {unit}
-    pattern: "\d+[.\d+] - \d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] - \\d+[.\\d+] \\S+"
     string_serialization: "{float} - {float} {unit}"
     mappings:
       - MIxS:hcr_temp
@@ -4417,7 +4417,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tvdss_of_hcr_temp
@@ -4430,7 +4430,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} - {float} {unit}
-    pattern: "\d+[.\d+] - \d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] - \\d+[.\\d+] \\S+"
     string_serialization: "{float} - {float} {unit}"
     mappings:
       - MIxS:hcr_pressure
@@ -4443,7 +4443,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tvdss_of_hcr_pressure
@@ -4468,7 +4468,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} - {float} {unit}
-    pattern: "\d+[.\d+] - \d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] - \\d+[.\\d+] \\S+"
     string_serialization: "{float} - {float} {unit}"
     mappings:
       - MIxS:porosity
@@ -4517,7 +4517,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:owc_tvdss
@@ -4530,7 +4530,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:hcr_fw_salinity
@@ -4543,7 +4543,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:sulfate_fw
@@ -4556,7 +4556,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:vfa_fw
@@ -4663,7 +4663,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:pressure
@@ -4676,7 +4676,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float}-{float} {unit}
-    pattern: "\d+[.\d+]-\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+]-\\d+[.\\d+] \\S+"
     string_serialization: "{float}-{float} {unit}"
     mappings:
       - MIxS:samp_tvdss
@@ -4689,7 +4689,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit};[GL|DF|RT|KB|MSL|other]
-    pattern: "\d+[.\d+] \S+;[GL|DF|RT|KB|MSL|other]"
+    pattern: "\\d+[.\\d+] \\S+;[GL|DF|RT|KB|MSL|other]"
     string_serialization: "{float} {unit};[GL|DF|RT|KB|MSL|other]"
     mappings:
       - MIxS:samp_md
@@ -4702,7 +4702,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit};{float} {unit}
-    pattern: "\d+[.\d+] \S+;\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+;\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit};{float} {unit}"
     mappings:
       - MIxS:samp_transport_cond
@@ -4726,7 +4726,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float}
-    pattern: "\d+[.\d+]"
+    pattern: "\\d+[.\\d+]"
     mappings:
       - MIxS:ph
 
@@ -4738,7 +4738,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:alkalinity
@@ -4762,7 +4762,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:sulfate
@@ -4775,7 +4775,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:sulfide
@@ -4788,7 +4788,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_sulfur
@@ -4801,7 +4801,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:nitrate
@@ -4814,7 +4814,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:nitrite
@@ -4827,7 +4827,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:ammonium
@@ -4840,7 +4840,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_nitro
@@ -4853,7 +4853,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_iron
@@ -4866,7 +4866,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:sodium
@@ -4879,7 +4879,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:chloride
@@ -4892,7 +4892,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:potassium
@@ -4905,7 +4905,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:magnesium
@@ -4918,7 +4918,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:calcium
@@ -4931,7 +4931,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_iron
@@ -4944,7 +4944,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_org_carb
@@ -4957,7 +4957,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_inorg_carb
@@ -4970,7 +4970,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_inorg_phosp
@@ -4983,7 +4983,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_phosp
@@ -5008,7 +5008,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:density
@@ -5021,7 +5021,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_carb_dioxide
@@ -5034,7 +5034,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_oxygen_fluid
@@ -5047,7 +5047,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:vfa
@@ -5060,7 +5060,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:benzene
@@ -5073,7 +5073,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:toluene
@@ -5086,7 +5086,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:ethylbenzene
@@ -5099,7 +5099,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:xylene
@@ -5112,7 +5112,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:api
@@ -5125,7 +5125,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tan
@@ -5138,7 +5138,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit};{float} {unit}
-    pattern: "\d+[.\d+] \S+;\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+;\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit};{float} {unit}"
     mappings:
       - MIxS:viscosity
@@ -5151,7 +5151,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:pour_point 
@@ -5234,7 +5234,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:prod_rate
@@ -5247,7 +5247,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:water_production_rate
@@ -5260,7 +5260,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:water_cut
@@ -5273,7 +5273,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:iwf
@@ -5354,7 +5354,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} - {float} {unit}
-    pattern: "\d+[.\d+] - \d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] - \\d+[.\\d+] \\S+"
     string_serialization: "{float} - {float} {unit}"
     mappings:
       - MIxS:samp_loc_corr_rate
@@ -5391,7 +5391,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:alkyl_diethers
@@ -5404,7 +5404,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:aminopept_act
@@ -5417,7 +5417,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:bacteria_carb_prod
@@ -5442,7 +5442,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:bishomohopanol
@@ -5455,7 +5455,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:bromide
@@ -5468,7 +5468,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:carb_nitro_ratio
@@ -5481,7 +5481,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:chlorophyll
@@ -5506,7 +5506,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_hydrogen
@@ -5519,7 +5519,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_org_nitro
@@ -5532,7 +5532,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_oxygen
@@ -5545,7 +5545,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:glucosidase_act
@@ -5558,7 +5558,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:mean_frict_vel
@@ -5571,7 +5571,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:mean_peak_frict_vel
@@ -5596,7 +5596,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:nitro
@@ -5609,7 +5609,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:org_carb
@@ -5622,7 +5622,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:org_matter
@@ -5635,7 +5635,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:org_nitro
@@ -5648,7 +5648,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:part_org_carb
@@ -5661,7 +5661,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:petroleum_hydrocarb
@@ -5686,7 +5686,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:phosphate
@@ -5711,7 +5711,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:redox_potential
@@ -5724,7 +5724,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:salinity
@@ -5737,7 +5737,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:silicate
@@ -5750,7 +5750,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_carb
@@ -5763,7 +5763,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_nitro_content
@@ -5776,7 +5776,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_org_carb
@@ -5789,7 +5789,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:turbidity
@@ -5802,7 +5802,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:water_content
@@ -5815,7 +5815,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:water_current
@@ -5992,7 +5992,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:host_wet_mass
@@ -6087,7 +6087,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}
-    pattern: ".* \S+:\S+"
+    pattern: ".* \\S+:\\S+"
     mappings:
       - MIxS:plant_growth_med
 
@@ -6122,7 +6122,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}
-    pattern: ".* \S+:\S+"
+    pattern: ".* \\S+:\\S+"
     mappings:
       - MIxS:plant_struc
 
@@ -6217,7 +6217,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float}
-    pattern: "\d+[.\d+]"
+    pattern: "\\d+[.\\d+]"
     mappings:
       - MIxS:root_med_ph
 
@@ -6357,7 +6357,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_depth_water_col
@@ -6573,7 +6573,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:annual_temp
@@ -6586,7 +6586,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:season_temp
@@ -6599,7 +6599,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:annual_precpt
@@ -6612,7 +6612,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:season_precpt
@@ -6692,7 +6692,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:slope_gradient
@@ -6705,7 +6705,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:slope_aspect
@@ -6742,7 +6742,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:texture
@@ -6799,7 +6799,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:microbial_biomass
@@ -6834,7 +6834,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:extreme_salinity
@@ -6881,7 +6881,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:al_sat
@@ -6905,7 +6905,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:biochem_oxygen_dem
@@ -6918,7 +6918,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:chem_oxygen_dem
@@ -6931,7 +6931,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:efficiency_percent
@@ -6968,7 +6968,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:indust_eff_percent
@@ -7060,7 +7060,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:sludge_retent_time
@@ -7108,7 +7108,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_phosphate
@@ -7144,7 +7144,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:bac_prod
@@ -7157,7 +7157,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:bac_resp
@@ -7170,7 +7170,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:conduc
@@ -7183,7 +7183,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:diss_inorg_nitro
@@ -7196,7 +7196,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:down_par
@@ -7209,7 +7209,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:fluor
@@ -7222,7 +7222,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:light_intensity
@@ -7235,7 +7235,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:part_org_nitro
@@ -7248,7 +7248,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:photon_flux
@@ -7261,7 +7261,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:primary_prod
@@ -7274,7 +7274,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:size_frac_low
@@ -7287,7 +7287,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:size_frac_up
@@ -7300,7 +7300,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:soluble_react_phosp
@@ -7313,7 +7313,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:suspend_part_matter
@@ -7326,7 +7326,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_diss_nitro
@@ -7339,7 +7339,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_inorg_nitro
@@ -7352,7 +7352,7 @@ slots:
     multivalued: false
     is_a: attribute
     range: quantity value  ## syntax: {float} {unit}
-    pattern: "\d+[.\d+] \S+"
+    pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
       - MIxS:tot_part_carb
