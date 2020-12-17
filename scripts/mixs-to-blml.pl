@@ -52,6 +52,7 @@ while(<>) {
     my $unit = $vals[18];
 
     my $range = "text value";
+    my $string_serialization;
 
     # hacks... need special inference
     if ($value_syntax eq '{text}') {
@@ -62,15 +63,18 @@ while(<>) {
     }
     if ($name eq 'lat_lon') {
         $range = 'geolocation value';
+        $string_serialization = $value_syntax;
     }
     if ($name eq 'depth') {
         $range = 'quantity value';
+        $string_serialization = $value_syntax;
     }
     if ($value_syntax =~ m@\{termLabel\}@) {
         $range = "controlled term value";
     }
     if ($value_syntax =~ m@\{unit\}@) {
         $range = "quantity value";
+        $string_serialization = $value_syntax;
     }
     if ($value_syntax eq '{boolean}') {
         $range = "boolean value";
@@ -88,6 +92,11 @@ while(<>) {
         $name = '_'.$name;
     }
     $done{$name} = 1;
+
+    my $re = translate_re($value_syntax);
+    if ($re) {
+        $re =~ s@\\@\\\\@g;
+    }
     
     print "  $name:\n";
     print "    aliases:\n";
@@ -97,10 +106,43 @@ while(<>) {
     print "    multivalued: false\n"; # TODO
     print "    is_a: attribute\n";
     print "    range: $range  ## syntax: $value_syntax\n";
+    print "    pattern: \"$re\"\n" if $re;
+    print "    string_serialization: \"$string_serialization\"\n" if $string_serialization && $string_serialization =~ m@\{@;
     print "    mappings:\n";
     print "      - MIxS:$name\n";
     print "    in_subset:\n      - $section\n" if $section;
     #print "    examples:\n      - value: $example\n" if $example;
     #print "    examples:\n      - value: $example\n" if $example;
     print "\n";
+}
+
+exit 0;
+
+sub translate_re {
+    $_ = shift @_;
+    s@\{float\}@\\d+[.\\d+]@g;
+    s@\{boolean\}@[true|false]@g;
+    s@\{unit\}@\\S+@g;
+    s@\{termLabel\}@.*@g;
+    s@\{\[termID\]\}@\\S+:\\S+@g;
+    if ($_ eq '-') {
+        return ;
+    }
+    s@([\'\-\/])@\\$1@g;
+
+    # See: https://github.com/GenomicsStandardsConsortium/mixs/issues/94
+    # some mixs regexes are incorrectly quoted
+    if (m@^".*"$@) {
+        s@^"\s*@@;
+        s@\s*"@@;
+    }
+    # some mixs regexes have double ||s:
+    s@\|\|@\|@g;
+    
+    if (m@\{@) {
+        return;
+    }
+    else {
+        return $_;
+    }
 }
