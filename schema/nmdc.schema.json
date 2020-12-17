@@ -427,6 +427,45 @@
          "title": "BooleanValue",
          "type": "object"
       },
+      "ChemicalEntity": {
+         "additionalProperties": false,
+         "description": "An atom or molecule that can be represented with a chemical formula. Include lipids, glycans, natural products, drugs. There may be different terms for distinct acid-base forms, protonation states",
+         "properties": {
+            "chemical_formula": {
+               "description": "A generic grouping for miolecular formulae and empirican formulae",
+               "type": "string"
+            },
+            "has_raw_value": {
+               "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+               "type": "string"
+            },
+            "inchi": {
+               "type": "string"
+            },
+            "inchi_key": {
+               "type": "string"
+            },
+            "smiles": {
+               "description": "A string encoding of a molecular graph, no chiral or isotopic information. There are usually a large number of valid SMILES which represent a given structure. For example, CCO, OCC and C(O)C all specify the structure of ethanol.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "term": {
+               "$ref": "#/definitions/OntologyClass",
+               "description": "pointer to an ontology class"
+            },
+            "was_generated_by": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "inchi"
+         ],
+         "title": "ChemicalEntity",
+         "type": "object"
+      },
       "ControlledTermValue": {
          "additionalProperties": false,
          "description": "A controlled term or class from an ontology",
@@ -571,6 +610,74 @@
          "title": "EnvironmentalMaterialTerm",
          "type": "object"
       },
+      "FunctionalAnnotation": {
+         "additionalProperties": false,
+         "description": "An assignment of a function term (e.g. reaction or pathway) that is executed by a gene product, or which the gene product plays an active role in. Functional annotations can be assigned manually by curators, or automatically in workflows. In the context of NMDC, all function annotation is performed automatically, typically using HMM or Blast type methods",
+         "properties": {
+            "has_function": {
+               "$ref": "#/definitions/FunctionalAnnotationTerm"
+            },
+            "subject": {
+               "$ref": "#/definitions/GeneProduct"
+            },
+            "was_generated_by": {
+               "description": "provenance for the annotation. Note to be consistent with the rest of the NMDC schema we use the PROV annotation model, rather than GPAD",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "FunctionalAnnotation",
+         "type": "object"
+      },
+      "GeneProduct": {
+         "additionalProperties": false,
+         "description": "A molecule encoded by a gene that has an evolved function",
+         "properties": {},
+         "required": [],
+         "title": "GeneProduct",
+         "type": "object"
+      },
+      "GenomeFeature": {
+         "additionalProperties": false,
+         "description": "A feature localized to an interval along a genome",
+         "properties": {
+            "encodes": {
+               "$ref": "#/definitions/GeneProduct",
+               "description": "The gene product encoded by this feature. Typically this is used for a CDS feature or gene feature which will encode a protein. It can also be used by a nc transcript ot gene feature that encoded a ncRNA"
+            },
+            "end": {
+               "description": "The end of the feature in positive 1-based integer coordinates",
+               "type": "integer"
+            },
+            "phase": {
+               "description": "The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2.",
+               "type": "integer"
+            },
+            "seqid": {
+               "description": "The ID of the landmark used to establish the coordinate system for the current feature.",
+               "type": "string"
+            },
+            "start": {
+               "description": "The start of the feature in positive 1-based integer coordinates",
+               "type": "integer"
+            },
+            "strand": {
+               "description": "The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).",
+               "type": "string"
+            },
+            "type": {
+               "$ref": "#/definitions/ControlledTermValue",
+               "description": "A type from the sequence ontology"
+            }
+         },
+         "required": [
+            "seqid",
+            "start",
+            "end"
+         ],
+         "title": "GenomeFeature",
+         "type": "object"
+      },
       "GeolocationValue": {
          "additionalProperties": false,
          "description": "A normalized value for a location on the earth's surface",
@@ -595,6 +702,36 @@
          "title": "GeolocationValue",
          "type": "object"
       },
+      "Instrument": {
+         "additionalProperties": false,
+         "description": "A material entity that is designed to perform a function in a scientific investigation, but is not a reagent[OBI].",
+         "properties": {
+            "alternate_identifiers": {
+               "description": "Non-primary identifiers",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human readable label for an entity",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Instrument",
+         "type": "object"
+      },
       "IntegerValue": {
          "additionalProperties": false,
          "description": "A value that is an integer",
@@ -613,6 +750,23 @@
          },
          "required": [],
          "title": "IntegerValue",
+         "type": "object"
+      },
+      "MetaboliteQuantification": {
+         "additionalProperties": false,
+         "description": "This is used to link a metabolomics analysis workflow to a specific metabolite",
+         "properties": {
+            "highest_similarity_score": {
+               "description": "TODO: Yuri to fill in",
+               "type": "number"
+            },
+            "metabolite_quantified": {
+               "description": "the specific metabolite identifier",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "MetaboliteQuantification",
          "type": "object"
       },
       "MetabolomicsAnalysisActivity": {
@@ -640,6 +794,12 @@
                },
                "type": "array"
             },
+            "has_metabolite_quantifications": {
+               "items": {
+                  "$ref": "#/definitions/MetaboliteQuantification"
+               },
+               "type": "array"
+            },
             "has_output": {
                "description": "An output biosample to a processing step",
                "items": {
@@ -651,6 +811,7 @@
                "type": "string"
             },
             "used": {
+               "description": "The instrument used to collect the data used in the analysis",
                "type": "string"
             },
             "was_associated_with": {
@@ -908,10 +1069,17 @@
                },
                "type": "array"
             },
+            "has_peptide_quantifications": {
+               "items": {
+                  "$ref": "#/definitions/PeptideQuantification"
+               },
+               "type": "array"
+            },
             "started_at_time": {
                "type": "string"
             },
             "used": {
+               "description": "The instrument used to collect the data used in the analysis",
                "type": "string"
             },
             "was_associated_with": {
@@ -1009,6 +1177,88 @@
          "title": "OntologyClass",
          "type": "object"
       },
+      "OrthologyGroup": {
+         "additionalProperties": false,
+         "description": "A set of genes or gene products in which all members are orthologous",
+         "properties": {
+            "has_raw_value": {
+               "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+               "type": "string"
+            },
+            "term": {
+               "$ref": "#/definitions/OntologyClass",
+               "description": "pointer to an ontology class"
+            },
+            "was_generated_by": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "OrthologyGroup",
+         "type": "object"
+      },
+      "Pathway": {
+         "additionalProperties": false,
+         "description": "A pathway is a sequence of steps/reactions carried out by an organism or community of organisms",
+         "properties": {
+            "has_part": {
+               "description": "A pathway can be broken down to a series of reaction step",
+               "items": {
+                  "$ref": "#/definitions/Reaction"
+               },
+               "type": "array"
+            },
+            "has_raw_value": {
+               "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+               "type": "string"
+            },
+            "term": {
+               "$ref": "#/definitions/OntologyClass",
+               "description": "pointer to an ontology class"
+            },
+            "was_generated_by": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Pathway",
+         "type": "object"
+      },
+      "PeptideQuantification": {
+         "additionalProperties": false,
+         "description": "This is used to link a metabolomics analysis workflow to a specific protein",
+         "properties": {
+            "all_proteins": {
+               "description": "the specific protein identifier",
+               "items": {
+                  "$ref": "#/definitions/GeneProduct"
+               },
+               "type": "array"
+            },
+            "best_protein": {
+               "$ref": "#/definitions/GeneProduct",
+               "description": "the specific protein identifier"
+            },
+            "min_q_value": {
+               "description": "TODO: Sam to fill in",
+               "type": "integer"
+            },
+            "peptide_sequence": {
+               "type": "string"
+            },
+            "spectral_count": {
+               "description": "TODO: Sam to fill in",
+               "type": "integer"
+            },
+            "sum_masic_abundance": {
+               "description": "TODO: Sam to fill in",
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "PeptideQuantification",
+         "type": "object"
+      },
       "Person": {
          "additionalProperties": false,
          "description": "represents a person, such as a researcher",
@@ -1080,6 +1330,76 @@
          },
          "required": [],
          "title": "QuantityValue",
+         "type": "object"
+      },
+      "Reaction": {
+         "additionalProperties": false,
+         "description": "An individual biochemical transformation carried out by a functional unit of an organism, in which a collection of substrates are transformed into a collection of products. Can also represent transporters",
+         "properties": {
+            "direction": {
+               "description": "One of l->r, r->l, bidirectional, neutral",
+               "type": "string"
+            },
+            "has_raw_value": {
+               "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+               "type": "string"
+            },
+            "is_balanced": {
+               "type": "boolean"
+            },
+            "is_diastereoselective": {
+               "type": "boolean"
+            },
+            "is_fully_characterized": {
+               "description": "False if includes R-groups",
+               "type": "boolean"
+            },
+            "is_stereo": {
+               "type": "boolean"
+            },
+            "is_transport": {
+               "type": "boolean"
+            },
+            "left_participants": {
+               "items": {
+                  "$ref": "#/definitions/ReactionParticipant"
+               },
+               "type": "array"
+            },
+            "right_participants": {
+               "items": {
+                  "$ref": "#/definitions/ReactionParticipant"
+               },
+               "type": "array"
+            },
+            "smarts_string": {
+               "type": "string"
+            },
+            "term": {
+               "$ref": "#/definitions/OntologyClass",
+               "description": "pointer to an ontology class"
+            },
+            "was_generated_by": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Reaction",
+         "type": "object"
+      },
+      "ReactionParticipant": {
+         "additionalProperties": false,
+         "description": "Instances of this link a reaction to a chemical entity participant",
+         "properties": {
+            "chemical": {
+               "type": "string"
+            },
+            "stoichiometry": {
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "ReactionParticipant",
          "type": "object"
       },
       "ReadQCAnalysisActivity": {
