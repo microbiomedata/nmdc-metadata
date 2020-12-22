@@ -172,8 +172,8 @@ metatype:Nodeidentifier NONLITERAL
 }
 
 <https://microbiomedata/schema/annotation/ChemicalEntity> CLOSED {
-    (  $<https://microbiomedata/schema/annotation/ChemicalEntity_tes> (  &<ControlledTermValue_tes> ;
-          rdf:type [ <ControlledTermValue> ] ? ;
+    (  $<https://microbiomedata/schema/annotation/ChemicalEntity_tes> (  &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ? ;
           <inchi> @metatype:String ;
           <inchi_key> @metatype:String ? ;
           <smiles> @metatype:String * ;
@@ -183,17 +183,14 @@ metatype:Nodeidentifier NONLITERAL
     )
 }
 
-<ControlledTermValue>  (
-    CLOSED {
-       (  $<ControlledTermValue_tes> (  &<AttributeValue_tes> ;
-             rdf:type [ <AttributeValue> ] ? ;
-             rdf1:type @<OntologyClass> ?
-          ) ;
-          rdf:type [ <ControlledTermValue> ] ?
-       )
-    } OR @<https://microbiomedata/schema/annotation/ChemicalEntity> OR
-    @<https://microbiomedata/schema/annotation/FunctionalAnnotationTerm>
-)
+<ControlledTermValue> CLOSED {
+    (  $<ControlledTermValue_tes> (  &<AttributeValue_tes> ;
+          rdf:type [ <AttributeValue> ] ? ;
+          rdf1:type @<OntologyClass> ?
+       ) ;
+       rdf:type [ <ControlledTermValue> ] ?
+    )
+}
 
 <DataObject> CLOSED {
     (  $<DataObject_tes> (  &<NamedThing_tes> ;
@@ -242,10 +239,10 @@ metatype:Nodeidentifier NONLITERAL
 )
 
 <https://microbiomedata/schema/annotation/FunctionalAnnotationTerm_struct> {
-    (  $<https://microbiomedata/schema/annotation/FunctionalAnnotationTerm_tes> (  &<ControlledTermValue_tes> ;
-          rdf:type [ <ControlledTermValue> ] ?
+    (  $<https://microbiomedata/schema/annotation/FunctionalAnnotationTerm_tes> (  &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ?
        ) ;
-       rdf:type [ <https://microbiomedata/schema/annotation/FunctionalAnnotationTerm> ] ?
+       rdf:type [ <https://microbiomedata/schema/annotation/FunctionalAnnotationTerm> ]
     )
 }
 
@@ -257,7 +254,7 @@ metatype:Nodeidentifier NONLITERAL
 
 <https://microbiomedata/schema/annotation/GenomeFeature> CLOSED {
     (  $<https://microbiomedata/schema/annotation/GenomeFeature_tes> (  <seqid> @metatype:String ;
-          rdf1:type @<ControlledTermValue> ? ;
+          rdf1:type @<OntologyClass> ? ;
           <start> @metatype:Integer ;
           <end> @metatype:Integer ;
           <strand> @metatype:String ? ;
@@ -400,7 +397,8 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <OntologyClass> ]
        )
-    } OR @<EnvironmentalMaterialTerm>
+    } OR @<https://microbiomedata/schema/annotation/ChemicalEntity> OR @<EnvironmentalMaterialTerm> OR
+    @<https://microbiomedata/schema/annotation/FunctionalAnnotationTerm>
 )
 
 <https://microbiomedata/schema/annotation/OrthologyGroup> CLOSED {
@@ -408,7 +406,7 @@ metatype:Nodeidentifier NONLITERAL
           &<https://microbiomedata/schema/annotation/FunctionalAnnotationTerm_tes> ;
           rdf:type [ <https://microbiomedata/schema/annotation/FunctionalAnnotationTerm> ] ?
        ) ;
-       rdf:type [ <https://microbiomedata/schema/annotation/OrthologyGroup> ] ?
+       rdf:type [ <https://microbiomedata/schema/annotation/OrthologyGroup> ]
     )
 }
 
@@ -418,7 +416,7 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <https://microbiomedata/schema/annotation/FunctionalAnnotationTerm> ] ? ;
           <has_part> @<https://microbiomedata/schema/annotation/Reaction> *
        ) ;
-       rdf:type [ <https://microbiomedata/schema/annotation/Pathway> ] ?
+       rdf:type [ <https://microbiomedata/schema/annotation/Pathway> ]
     )
 }
 
@@ -477,7 +475,7 @@ metatype:Nodeidentifier NONLITERAL
           <is_transport> @metatype:Boolean ? ;
           <is_fully_characterized> @metatype:Boolean ?
        ) ;
-       rdf:type [ <https://microbiomedata/schema/annotation/Reaction> ] ?
+       rdf:type [ <https://microbiomedata/schema/annotation/Reaction> ]
     )
 }
 

@@ -32,7 +32,7 @@ classes:
         range: string ## make this an object
         required: true
       type:
-        range: controlled term value
+        range: ontology class
         description: >-
           A type from the sequence ontology
         slot_uri: rdf:type
@@ -77,7 +77,7 @@ classes:
     aliases:
       - function
       - functional annotation
-    is_a: controlled term value
+    is_a: ontology class
     description: >-
       Abstract grouping class for any term/descriptor that can be applied to a functional unit of a genome (protein, ncRNA, complex).
     abstract: true
@@ -176,7 +176,7 @@ classes:
       - chemical substance
       - chemical compound
       - chemical
-    is_a: controlled term value
+    is_a: ontology class
     description: >-
       An atom or molecule that can be represented with a chemical formula. Include lipids, glycans, natural products, drugs.
       There may be different terms for distinct acid-base forms, protonation states
