@@ -166,6 +166,7 @@ classes:
       - PFAM
       - TIGRFAM
       - SUPFAM
+      - CATH
       - PANTHER.FAMILY
     exact_mappings:
       - biolink:GeneFamily
