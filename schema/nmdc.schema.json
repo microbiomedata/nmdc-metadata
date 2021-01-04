@@ -431,12 +431,23 @@
          "additionalProperties": false,
          "description": "An atom or molecule that can be represented with a chemical formula. Include lipids, glycans, natural products, drugs. There may be different terms for distinct acid-base forms, protonation states",
          "properties": {
+            "alternate_identifiers": {
+               "description": "Non-primary identifiers",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "chemical_formula": {
                "description": "A generic grouping for miolecular formulae and empirican formulae",
                "type": "string"
             },
-            "has_raw_value": {
-               "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "inchi": {
@@ -445,22 +456,20 @@
             "inchi_key": {
                "type": "string"
             },
+            "name": {
+               "description": "A human readable label for an entity",
+               "type": "string"
+            },
             "smiles": {
                "description": "A string encoding of a molecular graph, no chiral or isotopic information. There are usually a large number of valid SMILES which represent a given structure. For example, CCO, OCC and C(O)C all specify the structure of ethanol.",
                "items": {
                   "type": "string"
                },
                "type": "array"
-            },
-            "term": {
-               "$ref": "#/definitions/OntologyClass",
-               "description": "pointer to an ontology class"
-            },
-            "was_generated_by": {
-               "type": "string"
             }
          },
          "required": [
+            "id",
             "inchi"
          ],
          "title": "ChemicalEntity",
@@ -615,7 +624,7 @@
          "description": "An assignment of a function term (e.g. reaction or pathway) that is executed by a gene product, or which the gene product plays an active role in. Functional annotations can be assigned manually by curators, or automatically in workflows. In the context of NMDC, all function annotation is performed automatically, typically using HMM or Blast type methods",
          "properties": {
             "has_function": {
-               "$ref": "#/definitions/FunctionalAnnotationTerm"
+               "type": "string"
             },
             "subject": {
                "$ref": "#/definitions/GeneProduct"
@@ -666,8 +675,8 @@
                "type": "string"
             },
             "type": {
-               "$ref": "#/definitions/ControlledTermValue",
-               "description": "A type from the sequence ontology"
+               "description": "A type from the sequence ontology",
+               "type": "string"
             }
          },
          "required": [
@@ -1181,19 +1190,29 @@
          "additionalProperties": false,
          "description": "A set of genes or gene products in which all members are orthologous",
          "properties": {
-            "has_raw_value": {
-               "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+            "alternate_identifiers": {
+               "description": "Non-primary identifiers",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
                "type": "string"
             },
-            "term": {
-               "$ref": "#/definitions/OntologyClass",
-               "description": "pointer to an ontology class"
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
             },
-            "was_generated_by": {
+            "name": {
+               "description": "A human readable label for an entity",
                "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "OrthologyGroup",
          "type": "object"
       },
@@ -1201,26 +1220,36 @@
          "additionalProperties": false,
          "description": "A pathway is a sequence of steps/reactions carried out by an organism or community of organisms",
          "properties": {
-            "has_part": {
-               "description": "A pathway can be broken down to a series of reaction step",
+            "alternate_identifiers": {
+               "description": "Non-primary identifiers",
                "items": {
-                  "$ref": "#/definitions/Reaction"
+                  "type": "string"
                },
                "type": "array"
             },
-            "has_raw_value": {
-               "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+            "description": {
+               "description": "a human-readable description of a thing",
                "type": "string"
             },
-            "term": {
-               "$ref": "#/definitions/OntologyClass",
-               "description": "pointer to an ontology class"
+            "has_part": {
+               "description": "A pathway can be broken down to a series of reaction step",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
-            "was_generated_by": {
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human readable label for an entity",
                "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "Pathway",
          "type": "object"
       },
@@ -1336,12 +1365,23 @@
          "additionalProperties": false,
          "description": "An individual biochemical transformation carried out by a functional unit of an organism, in which a collection of substrates are transformed into a collection of products. Can also represent transporters",
          "properties": {
+            "alternate_identifiers": {
+               "description": "Non-primary identifiers",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
             "direction": {
                "description": "One of l->r, r->l, bidirectional, neutral",
                "type": "string"
             },
-            "has_raw_value": {
-               "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "is_balanced": {
@@ -1366,6 +1406,10 @@
                },
                "type": "array"
             },
+            "name": {
+               "description": "A human readable label for an entity",
+               "type": "string"
+            },
             "right_participants": {
                "items": {
                   "$ref": "#/definitions/ReactionParticipant"
@@ -1374,16 +1418,11 @@
             },
             "smarts_string": {
                "type": "string"
-            },
-            "term": {
-               "$ref": "#/definitions/OntologyClass",
-               "description": "pointer to an ontology class"
-            },
-            "was_generated_by": {
-               "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "Reaction",
          "type": "object"
       },

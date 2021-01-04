@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.9.0
-# Generation date: 2020-12-17 13:39
+# Generation date: 2020-12-22 10:17
 # Schema: NMDC
 #
 # id: https://microbiomedata/schema
@@ -179,7 +179,23 @@ class MetaproteomicsAnalysisActivityActivityId(WorkflowExecutionActivityActivity
     pass
 
 
-class ChemicalEntityInchi(extended_str):
+class FunctionalAnnotationTermId(OntologyClassId):
+    pass
+
+
+class PathwayId(FunctionalAnnotationTermId):
+    pass
+
+
+class ReactionId(FunctionalAnnotationTermId):
+    pass
+
+
+class OrthologyGroupId(FunctionalAnnotationTermId):
+    pass
+
+
+class ChemicalEntityId(OntologyClassId):
     pass
 
 
@@ -249,12 +265,12 @@ class MetaboliteQuantification(YAMLRoot):
     class_name: ClassVar[str] = "metabolite quantification"
     class_model_uri: ClassVar[URIRef] = NMDC.MetaboliteQuantification
 
-    metabolite_quantified: Optional[Union[str, ChemicalEntityInchi]] = None
+    metabolite_quantified: Optional[Union[str, ChemicalEntityId]] = None
     highest_similarity_score: Optional[float] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.metabolite_quantified is not None and not isinstance(self.metabolite_quantified, ChemicalEntityInchi):
-            self.metabolite_quantified = ChemicalEntityInchi(self.metabolite_quantified)
+        if self.metabolite_quantified is not None and not isinstance(self.metabolite_quantified, ChemicalEntityId):
+            self.metabolite_quantified = ChemicalEntityId(self.metabolite_quantified)
 
         if self.highest_similarity_score is not None and not isinstance(self.highest_similarity_score, float):
             self.highest_similarity_score = float(self.highest_similarity_score)
@@ -1536,7 +1552,7 @@ class GenomeFeature(YAMLRoot):
     seqid: str = None
     start: int = None
     end: int = None
-    type: Optional[Union[dict, ControlledTermValue]] = None
+    type: Optional[Union[str, OntologyClassId]] = None
     strand: Optional[str] = None
     phase: Optional[int] = None
     encodes: Optional[Union[dict, "GeneProduct"]] = None
@@ -1557,8 +1573,8 @@ class GenomeFeature(YAMLRoot):
         if not isinstance(self.end, int):
             self.end = int(self.end)
 
-        if self.type is not None and not isinstance(self.type, ControlledTermValue):
-            self.type = ControlledTermValue(**self.type)
+        if self.type is not None and not isinstance(self.type, OntologyClassId):
+            self.type = OntologyClassId(self.type)
 
         if self.strand is not None and not isinstance(self.strand, str):
             self.strand = str(self.strand)
@@ -1572,7 +1588,8 @@ class GenomeFeature(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-class FunctionalAnnotationTerm(ControlledTermValue):
+@dataclass
+class FunctionalAnnotationTerm(OntologyClass):
     """
     Abstract grouping class for any term/descriptor that can be applied to a functional unit of a genome (protein,
     ncRNA, complex).
@@ -1584,6 +1601,7 @@ class FunctionalAnnotationTerm(ControlledTermValue):
     class_name: ClassVar[str] = "functional annotation term"
     class_model_uri: ClassVar[URIRef] = NMDC.FunctionalAnnotationTerm
 
+    id: Union[str, FunctionalAnnotationTermId] = None
 
 @dataclass
 class Pathway(FunctionalAnnotationTerm):
@@ -1597,14 +1615,20 @@ class Pathway(FunctionalAnnotationTerm):
     class_name: ClassVar[str] = "pathway"
     class_model_uri: ClassVar[URIRef] = NMDC.Pathway
 
-    has_part: Optional[Union[Union[dict, "Reaction"], List[Union[dict, "Reaction"]]]] = empty_list()
+    id: Union[str, PathwayId] = None
+    has_part: Optional[Union[Union[str, ReactionId], List[Union[str, ReactionId]]]] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, PathwayId):
+            self.id = PathwayId(self.id)
+
         if self.has_part is None:
             self.has_part = []
         if not isinstance(self.has_part, list):
             self.has_part = [self.has_part]
-        self.has_part = [v if isinstance(v, Reaction) else Reaction(**v) for v in self.has_part]
+        self.has_part = [v if isinstance(v, ReactionId) else ReactionId(v) for v in self.has_part]
 
         super().__post_init__(**kwargs)
 
@@ -1622,6 +1646,7 @@ class Reaction(FunctionalAnnotationTerm):
     class_name: ClassVar[str] = "reaction"
     class_model_uri: ClassVar[URIRef] = NMDC.Reaction
 
+    id: Union[str, ReactionId] = None
     left_participants: Optional[Union[Union[dict, "ReactionParticipant"], List[Union[dict, "ReactionParticipant"]]]] = empty_list()
     right_participants: Optional[Union[Union[dict, "ReactionParticipant"], List[Union[dict, "ReactionParticipant"]]]] = empty_list()
     direction: Optional[str] = None
@@ -1633,6 +1658,11 @@ class Reaction(FunctionalAnnotationTerm):
     is_fully_characterized: Optional[Bool] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ReactionId):
+            self.id = ReactionId(self.id)
+
         if self.left_participants is None:
             self.left_participants = []
         if not isinstance(self.left_participants, list):
@@ -1681,12 +1711,12 @@ class ReactionParticipant(YAMLRoot):
     class_name: ClassVar[str] = "reaction participant"
     class_model_uri: ClassVar[URIRef] = NMDC.ReactionParticipant
 
-    chemical: Optional[Union[str, ChemicalEntityInchi]] = None
+    chemical: Optional[Union[str, ChemicalEntityId]] = None
     stoichiometry: Optional[int] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.chemical is not None and not isinstance(self.chemical, ChemicalEntityInchi):
-            self.chemical = ChemicalEntityInchi(self.chemical)
+        if self.chemical is not None and not isinstance(self.chemical, ChemicalEntityId):
+            self.chemical = ChemicalEntityId(self.chemical)
 
         if self.stoichiometry is not None and not isinstance(self.stoichiometry, int):
             self.stoichiometry = int(self.stoichiometry)
@@ -1694,6 +1724,7 @@ class ReactionParticipant(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
+@dataclass
 class OrthologyGroup(FunctionalAnnotationTerm):
     """
     A set of genes or gene products in which all members are orthologous
@@ -1705,9 +1736,19 @@ class OrthologyGroup(FunctionalAnnotationTerm):
     class_name: ClassVar[str] = "orthology group"
     class_model_uri: ClassVar[URIRef] = NMDC.OrthologyGroup
 
+    id: Union[str, OrthologyGroupId] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, OrthologyGroupId):
+            self.id = OrthologyGroupId(self.id)
+
+        super().__post_init__(**kwargs)
+
 
 @dataclass
-class ChemicalEntity(ControlledTermValue):
+class ChemicalEntity(OntologyClass):
     """
     An atom or molecule that can be represented with a chemical formula. Include lipids, glycans, natural products,
     drugs. There may be different terms for distinct acid-base forms, protonation states
@@ -1719,16 +1760,21 @@ class ChemicalEntity(ControlledTermValue):
     class_name: ClassVar[str] = "chemical entity"
     class_model_uri: ClassVar[URIRef] = NMDC.ChemicalEntity
 
-    inchi: Union[str, ChemicalEntityInchi] = None
+    id: Union[str, ChemicalEntityId] = None
     inchi_key: Optional[str] = None
     smiles: Optional[Union[str, List[str]]] = empty_list()
     chemical_formula: Optional[str] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ChemicalEntityId):
+            self.id = ChemicalEntityId(self.id)
+
         if self.inchi is None:
             raise ValueError("inchi must be supplied")
-        if not isinstance(self.inchi, ChemicalEntityInchi):
-            self.inchi = ChemicalEntityInchi(self.inchi)
+        if not isinstance(self.inchi, ChemicalEntityId):
+            self.inchi = ChemicalEntityId(self.inchi)
 
         if self.inchi_key is not None and not isinstance(self.inchi_key, str):
             self.inchi_key = str(self.inchi_key)
@@ -1774,7 +1820,7 @@ class FunctionalAnnotation(YAMLRoot):
 
     was_generated_by: Optional[Union[str, ActivityActivityId]] = None
     subject: Optional[Union[dict, GeneProduct]] = None
-    has_function: Optional[Union[dict, FunctionalAnnotationTerm]] = None
+    has_function: Optional[Union[str, FunctionalAnnotationTermId]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.was_generated_by is not None and not isinstance(self.was_generated_by, ActivityActivityId):
@@ -1783,8 +1829,8 @@ class FunctionalAnnotation(YAMLRoot):
         if self.subject is not None and not isinstance(self.subject, GeneProduct):
             self.subject = GeneProduct()
 
-        if self.has_function is not None and not isinstance(self.has_function, FunctionalAnnotationTerm):
-            self.has_function = FunctionalAnnotationTerm(**self.has_function)
+        if self.has_function is not None and not isinstance(self.has_function, FunctionalAnnotationTermId):
+            self.has_function = FunctionalAnnotationTermId(self.has_function)
 
         super().__post_init__(**kwargs)
 
@@ -4258,7 +4304,7 @@ slots.has_peptide_quantifications = Slot(uri=NMDC.has_peptide_quantifications, n
                    model_uri=NMDC.has_peptide_quantifications, domain=None, range=Optional[Union[Union[dict, PeptideQuantification], List[Union[dict, PeptideQuantification]]]])
 
 slots.metabolite_quantified = Slot(uri=NMDC.metabolite_quantified, name="metabolite quantified", curie=NMDC.curie('metabolite_quantified'),
-                   model_uri=NMDC.metabolite_quantified, domain=None, range=Optional[Union[str, ChemicalEntityInchi]])
+                   model_uri=NMDC.metabolite_quantified, domain=None, range=Optional[Union[str, ChemicalEntityId]])
 
 slots.highest_similarity_score = Slot(uri=NMDC.highest_similarity_score, name="highest similarity score", curie=NMDC.curie('highest_similarity_score'),
                    model_uri=NMDC.highest_similarity_score, domain=None, range=Optional[float])
@@ -4300,7 +4346,7 @@ slots.encodes = Slot(uri=NMDC.encodes, name="encodes", curie=NMDC.curie('encodes
                    model_uri=NMDC.encodes, domain=None, range=Optional[Union[dict, GeneProduct]])
 
 slots.has_part = Slot(uri=NMDC.has_part, name="has_part", curie=NMDC.curie('has_part'),
-                   model_uri=NMDC.has_part, domain=None, range=Optional[Union[Union[dict, Reaction], List[Union[dict, Reaction]]]])
+                   model_uri=NMDC.has_part, domain=None, range=Optional[Union[Union[str, ReactionId], List[Union[str, ReactionId]]]])
 
 slots.left_participants = Slot(uri=NMDC.left_participants, name="left participants", curie=NMDC.curie('left_participants'),
                    model_uri=NMDC.left_participants, domain=None, range=Optional[Union[Union[dict, ReactionParticipant], List[Union[dict, ReactionParticipant]]]])
@@ -4330,7 +4376,7 @@ slots.is_fully_characterized = Slot(uri=NMDC.is_fully_characterized, name="is fu
                    model_uri=NMDC.is_fully_characterized, domain=None, range=Optional[Bool])
 
 slots.chemical = Slot(uri=NMDC.chemical, name="chemical", curie=NMDC.curie('chemical'),
-                   model_uri=NMDC.chemical, domain=None, range=Optional[Union[str, ChemicalEntityInchi]])
+                   model_uri=NMDC.chemical, domain=None, range=Optional[Union[str, ChemicalEntityId]])
 
 slots.stoichiometry = Slot(uri=NMDC.stoichiometry, name="stoichiometry", curie=NMDC.curie('stoichiometry'),
                    model_uri=NMDC.stoichiometry, domain=None, range=Optional[int])
@@ -4351,7 +4397,7 @@ slots.subject = Slot(uri=NMDC.subject, name="subject", curie=NMDC.curie('subject
                    model_uri=NMDC.subject, domain=None, range=Optional[Union[dict, GeneProduct]])
 
 slots.has_function = Slot(uri=NMDC.has_function, name="has function", curie=NMDC.curie('has_function'),
-                   model_uri=NMDC.has_function, domain=None, range=Optional[Union[dict, FunctionalAnnotationTerm]])
+                   model_uri=NMDC.has_function, domain=None, range=Optional[Union[str, FunctionalAnnotationTermId]])
 
 slots.data_object_was_generated_by = Slot(uri=NMDC.was_generated_by, name="data object_was generated by", curie=NMDC.curie('was_generated_by'),
                    model_uri=NMDC.data_object_was_generated_by, domain=DataObject, range=Optional[Union[dict, "WorkflowExecutionActivity"]])
@@ -4424,7 +4470,7 @@ slots.omics_processing_has_output = Slot(uri=NMDC.has_output, name="omics proces
                    model_uri=NMDC.omics_processing_has_output, domain=OmicsProcessing, range=Optional[Union[Union[str, DataObjectId], List[Union[str, DataObjectId]]]])
 
 slots.metabolite_quantification_metabolite_quantified = Slot(uri=NMDC.metabolite_quantified, name="metabolite quantification_metabolite quantified", curie=NMDC.curie('metabolite_quantified'),
-                   model_uri=NMDC.metabolite_quantification_metabolite_quantified, domain=MetaboliteQuantification, range=Optional[Union[str, ChemicalEntityInchi]])
+                   model_uri=NMDC.metabolite_quantification_metabolite_quantified, domain=MetaboliteQuantification, range=Optional[Union[str, ChemicalEntityId]])
 
 slots.metabolite_quantification_highest_similarity_score = Slot(uri=NMDC.highest_similarity_score, name="metabolite quantification_highest similarity score", curie=NMDC.curie('highest_similarity_score'),
                    model_uri=NMDC.metabolite_quantification_highest_similarity_score, domain=MetaboliteQuantification, range=Optional[float])
@@ -4469,7 +4515,7 @@ slots.genome_feature_seqid = Slot(uri=NMDC.seqid, name="genome feature_seqid", c
                    model_uri=NMDC.genome_feature_seqid, domain=GenomeFeature, range=str)
 
 slots.genome_feature_type = Slot(uri=RDF.type, name="genome feature_type", curie=RDF.curie('type'),
-                   model_uri=NMDC.genome_feature_type, domain=GenomeFeature, range=Optional[Union[dict, ControlledTermValue]])
+                   model_uri=NMDC.genome_feature_type, domain=GenomeFeature, range=Optional[Union[str, OntologyClassId]])
 
 slots.genome_feature_start = Slot(uri=NMDC.start, name="genome feature_start", curie=NMDC.curie('start'),
                    model_uri=NMDC.genome_feature_start, domain=GenomeFeature, range=int)
@@ -4487,7 +4533,7 @@ slots.genome_feature_encodes = Slot(uri=NMDC.encodes, name="genome feature_encod
                    model_uri=NMDC.genome_feature_encodes, domain=GenomeFeature, range=Optional[Union[dict, "GeneProduct"]])
 
 slots.pathway_has_part = Slot(uri=NMDC.has_part, name="pathway_has_part", curie=NMDC.curie('has_part'),
-                   model_uri=NMDC.pathway_has_part, domain=Pathway, range=Optional[Union[Union[dict, "Reaction"], List[Union[dict, "Reaction"]]]])
+                   model_uri=NMDC.pathway_has_part, domain=Pathway, range=Optional[Union[Union[str, ReactionId], List[Union[str, ReactionId]]]])
 
 slots.reaction_left_participants = Slot(uri=NMDC.left_participants, name="reaction_left participants", curie=NMDC.curie('left_participants'),
                    model_uri=NMDC.reaction_left_participants, domain=Reaction, range=Optional[Union[Union[dict, "ReactionParticipant"], List[Union[dict, "ReactionParticipant"]]]])
@@ -4517,13 +4563,13 @@ slots.reaction_is_fully_characterized = Slot(uri=NMDC.is_fully_characterized, na
                    model_uri=NMDC.reaction_is_fully_characterized, domain=Reaction, range=Optional[Bool])
 
 slots.reaction_participant_chemical = Slot(uri=NMDC.chemical, name="reaction participant_chemical", curie=NMDC.curie('chemical'),
-                   model_uri=NMDC.reaction_participant_chemical, domain=ReactionParticipant, range=Optional[Union[str, ChemicalEntityInchi]])
+                   model_uri=NMDC.reaction_participant_chemical, domain=ReactionParticipant, range=Optional[Union[str, ChemicalEntityId]])
 
 slots.reaction_participant_stoichiometry = Slot(uri=NMDC.stoichiometry, name="reaction participant_stoichiometry", curie=NMDC.curie('stoichiometry'),
                    model_uri=NMDC.reaction_participant_stoichiometry, domain=ReactionParticipant, range=Optional[int])
 
 slots.chemical_entity_inchi = Slot(uri=NMDC.inchi, name="chemical entity_inchi", curie=NMDC.curie('inchi'),
-                   model_uri=NMDC.chemical_entity_inchi, domain=ChemicalEntity, range=Union[str, ChemicalEntityInchi])
+                   model_uri=NMDC.chemical_entity_inchi, domain=ChemicalEntity, range=Union[str, ChemicalEntityId])
 
 slots.chemical_entity_inchi_key = Slot(uri=NMDC.inchi_key, name="chemical entity_inchi key", curie=NMDC.curie('inchi_key'),
                    model_uri=NMDC.chemical_entity_inchi_key, domain=ChemicalEntity, range=Optional[str])
@@ -4538,7 +4584,7 @@ slots.functional_annotation_subject = Slot(uri=NMDC.subject, name="functional an
                    model_uri=NMDC.functional_annotation_subject, domain=FunctionalAnnotation, range=Optional[Union[dict, GeneProduct]])
 
 slots.functional_annotation_has_function = Slot(uri=NMDC.has_function, name="functional annotation_has function", curie=NMDC.curie('has_function'),
-                   model_uri=NMDC.functional_annotation_has_function, domain=FunctionalAnnotation, range=Optional[Union[dict, FunctionalAnnotationTerm]])
+                   model_uri=NMDC.functional_annotation_has_function, domain=FunctionalAnnotation, range=Optional[Union[str, FunctionalAnnotationTermId]])
 
 slots.functional_annotation_was_generated_by = Slot(uri=NMDC.was_generated_by, name="functional annotation_was generated by", curie=NMDC.curie('was_generated_by'),
                    model_uri=NMDC.functional_annotation_was_generated_by, domain=FunctionalAnnotation, range=Optional[Union[str, ActivityActivityId]])
