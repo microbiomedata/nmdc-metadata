@@ -424,8 +424,8 @@ classes:
         multivalued: true
       min_q_value:
         description: >-
-          TODO: Sam to fill in
-        range: integer
+          TODO: Sam to fill in at some point
+        range: float
       spectral_count:
         description: >-
           TODO: Sam to fill in
