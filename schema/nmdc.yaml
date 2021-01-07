@@ -409,30 +409,30 @@ classes:
 
   peptide quantification:
     description: >-
-      This is used to link a metabolomics analysis workflow to a specific protein
+      This is used to link a metaproteomics analysis workflow to a specific peptide sequence and related information
     slot_usage:
       peptide sequence:
         range: string
       best protein:
         description: >-
-          the specific protein identifier
+          the specific protein identifier most correctly associated with the peptide sequence
         range: gene product
       all proteins:
         description: >-
-          the specific protein identifier
+          the list of protein identifiers that are associated with the peptide sequence
         range: gene product
         multivalued: true
       min_q_value:
         description: >-
-          TODO: Sam to fill in
-        range: integer
+          smallest Q-Value associated with the peptide sequence as provided by MSGFPlus tool
+        range: float
       spectral_count:
         description: >-
-          TODO: Sam to fill in
+          sum of filter passing MS2 spectra associated with the peptide sequence within a given LC-MS/MS data file
         range: integer
       sum_masic_abundance:
         description: >-
-          TODO: Sam to fill in
+          combined MS1 extracted ion chromatograms derived from MS2 spectra associated with the peptide sequence from a given LC-MS/MS data file using the MASIC tool
         range: integer
         
   person:
