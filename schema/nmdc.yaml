@@ -434,7 +434,29 @@ classes:
         description: >-
           combined MS1 extracted ion chromatograms derived from MS2 spectra associated with the peptide sequence from a given LC-MS/MS data file using the MASIC tool
         range: integer
-        
+  
+  protein quantification:
+    description: >-
+      This is used to link a metaproteomics analysis workflow to a specific protein
+    slot_usage:
+      best protein:
+        description: >-
+          the specific protein identifier most correctly grouped to its associated peptide sequences
+        range: gene product
+      all proteins:
+        description: >-
+          the grouped list of protein identifiers associated with the peptide sequences that were grouped to a best protein
+        range: gene product
+        multivalued: true
+      spectral_count:
+        description: >-
+          sum of filter passing MS2 spectra associated with the best protein within a given LC-MS/MS data file
+        range: integer
+      sum_masic_abundance:
+        description: >-
+          combined MS1 extracted ion chromatograms derived from MS2 spectra associated with the best protein from a given LC-MS/MS data file using the MASIC tool
+        range: integer
+
   person:
     is_a: named thing
     description: >-
