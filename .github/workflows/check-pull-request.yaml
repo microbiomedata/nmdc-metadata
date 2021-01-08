@@ -2,9 +2,9 @@ name: Check Pull Request
 
 # Controls when the action will run. Triggers the workflow on pull requests.
 on:
-  pull_request::
+  pull_request:
     branches:
-    - master
+      - master
   repository_dispatch:
     types: trigger-check-pull-request
 
