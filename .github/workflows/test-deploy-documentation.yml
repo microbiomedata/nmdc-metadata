@@ -1,0 +1,63 @@
+name: Deploy Documentation
+
+# Controls when the action will run. Triggers the workflow on push
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - 'README.md'
+    - 'docs/*'
+    - 'schema/nmdc.py'
+    - 'schema/nmdc.schema.json'
+    - 'schema/nmdc.context.jsonld'
+    - 'schema/nmdc_schema_uml.png'
+
+  repository_dispatch:
+    types: trigger-test-build-documentation
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  synchronize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Merge master to test-gh-pages branch
+        uses: devmasx/merge-branch@v1.1.0
+        with:
+          type: now
+          target_branch: test-gh-pages
+        env:
+          GITHUB_TOKEN: ${{secrets.API_TOKEN}}
+
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        repository: microbiomedata/nmdc-metadata
+        persist-credentials: false
+
+    - name: Setup Python Environment
+      uses: actions/setup-python@v2
+      with:
+        # Version range or exact version of a Python version to use, using SemVer's version range syntax.
+        python-version: 3.7
+
+    - name: Install and Build
+      run: |
+        pip install pipenv
+        make jekyll-docs
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
+        REPOSITORY_NAME: microbiomedata/nmdc-metadata # The repository the action should deploy to
+        BRANCH: test-gh-pages # The branch the action should deploy to.
+        FOLDER: . # The folder the action should deploy.
