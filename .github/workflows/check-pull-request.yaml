@@ -30,6 +30,7 @@ jobs:
         # The target architecture (x86, x64) of the Python interpreter.
         # architecture: x64 # optional
 
+    # Excute the Makefile
     - name: Make All
       run: |
         make all
