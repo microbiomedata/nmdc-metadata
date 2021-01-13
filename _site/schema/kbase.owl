@@ -1,0 +1,1841 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix meta: <https://w3id.org/kbase/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://microbiomedata/schema/kbase> a owl:Ontology ;
+    rdfs:label "kbase" ;
+    dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
+    skos:definition "NMDC rendering of KBase metadata schema" ;
+    meta:generation_date "2020-06-15 23:55" ;
+    meta:metamodel_version "1.4.3" ;
+    meta:source_file "kbase.yaml" ;
+    meta:source_file_date "Mon Jun 15 23:50:17 2020" ;
+    meta:source_file_size 21048 .
+
+meta:ENIGMA a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "ENIGMA" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:country ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:method ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:area_name ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:time ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:material ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:well_name ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:env_pakcage ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:conductivity_ms_cm ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:aquifer ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:pore_water_extraction_microliters ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:experiment_name ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:temperature_celsius ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:open_interval_end_depth_ft_bgs ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:id ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:open_casing_depth_ft_bgs ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:geological_zone ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:condition ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:maturation_time ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:packing_depth_end_ft_bgs ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:date ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:other_name ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:total_carbon_mg_g_dry_weight ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:well_casing_type ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:open_interval_start_depth_ft_bgs ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:fractures_cavities_waterbreaks ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:upper_seal_type ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:min_water_level_ft_amsl ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:open_casing_type ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:drive_casing_start_depth_ft_bgs ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:functional_area ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:screen_type ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:ground_elevation_ft_amsl ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:continent ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:packing_type ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:lower_seal_type_ft_bgs ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:boring_ft_bgs ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:drive_casing_od_in ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:replicate ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:double ;
+            owl:onProperty meta:longitude ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:type_of_well ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:drive_casing_id_in ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:double ;
+            owl:onProperty meta:depth ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:environmental_package ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:topofweatheredbedrock_ft_bgs ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:name ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:treatment ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:sampleid ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:boring_refusal ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:timezone ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:biomass_carbon_mg_g ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:double ;
+            owl:onProperty meta:latitude ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:double ;
+            owl:onProperty meta:ph ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:region ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:collection_time ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:origination_or_plug_abandon ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:average_water_level_ft_amsl ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:installation_method ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:leucine_activity_ngc_day_cell ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:env_package ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:topoffreshbedrock_ft_bgs ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:feature ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:fraction ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:lower_seal_end_depth_ft_bgs ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:biome ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:drive_casing_end_depth_ft_bgs ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:double ;
+            owl:onProperty meta:moisture ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:total_nitrogen_mg_g_dry_weight ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:description ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:packing_depth_start_ft_bgs ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:time_zone ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:lower_seal_start_depth_ft_bgs ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:well_status ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:screened ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:open ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:open_hole_diameter_in ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:well ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:open_interval_diameter_in ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:upper_seal_start_depth_ft_bgs ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:recovery_factor ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:well_casing_id_in ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:well_casing_od_in ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:drive_casing_type ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:boring_diameter_in ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:max_water_level_ft_amsl ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:rock_formation ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:open_hole_depth_ft_bgs ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:open_casing_od_in ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:open_casing_id_in ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:upper_seal_end_depth_ft_bgs ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:elevation ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:dapi_cell_count_cells_g ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:dna_picogreen_total_ng ] ;
+    skos:definition "TODO" .
+
+meta:SESAR a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "SESAR" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:other_names ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:launch_id ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:sample_name ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:locality_description ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:date ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:age_unit ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:related_identifiers ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:collection_date_precision ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:name_of_physiographic_feature ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:platform_type ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:collector_chief_scientist_address ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:geological_unit ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:elevation ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:field_name_informal_classification ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:material ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:location_description ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:double ;
+            owl:onProperty meta:depth ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:sample_description ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:zone ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:county ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:time ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:env_pakcage ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:locality ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:current_archive ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:collector_chief_scientist ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:depth_scale ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:timezone ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:original_archive ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:collection_time ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:name ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:navigation_type ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:size_unit ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:well ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:description ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:original_archive_contact ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:platform_name ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:double ;
+            owl:onProperty meta:latitude ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:id ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:state_province ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:city_township ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:field_program_cruise ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:purpose ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:sub-object_type ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:double ;
+            owl:onProperty meta:size ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:country ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:collection_time_end ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:vertical_datum ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:launch_platform_name ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:primary_physiographic_feature ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:classification ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:double ;
+            owl:onProperty meta:longitude ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:collection_method_description ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass meta:string ;
+            owl:onProperty meta:collection_method ] ;
+    skos:definition "TODO" .
+
+meta:SubsetDefinition a owl:Class ;
+    rdfs:label "subset_definition" ;
+    skos:definition "the name and description of a subset" .
+
+meta:age_max a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "age_max" ;
+    rdfs:range meta:double ;
+    skos:definition "maximum age in years" .
+
+meta:age_min a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "age_min" ;
+    rdfs:range meta:double ;
+    skos:definition "minimum age in years" .
+
+meta:aodc a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "aodc" ;
+    rdfs:range meta:double ;
+    skos:definition "units in cells per gram" .
+
+meta:average_water_level a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "average_water_level" ;
+    rdfs:range meta:double ;
+    skos:definition "units in ft above mean sea level (ft AMSL)" .
+
+meta:biomass_carbon a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "biomass_carbon" ;
+    rdfs:range meta:double ;
+    skos:definition "units in milligrams per gram" .
+
+meta:boncat_activity a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "boncat_activity" ;
+    rdfs:range meta:double ;
+    skos:definition "units in cells per gram" .
+
+meta:boolean a owl:Class,
+        meta:TypeDefinition ;
+    rdfs:label "boolean" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:boolean ;
+            owl:onProperty meta:topValue ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "A binary (true or false) value" .
+
+meta:boring a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "boring" ;
+    rdfs:range meta:double ;
+    skos:definition "boring depth in ft below groud surface (ft BGS)" .
+
+meta:boring_diameter a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "boring_diameter" ;
+    rdfs:range meta:double ;
+    skos:definition "boring diameter in inches" .
+
+meta:collection_date a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "collection_date" ;
+    rdfs:range meta:string .
+
+meta:collection_date_end a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "collection_date_end" ;
+    rdfs:range meta:string .
+
+meta:conductivity a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "conductivity" ;
+    rdfs:range meta:double ;
+    skos:definition "conductivity in millisiemens per centimeter" .
+
+<https://w3id.org/biolink/biolinkml/meta/coordinate_precision?> a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "coordinate_precision?" ;
+    rdfs:range meta:string .
+
+meta:current_archive_contact a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "current_archive_contact" ;
+    rdfs:range meta:string .
+
+meta:dapi_cell_count a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "dapi_cell_count" ;
+    rdfs:range meta:string ;
+    skos:definition "DAPI cell count in cells per gram" .
+
+meta:datetime a owl:Class,
+        meta:TypeDefinition ;
+    rdfs:label "datetime" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:dateTime ;
+            owl:onProperty meta:topValue ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "The combination of a date and time" .
+
+meta:depth_in_core_max a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "depth_in_core_max" ;
+    rdfs:range meta:double ;
+    skos:definition "maximum depth in core in meters" .
+
+meta:depth_in_core_min a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "depth_in_core_min" ;
+    rdfs:range meta:double ;
+    skos:definition "minimum depth in core in meters" .
+
+meta:dna_picogreen_total a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "dna_picogreen_total" ;
+    rdfs:range meta:double ;
+    skos:definition "units in nanograms" .
+
+meta:drive_casing_end_depth a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "drive_casing_end_depth" ;
+    rdfs:range meta:double ;
+    skos:definition "drive casing end depth in ft below ground surface (ft BGS)" .
+
+meta:drive_casing_id a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "drive_casing_id" ;
+    rdfs:range meta:double ;
+    skos:definition "drive casing inner diameter in inches" .
+
+meta:drive_casing_od a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "drive_casing_od" ;
+    rdfs:range meta:double ;
+    skos:definition "drive casing outer diameter in inches" .
+
+meta:drive_casing_start_depth a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "drive_casing_start_depth" ;
+    rdfs:range meta:double ;
+    skos:definition "units in ft below ground surface (ft BGS)" .
+
+meta:easting a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "easting" ;
+    rdfs:range meta:double ;
+    skos:definition "Easting in meters" .
+
+meta:elevation_end a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "elevation_end" ;
+    rdfs:range meta:double ;
+    skos:definition "Elevation end in meters" .
+
+meta:elevation_start a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "elevation_start" ;
+    rdfs:range meta:double ;
+    skos:definition "Elevation start in meters" .
+
+meta:filter a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "filter" ;
+    rdfs:range meta:double ;
+    skos:definition "Filter pore size in microns" .
+
+meta:float a owl:Class,
+        meta:TypeDefinition ;
+    rdfs:label "float" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:float ;
+            owl:onProperty meta:topValue ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "A real number that conforms to the xsd:float specification" .
+
+meta:geological_age a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "geological_age" ;
+    rdfs:range meta:double ;
+    skos:definition "Geological Age in years * 1000000" .
+
+meta:ground_elevation a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "ground_elevation" ;
+    rdfs:range meta:double ;
+    skos:definition "ground elevation in ft above mean sea level (ft AMSL)" .
+
+meta:igsn a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "igsn" ;
+    rdfs:range meta:string .
+
+meta:integer a owl:Class,
+        meta:TypeDefinition ;
+    rdfs:label "integer" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:integer ;
+            owl:onProperty meta:topValue ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "An integer" .
+
+meta:lower_seal_end_depth a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "lower_seal_end_depth" ;
+    rdfs:range meta:double ;
+    skos:definition "Lower seal end depth in ft below ground surface (ft BGS)" .
+
+meta:lower_seal_start_depth a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "lower_seal_start_depth" ;
+    rdfs:range meta:double ;
+    skos:definition "Lower seal start depth in ft below ground surface (ft BGS)" .
+
+meta:lower_seal_type a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "lower_seal_type" ;
+    rdfs:range meta:string .
+
+meta:max_water_level a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "max_water_level" ;
+    rdfs:range meta:double ;
+    skos:definition "Maximum water level in ft above mean sea level (ft AMSL)" .
+
+meta:min_water_level a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "min_water_level" ;
+    rdfs:range meta:double ;
+    skos:definition "Minimum water level in ft above mean sea level (ft AMSL)" .
+
+meta:ncname a owl:Class,
+        meta:TypeDefinition ;
+    rdfs:label "ncname" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty meta:topValue ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "Prefix part of CURIE" .
+
+meta:nodeidentifier a owl:Class,
+        meta:TypeDefinition ;
+    rdfs:label "nodeidentifier" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange <http://www.w3.org/ns/shex#nonLiteral> ;
+            owl:onProperty meta:topValue ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "A URI, CURIE or BNODE that represents a node in a model." .
+
+meta:northing a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "northing" ;
+    rdfs:range meta:double ;
+    skos:definition "Northing in meters" .
+
+meta:objectidentifier a owl:Class,
+        meta:TypeDefinition ;
+    rdfs:label "objectidentifier" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange <http://www.w3.org/ns/shex#iri> ;
+            owl:onProperty meta:topValue ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "A URI or CURIE that represents an object in the model." ;
+    skos:note "Used for inheritence and type checking" .
+
+meta:open_casing_depth a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "open_casing_depth" ;
+    rdfs:range meta:double ;
+    skos:definition "Open casing depth in ft below ground surface (ft BGS)" .
+
+meta:open_casing_id a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "open_casing_id" ;
+    rdfs:range meta:double ;
+    skos:definition "open casing inner diameter in inches (in)" .
+
+meta:open_casing_od a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "open_casing_od" ;
+    rdfs:range meta:double ;
+    skos:definition "open casing outer diameter in inches (in)" .
+
+meta:open_hole_depth a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "open_hole_depth" ;
+    rdfs:range meta:double ;
+    skos:definition "Open hole depth in ft below ground surface (ft BGS)" .
+
+meta:open_hole_diameter a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "open_hole_diameter" ;
+    rdfs:range meta:double ;
+    skos:definition "Open hole diameter in inches" .
+
+meta:open_interval_diameter a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "open_interval_diameter" ;
+    rdfs:range meta:double ;
+    skos:definition "Open interval diameter in inches" .
+
+meta:open_interval_end_depth a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "open_interval_end_depth" ;
+    rdfs:range meta:double ;
+    skos:definition "Open interval end depth in ft below ground surface (ft BGS)" .
+
+meta:open_interval_start_depth a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "open_interval_start_depth" ;
+    rdfs:range meta:double ;
+    skos:definition "Open interval start depth in ft below ground surface (ft BGS)" .
+
+meta:organic_carbon a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "organic_carbon" ;
+    rdfs:range meta:double ;
+    skos:definition "Organic carbon in milligrams per gram dry weight" .
+
+meta:packing_depth_end a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "packing_depth_end" ;
+    rdfs:range meta:double ;
+    skos:definition "Packind depth end in ft below ground surface (ft BGS)" .
+
+meta:packing_depth_start a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "packing_depth_start" ;
+    rdfs:range meta:double ;
+    skos:definition "Packind depth start in ft below ground surface (ft BGS)" .
+
+meta:parent_id a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "parent_id" ;
+    rdfs:range meta:string ;
+    skos:definition "id field of parent" .
+
+meta:parent_igsn a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "parent_igsn" ;
+    rdfs:range meta:string .
+
+meta:pore_water_extraction a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "pore_water_extraction" ;
+    rdfs:range meta:double ;
+    skos:definition "Pore water extraction in microliters" .
+
+<https://w3id.org/biolink/biolinkml/meta/redox_potential_?> a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "redox_potential_?" ;
+    rdfs:range meta:string .
+
+meta:relation_type a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "relation_type" ;
+    rdfs:range meta:string .
+
+meta:release_date a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "release_date" ;
+    rdfs:range meta:string .
+
+meta:screen_bottom_elevation a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "screen_bottom_elevation" ;
+    rdfs:range meta:double ;
+    skos:definition "Screen bottom elevation in ft above mean sea level (ft AMSL)" .
+
+meta:screen_end_depth a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "screen_end_depth" ;
+    rdfs:range meta:double ;
+    skos:definition "Screen end depth in ft below ground surface (ft BGS)" .
+
+meta:screen_start_depth a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "screen_start_depth" ;
+    rdfs:range meta:double ;
+    skos:definition "Screen start depth in ft below ground surface (ft BGS)" .
+
+meta:screen_top_elevation a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "screen_top_elevation" ;
+    rdfs:range meta:double ;
+    skos:definition "Screen top elevation in ft above mean sea level (ft AMSL)" .
+
+meta:screened_interval a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "screened_interval" ;
+    rdfs:range meta:double ;
+    skos:definition "Screened interval in ft" .
+
+meta:temperature a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "temperature" ;
+    rdfs:range meta:double .
+
+meta:top_of_casing_elevation a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "top_of_casing_elevation" ;
+    rdfs:range meta:double ;
+    skos:definition "Top of casing elevation in ft above mean sea level (ft AMSL)" .
+
+meta:top_of_casing_stickup a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "top_of_casing_stickup" ;
+    rdfs:range meta:double ;
+    skos:definition "Top of casing stickup in ft" .
+
+meta:top_of_fresh_bedrock a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "top_of_fresh_bedrock" ;
+    rdfs:range meta:double ;
+    skos:definition "Top of fresh bedrock in ft below ground surface (ft BGS)" .
+
+meta:top_of_weathered_bedrock a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "top_of_weathered_bedrock" ;
+    rdfs:range meta:double ;
+    skos:definition "Top of weathered bedrock in ft below ground surface (ft BGS)" .
+
+meta:total_carbon a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "total_carbon" ;
+    rdfs:range meta:double ;
+    skos:definition "Total carbon in milligrams per gram dry weight" .
+
+meta:total_nitrogen a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "total_nitrogen" ;
+    rdfs:range meta:double ;
+    skos:definition "Total nitrogen in milligrams per gram dry weight" .
+
+meta:upper_seal_end_depth a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "upper_seal_end_depth" ;
+    rdfs:range meta:double ;
+    skos:definition "Upper seal end depth in ft below ground surface (ft BGS)" .
+
+meta:upper_seal_start_depth a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "upper_seal_start_depth" ;
+    rdfs:range meta:double ;
+    skos:definition "Upper seal start depth in ft below ground surface (ft BGS)" .
+
+meta:uri a owl:Class,
+        meta:TypeDefinition ;
+    rdfs:label "uri" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:anyURI ;
+            owl:onProperty meta:topValue ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "a complete URI" .
+
+meta:uriorcurie a owl:Class,
+        meta:TypeDefinition ;
+    rdfs:label "uriorcurie" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:anyURI ;
+            owl:onProperty meta:topValue ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "a URI or a CURIE" .
+
+meta:well_casing_depth a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "well_casing_depth" ;
+    rdfs:range meta:double ;
+    skos:definition "Well casing depth in ft below ground surface (ft BGS)" .
+
+meta:well_casing_id a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "well_casing_id" ;
+    rdfs:range meta:double ;
+    skos:definition "Well casing inner diameter. units in inches" .
+
+meta:well_casing_od a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "well_casing_od" ;
+    rdfs:range meta:double ;
+    skos:definition "Well casing outer diameter. units in inches" .
+
+meta:age_unit a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "age_unit" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:aquifer a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "aquifer" ;
+    rdfs:range meta:string .
+
+meta:area_name a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "area_name" ;
+    rdfs:range meta:string .
+
+meta:average_water_level_ft_amsl a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "average_water_level_ft_amsl" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:biomass_carbon_mg_g a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "biomass_carbon_mg_g" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:biome a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "biome" ;
+    rdfs:range meta:string .
+
+meta:boring_diameter_in a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "boring_diameter_in" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:boring_ft_bgs a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "boring_ft_bgs" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:boring_refusal a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "boring_refusal" ;
+    rdfs:range meta:string .
+
+meta:city_township a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "city_township" ;
+    rdfs:range meta:string .
+
+meta:classification a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "classification" ;
+    rdfs:range meta:string .
+
+meta:collection_date_precision a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "collection_date_precision" ;
+    rdfs:range meta:string .
+
+meta:collection_method a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "collection_method" ;
+    rdfs:range meta:string .
+
+meta:collection_method_description a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "collection_method_description" ;
+    rdfs:range meta:string .
+
+meta:collection_time_end a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "collection_time_end" ;
+    rdfs:range meta:string .
+
+meta:collector_chief_scientist a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "collector_chief_scientist" ;
+    rdfs:range meta:string .
+
+meta:collector_chief_scientist_address a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "collector_chief_scientist_address" ;
+    rdfs:range meta:string .
+
+meta:condition a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "condition" ;
+    rdfs:range meta:string .
+
+meta:conductivity_ms_cm a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "conductivity_ms_cm" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:continent a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "continent" ;
+    rdfs:range meta:string .
+
+meta:county a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "county" ;
+    rdfs:range meta:string .
+
+meta:current_archive a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "current_archive" ;
+    rdfs:range meta:string .
+
+meta:dapi_cell_count_cells_g a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "dapi_cell_count_cells_g" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:depth_scale a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "depth_scale" ;
+    rdfs:range meta:string .
+
+meta:dna_picogreen_total_ng a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "dna_picogreen_total_ng" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:drive_casing_end_depth_ft_bgs a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "drive_casing_end_depth_ft_bgs" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:drive_casing_id_in a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "drive_casing_id_in" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:drive_casing_od_in a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "drive_casing_od_in" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:drive_casing_start_depth_ft_bgs a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "drive_casing_start_depth_ft_bgs" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:drive_casing_type a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "drive_casing_type" ;
+    rdfs:range meta:string .
+
+meta:env_package a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "env_package" ;
+    rdfs:range meta:string .
+
+meta:environmental_package a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "environmental_package" ;
+    rdfs:range meta:string .
+
+meta:experiment_name a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "experiment_name" ;
+    rdfs:range meta:string .
+
+meta:feature a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "feature" ;
+    rdfs:range meta:string .
+
+meta:field_name_informal_classification a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "field_name_informal_classification" ;
+    rdfs:range meta:string .
+
+meta:field_program_cruise a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "field_program_cruise" ;
+    rdfs:range meta:string .
+
+meta:fraction a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "fraction" ;
+    rdfs:range meta:string .
+
+meta:fractures_cavities_waterbreaks a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "fractures_cavities_waterbreaks" ;
+    rdfs:range meta:string .
+
+meta:functional_area a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "functional_area" ;
+    rdfs:range meta:string .
+
+meta:geological_unit a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "geological_unit" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:geological_zone a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "geological_zone" ;
+    rdfs:range meta:string .
+
+meta:ground_elevation_ft_amsl a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "ground_elevation_ft_amsl" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:installation_method a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "installation_method" ;
+    rdfs:range meta:string .
+
+meta:launch_id a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "launch_id" ;
+    rdfs:range meta:string .
+
+meta:launch_platform_name a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "launch_platform_name" ;
+    rdfs:range meta:string .
+
+meta:leucine_activity_ngc_day_cell a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "leucine_activity_ngc_day_cell" ;
+    rdfs:range meta:string ;
+    skos:definition "units in ngC/day cell" .
+
+meta:locality a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "locality" ;
+    rdfs:range meta:string .
+
+meta:locality_description a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "locality_description" ;
+    rdfs:range meta:string .
+
+meta:location_description a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "location_description" ;
+    rdfs:range meta:string .
+
+meta:lower_seal_end_depth_ft_bgs a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "lower_seal_end_depth_ft_bgs" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:lower_seal_start_depth_ft_bgs a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "lower_seal_start_depth_ft_bgs" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:lower_seal_type_ft_bgs a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "lower_seal_type_ft_bgs" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:maturation_time a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "maturation_time" ;
+    rdfs:range meta:string .
+
+meta:max_water_level_ft_amsl a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "max_water_level_ft_amsl" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:method a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "method" ;
+    rdfs:range meta:string .
+
+meta:min_water_level_ft_amsl a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "min_water_level_ft_amsl" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:moisture a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "moisture" ;
+    rdfs:range meta:double ;
+    skos:definition "percent moisture" .
+
+meta:name_of_physiographic_feature a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "name_of_physiographic_feature" ;
+    rdfs:range meta:string .
+
+meta:navigation_type a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "navigation_type" ;
+    rdfs:range meta:string .
+
+meta:open a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "open" ;
+    rdfs:range meta:string .
+
+meta:open_casing_depth_ft_bgs a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "open_casing_depth_ft_bgs" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:open_casing_id_in a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "open_casing_id_in" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:open_casing_od_in a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "open_casing_od_in" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:open_casing_type a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "open_casing_type" ;
+    rdfs:range meta:string .
+
+meta:open_hole_depth_ft_bgs a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "open_hole_depth_ft_bgs" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:open_hole_diameter_in a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "open_hole_diameter_in" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:open_interval_diameter_in a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "open_interval_diameter_in" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:open_interval_end_depth_ft_bgs a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "open_interval_end_depth_ft_bgs" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:open_interval_start_depth_ft_bgs a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "open_interval_start_depth_ft_bgs" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:original_archive a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "original_archive" ;
+    rdfs:range meta:string .
+
+meta:original_archive_contact a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "original_archive_contact" ;
+    rdfs:range meta:string .
+
+meta:origination_or_plug_abandon a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "origination_or_plug_abandon" ;
+    rdfs:range meta:string .
+
+meta:other_name a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "other_name" ;
+    rdfs:range meta:string .
+
+meta:other_names a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "other_names" ;
+    rdfs:range meta:string .
+
+meta:packing_depth_end_ft_bgs a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "packing_depth_end_ft_bgs" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:packing_depth_start_ft_bgs a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "packing_depth_start_ft_bgs" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:packing_type a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "packing_type" ;
+    rdfs:range meta:string .
+
+meta:ph a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "ph" ;
+    rdfs:range meta:double ;
+    skos:definition "pH of sample" .
+
+meta:platform_name a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "platform_name" ;
+    rdfs:range meta:string .
+
+meta:platform_type a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "platform_type" ;
+    rdfs:range meta:string .
+
+meta:pore_water_extraction_microliters a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "pore_water_extraction_microliters" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:primary_physiographic_feature a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "primary_physiographic_feature" ;
+    rdfs:range meta:string .
+
+meta:purpose a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "purpose" ;
+    rdfs:range meta:string .
+
+meta:recovery_factor a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "recovery_factor" ;
+    rdfs:range meta:string .
+
+meta:region a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "region" ;
+    rdfs:range meta:string .
+
+meta:related_identifiers a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "related_identifiers" ;
+    rdfs:range meta:string .
+
+meta:replicate a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "replicate" ;
+    rdfs:range meta:string .
+
+meta:rock_formation a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "rock_formation" ;
+    rdfs:range meta:string .
+
+meta:sample_description a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "sample_description" ;
+    rdfs:range meta:string .
+
+meta:sample_name a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "sample_name" ;
+    rdfs:range meta:string .
+
+meta:sampleid a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "sampleid" ;
+    rdfs:range meta:string .
+
+meta:screen_type a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "screen_type" ;
+    rdfs:range meta:string .
+
+meta:screened a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "screened" ;
+    rdfs:range meta:string .
+
+meta:size a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "size" ;
+    rdfs:range meta:double ;
+    skos:definition "Size in meters cubed" .
+
+meta:size_unit a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "size_unit" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:state_province a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "state_province" ;
+    rdfs:range meta:string .
+
+meta:sub-object_type a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "sub-object_type" ;
+    rdfs:range meta:string .
+
+meta:temperature_celsius a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "temperature_celsius" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:time_zone a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "time_zone" ;
+    rdfs:range meta:string .
+
+meta:topoffreshbedrock_ft_bgs a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "topoffreshbedrock_ft_bgs" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:topofweatheredbedrock_ft_bgs a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "topofweatheredbedrock_ft_bgs" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:total_carbon_mg_g_dry_weight a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "total_carbon_mg_g_dry_weight" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:total_nitrogen_mg_g_dry_weight a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "total_nitrogen_mg_g_dry_weight" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:treatment a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "treatment" ;
+    rdfs:range meta:string .
+
+meta:type_of_well a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "type_of_well" ;
+    rdfs:range meta:string .
+
+meta:upper_seal_end_depth_ft_bgs a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "upper_seal_end_depth_ft_bgs" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:upper_seal_start_depth_ft_bgs a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "upper_seal_start_depth_ft_bgs" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:upper_seal_type a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "upper_seal_type" ;
+    rdfs:range meta:string .
+
+meta:vertical_datum a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "vertical_datum" ;
+    rdfs:range meta:string .
+
+meta:well_casing_id_in a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "well_casing_id_in" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:well_casing_od_in a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "well_casing_od_in" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:well_casing_type a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "well_casing_type" ;
+    rdfs:range meta:string .
+
+meta:well_name a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "well_name" ;
+    rdfs:range meta:string .
+
+meta:well_status a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "well_status" ;
+    rdfs:range meta:string .
+
+meta:zone a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "zone" ;
+    rdfs:range meta:string .
+
+meta:ClassDefinition a owl:Class ;
+    rdfs:label "class_definition" ;
+    skos:definition "the definition of a class or interface" .
+
+meta:collection_time a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "collection_time" ;
+    rdfs:range meta:string .
+
+meta:country a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "country" ;
+    rdfs:range meta:string .
+
+meta:date a owl:Class,
+        owl:ObjectProperty,
+        meta:SlotDefinition,
+        meta:TypeDefinition ;
+    rdfs:label "date" ;
+    rdfs:range meta:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:date ;
+            owl:onProperty meta:topValue ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "a date (year, month and day) in an idealized calendar" ;
+    skos:editorialNote "URI is dateTime because OWL reasoners don't work with straight date or time" .
+
+meta:depth a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "depth" ;
+    rdfs:range meta:double ;
+    skos:definition "depth in centimeters below ground surface (cm BGS)" .
+
+meta:description a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "description" ;
+    rdfs:range meta:string .
+
+meta:elevation a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "elevation" ;
+    rdfs:range meta:string .
+
+meta:env_pakcage a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "env_pakcage" ;
+    rdfs:range meta:string ;
+    skos:definition "Auto-populated" .
+
+meta:id a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "id" ;
+    rdfs:range meta:string ;
+    skos:definition "Unique identifier for the Sample" .
+
+meta:latitude a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "latitude" ;
+    rdfs:range meta:double ;
+    skos:definition "Latitude in degrees" .
+
+meta:longitude a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "longitude" ;
+    rdfs:range meta:double ;
+    skos:definition "Longitude in degrees" .
+
+meta:material a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "material" ;
+    rdfs:range meta:string .
+
+meta:name a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "name" ;
+    rdfs:range meta:string ;
+    skos:definition "name validator" .
+
+meta:time a owl:Class,
+        owl:ObjectProperty,
+        meta:SlotDefinition,
+        meta:TypeDefinition ;
+    rdfs:label "time" ;
+    rdfs:range meta:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:dateTime ;
+            owl:onProperty meta:topValue ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "A time object represents a (local) time of day, independent of any particular day" ;
+    skos:editorialNote "URI is dateTime because OWL reasoners don't work with straight date or time" .
+
+meta:timezone a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "timezone" ;
+    rdfs:range meta:string .
+
+meta:well a owl:ObjectProperty,
+        meta:SlotDefinition ;
+    rdfs:label "well" ;
+    rdfs:range meta:string .
+
+meta:TypeDefinition a owl:Class ;
+    rdfs:label "type_definition" ;
+    skos:definition "A data type definition." .
+
+meta:topValue a owl:DatatypeProperty ;
+    rdfs:label "value" .
+
+meta:double a owl:Class,
+        meta:TypeDefinition ;
+    rdfs:label "double" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:double ;
+            owl:onProperty meta:topValue ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "A real number that conforms to the xsd:double specification" .
+
+meta:SlotDefinition a owl:Class ;
+    rdfs:label "slot_definition" ;
+    skos:definition "the definition of a property or a slot" .
+
+meta:string a owl:Class,
+        meta:TypeDefinition ;
+    rdfs:label "string" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty meta:topValue ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "A character string" .
+
+
+

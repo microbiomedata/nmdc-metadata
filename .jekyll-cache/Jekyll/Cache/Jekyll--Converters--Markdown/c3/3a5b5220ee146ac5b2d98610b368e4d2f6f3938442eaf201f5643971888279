@@ -1,0 +1,49 @@
+I"�<h1 id="type-has_numeric_value">Type: has_numeric_value</h1>
+
+<p>Links a quantity value to a number</p>
+
+<p>URI: <a href="https://microbiomedata/meta/has_numeric_value">nmdc:has_numeric_value</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p>None -&gt;  <sub>OPT</sub> <a href="types/Float.md">Float</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<h2 id="children">Children</h2>
+
+<ul>
+  <li><a href="quantity_value_has_numeric_value.md">quantity value➞has numeric value</a></li>
+</ul>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="IntegerValue.md">IntegerValue</a></li>
+</ul>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Mappings:</strong></td>
+      <td> </td>
+      <td>qud:quantityValue</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>schema:value</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

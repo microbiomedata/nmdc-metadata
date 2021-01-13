@@ -1,0 +1,183 @@
+I"<h1 id="type-study">Type: Study</h1>
+
+<p>A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.</p>
+
+<p>URI: <a href="https://microbiomedata/meta/Study">nmdc:Study</a></p>
+
+<hr />
+
+<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[AttributeValue]%3Cdoi%200..1-++[Study%7Cid:string;name:string%20%3F;alternate_identifiers:string%20%2A;description(i):string%20%3F],[PersonValue]%3Cprincipal%20investigator%200..1-++[Study],[AttributeValue]%3Cspecific_ecosystem%200..1-++[Study],[AttributeValue]%3Cecosystem_subtype%200..1-++[Study],[AttributeValue]%3Cecosystem_type%200..1-++[Study],[AttributeValue]%3Cecosystem_category%200..1-++[Study],[AttributeValue]%3Cecosystem%200..1-++[Study],[OmicsProcessing]-%20part%20of%200..%2A%3E[Study],[Database]++-%20study%20set%200..%2A%3E[Study],[NamedThing]%5E-[Study],[PersonValue],[OmicsProcessing],[NamedThing],[Database],[AttributeValue]" alt="img" /></p>
+
+<hr />
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="NamedThing.md">NamedThing</a> - a databased entity or concept/class</li>
+</ul>
+
+<h2 id="referenced-by-class">Referenced by class</h2>
+
+<ul>
+  <li><strong><a href="OmicsProcessing.md">OmicsProcessing</a></strong> <em><a href="omics_processing_part_of.md">omics processing➞part of</a></em>  <sub>0..*</sub>  <strong><a href="Study.md">Study</a></strong></li>
+  <li><strong><a href="Database.md">Database</a></strong> <em><a href="study_set.md">study set</a></em>  <sub>0..*</sub>  <strong><a href="Study.md">Study</a></strong></li>
+</ul>
+
+<h2 id="attributes">Attributes</h2>
+
+<h3 id="own">Own</h3>
+
+<ul>
+  <li><a href="doi.md">doi</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="AttributeValue.md">AttributeValue</a></li>
+    </ul>
+  </li>
+  <li><a href="ecosystem.md">ecosystem</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: TODO</li>
+      <li>range: <a href="AttributeValue.md">AttributeValue</a></li>
+    </ul>
+  </li>
+  <li><a href="ecosystem_category.md">ecosystem_category</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: TODO</li>
+      <li>range: <a href="AttributeValue.md">AttributeValue</a></li>
+    </ul>
+  </li>
+  <li><a href="ecosystem_subtype.md">ecosystem_subtype</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: TODO</li>
+      <li>range: <a href="AttributeValue.md">AttributeValue</a></li>
+    </ul>
+  </li>
+  <li><a href="ecosystem_type.md">ecosystem_type</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: TODO</li>
+      <li>range: <a href="AttributeValue.md">AttributeValue</a></li>
+    </ul>
+  </li>
+  <li><a href="principal_investigator.md">principal investigator</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: represents the PI</li>
+      <li>range: <a href="PersonValue.md">PersonValue</a></li>
+    </ul>
+  </li>
+  <li><a href="specific_ecosystem.md">specific_ecosystem</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: TODO</li>
+      <li>range: <a href="AttributeValue.md">AttributeValue</a></li>
+    </ul>
+  </li>
+  <li><a href="study_alternate_identifiers.md">study➞alternate identifiers</a>  <sub>0..*</sub>
+    <ul>
+      <li>Description: The same study may have distinct identifiers in different databases (e.g. GOLD and EMSL)</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="study_id.md">study➞id</a>  <sub>REQ</sub>
+    <ul>
+      <li>Description: The primary identifier for the study.</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="study_name.md">study➞name</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: A human readable name or description of the study.</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="inherited-from-named-thing">Inherited from named thing:</h3>
+
+<ul>
+  <li><a href="id.md">id</a>  <sub>REQ</sub>
+    <ul>
+      <li>Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="name.md">name</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: A human readable label for an entity</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="description.md">description</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: a human-readable description of a thing</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="alternate_identifiers.md">alternate identifiers</a>  <sub>0..*</sub>
+    <ul>
+      <li>Description: Non-primary identifiers</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="domain-for-slot">Domain for slot:</h3>
+
+<ul>
+  <li><a href="study_alternate_identifiers.md">study➞alternate identifiers</a>  <sub>0..*</sub>
+    <ul>
+      <li>Description: The same study may have distinct identifiers in different databases (e.g. GOLD and EMSL)</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="study_id.md">study➞id</a>  <sub>REQ</sub>
+    <ul>
+      <li>Description: The primary identifier for the study.</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="study_name.md">study➞name</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: A human readable name or description of the study.</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Aliases:</strong></td>
+      <td> </td>
+      <td>proposal</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>research proposal</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>research study</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>investigation</td>
+    </tr>
+    <tr>
+      <td><strong>In Subsets:</strong></td>
+      <td> </td>
+      <td>sample subset</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

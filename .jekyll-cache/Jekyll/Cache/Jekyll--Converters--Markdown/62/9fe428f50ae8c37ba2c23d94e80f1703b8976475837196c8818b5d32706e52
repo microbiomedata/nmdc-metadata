@@ -1,0 +1,45 @@
+I"�<h1 id="type-was_informed_by">Type: was_informed_by</h1>
+
+<p>URI: <a href="https://microbiomedata/meta/was_informed_by">nmdc:was_informed_by</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p>None -&gt;  <sub>OPT</sub> <a href="Activity.md">Activity</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="Activity.md">Activity</a></li>
+  <li><a href="Agent.md">Agent</a></li>
+  <li><a href="MetabolomicsAnalysisActivity.md">MetabolomicsAnalysisActivity</a></li>
+  <li><a href="MetagenomeAnnotationActivity.md">MetagenomeAnnotationActivity</a></li>
+  <li><a href="MetagenomeAssembly.md">MetagenomeAssembly</a></li>
+  <li><a href="MetaproteomicsAnalysisActivity.md">MetaproteomicsAnalysisActivity</a></li>
+  <li><a href="ReadQCAnalysisActivity.md">ReadQCAnalysisActivity</a></li>
+  <li><a href="WorkflowExecutionActivity.md">WorkflowExecutionActivity</a></li>
+</ul>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Mappings:</strong></td>
+      <td> </td>
+      <td>prov:wasInformedBy</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

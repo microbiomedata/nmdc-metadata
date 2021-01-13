@@ -1,0 +1,239 @@
+{
+   "$id": "https://microbiomedata/schema/mixs_meta",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "definitions": {
+      "SummaryTemplate": {
+         "description": "Describes the MIxS summary sheet",
+         "properties": {
+            "Definition": {
+               "description": "a description of the item",
+               "type": "string"
+            },
+            "Environmental_package": {
+               "description": "name of a checklist item",
+               "type": "string"
+            },
+            "Example": {
+               "description": "Examples of values of the item",
+               "type": "string"
+            },
+            "Expected_value": {
+               "description": "short description and/or expected value",
+               "type": "string"
+            },
+            "Item": {
+               "description": "full name",
+               "type": "string"
+            },
+            "MIXS_ID": {
+               "type": "string"
+            },
+            "Occurence": {
+               "description": "How many times it can be used: 1, m, or none 0",
+               "type": "string"
+            },
+            "Position": {
+               "description": "as it appears in publication",
+               "type": "string"
+            },
+            "Preferred_unit": {
+               "description": "A unit suggestion if a measurement value is given",
+               "type": "string"
+            },
+            "Requirement": {
+               "description": "if required globally",
+               "type": "string"
+            },
+            "Structured_comment_name": {
+               "description": "name of a checklist item",
+               "type": "string"
+            },
+            "Value_syntax": {
+               "description": "proper syntax for writing the item",
+               "type": "string"
+            }
+         },
+         "required": [
+            "Structured_comment_name",
+            "Item",
+            "Definition",
+            "Value_syntax"
+         ],
+         "title": "SummaryTemplate",
+         "type": "object"
+      },
+      "Template": {
+         "description": "A representation of a MIxS template",
+         "properties": {
+            "Definition": {
+               "description": "a description of the item",
+               "type": "string"
+            },
+            "Example": {
+               "description": "Examples of values of the item",
+               "type": "string"
+            },
+            "Expected_value": {
+               "description": "short description and/or expected value",
+               "type": "string"
+            },
+            "Item": {
+               "description": "full name",
+               "type": "string"
+            },
+            "MIXS_ID": {
+               "type": "string"
+            },
+            "Occurence": {
+               "description": "How many times it can be used: 1, m, or none 0",
+               "type": "string"
+            },
+            "Position": {
+               "description": "as it appears in publication",
+               "type": "string"
+            },
+            "Preferred_unit": {
+               "description": "A unit suggestion if a measurement value is given",
+               "type": "string"
+            },
+            "Section": {
+               "description": "The section of the item",
+               "type": "string"
+            },
+            "Structured_comment_name": {
+               "description": "name of a checklist item",
+               "type": "string"
+            },
+            "Value_syntax": {
+               "description": "proper syntax for writing the item",
+               "type": "string"
+            },
+            "me": {
+               "type": "string"
+            },
+            "migs_ba": {
+               "type": "string"
+            },
+            "migs_eu": {
+               "description": "Examples of values of the item",
+               "type": "string"
+            },
+            "migs_org": {
+               "type": "string"
+            },
+            "migs_pl": {
+               "type": "string"
+            },
+            "migs_vi": {
+               "type": "string"
+            },
+            "mimag": {
+               "type": "string"
+            },
+            "mimarks_c": {
+               "type": "string"
+            },
+            "mimarks_s": {
+               "type": "string"
+            },
+            "misag": {
+               "type": "string"
+            },
+            "miuvig": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "Structured_comment_name",
+            "Item",
+            "Definition",
+            "Value_syntax",
+            "Section"
+         ],
+         "title": "Template",
+         "type": "object"
+      }
+   },
+   "properties": {
+      "Definition": {
+         "description": "a description of the item",
+         "type": "string"
+      },
+      "Example": {
+         "description": "Examples of values of the item",
+         "type": "string"
+      },
+      "Expected_value": {
+         "description": "short description and/or expected value",
+         "type": "string"
+      },
+      "Item": {
+         "description": "full name",
+         "type": "string"
+      },
+      "MIXS_ID": {
+         "type": "string"
+      },
+      "Occurence": {
+         "description": "How many times it can be used: 1, m, or none 0",
+         "type": "string"
+      },
+      "Position": {
+         "description": "as it appears in publication",
+         "type": "string"
+      },
+      "Preferred_unit": {
+         "description": "A unit suggestion if a measurement value is given",
+         "type": "string"
+      },
+      "Section": {
+         "description": "The section of the item",
+         "type": "string"
+      },
+      "Structured_comment_name": {
+         "description": "name of a checklist item",
+         "type": "string"
+      },
+      "Value_syntax": {
+         "description": "proper syntax for writing the item",
+         "type": "string"
+      },
+      "me": {
+         "type": "string"
+      },
+      "migs_ba": {
+         "type": "string"
+      },
+      "migs_eu": {
+         "description": "Examples of values of the item",
+         "type": "string"
+      },
+      "migs_org": {
+         "type": "string"
+      },
+      "migs_pl": {
+         "type": "string"
+      },
+      "migs_vi": {
+         "type": "string"
+      },
+      "mimag": {
+         "type": "string"
+      },
+      "mimarks_c": {
+         "type": "string"
+      },
+      "mimarks_s": {
+         "type": "string"
+      },
+      "misag": {
+         "type": "string"
+      },
+      "miuvig": {
+         "type": "string"
+      }
+   },
+   "title": "MIxS Meta-Schema",
+   "type": "object"
+}
+

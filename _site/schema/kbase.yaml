@@ -1,0 +1,950 @@
+id: https://microbiomedata/schema/kbase
+description: NMDC rendering of KBase metadata schema
+imports:
+- biolinkml:types
+prefixes:
+  biolinkml: https://w3id.org/biolink/biolinkml/
+  kbase: http://kbase.us/
+default_prefix: kbase
+slots:
+  age_max:
+    aliases:
+    - Age (max)
+    description: maximum age in years
+    range: double
+  age_min:
+    aliases:
+    - Age (min)
+    description: minimum age in years
+    range: double
+  aodc:
+    aliases:
+    - AODC
+    description: units in cells per gram
+    range: double
+  aquifer:
+    aliases:
+    - Aquifer
+    range: string
+  area_name:
+    aliases:
+    - Area Name
+    range: string
+  average_water_level:
+    aliases:
+    - Average Water Level
+    description: units in ft above mean sea level (ft AMSL)
+    range: double
+  biomass_carbon:
+    aliases:
+    - Biomass Carbon
+    description: units in milligrams per gram
+    range: double
+  biome:
+    aliases:
+    - Biome
+    range: string
+  boncat_activity:
+    aliases:
+    - BONCAT Activity
+    description: units in cells per gram
+    range: double
+  boring:
+    aliases:
+    - Boring depth
+    description: boring depth in ft below groud surface (ft BGS)
+    range: double
+  boring_diameter:
+    aliases:
+    - Boring Diameter
+    description: boring diameter in inches
+    range: double
+  boring_refusal:
+    aliases:
+    - Boring Refusal
+    range: string
+  city_township:
+    aliases:
+    - City/Township
+    range: string
+  classification:
+    aliases:
+    - Classification
+    range: string
+  collection_date:
+    aliases:
+    - Collection date
+    range: string
+  collection_date_end:
+    aliases:
+    - Collection date (end)
+    range: string
+  collection_date_precision:
+    aliases:
+    - Collection date precision
+    range: string
+  collection_method:
+    aliases:
+    - Collection method
+    range: string
+  collection_method_description:
+    aliases:
+    - Collection method description
+    range: string
+  collection_time:
+    aliases:
+    - Collection time
+    range: string
+  collection_time_end:
+    aliases:
+    - Collection time (end)
+    range: string
+  collector_chief_scientist:
+    aliases:
+    - Collector/Chief Scientist name
+    range: string
+  collector_chief_scientist_address:
+    aliases:
+    - Collector/Chief Scientist address
+    range: string
+  condition:
+    aliases:
+    - Condition
+    range: string
+  conductivity:
+    aliases:
+    - Conductivity
+    description: conductivity in millisiemens per centimeter
+    range: double
+  continent:
+    aliases:
+    - Continent
+    range: string
+  coordinate_precision?:
+    aliases:
+    - Coordinate Precision
+    range: string
+  country:
+    aliases:
+    - Country
+    range: string
+  county:
+    aliases:
+    - County
+    range: string
+  current_archive:
+    aliases:
+    - Current archive
+    range: string
+  current_archive_contact:
+    aliases:
+    - Current archive contact name
+    range: string
+  dapi_cell_count:
+    aliases:
+    - DAPI Cell Count
+    description: DAPI cell count in cells per gram
+    range: string
+  date:
+    aliases:
+    - Date
+    range: string
+  depth:
+    aliases:
+    - Depth
+    description: depth in centimeters below ground surface (cm BGS)
+    range: double
+  depth_in_core_max:
+    aliases:
+    - Depth in Core (max)
+    description: maximum depth in core in meters
+    range: double
+  depth_in_core_min:
+    aliases:
+    - Depth in Core (min)
+    description: minimum depth in core in meters
+    range: double
+  depth_scale:
+    aliases:
+    - Depth scale
+    range: string
+  description:
+    aliases:
+    - Description
+    range: string
+  dna_picogreen_total:
+    aliases:
+    - DNA Picogreen Total
+    description: units in nanograms
+    range: double
+  drive_casing_end_depth:
+    aliases:
+    - Drive Casing End Depth
+    description: drive casing end depth in ft below ground surface (ft BGS)
+    range: double
+  drive_casing_id:
+    aliases:
+    - Drive Casing ID
+    description: drive casing inner diameter in inches
+    range: double
+  drive_casing_od:
+    aliases:
+    - Drive Casing OD
+    description: drive casing outer diameter in inches
+    range: double
+  drive_casing_start_depth:
+    aliases:
+    - Drive Casing Start Depth
+    description: units in ft below ground surface (ft BGS)
+    range: double
+  drive_casing_type:
+    aliases:
+    - Drive Casing Type
+    range: string
+  easting:
+    aliases:
+    - Easting
+    description: Easting in meters
+    range: double
+  elevation:
+    aliases:
+    - Elevation
+    range: string
+  elevation_end:
+    aliases:
+    - Elevation end
+    description: Elevation end in meters
+    range: double
+  elevation_start:
+    aliases:
+    - Elevation start
+    description: Elevation start in meters
+    range: double
+  env_package:
+    aliases:
+    - Env_package
+    range: string
+  environmental_package:
+    aliases:
+    - Environmental Package
+    range: string
+  experiment_name:
+    aliases:
+    - Experiment Name
+    range: string
+  feature:
+    aliases:
+    - Feature
+    range: string
+  field_name_informal_classification:
+    aliases:
+    - Field name (informal classification)
+    range: string
+  field_program_cruise:
+    aliases:
+    - Field program/cruise
+    range: string
+  filter:
+    aliases:
+    - Filter
+    description: Filter pore size in microns
+    range: double
+  fraction:
+    aliases:
+    - Fraction
+    range: string
+  fractures_cavities_waterbreaks:
+    aliases:
+    - Fractures/Cavities/WaterBreaks
+    range: string
+  functional_area:
+    aliases:
+    - Functional Area
+    range: string
+  geological_age:
+    aliases:
+    - Geological Age
+    description: Geological Age in years * 1000000
+    range: double
+  geological_zone:
+    aliases:
+    - Geological Zone
+    range: string
+  ground_elevation:
+    aliases:
+    - Ground Elevation
+    description: ground elevation in ft above mean sea level (ft AMSL)
+    range: double
+  id:
+    aliases:
+    - Id
+    description: Unique identifier for the Sample
+    range: string
+  igsn:
+    aliases:
+    - IGSN
+    range: string
+  installation_method:
+    aliases:
+    - Installation Method
+    range: string
+  latitude:
+    aliases:
+    - Latitude
+    description: Latitude in degrees
+    range: double
+  launch_id:
+    aliases:
+    - Launch ID
+    range: string
+  launch_platform_name:
+    aliases:
+    - Launch platform name
+    range: string
+  leucine_activity_ngc_day_cell:
+    aliases:
+    - Leucine Activity (ngC/day cell)
+    description: units in ngC/day cell
+    range: string
+  locality:
+    aliases:
+    - Locality
+    range: string
+  locality_description:
+    aliases:
+    - Locality description
+    range: string
+  location_description:
+    aliases:
+    - Location description
+    range: string
+  longitude:
+    aliases:
+    - Longitude
+    description: Longitude in degrees
+    range: double
+  lower_seal_end_depth:
+    aliases:
+    - Lower Seal End Depth
+    description: Lower seal end depth in ft below ground surface (ft BGS)
+    range: double
+  lower_seal_start_depth:
+    aliases:
+    - Lower Seal Start Depth
+    description: Lower seal start depth in ft below ground surface (ft BGS)
+    range: double
+  lower_seal_type:
+    aliases:
+    - Lower Seal Type
+    range: string
+  material:
+    aliases:
+    - Material
+    range: string
+  maturation_time:
+    aliases:
+    - Maturation Time
+    range: string
+  max_water_level:
+    aliases:
+    - Max Water Level
+    description: Maximum water level in ft above mean sea level (ft AMSL)
+    range: double
+  method:
+    aliases:
+    - Method
+    range: string
+  min_water_level:
+    aliases:
+    - Min Water Level
+    description: Minimum water level in ft above mean sea level (ft AMSL)
+    range: double
+  moisture:
+    aliases:
+    - Moisture
+    description: percent moisture
+    range: double
+  name:
+    aliases:
+    - Name
+    description: name validator
+    range: string
+  name_of_physiographic_feature:
+    aliases:
+    - Name of physiographic feature
+    range: string
+  navigation_type:
+    aliases:
+    - Navigation type
+    range: string
+  northing:
+    aliases:
+    - Northing
+    description: Northing in meters
+    range: double
+  open:
+    aliases:
+    - Open
+    range: string
+  open_casing_depth:
+    aliases:
+    - Open Casing Depth
+    description: Open casing depth in ft below ground surface (ft BGS)
+    range: double
+  open_casing_id:
+    aliases:
+    - Open Casing ID
+    description: open casing inner diameter in inches (in)
+    range: double
+  open_casing_od:
+    aliases:
+    - Open Casing OD
+    description: open casing outer diameter in inches (in)
+    range: double
+  open_casing_type:
+    aliases:
+    - Open Casing Type
+    range: string
+  open_hole_depth:
+    aliases:
+    - Open Hole Depth
+    description: Open hole depth in ft below ground surface (ft BGS)
+    range: double
+  open_hole_diameter:
+    aliases:
+    - Open Hole Diameter
+    description: Open hole diameter in inches
+    range: double
+  open_interval_diameter:
+    aliases:
+    - Open Interval Diameter
+    description: Open interval diameter in inches
+    range: double
+  open_interval_end_depth:
+    aliases:
+    - Open Interval End Depth
+    description: Open interval end depth in ft below ground surface (ft BGS)
+    range: double
+  open_interval_start_depth:
+    aliases:
+    - Open Interval Start Depth
+    description: Open interval start depth in ft below ground surface (ft BGS)
+    range: double
+  organic_carbon:
+    aliases:
+    - Organic Carbon
+    description: Organic carbon in milligrams per gram dry weight
+    range: double
+  original_archive:
+    aliases:
+    - Original archive
+    range: string
+  original_archive_contact:
+    aliases:
+    - Original archive contact
+    range: string
+  origination_or_plug_abandon:
+    aliases:
+    - Origination or Plug/Abandon
+    range: string
+  other_name:
+    aliases:
+    - Other Name
+    range: string
+  other_names:
+    aliases:
+    - Other name(s)
+    range: string
+  packing_depth_end:
+    aliases:
+    - Packing Depth End
+    description: Packind depth end in ft below ground surface (ft BGS)
+    range: double
+  packing_depth_start:
+    aliases:
+    - Packing Depth Start
+    description: Packind depth start in ft below ground surface (ft BGS)
+    range: double
+  packing_type:
+    aliases:
+    - Packing Type
+    range: string
+  parent_id:
+    aliases:
+    - Parent_id
+    description: id field of parent
+    range: string
+  parent_igsn:
+    aliases:
+    - Parent IGSN
+    range: string
+  ph:
+    aliases:
+    - Ph
+    description: pH of sample
+    range: double
+  platform_name:
+    aliases:
+    - Platform name
+    range: string
+  platform_type:
+    aliases:
+    - Platform type
+    range: string
+  pore_water_extraction:
+    aliases:
+    - Pore Water Extraction
+    description: Pore water extraction in microliters
+    range: double
+  primary_physiographic_feature:
+    aliases:
+    - Primary physiographic feature
+    range: string
+  purpose:
+    aliases:
+    - Purpose
+    range: string
+  recovery_factor:
+    aliases:
+    - Recovery Factor
+    range: string
+  redox_potential_?:
+    aliases:
+    - Redox Potential
+    range: string
+  region:
+    aliases:
+    - Region
+    range: string
+  related_identifiers:
+    aliases:
+    - Related Identifiers
+    range: string
+  relation_type:
+    aliases:
+    - Relation Type
+    range: string
+  release_date:
+    aliases:
+    - Release date
+    range: string
+  replicate:
+    aliases:
+    - Replicate
+    range: string
+  rock_formation:
+    aliases:
+    - Rock Formation
+    range: string
+  sample_description:
+    aliases:
+    - Sample Description
+    range: string
+  sample_name:
+    aliases:
+    - Sample Name
+    range: string
+  sampleid:
+    aliases:
+    - SampleID
+    range: string
+  screen_bottom_elevation:
+    aliases:
+    - Screen Bottom Elevation
+    description: Screen bottom elevation in ft above mean sea level (ft AMSL)
+    range: double
+  screen_end_depth:
+    aliases:
+    - Screen End Depth
+    description: Screen end depth in ft below ground surface (ft BGS)
+    range: double
+  screen_start_depth:
+    aliases:
+    - Screen Start Depth
+    description: Screen start depth in ft below ground surface (ft BGS)
+    range: double
+  screen_top_elevation:
+    aliases:
+    - Screen Top Elevation
+    description: Screen top elevation in ft above mean sea level (ft AMSL)
+    range: double
+  screen_type:
+    aliases:
+    - Screen Type
+    range: string
+  screened:
+    aliases:
+    - Screened
+    range: string
+  screened_interval:
+    aliases:
+    - Screened Interval
+    description: Screened interval in ft
+    range: double
+  size:
+    aliases:
+    - Size
+    description: Size in meters cubed
+    range: double
+  state_province:
+    aliases:
+    - State/Province
+    range: string
+  sub-object_type:
+    aliases:
+    - Sub-object type
+    range: string
+  temperature:
+    aliases:
+    - Temperature
+    range: double
+  time:
+    aliases:
+    - Time
+    range: string
+  time_zone:
+    aliases:
+    - Time Zone
+    range: string
+  timezone:
+    aliases:
+    - Timezone
+    range: string
+  top_of_casing_elevation:
+    aliases:
+    - Top of Casing Elevation
+    description: Top of casing elevation in ft above mean sea level (ft AMSL)
+    range: double
+  top_of_casing_stickup:
+    aliases:
+    - Top of Casing Stickup
+    description: Top of casing stickup in ft
+    range: double
+  top_of_fresh_bedrock:
+    aliases:
+    - Top of Fresh Bedrock
+    description: Top of fresh bedrock in ft below ground surface (ft BGS)
+    range: double
+  top_of_weathered_bedrock:
+    aliases:
+    - Top of Weathered Bedrock
+    description: Top of weathered bedrock in ft below ground surface (ft BGS)
+    range: double
+  total_carbon:
+    aliases:
+    - Total Carbon
+    description: Total carbon in milligrams per gram dry weight
+    range: double
+  total_nitrogen:
+    aliases:
+    - Total Nitrogen
+    description: Total nitrogen in milligrams per gram dry weight
+    range: double
+  treatment:
+    aliases:
+    - Treatment
+    range: string
+  type_of_well:
+    aliases:
+    - Type of Well
+    range: string
+  upper_seal_end_depth:
+    aliases:
+    - Upper Seal End Depth
+    description: Upper seal end depth in ft below ground surface (ft BGS)
+    range: double
+  upper_seal_start_depth:
+    aliases:
+    - Upper Seal Start Depth
+    description: Upper seal start depth in ft below ground surface (ft BGS)
+    range: double
+  upper_seal_type:
+    aliases:
+    - Upper Seal Type
+    range: string
+  vertical_datum:
+    aliases:
+    - Vertical Datum
+    range: string
+  well:
+    aliases:
+    - Well
+    range: string
+  well_casing_depth:
+    aliases:
+    - Well Casing Depth
+    description: Well casing depth in ft below ground surface (ft BGS)
+    range: double
+  well_casing_id:
+    aliases:
+    - Well Casing ID
+    description: Well casing inner diameter. units in inches
+    range: double
+  well_casing_od:
+    aliases:
+    - Well Casing OD
+    description: Well casing outer diameter. units in inches
+    range: double
+  well_casing_type:
+    aliases:
+    - Well Casing Type
+    range: string
+  well_name:
+    aliases:
+    - Well Name
+    range: string
+  well_status:
+    aliases:
+    - Well Status
+    range: string
+  zone:
+    aliases:
+    - Zone
+    range: string
+  size_unit:
+    description: Auto-populated
+  age_unit:
+    description: Auto-populated
+  geological_unit:
+    description: Auto-populated
+  env_pakcage:
+    description: Auto-populated
+  temperature_celsius:
+    description: Auto-populated
+  pore_water_extraction_microliters:
+    description: Auto-populated
+  conductivity_ms_cm:
+    description: Auto-populated
+  dapi_cell_count_cells_g:
+    description: Auto-populated
+  dna_picogreen_total_ng:
+    description: Auto-populated
+  total_carbon_mg_g_dry_weight:
+    description: Auto-populated
+  biomass_carbon_mg_g:
+    description: Auto-populated
+  total_nitrogen_mg_g_dry_weight:
+    description: Auto-populated
+  ground_elevation_ft_amsl:
+    description: Auto-populated
+  boring_ft_bgs:
+    description: Auto-populated
+  boring_diameter_in:
+    description: Auto-populated
+  well_casing_od_in:
+    description: Auto-populated
+  well_casing_id_in:
+    description: Auto-populated
+  drive_casing_id_in:
+    description: Auto-populated
+  drive_casing_od_in:
+    description: Auto-populated
+  drive_casing_start_depth_ft_bgs:
+    description: Auto-populated
+  drive_casing_end_depth_ft_bgs:
+    description: Auto-populated
+  packing_depth_start_ft_bgs:
+    description: Auto-populated
+  packing_depth_end_ft_bgs:
+    description: Auto-populated
+  topofweatheredbedrock_ft_bgs:
+    description: Auto-populated
+  topoffreshbedrock_ft_bgs:
+    description: Auto-populated
+  min_water_level_ft_amsl:
+    description: Auto-populated
+  average_water_level_ft_amsl:
+    description: Auto-populated
+  max_water_level_ft_amsl:
+    description: Auto-populated
+  upper_seal_start_depth_ft_bgs:
+    description: Auto-populated
+  upper_seal_end_depth_ft_bgs:
+    description: Auto-populated
+  lower_seal_type_ft_bgs:
+    description: Auto-populated
+  lower_seal_start_depth_ft_bgs:
+    description: Auto-populated
+  lower_seal_end_depth_ft_bgs:
+    description: Auto-populated
+  open_casing_od_in:
+    description: Auto-populated
+  open_casing_id_in:
+    description: Auto-populated
+  open_casing_depth_ft_bgs:
+    description: Auto-populated
+  open_hole_diameter_in:
+    description: Auto-populated
+  open_hole_depth_ft_bgs:
+    description: Auto-populated
+  open_interval_start_depth_ft_bgs:
+    description: Auto-populated
+  open_interval_end_depth_ft_bgs:
+    description: Auto-populated
+  open_interval_diameter_in:
+    description: Auto-populated
+classes:
+  SESAR:
+    description: TODO
+    slots:
+    - sample_name
+    - material
+    - field_name_informal_classification
+    - location_description
+    - locality_description
+    - collection_method
+    - purpose
+    - navigation_type
+    - primary_physiographic_feature
+    - name_of_physiographic_feature
+    - field_program_cruise
+    - collector_chief_scientist
+    - collection_date_precision
+    - current_archive
+    - related_identifiers
+    - platform_type
+    - location_description
+    - zone
+    - state_province
+    - original_archive_contact
+    - classification
+    - vertical_datum
+    - original_archive
+    - platform_name
+    - collection_time_end
+    - county
+    - size_unit
+    - age_unit
+    - locality
+    - sample_description
+    - collection_method_description
+    - other_names
+    - geological_unit
+    - collector_chief_scientist_address
+    - collection_time
+    - locality_description
+    - size
+    - launch_platform_name
+    - depth_scale
+    - country
+    - city_township
+    - sub-object_type
+    - launch_id
+    - id
+    - name
+    - well
+    - depth
+    - elevation
+    - date
+    - time
+    - timezone
+    - material
+    - env_pakcage
+    - description
+    - latitude
+    - longitude
+    - country
+  ENIGMA:
+    description: TODO
+    slots:
+    - sampleid
+    - experiment_name
+    - area_name
+    - well_name
+    - environmental_package
+    - material
+    - description
+    - date
+    - collection_time
+    - time_zone
+    - geological_zone
+    - recovery_factor
+    - method
+    - fraction
+    - replicate
+    - maturation_time
+    - treatment
+    - temperature_celsius
+    - moisture
+    - pore_water_extraction_microliters
+    - conductivity_ms_cm
+    - ph
+    - dapi_cell_count_cells_g
+    - dna_picogreen_total_ng
+    - total_carbon_mg_g_dry_weight
+    - biomass_carbon_mg_g
+    - total_nitrogen_mg_g_dry_weight
+    - leucine_activity_ngc_day_cell
+    - functional_area
+    - type_of_well
+    - ground_elevation_ft_amsl
+    - installation_method
+    - boring_ft_bgs
+    - boring_refusal
+    - boring_diameter_in
+    - screen_type
+    - well_casing_type
+    - well_casing_od_in
+    - well_casing_id_in
+    - drive_casing_type
+    - drive_casing_id_in
+    - drive_casing_od_in
+    - drive_casing_start_depth_ft_bgs
+    - drive_casing_end_depth_ft_bgs
+    - packing_type
+    - packing_depth_start_ft_bgs
+    - packing_depth_end_ft_bgs
+    - topofweatheredbedrock_ft_bgs
+    - topoffreshbedrock_ft_bgs
+    - aquifer
+    - fractures_cavities_waterbreaks
+    - other_name
+    - screened
+    - open
+    - well_status
+    - condition
+    - origination_or_plug_abandon
+    - min_water_level_ft_amsl
+    - average_water_level_ft_amsl
+    - max_water_level_ft_amsl
+    - upper_seal_type
+    - upper_seal_start_depth_ft_bgs
+    - upper_seal_end_depth_ft_bgs
+    - lower_seal_type_ft_bgs
+    - lower_seal_start_depth_ft_bgs
+    - lower_seal_end_depth_ft_bgs
+    - open_casing_type
+    - open_casing_od_in
+    - open_casing_id_in
+    - open_casing_depth_ft_bgs
+    - open_hole_diameter_in
+    - open_hole_depth_ft_bgs
+    - open_interval_start_depth_ft_bgs
+    - open_interval_end_depth_ft_bgs
+    - open_interval_diameter_in
+    - rock_formation
+    - depth
+    - elevation
+    - time
+    - timezone
+    - material
+    - env_package
+    - continent
+    - country
+    - region
+    - biome
+    - feature
+    - id
+    - name
+    - well
+    - depth
+    - elevation
+    - date
+    - time
+    - timezone
+    - material
+    - env_pakcage
+    - description
+    - latitude
+    - longitude
+    - country

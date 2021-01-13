@@ -1,0 +1,49 @@
+I"�<h1 id="type-link_class_info">Type: link_class_info</h1>
+
+<p>Link to digitized soil maps or other soil classification information</p>
+
+<p>URI: <a href="https://microbiomedata/meta/link_class_info">nmdc:link_class_info</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p>None -&gt;  <sub>OPT</sub> <a href="TextValue.md">TextValue</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="attribute.md">attribute</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="Biosample.md">Biosample</a></li>
+</ul>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Aliases:</strong></td>
+      <td> </td>
+      <td>link to classification information</td>
+    </tr>
+    <tr>
+      <td><strong>Mappings:</strong></td>
+      <td> </td>
+      <td>MIxS:link_class_info</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

@@ -1,0 +1,24 @@
+I"{<h1 id="type-biosample_env_local_scale">Type: biosample_env_local_scale</h1>
+
+<p>formerly known as ‘feature’</p>
+
+<p>URI: <a href="https://microbiomedata/meta/biosample_env_local_scale">nmdc:biosample_env_local_scale</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p><a href="Biosample.md">Biosample</a> -&gt;  <sub>REQ</sub> <a href="ControlledTermValue.md">ControlledTermValue</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="env_local_scale.md">env_local_scale</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="Biosample.md">Biosample</a></li>
+</ul>
+:ET

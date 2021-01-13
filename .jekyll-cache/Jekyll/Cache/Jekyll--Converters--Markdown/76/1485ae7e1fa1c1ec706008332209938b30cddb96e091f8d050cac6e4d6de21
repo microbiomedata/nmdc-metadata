@@ -1,0 +1,24 @@
+I"b<h1 id="type-num_input_reads">Type: num_input_reads</h1>
+
+<p>The sequence count number of input reads for assembly.</p>
+
+<p>URI: <a href="https://microbiomedata/meta/num_input_reads">nmdc:num_input_reads</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p>None -&gt;  <sub>OPT</sub> <a href="types/Float.md">Float</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="metagenome_assembly_parameter.md">metagenome assembly parameter</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="MetagenomeAssembly.md">MetagenomeAssembly</a></li>
+</ul>
+:ET

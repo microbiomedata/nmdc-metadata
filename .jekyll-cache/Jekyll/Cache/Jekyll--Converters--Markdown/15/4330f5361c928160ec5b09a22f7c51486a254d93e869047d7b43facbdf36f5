@@ -1,0 +1,20 @@
+I"å<h1 id="type-has_boolean_value">Type: has_boolean_value</h1>
+
+<p>Links a quantity value to a boolean</p>
+
+<p>URI: <a href="https://microbiomedata/meta/has_boolean_value">nmdc:has_boolean_value</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p>None -&gt;  <sub>OPT</sub> <a href="types/Boolean.md">Boolean</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="BooleanValue.md">BooleanValue</a></li>
+</ul>
+:ET

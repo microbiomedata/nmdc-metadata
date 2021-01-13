@@ -1,0 +1,47 @@
+I"�<h1 id="type-used">Type: used</h1>
+
+<p>URI: <a href="https://microbiomedata/meta/used">nmdc:used</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p><a href="Activity.md">Activity</a> -&gt;  <sub>OPT</sub> <a href="types/String.md">String</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<h2 id="children">Children</h2>
+
+<ul>
+  <li><a href="metabolomics_analysis_activity_used.md">metabolomics analysis activity➞used</a></li>
+  <li><a href="metaproteomics_analysis_activity_used.md">metaproteomics analysis activity➞used</a></li>
+</ul>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="Activity.md">Activity</a></li>
+  <li><a href="MetagenomeAnnotationActivity.md">MetagenomeAnnotationActivity</a></li>
+  <li><a href="MetagenomeAssembly.md">MetagenomeAssembly</a></li>
+  <li><a href="ReadQCAnalysisActivity.md">ReadQCAnalysisActivity</a></li>
+  <li><a href="WorkflowExecutionActivity.md">WorkflowExecutionActivity</a></li>
+</ul>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Mappings:</strong></td>
+      <td> </td>
+      <td>prov:used</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

@@ -1,0 +1,24 @@
+I"^<h1 id="type-biosample_env_medium">Type: biosample_env_medium</h1>
+
+<p>formerly known as ‘material’</p>
+
+<p>URI: <a href="https://microbiomedata/meta/biosample_env_medium">nmdc:biosample_env_medium</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p><a href="Biosample.md">Biosample</a> -&gt;  <sub>REQ</sub> <a href="ControlledTermValue.md">ControlledTermValue</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="env_medium.md">env_medium</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="Biosample.md">Biosample</a></li>
+</ul>
+:ET

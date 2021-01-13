@@ -1,0 +1,24 @@
+I"o<h1 id="type-omics_processing_id">Type: omics_processing_id</h1>
+
+<p>The primary identifier for the omics processing. E.g. GOLD:GpNNNN</p>
+
+<p>URI: <a href="https://microbiomedata/meta/omics_processing_id">nmdc:omics_processing_id</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p><a href="OmicsProcessing.md">OmicsProcessing</a> -&gt;  <sub>REQ</sub> <a href="types/String.md">String</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="id.md">id</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="OmicsProcessing.md">OmicsProcessing</a></li>
+</ul>
+:ET

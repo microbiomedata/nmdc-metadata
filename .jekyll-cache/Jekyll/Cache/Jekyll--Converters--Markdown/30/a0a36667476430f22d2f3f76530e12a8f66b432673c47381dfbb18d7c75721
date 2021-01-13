@@ -1,0 +1,22 @@
+I"<<h1 id="type-omics_processing_part_of">Type: omics_processing_part_of</h1>
+
+<p>URI: <a href="https://microbiomedata/meta/omics_processing_part_of">nmdc:omics_processing_part_of</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p><a href="OmicsProcessing.md">OmicsProcessing</a> -&gt;  <sub>0..*</sub> <a href="Study.md">Study</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="part_of.md">part of</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="OmicsProcessing.md">OmicsProcessing</a></li>
+</ul>
+:ET

@@ -1,0 +1,24 @@
+I"…<h1 id="type-person_value_has_raw_value">Type: person_value_has_raw_value</h1>
+
+<p>the full name of the Investgator in format FIRST LAST</p>
+
+<p>URI: <a href="https://microbiomedata/meta/person_value_has_raw_value">nmdc:person_value_has_raw_value</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p><a href="PersonValue.md">PersonValue</a> -&gt;  <sub>OPT</sub> <a href="types/String.md">String</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="has_raw_value.md">has raw value</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="PersonValue.md">PersonValue</a></li>
+</ul>
+:ET

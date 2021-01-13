@@ -1,0 +1,89 @@
+I"t<h1 id="type-functionalannotationterm">Type: FunctionalAnnotationTerm</h1>
+
+<p>Abstract grouping class for any term/descriptor that can be applied to a functional unit of a genome (protein, ncRNA, complex).</p>
+
+<p>URI: <a href="https://microbiomedata/meta/FunctionalAnnotationTerm">nmdc:FunctionalAnnotationTerm</a></p>
+
+<hr />
+
+<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[Reaction],[Pathway],[OrthologyGroup],[OntologyClass],[FunctionalAnnotation]-%20has%20function%200..1%3E[FunctionalAnnotationTerm%7Cid(i):string;name(i):string%20%3F;description(i):string%20%3F;alternate_identifiers(i):string%20%2A],[FunctionalAnnotationTerm]%5E-[Reaction],[FunctionalAnnotationTerm]%5E-[Pathway],[FunctionalAnnotationTerm]%5E-[OrthologyGroup],[OntologyClass]%5E-[FunctionalAnnotationTerm],[FunctionalAnnotation]" alt="img" /></p>
+
+<hr />
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="OntologyClass.md">OntologyClass</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<ul>
+  <li><a href="OrthologyGroup.md">OrthologyGroup</a> - A set of genes or gene products in which all members are orthologous</li>
+  <li><a href="Pathway.md">Pathway</a> - A pathway is a sequence of steps/reactions carried out by an organism or community of organisms</li>
+  <li><a href="Reaction.md">Reaction</a> - An individual biochemical transformation carried out by a functional unit of an organism, in which a collection of substrates are transformed into a collection of products. Can also represent transporters</li>
+</ul>
+
+<h2 id="referenced-by-class">Referenced by class</h2>
+
+<ul>
+  <li><strong><a href="FunctionalAnnotation.md">FunctionalAnnotation</a></strong> <em><a href="functional_annotation_has_function.md">functional annotation➞has function</a></em>  <sub>OPT</sub>  <strong><a href="FunctionalAnnotationTerm.md">FunctionalAnnotationTerm</a></strong></li>
+  <li><strong>None</strong> <em><a href="has_function.md">has function</a></em>  <sub>OPT</sub>  <strong><a href="FunctionalAnnotationTerm.md">FunctionalAnnotationTerm</a></strong></li>
+</ul>
+
+<h2 id="attributes">Attributes</h2>
+
+<h3 id="inherited-from-named-thing">Inherited from named thing:</h3>
+
+<ul>
+  <li><a href="id.md">id</a>  <sub>REQ</sub>
+    <ul>
+      <li>Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="name.md">name</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: A human readable label for an entity</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="description.md">description</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: a human-readable description of a thing</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="alternate_identifiers.md">alternate identifiers</a>  <sub>0..*</sub>
+    <ul>
+      <li>Description: Non-primary identifiers</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Aliases:</strong></td>
+      <td> </td>
+      <td>function</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>functional annotation</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

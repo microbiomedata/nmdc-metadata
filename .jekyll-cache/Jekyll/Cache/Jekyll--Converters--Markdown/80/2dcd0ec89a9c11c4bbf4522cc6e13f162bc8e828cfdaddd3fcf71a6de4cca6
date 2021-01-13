@@ -1,0 +1,24 @@
+I"è<h1 id="type-scaf_l50">Type: scaf_L50</h1>
+
+<p>Given a set of scaffolds, the N50 is defined as the sequence length of the shortest scaffold at 50% of the total genome length.</p>
+
+<p>URI: <a href="https://microbiomedata/meta/scaf_L50">nmdc:scaf_L50</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p>None -&gt;  <sub>OPT</sub> <a href="types/Float.md">Float</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="metagenome_assembly_parameter.md">metagenome assembly parameter</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="MetagenomeAssembly.md">MetagenomeAssembly</a></li>
+</ul>
+:ET

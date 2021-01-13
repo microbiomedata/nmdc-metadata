@@ -1,0 +1,56 @@
+I"t<h1 id="type-env_package">Type: env_package</h1>
+
+<p class="subset-label">mixs extension</p>
+
+<p>“MIxS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported”</p>
+
+<p>URI: <a href="https://microbiomedata/meta/env_package">nmdc:env_package</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p>None -&gt;  <sub>OPT</sub> <a href="TextValue.md">TextValue</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="attribute.md">attribute</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="Biosample.md">Biosample</a></li>
+</ul>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Aliases:</strong></td>
+      <td> </td>
+      <td>environmental package</td>
+    </tr>
+    <tr>
+      <td><strong>Mappings:</strong></td>
+      <td> </td>
+      <td>MIxS:env_package</td>
+    </tr>
+    <tr>
+      <td><strong>In Subsets:</strong></td>
+      <td> </td>
+      <td>mixs extension</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

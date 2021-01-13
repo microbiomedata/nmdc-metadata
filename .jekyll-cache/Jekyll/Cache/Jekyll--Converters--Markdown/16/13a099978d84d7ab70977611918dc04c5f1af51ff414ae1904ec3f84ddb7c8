@@ -1,0 +1,24 @@
+I"<h1 id="type-omics_processing_alternate_identifiers">Type: omics_processing_alternate_identifiers</h1>
+
+<p>The same omics processing may have distinct identifiers in different databases (e.g. GOLD and EMSL, as well as NCBI)</p>
+
+<p>URI: <a href="https://microbiomedata/meta/omics_processing_alternate_identifiers">nmdc:omics_processing_alternate_identifiers</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p><a href="OmicsProcessing.md">OmicsProcessing</a> -&gt;  <sub>0..*</sub> <a href="types/String.md">String</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="alternate_identifiers.md">alternate identifiers</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="OmicsProcessing.md">OmicsProcessing</a></li>
+</ul>
+:ET

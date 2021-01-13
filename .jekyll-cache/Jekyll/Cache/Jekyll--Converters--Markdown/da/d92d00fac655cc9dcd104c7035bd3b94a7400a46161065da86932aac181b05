@@ -1,0 +1,24 @@
+I"<h1 id="type-file_size_bytes">Type: file_size_bytes</h1>
+
+<p>Size of the file in bytes</p>
+
+<p>URI: <a href="https://microbiomedata/meta/file_size_bytes">nmdc:file_size_bytes</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p>None -&gt;  <sub>OPT</sub> <a href="types/Bytes.md">Bytes</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="attribute.md">attribute</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="DataObject.md">DataObject</a></li>
+</ul>
+:ET

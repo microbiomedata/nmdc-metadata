@@ -1,0 +1,28 @@
+I"�<h1 id="type-httpsmicrobiomedatametabiolinkmltypestime">Type: https://microbiomedata/meta/biolinkml:types/Time</h1>
+
+<p>A time object represents a (local) time of day, independent of any particular day</p>
+
+<p>URI: <a href="https://microbiomedata/meta/biolinkml:types/Time">https://microbiomedata/meta/biolinkml:types/Time</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Root (builtin) type</td>
+      <td> </td>
+      <td><strong>XSDTime</strong></td>
+    </tr>
+    <tr>
+      <td>Representation</td>
+      <td> </td>
+      <td>str</td>
+    </tr>
+  </tbody>
+</table>
+:ET

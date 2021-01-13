@@ -1,0 +1,22 @@
+I"X<h1 id="type-omics_processing_has_output">Type: omics_processing_has_output</h1>
+
+<p>URI: <a href="https://microbiomedata/meta/omics_processing_has_output">nmdc:omics_processing_has_output</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p><a href="OmicsProcessing.md">OmicsProcessing</a> -&gt;  <sub>0..*</sub> <a href="DataObject.md">DataObject</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="has_output.md">has output</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="OmicsProcessing.md">OmicsProcessing</a></li>
+</ul>
+:ET

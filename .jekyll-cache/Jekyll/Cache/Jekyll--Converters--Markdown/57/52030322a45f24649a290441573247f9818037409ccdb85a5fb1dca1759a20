@@ -1,0 +1,28 @@
+I"�<h1 id="type-httpsmicrobiomedatametabiolinkmltypesobjectidentifier">Type: https://microbiomedata/meta/biolinkml:types/Objectidentifier</h1>
+
+<p>A URI or CURIE that represents an object in the model.</p>
+
+<p>URI: <a href="https://microbiomedata/meta/biolinkml:types/Objectidentifier">https://microbiomedata/meta/biolinkml:types/Objectidentifier</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Root (builtin) type</td>
+      <td> </td>
+      <td><strong>ElementIdentifier</strong></td>
+    </tr>
+    <tr>
+      <td>Representation</td>
+      <td> </td>
+      <td>str</td>
+    </tr>
+  </tbody>
+</table>
+:ET

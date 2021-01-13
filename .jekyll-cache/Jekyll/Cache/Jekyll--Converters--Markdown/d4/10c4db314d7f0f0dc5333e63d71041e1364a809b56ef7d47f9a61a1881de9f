@@ -1,0 +1,23 @@
+I"�<h1 id="type-decimaldegree">Type: DecimalDegree</h1>
+
+<p>A decimal degree expresses latitude or longitude as decimal fractions.</p>
+
+<p>URI: <a href="https://microbiomedata/meta/DecimalDegree">nmdc:DecimalDegree</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Root (builtin) type</td>
+      <td> </td>
+      <td><strong>float</strong></td>
+    </tr>
+  </tbody>
+</table>
+:ET

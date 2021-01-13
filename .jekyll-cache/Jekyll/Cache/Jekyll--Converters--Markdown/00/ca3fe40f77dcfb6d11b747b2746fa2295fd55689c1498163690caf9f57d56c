@@ -1,0 +1,25 @@
+I"2<h1 id="type-ecosystem_type">Type: ecosystem_type</h1>
+
+<p>TODO</p>
+
+<p>URI: <a href="https://microbiomedata/meta/ecosystem_type">nmdc:ecosystem_type</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p>None -&gt;  <sub>OPT</sub> <a href="AttributeValue.md">AttributeValue</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="gold_path_field.md">gold_path_field</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="Biosample.md">Biosample</a></li>
+  <li><a href="Study.md">Study</a></li>
+</ul>
+:ET

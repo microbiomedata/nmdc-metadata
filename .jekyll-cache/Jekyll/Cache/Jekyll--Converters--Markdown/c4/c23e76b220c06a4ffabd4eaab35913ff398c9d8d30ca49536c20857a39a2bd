@@ -1,0 +1,81 @@
+I"<h1 id="type-instrument">Type: Instrument</h1>
+
+<p>A material entity that is designed to perform a function in a scientific investigation, but is not a reagent[OBI].</p>
+
+<p>URI: <a href="https://microbiomedata/meta/Instrument">nmdc:Instrument</a></p>
+
+<hr />
+
+<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[MetaproteomicsAnalysisActivity],[MetabolomicsAnalysisActivity],[MetabolomicsAnalysisActivity]-%20used%200..1%3E[Instrument%7Cid(i):string;name(i):string%20%3F;description(i):string%20%3F;alternate_identifiers(i):string%20%2A],[MetaproteomicsAnalysisActivity]-%20used%200..1%3E[Instrument],[NamedThing]%5E-[Instrument]" alt="img" /></p>
+
+<hr />
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="NamedThing.md">NamedThing</a> - a databased entity or concept/class</li>
+</ul>
+
+<h2 id="referenced-by-class">Referenced by class</h2>
+
+<ul>
+  <li><strong><a href="MetabolomicsAnalysisActivity.md">MetabolomicsAnalysisActivity</a></strong> <em><a href="metabolomics_analysis_activity_used.md">metabolomics analysis activity➞used</a></em>  <sub>OPT</sub>  <strong><a href="Instrument.md">Instrument</a></strong></li>
+  <li><strong><a href="MetaproteomicsAnalysisActivity.md">MetaproteomicsAnalysisActivity</a></strong> <em><a href="metaproteomics_analysis_activity_used.md">metaproteomics analysis activity➞used</a></em>  <sub>OPT</sub>  <strong><a href="Instrument.md">Instrument</a></strong></li>
+</ul>
+
+<h2 id="attributes">Attributes</h2>
+
+<h3 id="inherited-from-named-thing">Inherited from named thing:</h3>
+
+<ul>
+  <li><a href="id.md">id</a>  <sub>REQ</sub>
+    <ul>
+      <li>Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="name.md">name</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: A human readable label for an entity</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="description.md">description</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: a human-readable description of a thing</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="alternate_identifiers.md">alternate identifiers</a>  <sub>0..*</sub>
+    <ul>
+      <li>Description: Non-primary identifiers</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Aliases:</strong></td>
+      <td> </td>
+      <td>device</td>
+    </tr>
+    <tr>
+      <td><strong>Exact Mappings:</strong></td>
+      <td> </td>
+      <td>OBI:0000485</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

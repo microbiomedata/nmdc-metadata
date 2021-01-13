@@ -1,0 +1,24 @@
+I";<h1 id="type-biosample_name">Type: biosample_name</h1>
+
+<p>A human readable name or description of the biosample</p>
+
+<p>URI: <a href="https://microbiomedata/meta/biosample_name">nmdc:biosample_name</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p><a href="Biosample.md">Biosample</a> -&gt;  <sub>OPT</sub> <a href="types/String.md">String</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="name.md">name</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="Biosample.md">Biosample</a></li>
+</ul>
+:ET

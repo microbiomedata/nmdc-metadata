@@ -1,0 +1,53 @@
+I"�	<h1 id="type-reactionparticipant">Type: ReactionParticipant</h1>
+
+<p>Instances of this link a reaction to a chemical entity participant</p>
+
+<p>URI: <a href="https://microbiomedata/meta/ReactionParticipant">nmdc:ReactionParticipant</a></p>
+
+<hr />
+
+<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalEntity]%3Cchemical%200..1-%20[ReactionParticipant%7Cstoichiometry:integer%20%3F],[Reaction]++-%20left%20participants%200..%2A%3E[ReactionParticipant],[Reaction]++-%20right%20participants%200..%2A%3E[ReactionParticipant],[Reaction],[ChemicalEntity]" alt="img" /></p>
+
+<hr />
+
+<h2 id="referenced-by-class">Referenced by class</h2>
+
+<ul>
+  <li><strong>None</strong> <em><a href="left_participants.md">left participants</a></em>  <sub>0..*</sub>  <strong><a href="ReactionParticipant.md">ReactionParticipant</a></strong></li>
+  <li><strong><a href="Reaction.md">Reaction</a></strong> <em><a href="reaction_left_participants.md">reaction➞left participants</a></em>  <sub>0..*</sub>  <strong><a href="ReactionParticipant.md">ReactionParticipant</a></strong></li>
+  <li><strong><a href="Reaction.md">Reaction</a></strong> <em><a href="reaction_right_participants.md">reaction➞right participants</a></em>  <sub>0..*</sub>  <strong><a href="ReactionParticipant.md">ReactionParticipant</a></strong></li>
+  <li><strong>None</strong> <em><a href="right_participants.md">right participants</a></em>  <sub>0..*</sub>  <strong><a href="ReactionParticipant.md">ReactionParticipant</a></strong></li>
+</ul>
+
+<h2 id="attributes">Attributes</h2>
+
+<h3 id="own">Own</h3>
+
+<ul>
+  <li><a href="reaction_participant_chemical.md">reaction participant➞chemical</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="ChemicalEntity.md">ChemicalEntity</a></li>
+    </ul>
+  </li>
+  <li><a href="reaction_participant_stoichiometry.md">reaction participant➞stoichiometry</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="types/Integer.md">Integer</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="domain-for-slot">Domain for slot:</h3>
+
+<ul>
+  <li><a href="reaction_participant_chemical.md">reaction participant➞chemical</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="ChemicalEntity.md">ChemicalEntity</a></li>
+    </ul>
+  </li>
+  <li><a href="reaction_participant_stoichiometry.md">reaction participant➞stoichiometry</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="types/Integer.md">Integer</a></li>
+    </ul>
+  </li>
+</ul>
+:ET

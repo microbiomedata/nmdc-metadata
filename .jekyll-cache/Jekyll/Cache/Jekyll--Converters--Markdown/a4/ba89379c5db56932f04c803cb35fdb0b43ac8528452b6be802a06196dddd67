@@ -1,0 +1,24 @@
+I"<h1 id="type-genome_feature_encodes">Type: genome_feature_encodes</h1>
+
+<p>The gene product encoded by this feature. Typically this is used for a CDS feature or gene feature which will encode a protein. It can also be used by a nc transcript ot gene feature that encoded a ncRNA</p>
+
+<p>URI: <a href="https://microbiomedata/meta/genome_feature_encodes">nmdc:genome_feature_encodes</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p><a href="GenomeFeature.md">GenomeFeature</a> -&gt;  <sub>OPT</sub> <a href="GeneProduct.md">GeneProduct</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="encodes.md">encodes</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="GenomeFeature.md">GenomeFeature</a></li>
+</ul>
+:ET

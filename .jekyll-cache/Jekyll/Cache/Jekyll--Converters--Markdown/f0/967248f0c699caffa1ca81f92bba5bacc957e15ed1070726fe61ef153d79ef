@@ -1,0 +1,28 @@
+I"p<h1 id="type-httpsmicrobiomedatametabiolinkmltypesuriorcurie">Type: https://microbiomedata/meta/biolinkml:types/Uriorcurie</h1>
+
+<p>a URI or a CURIE</p>
+
+<p>URI: <a href="https://microbiomedata/meta/biolinkml:types/Uriorcurie">https://microbiomedata/meta/biolinkml:types/Uriorcurie</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Root (builtin) type</td>
+      <td> </td>
+      <td><strong>URIorCURIE</strong></td>
+    </tr>
+    <tr>
+      <td>Representation</td>
+      <td> </td>
+      <td>str</td>
+    </tr>
+  </tbody>
+</table>
+:ET

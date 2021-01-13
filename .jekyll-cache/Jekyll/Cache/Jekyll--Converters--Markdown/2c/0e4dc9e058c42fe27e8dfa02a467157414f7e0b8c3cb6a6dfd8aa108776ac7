@@ -1,0 +1,24 @@
+I"F<h1 id="type-pathway_has_part">Type: pathway_has_part</h1>
+
+<p>A pathway can be broken down to a series of reaction step</p>
+
+<p>URI: <a href="https://microbiomedata/meta/pathway_has_part">nmdc:pathway_has_part</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p><a href="Pathway.md">Pathway</a> -&gt;  <sub>0..*</sub> <a href="Reaction.md">Reaction</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="has_part.md">has_part</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="Pathway.md">Pathway</a></li>
+</ul>
+:ET

@@ -1,0 +1,170 @@
+I"�<h1 id="type-chemicalentity">Type: ChemicalEntity</h1>
+
+<p>An atom or molecule that can be represented with a chemical formula. Include lipids, glycans, natural products, drugs. There may be different terms for distinct acid-base forms, protonation states</p>
+
+<p>URI: <a href="https://microbiomedata/meta/ChemicalEntity">nmdc:ChemicalEntity</a></p>
+
+<hr />
+
+<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[ReactionParticipant],[OntologyClass],[MetaboliteQuantification],[MetaboliteQuantification]-%20metabolite%20quantified%200..1%3E[ChemicalEntity%7Cinchi(pk):string;inchi_key:string%20%3F;smiles:string%20%2A;chemical_formula:string%20%3F;id(i):string;name(i):string%20%3F;description(i):string%20%3F;alternate_identifiers(i):string%20%2A],[ReactionParticipant]-%20chemical%200..1%3E[ChemicalEntity],[OntologyClass]%5E-[ChemicalEntity]" alt="img" /></p>
+
+<hr />
+
+<h2 id="identifier-prefixes">Identifier prefixes</h2>
+
+<ul>
+  <li>KEGG.COMPOUND</li>
+  <li>CHEBI</li>
+  <li>CHEMBL.COMPOUND</li>
+  <li>DRUGBANK</li>
+  <li>PUBCHEM.COMPOUND</li>
+  <li>CAS</li>
+  <li>HMDB</li>
+  <li>MESH</li>
+</ul>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="OntologyClass.md">OntologyClass</a></li>
+</ul>
+
+<h2 id="referenced-by-class">Referenced by class</h2>
+
+<ul>
+  <li><strong>None</strong> <em><a href="chemical.md">chemical</a></em>  <sub>OPT</sub>  <strong><a href="ChemicalEntity.md">ChemicalEntity</a></strong></li>
+  <li><strong><a href="MetaboliteQuantification.md">MetaboliteQuantification</a></strong> <em><a href="metabolite_quantification_metabolite_quantified.md">metabolite quantification➞metabolite quantified</a></em>  <sub>OPT</sub>  <strong><a href="ChemicalEntity.md">ChemicalEntity</a></strong></li>
+  <li><strong>None</strong> <em><a href="metabolite_quantified.md">metabolite quantified</a></em>  <sub>OPT</sub>  <strong><a href="ChemicalEntity.md">ChemicalEntity</a></strong></li>
+  <li><strong><a href="ReactionParticipant.md">ReactionParticipant</a></strong> <em><a href="reaction_participant_chemical.md">reaction participant➞chemical</a></em>  <sub>OPT</sub>  <strong><a href="ChemicalEntity.md">ChemicalEntity</a></strong></li>
+</ul>
+
+<h2 id="attributes">Attributes</h2>
+
+<h3 id="own">Own</h3>
+
+<ul>
+  <li><a href="chemical_entity_chemical_formula.md">chemical entity➞chemical formula</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: A generic grouping for miolecular formulae and empirican formulae</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="chemical_entity_inchi.md">chemical entity➞inchi</a>  <sub>REQ</sub>
+    <ul>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="chemical_entity_inchi_key.md">chemical entity➞inchi key</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="chemical_entity_smiles.md">chemical entity➞smiles</a>  <sub>0..*</sub>
+    <ul>
+      <li>Description: A string encoding of a molecular graph, no chiral or isotopic information. There are usually a large number of valid SMILES which represent a given structure. For example, CCO, OCC and C(O)C all specify the structure of ethanol.</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="inherited-from-named-thing">Inherited from named thing:</h3>
+
+<ul>
+  <li><a href="id.md">id</a>  <sub>REQ</sub>
+    <ul>
+      <li>Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="name.md">name</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: A human readable label for an entity</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="description.md">description</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: a human-readable description of a thing</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="alternate_identifiers.md">alternate identifiers</a>  <sub>0..*</sub>
+    <ul>
+      <li>Description: Non-primary identifiers</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="domain-for-slot">Domain for slot:</h3>
+
+<ul>
+  <li><a href="chemical_entity_chemical_formula.md">chemical entity➞chemical formula</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: A generic grouping for miolecular formulae and empirican formulae</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="chemical_entity_inchi.md">chemical entity➞inchi</a>  <sub>REQ</sub>
+    <ul>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="chemical_entity_inchi_key.md">chemical entity➞inchi key</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="chemical_entity_smiles.md">chemical entity➞smiles</a>  <sub>0..*</sub>
+    <ul>
+      <li>Description: A string encoding of a molecular graph, no chiral or isotopic information. There are usually a large number of valid SMILES which represent a given structure. For example, CCO, OCC and C(O)C all specify the structure of ethanol.</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Aliases:</strong></td>
+      <td> </td>
+      <td>metabolite</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>chemical substance</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>chemical compound</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>chemical</td>
+    </tr>
+    <tr>
+      <td><strong>See also:</strong></td>
+      <td> </td>
+      <td>https://bioconductor.org/packages/devel/data/annotation/vignettes/metaboliteIDmapping/inst/doc/metaboliteIDmapping.html</td>
+    </tr>
+    <tr>
+      <td><strong>Exact Mappings:</strong></td>
+      <td> </td>
+      <td>biolink:ChemicalSubstance</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

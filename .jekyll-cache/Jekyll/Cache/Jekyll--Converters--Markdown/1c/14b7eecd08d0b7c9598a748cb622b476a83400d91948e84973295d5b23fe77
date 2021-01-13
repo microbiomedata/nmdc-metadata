@@ -1,0 +1,23 @@
+I"<h1 id="type-httpsmicrobiomedatametabiolinkmltypesboolean">Type: https://microbiomedata/meta/biolinkml:types/Boolean</h1>
+
+<p>A binary (true or false) value</p>
+
+<p>URI: <a href="https://microbiomedata/meta/biolinkml:types/Boolean">https://microbiomedata/meta/biolinkml:types/Boolean</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Root (builtin) type</td>
+      <td> </td>
+      <td><strong>Bool</strong></td>
+    </tr>
+  </tbody>
+</table>
+:ET

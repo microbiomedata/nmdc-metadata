@@ -1,0 +1,180 @@
+// a provence-generating activity
+message Activity
+ {
+  activityId String = 1
+  optional startedAtTime String = 2
+  optional endedAtTime String = 3
+  optional wasInformedBy Activity = 4
+  optional wasAssociatedWith Agent = 5
+  optional used String = 6
+ }
+// a provence-generating agent
+message Agent
+ {
+  optional actedOnBehalfOf Agent = 1
+  optional wasInformedBy Activity = 2
+ }
+// The value for any value of a attribute for a sample. This object can hold both the un-normalized atomic value and the structured value
+message AttributeValue
+ {
+  optional hasRawValue String = 1
+  optional wasGeneratedBy Activity = 2
+ }
+// A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.   An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.
+message Biosample
+ {
+  id String = 1
+  optional name String = 2
+  optional description String = 3
+  repeated alternateIdentifiers String = 4
+  repeated partOf String = 5
+  optional envPackage TextValue = 6
+  latLon GeolocationValue = 7
+  optional geoLocName TextValue = 8
+  optional collectionDate TimestampValue = 9
+  envBroadScale ControlledTermValue = 10
+  envLocalScale ControlledTermValue = 11
+  envMedium ControlledTermValue = 12
+  optional ecosystem String = 13
+  optional ecosystemCategory String = 14
+  optional ecosystemType String = 15
+  optional ecosystemSubtype String = 16
+  optional specificEcosystem String = 17
+  optional depth QuantityValue = 18
+  optional totOrgCarb QuantityValue = 19
+  optional alt QuantityValue = 20
+  optional elev QuantityValue = 21
+ }
+// A process that takes one or more biosamples as inputs and generates one or as outputs. Examples of outputs include samples cultivated from another sample or data objects created by instruments runs.
+message BiosampleProcessing
+ {
+  id String = 1
+  optional name String = 2
+  optional description String = 3
+  repeated alternateIdentifiers String = 4
+  repeated partOf String = 5
+  repeated hasInput Biosample = 6
+ }
+// A value that is a boolean
+message BooleanValue
+ {
+  optional hasRawValue String = 1
+  optional wasGeneratedBy Activity = 2
+  optional hasBooleanValue Boolean = 3
+ }
+// A controlled term or class from an ontology
+message ControlledTermValue
+ {
+  optional hasRawValue String = 1
+  optional wasGeneratedBy Activity = 2
+  optional term OntologyClass = 3
+ }
+// An object that primarily consists of symbols that represent information.   Files, records, and omics data are examples of data objects. 
+message DataObject
+ {
+  id String = 1
+  optional name String = 2
+  optional description String = 3
+  repeated alternateIdentifiers String = 4
+  repeated partOf String = 5
+  optional fileSize String = 6
+ }
+// An abstract holder for any set of metadata and data. It does not need to correspond to an actual managed databse top level holder class. When translated to JSON-Schema this is the 'root' object. It should contain pointers to other objects of interest
+message Database
+ {
+  repeated biosampleSet Biosample = 1
+  repeated dataObjectSet DataObject = 2
+  repeated activitySet Activity = 3
+ }
+message EnvironmentalMaterialTerm
+ {
+  id String = 1
+  optional name String = 2
+  optional description String = 3
+  repeated alternateIdentifiers String = 4
+  repeated partOf String = 5
+ }
+// A normalized value for a location on the earth's surface
+message GeolocationValue
+ {
+  optional hasRawValue String = 1
+  optional wasGeneratedBy Activity = 2
+  optional latitude DecimalDegree = 3
+  optional longitude DecimalDegree = 4
+ }
+// A value that is an integer
+message IntegerValue
+ {
+  optional hasRawValue String = 1
+  optional wasGeneratedBy Activity = 2
+  optional hasNumericValue Float = 3
+ }
+// The methods and processes used to generate omics data from a biosample or organism.
+message OmicsProcessing
+ {
+  id String = 1
+  optional name String = 2
+  optional description String = 3
+  repeated alternateIdentifiers String = 4
+  repeated hasInput Biosample = 5
+  repeated partOf Study = 6
+  repeated hasOutput DataObject = 7
+ }
+message OntologyClass
+ {
+  id String = 1
+  optional name String = 2
+  optional description String = 3
+  repeated alternateIdentifiers String = 4
+  repeated partOf String = 5
+ }
+// represents a person, such as a researcher
+message Person
+ {
+  id String = 1
+  optional name String = 2
+  optional description String = 3
+  repeated alternateIdentifiers String = 4
+  repeated partOf String = 5
+ }
+// A simple quantity, e.g. 2cm
+message QuantityValue
+ {
+  optional hasRawValue String = 1
+  optional wasGeneratedBy Activity = 2
+  repeated hasUnit Unit = 3
+  optional hasNumericValue Double = 4
+ }
+// A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.  
+message Study
+ {
+  id String = 1
+  optional name String = 2
+  optional description String = 3
+  repeated alternateIdentifiers String = 4
+  repeated partOf String = 5
+  optional submittedToInsdc BooleanValue = 6
+  optional investigationType TextValue = 7
+  optional projectName TextValue = 8
+  optional experimentalFactor ControlledTermValue = 9
+ }
+// A basic string value
+message TextValue
+ {
+  optional hasRawValue String = 1
+  optional wasGeneratedBy Activity = 2
+  optional language LanguageCode = 3
+ }
+// A value that is a timestamp. The range should be ISO-8601
+message TimestampValue
+ {
+  optional hasRawValue String = 1
+  optional wasGeneratedBy Activity = 2
+ }
+// A value that is a string that conforms to URL syntax
+message UrlValue
+ {
+  optional hasRawValue String = 1
+  optional wasGeneratedBy Activity = 2
+ }
+

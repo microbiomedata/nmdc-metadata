@@ -1,0 +1,23 @@
+I"P<h1 id="type-httpsmicrobiomedatametabiolinkmltypesdecimal">Type: https://microbiomedata/meta/biolinkml:types/Decimal</h1>
+
+<p>A real number with arbitrary precision that conforms to the xsd:decimal specification</p>
+
+<p>URI: <a href="https://microbiomedata/meta/biolinkml:types/Decimal">https://microbiomedata/meta/biolinkml:types/Decimal</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Root (builtin) type</td>
+      <td> </td>
+      <td><strong>Decimal</strong></td>
+    </tr>
+  </tbody>
+</table>
+:ET

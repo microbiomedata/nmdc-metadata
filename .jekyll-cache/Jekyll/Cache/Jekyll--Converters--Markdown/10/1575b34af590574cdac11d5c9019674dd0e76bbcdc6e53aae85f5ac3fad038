@@ -1,0 +1,93 @@
+I"�	<h1 id="type-person">Type: Person</h1>
+
+<p>represents a person, such as a researcher</p>
+
+<p>URI: <a href="https://microbiomedata/meta/Person">nmdc:Person</a></p>
+
+<hr />
+
+<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing]%5E-[Person%7Cid:string;name(i):string%20%3F;description(i):string%20%3F;alternate_identifiers(i):string%20%2A],[NamedThing]" alt="img" /></p>
+
+<hr />
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="NamedThing.md">NamedThing</a> - a databased entity or concept/class</li>
+</ul>
+
+<h2 id="referenced-by-class">Referenced by class</h2>
+
+<h2 id="attributes">Attributes</h2>
+
+<h3 id="own">Own</h3>
+
+<ul>
+  <li><a href="person_id.md">person➞id</a>  <sub>REQ</sub>
+    <ul>
+      <li>Description: Should be an ORCID. Specify in CURIE format. E.g ORCID:0000-1111-…</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="inherited-from-named-thing">Inherited from named thing:</h3>
+
+<ul>
+  <li><a href="id.md">id</a>  <sub>REQ</sub>
+    <ul>
+      <li>Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="name.md">name</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: A human readable label for an entity</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="description.md">description</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: a human-readable description of a thing</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="alternate_identifiers.md">alternate identifiers</a>  <sub>0..*</sub>
+    <ul>
+      <li>Description: Non-primary identifiers</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="domain-for-slot">Domain for slot:</h3>
+
+<ul>
+  <li><a href="person_id.md">person➞id</a>  <sub>REQ</sub>
+    <ul>
+      <li>Description: Should be an ORCID. Specify in CURIE format. E.g ORCID:0000-1111-…</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Comments:</strong></td>
+      <td> </td>
+      <td>not yet in use</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

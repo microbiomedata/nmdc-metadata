@@ -1,0 +1,24 @@
+I"^<h1 id="type-output_read_count">Type: output_read_count</h1>
+
+<p>After QC analysis sequence count number.</p>
+
+<p>URI: <a href="https://microbiomedata/meta/output_read_count">nmdc:output_read_count</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p>None -&gt;  <sub>OPT</sub> <a href="types/Float.md">Float</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="read_QC_analysis_statistic.md">read QC analysis statistic</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="ReadQCAnalysisActivity.md">ReadQCAnalysisActivity</a></li>
+</ul>
+:ET

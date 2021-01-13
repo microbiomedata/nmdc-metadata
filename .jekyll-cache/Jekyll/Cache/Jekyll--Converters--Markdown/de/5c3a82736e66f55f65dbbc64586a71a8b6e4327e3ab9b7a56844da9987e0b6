@@ -1,0 +1,56 @@
+I"<h1 id="type-elev">Type: elev</h1>
+
+<p class="subset-label">environment</p>
+
+<p>“Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level. Elevation is mainly used when referring to points on the earth’s surface, while altitude is used for points above the surface, such as an aircraft in flight or a spacecraft in orbit”</p>
+
+<p>URI: <a href="https://microbiomedata/meta/elev">nmdc:elev</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p>None -&gt;  <sub>OPT</sub> <a href="QuantityValue.md">QuantityValue</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="attribute.md">attribute</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="Biosample.md">Biosample</a></li>
+</ul>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Aliases:</strong></td>
+      <td> </td>
+      <td>elevation</td>
+    </tr>
+    <tr>
+      <td><strong>Mappings:</strong></td>
+      <td> </td>
+      <td>MIxS:elev</td>
+    </tr>
+    <tr>
+      <td><strong>In Subsets:</strong></td>
+      <td> </td>
+      <td>environment</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

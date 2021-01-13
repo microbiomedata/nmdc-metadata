@@ -1,0 +1,62 @@
+I"$<h1 id="type-geneproduct">Type: GeneProduct</h1>
+
+<p>A molecule encoded by a gene that has an evolved function</p>
+
+<p>URI: <a href="https://microbiomedata/meta/GeneProduct">nmdc:GeneProduct</a></p>
+
+<hr />
+
+<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[ProteinQuantification],[PeptideQuantification],[GenomeFeature],[FunctionalAnnotation]++-%20subject%200..1%3E[GeneProduct],[GenomeFeature]++-%20encodes%200..1%3E[GeneProduct],[PeptideQuantification]++-%20all%20proteins%200..%2A%3E[GeneProduct],[PeptideQuantification]++-%20best%20protein%200..1%3E[GeneProduct],[ProteinQuantification]++-%20all%20proteins%200..%2A%3E[GeneProduct],[ProteinQuantification]++-%20best%20protein%200..1%3E[GeneProduct],[FunctionalAnnotation]" alt="img" /></p>
+
+<hr />
+
+<h2 id="identifier-prefixes">Identifier prefixes</h2>
+
+<ul>
+  <li>UniProtKB</li>
+  <li>gtpo</li>
+  <li>PR</li>
+</ul>
+
+<h2 id="referenced-by-class">Referenced by class</h2>
+
+<ul>
+  <li><strong>None</strong> <em><a href="all_proteins.md">all proteins</a></em>  <sub>0..*</sub>  <strong><a href="GeneProduct.md">GeneProduct</a></strong></li>
+  <li><strong>None</strong> <em><a href="best_protein.md">best protein</a></em>  <sub>OPT</sub>  <strong><a href="GeneProduct.md">GeneProduct</a></strong></li>
+  <li><strong>None</strong> <em><a href="encodes.md">encodes</a></em>  <sub>OPT</sub>  <strong><a href="GeneProduct.md">GeneProduct</a></strong></li>
+  <li><strong><a href="FunctionalAnnotation.md">FunctionalAnnotation</a></strong> <em><a href="functional_annotation_subject.md">functional annotation➞subject</a></em>  <sub>OPT</sub>  <strong><a href="GeneProduct.md">GeneProduct</a></strong></li>
+  <li><strong><a href="GenomeFeature.md">GenomeFeature</a></strong> <em><a href="genome_feature_encodes.md">genome feature➞encodes</a></em>  <sub>OPT</sub>  <strong><a href="GeneProduct.md">GeneProduct</a></strong></li>
+  <li><strong><a href="PeptideQuantification.md">PeptideQuantification</a></strong> <em><a href="peptide_quantification_all_proteins.md">peptide quantification➞all proteins</a></em>  <sub>0..*</sub>  <strong><a href="GeneProduct.md">GeneProduct</a></strong></li>
+  <li><strong><a href="PeptideQuantification.md">PeptideQuantification</a></strong> <em><a href="peptide_quantification_best_protein.md">peptide quantification➞best protein</a></em>  <sub>OPT</sub>  <strong><a href="GeneProduct.md">GeneProduct</a></strong></li>
+  <li><strong><a href="ProteinQuantification.md">ProteinQuantification</a></strong> <em><a href="protein_quantification_all_proteins.md">protein quantification➞all proteins</a></em>  <sub>0..*</sub>  <strong><a href="GeneProduct.md">GeneProduct</a></strong></li>
+  <li><strong><a href="ProteinQuantification.md">ProteinQuantification</a></strong> <em><a href="protein_quantification_best_protein.md">protein quantification➞best protein</a></em>  <sub>OPT</sub>  <strong><a href="GeneProduct.md">GeneProduct</a></strong></li>
+  <li><strong>None</strong> <em><a href="subject.md">subject</a></em>  <sub>OPT</sub>  <strong><a href="GeneProduct.md">GeneProduct</a></strong></li>
+</ul>
+
+<h2 id="attributes">Attributes</h2>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Comments:</strong></td>
+      <td> </td>
+      <td>we may include a more general gene product class in future to allow for ncRNA annotation</td>
+    </tr>
+    <tr>
+      <td><strong>Exact Mappings:</strong></td>
+      <td> </td>
+      <td>biolink:GeneProduct</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

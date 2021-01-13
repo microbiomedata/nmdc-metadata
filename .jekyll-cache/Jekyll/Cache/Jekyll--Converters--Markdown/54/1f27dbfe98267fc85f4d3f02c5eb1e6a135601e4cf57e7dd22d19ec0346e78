@@ -1,0 +1,24 @@
+I"&<h1 id="type-person_id">Type: person_id</h1>
+
+<p>Should be an ORCID. Specify in CURIE format. E.g ORCID:0000-1111-…</p>
+
+<p>URI: <a href="https://microbiomedata/meta/person_id">nmdc:person_id</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p><a href="Person.md">Person</a> -&gt;  <sub>REQ</sub> <a href="types/String.md">String</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="id.md">id</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="Person.md">Person</a></li>
+</ul>
+:ET

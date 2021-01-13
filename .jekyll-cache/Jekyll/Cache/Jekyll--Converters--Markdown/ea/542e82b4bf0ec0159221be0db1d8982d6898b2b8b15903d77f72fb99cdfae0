@@ -1,0 +1,49 @@
+I"a<h1 id="type-texture">Type: texture</h1>
+
+<p>“The relative proportion of different grain sizes of mineral particles in a soil, as described using a standard system; express as % sand (50 um to 2 mm), silt (2 um to 50 um), and clay (&lt;2 um) with textural name (e.g., silty clay loam) optional.”</p>
+
+<p>URI: <a href="https://microbiomedata/meta/texture">nmdc:texture</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p>None -&gt;  <sub>OPT</sub> <a href="QuantityValue.md">QuantityValue</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="attribute.md">attribute</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="Biosample.md">Biosample</a></li>
+</ul>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Aliases:</strong></td>
+      <td> </td>
+      <td>texture</td>
+    </tr>
+    <tr>
+      <td><strong>Mappings:</strong></td>
+      <td> </td>
+      <td>MIxS:texture</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

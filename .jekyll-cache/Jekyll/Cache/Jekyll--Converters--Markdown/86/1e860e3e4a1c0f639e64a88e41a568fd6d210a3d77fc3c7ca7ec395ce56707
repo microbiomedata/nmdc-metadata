@@ -1,0 +1,44 @@
+I"�<h1 id="type-genome_feature_phase">Type: genome_feature_phase</h1>
+
+<p>The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2.</p>
+
+<p>URI: <a href="https://microbiomedata/meta/genome_feature_phase">nmdc:genome_feature_phase</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p><a href="GenomeFeature.md">GenomeFeature</a> -&gt;  <sub>OPT</sub> <a href="types/Integer.md">Integer</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="phase.md">phase</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="GenomeFeature.md">GenomeFeature</a></li>
+</ul>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Exact Mappings:</strong></td>
+      <td> </td>
+      <td>biolink:phase</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

@@ -1,0 +1,44 @@
+I"�<h1 id="type-genome_feature_start">Type: genome_feature_start</h1>
+
+<p>The start of the feature in positive 1-based integer coordinates</p>
+
+<p>URI: <a href="https://microbiomedata/meta/genome_feature_start">nmdc:genome_feature_start</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p><a href="GenomeFeature.md">GenomeFeature</a> -&gt;  <sub>REQ</sub> <a href="types/Integer.md">Integer</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="gff_coordinate.md">gff coordinate</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="GenomeFeature.md">GenomeFeature</a></li>
+</ul>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Close Mappings:</strong></td>
+      <td> </td>
+      <td>biolink:start_interbase_coordinate</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

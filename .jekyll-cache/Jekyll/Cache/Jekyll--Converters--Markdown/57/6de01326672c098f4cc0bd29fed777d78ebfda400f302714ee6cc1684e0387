@@ -1,0 +1,174 @@
+I"V<h1 id="type-omicsprocessing">Type: OmicsProcessing</h1>
+
+<p>The methods and processes used to generate omics data from a biosample or organism.</p>
+
+<p>URI: <a href="https://microbiomedata/meta/OmicsProcessing">nmdc:OmicsProcessing</a></p>
+
+<hr />
+
+<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[Study],[ControlledTermValue]%3Comics%20type%200..1-++[OmicsProcessing%7Cid:string;name:string%20%3F;alternate_identifiers:string%20%2A;description(i):string%20%3F],[DataObject]%3Chas%20output%200..%2A-%20[OmicsProcessing],[Study]%3Cpart%20of%200..%2A-%20[OmicsProcessing],[Database]++-%20omics%20processing%20set%200..%2A%3E[OmicsProcessing],[BiosampleProcessing]%5E-[OmicsProcessing],[Database],[DataObject],[ControlledTermValue],[BiosampleProcessing],[Biosample]" alt="img" /></p>
+
+<hr />
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="BiosampleProcessing.md">BiosampleProcessing</a> - A process that takes one or more biosamples as inputs and generates one or as outputs. Examples of outputs include samples cultivated from another sample or data objects created by instruments runs.</li>
+</ul>
+
+<h2 id="referenced-by-class">Referenced by class</h2>
+
+<ul>
+  <li><strong><a href="Database.md">Database</a></strong> <em><a href="omics_processing_set.md">omics processing set</a></em>  <sub>0..*</sub>  <strong><a href="OmicsProcessing.md">OmicsProcessing</a></strong></li>
+</ul>
+
+<h2 id="attributes">Attributes</h2>
+
+<h3 id="own">Own</h3>
+
+<ul>
+  <li><a href="omics_processing_alternate_identifiers.md">omics processing➞alternate identifiers</a>  <sub>0..*</sub>
+    <ul>
+      <li>Description: The same omics processing may have distinct identifiers in different databases (e.g. GOLD and EMSL, as well as NCBI)</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="omics_processing_has_output.md">omics processing➞has output</a>  <sub>0..*</sub>
+    <ul>
+      <li>range: <a href="DataObject.md">DataObject</a></li>
+    </ul>
+  </li>
+  <li><a href="omics_processing_id.md">omics processing➞id</a>  <sub>REQ</sub>
+    <ul>
+      <li>Description: The primary identifier for the omics processing. E.g. GOLD:GpNNNN</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="omics_processing_name.md">omics processing➞name</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: A human readable name or description of the omics processing.</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="omics_processing_part_of.md">omics processing➞part of</a>  <sub>0..*</sub>
+    <ul>
+      <li>range: <a href="Study.md">Study</a></li>
+    </ul>
+  </li>
+  <li><a href="omics_type.md">omics type</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: The type of omics data</li>
+      <li>range: <a href="ControlledTermValue.md">ControlledTermValue</a></li>
+      <li>Example: metatranscriptome None</li>
+      <li>Example: metagenome None</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="inherited-from-biosample-processing">Inherited from biosample processing:</h3>
+
+<ul>
+  <li><a href="biosample_processing_has_input.md">biosample processing➞has input</a>  <sub>0..*</sub>
+    <ul>
+      <li>range: <a href="Biosample.md">Biosample</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="inherited-from-named-thing">Inherited from named thing:</h3>
+
+<ul>
+  <li><a href="id.md">id</a>  <sub>REQ</sub>
+    <ul>
+      <li>Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="name.md">name</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: A human readable label for an entity</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="description.md">description</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: a human-readable description of a thing</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="alternate_identifiers.md">alternate identifiers</a>  <sub>0..*</sub>
+    <ul>
+      <li>Description: Non-primary identifiers</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="domain-for-slot">Domain for slot:</h3>
+
+<ul>
+  <li><a href="omics_processing_alternate_identifiers.md">omics processing➞alternate identifiers</a>  <sub>0..*</sub>
+    <ul>
+      <li>Description: The same omics processing may have distinct identifiers in different databases (e.g. GOLD and EMSL, as well as NCBI)</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="omics_processing_has_output.md">omics processing➞has output</a>  <sub>0..*</sub>
+    <ul>
+      <li>range: <a href="DataObject.md">DataObject</a></li>
+    </ul>
+  </li>
+  <li><a href="omics_processing_id.md">omics processing➞id</a>  <sub>REQ</sub>
+    <ul>
+      <li>Description: The primary identifier for the omics processing. E.g. GOLD:GpNNNN</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="omics_processing_name.md">omics processing➞name</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: A human readable name or description of the omics processing.</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="omics_processing_part_of.md">omics processing➞part of</a>  <sub>0..*</sub>
+    <ul>
+      <li>range: <a href="Study.md">Study</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Aliases:</strong></td>
+      <td> </td>
+      <td>omics assay</td>
+    </tr>
+    <tr>
+      <td><strong>Comments:</strong></td>
+      <td> </td>
+      <td>The IDs for objects coming from GOLD will have prefixes gold:GpNNNN</td>
+    </tr>
+    <tr>
+      <td><strong>In Subsets:</strong></td>
+      <td> </td>
+      <td>sample subset</td>
+    </tr>
+    <tr>
+      <td><strong>Broad Mappings:</strong></td>
+      <td> </td>
+      <td>OBI:0000070</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

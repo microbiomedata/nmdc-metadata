@@ -1,0 +1,24 @@
+I"ñ<h1 id="type-peptide_quantification_best_protein">Type: peptide_quantification_best_protein</h1>
+
+<p>the specific protein identifier most correctly associated with the peptide sequence</p>
+
+<p>URI: <a href="https://microbiomedata/meta/peptide_quantification_best_protein">nmdc:peptide_quantification_best_protein</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p><a href="PeptideQuantification.md">PeptideQuantification</a> -&gt;  <sub>OPT</sub> <a href="GeneProduct.md">GeneProduct</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="best_protein.md">best protein</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="PeptideQuantification.md">PeptideQuantification</a></li>
+</ul>
+:ET

@@ -1,0 +1,390 @@
+I"y�<h1 id="type-textvalue">Type: TextValue</h1>
+
+<p>A basic string value</p>
+
+<p>URI: <a href="https://microbiomedata/meta/TextValue">nmdc:TextValue</a></p>
+
+<hr />
+
+<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[Biosample]++-%20al_sat_meth%200..1%3E[TextValue%7Clanguage:language_code%20%3F;has_raw_value(i):string%20%3F],[Biosample]++-%20crop_rotation%200..1%3E[TextValue],[Biosample]++-%20cur_land_use%200..1%3E[TextValue],[Biosample]++-%20cur_vegetation%200..1%3E[TextValue],[Biosample]++-%20cur_vegetation_meth%200..1%3E[TextValue],[Biosample]++-%20drainage_class%200..1%3E[TextValue],[Biosample]++-%20env_package%200..1%3E[TextValue],[Biosample]++-%20fao_class%200..1%3E[TextValue],[Biosample]++-%20geo_loc_name%200..1%3E[TextValue],[Biosample]++-%20heavy_metals_meth%200..1%3E[TextValue],[Biosample]++-%20horizon%200..1%3E[TextValue],[Biosample]++-%20horizon_meth%200..1%3E[TextValue],[Biosample]++-%20link_addit_analys%200..1%3E[TextValue],[Biosample]++-%20link_class_info%200..1%3E[TextValue],[Biosample]++-%20link_climate_info%200..1%3E[TextValue],[Biosample]++-%20local_class%200..1%3E[TextValue],[Biosample]++-%20local_class_meth%200..1%3E[TextValue],[Biosample]++-%20microbial_biomass_meth%200..1%3E[TextValue],[Biosample]++-%20ph_meth%200..1%3E[TextValue],[Biosample]++-%20pool_dna_extracts%200..1%3E[TextValue],[Biosample]++-%20previous_land_use%200..1%3E[TextValue],[Biosample]++-%20previous_land_use_meth%200..1%3E[TextValue],[Biosample]++-%20profile_position%200..1%3E[TextValue],[Biosample]++-%20salinity_meth%200..1%3E[TextValue],[Biosample]++-%20soil_type%200..1%3E[TextValue],[Biosample]++-%20soil_type_meth%200..1%3E[TextValue],[Biosample]++-%20store_cond%200..1%3E[TextValue],[Biosample]++-%20texture_meth%200..1%3E[TextValue],[Biosample]++-%20tillage%200..1%3E[TextValue],[Biosample]++-%20tot_nitro_content_meth%200..1%3E[TextValue],[Biosample]++-%20tot_org_c_meth%200..1%3E[TextValue],[DataObject]++-%20url%200..1%3E[TextValue],[Biosample]++-%20water_content_soil_meth%200..1%3E[TextValue],[AttributeValue]%5E-[TextValue],[DataObject],[Biosample],[AttributeValue],[Activity]" alt="img" /></p>
+
+<hr />
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="AttributeValue.md">AttributeValue</a> - The value for any value of a attribute for a sample. This object can hold both the un-normalized atomic value and the structured value</li>
+</ul>
+
+<h2 id="referenced-by-class">Referenced by class</h2>
+
+<ul>
+  <li><strong>None</strong> <em><a href="_16s_recover_software.md">_16s_recover_software</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="adapters.md">adapters</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="add_recov_method.md">add_recov_method</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="additional_info.md">additional_info</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="address.md">address</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="adj_room.md">adj_room</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="aero_struc.md">aero_struc</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="al_sat_meth.md">al_sat_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="alkalinity_method.md">alkalinity_method</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="amniotic_fluid_color.md">amniotic_fluid_color</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="ances_data.md">ances_data</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="annot.md">annot</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="arch_struc.md">arch_struc</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="assembly_name.md">assembly_name</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="assembly_qual.md">assembly_qual</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="assembly_software.md">assembly_software</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="avg_occup.md">avg_occup</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="basin.md">basin</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="bathroom_count.md">bathroom_count</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="bedroom_count.md">bedroom_count</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="bin_param.md">bin_param</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="bin_software.md">bin_software</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="biocide.md">biocide</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="biol_stat.md">biol_stat</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="biotic_regm.md">biotic_regm</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="biotic_relationship.md">biotic_relationship</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="birth_control.md">birth_control</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="blood_blood_disord.md">blood_blood_disord</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="build_docs.md">build_docs</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="build_occup_type.md">build_occup_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="building_setting.md">building_setting</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="built_struc_set.md">built_struc_set</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="built_struc_type.md">built_struc_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="ceil_cond.md">ceil_cond</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="ceil_finish_mat.md">ceil_finish_mat</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="ceil_struc.md">ceil_struc</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="ceil_texture.md">ceil_texture</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="ceil_type.md">ceil_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="ceil_water_mold.md">ceil_water_mold</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="chem_treatment.md">chem_treatment</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="chimera_check.md">chimera_check</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="climate_environment.md">climate_environment</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="compl_appr.md">compl_appr</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="compl_score.md">compl_score</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="compl_software.md">compl_software</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="contam_score.md">contam_score</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="contam_screen_input.md">contam_screen_input</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="contam_screen_param.md">contam_screen_param</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="cool_syst_id.md">cool_syst_id</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="crop_rotation.md">crop_rotation</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="cult_root_med.md">cult_root_med</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="cur_land_use.md">cur_land_use</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="cur_vegetation.md">cur_vegetation</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="cur_vegetation_meth.md">cur_vegetation_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="decontam_software.md">decontam_software</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="depos_env.md">depos_env</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="dermatology_disord.md">dermatology_disord</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="detec_type.md">detec_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="diet_last_six_month.md">diet_last_six_month</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="dominant_hand.md">dominant_hand</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="door_comp_type.md">door_comp_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="door_cond.md">door_cond</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="door_direct.md">door_direct</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="door_loc.md">door_loc</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="door_mat.md">door_mat</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="door_move.md">door_move</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="door_type.md">door_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="door_type_metal.md">door_type_metal</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="door_type_wood.md">door_type_wood</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="door_water_mold.md">door_water_mold</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="drainage_class.md">drainage_class</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="drawings.md">drawings</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="drug_usage.md">drug_usage</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="elevator.md">elevator</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="encoded_traits.md">encoded_traits</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="env_package.md">env_package</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="escalator.md">escalator</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="estimated_size.md">estimated_size</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="ext_door.md">ext_door</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="ext_wall_orient.md">ext_wall_orient</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="ext_window_orient.md">ext_window_orient</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="extrachrom_elements.md">extrachrom_elements</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="fao_class.md">fao_class</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="feat_pred.md">feat_pred</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="field.md">field</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="filter_type.md">filter_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="fireplace_type.md">fireplace_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="floor_cond.md">floor_cond</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="floor_count.md">floor_count</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="floor_finish_mat.md">floor_finish_mat</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="floor_struc.md">floor_struc</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="floor_water_mold.md">floor_water_mold</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="foetal_health_stat.md">foetal_health_stat</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="furniture.md">furniture</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="gastrointest_disord.md">gastrointest_disord</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="gender_restroom.md">gender_restroom</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="genetic_mod.md">genetic_mod</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="geo_loc_name.md">geo_loc_name</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="gestation_state.md">gestation_state</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="gravidity.md">gravidity</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="growth_habit.md">growth_habit</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="gynecologic_disord.md">gynecologic_disord</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="hall_count.md">hall_count</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="handidness.md">handidness</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="hc_produced.md">hc_produced</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="hcr.md">hcr</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="hcr_geol_age.md">hcr_geol_age</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="health_disease_stat.md">health_disease_stat</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="heat_cool_type.md">heat_cool_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="heat_deliv_loc.md">heat_deliv_loc</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="heat_system_deliv_meth.md">heat_system_deliv_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="heat_system_id.md">heat_system_id</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="heavy_metals_meth.md">heavy_metals_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="horizon.md">horizon</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="horizon_meth.md">horizon_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_body_habitat.md">host_body_habitat</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_color.md">host_color</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_common_name.md">host_common_name</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_diet.md">host_diet</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_family_relationship.md">host_family_relationship</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_genotype.md">host_genotype</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_growth_cond.md">host_growth_cond</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_hiv_stat.md">host_hiv_stat</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_infra_specific_name.md">host_infra_specific_name</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_infra_specific_rank.md">host_infra_specific_rank</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_last_meal.md">host_last_meal</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_life_stage.md">host_life_stage</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_occupation.md">host_occupation</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_pred_appr.md">host_pred_appr</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_pred_est_acc.md">host_pred_est_acc</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_sex.md">host_sex</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_shape.md">host_shape</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_spec_range.md">host_spec_range</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_subject_id.md">host_subject_id</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_substrate.md">host_substrate</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="host_taxid.md">host_taxid</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="ihmc_ethnicity.md">ihmc_ethnicity</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="ihmc_medication_code.md">ihmc_medication_code</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="indoor_space.md">indoor_space</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="indoor_surf.md">indoor_surf</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="int_wall_cond.md">int_wall_cond</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="investigation_type.md">investigation_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="isol_growth_condt.md">isol_growth_condt</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="kidney_disord.md">kidney_disord</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="lib_layout.md">lib_layout</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="lib_reads_seqd.md">lib_reads_seqd</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="lib_screen.md">lib_screen</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="lib_size.md">lib_size</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="lib_vector.md">lib_vector</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="light_type.md">light_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="link_addit_analys.md">link_addit_analys</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="link_class_info.md">link_class_info</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="link_climate_info.md">link_climate_info</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="lithology.md">lithology</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="liver_disord.md">liver_disord</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="local_class.md">local_class</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="local_class_meth.md">local_class_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="mag_cov_software.md">mag_cov_software</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="maternal_health_stat.md">maternal_health_stat</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="mech_struc.md">mech_struc</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="mechanical_damage.md">mechanical_damage</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="microbial_biomass_meth.md">microbial_biomass_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="mid.md">mid</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="nose_mouth_teeth_throat_disord.md">nose_mouth_teeth_throat_disord</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="nose_throat_disord.md">nose_throat_disord</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="nucl_acid_amp.md">nucl_acid_amp</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="nucl_acid_ext.md">nucl_acid_ext</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="num_replicons.md">num_replicons</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="number_contig.md">number_contig</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="occup_document.md">occup_document</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="organism_count_qpcr_info.md">organism_count_qpcr_info</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="oxy_stat_samp.md">oxy_stat_samp</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="pathogenicity.md">pathogenicity</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="pcr_cond.md">pcr_cond</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="pcr_primers.md">pcr_primers</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="perturbation.md">perturbation</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="pet_farm_animal.md">pet_farm_animal</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="ph_meth.md">ph_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="ph_regm.md">ph_regm</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="plant_product.md">plant_product</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="plant_sex.md">plant_sex</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="pool_dna_extracts.md">pool_dna_extracts</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="pre_treatment.md">pre_treatment</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="pred_genome_struc.md">pred_genome_struc</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="pred_genome_type.md">pred_genome_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="pres_animal.md">pres_animal</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="previous_land_use.md">previous_land_use</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="previous_land_use_meth.md">previous_land_use_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="primary_treatment.md">primary_treatment</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="profile_position.md">profile_position</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="project_name.md">project_name</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="propagation.md">propagation</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="pulmonary_disord.md">pulmonary_disord</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="quad_pos.md">quad_pos</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="reactor_type.md">reactor_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="ref_biomaterial.md">ref_biomaterial</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="ref_db.md">ref_db</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="rel_samp_loc.md">rel_samp_loc</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="rel_to_oxygen.md">rel_to_oxygen</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="reservoir.md">reservoir</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="room_architec_element.md">room_architec_element</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="room_condt.md">room_condt</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="room_connected.md">room_connected</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="room_count.md">room_count</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="room_door_share.md">room_door_share</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="room_hallway.md">room_hallway</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="room_loc.md">room_loc</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="room_moist_damage_hist.md">room_moist_damage_hist</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="room_samp_pos.md">room_samp_pos</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="room_type.md">room_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="room_wall_share.md">room_wall_share</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="room_window_count.md">room_window_count</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="root_cond.md">root_cond</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="root_med_solid.md">root_med_solid</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="salinity_meth.md">salinity_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="samp_capt_status.md">samp_capt_status</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="samp_collect_device.md">samp_collect_device</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="samp_collection_point.md">samp_collection_point</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="samp_dis_stage.md">samp_dis_stage</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="samp_floor.md">samp_floor</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="samp_room_id.md">samp_room_id</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="samp_sort_meth.md">samp_sort_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="samp_store_dur.md">samp_store_dur</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="samp_store_loc.md">samp_store_loc</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="samp_subtype.md">samp_subtype</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="samp_time_out.md">samp_time_out</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="samp_type.md">samp_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="samp_weather.md">samp_weather</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="samp_well_name.md">samp_well_name</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="season.md">season</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="season_environment.md">season_environment</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="season_use.md">season_use</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="secondary_treatment.md">secondary_treatment</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="sediment_type.md">sediment_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="seq_meth.md">seq_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="seq_quality_check.md">seq_quality_check</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="sewage_type.md">sewage_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="sexual_act.md">sexual_act</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="shading_device_cond.md">shading_device_cond</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="shading_device_loc.md">shading_device_loc</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="shading_device_mat.md">shading_device_mat</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="shading_device_type.md">shading_device_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="shading_device_water_mold.md">shading_device_water_mold</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="sim_search_meth.md">sim_search_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="single_cell_lysis_appr.md">single_cell_lysis_appr</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="single_cell_lysis_prot.md">single_cell_lysis_prot</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="soil_type.md">soil_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="soil_type_meth.md">soil_type_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="sop.md">sop</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="sort_tech.md">sort_tech</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="source_mat_id.md">source_mat_id</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="source_uvig.md">source_uvig</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="space_typ_state.md">space_typ_state</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="special_diet.md">special_diet</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="specific.md">specific</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="specific_host.md">specific_host</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="sr_dep_env.md">sr_dep_env</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="sr_geol_age.md">sr_geol_age</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="sr_kerog_type.md">sr_kerog_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="sr_lithology.md">sr_lithology</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="standing_water_regm.md">standing_water_regm</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="store_cond.md">store_cond</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="study_complt_stat.md">study_complt_stat</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="subspecf_gen_lin.md">subspecf_gen_lin</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="substructure_type.md">substructure_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="surf_air_cont.md">surf_air_cont</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="surf_material.md">surf_material</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="target_gene.md">target_gene</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="target_subfragment.md">target_subfragment</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="tax_class.md">tax_class</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="tax_ident.md">tax_ident</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="tertiary_treatment.md">tertiary_treatment</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="texture_meth.md">texture_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="tidal_stage.md">tidal_stage</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="tillage.md">tillage</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="time_last_toothbrush.md">time_last_toothbrush</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="time_since_last_wash.md">time_since_last_wash</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="tiss_cult_growth_med.md">tiss_cult_growth_med</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="tot_nitro_content_meth.md">tot_nitro_content_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="tot_org_c_meth.md">tot_org_c_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="train_line.md">train_line</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="train_stat_loc.md">train_stat_loc</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="train_stop_loc.md">train_stop_loc</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="travel_out_six_month.md">travel_out_six_month</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="trna_ext_software.md">trna_ext_software</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="trnas.md">trnas</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="trophic_level.md">trophic_level</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="urine_collect_meth.md">urine_collect_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="url.md">url</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="urogenit_disord.md">urogenit_disord</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="urogenit_tract_disor.md">urogenit_tract_disor</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="ventilation_type.md">ventilation_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="vir_ident_software.md">vir_ident_software</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="virus_enrich_appr.md">virus_enrich_appr</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="vis_media.md">vis_media</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="votu_class_appr.md">votu_class_appr</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="votu_db.md">votu_db</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="votu_seq_comp_appr.md">votu_seq_comp_appr</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="wall_const_type.md">wall_const_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="wall_finish_mat.md">wall_finish_mat</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="wall_loc.md">wall_loc</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="wall_surf_treatment.md">wall_surf_treatment</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="wall_texture.md">wall_texture</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="wall_water_mold.md">wall_water_mold</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="wastewater_type.md">wastewater_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="water_content_soil_meth.md">water_content_soil_meth</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="water_feat_type.md">water_feat_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="weekday.md">weekday</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="wga_amp_appr.md">wga_amp_appr</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="wga_amp_kit.md">wga_amp_kit</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="win.md">win</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="wind_direction.md">wind_direction</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="window_cond.md">window_cond</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="window_cover.md">window_cover</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="window_horiz_pos.md">window_horiz_pos</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="window_loc.md">window_loc</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="window_mat.md">window_mat</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="window_open_freq.md">window_open_freq</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="window_status.md">window_status</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="window_type.md">window_type</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="window_vert_pos.md">window_vert_pos</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+  <li><strong>None</strong> <em><a href="window_water_mold.md">window_water_mold</a></em>  <sub>OPT</sub>  <strong><a href="TextValue.md">TextValue</a></strong></li>
+</ul>
+
+<h2 id="attributes">Attributes</h2>
+
+<h3 id="own">Own</h3>
+
+<ul>
+  <li><a href="language.md">language</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: Should use ISO 639-1 code e.g. “en”, “fr”</li>
+      <li>range: <a href="types/LanguageCode.md">LanguageCode</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="inherited-from-attribute-value">Inherited from attribute value:</h3>
+
+<ul>
+  <li><a href="has_raw_value.md">has raw value</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: The value that was specified for an annotation in raw form, i.e. a string. E.g. “2 cm” or “2-4 cm”</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="inherited-from-functional-annotation">Inherited from functional annotation:</h3>
+
+<ul>
+  <li><a href="functional_annotation_was_generated_by.md">functional annotation➞was generated by</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: provenance for the annotation. Note to be consistent with the rest of the NMDC schema we use the PROV annotation model, rather than GPAD</li>
+      <li>range: <a href="Activity.md">Activity</a></li>
+    </ul>
+  </li>
+  <li><a href="functional_annotation_subject.md">functional annotation➞subject</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="GeneProduct.md">GeneProduct</a></li>
+    </ul>
+  </li>
+  <li><a href="functional_annotation_has_function.md">functional annotation➞has function</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="FunctionalAnnotationTerm.md">FunctionalAnnotationTerm</a></li>
+    </ul>
+  </li>
+</ul>
+:ET

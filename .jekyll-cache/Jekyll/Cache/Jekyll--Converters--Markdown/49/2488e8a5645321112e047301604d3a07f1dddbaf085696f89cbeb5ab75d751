@@ -1,0 +1,20 @@
+I"�<h1 id="type-language">Type: language</h1>
+
+<p>Should use ISO 639-1 code e.g. “en”, “fr”</p>
+
+<p>URI: <a href="https://microbiomedata/meta/language">nmdc:language</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p>None -&gt;  <sub>OPT</sub> <a href="types/LanguageCode.md">LanguageCode</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="TextValue.md">TextValue</a></li>
+</ul>
+:ET

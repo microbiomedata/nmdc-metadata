@@ -1,0 +1,20 @@
+I"õ<h1 id="type-study_set">Type: study_set</h1>
+
+<p>This property links a database object to the set of studies within it.</p>
+
+<p>URI: <a href="https://microbiomedata/meta/study_set">nmdc:study_set</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p><a href="Database.md">Database</a> -&gt;  <sub>0..*</sub> <a href="Study.md">Study</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="Database.md">Database</a></li>
+</ul>
+:ET

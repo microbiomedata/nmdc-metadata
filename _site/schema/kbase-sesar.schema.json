@@ -1,0 +1,689 @@
+{
+   "$id": "https://microbiomedata/schema/kbase",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "definitions": {
+      "ENIGMA": {
+         "additionalProperties": false,
+         "description": "TODO",
+         "properties": {
+            "aquifer": {
+               "type": "string"
+            },
+            "area_name": {
+               "type": "string"
+            },
+            "average_water_level_ft_amsl": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "biomass_carbon_mg_g": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "biome": {
+               "type": "string"
+            },
+            "boring_diameter_in": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "boring_ft_bgs": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "boring_refusal": {
+               "type": "string"
+            },
+            "collection_time": {
+               "type": "string"
+            },
+            "condition": {
+               "type": "string"
+            },
+            "conductivity_ms_cm": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "continent": {
+               "type": "string"
+            },
+            "country": {
+               "type": "string"
+            },
+            "dapi_cell_count_cells_g": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "date": {
+               "type": "string"
+            },
+            "depth": {
+               "description": "depth in centimeters below ground surface (cm BGS)",
+               "type": "number"
+            },
+            "description": {
+               "type": "string"
+            },
+            "dna_picogreen_total_ng": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "drive_casing_end_depth_ft_bgs": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "drive_casing_id_in": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "drive_casing_od_in": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "drive_casing_start_depth_ft_bgs": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "drive_casing_type": {
+               "type": "string"
+            },
+            "elevation": {
+               "type": "string"
+            },
+            "env_package": {
+               "type": "string"
+            },
+            "env_pakcage": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "environmental_package": {
+               "type": "string"
+            },
+            "experiment_name": {
+               "type": "string"
+            },
+            "feature": {
+               "type": "string"
+            },
+            "fraction": {
+               "type": "string"
+            },
+            "fractures_cavities_waterbreaks": {
+               "type": "string"
+            },
+            "functional_area": {
+               "type": "string"
+            },
+            "geological_zone": {
+               "type": "string"
+            },
+            "ground_elevation_ft_amsl": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "id": {
+               "description": "Unique identifier for the Sample",
+               "type": "string"
+            },
+            "installation_method": {
+               "type": "string"
+            },
+            "latitude": {
+               "description": "Latitude in degrees",
+               "type": "number"
+            },
+            "leucine_activity_ngc_day_cell": {
+               "description": "units in ngC/day cell",
+               "type": "string"
+            },
+            "longitude": {
+               "description": "Longitude in degrees",
+               "type": "number"
+            },
+            "lower_seal_end_depth_ft_bgs": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "lower_seal_start_depth_ft_bgs": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "lower_seal_type_ft_bgs": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "material": {
+               "type": "string"
+            },
+            "maturation_time": {
+               "type": "string"
+            },
+            "max_water_level_ft_amsl": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "method": {
+               "type": "string"
+            },
+            "min_water_level_ft_amsl": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "moisture": {
+               "description": "percent moisture",
+               "type": "number"
+            },
+            "name": {
+               "description": "name validator",
+               "type": "string"
+            },
+            "open": {
+               "type": "string"
+            },
+            "open_casing_depth_ft_bgs": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "open_casing_id_in": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "open_casing_od_in": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "open_casing_type": {
+               "type": "string"
+            },
+            "open_hole_depth_ft_bgs": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "open_hole_diameter_in": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "open_interval_diameter_in": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "open_interval_end_depth_ft_bgs": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "open_interval_start_depth_ft_bgs": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "origination_or_plug_abandon": {
+               "type": "string"
+            },
+            "other_name": {
+               "type": "string"
+            },
+            "packing_depth_end_ft_bgs": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "packing_depth_start_ft_bgs": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "packing_type": {
+               "type": "string"
+            },
+            "ph": {
+               "description": "pH of sample",
+               "type": "number"
+            },
+            "pore_water_extraction_microliters": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "recovery_factor": {
+               "type": "string"
+            },
+            "region": {
+               "type": "string"
+            },
+            "replicate": {
+               "type": "string"
+            },
+            "rock_formation": {
+               "type": "string"
+            },
+            "sampleid": {
+               "type": "string"
+            },
+            "screen_type": {
+               "type": "string"
+            },
+            "screened": {
+               "type": "string"
+            },
+            "temperature_celsius": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "time": {
+               "type": "string"
+            },
+            "time_zone": {
+               "type": "string"
+            },
+            "timezone": {
+               "type": "string"
+            },
+            "topoffreshbedrock_ft_bgs": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "topofweatheredbedrock_ft_bgs": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "total_carbon_mg_g_dry_weight": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "total_nitrogen_mg_g_dry_weight": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "treatment": {
+               "type": "string"
+            },
+            "type_of_well": {
+               "type": "string"
+            },
+            "upper_seal_end_depth_ft_bgs": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "upper_seal_start_depth_ft_bgs": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "upper_seal_type": {
+               "type": "string"
+            },
+            "well": {
+               "type": "string"
+            },
+            "well_casing_id_in": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "well_casing_od_in": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "well_casing_type": {
+               "type": "string"
+            },
+            "well_name": {
+               "type": "string"
+            },
+            "well_status": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "ENIGMA",
+         "type": "object"
+      },
+      "SESAR": {
+         "additionalProperties": false,
+         "description": "TODO",
+         "properties": {
+            "age_unit": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "city_township": {
+               "type": "string"
+            },
+            "classification": {
+               "type": "string"
+            },
+            "collection_date_precision": {
+               "type": "string"
+            },
+            "collection_method": {
+               "type": "string"
+            },
+            "collection_method_description": {
+               "type": "string"
+            },
+            "collection_time": {
+               "type": "string"
+            },
+            "collection_time_end": {
+               "type": "string"
+            },
+            "collector_chief_scientist": {
+               "type": "string"
+            },
+            "collector_chief_scientist_address": {
+               "type": "string"
+            },
+            "country": {
+               "type": "string"
+            },
+            "county": {
+               "type": "string"
+            },
+            "current_archive": {
+               "type": "string"
+            },
+            "date": {
+               "type": "string"
+            },
+            "depth": {
+               "description": "depth in centimeters below ground surface (cm BGS)",
+               "type": "number"
+            },
+            "depth_scale": {
+               "type": "string"
+            },
+            "description": {
+               "type": "string"
+            },
+            "elevation": {
+               "type": "string"
+            },
+            "env_pakcage": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "field_name_informal_classification": {
+               "type": "string"
+            },
+            "field_program_cruise": {
+               "type": "string"
+            },
+            "geological_unit": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "id": {
+               "description": "Unique identifier for the Sample",
+               "type": "string"
+            },
+            "latitude": {
+               "description": "Latitude in degrees",
+               "type": "number"
+            },
+            "launch_id": {
+               "type": "string"
+            },
+            "launch_platform_name": {
+               "type": "string"
+            },
+            "locality": {
+               "type": "string"
+            },
+            "locality_description": {
+               "type": "string"
+            },
+            "location_description": {
+               "type": "string"
+            },
+            "longitude": {
+               "description": "Longitude in degrees",
+               "type": "number"
+            },
+            "material": {
+               "type": "string"
+            },
+            "name": {
+               "description": "name validator",
+               "type": "string"
+            },
+            "name_of_physiographic_feature": {
+               "type": "string"
+            },
+            "navigation_type": {
+               "type": "string"
+            },
+            "original_archive": {
+               "type": "string"
+            },
+            "original_archive_contact": {
+               "type": "string"
+            },
+            "other_names": {
+               "type": "string"
+            },
+            "platform_name": {
+               "type": "string"
+            },
+            "platform_type": {
+               "type": "string"
+            },
+            "primary_physiographic_feature": {
+               "type": "string"
+            },
+            "purpose": {
+               "type": "string"
+            },
+            "related_identifiers": {
+               "type": "string"
+            },
+            "sample_description": {
+               "type": "string"
+            },
+            "sample_name": {
+               "type": "string"
+            },
+            "size": {
+               "description": "Size in meters cubed",
+               "type": "number"
+            },
+            "size_unit": {
+               "description": "Auto-populated",
+               "type": "string"
+            },
+            "state_province": {
+               "type": "string"
+            },
+            "sub-object_type": {
+               "type": "string"
+            },
+            "time": {
+               "type": "string"
+            },
+            "timezone": {
+               "type": "string"
+            },
+            "vertical_datum": {
+               "type": "string"
+            },
+            "well": {
+               "type": "string"
+            },
+            "zone": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "SESAR",
+         "type": "object"
+      }
+   },
+   "properties": {
+      "age_unit": {
+         "description": "Auto-populated",
+         "type": "string"
+      },
+      "city_township": {
+         "type": "string"
+      },
+      "classification": {
+         "type": "string"
+      },
+      "collection_date_precision": {
+         "type": "string"
+      },
+      "collection_method": {
+         "type": "string"
+      },
+      "collection_method_description": {
+         "type": "string"
+      },
+      "collection_time": {
+         "type": "string"
+      },
+      "collection_time_end": {
+         "type": "string"
+      },
+      "collector_chief_scientist": {
+         "type": "string"
+      },
+      "collector_chief_scientist_address": {
+         "type": "string"
+      },
+      "country": {
+         "type": "string"
+      },
+      "county": {
+         "type": "string"
+      },
+      "current_archive": {
+         "type": "string"
+      },
+      "date": {
+         "type": "string"
+      },
+      "depth": {
+         "description": "depth in centimeters below ground surface (cm BGS)",
+         "type": "number"
+      },
+      "depth_scale": {
+         "type": "string"
+      },
+      "description": {
+         "type": "string"
+      },
+      "elevation": {
+         "type": "string"
+      },
+      "env_pakcage": {
+         "description": "Auto-populated",
+         "type": "string"
+      },
+      "field_name_informal_classification": {
+         "type": "string"
+      },
+      "field_program_cruise": {
+         "type": "string"
+      },
+      "geological_unit": {
+         "description": "Auto-populated",
+         "type": "string"
+      },
+      "id": {
+         "description": "Unique identifier for the Sample",
+         "type": "string"
+      },
+      "latitude": {
+         "description": "Latitude in degrees",
+         "type": "number"
+      },
+      "launch_id": {
+         "type": "string"
+      },
+      "launch_platform_name": {
+         "type": "string"
+      },
+      "locality": {
+         "type": "string"
+      },
+      "locality_description": {
+         "type": "string"
+      },
+      "location_description": {
+         "type": "string"
+      },
+      "longitude": {
+         "description": "Longitude in degrees",
+         "type": "number"
+      },
+      "material": {
+         "type": "string"
+      },
+      "name": {
+         "description": "name validator",
+         "type": "string"
+      },
+      "name_of_physiographic_feature": {
+         "type": "string"
+      },
+      "navigation_type": {
+         "type": "string"
+      },
+      "original_archive": {
+         "type": "string"
+      },
+      "original_archive_contact": {
+         "type": "string"
+      },
+      "other_names": {
+         "type": "string"
+      },
+      "platform_name": {
+         "type": "string"
+      },
+      "platform_type": {
+         "type": "string"
+      },
+      "primary_physiographic_feature": {
+         "type": "string"
+      },
+      "purpose": {
+         "type": "string"
+      },
+      "related_identifiers": {
+         "type": "string"
+      },
+      "sample_description": {
+         "type": "string"
+      },
+      "sample_name": {
+         "type": "string"
+      },
+      "size": {
+         "description": "Size in meters cubed",
+         "type": "number"
+      },
+      "size_unit": {
+         "description": "Auto-populated",
+         "type": "string"
+      },
+      "state_province": {
+         "type": "string"
+      },
+      "sub-object_type": {
+         "type": "string"
+      },
+      "time": {
+         "type": "string"
+      },
+      "timezone": {
+         "type": "string"
+      },
+      "vertical_datum": {
+         "type": "string"
+      },
+      "well": {
+         "type": "string"
+      },
+      "zone": {
+         "type": "string"
+      }
+   },
+   "title": "kbase",
+   "type": "object"
+}
+

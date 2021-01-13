@@ -1,0 +1,45 @@
+I"�<h1 id="type-omics_type">Type: omics_type</h1>
+
+<p>The type of omics data</p>
+
+<p>URI: <a href="https://microbiomedata/meta/omics_type">nmdc:omics_type</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p>None -&gt;  <sub>OPT</sub> <a href="ControlledTermValue.md">ControlledTermValue</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="OmicsProcessing.md">OmicsProcessing</a></li>
+</ul>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Examples:</strong></td>
+      <td> </td>
+      <td>Example(value=’metatranscriptome’, description=None)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>Example(value=’metagenome’, description=None)</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

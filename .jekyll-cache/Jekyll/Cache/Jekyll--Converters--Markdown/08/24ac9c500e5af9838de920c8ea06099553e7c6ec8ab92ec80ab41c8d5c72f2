@@ -1,0 +1,37 @@
+I"<h1 id="type-id">Type: id</h1>
+
+<p>A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI</p>
+
+<p>URI: <a href="https://microbiomedata/meta/id">nmdc:id</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p>None -&gt;  <sub>REQ</sub> <a href="types/String.md">String</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<h2 id="children">Children</h2>
+
+<ul>
+  <li><a href="biosample_id.md">biosample➞id</a></li>
+  <li><a href="omics_processing_id.md">omics processing➞id</a></li>
+  <li><a href="person_id.md">person➞id</a></li>
+  <li><a href="study_id.md">study➞id</a></li>
+</ul>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="BiosampleProcessing.md">BiosampleProcessing</a></li>
+  <li><a href="ChemicalEntity.md">ChemicalEntity</a></li>
+  <li><a href="DataObject.md">DataObject</a></li>
+  <li><a href="EnvironmentalMaterialTerm.md">EnvironmentalMaterialTerm</a></li>
+  <li><a href="FunctionalAnnotationTerm.md">FunctionalAnnotationTerm</a></li>
+  <li><a href="Instrument.md">Instrument</a></li>
+  <li><a href="NamedThing.md">NamedThing</a></li>
+  <li><a href="OntologyClass.md">OntologyClass</a></li>
+  <li><a href="OrthologyGroup.md">OrthologyGroup</a></li>
+  <li><a href="Pathway.md">Pathway</a></li>
+  <li><a href="Reaction.md">Reaction</a></li>
+</ul>
+:ET

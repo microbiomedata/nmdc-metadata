@@ -1,0 +1,67 @@
+I"=<h1 id="type-alternate_identifiers">Type: alternate_identifiers</h1>
+
+<p>Non-primary identifiers</p>
+
+<p>URI: <a href="https://microbiomedata/meta/alternate_identifiers">nmdc:alternate_identifiers</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p>None -&gt;  <sub>0..*</sub> <a href="types/String.md">String</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<h2 id="children">Children</h2>
+
+<ul>
+  <li><a href="biosample_alternate_identifiers.md">biosample➞alternate identifiers</a></li>
+  <li><a href="omics_processing_alternate_identifiers.md">omics processing➞alternate identifiers</a></li>
+  <li><a href="study_alternate_identifiers.md">study➞alternate identifiers</a></li>
+</ul>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="BiosampleProcessing.md">BiosampleProcessing</a></li>
+  <li><a href="ChemicalEntity.md">ChemicalEntity</a></li>
+  <li><a href="DataObject.md">DataObject</a></li>
+  <li><a href="EnvironmentalMaterialTerm.md">EnvironmentalMaterialTerm</a></li>
+  <li><a href="FunctionalAnnotationTerm.md">FunctionalAnnotationTerm</a></li>
+  <li><a href="Instrument.md">Instrument</a></li>
+  <li><a href="NamedThing.md">NamedThing</a></li>
+  <li><a href="OntologyClass.md">OntologyClass</a></li>
+  <li><a href="OrthologyGroup.md">OrthologyGroup</a></li>
+  <li><a href="Pathway.md">Pathway</a></li>
+  <li><a href="Person.md">Person</a></li>
+  <li><a href="Reaction.md">Reaction</a></li>
+</ul>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Aliases:</strong></td>
+      <td> </td>
+      <td>mappings</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>alt ids</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>xrefs</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

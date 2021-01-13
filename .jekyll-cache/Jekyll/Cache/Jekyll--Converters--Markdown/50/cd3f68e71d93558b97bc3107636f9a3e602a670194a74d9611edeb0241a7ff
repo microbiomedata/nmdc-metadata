@@ -1,0 +1,180 @@
+I"<h1 id="type-readqcanalysisactivity">Type: ReadQCAnalysisActivity</h1>
+
+<p>URI: <a href="https://microbiomedata/meta/ReadQCAnalysisActivity">nmdc:ReadQCAnalysisActivity</a></p>
+
+<hr />
+
+<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[WorkflowExecutionActivity],[WorkflowExecutionActivity]%5E-[ReadQCAnalysisActivity%7Cinput_read_count:float%20%3F;input_base_count:float%20%3F;output_read_count:float%20%3F;output_base_count:float%20%3F;execution_resource(i):string%20%3F;git_url(i):string%20%3F;has_input(i):string%20%2A;has_output(i):string%20%2A;activity_id(i):string;started_at_time(i):string%20%3F;ended_at_time(i):string%20%3F;used(i):string%20%3F],[Agent],[Activity]" alt="img" /></p>
+
+<hr />
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="WorkflowExecutionActivity.md">WorkflowExecutionActivity</a> - Represents an instance of an execution of a particular workflow</li>
+</ul>
+
+<h2 id="attributes">Attributes</h2>
+
+<h3 id="own">Own</h3>
+
+<ul>
+  <li><a href="input_base_count.md">input base count</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: The nucleotide base count number of input reads for QC analysis.</li>
+      <li>range: <a href="types/Float.md">Float</a></li>
+    </ul>
+  </li>
+  <li><a href="input_read_count.md">input read count</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: The sequence count number of input reads for QC analysis.</li>
+      <li>range: <a href="types/Float.md">Float</a></li>
+    </ul>
+  </li>
+  <li><a href="output_base_count.md">output base count</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: After QC analysis nucleotide base count number.</li>
+      <li>range: <a href="types/Float.md">Float</a></li>
+    </ul>
+  </li>
+  <li><a href="output_read_count.md">output read count</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: After QC analysis sequence count number.</li>
+      <li>range: <a href="types/Float.md">Float</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="inherited-from-activity">Inherited from activity:</h3>
+
+<ul>
+  <li><a href="activity_id.md">activity id</a>  <sub>REQ</sub>
+    <ul>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="started_at_time.md">started at time</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="ended_at_time.md">ended at time</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="was_associated_with.md">was associated with</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="Agent.md">Agent</a></li>
+    </ul>
+  </li>
+  <li><a href="used.md">used</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="inherited-from-agent">Inherited from agent:</h3>
+
+<ul>
+  <li><a href="acted_on_behalf_of.md">acted on behalf of</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="Agent.md">Agent</a></li>
+    </ul>
+  </li>
+  <li><a href="was_informed_by.md">was informed by</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="Activity.md">Activity</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="inherited-from-biosample-processing">Inherited from biosample processing:</h3>
+
+<ul>
+  <li><a href="biosample_processing_has_input.md">biosample processing➞has input</a>  <sub>0..*</sub>
+    <ul>
+      <li>range: <a href="Biosample.md">Biosample</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="inherited-from-omics-processing">Inherited from omics processing:</h3>
+
+<ul>
+  <li><a href="omics_processing_part_of.md">omics processing➞part of</a>  <sub>0..*</sub>
+    <ul>
+      <li>range: <a href="Study.md">Study</a></li>
+    </ul>
+  </li>
+  <li><a href="omics_processing_has_output.md">omics processing➞has output</a>  <sub>0..*</sub>
+    <ul>
+      <li>range: <a href="DataObject.md">DataObject</a></li>
+    </ul>
+  </li>
+  <li><a href="omics_type.md">omics type</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: The type of omics data</li>
+      <li>range: <a href="ControlledTermValue.md">ControlledTermValue</a></li>
+      <li>Example: metatranscriptome None</li>
+      <li>Example: metagenome None</li>
+    </ul>
+  </li>
+  <li><a href="omics_processing_id.md">omics processing➞id</a>  <sub>REQ</sub>
+    <ul>
+      <li>Description: The primary identifier for the omics processing. E.g. GOLD:GpNNNN</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="omics_processing_name.md">omics processing➞name</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: A human readable name or description of the omics processing.</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="omics_processing_alternate_identifiers.md">omics processing➞alternate identifiers</a>  <sub>0..*</sub>
+    <ul>
+      <li>Description: The same omics processing may have distinct identifiers in different databases (e.g. GOLD and EMSL, as well as NCBI)</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="inherited-from-workflow-execution-activity">Inherited from workflow execution activity:</h3>
+
+<ul>
+  <li><a href="execution_resource.md">execution resource</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: Example: NERSC-Cori</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="git_url.md">git url</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: Example: https://github.com/microbiomedata/mg_annotation/releases/tag/0.1</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="other-properties">Other properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>In Subsets:</strong></td>
+      <td> </td>
+      <td>workflow subset</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

@@ -1,0 +1,24 @@
+I"#<h1 id="type-chemical_entity_smiles">Type: chemical_entity_smiles</h1>
+
+<p>A string encoding of a molecular graph, no chiral or isotopic information. There are usually a large number of valid SMILES which represent a given structure. For example, CCO, OCC and C(O)C all specify the structure of ethanol.</p>
+
+<p>URI: <a href="https://microbiomedata/meta/chemical_entity_smiles">nmdc:chemical_entity_smiles</a></p>
+
+<h2 id="domain-and-range">Domain and Range</h2>
+
+<p><a href="ChemicalEntity.md">ChemicalEntity</a> -&gt;  <sub>0..*</sub> <a href="types/String.md">String</a></p>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="smiles.md">smiles</a></li>
+</ul>
+
+<h2 id="children">Children</h2>
+
+<h2 id="used-by">Used by</h2>
+
+<ul>
+  <li><a href="ChemicalEntity.md">ChemicalEntity</a></li>
+</ul>
+:ET
