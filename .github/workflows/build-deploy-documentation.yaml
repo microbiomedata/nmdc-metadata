@@ -14,7 +14,7 @@ on:
     - 'schema/nmdc_schema_uml.png'
 
   repository_dispatch:
-    types: trigger-build-deploy-jekyll-documentaton
+    types: trigger-build-deploy-jekyll-documentation
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
