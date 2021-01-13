@@ -51,7 +51,7 @@ jobs:
 
     - name: Install and Build
       run: |
-        gem install just-the-docs
+        sudo gem install just-the-docs
         pip install pipenv
         make jekyll-docs
         jekyll build # create static files in _site directory
