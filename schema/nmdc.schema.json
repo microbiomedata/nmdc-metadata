@@ -534,6 +534,9 @@
                "description": "A human readable label for an entity",
                "type": "string"
             },
+            "url": {
+               "$ref": "#/definitions/TextValue"
+            },
             "was_generated_by": {
                "$ref": "#/definitions/WorkflowExecutionActivity",
                "description": "the activity that generated the file"
@@ -759,6 +762,66 @@
          },
          "required": [],
          "title": "IntegerValue",
+         "type": "object"
+      },
+      "MAGAnnotationActivity": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "activity_id": {
+               "type": "string"
+            },
+            "binned_contig_num": {
+               "type": "integer"
+            },
+            "ended_at_time": {
+               "type": "string"
+            },
+            "execution_resource": {
+               "description": "Example: NERSC-Cori",
+               "type": "string"
+            },
+            "git_url": {
+               "description": "Example: https://github.com/microbiomedata/mg_annotation/releases/tag/0.1",
+               "type": "string"
+            },
+            "has_input": {
+               "description": "An input to a process.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_output": {
+               "description": "An output biosample to a processing step",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "input_contig_num": {
+               "type": "integer"
+            },
+            "started_at_time": {
+               "type": "string"
+            },
+            "too_short_contig_num": {
+               "type": "integer"
+            },
+            "used": {
+               "type": "string"
+            },
+            "was_associated_with": {
+               "$ref": "#/definitions/Agent"
+            },
+            "was_informed_by": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "activity_id"
+         ],
+         "title": "MAGAnnotationActivity",
          "type": "object"
       },
       "MetaboliteQuantification": {
@@ -1255,10 +1318,10 @@
       },
       "PeptideQuantification": {
          "additionalProperties": false,
-         "description": "This is used to link a metabolomics analysis workflow to a specific protein",
+         "description": "This is used to link a metaproteomics analysis workflow to a specific peptide sequence and related information",
          "properties": {
             "all_proteins": {
-               "description": "the specific protein identifier",
+               "description": "the list of protein identifiers that are associated with the peptide sequence",
                "items": {
                   "$ref": "#/definitions/GeneProduct"
                },
@@ -1266,21 +1329,21 @@
             },
             "best_protein": {
                "$ref": "#/definitions/GeneProduct",
-               "description": "the specific protein identifier"
+               "description": "the specific protein identifier most correctly associated with the peptide sequence"
             },
             "min_q_value": {
-               "description": "TODO: Sam to fill in",
-               "type": "integer"
+               "description": "smallest Q-Value associated with the peptide sequence as provided by MSGFPlus tool",
+               "type": "number"
             },
             "peptide_sequence": {
                "type": "string"
             },
-            "spectral_count": {
-               "description": "TODO: Sam to fill in",
+            "peptide_spectral_count": {
+               "description": "sum of filter passing MS2 spectra associated with the peptide sequence within a given LC-MS/MS data file",
                "type": "integer"
             },
-            "sum_masic_abundance": {
-               "description": "TODO: Sam to fill in",
+            "peptide_sum_masic_abundance": {
+               "description": "combined MS1 extracted ion chromatograms derived from MS2 spectra associated with the peptide sequence from a given LC-MS/MS data file using the MASIC tool",
                "type": "integer"
             }
          },
@@ -1335,6 +1398,38 @@
          },
          "required": [],
          "title": "PersonValue",
+         "type": "object"
+      },
+      "ProteinQuantification": {
+         "additionalProperties": false,
+         "description": "This is used to link a metaproteomics analysis workflow to a specific protein",
+         "properties": {
+            "all_proteins": {
+               "description": "the grouped list of protein identifiers associated with the peptide sequences that were grouped to a best protein",
+               "items": {
+                  "$ref": "#/definitions/GeneProduct"
+               },
+               "type": "array"
+            },
+            "best_protein": {
+               "$ref": "#/definitions/GeneProduct",
+               "description": "the specific protein identifier most correctly grouped to its associated peptide sequences"
+            },
+            "peptide_sequence_count": {
+               "description": "count of peptide sequences grouped to the best_protein",
+               "type": "integer"
+            },
+            "protein_spectral_count": {
+               "description": "sum of filter passing MS2 spectra associated with the best protein within a given LC-MS/MS data file",
+               "type": "integer"
+            },
+            "protein_sum_masic_abundance": {
+               "description": "combined MS1 extracted ion chromatograms derived from MS2 spectra associated with the best protein from a given LC-MS/MS data file using the MASIC tool",
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "ProteinQuantification",
          "type": "object"
       },
       "QuantityValue": {

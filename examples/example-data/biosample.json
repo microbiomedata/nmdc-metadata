@@ -1,11 +1,12 @@
+{"biosample_set":
 [
   {
     "id": "gold:Gb0108335",
     "name": "Thawing permafrost microbial communities from the Arctic, studying carbon transformations - Permafrost 712P3D",
     "lat_lon": {
       "has_raw_value": "68.3534 19.0472",
-      "latitude": "68.3534",
-      "longitude": "19.0472",
+      "latitude": 68.3534,
+      "longitude": 19.0472,
       "type": "nmdc:GeolocationValue"
     },
     "env_broad_scale": {
@@ -287,3 +288,4 @@
     ]
   }
 ]
+}
