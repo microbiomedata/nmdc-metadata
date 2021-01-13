@@ -65,35 +65,35 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                     if not cls.is_a and not cls.mixin and self.is_secondary_ref(cls.name):
                         self.class_hier(cls)
 
-                self.header(3, 'Mixins')
-                with open(os.path.join(directory, 'Mixins.md'), 'w') as file:
-                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Mixins\nhas_children: true\nnav_order: 2\nlayout: default\n---')
-                for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
-                    if cls.mixin and self.is_secondary_ref(cls.name):
-                        self.class_hier(cls)
-
-                self.header(3, 'Slots')
-                with open(os.path.join(directory, 'Slots.md'), 'w') as file:
-                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Slots\nhas_children: true\nnav_order: 3\nlayout: default\n---')
-                for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
-                    if not slot.is_a and self.is_secondary_ref(slot.name):
-                        self.pred_hier(slot)
-
-                self.header(3, 'Types')
-                with open(os.path.join(directory, 'Types.md'), 'w') as file:
-                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Types\nhas_children: true\nnav_order: 4\nlayout: default\n---')
-                self.header(4, 'Built in')
-                for builtin_name in sorted(self.synopsis.typebases.keys()):
-                    self.bullet(f'**{builtin_name}**')
-                self.header(4, 'Defined')
-                for typ in sorted(self.schema.types.values(), key=lambda t: t.name):
-                    if self.is_secondary_ref(typ.name):
-                        if typ.typeof:
-                            typ_typ = self.type_link(typ.typeof)
-                        else:
-                            typ_typ = f'**{typ.base}**'
-
-                        self.bullet(self.type_link(typ, after_link=f' ({typ_typ})', use_desc=True))
+                # self.header(3, 'Mixins')
+                # with open(os.path.join(directory, 'Mixins.md'), 'w') as file:
+                #     file.write(f'---\nparent: {self.doc_root_title}\ntitle: Mixins\nhas_children: true\nnav_order: 2\nlayout: default\n---')
+                # for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
+                #     if cls.mixin and self.is_secondary_ref(cls.name):
+                #         self.class_hier(cls)
+                #
+                # self.header(3, 'Slots')
+                # with open(os.path.join(directory, 'Slots.md'), 'w') as file:
+                #     file.write(f'---\nparent: {self.doc_root_title}\ntitle: Slots\nhas_children: true\nnav_order: 3\nlayout: default\n---')
+                # for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
+                #     if not slot.is_a and self.is_secondary_ref(slot.name):
+                #         self.pred_hier(slot)
+                #
+                # self.header(3, 'Types')
+                # with open(os.path.join(directory, 'Types.md'), 'w') as file:
+                #     file.write(f'---\nparent: {self.doc_root_title}\ntitle: Types\nhas_children: true\nnav_order: 4\nlayout: default\n---')
+                # self.header(4, 'Built in')
+                # for builtin_name in sorted(self.synopsis.typebases.keys()):
+                #     self.bullet(f'**{builtin_name}**')
+                # self.header(4, 'Defined')
+                # for typ in sorted(self.schema.types.values(), key=lambda t: t.name):
+                #     if self.is_secondary_ref(typ.name):
+                #         if typ.typeof:
+                #             typ_typ = self.type_link(typ.typeof)
+                #         else:
+                #             typ_typ = f'**{typ.base}**'
+                #
+                #         self.bullet(self.type_link(typ, after_link=f' ({typ_typ})', use_desc=True))
 
     def visit_class(self, cls: ClassDefinition) -> bool:
         if self.gen_classes and cls.name not in self.gen_classes:
@@ -187,41 +187,42 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
         return True
 
-    def visit_class_slot(self, cls: ClassDefinition, aliased_slot_name: str, slot: SlotDefinition) -> None:
-        with open(self.dir_path(slot), 'w') as slotfile:
-            with redirect_stdout(slotfile):
-                slot_curie = self.namespaces.uri_or_curie_for(self.namespaces._base, underscore(slot.name))
-                slot_uri = self.namespaces.uri_for(slot_curie)
-                self.frontmatter(**{'parent': 'Slots', 'title': slot_curie, 'grand_parent': self.doc_root_title, 'layout': 'default'})
-                simple_name = slot_curie.split(':', 1)[1]
-                self.header(1, f"Type: {simple_name}" + (f" _(deprecated)_" if slot.deprecated else ""))
-                for s in slot.in_subset:
-                    self.badges(s, f'subset-label')
-
-                self.para(be(slot.description))
-                print(f'URI: [{slot_curie}]({slot_uri})')
-
-                self.header(2, 'Domain and Range')
-                print(f'{self.class_link(slot.domain)} ->{self.predicate_cardinality(slot)} '
-                      f'{self.class_type_link(slot.range)}')
-
-                self.header(2, 'Parents')
-                if slot.is_a:
-                    self.bullet(f' is_a: {self.slot_link(slot.is_a)}')
-
-                self.header(2, 'Children')
-                if slot.name in sorted(self.synopsis.isarefs):
-                    for child in sorted(self.synopsis.isarefs[slot.name].slotrefs):
-                        self.bullet(f' {self.slot_link(child)}')
-
-                self.header(2, 'Used by')
-                if slot.name in sorted(self.synopsis.slotrefs):
-                    for rc in sorted(self.synopsis.slotrefs[slot.name].classrefs):
-                        self.bullet(f'{self.class_link(rc)}')
-                if aliased_slot_name == 'relation':
-                    if slot.subproperty_of:
-                        self.bullet(f' reifies: {self.slot_link(slot.subproperty_of)}')
-                self.element_properties(slot)
+    def visit_slot(self, aliased_slot_name: str, slot: SlotDefinition) -> None:
+        pass
+        # with open(self.dir_path(slot), 'w') as slotfile:
+        #     with redirect_stdout(slotfile):
+        #         slot_curie = self.namespaces.uri_or_curie_for(self.namespaces._base, underscore(slot.name))
+        #         slot_uri = self.namespaces.uri_for(slot_curie)
+        #         self.frontmatter(**{'parent': 'Slots', 'title': slot_curie, 'grand_parent': self.doc_root_title, 'layout': 'default'})
+        #         simple_name = slot_curie.split(':', 1)[1]
+        #         self.header(1, f"Type: {simple_name}" + (f" _(deprecated)_" if slot.deprecated else ""))
+        #         for s in slot.in_subset:
+        #             self.badges(s, f'subset-label')
+        #
+        #         self.para(be(slot.description))
+        #         print(f'URI: [{slot_curie}]({slot_uri})')
+        #
+        #         self.header(2, 'Domain and Range')
+        #         print(f'{self.class_link(slot.domain)} ->{self.predicate_cardinality(slot)} '
+        #               f'{self.class_type_link(slot.range)}')
+        #
+        #         self.header(2, 'Parents')
+        #         if slot.is_a:
+        #             self.bullet(f' is_a: {self.slot_link(slot.is_a)}')
+        #
+        #         self.header(2, 'Children')
+        #         if slot.name in sorted(self.synopsis.isarefs):
+        #             for child in sorted(self.synopsis.isarefs[slot.name].slotrefs):
+        #                 self.bullet(f' {self.slot_link(child)}')
+        #
+        #         self.header(2, 'Used by')
+        #         if slot.name in sorted(self.synopsis.slotrefs):
+        #             for rc in sorted(self.synopsis.slotrefs[slot.name].classrefs):
+        #                 self.bullet(f'{self.class_link(rc)}')
+        #         if aliased_slot_name == 'relation':
+        #             if slot.subproperty_of:
+        #                 self.bullet(f' reifies: {self.slot_link(slot.subproperty_of)}')
+        #         self.element_properties(slot)
 
     def visit_type(self, typ: TypeDefinition) -> None:
         with open(self.dir_path(typ), 'w') as typefile:
