@@ -58,6 +58,8 @@ You can try this with some ready-made examples in this repo:
 jsonschema -i examples/nmdc-01.json schema/nmdc.schema.json
 ```
 
+Note: nmdc.schema.json describes each model object, its required attributes and attribute types.  The examples themselves use JSON notation to allow multiple instances of the objects in the JSON schema, to be submitted in one file.
+
 You can also use the jsonschema library to validate directly from within your python.
 
 # What to do if your JSON does not validate
@@ -69,10 +71,12 @@ There are 3 possibilities:
  3. some other odd bug somewhere
 
 For 1, you can go right ahead and make PR on the schema yaml. However,
-if you are not confortable doing this then you can get help from one
+if you are not comfortable doing this then you can get help from one
 of the schema developers. We recommend filing a new ticket explaining the issue.
 
-For 2, this is upon you to fix this. If you need help explaining part of the schema then 
+For 2, this is upon you to fix this, however debugging can be aided in pulling out single instances of your model objects, and verifying that you are creating valid JSON (ie: paste one instance of your object into https://jsonlint.com/ or tools like it to verify its syntax).
+Another common issue is that you might have incorrect syntax for grouping many instances of a JSON object into an array.  Using a small subsample of your data and an online linter as above, can aide in debugging this.
+Sometimes the validation can complain about invalid syntax if the attribute of an instance object disagrees with the schema's typing (ie: you have an integer where a string is expected).
 
 # NMDC Producer SOP
 
