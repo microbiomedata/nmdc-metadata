@@ -152,6 +152,15 @@ classes:
     in_subset: 
       - workflow subset
 
+  MAG annotation activity:
+    is_a: workflow execution activity
+    in_subset: 
+      - workflow subset
+    slots:
+      - input contig num
+      - binned contig num
+      - too short contig num
+
   read QC analysis activity:
     is_a: workflow execution activity
     in_subset: 
@@ -765,6 +774,15 @@ slots:
       
   read QC analysis statistic: {}
 
+  too short contig num:
+    range: integer
+
+  binned contig num:
+    range: integer
+
+  input contig num:
+    range: integer
+  
   input read count:
     is_a: read QC analysis statistic
     description: >-
