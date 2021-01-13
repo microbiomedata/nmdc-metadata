@@ -22,11 +22,7 @@ type AttributeValue
 
 type Biosample
   {
-    id: String!
-    name: String
     description: String
-    alternateIdentifiers: [String]
-    partOf: [String]
     envPackage: TextValue
     latLon: GeolocationValue!
     geoLocName: TextValue
@@ -96,6 +92,9 @@ type Biosample
     alSat: QuantityValue
     alSatMeth: TextValue
     miscParam: QuantityValue
+    id: String!
+    name: String
+    alternateIdentifiers: [String]
   }
 
 type BiosampleProcessing
@@ -104,7 +103,6 @@ type BiosampleProcessing
     name: String
     description: String
     alternateIdentifiers: [String]
-    partOf: [String]
     hasInput: [Biosample]
   }
 
@@ -113,6 +111,18 @@ type BooleanValue
     hasRawValue: String
     wasGeneratedBy: Activity
     hasBooleanValue: Boolean
+  }
+
+type ChemicalEntity
+  {
+    id: String!
+    name: String
+    description: String
+    alternateIdentifiers: [String]
+    inchi: String!
+    inchiKey: String
+    smiles: [String]
+    chemicalFormula: String
   }
 
 type ControlledTermValue
@@ -128,8 +138,12 @@ type DataObject
     name: String
     description: String
     alternateIdentifiers: [String]
-    partOf: [String]
-    fileSize: Integer
+    fileSizeBytes: Bytes
+    md5Checksum: String
+    dataObjectType: ControlledTermValue
+    compressionType: String
+    wasGeneratedBy: WorkflowExecutionActivity
+    url: TextValue
   }
 
 type Database
@@ -147,15 +161,52 @@ type EnvironmentalMaterialTerm
     name: String
     description: String
     alternateIdentifiers: [String]
-    partOf: [String]
+  }
+
+type FunctionalAnnotation
+  {
+    wasGeneratedBy: Activity
+    subject: GeneProduct
+    hasFunction: FunctionalAnnotationTerm
+  }
+
+interface FunctionalAnnotationTerm
+  {
+    id: String!
+    name: String
+    description: String
+    alternateIdentifiers: [String]
+  }
+
+type GeneProduct
+  {
+  }
+
+type GenomeFeature
+  {
+    seqid: String!
+    type: OntologyClass
+    start: Integer!
+    end: Integer!
+    strand: String
+    phase: Integer
+    encodes: GeneProduct
   }
 
 type GeolocationValue
   {
-    hasRawValue: String
     wasGeneratedBy: Activity
     latitude: DecimalDegree
     longitude: DecimalDegree
+    hasRawValue: String
+  }
+
+type Instrument
+  {
+    id: String!
+    name: String
+    description: String
+    alternateIdentifiers: [String]
   }
 
 type IntegerValue
@@ -165,24 +216,132 @@ type IntegerValue
     hasNumericValue: Float
   }
 
+type MAGAnnotationActivity
+  {
+    activityId: String!
+    startedAtTime: String
+    endedAtTime: String
+    wasInformedBy: Activity
+    wasAssociatedWith: Agent
+    used: String
+    executionResource: String
+    gitUrl: String
+    hasInput: [String]
+    hasOutput: [String]
+    inputContigNum: Integer
+    binnedContigNum: Integer
+    tooShortContigNum: Integer
+  }
+
+type MetaboliteQuantification
+  {
+    metaboliteQuantified: ChemicalEntity
+    highestSimilarityScore: Float
+  }
+
+type MetabolomicsAnalysisActivity
+  {
+    activityId: String!
+    startedAtTime: String
+    endedAtTime: String
+    wasInformedBy: Activity
+    wasAssociatedWith: Agent
+    executionResource: String
+    gitUrl: String
+    hasInput: [String]
+    hasOutput: [String]
+    used: Instrument
+    hasMetaboliteQuantifications: [MetaboliteQuantification]
+  }
+
+type MetagenomeAnnotationActivity
+  {
+    activityId: String!
+    startedAtTime: String
+    endedAtTime: String
+    wasInformedBy: Activity
+    wasAssociatedWith: Agent
+    used: String
+    executionResource: String
+    gitUrl: String
+    hasInput: [String]
+    hasOutput: [String]
+  }
+
+type MetagenomeAssembly
+  {
+    activityId: String!
+    startedAtTime: String
+    endedAtTime: String
+    wasInformedBy: Activity
+    wasAssociatedWith: Agent
+    used: String
+    executionResource: String
+    gitUrl: String
+    hasInput: [String]
+    hasOutput: [String]
+    asmScore: Float
+    scaffolds: Float
+    scafLogsum: Float
+    scafPowsum: Float
+    scafMax: Float
+    scafBp: Float
+    scafN50: Float
+    scafN90: Float
+    scafL50: Float
+    scafL90: Float
+    scafNGt50K: Float
+    scafLGt50K: Float
+    scafPctGt50K: Float
+    contigs: Float
+    contigBp: Float
+    ctgN50: Float
+    ctgL50: Float
+    ctgN90: Float
+    ctgL90: Float
+    ctgLogsum: Float
+    ctgPowsum: Float
+    ctgMax: Float
+    gapPct: Float
+    gcStd: Float
+    gcAvg: Float
+    numInputReads: Float
+    numAlignedReads: Float
+  }
+
+type MetaproteomicsAnalysisActivity
+  {
+    activityId: String!
+    startedAtTime: String
+    endedAtTime: String
+    wasInformedBy: Activity
+    wasAssociatedWith: Agent
+    executionResource: String
+    gitUrl: String
+    hasInput: [String]
+    hasOutput: [String]
+    used: Instrument
+    hasPeptideQuantifications: [PeptideQuantification]
+  }
+
 interface NamedThing
   {
     id: String!
     name: String
     description: String
     alternateIdentifiers: [String]
-    partOf: [String]
   }
 
 type OmicsProcessing
   {
-    id: String!
-    name: String
     description: String
-    alternateIdentifiers: [String]
     hasInput: [Biosample]
     partOf: [Study]
     hasOutput: [DataObject]
+    omicsType: ControlledTermValue
+    id: String!
+    name: String
+    alternateIdentifiers: [String]
   }
 
 type OntologyClass
@@ -191,50 +350,121 @@ type OntologyClass
     name: String
     description: String
     alternateIdentifiers: [String]
-    partOf: [String]
+  }
+
+type OrthologyGroup
+  {
+    id: String!
+    name: String
+    description: String
+    alternateIdentifiers: [String]
+  }
+
+type Pathway
+  {
+    id: String!
+    name: String
+    description: String
+    alternateIdentifiers: [String]
+    hasPart: [Reaction]
+  }
+
+type PeptideQuantification
+  {
+    peptideSequence: String
+    bestProtein: GeneProduct
+    allProteins: [GeneProduct]
+    minQValue: Float
+    peptideSpectralCount: Integer
+    peptideSumMasicAbundance: Integer
   }
 
 type Person
   {
-    id: String!
     name: String
     description: String
     alternateIdentifiers: [String]
-    partOf: [String]
+    id: String!
   }
 
 type PersonValue
   {
-    hasRawValue: String
     wasGeneratedBy: Activity
     orcid: String
+    hasRawValue: String
+  }
+
+type ProteinQuantification
+  {
+    bestProtein: GeneProduct
+    allProteins: [GeneProduct]
+    peptideSequenceCount: Integer
+    proteinSpectralCount: Integer
+    proteinSumMasicAbundance: Integer
   }
 
 type QuantityValue
   {
-    hasRawValue: String
     wasGeneratedBy: Activity
     hasUnit: Unit
     hasNumericValue: Double
+    hasRawValue: String
   }
 
-type Study
+type Reaction
   {
     id: String!
     name: String
     description: String
     alternateIdentifiers: [String]
-    partOf: [String]
-    submittedToInsdc: BooleanValue
-    investigationType: TextValue
-    projectName: TextValue
-    experimentalFactor: ControlledTermValue
+    leftParticipants: [ReactionParticipant]
+    rightParticipants: [ReactionParticipant]
+    direction: String
+    smartsString: String
+    isDiastereoselective: Boolean
+    isStereo: Boolean
+    isBalanced: Boolean
+    isTransport: Boolean
+    isFullyCharacterized: Boolean
+  }
+
+type ReactionParticipant
+  {
+    chemical: ChemicalEntity
+    stoichiometry: Integer
+  }
+
+type ReadQCAnalysisActivity
+  {
+    activityId: String!
+    startedAtTime: String
+    endedAtTime: String
+    wasInformedBy: Activity
+    wasAssociatedWith: Agent
+    used: String
+    executionResource: String
+    gitUrl: String
+    hasInput: [String]
+    hasOutput: [String]
+    inputReadCount: Float
+    inputBaseCount: Float
+    outputReadCount: Float
+    outputBaseCount: Float
+  }
+
+type Study
+  {
+    description: String
     ecosystem: AttributeValue
     ecosystemCategory: AttributeValue
     ecosystemType: AttributeValue
     ecosystemSubtype: AttributeValue
     specificEcosystem: AttributeValue
     principalInvestigator: PersonValue
+    doi: AttributeValue
+    id: String!
+    name: String
+    alternateIdentifiers: [String]
   }
 
 type TextValue
@@ -254,6 +484,20 @@ type UrlValue
   {
     hasRawValue: String
     wasGeneratedBy: Activity
+  }
+
+type WorkflowExecutionActivity
+  {
+    activityId: String!
+    startedAtTime: String
+    endedAtTime: String
+    wasInformedBy: Activity
+    wasAssociatedWith: Agent
+    used: String
+    executionResource: String
+    gitUrl: String
+    hasInput: [String]
+    hasOutput: [String]
   }
 
 

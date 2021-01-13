@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.9.0
-# Generation date: 2020-12-22 10:17
+# Generation date: 2021-01-13 13:41
 # Schema: NMDC
 #
 # id: https://microbiomedata/schema
@@ -33,6 +33,7 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 CAS = CurieNamespace('CAS', 'http://identifiers.org/cas/')
+CATH = CurieNamespace('CATH', 'http://identifiers.org/cath/')
 CHEBI = CurieNamespace('CHEBI', 'http://purl.obolibrary.org/obo/CHEBI_')
 CHEMBL_COMPOUND = CurieNamespace('CHEMBL_COMPOUND', 'http://identifiers.org/chembl.compound/')
 COG = CurieNamespace('COG', 'http://example.org/UNKNOWN/COG/')
@@ -167,6 +168,10 @@ class MetagenomeAnnotationActivityActivityId(WorkflowExecutionActivityActivityId
     pass
 
 
+class MAGAnnotationActivityActivityId(WorkflowExecutionActivityActivityId):
+    pass
+
+
 class ReadQCAnalysisActivityActivityId(WorkflowExecutionActivityActivityId):
     pass
 
@@ -281,7 +286,7 @@ class MetaboliteQuantification(YAMLRoot):
 @dataclass
 class PeptideQuantification(YAMLRoot):
     """
-    This is used to link a metabolomics analysis workflow to a specific protein
+    This is used to link a metaproteomics analysis workflow to a specific peptide sequence and related information
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -293,9 +298,9 @@ class PeptideQuantification(YAMLRoot):
     peptide_sequence: Optional[str] = None
     best_protein: Optional[Union[dict, "GeneProduct"]] = None
     all_proteins: Optional[Union[Union[dict, "GeneProduct"], List[Union[dict, "GeneProduct"]]]] = empty_list()
-    min_q_value: Optional[int] = None
-    spectral_count: Optional[int] = None
-    sum_masic_abundance: Optional[int] = None
+    min_q_value: Optional[float] = None
+    peptide_spectral_count: Optional[int] = None
+    peptide_sum_masic_abundance: Optional[int] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.peptide_sequence is not None and not isinstance(self.peptide_sequence, str):
@@ -310,14 +315,54 @@ class PeptideQuantification(YAMLRoot):
             self.all_proteins = [self.all_proteins]
         self.all_proteins = [v if isinstance(v, GeneProduct) else GeneProduct(**v) for v in self.all_proteins]
 
-        if self.min_q_value is not None and not isinstance(self.min_q_value, int):
-            self.min_q_value = int(self.min_q_value)
+        if self.min_q_value is not None and not isinstance(self.min_q_value, float):
+            self.min_q_value = float(self.min_q_value)
 
-        if self.spectral_count is not None and not isinstance(self.spectral_count, int):
-            self.spectral_count = int(self.spectral_count)
+        if self.peptide_spectral_count is not None and not isinstance(self.peptide_spectral_count, int):
+            self.peptide_spectral_count = int(self.peptide_spectral_count)
 
-        if self.sum_masic_abundance is not None and not isinstance(self.sum_masic_abundance, int):
-            self.sum_masic_abundance = int(self.sum_masic_abundance)
+        if self.peptide_sum_masic_abundance is not None and not isinstance(self.peptide_sum_masic_abundance, int):
+            self.peptide_sum_masic_abundance = int(self.peptide_sum_masic_abundance)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ProteinQuantification(YAMLRoot):
+    """
+    This is used to link a metaproteomics analysis workflow to a specific protein
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC.ProteinQuantification
+    class_class_curie: ClassVar[str] = "nmdc:ProteinQuantification"
+    class_name: ClassVar[str] = "protein quantification"
+    class_model_uri: ClassVar[URIRef] = NMDC.ProteinQuantification
+
+    best_protein: Optional[Union[dict, "GeneProduct"]] = None
+    all_proteins: Optional[Union[Union[dict, "GeneProduct"], List[Union[dict, "GeneProduct"]]]] = empty_list()
+    peptide_sequence_count: Optional[int] = None
+    protein_spectral_count: Optional[int] = None
+    protein_sum_masic_abundance: Optional[int] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.best_protein is not None and not isinstance(self.best_protein, GeneProduct):
+            self.best_protein = GeneProduct()
+
+        if self.all_proteins is None:
+            self.all_proteins = []
+        if not isinstance(self.all_proteins, list):
+            self.all_proteins = [self.all_proteins]
+        self.all_proteins = [v if isinstance(v, GeneProduct) else GeneProduct(**v) for v in self.all_proteins]
+
+        if self.peptide_sequence_count is not None and not isinstance(self.peptide_sequence_count, int):
+            self.peptide_sequence_count = int(self.peptide_sequence_count)
+
+        if self.protein_spectral_count is not None and not isinstance(self.protein_spectral_count, int):
+            self.protein_spectral_count = int(self.protein_spectral_count)
+
+        if self.protein_sum_masic_abundance is not None and not isinstance(self.protein_sum_masic_abundance, int):
+            self.protein_sum_masic_abundance = int(self.protein_sum_masic_abundance)
 
         super().__post_init__(**kwargs)
 
@@ -379,6 +424,7 @@ class DataObject(NamedThing):
     data_object_type: Optional[Union[dict, "ControlledTermValue"]] = None
     compression_type: Optional[str] = None
     was_generated_by: Optional[Union[dict, "WorkflowExecutionActivity"]] = None
+    url: Optional[Union[dict, "TextValue"]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -400,6 +446,9 @@ class DataObject(NamedThing):
 
         if self.was_generated_by is not None and not isinstance(self.was_generated_by, WorkflowExecutionActivity):
             self.was_generated_by = WorkflowExecutionActivity(self.was_generated_by)
+
+        if self.url is not None and not isinstance(self.url, TextValue):
+            self.url = TextValue(**self.url)
 
         super().__post_init__(**kwargs)
 
@@ -1415,6 +1464,38 @@ class MetagenomeAnnotationActivity(WorkflowExecutionActivity):
 
 
 @dataclass
+class MAGAnnotationActivity(WorkflowExecutionActivity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC.MAGAnnotationActivity
+    class_class_curie: ClassVar[str] = "nmdc:MAGAnnotationActivity"
+    class_name: ClassVar[str] = "MAG annotation activity"
+    class_model_uri: ClassVar[URIRef] = NMDC.MAGAnnotationActivity
+
+    activity_id: Union[str, MAGAnnotationActivityActivityId] = None
+    input_contig_num: Optional[int] = None
+    binned_contig_num: Optional[int] = None
+    too_short_contig_num: Optional[int] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.activity_id is None:
+            raise ValueError("activity_id must be supplied")
+        if not isinstance(self.activity_id, MAGAnnotationActivityActivityId):
+            self.activity_id = MAGAnnotationActivityActivityId(self.activity_id)
+
+        if self.input_contig_num is not None and not isinstance(self.input_contig_num, int):
+            self.input_contig_num = int(self.input_contig_num)
+
+        if self.binned_contig_num is not None and not isinstance(self.binned_contig_num, int):
+            self.binned_contig_num = int(self.binned_contig_num)
+
+        if self.too_short_contig_num is not None and not isinstance(self.too_short_contig_num, int):
+            self.too_short_contig_num = int(self.too_short_contig_num)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class ReadQCAnalysisActivity(WorkflowExecutionActivity):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1974,6 +2055,15 @@ slots.num_aligned_reads = Slot(uri=NMDC.num_aligned_reads, name="num_aligned_rea
 
 slots.read_QC_analysis_statistic = Slot(uri=NMDC.read_QC_analysis_statistic, name="read QC analysis statistic", curie=NMDC.curie('read_QC_analysis_statistic'),
                    model_uri=NMDC.read_QC_analysis_statistic, domain=None, range=Optional[str])
+
+slots.too_short_contig_num = Slot(uri=NMDC.too_short_contig_num, name="too short contig num", curie=NMDC.curie('too_short_contig_num'),
+                   model_uri=NMDC.too_short_contig_num, domain=None, range=Optional[int])
+
+slots.binned_contig_num = Slot(uri=NMDC.binned_contig_num, name="binned contig num", curie=NMDC.curie('binned_contig_num'),
+                   model_uri=NMDC.binned_contig_num, domain=None, range=Optional[int])
+
+slots.input_contig_num = Slot(uri=NMDC.input_contig_num, name="input contig num", curie=NMDC.curie('input_contig_num'),
+                   model_uri=NMDC.input_contig_num, domain=None, range=Optional[int])
 
 slots.input_read_count = Slot(uri=NMDC.input_read_count, name="input read count", curie=NMDC.curie('input_read_count'),
                    model_uri=NMDC.input_read_count, domain=None, range=Optional[float])
@@ -4319,13 +4409,22 @@ slots.all_proteins = Slot(uri=NMDC.all_proteins, name="all proteins", curie=NMDC
                    model_uri=NMDC.all_proteins, domain=None, range=Optional[Union[Union[dict, GeneProduct], List[Union[dict, GeneProduct]]]])
 
 slots.min_q_value = Slot(uri=NMDC.min_q_value, name="min_q_value", curie=NMDC.curie('min_q_value'),
-                   model_uri=NMDC.min_q_value, domain=None, range=Optional[int])
+                   model_uri=NMDC.min_q_value, domain=None, range=Optional[float])
 
-slots.spectral_count = Slot(uri=NMDC.spectral_count, name="spectral_count", curie=NMDC.curie('spectral_count'),
-                   model_uri=NMDC.spectral_count, domain=None, range=Optional[int])
+slots.peptide_spectral_count = Slot(uri=NMDC.peptide_spectral_count, name="peptide_spectral_count", curie=NMDC.curie('peptide_spectral_count'),
+                   model_uri=NMDC.peptide_spectral_count, domain=None, range=Optional[int])
 
-slots.sum_masic_abundance = Slot(uri=NMDC.sum_masic_abundance, name="sum_masic_abundance", curie=NMDC.curie('sum_masic_abundance'),
-                   model_uri=NMDC.sum_masic_abundance, domain=None, range=Optional[int])
+slots.peptide_sum_masic_abundance = Slot(uri=NMDC.peptide_sum_masic_abundance, name="peptide_sum_masic_abundance", curie=NMDC.curie('peptide_sum_masic_abundance'),
+                   model_uri=NMDC.peptide_sum_masic_abundance, domain=None, range=Optional[int])
+
+slots.peptide_sequence_count = Slot(uri=NMDC.peptide_sequence_count, name="peptide_sequence_count", curie=NMDC.curie('peptide_sequence_count'),
+                   model_uri=NMDC.peptide_sequence_count, domain=None, range=Optional[int])
+
+slots.protein_spectral_count = Slot(uri=NMDC.protein_spectral_count, name="protein_spectral_count", curie=NMDC.curie('protein_spectral_count'),
+                   model_uri=NMDC.protein_spectral_count, domain=None, range=Optional[int])
+
+slots.protein_sum_masic_abundance = Slot(uri=NMDC.protein_sum_masic_abundance, name="protein_sum_masic_abundance", curie=NMDC.curie('protein_sum_masic_abundance'),
+                   model_uri=NMDC.protein_sum_masic_abundance, domain=None, range=Optional[int])
 
 slots.seqid = Slot(uri=NMDC.seqid, name="seqid", curie=NMDC.curie('seqid'),
                    model_uri=NMDC.seqid, domain=None, range=str)
@@ -4485,13 +4584,28 @@ slots.peptide_quantification_all_proteins = Slot(uri=NMDC.all_proteins, name="pe
                    model_uri=NMDC.peptide_quantification_all_proteins, domain=PeptideQuantification, range=Optional[Union[Union[dict, "GeneProduct"], List[Union[dict, "GeneProduct"]]]])
 
 slots.peptide_quantification_min_q_value = Slot(uri=NMDC.min_q_value, name="peptide quantification_min_q_value", curie=NMDC.curie('min_q_value'),
-                   model_uri=NMDC.peptide_quantification_min_q_value, domain=PeptideQuantification, range=Optional[int])
+                   model_uri=NMDC.peptide_quantification_min_q_value, domain=PeptideQuantification, range=Optional[float])
 
-slots.peptide_quantification_spectral_count = Slot(uri=NMDC.spectral_count, name="peptide quantification_spectral_count", curie=NMDC.curie('spectral_count'),
-                   model_uri=NMDC.peptide_quantification_spectral_count, domain=PeptideQuantification, range=Optional[int])
+slots.peptide_quantification_peptide_spectral_count = Slot(uri=NMDC.peptide_spectral_count, name="peptide quantification_peptide_spectral_count", curie=NMDC.curie('peptide_spectral_count'),
+                   model_uri=NMDC.peptide_quantification_peptide_spectral_count, domain=PeptideQuantification, range=Optional[int])
 
-slots.peptide_quantification_sum_masic_abundance = Slot(uri=NMDC.sum_masic_abundance, name="peptide quantification_sum_masic_abundance", curie=NMDC.curie('sum_masic_abundance'),
-                   model_uri=NMDC.peptide_quantification_sum_masic_abundance, domain=PeptideQuantification, range=Optional[int])
+slots.peptide_quantification_peptide_sum_masic_abundance = Slot(uri=NMDC.peptide_sum_masic_abundance, name="peptide quantification_peptide_sum_masic_abundance", curie=NMDC.curie('peptide_sum_masic_abundance'),
+                   model_uri=NMDC.peptide_quantification_peptide_sum_masic_abundance, domain=PeptideQuantification, range=Optional[int])
+
+slots.protein_quantification_best_protein = Slot(uri=NMDC.best_protein, name="protein quantification_best protein", curie=NMDC.curie('best_protein'),
+                   model_uri=NMDC.protein_quantification_best_protein, domain=ProteinQuantification, range=Optional[Union[dict, "GeneProduct"]])
+
+slots.protein_quantification_all_proteins = Slot(uri=NMDC.all_proteins, name="protein quantification_all proteins", curie=NMDC.curie('all_proteins'),
+                   model_uri=NMDC.protein_quantification_all_proteins, domain=ProteinQuantification, range=Optional[Union[Union[dict, "GeneProduct"], List[Union[dict, "GeneProduct"]]]])
+
+slots.protein_quantification_peptide_sequence_count = Slot(uri=NMDC.peptide_sequence_count, name="protein quantification_peptide_sequence_count", curie=NMDC.curie('peptide_sequence_count'),
+                   model_uri=NMDC.protein_quantification_peptide_sequence_count, domain=ProteinQuantification, range=Optional[int])
+
+slots.protein_quantification_protein_spectral_count = Slot(uri=NMDC.protein_spectral_count, name="protein quantification_protein_spectral_count", curie=NMDC.curie('protein_spectral_count'),
+                   model_uri=NMDC.protein_quantification_protein_spectral_count, domain=ProteinQuantification, range=Optional[int])
+
+slots.protein_quantification_protein_sum_masic_abundance = Slot(uri=NMDC.protein_sum_masic_abundance, name="protein quantification_protein_sum_masic_abundance", curie=NMDC.curie('protein_sum_masic_abundance'),
+                   model_uri=NMDC.protein_quantification_protein_sum_masic_abundance, domain=ProteinQuantification, range=Optional[int])
 
 slots.person_id = Slot(uri=NMDC.id, name="person_id", curie=NMDC.curie('id'),
                    model_uri=NMDC.person_id, domain=Person, range=Union[str, PersonId])
