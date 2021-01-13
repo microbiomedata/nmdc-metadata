@@ -13,7 +13,11 @@ env.lock:
 	pipenv install
 	cp /dev/null env.lock
 
-test: schema/test-nmdc-01.valid schema/test-nmdc-02.valid pytest
+# TODO: nmdc-02
+schema_test_examples = nmdc-01 functional-annotation
+
+test_jsonschema: $(patsubst %, schema/test-%.valid, $(schema_test_examples))
+test: test_jsonschema pytest
 
 pytest: schema/nmdc.py
 	pipenv run python $<
