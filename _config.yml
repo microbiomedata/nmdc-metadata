@@ -3,7 +3,7 @@ email: deepak.unni3@gmail.com
 description: A schema for managing metadata in [National Microbiome Data Collaborative](https://microbiomedata.org/)
 
 #remote_theme: deepakunni3/just-the-docs
-theme: just-the-docs
+theme: just-the-docs # build the docs using gem
 
 aux_links:
   "GitHub":
