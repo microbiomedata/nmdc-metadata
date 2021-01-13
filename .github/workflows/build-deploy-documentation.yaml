@@ -1,4 +1,4 @@
-name: Deploy Documentation
+name: Build adn Deploy Static Jekyll Documentation
 
 # Controls when the action will run. Triggers the workflow on push
 on:
@@ -14,7 +14,7 @@ on:
     - 'schema/nmdc_schema_uml.png'
 
   repository_dispatch:
-    types: trigger-build-documentation
+    types: trigger-build-deploy-jekyll-documentaton
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
