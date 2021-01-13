@@ -58,3 +58,29 @@ You can try this with some ready-made examples in this repo:
 jsonschema -i examples/nmdc-01.json schema/nmdc.schema.json
 ```
 
+You can also use the jsonschema library to validate directly from within your python.
+
+# What to do if your JSON does not validate
+
+There are 3 possibilities:
+
+ 1. Your json is good, and the schema needs to be extended or modified to account
+ 2. you need to modify the json to conform
+ 3. some other odd bug somewhere
+
+For 1, you can go right ahead and make PR on the schema yaml. However,
+if you are not confortable doing this then you can get help from one
+of the schema developers. We recommend filing a new ticket explaining the issue.
+
+For 2, this is upon you to fix this. If you need help explaining part of the schema then 
+
+# NMDC Producer SOP
+
+It is expected that different providers of JSON within the NMDC take
+responsibility for validating their JSON. Aim1 can help with any
+problems.
+
+Currently not all providers of information to NMDC provide JSON - for
+example, GOLD is provided as database dumps, and an ETL process
+transforms this into JSON. In future we would like to move towards a
+situation where all information is provided as JSON.
