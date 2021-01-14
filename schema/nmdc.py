@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-01-14 10:03
+# Generation date: 2021-01-14 12:14
 # Schema: NMDC
 #
 # id: https://microbiomedata/schema
@@ -223,6 +223,8 @@ class Database(YAMLRoot):
     data_object_set: Optional[Union[Dict[Union[str, DataObjectId], Union[dict, "DataObject"]], List[Union[dict, "DataObject"]]]] = empty_dict()
     activity_set: Optional[Union[Dict[Union[str, WorkflowExecutionActivityId], Union[dict, "WorkflowExecutionActivity"]], List[Union[dict, "WorkflowExecutionActivity"]]]] = empty_dict()
     omics_processing_set: Optional[Union[Dict[Union[str, OmicsProcessingId], Union[dict, "OmicsProcessing"]], List[Union[dict, "OmicsProcessing"]]]] = empty_dict()
+    functional_annotation_set: Optional[Union[Union[dict, "FunctionalAnnotation"], List[Union[dict, "FunctionalAnnotation"]]]] = empty_list()
+    genome_feature_set: Optional[Union[Union[dict, "GenomeFeature"], List[Union[dict, "GenomeFeature"]]]] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.biosample_set is None:
@@ -254,6 +256,18 @@ class Database(YAMLRoot):
         if not isinstance(self.omics_processing_set, (list, dict)):
             self.omics_processing_set = [self.omics_processing_set]
         self._normalize_inlined_slot(slot_name="omics_processing_set", slot_type=OmicsProcessing, key_name="id", inlined_as_list=None, keyed=True)
+
+        if self.functional_annotation_set is None:
+            self.functional_annotation_set = []
+        if not isinstance(self.functional_annotation_set, list):
+            self.functional_annotation_set = [self.functional_annotation_set]
+        self.functional_annotation_set = [v if isinstance(v, FunctionalAnnotation) else FunctionalAnnotation(**v) for v in self.functional_annotation_set]
+
+        if self.genome_feature_set is None:
+            self.genome_feature_set = []
+        if not isinstance(self.genome_feature_set, list):
+            self.genome_feature_set = [self.genome_feature_set]
+        self._normalize_inlined_slot(slot_name="genome_feature_set", slot_type=GenomeFeature, key_name="seqid", inlined_as_list=True, keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -1929,6 +1943,9 @@ class FunctionalAnnotation(YAMLRoot):
 class slots:
     pass
 
+slots.object_set = Slot(uri=NMDC.object_set, name="object set", curie=NMDC.curie('object_set'),
+                   model_uri=NMDC.object_set, domain=Database, range=Optional[Union[str, List[str]]])
+
 slots.biosample_set = Slot(uri=NMDC.biosample_set, name="biosample set", curie=NMDC.curie('biosample_set'),
                    model_uri=NMDC.biosample_set, domain=Database, range=Optional[Union[Dict[Union[str, BiosampleId], Union[dict, "Biosample"]], List[Union[dict, "Biosample"]]]])
 
@@ -1937,6 +1954,12 @@ slots.study_set = Slot(uri=NMDC.study_set, name="study set", curie=NMDC.curie('s
 
 slots.data_object_set = Slot(uri=NMDC.data_object_set, name="data object set", curie=NMDC.curie('data_object_set'),
                    model_uri=NMDC.data_object_set, domain=Database, range=Optional[Union[Dict[Union[str, DataObjectId], Union[dict, "DataObject"]], List[Union[dict, "DataObject"]]]])
+
+slots.genome_feature_set = Slot(uri=NMDC.genome_feature_set, name="genome feature set", curie=NMDC.curie('genome_feature_set'),
+                   model_uri=NMDC.genome_feature_set, domain=Database, range=Optional[Union[Union[dict, "GenomeFeature"], List[Union[dict, "GenomeFeature"]]]])
+
+slots.functional_annotation_set = Slot(uri=NMDC.functional_annotation_set, name="functional annotation set", curie=NMDC.curie('functional_annotation_set'),
+                   model_uri=NMDC.functional_annotation_set, domain=Database, range=Optional[Union[Union[dict, "FunctionalAnnotation"], List[Union[dict, "FunctionalAnnotation"]]]])
 
 slots.activity_set = Slot(uri=NMDC.activity_set, name="activity set", curie=NMDC.curie('activity_set'),
                    model_uri=NMDC.activity_set, domain=Database, range=Optional[Union[Dict[Union[str, WorkflowExecutionActivityId], Union[dict, "WorkflowExecutionActivity"]], List[Union[dict, "WorkflowExecutionActivity"]]]])

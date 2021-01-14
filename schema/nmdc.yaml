@@ -77,6 +77,8 @@ classes:
       - data object set
       - activity set
       - omics processing set
+      - functional annotation set
+      - genome feature set
   
   data object:
     is_a: named thing
@@ -485,7 +487,18 @@ classes:
 
 slots:
 
+  object set:
+    mixin: true
+    domain: database
+    multivalued: true
+    inlined: true
+    description:
+      Applies to a property that links a database object to a set of objects.
+      This is necessary in a json document to provide context for a list, and
+      to allow for a single json object that combines multiple object types
+  
   biosample set:
+    mixins: object set
     domain: database
     range: biosample
     multivalued: true
@@ -494,6 +507,7 @@ slots:
       This property links a database object to the set of samples within it.
 
   study set:
+    mixins: object set
     domain: database
     range: study
     multivalued: true
@@ -502,6 +516,7 @@ slots:
       This property links a database object to the set of studies within it.
 
   data object set:
+    mixins: object set
     domain: database
     range: data object
     multivalued: true
@@ -509,7 +524,26 @@ slots:
     description: >-
       This property links a database object to the set of data objects within it.
   
+  genome feature set:
+    mixins: object set
+    domain: database
+    range: genome feature
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of all features
+  
+  functional annotation set:
+    mixins: object set
+    domain: database
+    range: functional annotation
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of all functional annotations
+  
   activity set:
+    mixins: object set
     domain: database
     range: workflow execution activity
     multivalued: true
@@ -518,6 +552,7 @@ slots:
       This property links a database object to the set of prov activities.
   
   omics processing set:
+    mixins: object set
     domain: database
     range: omics processing
     multivalued: true
