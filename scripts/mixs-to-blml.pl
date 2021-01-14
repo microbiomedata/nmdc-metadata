@@ -1,6 +1,10 @@
 #!/usr/bin/perl -w
 use strict;
 
+our %REMAP = (
+    'url' => 'mixs_url',
+    );
+
 # THIS WILL BE REWRITTEN IN PYTHON!
 
 print "id: https://microbiomedata/schema/mixs\n\n";
@@ -93,6 +97,10 @@ while(<>) {
     }
     $done{$name} = 1;
 
+    if ($REMAP{$name}) {
+        $name = $REMAP{$name};
+    }
+    
     my $re = translate_re($value_syntax);
     if ($re) {
         $re =~ s@\\@\\\\@g;
