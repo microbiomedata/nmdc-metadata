@@ -6,13 +6,22 @@
          "additionalProperties": false,
          "description": "a provence-generating activity",
          "properties": {
-            "activity_id": {
-               "type": "string"
-            },
             "ended_at_time": {
                "type": "string"
             },
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human readable label for an entity",
+               "type": "string"
+            },
             "started_at_time": {
+               "type": "string"
+            },
+            "type": {
+               "description": "The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.",
                "type": "string"
             },
             "used": {
@@ -26,7 +35,7 @@
             }
          },
          "required": [
-            "activity_id"
+            "id"
          ],
          "title": "Activity",
          "type": "object"
@@ -535,7 +544,7 @@
                "type": "string"
             },
             "url": {
-               "$ref": "#/definitions/TextValue"
+               "type": "string"
             },
             "was_generated_by": {
                "$ref": "#/definitions/WorkflowExecutionActivity",
@@ -555,7 +564,7 @@
             "activity_set": {
                "description": "This property links a database object to the set of prov activities.",
                "items": {
-                  "$ref": "#/definitions/Activity"
+                  "$ref": "#/definitions/WorkflowExecutionActivity"
                },
                "type": "array"
             },
@@ -633,7 +642,7 @@
                "$ref": "#/definitions/GeneProduct"
             },
             "was_generated_by": {
-               "description": "provenance for the annotation. Note to be consistent with the rest of the NMDC schema we use the PROV annotation model, rather than GPAD",
+               "description": "provenance for the annotation.",
                "type": "string"
             }
          },
@@ -768,9 +777,6 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "activity_id": {
-               "type": "string"
-            },
             "binned_contig_num": {
                "type": "integer"
             },
@@ -799,14 +805,26 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "input_contig_num": {
                "type": "integer"
+            },
+            "name": {
+               "description": "A human readable label for an entity",
+               "type": "string"
             },
             "started_at_time": {
                "type": "string"
             },
             "too_short_contig_num": {
                "type": "integer"
+            },
+            "type": {
+               "description": "The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.",
+               "type": "string"
             },
             "used": {
                "type": "string"
@@ -819,7 +837,7 @@
             }
          },
          "required": [
-            "activity_id"
+            "id"
          ],
          "title": "MAGAnnotationActivity",
          "type": "object"
@@ -845,9 +863,6 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "activity_id": {
-               "type": "string"
-            },
             "ended_at_time": {
                "type": "string"
             },
@@ -879,7 +894,19 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human readable label for an entity",
+               "type": "string"
+            },
             "started_at_time": {
+               "type": "string"
+            },
+            "type": {
+               "description": "The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.",
                "type": "string"
             },
             "used": {
@@ -894,7 +921,7 @@
             }
          },
          "required": [
-            "activity_id"
+            "id"
          ],
          "title": "MetabolomicsAnalysisActivity",
          "type": "object"
@@ -903,9 +930,6 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "activity_id": {
-               "type": "string"
-            },
             "ended_at_time": {
                "type": "string"
             },
@@ -931,7 +955,19 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human readable label for an entity",
+               "type": "string"
+            },
             "started_at_time": {
+               "type": "string"
+            },
+            "type": {
+               "description": "The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.",
                "type": "string"
             },
             "used": {
@@ -945,7 +981,7 @@
             }
          },
          "required": [
-            "activity_id"
+            "id"
          ],
          "title": "MetagenomeAnnotationActivity",
          "type": "object"
@@ -954,9 +990,6 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "activity_id": {
-               "type": "string"
-            },
             "asm_score": {
                "description": "A score for comparing metagenomic assembly quality from same sample.",
                "type": "number"
@@ -1034,6 +1067,14 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human readable label for an entity",
+               "type": "string"
+            },
             "num_aligned_reads": {
                "description": "The sequence count number of input reads aligned to assembled contigs.",
                "type": "number"
@@ -1093,6 +1134,10 @@
             "started_at_time": {
                "type": "string"
             },
+            "type": {
+               "description": "The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.",
+               "type": "string"
+            },
             "used": {
                "type": "string"
             },
@@ -1104,7 +1149,7 @@
             }
          },
          "required": [
-            "activity_id"
+            "id"
          ],
          "title": "MetagenomeAssembly",
          "type": "object"
@@ -1113,9 +1158,6 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "activity_id": {
-               "type": "string"
-            },
             "ended_at_time": {
                "type": "string"
             },
@@ -1147,7 +1189,19 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human readable label for an entity",
+               "type": "string"
+            },
             "started_at_time": {
+               "type": "string"
+            },
+            "type": {
+               "description": "The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.",
                "type": "string"
             },
             "used": {
@@ -1162,7 +1216,7 @@
             }
          },
          "required": [
-            "activity_id"
+            "id"
          ],
          "title": "MetaproteomicsAnalysisActivity",
          "type": "object"
@@ -1540,9 +1594,6 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "activity_id": {
-               "type": "string"
-            },
             "ended_at_time": {
                "type": "string"
             },
@@ -1568,6 +1619,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "input_base_count": {
                "description": "The nucleotide base count number of input reads for QC analysis.",
                "type": "number"
@@ -1575,6 +1630,10 @@
             "input_read_count": {
                "description": "The sequence count number of input reads for QC analysis.",
                "type": "number"
+            },
+            "name": {
+               "description": "A human readable label for an entity",
+               "type": "string"
             },
             "output_base_count": {
                "description": "After QC analysis nucleotide base count number.",
@@ -1585,6 +1644,10 @@
                "type": "number"
             },
             "started_at_time": {
+               "type": "string"
+            },
+            "type": {
+               "description": "The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.",
                "type": "string"
             },
             "used": {
@@ -1598,7 +1661,7 @@
             }
          },
          "required": [
-            "activity_id"
+            "id"
          ],
          "title": "ReadQCAnalysisActivity",
          "type": "object"
@@ -1716,9 +1779,6 @@
          "additionalProperties": false,
          "description": "Represents an instance of an execution of a particular workflow",
          "properties": {
-            "activity_id": {
-               "type": "string"
-            },
             "ended_at_time": {
                "type": "string"
             },
@@ -1744,7 +1804,19 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human readable label for an entity",
+               "type": "string"
+            },
             "started_at_time": {
+               "type": "string"
+            },
+            "type": {
+               "description": "The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.",
                "type": "string"
             },
             "used": {
@@ -1758,7 +1830,7 @@
             }
          },
          "required": [
-            "activity_id"
+            "id"
          ],
          "title": "WorkflowExecutionActivity",
          "type": "object"
@@ -1768,7 +1840,7 @@
       "activity_set": {
          "description": "This property links a database object to the set of prov activities.",
          "items": {
-            "$ref": "#/definitions/Activity"
+            "$ref": "#/definitions/WorkflowExecutionActivity"
          },
          "type": "array"
       },
