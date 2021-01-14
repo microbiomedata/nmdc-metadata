@@ -14,7 +14,7 @@ We can conceive of validation of a piece of JSON at two levels
 
 It is crucial that the JSON is syntactically valid, otherwise it can't even be schema-validated.
 
-There are a varoety of ways to check for this. We recommend using jsonschema to validate this, see below.
+There are a variety of ways to check for this. We recommend using jsonschema to validate this, see below.
 
 NOTE: all NMDC JSON-producing tools, libraries, or scripts SHOULD use a standard json library. If you are using a robust standard json library, your output is practically guaranteed to be syntactically valid JSON.
 
