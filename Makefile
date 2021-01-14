@@ -53,6 +53,9 @@ schema_uml: schema/nmdc_schema_uml.png
 schema/%.py: schema/%.yaml env.lock
 	pipenv run gen-py-classes $< > $@.tmp && pipenv run python $@.tmp && mv $@.tmp $@
 
+#.PHONY: force_schema_build
+#force_schema_build: schema/nmdc.yaml schema/prov.yaml schema/core.yaml  schema/annotation.yaml
+
 # JSON Schema
 schema/nmdc.schema.json: schema/nmdc.yaml env.lock
 	pipenv run gen-json-schema -t database $<  > $@.tmp && jsonschema $@.tmp && mv $@.tmp $@
