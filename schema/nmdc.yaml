@@ -511,7 +511,7 @@ slots:
   
   activity set:
     domain: database
-    range: activity
+    range: workflow execution activity
     multivalued: true
     inlined: true
     description: >-
@@ -587,6 +587,12 @@ slots:
     is_a: attribute
     description: >-
       Example: NERSC-Cori
+      
+  url:
+    is_a: attribute
+    range: string
+    notes:
+      - See issue 207 - this clashes with the mixs field
       
   git url:
     is_a: attribute

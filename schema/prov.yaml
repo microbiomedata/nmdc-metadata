@@ -25,7 +25,9 @@ classes:
   activity:
     description: "a provence-generating activity"
     slots:
-      - activity id
+      - id
+      - name
+      - type
       - started at time
       - ended at time
       - was informed by
@@ -44,9 +46,6 @@ classes:
       
 slots:
 
-  activity id:
-    identifier: true
-  
   started at time:
     mappings:
       - prov:startedAtTime
