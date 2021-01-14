@@ -90,7 +90,7 @@
   </li>
 </ul>
 
-<h3 id="inherited-from-named-thing">Inherited from named thing:</h3>
+<h3 id="inherited-from-activity">Inherited from activity:</h3>
 
 <ul>
   <li><a href="id.md">id</a>  <sub>REQ</sub>
@@ -105,6 +105,39 @@
       <li>range: <a href="types/String.md">String</a></li>
     </ul>
   </li>
+  <li><a href="type.md">type</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.</li>
+      <li>range: <a href="types/String.md">String</a></li>
+      <li>Example: nmdc:Biosample None</li>
+      <li>Example: nmdc:Study None</li>
+    </ul>
+  </li>
+  <li><a href="started_at_time.md">started at time</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="ended_at_time.md">ended at time</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="was_associated_with.md">was associated with</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="Agent.md">Agent</a></li>
+    </ul>
+  </li>
+  <li><a href="used.md">used</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="inherited-from-named-thing">Inherited from named thing:</h3>
+
+<ul>
   <li><a href="description.md">description</a>  <sub>OPT</sub>
     <ul>
       <li>Description: a human-readable description of a thing</li>

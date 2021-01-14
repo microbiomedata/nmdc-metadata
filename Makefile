@@ -14,7 +14,7 @@ env.lock:
 	cp /dev/null env.lock
 
 # TODO: nmdc-02
-schema_test_examples = nmdc-01 functional-annotation feature-set
+schema_test_examples = nmdc-01 functional-annotation feature-set img_mg_annotation_data_objects img_mg_annotation_objects
 
 test_jsonschema: $(patsubst %, schema/test-%.valid, $(schema_test_examples))
 test: test_jsonschema pytest
@@ -52,6 +52,9 @@ schema_uml: schema/nmdc_schema_uml.png
 # Python dataclasses
 schema/%.py: schema/%.yaml env.lock
 	pipenv run gen-py-classes $< > $@.tmp && pipenv run python $@.tmp && mv $@.tmp $@
+
+#.PHONY: force_schema_build
+#force_schema_build: schema/nmdc.yaml schema/prov.yaml schema/core.yaml  schema/annotation.yaml
 
 # JSON Schema
 schema/nmdc.schema.json: schema/nmdc.yaml env.lock

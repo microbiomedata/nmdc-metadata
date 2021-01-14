@@ -6,7 +6,7 @@
 
 <hr />
 
-<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[WorkflowExecutionActivity],[TextValue],[OmicsProcessing],[NamedThing],[Database],[TextValue]%3Curl%200..1-++[DataObject%7Cfile_size_bytes:bytes%20%3F;md5_checksum:string%20%3F;compression_type:string%20%3F;id(i):string;name(i):string%20%3F;description(i):string%20%3F;alternate_identifiers(i):string%20%2A],[WorkflowExecutionActivity]%3Cwas%20generated%20by%200..1-++[DataObject],[ControlledTermValue]%3Cdata%20object%20type%200..1-++[DataObject],[Database]++-%20data%20object%20set%200..%2A%3E[DataObject],[OmicsProcessing]-%20has%20output%200..%2A%3E[DataObject],[NamedThing]%5E-[DataObject],[ControlledTermValue]" alt="img" /></p>
+<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[WorkflowExecutionActivity],[OmicsProcessing],[NamedThing],[Database],[WorkflowExecutionActivity]%3Cwas%20generated%20by%200..1-++[DataObject%7Cfile_size_bytes:bytes%20%3F;md5_checksum:string%20%3F;compression_type:string%20%3F;url:string%20%3F;id(i):string;name(i):string%20%3F;description(i):string%20%3F;alternate_identifiers(i):string%20%2A],[ControlledTermValue]%3Cdata%20object%20type%200..1-++[DataObject],[Database]++-%20data%20object%20set%200..%2A%3E[DataObject],[OmicsProcessing]-%20has%20output%200..%2A%3E[DataObject],[NamedThing]%5E-[DataObject],[ControlledTermValue]" alt="img" /></p>
 
 <hr />
 
@@ -68,13 +68,12 @@
   </li>
   <li><a href="url.md">url</a>  <sub>OPT</sub>
     <ul>
-      <li>range: <a href="TextValue.md">TextValue</a></li>
-      <li>in subsets: (sequencing)</li>
+      <li>range: <a href="types/String.md">String</a></li>
     </ul>
   </li>
 </ul>
 
-<h3 id="inherited-from-named-thing">Inherited from named thing:</h3>
+<h3 id="inherited-from-activity">Inherited from activity:</h3>
 
 <ul>
   <li><a href="id.md">id</a>  <sub>REQ</sub>
@@ -89,6 +88,39 @@
       <li>range: <a href="types/String.md">String</a></li>
     </ul>
   </li>
+  <li><a href="type.md">type</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.</li>
+      <li>range: <a href="types/String.md">String</a></li>
+      <li>Example: nmdc:Biosample None</li>
+      <li>Example: nmdc:Study None</li>
+    </ul>
+  </li>
+  <li><a href="started_at_time.md">started at time</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="ended_at_time.md">ended at time</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="was_associated_with.md">was associated with</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="Agent.md">Agent</a></li>
+    </ul>
+  </li>
+  <li><a href="used.md">used</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="inherited-from-named-thing">Inherited from named thing:</h3>
+
+<ul>
   <li><a href="description.md">description</a>  <sub>OPT</sub>
     <ul>
       <li>Description: a human-readable description of a thing</li>

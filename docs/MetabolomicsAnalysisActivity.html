@@ -4,7 +4,7 @@
 
 <hr />
 
-<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[WorkflowExecutionActivity],[MetaboliteQuantification]%3Chas%20metabolite%20quantifications%200..%2A-++[MetabolomicsAnalysisActivity%7Cexecution_resource(i):string%20%3F;git_url(i):string%20%3F;has_input(i):string%20%2A;has_output(i):string%20%2A;activity_id(i):string;started_at_time(i):string%20%3F;ended_at_time(i):string%20%3F],[Instrument]%3Cused%200..1-%20[MetabolomicsAnalysisActivity],[WorkflowExecutionActivity]%5E-[MetabolomicsAnalysisActivity],[MetaboliteQuantification],[Instrument],[Agent],[Activity]" alt="img" /></p>
+<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[WorkflowExecutionActivity],[MetaboliteQuantification]%3Chas%20metabolite%20quantifications%200..%2A-++[MetabolomicsAnalysisActivity%7Cexecution_resource(i):string%20%3F;git_url(i):string%20%3F;has_input(i):string%20%2A;has_output(i):string%20%2A;id(i):string;name(i):string%20%3F;type(i):string%20%3F;started_at_time(i):string%20%3F;ended_at_time(i):string%20%3F],[Instrument]%3Cused%200..1-%20[MetabolomicsAnalysisActivity],[WorkflowExecutionActivity]%5E-[MetabolomicsAnalysisActivity],[MetaboliteQuantification],[Instrument],[Agent],[Activity]" alt="img" /></p>
 
 <hr />
 
@@ -37,9 +37,24 @@
 <h3 id="inherited-from-activity">Inherited from activity:</h3>
 
 <ul>
-  <li><a href="activity_id.md">activity id</a>  <sub>REQ</sub>
+  <li><a href="id.md">id</a>  <sub>REQ</sub>
     <ul>
+      <li>Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI</li>
       <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="name.md">name</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: A human readable label for an entity</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="type.md">type</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.</li>
+      <li>range: <a href="types/String.md">String</a></li>
+      <li>Example: nmdc:Biosample None</li>
+      <li>Example: nmdc:Study None</li>
     </ul>
   </li>
   <li><a href="started_at_time.md">started at time</a>  <sub>OPT</sub>
