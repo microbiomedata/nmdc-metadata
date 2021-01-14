@@ -16,6 +16,8 @@ metatype:Float xsd:float
 
 metatype:Double xsd:double
 
+metatype:Decimal xsd:decimal
+
 metatype:Time xsd:dateTime
 
 metatype:Date xsd:date
@@ -199,7 +201,8 @@ metatype:Nodeidentifier NONLITERAL
           <md5_checksum> @metatype:String ? ;
           <data_object_type> @<ControlledTermValue> ? ;
           <compression_type> @metatype:String ? ;
-          <was_generated_by> @<WorkflowExecutionActivity> ?
+          <was_generated_by> @<WorkflowExecutionActivity> ? ;
+          <https://microbiomedata/schema/mixs/url> @<TextValue> ?
        ) ;
        rdf:type [ <DataObject> ]
     )
@@ -225,7 +228,8 @@ metatype:Nodeidentifier NONLITERAL
 }
 
 <https://microbiomedata/schema/annotation/FunctionalAnnotation> CLOSED {
-    (  $<https://microbiomedata/schema/annotation/FunctionalAnnotation_tes> (  <was_generated_by> @<Activity> ? ;
+    (  $<https://microbiomedata/schema/annotation/FunctionalAnnotation_tes> (  <was_generated_by> @<MetagenomeAnnotationActivity> ?
+          ;
           <subject> @<https://microbiomedata/schema/annotation/GeneProduct> ? ;
           <has_function> @<https://microbiomedata/schema/annotation/FunctionalAnnotationTerm> ?
        ) ;
@@ -290,6 +294,17 @@ metatype:Nodeidentifier NONLITERAL
           <has_numeric_value> @metatype:Float ?
        ) ;
        rdf:type [ <IntegerValue> ] ?
+    )
+}
+
+<MAGAnnotationActivity> CLOSED {
+    (  $<MAGAnnotationActivity_tes> (  &<WorkflowExecutionActivity_tes> ;
+          rdf:type [ <WorkflowExecutionActivity> ] ? ;
+          <input_contig_num> @metatype:Integer ? ;
+          <binned_contig_num> @metatype:Integer ? ;
+          <too_short_contig_num> @metatype:Integer ?
+       ) ;
+       rdf:type [ <MAGAnnotationActivity> ]
     )
 }
 
@@ -424,9 +439,9 @@ metatype:Nodeidentifier NONLITERAL
     (  $<PeptideQuantification_tes> (  <peptide_sequence> @metatype:String ? ;
           <best_protein> @<https://microbiomedata/schema/annotation/GeneProduct> ? ;
           <all_proteins> @<https://microbiomedata/schema/annotation/GeneProduct> * ;
-          <min_q_value> @metatype:Integer ? ;
-          <spectral_count> @metatype:Integer ? ;
-          <sum_masic_abundance> @metatype:Integer ?
+          <min_q_value> @metatype:Float ? ;
+          <peptide_spectral_count> @metatype:Integer ? ;
+          <peptide_sum_masic_abundance> @metatype:Integer ?
        ) ;
        rdf:type [ <PeptideQuantification> ] ?
     )
@@ -447,6 +462,17 @@ metatype:Nodeidentifier NONLITERAL
           <has_raw_value> @metatype:String ?
        ) ;
        rdf:type [ <PersonValue> ] ?
+    )
+}
+
+<ProteinQuantification> CLOSED {
+    (  $<ProteinQuantification_tes> (  <best_protein> @<https://microbiomedata/schema/annotation/GeneProduct> ? ;
+          <all_proteins> @<https://microbiomedata/schema/annotation/GeneProduct> * ;
+          <peptide_sequence_count> @metatype:Integer ? ;
+          <protein_spectral_count> @metatype:Integer ? ;
+          <protein_sum_masic_abundance> @metatype:Integer ?
+       ) ;
+       rdf:type [ <ProteinQuantification> ] ?
     )
 }
 
@@ -553,7 +579,7 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <WorkflowExecutionActivity> ]
        )
-    } OR @<MetabolomicsAnalysisActivity> OR @<MetagenomeAnnotationActivity> OR @<MetagenomeAssembly> OR
+    } OR @<MAGAnnotationActivity> OR @<MetabolomicsAnalysisActivity> OR @<MetagenomeAnnotationActivity> OR @<MetagenomeAssembly> OR
     @<MetaproteomicsAnalysisActivity> OR @<ReadQCAnalysisActivity>
 )
 
