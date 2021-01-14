@@ -27,7 +27,7 @@ jobs:
       - run: pip install biolinkml
         
       # generate markdown files
-      - run: gen-markdown --dir docs schemanmdc.yaml
+      - run: gen-markdown --dir docs schema/nmdc.yaml
 
       # deploy documentation (note: requires documentation is in docs dir)
       - run: mkdocs gh-deploy --remote-branch gh-pages --force --theme readthedocs
