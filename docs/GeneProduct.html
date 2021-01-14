@@ -6,7 +6,7 @@
 
 <hr />
 
-<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[ProteinQuantification],[PeptideQuantification],[GenomeFeature],[FunctionalAnnotation]++-%20subject%200..1%3E[GeneProduct],[GenomeFeature]++-%20encodes%200..1%3E[GeneProduct],[PeptideQuantification]++-%20all%20proteins%200..%2A%3E[GeneProduct],[PeptideQuantification]++-%20best%20protein%200..1%3E[GeneProduct],[ProteinQuantification]++-%20all%20proteins%200..%2A%3E[GeneProduct],[ProteinQuantification]++-%20best%20protein%200..1%3E[GeneProduct],[FunctionalAnnotation]" alt="img" /></p>
+<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[ProteinQuantification],[PeptideQuantification],[NamedThing],[GenomeFeature],[FunctionalAnnotation]-%20subject%200..1%3E[GeneProduct%7Cid(i):string;name(i):string%20%3F;description(i):string%20%3F;alternate_identifiers(i):string%20%2A],[GenomeFeature]-%20encodes%200..1%3E[GeneProduct],[PeptideQuantification]-%20all%20proteins%200..%2A%3E[GeneProduct],[PeptideQuantification]-%20best%20protein%200..1%3E[GeneProduct],[ProteinQuantification]-%20all%20proteins%200..%2A%3E[GeneProduct],[ProteinQuantification]-%20best%20protein%200..1%3E[GeneProduct],[NamedThing]%5E-[GeneProduct],[FunctionalAnnotation]" alt="img" /></p>
 
 <hr />
 
@@ -16,6 +16,12 @@
   <li>UniProtKB</li>
   <li>gtpo</li>
   <li>PR</li>
+</ul>
+
+<h2 id="parents">Parents</h2>
+
+<ul>
+  <li>is_a: <a href="NamedThing.md">NamedThing</a> - a databased entity or concept/class</li>
 </ul>
 
 <h2 id="referenced-by-class">Referenced by class</h2>
@@ -34,6 +40,68 @@
 </ul>
 
 <h2 id="attributes">Attributes</h2>
+
+<h3 id="inherited-from-activity">Inherited from activity:</h3>
+
+<ul>
+  <li><a href="id.md">id</a>  <sub>REQ</sub>
+    <ul>
+      <li>Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="name.md">name</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: A human readable label for an entity</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="type.md">type</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.</li>
+      <li>range: <a href="types/String.md">String</a></li>
+      <li>Example: nmdc:Biosample None</li>
+      <li>Example: nmdc:Study None</li>
+    </ul>
+  </li>
+  <li><a href="started_at_time.md">started at time</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="ended_at_time.md">ended at time</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="was_associated_with.md">was associated with</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="Agent.md">Agent</a></li>
+    </ul>
+  </li>
+  <li><a href="used.md">used</a>  <sub>OPT</sub>
+    <ul>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="inherited-from-named-thing">Inherited from named thing:</h3>
+
+<ul>
+  <li><a href="description.md">description</a>  <sub>OPT</sub>
+    <ul>
+      <li>Description: a human-readable description of a thing</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+  <li><a href="alternate_identifiers.md">alternate identifiers</a>  <sub>0..*</sub>
+    <ul>
+      <li>Description: Non-primary identifiers</li>
+      <li>range: <a href="types/String.md">String</a></li>
+    </ul>
+  </li>
+</ul>
 
 <h2 id="other-properties">Other properties</h2>
 

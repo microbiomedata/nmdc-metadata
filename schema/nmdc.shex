@@ -44,7 +44,9 @@ metatype:Nodeidentifier NONLITERAL
 
 <Activity>  (
     CLOSED {
-       (  $<Activity_tes> (  <started_at_time> @metatype:String ? ;
+       (  $<Activity_tes> (  <name> @metatype:String ? ;
+             <type> @metatype:String ? ;
+             <started_at_time> @metatype:String ? ;
              <ended_at_time> @metatype:String ? ;
              <was_informed_by> @<Activity> ? ;
              <was_associated_with> @<Agent> ? ;
@@ -202,7 +204,7 @@ metatype:Nodeidentifier NONLITERAL
           <data_object_type> @<ControlledTermValue> ? ;
           <compression_type> @metatype:String ? ;
           <was_generated_by> @<WorkflowExecutionActivity> ? ;
-          <https://microbiomedata/schema/mixs/url> @<TextValue> ?
+          <url> @metatype:String ?
        ) ;
        rdf:type [ <DataObject> ]
     )
@@ -212,8 +214,10 @@ metatype:Nodeidentifier NONLITERAL
     (  $<Database_tes> (  <biosample_set> @<Biosample> * ;
           <study_set> @<Study> * ;
           <data_object_set> @<DataObject> * ;
-          <activity_set> @<Activity> * ;
-          <omics_processing_set> @<OmicsProcessing> *
+          <activity_set> @<WorkflowExecutionActivity> * ;
+          <omics_processing_set> @<OmicsProcessing> * ;
+          <functional_annotation_set> @<https://microbiomedata/schema/annotation/FunctionalAnnotation> * ;
+          <genome_feature_set> @<https://microbiomedata/schema/annotation/GenomeFeature> *
        ) ;
        rdf:type [ <Database> ] ?
     )

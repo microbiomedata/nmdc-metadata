@@ -216,6 +216,7 @@ classes:
       - biolink:ChemicalSubstance
     
   gene product:
+    is_a: named thing
     description: >-
       A molecule encoded by a gene that has an evolved function
     comments:

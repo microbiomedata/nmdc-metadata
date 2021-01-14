@@ -6,7 +6,7 @@
 
 <hr />
 
-<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[WorkflowExecutionActivity],[Study],[OmicsProcessing],[OmicsProcessing]%3Comics%20processing%20set%200..%2A-++[Database],[WorkflowExecutionActivity]%3Cactivity%20set%200..%2A-++[Database],[DataObject]%3Cdata%20object%20set%200..%2A-++[Database],[Study]%3Cstudy%20set%200..%2A-++[Database],[Biosample]%3Cbiosample%20set%200..%2A-++[Database],[DataObject],[Biosample]" alt="img" /></p>
+<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[WorkflowExecutionActivity],[Study],[OmicsProcessing],[GenomeFeature],[FunctionalAnnotation],[GenomeFeature]%3Cgenome%20feature%20set%200..%2A-++[Database],[FunctionalAnnotation]%3Cfunctional%20annotation%20set%200..%2A-++[Database],[OmicsProcessing]%3Comics%20processing%20set%200..%2A-++[Database],[WorkflowExecutionActivity]%3Cactivity%20set%200..%2A-++[Database],[DataObject]%3Cdata%20object%20set%200..%2A-++[Database],[Study]%3Cstudy%20set%200..%2A-++[Database],[Biosample]%3Cbiosample%20set%200..%2A-++[Database],[DataObject],[Biosample]" alt="img" /></p>
 
 <hr />
 
@@ -33,6 +33,18 @@
     <ul>
       <li>Description: This property links a database object to the set of data objects within it.</li>
       <li>range: <a href="DataObject.md">DataObject</a></li>
+    </ul>
+  </li>
+  <li><a href="functional_annotation_set.md">functional annotation set</a>  <sub>0..*</sub>
+    <ul>
+      <li>Description: This property links a database object to the set of all functional annotations</li>
+      <li>range: <a href="FunctionalAnnotation.md">FunctionalAnnotation</a></li>
+    </ul>
+  </li>
+  <li><a href="genome_feature_set.md">genome feature set</a>  <sub>0..*</sub>
+    <ul>
+      <li>Description: This property links a database object to the set of all features</li>
+      <li>range: <a href="GenomeFeature.md">GenomeFeature</a></li>
     </ul>
   </li>
   <li><a href="omics_processing_set.md">omics processing set</a>  <sub>0..*</sub>
@@ -68,6 +80,18 @@
     <ul>
       <li>Description: This property links a database object to the set of data objects within it.</li>
       <li>range: <a href="DataObject.md">DataObject</a></li>
+    </ul>
+  </li>
+  <li><a href="functional_annotation_set.md">functional annotation set</a>  <sub>0..*</sub>
+    <ul>
+      <li>Description: This property links a database object to the set of all functional annotations</li>
+      <li>range: <a href="FunctionalAnnotation.md">FunctionalAnnotation</a></li>
+    </ul>
+  </li>
+  <li><a href="genome_feature_set.md">genome feature set</a>  <sub>0..*</sub>
+    <ul>
+      <li>Description: This property links a database object to the set of all features</li>
+      <li>range: <a href="GenomeFeature.md">GenomeFeature</a></li>
     </ul>
   </li>
   <li><a href="omics_processing_set.md">omics processing set</a>  <sub>0..*</sub>

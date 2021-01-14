@@ -6,11 +6,15 @@
 
 <hr />
 
-<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass],[GeneProduct]%3Cencodes%200..1-++[GenomeFeature%7Cseqid:string;start:integer;end:integer;strand:string%20%3F;phase:integer%20%3F],[OntologyClass]%3Ctype%200..1-%20[GenomeFeature],[GeneProduct]" alt="img" /></p>
+<p><img src="http://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass],[GeneProduct]%3Cencodes%200..1-%20[GenomeFeature%7Cseqid:string;start:integer;end:integer;strand:string%20%3F;phase:integer%20%3F],[OntologyClass]%3Ctype%200..1-%20[GenomeFeature],[Database]++-%20genome%20feature%20set%200..%2A%3E[GenomeFeature],[GeneProduct],[Database]" alt="img" /></p>
 
 <hr />
 
 <h2 id="referenced-by-class">Referenced by class</h2>
+
+<ul>
+  <li><strong><a href="Database.md">Database</a></strong> <em><a href="genome_feature_set.md">genome feature set</a></em>  <sub>0..*</sub>  <strong><a href="GenomeFeature.md">GenomeFeature</a></strong></li>
+</ul>
 
 <h2 id="attributes">Attributes</h2>
 
