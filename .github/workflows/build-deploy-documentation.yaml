@@ -1,65 +1,33 @@
-name: Build adn Deploy Static Jekyll Documentation
+name: Build and Deploy Static Mkdocs Documentation
 
 # Controls when the action will run. Triggers the workflow on push
 on:
   push:
     branches:
-    - master
+      - master
     paths:
-    - 'README.md'
-    - 'docs/*'
-    - 'schema/nmdc.py'
-    - 'schema/nmdc.schema.json'
-    - 'schema/nmdc.context.jsonld'
-    - 'schema/nmdc_schema_uml.png'
+      - 'schema/nmdc.yaml'
 
   repository_dispatch:
-    types: trigger-build-deploy-jekyll-documentation
+    types: trigger-build-deploy-documentation
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  synchronize:
+  github-pages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Merge master to gh-pages branch
-        uses: devmasx/merge-branch@v1.1.0
+      - uses: actions/setup-python@v2
         with:
-          type: now
-          target_branch: gh-pages
-        env:
-          GITHUB_TOKEN: ${{secrets.API_TOKEN}}
+          python-version: 3.x
+          
+      # install dependencies
+      - run: pip install --upgrade pip
+      - run: pip install mkdocs
+      - run: pip install biolinkml
+        
+      # generate markdown files
+      - run: gen-markdown --dir docs schemanmdc.yaml
 
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        repository: microbiomedata/nmdc-metadata
-        persist-credentials: false
-
-    - name: Setup Python Environment
-      uses: actions/setup-python@v2
-      with:
-        # Version range or exact version of a Python version to use, using SemVer's version range syntax.
-        python-version: 3.7
-
-    - name: Install and Build
-      run: |
-        sudo gem install just-the-docs
-        pip install pipenv
-        make jekyll-docs
-        jekyll build # create static files in _site directory
-
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
-        REPOSITORY_NAME: microbiomedata/nmdc-metadata # The repository the action should deploy to
-        BRANCH:  gh-jekyll-site # The branch the action should deploy to.
-        FOLDER: _site # The folder the action should deploy.
+      # deploy documentation (note: requires documentation is in docs dir)
+      - run: mkdocs gh-deploy --remote-branch gh-pages --force --theme readthedocs
