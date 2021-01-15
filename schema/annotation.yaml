@@ -183,7 +183,7 @@ classes:
       There may be different terms for distinct acid-base forms, protonation states
     slot_usage:
       inchi:
-        key: true
+        key: false
         multivalued: false
         range: string
       inchi key:
