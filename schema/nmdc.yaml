@@ -76,6 +76,7 @@ classes:
       - study set
       - data object set
       - activity set
+      - mags activity set
       - omics processing set
       - functional annotation set
       - genome feature set

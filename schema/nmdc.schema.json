@@ -595,6 +595,13 @@
                },
                "type": "array"
             },
+            "mags_activity_set": {
+               "description": "This property links a database object to the set of MAGs analysis activities.",
+               "items": {
+                  "$ref": "#/definitions/MAGsAnalysisActivity"
+               },
+               "type": "array"
+            },
             "omics_processing_set": {
                "description": "This property links a database object to the set of omics processings within it.",
                "items": {
@@ -814,6 +821,9 @@
          "properties": {
             "bin_name": {
                "type": "string"
+            },
+            "number_of_contigs": {
+               "type": "integer"
             }
          },
          "required": [],
@@ -1922,6 +1932,13 @@
          "description": "This property links a database object to the set of all features",
          "items": {
             "$ref": "#/definitions/GenomeFeature"
+         },
+         "type": "array"
+      },
+      "mags_activity_set": {
+         "description": "This property links a database object to the set of MAGs analysis activities.",
+         "items": {
+            "$ref": "#/definitions/MAGsAnalysisActivity"
          },
          "type": "array"
       },
