@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-01-15 13:46
+# Generation date: 2021-01-15 18:38
 # Schema: NMDC
 #
 # id: https://microbiomedata/schema
@@ -226,6 +226,7 @@ class Database(YAMLRoot):
     study_set: Optional[Union[Dict[Union[str, StudyId], Union[dict, "Study"]], List[Union[dict, "Study"]]]] = empty_dict()
     data_object_set: Optional[Union[Dict[Union[str, DataObjectId], Union[dict, "DataObject"]], List[Union[dict, "DataObject"]]]] = empty_dict()
     activity_set: Optional[Union[Dict[Union[str, WorkflowExecutionActivityId], Union[dict, "WorkflowExecutionActivity"]], List[Union[dict, "WorkflowExecutionActivity"]]]] = empty_dict()
+    mags_activity_set: Optional[Union[Dict[Union[str, MAGsAnalysisActivityId], Union[dict, "MAGsAnalysisActivity"]], List[Union[dict, "MAGsAnalysisActivity"]]]] = empty_dict()
     omics_processing_set: Optional[Union[Dict[Union[str, OmicsProcessingId], Union[dict, "OmicsProcessing"]], List[Union[dict, "OmicsProcessing"]]]] = empty_dict()
     functional_annotation_set: Optional[Union[Union[dict, "FunctionalAnnotation"], List[Union[dict, "FunctionalAnnotation"]]]] = empty_list()
     genome_feature_set: Optional[Union[Union[dict, "GenomeFeature"], List[Union[dict, "GenomeFeature"]]]] = empty_list()
@@ -254,6 +255,12 @@ class Database(YAMLRoot):
         if not isinstance(self.activity_set, (list, dict)):
             self.activity_set = [self.activity_set]
         self._normalize_inlined_slot(slot_name="activity_set", slot_type=WorkflowExecutionActivity, key_name="id", inlined_as_list=None, keyed=True)
+
+        if self.mags_activity_set is None:
+            self.mags_activity_set = []
+        if not isinstance(self.mags_activity_set, (list, dict)):
+            self.mags_activity_set = [self.mags_activity_set]
+        self._normalize_inlined_slot(slot_name="mags_activity_set", slot_type=MAGsAnalysisActivity, key_name="id", inlined_as_list=None, keyed=True)
 
         if self.omics_processing_set is None:
             self.omics_processing_set = []
@@ -286,10 +293,14 @@ class MAGBin(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = NMDC.MAGBin
 
     bin_name: Optional[str] = None
+    number_of_contigs: Optional[int] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.bin_name is not None and not isinstance(self.bin_name, str):
             self.bin_name = str(self.bin_name)
+
+        if self.number_of_contigs is not None and not isinstance(self.number_of_contigs, int):
+            self.number_of_contigs = int(self.number_of_contigs)
 
         super().__post_init__(**kwargs)
 
@@ -1946,7 +1957,29 @@ class GeneProduct(NamedThing):
 
 
 @dataclass
-class FunctionalAnnotation(YAMLRoot):
+class Annotation(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://microbiomedata/schema/annotation/Annotation")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "annotation"
+    class_model_uri: ClassVar[URIRef] = NMDC.Annotation
+
+    type: Optional[str] = None
+    was_generated_by: Optional[Union[str, ActivityId]] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.type is not None and not isinstance(self.type, str):
+            self.type = str(self.type)
+
+        if self.was_generated_by is not None and not isinstance(self.was_generated_by, ActivityId):
+            self.was_generated_by = ActivityId(self.was_generated_by)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class FunctionalAnnotation(Annotation):
     """
     An assignment of a function term (e.g. reaction or pathway) that is executed by a gene product, or which the gene
     product plays an active role in. Functional annotations can be assigned manually by curators, or automatically in
@@ -1960,19 +1993,19 @@ class FunctionalAnnotation(YAMLRoot):
     class_name: ClassVar[str] = "functional annotation"
     class_model_uri: ClassVar[URIRef] = NMDC.FunctionalAnnotation
 
-    was_generated_by: Optional[Union[str, MetagenomeAnnotationActivityId]] = None
     subject: Optional[Union[str, GeneProductId]] = None
     has_function: Optional[Union[str, FunctionalAnnotationTermId]] = None
+    was_generated_by: Optional[Union[str, MetagenomeAnnotationActivityId]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.was_generated_by is not None and not isinstance(self.was_generated_by, MetagenomeAnnotationActivityId):
-            self.was_generated_by = MetagenomeAnnotationActivityId(self.was_generated_by)
-
         if self.subject is not None and not isinstance(self.subject, GeneProductId):
             self.subject = GeneProductId(self.subject)
 
         if self.has_function is not None and not isinstance(self.has_function, FunctionalAnnotationTermId):
             self.has_function = FunctionalAnnotationTermId(self.has_function)
+
+        if self.was_generated_by is not None and not isinstance(self.was_generated_by, MetagenomeAnnotationActivityId):
+            self.was_generated_by = MetagenomeAnnotationActivityId(self.was_generated_by)
 
         super().__post_init__(**kwargs)
 
@@ -4457,6 +4490,12 @@ slots.was_generated_by = Slot(uri=NMDC.was_generated_by, name="was generated by"
 slots.used = Slot(uri=NMDC.used, name="used", curie=NMDC.curie('used'),
                    model_uri=NMDC.used, domain=Activity, range=Optional[str], mappings = [PROV.used])
 
+slots.subject = Slot(uri="str(uriorcurie)", name="subject", curie=None,
+                   model_uri=NMDC.subject, domain=None, range=Optional[Union[str, GeneProductId]])
+
+slots.has_function = Slot(uri="str(uriorcurie)", name="has function", curie=None,
+                   model_uri=NMDC.has_function, domain=None, range=Optional[Union[str, FunctionalAnnotationTermId]])
+
 slots.has_participants = Slot(uri="str(uriorcurie)", name="has participants", curie=None,
                    model_uri=NMDC.has_participants, domain=None, range=Optional[str])
 
@@ -4465,6 +4504,9 @@ slots.gff_coordinate = Slot(uri="str(uriorcurie)", name="gff coordinate", curie=
 
 slots.mAGBin__bin_name = Slot(uri=NMDC.bin_name, name="mAGBin__bin_name", curie=NMDC.curie('bin_name'),
                    model_uri=NMDC.mAGBin__bin_name, domain=None, range=Optional[str])
+
+slots.mAGBin__number_of_contigs = Slot(uri=NMDC.number_of_contigs, name="mAGBin__number_of_contigs", curie=NMDC.curie('number_of_contigs'),
+                   model_uri=NMDC.mAGBin__number_of_contigs, domain=None, range=Optional[int])
 
 slots.has_metabolite_quantifications = Slot(uri=NMDC.has_metabolite_quantifications, name="has metabolite quantifications", curie=NMDC.curie('has_metabolite_quantifications'),
                    model_uri=NMDC.has_metabolite_quantifications, domain=None, range=Optional[Union[Union[dict, MetaboliteQuantification], List[Union[dict, MetaboliteQuantification]]]])
@@ -4570,12 +4612,6 @@ slots.smiles = Slot(uri=NMDC.smiles, name="smiles", curie=NMDC.curie('smiles'),
 
 slots.chemical_formula = Slot(uri=NMDC.chemical_formula, name="chemical formula", curie=NMDC.curie('chemical_formula'),
                    model_uri=NMDC.chemical_formula, domain=None, range=Optional[str])
-
-slots.subject = Slot(uri=NMDC.subject, name="subject", curie=NMDC.curie('subject'),
-                   model_uri=NMDC.subject, domain=None, range=Optional[Union[str, GeneProductId]])
-
-slots.has_function = Slot(uri=NMDC.has_function, name="has function", curie=NMDC.curie('has_function'),
-                   model_uri=NMDC.has_function, domain=None, range=Optional[Union[str, FunctionalAnnotationTermId]])
 
 slots.data_object_was_generated_by = Slot(uri=NMDC.was_generated_by, name="data object_was generated by", curie=NMDC.curie('was_generated_by'),
                    model_uri=NMDC.data_object_was_generated_by, domain=DataObject, range=Optional[Union[dict, "WorkflowExecutionActivity"]])
@@ -4772,12 +4808,6 @@ slots.chemical_entity_smiles = Slot(uri=NMDC.smiles, name="chemical entity_smile
 
 slots.chemical_entity_chemical_formula = Slot(uri=NMDC.chemical_formula, name="chemical entity_chemical formula", curie=NMDC.curie('chemical_formula'),
                    model_uri=NMDC.chemical_entity_chemical_formula, domain=ChemicalEntity, range=Optional[str])
-
-slots.functional_annotation_subject = Slot(uri=NMDC.subject, name="functional annotation_subject", curie=NMDC.curie('subject'),
-                   model_uri=NMDC.functional_annotation_subject, domain=FunctionalAnnotation, range=Optional[Union[str, GeneProductId]])
-
-slots.functional_annotation_has_function = Slot(uri=NMDC.has_function, name="functional annotation_has function", curie=NMDC.curie('has_function'),
-                   model_uri=NMDC.functional_annotation_has_function, domain=FunctionalAnnotation, range=Optional[Union[str, FunctionalAnnotationTermId]])
 
 slots.functional_annotation_was_generated_by = Slot(uri=NMDC.was_generated_by, name="functional annotation_was generated by", curie=NMDC.curie('was_generated_by'),
                    model_uri=NMDC.functional_annotation_was_generated_by, domain=FunctionalAnnotation, range=Optional[Union[str, MetagenomeAnnotationActivityId]])

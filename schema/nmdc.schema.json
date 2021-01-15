@@ -55,6 +55,22 @@
          "title": "Agent",
          "type": "object"
       },
+      "Annotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "type": {
+               "description": "The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.",
+               "type": "string"
+            },
+            "was_generated_by": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Annotation",
+         "type": "object"
+      },
       "AttributeValue": {
          "additionalProperties": false,
          "description": "The value for any value of a attribute for a sample. This object can hold both the un-normalized atomic value and the structured value",
@@ -659,6 +675,10 @@
                "type": "string"
             },
             "subject": {
+               "type": "string"
+            },
+            "type": {
+               "description": "The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.",
                "type": "string"
             },
             "was_generated_by": {

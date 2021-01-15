@@ -65,6 +65,16 @@ metatype:Nodeidentifier NONLITERAL
     )
 }
 
+<https://microbiomedata/schema/annotation/Annotation>  (
+    CLOSED {
+       (  $<https://microbiomedata/schema/annotation/Annotation_tes> (  <type> @metatype:String ? ;
+             <was_generated_by> @<Activity> ?
+          ) ;
+          rdf:type [ <https://microbiomedata/schema/annotation/Annotation> ] ?
+       )
+    } OR @<https://microbiomedata/schema/annotation/FunctionalAnnotation>
+)
+
 <AttributeValue>  (
     CLOSED {
        (  $<AttributeValue_tes> (  <has_raw_value> @metatype:String ? ;
@@ -215,6 +225,7 @@ metatype:Nodeidentifier NONLITERAL
           <study_set> @<Study> * ;
           <data_object_set> @<DataObject> * ;
           <activity_set> @<WorkflowExecutionActivity> * ;
+          <mags_activity_set> @<MAGsAnalysisActivity> * ;
           <omics_processing_set> @<OmicsProcessing> * ;
           <functional_annotation_set> @<https://microbiomedata/schema/annotation/FunctionalAnnotation> * ;
           <genome_feature_set> @<https://microbiomedata/schema/annotation/GenomeFeature> *
@@ -232,10 +243,13 @@ metatype:Nodeidentifier NONLITERAL
 }
 
 <https://microbiomedata/schema/annotation/FunctionalAnnotation> CLOSED {
-    (  $<https://microbiomedata/schema/annotation/FunctionalAnnotation_tes> (  <was_generated_by> @<MetagenomeAnnotationActivity> ?
-          ;
-          <subject> @<https://microbiomedata/schema/annotation/GeneProduct> ? ;
-          <has_function> @<https://microbiomedata/schema/annotation/FunctionalAnnotationTerm> ?
+    (  $<https://microbiomedata/schema/annotation/FunctionalAnnotation_tes> ( 
+          &<https://microbiomedata/schema/annotation/Annotation_tes> ;
+          rdf:type [ <https://microbiomedata/schema/annotation/Annotation> ] ? ;
+          <https://microbiomedata/schema/annotation/subject> @<https://microbiomedata/schema/annotation/GeneProduct> ? ;
+          <https://microbiomedata/schema/annotation/has_function>
+          @<https://microbiomedata/schema/annotation/FunctionalAnnotationTerm> ? ;
+          <was_generated_by> @<MetagenomeAnnotationActivity> ?
        ) ;
        rdf:type [ <https://microbiomedata/schema/annotation/FunctionalAnnotation> ] ?
     )
@@ -304,7 +318,9 @@ metatype:Nodeidentifier NONLITERAL
 }
 
 <MAGBin> CLOSED {
-    (  $<MAGBin_tes> <bin_name> @metatype:String ? ;
+    (  $<MAGBin_tes> (  <bin_name> @metatype:String ? ;
+          <number_of_contigs> @metatype:Integer ?
+       ) ;
        rdf:type [ <MAGBin> ] ?
     )
 }
