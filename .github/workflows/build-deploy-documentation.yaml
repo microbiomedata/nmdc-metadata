@@ -6,6 +6,7 @@ on:
     branches:
       - master
     paths:
+      - 'mkdocs.yml'
       - 'schema/*.yaml'
 
   repository_dispatch:
