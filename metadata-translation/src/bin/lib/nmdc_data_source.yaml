@@ -261,9 +261,9 @@ data_sources:
   study_table:
     id_key: study_id
     data_source:
-      file_name: "export.sql/STUDY_DATA_TABLE.dsv"
+      file_name: "NMDC_DUMP/STUDY_DATA_TABLE.dsv"
       file_type: tsv
-      file_archive_name: "../data/nmdc-version5.zip"
+      file_archive_name: "../data/GOLD_NMDC_DUMP_10162020.zip"
     filters:
       - include:
           field: gold_id
@@ -288,9 +288,9 @@ data_sources:
   contact_table:
     id_key: contact_id
     data_source:
-      file_name: "export.sql/CONTACT_DATA_TABLE.dsv"
+      file_name: "NMDC_DUMP/CONTACT_DATA_TABLE.dsv"
       file_type: tsv
-      file_archive_name: "../data/nmdc-version5.zip"
+      file_archive_name: "../data/GOLD_NMDC_DUMP_10162020.zip"
     rename_slots:
       - old_name: name
         new_name: principal_investigator_name
@@ -304,9 +304,9 @@ data_sources:
   project_table:
     id_key: project_id
     data_source:
-      file_name: "export.sql/PROJECT_DATA_TABLE.dsv"
+      file_name: "NMDC_DUMP/PROJECT_DATA_TABLE.dsv"
       file_type: tsv
-      file_archive_name: "../data/nmdc-version5.zip"
+      file_archive_name: "../data/GOLD_NMDC_DUMP_10162020.zip"
     rename_slots:
       - old_name: sequencing_strategy
         new_name: omics_type
@@ -323,16 +323,16 @@ data_sources:
 
   project_biosample_table:
     data_source:
-      file_name: "export.sql/PROJECT_BIOSAMPLE_DATA_TABLE.dsv"
+      file_name: "NMDC_DUMP/PROJECT_BIOSAMPLE_DATA_TABLE.dsv"
       file_type: tsv
-      file_archive_name: "../data/nmdc-version5.zip"
+      file_archive_name: "../data/GOLD_NMDC_DUMP_10162020.zip"
     
   biosample_table:
     id_key: biosample_id
     data_source:
-      file_name: "export.sql/BIOSAMPLE_DATA_TABLE.dsv" 
+      file_name: "NMDC_DUMP/BIOSAMPLE_DATA_TABLE.dsv" 
       file_type: tsv
-      file_archive_name: "../data/nmdc-version5.zip"
+      file_archive_name: "../data/GOLD_NMDC_DUMP_10162020.zip"
     filters:              
       - include:
           field: active
@@ -374,32 +374,99 @@ data_sources:
       - sample_collection_site
       - identifier
       - host_name
-      - depth
+      - depth # BIOSAMPLE, MICROBIAL_MAT_PACKAGE, PLANT_PACKAGE, SEDIMENT_PACKAGE, SOIL_PACKAGE, WATER_PACKAGE
       - subsurface_depth
       - altitude
       - proport_woa_temperature
       - biogas_temperature
-      - growth_temperature
-      - water_samp_store_temp
+      - growth_temperature # BIOSAMPLE, PLANT_PACKAGE
       - biogas_retention_time
-      - salinity
-      - pressure
-      - ph
+      - salinity # BIOSAMPLE, MICROBIAL_MAT_PACKAGE
+      - pressure # BIOSAMPLE, HYDROCARBON_CORE_PACKAGE, HYDROCARBON_FS_PACKAGE, MICROBIAL_MAT_PACKAGE, SEDIMENT_PACKAGE, WATER_PACKAGE
+      - ph # BIOSAMPLE, HYDROCARBON_CORE_PACKAGE, HYDROCARBON_FS_PACKAGE, MICROBIAL_MAT_PACKAGE, SEDIMENT_PACKAGE, SOIL_PACKAGE, WATER_PACKAGE
       - chlorophyll_concentration
       - nitrate_concentration
       - oxygen_concentration
       - salinity_concentration
-      - sample_volume
-      - sample_weight_dna_ext
+      - sample_volume # BIOSAMPLE, PLANT_PACKAGE, SOIL_PACKAGE, WATER_PACKAGE
+      - sample_weight_dna_ext # MICROBIAL_MAT_PACKAGE, PLANT_PACKAGE, SOIL_PACKAGE, WATER_PACKAGE
       - sampling_strategy
-      - soil_link_climate_info
-      - soil_misc_param
-      - soil_water_content
       - soluble_iron_micromol
       - subsurface_depth2
-      - tot_nitrogen
-      - tot_org_carbon
-      - water_alkalinity
+      - tot_nitrogen # BIOSAMPLE, MICROBIAL_MAT_PACKAGE, SEDIMENT_PACKAGE, SOIL_PACKAGE, WATER_PACKAGE
+      - tot_org_carbon # BIOSAMPLE, SOIL_PACKAGE
+      
+
+  soil_package_table:
+    id_key: soil_package_id
+    data_source:
+      file_name: "NMDC_DUMP/SOIL_PACKAGE_DATA_TABLE.dsv" 
+      file_type: tsv
+      file_archive_name: "../data/GOLD_NMDC_DUMP_10162020.zip"
+    subset_cols:
+      - soil_package_id
+      - soil_agrochem_addition
+      - soil_alumnium_sat # fix typo in SSSOM -> alumnium
+      - soil_alumnium_sat_method # fix typo in SSSOM -> alumnium
+      - soil_crop_rotation
+      - soil_curr_land_use
+      - soil_curr_vegetation # fix spelling in SSSOM -> vegetation
+      - soil_curr_vegetation_method # fix spelling in SSSOM -> vegetation
+      - soil_drainage_class
+      - soil_extreme_event
+      - soil_fao_class
+      - soil_fire
+      - soil_flooding # fix typo in SSSOM -> flodding
+      - soil_heavy_metals
+      - soil_heavy_metals_method
+      - soil_horizon
+      - soil_horizon_method
+      - soil_link_addit_analys
+      - soil_link_climate_info
+      - soil_local_class
+      - soil_local_class_method
+      - soil_microbial_biomass
+      - soil_microbial_biomass_method
+      - soil_misc_param
+      - soil_depth
+      - soil_ph # add to SSSOM
+      - soil_ph_method
+      - soil_pool_dna_extracts
+      - soil_prev_land_use
+      - soil_prev_land_use_meth
+      - soil_profile_position
+      - soil_salinity_method
+      - soil_slope_aspect
+      - soil_slope_gradient
+      - soil_texture
+      - soil_texture_method
+      - soil_tillage
+      - soil_type
+      - soil_type_method
+      - soil_water_content_soil_meth
+      - soil_water_content
+      - soil_sample_volume
+      - sample_weight_dna_ext # rename to soil_sample_weight_dna_ext
+      - tot_nitrogen # rename to soil_tot_nitrogen
+      - tot_org_carbon # rename to soil_tot_org_carbon
+    rename_slots:
+      - old_name: sample_weight_dna_ext
+        new_name: soil_sample_weight_dna_ext
+      - old_name: tot_nitrogen
+        new_name: soil_tot_nitrogen
+      - old_name: tot_org_carbon
+        new_name: soil_tot_org_carbon
+      
+  water_package_table:
+    id_key: water_package_id
+    data_source:
+      file_name: "NMDC_DUMP/WATER_PACKAGE_DATA_TABLE.dsv" 
+      file_type: tsv
+      file_archive_name: "../data/GOLD_NMDC_DUMP_10162020.zip"
+    subset_cols:
+      - water_package_id
+      - water_depth
+      - water_alkalinity 
       - water_alkalinity_method
       - water_alkyl_diethers
       - water_aminopept_act
@@ -439,6 +506,7 @@ data_sources:
       - water_redox_potential
       - water_samp_store_dur
       - water_samp_store_loc
+      - water_samp_store_temp
       - water_size_frac_low
       - water_size_frac_up
       - water_sodium
