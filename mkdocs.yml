@@ -1,4 +1,6 @@
 site_name: "NMDC Metadata on MkDocs"
 theme: readthedocs
 nav:
-    - Home: index.md
+  - Home: index.md
+  - NMDC Schema Validation: schema-validation.md
+  - Identifiers in NMDC: identifiers.md
