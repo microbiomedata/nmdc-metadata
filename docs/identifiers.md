@@ -55,9 +55,9 @@ Registry entry: https://registry.identifiers.org/registry/biosample
 
 Example ID/CURIE: BIOSAMPLE:SAMEA2397676
 
-Resolving via identifiers.org: https://identifiers.org/BIOSAMPLE:SAMEA2397676
+Resolving via identifiers.org: [https://identifiers.org/BIOSAMPLE:SAMEA2397676](https://identifiers.org/BIOSAMPLE:SAMEA2397676)
 
-Resolving via nt2.net: http://n2t.net/BIOSAMPLE:SAMEA2397676
+Resolving via nt2.net: [http://n2t.net/BIOSAMPLE:SAMEA2397676](http://n2t.net/BIOSAMPLE:SAMEA2397676)
 
 ## GOLD identifiers
 
