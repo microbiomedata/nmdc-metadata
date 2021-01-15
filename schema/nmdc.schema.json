@@ -478,8 +478,7 @@
             }
          },
          "required": [
-            "id",
-            "inchi"
+            "id"
          ],
          "title": "ChemicalEntity",
          "type": "object"
@@ -562,7 +561,7 @@
          "description": "An abstract holder for any set of metadata and data. It does not need to correspond to an actual managed databse top level holder class. When translated to JSON-Schema this is the 'root' object. It should contain pointers to other objects of interest",
          "properties": {
             "activity_set": {
-               "description": "This property links a database object to the set of prov activities.",
+               "description": "This property links a database object to the set of workflow activities.",
                "items": {
                   "$ref": "#/definitions/WorkflowExecutionActivity"
                },
@@ -653,7 +652,7 @@
                "type": "string"
             },
             "subject": {
-               "$ref": "#/definitions/GeneProduct"
+               "type": "string"
             },
             "was_generated_by": {
                "description": "provenance for the annotation.",
@@ -667,8 +666,30 @@
       "GeneProduct": {
          "additionalProperties": false,
          "description": "A molecule encoded by a gene that has an evolved function",
-         "properties": {},
-         "required": [],
+         "properties": {
+            "alternate_identifiers": {
+               "description": "Non-primary identifiers",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human readable label for an entity",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
          "title": "GeneProduct",
          "type": "object"
       },
@@ -677,8 +698,8 @@
          "description": "A feature localized to an interval along a genome",
          "properties": {
             "encodes": {
-               "$ref": "#/definitions/GeneProduct",
-               "description": "The gene product encoded by this feature. Typically this is used for a CDS feature or gene feature which will encode a protein. It can also be used by a nc transcript ot gene feature that encoded a ncRNA"
+               "description": "The gene product encoded by this feature. Typically this is used for a CDS feature or gene feature which will encode a protein. It can also be used by a nc transcript ot gene feature that encoded a ncRNA",
+               "type": "string"
             },
             "end": {
                "description": "The end of the feature in positive 1-based integer coordinates",
@@ -787,7 +808,19 @@
          "title": "IntegerValue",
          "type": "object"
       },
-      "MAGAnnotationActivity": {
+      "MAGBin": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "bin_name": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "MAGBin",
+         "type": "object"
+      },
+      "MAGsAnalysisActivity": {
          "additionalProperties": false,
          "description": "",
          "properties": {
@@ -826,6 +859,12 @@
             "input_contig_num": {
                "type": "integer"
             },
+            "mags_list": {
+               "items": {
+                  "$ref": "#/definitions/MAGBin"
+               },
+               "type": "array"
+            },
             "name": {
                "description": "A human readable label for an entity",
                "type": "string"
@@ -853,7 +892,7 @@
          "required": [
             "id"
          ],
-         "title": "MAGAnnotationActivity",
+         "title": "MAGsAnalysisActivity",
          "type": "object"
       },
       "MetaboliteQuantification": {
@@ -1391,13 +1430,13 @@
             "all_proteins": {
                "description": "the list of protein identifiers that are associated with the peptide sequence",
                "items": {
-                  "$ref": "#/definitions/GeneProduct"
+                  "type": "string"
                },
                "type": "array"
             },
             "best_protein": {
-               "$ref": "#/definitions/GeneProduct",
-               "description": "the specific protein identifier most correctly associated with the peptide sequence"
+               "description": "the specific protein identifier most correctly associated with the peptide sequence",
+               "type": "string"
             },
             "min_q_value": {
                "description": "smallest Q-Value associated with the peptide sequence as provided by MSGFPlus tool",
@@ -1475,13 +1514,13 @@
             "all_proteins": {
                "description": "the grouped list of protein identifiers associated with the peptide sequences that were grouped to a best protein",
                "items": {
-                  "$ref": "#/definitions/GeneProduct"
+                  "type": "string"
                },
                "type": "array"
             },
             "best_protein": {
-               "$ref": "#/definitions/GeneProduct",
-               "description": "the specific protein identifier most correctly grouped to its associated peptide sequences"
+               "description": "the specific protein identifier most correctly grouped to its associated peptide sequences",
+               "type": "string"
             },
             "peptide_sequence_count": {
                "description": "count of peptide sequences grouped to the best_protein",
@@ -1852,7 +1891,7 @@
    },
    "properties": {
       "activity_set": {
-         "description": "This property links a database object to the set of prov activities.",
+         "description": "This property links a database object to the set of workflow activities.",
          "items": {
             "$ref": "#/definitions/WorkflowExecutionActivity"
          },

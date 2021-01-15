@@ -178,7 +178,7 @@ metatype:Nodeidentifier NONLITERAL
 <https://microbiomedata/schema/annotation/ChemicalEntity> CLOSED {
     (  $<https://microbiomedata/schema/annotation/ChemicalEntity_tes> (  &<OntologyClass_tes> ;
           rdf:type [ <OntologyClass> ] ? ;
-          <inchi> @metatype:String ;
+          <inchi> @metatype:String ? ;
           <inchi_key> @metatype:String ? ;
           <smiles> @metatype:String * ;
           <chemical_formula> @metatype:String ?
@@ -255,8 +255,10 @@ metatype:Nodeidentifier NONLITERAL
 }
 
 <https://microbiomedata/schema/annotation/GeneProduct> CLOSED {
-    (  $<https://microbiomedata/schema/annotation/GeneProduct_tes> rdf:type . * ;
-       rdf:type [ <https://microbiomedata/schema/annotation/GeneProduct> ] ?
+    (  $<https://microbiomedata/schema/annotation/GeneProduct_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ?
+       ) ;
+       rdf:type [ <https://microbiomedata/schema/annotation/GeneProduct> ]
     )
 }
 
@@ -301,14 +303,21 @@ metatype:Nodeidentifier NONLITERAL
     )
 }
 
-<MAGAnnotationActivity> CLOSED {
-    (  $<MAGAnnotationActivity_tes> (  &<WorkflowExecutionActivity_tes> ;
+<MAGBin> CLOSED {
+    (  $<MAGBin_tes> <bin_name> @metatype:String ? ;
+       rdf:type [ <MAGBin> ] ?
+    )
+}
+
+<MAGsAnalysisActivity> CLOSED {
+    (  $<MAGsAnalysisActivity_tes> (  &<WorkflowExecutionActivity_tes> ;
           rdf:type [ <WorkflowExecutionActivity> ] ? ;
           <input_contig_num> @metatype:Integer ? ;
           <binned_contig_num> @metatype:Integer ? ;
-          <too_short_contig_num> @metatype:Integer ?
+          <too_short_contig_num> @metatype:Integer ? ;
+          <mags_list> @<MAGBin> *
        ) ;
-       rdf:type [ <MAGAnnotationActivity> ]
+       rdf:type [ <MAGsAnalysisActivity> ]
     )
 }
 
@@ -384,7 +393,8 @@ metatype:Nodeidentifier NONLITERAL
 }
 
 <NamedThing>  (
-    @<Biosample> OR @<BiosampleProcessing> OR @<DataObject> OR @<Instrument> OR @<OntologyClass> OR @<Person> OR @<Study>
+    @<Biosample> OR @<BiosampleProcessing> OR @<DataObject> OR @<https://microbiomedata/schema/annotation/GeneProduct> OR
+    @<Instrument> OR @<OntologyClass> OR @<Person> OR @<Study>
 )
 
 <NamedThing_struct> {
@@ -583,7 +593,7 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <WorkflowExecutionActivity> ]
        )
-    } OR @<MAGAnnotationActivity> OR @<MetabolomicsAnalysisActivity> OR @<MetagenomeAnnotationActivity> OR @<MetagenomeAssembly> OR
+    } OR @<MAGsAnalysisActivity> OR @<MetabolomicsAnalysisActivity> OR @<MetagenomeAnnotationActivity> OR @<MetagenomeAssembly> OR
     @<MetaproteomicsAnalysisActivity> OR @<ReadQCAnalysisActivity>
 )
 

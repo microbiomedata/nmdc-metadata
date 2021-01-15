@@ -103,6 +103,13 @@ classes:
     id_prefixes:
       - GOLD
 
+  MAG bin:
+    attributes:
+      bin name:
+        range: string
+      number of contigs:
+        range: integer
+    
   workflow execution activity:
     is_a: activity
     in_subset: 
@@ -154,7 +161,7 @@ classes:
     in_subset: 
       - workflow subset
 
-  MAG annotation activity:
+  MAGs analysis activity:
     is_a: workflow execution activity
     in_subset: 
       - workflow subset
@@ -162,6 +169,7 @@ classes:
       - input contig num
       - binned contig num
       - too short contig num
+      - mags list
 
   read QC analysis activity:
     is_a: workflow execution activity
@@ -549,7 +557,16 @@ slots:
     multivalued: true
     inlined: true
     description: >-
-      This property links a database object to the set of prov activities.
+      This property links a database object to the set of workflow activities.
+  
+  mags activity set:
+    mixins: object set
+    domain: database
+    range: MAGs analysis activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of MAGs analysis activities.
   
   omics processing set:
     mixins: object set
@@ -814,6 +831,10 @@ slots:
     range: float
       
   read QC analysis statistic: {}
+
+  mags list:
+    range: MAG bin
+    multivalued: true
 
   too short contig num:
     range: integer
