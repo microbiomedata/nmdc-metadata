@@ -1,4 +1,4 @@
-site_name: "NMDC Metadata on MkDocs"
+site_name: "NMDC Metadata Documentation"
 theme: readthedocs
 nav:
   - Home: index.md
