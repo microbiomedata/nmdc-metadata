@@ -6,7 +6,7 @@ on:
     branches:
       - master
     paths:
-      - 'schema/nmdc.yaml'
+      - 'schema/*.yaml'
 
   repository_dispatch:
     types: trigger-build-deploy-documentation
