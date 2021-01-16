@@ -24,7 +24,7 @@ gold.vocab:soil_crop_rotation	soil_crop_rotation	skos:exactMatch	mixs:crop_rotat
 gold.vocab:soil_agrochem_addition	soil_agrochem_addition	skos:exactMatch	mixs:agrochem_addition	agrochem_addition	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_tillage	soil_tillage	skos:exactMatch	mixs:tillage	tillage	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_fire	soil_fire	skos:exactMatch	mixs:fire	fire	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
-gold.vocab:soil_flodding	soil_flodding	skos:exactMatch	mixs:flooding	flooding	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
+gold.vocab:soil_flooding	soil_flooding	skos:exactMatch	mixs:flooding	flooding	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_extreme_event	soil_extreme_event	skos:exactMatch	mixs:extreme_event	extreme_event	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_horizon	soil_horizon	skos:exactMatch	mixs:horizon	horizon	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_horizon_method	soil_horizon_method	skos:exactMatch	mixs:horizon_meth	horizon_meth	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.

@@ -410,13 +410,13 @@ data_sources:
       - soil_aluminium_sat_method
       - soil_crop_rotation
       - soil_curr_land_use
-      - soil_curr_vegetation # fix spelling in SSSOM -> vegetation
-      - soil_curr_vegetation_method # fix spelling in SSSOM -> vegetation
+      - soil_curr_vegetation
+      - soil_curr_vegetation_method
       - soil_drainage_class
       - soil_extreme_event
       - soil_fao_class
       - soil_fire
-      - soil_flooding # fix typo in SSSOM -> flodding
+      - soil_flooding
       - soil_heavy_metals
       - soil_heavy_metals_method
       - soil_horizon
