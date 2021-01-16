@@ -483,6 +483,7 @@ data_sources:
       - water_diss_carbon_dioxide
       - water_diss_hydrogen
       - water_diss_inorg_carbon
+      - water_diss_inorg_nitro
       - water_diss_inorg_phosphorus
       - water_diss_org_carbon
       - water_diss_org_nitrogen
