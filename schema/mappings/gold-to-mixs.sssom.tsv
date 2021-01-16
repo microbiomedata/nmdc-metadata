@@ -16,8 +16,8 @@ gold.vocab:geographic_location	geographic_location	skos:exactMatch	mixs:geo_loc_
 gold.vocab:nitrate_concentration	nitrate_concentration	skos:exactMatch	mixs:nitrate	nitrate	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:chlorophyll_concentration	chlorophyll_concentration	skos:exactMatch	mixs:chlorophyll	chlorophyll	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_curr_land_use	soil_curr_land_use	skos:exactMatch	mixs:cur_land_use	cur_land_use	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
-gold.vocab:soil_curr_vegitation	soil_curr_vegitation	skos:exactMatch	mixs:cur_vegetation	cur_vegetation	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
-gold.vocab:soil_curr_vegitation_method	soil_curr_vegitation_method	skos:exactMatch	mixs:cur_vegetation_meth	cur_vegetation_meth	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
+gold.vocab:soil_curr_vegetation	soil_curr_vegetation	skos:exactMatch	mixs:cur_vegetation	cur_vegetation	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
+gold.vocab:soil_curr_vegetation_method	soil_curr_vegetation_method	skos:exactMatch	mixs:cur_vegetation_meth	cur_vegetation_meth	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_prev_land_use	soil_prev_land_use	skos:exactMatch	mixs:previous_land_use	previous_land_use	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_prev_land_use_meth	soil_prev_land_use_meth	skos:exactMatch	mixs:previous_land_use_meth	previous_land_use_meth	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_crop_rotation	soil_crop_rotation	skos:exactMatch	mixs:crop_rotation	crop_rotation	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
