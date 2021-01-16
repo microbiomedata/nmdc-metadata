@@ -12,6 +12,7 @@ subject_id	subject_label	predicate_id	object_id	object_label	match_type	subject_
 gold.vocab:altitude	altitude	skos:exactMatch	mixs:alt	alt	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:salinity_concentration	salinity_concentration	skos:exactMatch	mixs:salinity	salinity	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:oxygen_concentration	oxygen_concentration	skos:exactMatch	mixs:diss_oxygen	diss_oxygen	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
+gold.vocab:ph	ph	skos:exactMatch	mixs:ph	ph	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:geographic_location	geographic_location	skos:exactMatch	mixs:geo_loc_name	geo_loc_name	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:nitrate_concentration	nitrate_concentration	skos:exactMatch	mixs:nitrate	nitrate	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:chlorophyll_concentration	chlorophyll_concentration	skos:exactMatch	mixs:chlorophyll	chlorophyll	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
@@ -51,6 +52,7 @@ gold.vocab:soil_profile_position	soil_profile_position	skos:exactMatch	mixs:prof
 gold.vocab:soil_drainage_class	soil_drainage_class	skos:exactMatch	mixs:drainage_class	drainage_class	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_texture	soil_texture	skos:exactMatch	mixs:texture	texture	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_texture_method	soil_texture_method	skos:exactMatch	mixs:texture_meth	texture_meth	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
+gold.vocab:soil_ph	soil_ph	skos:exactMatch	mixs:ph	ph	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_ph_method	soil_ph_method	skos:exactMatch	mixs:ph_meth	ph_meth	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:tot_org_carbon	tot_org_carbon	skos:exactMatch	mixs:tot_org_carb	tot_org_carb	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_tot_org_c_method	soil_tot_org_c_method	skos:exactMatch	mixs:tot_org_c_meth	tot_org_c_meth	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.

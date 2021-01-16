@@ -429,7 +429,7 @@ data_sources:
       - soil_microbial_biomass_method
       - soil_misc_param
       - soil_depth
-      - soil_ph # add to SSSOM
+      - soil_ph
       - soil_ph_method
       - soil_pool_dna_extracts
       - soil_prev_land_use
