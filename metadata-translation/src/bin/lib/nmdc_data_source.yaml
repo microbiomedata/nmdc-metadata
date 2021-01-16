@@ -406,8 +406,8 @@ data_sources:
     subset_cols:
       - soil_package_id
       - soil_agrochem_addition
-      - soil_alumnium_sat # fix typo in SSSOM -> alumnium
-      - soil_alumnium_sat_method # fix typo in SSSOM -> alumnium
+      - soil_aluminium_sat
+      - soil_aluminium_sat_method
       - soil_crop_rotation
       - soil_curr_land_use
       - soil_curr_vegetation # fix spelling in SSSOM -> vegetation

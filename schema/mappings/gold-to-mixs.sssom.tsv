@@ -62,6 +62,6 @@ gold.vocab:soil_link_addit_analys	soil_link_addit_analys	skos:exactMatch	mixs:li
 gold.vocab:soil_salinity_method	soil_salinity_method	skos:exactMatch	mixs:salinity_meth	salinity_meth	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_heavy_metals	soil_heavy_metals	skos:exactMatch	mixs:heavy_metals	heavy_metals	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_heavy_metals_method	soil_heavy_metals_method	skos:exactMatch	mixs:heavy_metals_meth	heavy_metals_meth	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
-gold.vocab:soil_aluminum_sat	soil_aluminum_sat	skos:exactMatch	mixs:al_sat	al_sat	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
-gold.vocab:soil_aluminum_sat_method	soil_aluminum_sat_method	skos:exactMatch	mixs:al_sat_meth	al_sat_meth	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
+gold.vocab:soil_aluminium_sat	soil_aluminium_sat	skos:exactMatch	mixs:al_sat	al_sat	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
+gold.vocab:soil_aluminium_sat_method	soil_aluminium_sat_method	skos:exactMatch	mixs:al_sat_meth	al_sat_meth	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
 gold.vocab:soil_misc_param	soil_misc_param	skos:exactMatch	mixs:misc_param	misc_param	SSSOMC:HumanCurated	gold.vocab	mixs	1.0	.
