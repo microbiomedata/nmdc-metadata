@@ -8,6 +8,8 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 prefixes:
   nmdc: https://microbiomedata/meta/
   prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  skos: http://www.w3.org/2004/02/skos/core#
   biolinkml: https://w3id.org/biolink/biolinkml/
   
 default_prefix: nmdc
@@ -45,6 +47,33 @@ classes:
       - prov:Agent
       
 slots:
+
+  id:
+    identifier: true
+    multivalued: false
+    description: >-
+      A unique identifier for a thing.
+      Must be either a CURIE shorthand for a URI or a complete URI
+    #required: false # for now we setting this to false until we develop an id template
+
+  name:
+    multivalued: false
+    range: string
+    description: >-
+      A human readable label for an entity
+    mappings:
+      - skos:prefLabel
+
+  type:
+    range: string
+    description: >-
+      The type of entity that the json object represents.
+      This is used to allow for searches for different kinds of objects.
+    examples:
+      - value: nmdc:Biosample
+      - value: nmdc:Study
+    mappings:
+      - rdf:type
 
   started at time:
     mappings:

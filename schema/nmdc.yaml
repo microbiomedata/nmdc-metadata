@@ -568,15 +568,6 @@ slots:
       - value: metatranscriptome
       - value: metagenome
   
-  type:
-    range: string
-    description: >-
-      The type of entity that the json object represents. 
-      This is used to allow for searches for different kinds of objects.
-    examples:
-      - value: nmdc:Biosample
-      - value: nmdc:Study
-  
   data object type:
     range: controlled term value
     description: >-

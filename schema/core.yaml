@@ -190,20 +190,6 @@ classes:
 
 slots:
 
-  id:
-    identifier: true
-    multivalued: false
-    description: >-
-      A unique identifier for a thing.
-      Must be either a CURIE shorthand for a URI or a complete URI
-    #required: false # for now we setting this to false until we develop an id template
-
-  name:
-    multivalued: false
-    range: string
-    description: >-
-      A human readable label for an entity
-
   description:
     range: string
     multivalued: false
