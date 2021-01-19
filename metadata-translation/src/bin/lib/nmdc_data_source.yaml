@@ -388,7 +388,6 @@ data_sources:
       - oxygen_concentration
       - salinity_concentration
       - sample_volume # BIOSAMPLE, PLANT_PACKAGE, SOIL_PACKAGE, WATER_PACKAGE
-      - sample_weight_dna_ext # MICROBIAL_MAT_PACKAGE, PLANT_PACKAGE, SOIL_PACKAGE, WATER_PACKAGE
       - sampling_strategy
       - soluble_iron_micromol
       - subsurface_depth2
