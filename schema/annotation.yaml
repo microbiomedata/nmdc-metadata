@@ -229,7 +229,6 @@ classes:
       - biolink:GeneProduct
 
   functional annotation:
-    is_a: annotation
     description: >-
       An assignment of a function term (e.g. reaction or pathway) that is executed by a gene product, or which the gene product plays an active role in.
       Functional annotations can be assigned manually by curators, or automatically in workflows. In the context of NMDC, all function annotation is performed
