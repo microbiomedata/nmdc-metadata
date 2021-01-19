@@ -55,22 +55,6 @@
          "title": "Agent",
          "type": "object"
       },
-      "Annotation": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "type": {
-               "description": "The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.",
-               "type": "string"
-            },
-            "was_generated_by": {
-               "type": "string"
-            }
-         },
-         "required": [],
-         "title": "Annotation",
-         "type": "object"
-      },
       "AttributeValue": {
          "additionalProperties": false,
          "description": "The value for any value of a attribute for a sample. This object can hold both the un-normalized atomic value and the structured value",
@@ -842,7 +826,52 @@
             "bin_name": {
                "type": "string"
             },
-            "number_of_contigs": {
+            "bin_quality": {
+               "type": "string"
+            },
+            "completeness": {
+               "type": "number"
+            },
+            "contamination": {
+               "type": "number"
+            },
+            "gene_count": {
+               "type": "integer"
+            },
+            "gtdbtk_class": {
+               "type": "string"
+            },
+            "gtdbtk_domain": {
+               "type": "string"
+            },
+            "gtdbtk_family": {
+               "type": "string"
+            },
+            "gtdbtk_genus": {
+               "type": "string"
+            },
+            "gtdbtk_order": {
+               "type": "string"
+            },
+            "gtdbtk_phylum": {
+               "type": "string"
+            },
+            "gtdbtk_species": {
+               "type": "string"
+            },
+            "num_16s": {
+               "type": "integer"
+            },
+            "num_23s": {
+               "type": "integer"
+            },
+            "num_5s": {
+               "type": "integer"
+            },
+            "num_tRNA": {
+               "type": "integer"
+            },
+            "number_of_contig": {
                "type": "integer"
             }
          },
@@ -889,6 +918,9 @@
             "input_contig_num": {
                "type": "integer"
             },
+            "lowDepth_contig_num": {
+               "type": "integer"
+            },
             "mags_list": {
                "items": {
                   "$ref": "#/definitions/MAGBin"
@@ -908,6 +940,9 @@
             "type": {
                "description": "The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.",
                "type": "string"
+            },
+            "unbinned_contig_num": {
+               "type": "integer"
             },
             "used": {
                "type": "string"

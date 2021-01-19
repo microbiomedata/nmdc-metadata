@@ -108,8 +108,46 @@ classes:
     attributes:
       bin name:
         range: string
-      number of contigs:
+      number of contig:
         range: integer
+      completeness:
+        range: float
+      contamination:
+        range: float
+      gene count:
+        range: integer
+      bin quality:
+        range: string
+      num 16s:
+        range: integer
+      num 5s:
+        range: integer
+      num 23s:
+        range: integer
+      num tRNA:
+        range: integer
+      gtdbtk domain:
+        required: false
+        range: string
+      gtdbtk phylum:
+        required: false
+        range: string
+      gtdbtk class:
+        required: false
+        range: string
+      gtdbtk order:
+        required: false
+        range: string
+      gtdbtk family:
+        required: false
+        range: string
+      gtdbtk genus:
+        required: false
+        range: string
+      gtdbtk species:
+        required: false
+        range: string
+      
     
   workflow execution activity:
     is_a: activity
@@ -169,7 +207,9 @@ classes:
     slots:
       - input contig num
       - binned contig num
-      - too short contig num
+      - too short contig num 
+      - lowDepth contig num
+      - unbinned contig num
       - mags list
 
   read QC analysis activity:
@@ -845,7 +885,13 @@ slots:
 
   input contig num:
     range: integer
-  
+
+  unbinned contig num:
+    range: integer
+
+  lowDepth contig num:
+    range: integer
+      
   input read count:
     is_a: read QC analysis statistic
     description: >-
