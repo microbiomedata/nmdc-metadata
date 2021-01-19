@@ -1,5 +1,6 @@
 import os, sys
-sys.path.append(os.path.abspath('../../../schema')) # add path nmdc schema files and modules
+from git_root import git_root
+sys.path.append(os.path.abspath(git_root('schema'))) # add path nmdc schema files and modules
 
 from lib.nmdc_etl_class import NMDC_ETL
 import yaml
