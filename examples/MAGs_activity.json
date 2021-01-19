@@ -36,14 +36,7 @@
         "num_16s": 0,
         "num_5s": 1,
         "num_23s": 0,
-        "num_tRNA": 1,
-        "gtdbtk_domain": null,
-        "gtdbtk_phylum": null,
-        "gtdbtk_class": null,
-        "gtdbtk_order": null,
-        "gtdbtk_family": null,
-        "gtdbtk_genus": null,
-        "gtdbtk_species": null
+        "num_tRNA": 1
       },
       {
         "bin_name": "bins.2",
@@ -55,14 +48,7 @@
         "num_16s": 0,
         "num_5s": 1,
         "num_23s": 0,
-        "num_tRNA": 26,
-        "gtdbtk_domain": null,
-        "gtdbtk_phylum": null,
-        "gtdbtk_class": null,
-        "gtdbtk_order": null,
-        "gtdbtk_family": null,
-        "gtdbtk_genus": null,
-        "gtdbtk_species": null
+        "num_tRNA": 26
       },
       {
         "bin_name": "bins.3",
@@ -74,14 +60,7 @@
         "num_16s": 0,
         "num_5s": 0,
         "num_23s": 0,
-        "num_tRNA": 1,
-        "gtdbtk_domain": null,
-        "gtdbtk_phylum": null,
-        "gtdbtk_class": null,
-        "gtdbtk_order": null,
-        "gtdbtk_family": null,
-        "gtdbtk_genus": null,
-        "gtdbtk_species": null
+        "num_tRNA": 1
       }
     ]
   },
@@ -121,14 +100,7 @@
         "num_16s": 0,
         "num_5s": 0,
         "num_23s": 0,
-        "num_tRNA": 4,
-        "gtdbtk_domain": null,
-        "gtdbtk_phylum": null,
-        "gtdbtk_class": null,
-        "gtdbtk_order": null,
-        "gtdbtk_family": null,
-        "gtdbtk_genus": null,
-        "gtdbtk_species": null
+        "num_tRNA": 4
       },
       {
         "bin_name": "bins.2",
@@ -140,14 +112,7 @@
         "num_16s": 0,
         "num_5s": 0,
         "num_23s": 0,
-        "num_tRNA": 5,
-        "gtdbtk_domain": null,
-        "gtdbtk_phylum": null,
-        "gtdbtk_class": null,
-        "gtdbtk_order": null,
-        "gtdbtk_family": null,
-        "gtdbtk_genus": null,
-        "gtdbtk_species": null
+        "num_tRNA": 5
       },
       {
         "bin_name": "bins.3",
@@ -159,14 +124,7 @@
         "num_16s": 0,
         "num_5s": 0,
         "num_23s": 0,
-        "num_tRNA": 7,
-        "gtdbtk_domain": null,
-        "gtdbtk_phylum": null,
-        "gtdbtk_class": null,
-        "gtdbtk_order": null,
-        "gtdbtk_family": null,
-        "gtdbtk_genus": null,
-        "gtdbtk_species": null
+        "num_tRNA": 7
       }
     ]
   }
