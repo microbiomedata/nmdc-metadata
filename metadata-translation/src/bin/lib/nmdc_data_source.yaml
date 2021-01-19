@@ -179,7 +179,6 @@ classes:
       - oxygen_concentration
       - salinity_concentration
       - sample_volume
-      - sample_weight_dna_ext
       - sampling_strategy
       - soil_link_climate_info
       - soil_misc_param
@@ -508,6 +507,7 @@ data_sources:
       - water_samp_store_dur
       - water_samp_store_loc
       - water_samp_store_temp
+      - water_sample_weight_dna_ext
       - water_size_frac_low
       - water_size_frac_up
       - water_sodium
