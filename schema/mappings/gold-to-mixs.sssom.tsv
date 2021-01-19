@@ -54,6 +54,7 @@ gold.vocab:soil_texture	soil_texture	skos:exactMatch	mixs:texture	texture	SSSOMC
 gold.vocab:soil_texture_method	soil_texture_method	skos:exactMatch	mixs:texture_meth	texture_meth	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:soil_ph	soil_ph	skos:exactMatch	mixs:ph	ph	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:soil_ph_method	soil_ph_method	skos:exactMatch	mixs:ph_meth	ph_meth	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
+gold.vocab:soil_tot_org_carbon	soil_tot_org_carbon	skos:exactMatch	mixs:tot_org_carb	tot_org_carb	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:tot_org_carbon	tot_org_carbon	skos:exactMatch	mixs:tot_org_carb	tot_org_carb	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:soil_tot_org_c_method	soil_tot_org_c_method	skos:exactMatch	mixs:tot_org_c_meth	tot_org_c_meth	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:tot_nitrogen	tot_nitrogen	skos:exactMatch	mixs:tot_nitro_content	tot_nitro_content	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
