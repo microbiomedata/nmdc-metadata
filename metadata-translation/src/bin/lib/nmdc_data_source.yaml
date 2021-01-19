@@ -252,11 +252,13 @@ data_sources:
   ##   filters:
   ##     define how the original data source should be filtered (records included/exclued)
   ##     when the data source is extracted
+  ##  append_columns:
+  ##     defines new columns to append to the extracted dataset
   ##  rename_slots:
   ##     defines fields that will be renamed as part of the data extraction process
   ##     this is often necessary for harmonizing data
-  ##  append_columns:
-  ##     defines new columns to append to the extracted dataset
+  ##     NOTE: This should be the last thing specified.
+  
   study_table:
     id_key: study_id
     data_source:
@@ -306,19 +308,19 @@ data_sources:
       file_name: "NMDC_DUMP/PROJECT_DATA_TABLE.dsv"
       file_type: tsv
       file_archive_name: "../data/GOLD_NMDC_DUMP_10162020.zip"
-    rename_slots:
-      - old_name: sequencing_strategy
-        new_name: omics_type
     filters:              
       - include:
           field: active
           values: ['Yes']
       - exclude:
-          field: omics_type
+          field: sequencing_strategy
           values: ['Whole Genome Sequencing']
     append_columns:
       - name: processing_institution
         value: Joint Genome Institute
+    rename_slots:
+      - old_name: sequencing_strategy
+        new_name: omics_type
 
   project_biosample_table:
     data_source:
@@ -336,13 +338,6 @@ data_sources:
       - include:
           field: active
           values: ['Yes']
-    rename_slots:
-      - old_name: envo_biome_id
-        new_name: env_broad_scale
-      - old_name: envo_feature_id
-        new_name: env_local_scale
-      - old_name: envo_material_id
-        new_name: env_medium
     subset_cols:
       - biosample_id
       - gold_id
@@ -393,6 +388,13 @@ data_sources:
       - subsurface_depth2
       - tot_nitrogen # BIOSAMPLE, MICROBIAL_MAT_PACKAGE, SEDIMENT_PACKAGE, SOIL_PACKAGE, WATER_PACKAGE
       - tot_org_carbon # BIOSAMPLE, SOIL_PACKAGE
+    rename_slots:
+      - old_name: envo_biome_id
+        new_name: env_broad_scale
+      - old_name: envo_feature_id
+        new_name: env_local_scale
+      - old_name: envo_material_id
+        new_name: env_medium
       
 
   soil_package_table:
@@ -565,14 +567,14 @@ data_sources:
     data_source: 
       file_name: "../data/EMSL_FICUS_project_process_data_export.xlsx"
       file_type: multi-sheet-excel
+    append_columns:
+      - name: processing_institution
+        value: Environmental Molecular Sciences Lab
     rename_slots:
       - old_name: experimental_data_type
         new_name: omics_type
       - old_name: dataset_file_size_bytes
         new_name: file_size_bytes
-    append_columns:
-      - name: processing_institution
-        value: Environmental Molecular Sciences Lab
   
   ficus_emsl_biosample:
     # id_key: dataset_id # since the key is the same as ficus_emsl don't use it

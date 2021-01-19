@@ -508,11 +508,6 @@ def make_dataframe_from_spec_file (data_spec_file, nrows=None):
             for col in data['append_columns']: 
                 df[col['name']] = col['value']
         
-        ## rename columns
-        if 'rename_slots' in data.keys():
-            for slot in data['rename_slots']: 
-                df.rename(columns={slot['old_name']: slot['new_name']}, inplace=True)
-        
         ## filter rows by specific values
         if 'filters' in data.keys():
             for fltr in data['filters']:
@@ -524,8 +519,14 @@ def make_dataframe_from_spec_file (data_spec_file, nrows=None):
                     df = df[ df[fltr['field']].isin(fltr['values']) ]
 
         ## select a subset of the columns
+        print("data keys:", data.keys())
         if 'subset_cols' in data.keys():
             df = df[data['subset_cols']]
+        
+        ## rename columns
+        if 'rename_slots' in data.keys():
+            for slot in data['rename_slots']: 
+                df.rename(columns={slot['old_name']: slot['new_name']}, inplace=True)
         
         ## add 'nmdc_record_id' as a primary key
         if 'id_key' in data.keys():
@@ -546,6 +547,7 @@ def make_dataframe_from_spec_file (data_spec_file, nrows=None):
     
     dataframes = []
     for source in spec['data_sources'].items():
+        print("*******************\nsource:", source)
         df = make_df(source)
         ds = Data_source(df, source[0])
         dataframes.append(ds)
