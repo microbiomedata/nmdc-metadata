@@ -65,16 +65,6 @@ metatype:Nodeidentifier NONLITERAL
     )
 }
 
-<https://microbiomedata/schema/annotation/Annotation>  (
-    CLOSED {
-       (  $<https://microbiomedata/schema/annotation/Annotation_tes> (  <type> @metatype:String ? ;
-             <was_generated_by> @<Activity> ?
-          ) ;
-          rdf:type [ <https://microbiomedata/schema/annotation/Annotation> ] ?
-       )
-    } OR @<https://microbiomedata/schema/annotation/FunctionalAnnotation>
-)
-
 <AttributeValue>  (
     CLOSED {
        (  $<AttributeValue_tes> (  <has_raw_value> @metatype:String ? ;
@@ -243,13 +233,11 @@ metatype:Nodeidentifier NONLITERAL
 }
 
 <https://microbiomedata/schema/annotation/FunctionalAnnotation> CLOSED {
-    (  $<https://microbiomedata/schema/annotation/FunctionalAnnotation_tes> ( 
-          &<https://microbiomedata/schema/annotation/Annotation_tes> ;
-          rdf:type [ <https://microbiomedata/schema/annotation/Annotation> ] ? ;
+    (  $<https://microbiomedata/schema/annotation/FunctionalAnnotation_tes> (  <type> @metatype:String ? ;
+          <was_generated_by> @<MetagenomeAnnotationActivity> ? ;
           <https://microbiomedata/schema/annotation/subject> @<https://microbiomedata/schema/annotation/GeneProduct> ? ;
           <https://microbiomedata/schema/annotation/has_function>
-          @<https://microbiomedata/schema/annotation/FunctionalAnnotationTerm> ? ;
-          <was_generated_by> @<MetagenomeAnnotationActivity> ?
+          @<https://microbiomedata/schema/annotation/FunctionalAnnotationTerm> ?
        ) ;
        rdf:type [ <https://microbiomedata/schema/annotation/FunctionalAnnotation> ] ?
     )
@@ -319,7 +307,22 @@ metatype:Nodeidentifier NONLITERAL
 
 <MAGBin> CLOSED {
     (  $<MAGBin_tes> (  <bin_name> @metatype:String ? ;
-          <number_of_contigs> @metatype:Integer ?
+          <number_of_contig> @metatype:Integer ? ;
+          <completeness> @metatype:Float ? ;
+          <contamination> @metatype:Float ? ;
+          <gene_count> @metatype:Integer ? ;
+          <bin_quality> @metatype:String ? ;
+          <num_16s> @metatype:Integer ? ;
+          <num_5s> @metatype:Integer ? ;
+          <num_23s> @metatype:Integer ? ;
+          <num_tRNA> @metatype:Integer ? ;
+          <gtdbtk_domain> @metatype:String ? ;
+          <gtdbtk_phylum> @metatype:String ? ;
+          <gtdbtk_class> @metatype:String ? ;
+          <gtdbtk_order> @metatype:String ? ;
+          <gtdbtk_family> @metatype:String ? ;
+          <gtdbtk_genus> @metatype:String ? ;
+          <gtdbtk_species> @metatype:String ?
        ) ;
        rdf:type [ <MAGBin> ] ?
     )
@@ -331,6 +334,8 @@ metatype:Nodeidentifier NONLITERAL
           <input_contig_num> @metatype:Integer ? ;
           <binned_contig_num> @metatype:Integer ? ;
           <too_short_contig_num> @metatype:Integer ? ;
+          <lowDepth_contig_num> @metatype:Integer ? ;
+          <unbinned_contig_num> @metatype:Integer ? ;
           <mags_list> @<MAGBin> *
        ) ;
        rdf:type [ <MAGsAnalysisActivity> ]
