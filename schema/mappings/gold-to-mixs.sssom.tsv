@@ -33,6 +33,7 @@ gold.vocab:soil_seiving	soil_seiving	skos:exactMatch	mixs:sieving	sieving	SSSOMC
 gold.vocab:soil_water_content	soil_water_content	skos:exactMatch	mixs:water_content	water_content	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:soil_water_content_soil_meth	soil_water_content_soil_meth	skos:exactMatch	mixs:water_content_soil_meth	water_content_soil_meth	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:sample_weight_dna_ext	sample_weight_dna_ext	skos:exactMatch	mixs:samp_vol_we_dna_ext	samp_vol_we_dna_ext	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
+gold.vocab:soil_sample_weight_dna_ext	soil_sample_weight_dna_ext	skos:exactMatch	mixs:samp_vol_we_dna_ext	samp_vol_we_dna_ext	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:soil_pool_dna_extracts	soil_pool_dna_extracts	skos:exactMatch	mixs:pool_dna_extracts	pool_dna_extracts	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:soil_store_condition	soil_store_condition	skos:exactMatch	mixs:store_cond	store_cond	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:soil_link_climate_info	soil_link_climate_info	skos:exactMatch	mixs:link_climate_info	link_climate_info	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
