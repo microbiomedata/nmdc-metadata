@@ -519,7 +519,6 @@ def make_dataframe_from_spec_file (data_spec_file, nrows=None):
                     df = df[ df[fltr['field']].isin(fltr['values']) ]
 
         ## select a subset of the columns
-        print("data keys:", data.keys())
         if 'subset_cols' in data.keys():
             df = df[data['subset_cols']]
         
@@ -547,11 +546,10 @@ def make_dataframe_from_spec_file (data_spec_file, nrows=None):
     
     dataframes = []
     for source in spec['data_sources'].items():
-        print("*******************\nsource:", source)
         df = make_df(source)
         ds = Data_source(df, source[0])
         dataframes.append(ds)
-        # print(source[0], len(df))
+        print(source[0], len(df))
     
     merged_df = merge_dataframes(dataframes)
     return merged_df
