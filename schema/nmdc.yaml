@@ -76,6 +76,7 @@ classes:
       - study set
       - data object set
       - activity set
+      - mags activity set
       - omics processing set
       - functional annotation set
       - genome feature set
@@ -103,6 +104,51 @@ classes:
     id_prefixes:
       - GOLD
 
+  MAG bin:
+    attributes:
+      bin name:
+        range: string
+      number of contig:
+        range: integer
+      completeness:
+        range: float
+      contamination:
+        range: float
+      gene count:
+        range: integer
+      bin quality:
+        range: string
+      num 16s:
+        range: integer
+      num 5s:
+        range: integer
+      num 23s:
+        range: integer
+      num tRNA:
+        range: integer
+      gtdbtk domain:
+        required: false
+        range: string
+      gtdbtk phylum:
+        required: false
+        range: string
+      gtdbtk class:
+        required: false
+        range: string
+      gtdbtk order:
+        required: false
+        range: string
+      gtdbtk family:
+        required: false
+        range: string
+      gtdbtk genus:
+        required: false
+        range: string
+      gtdbtk species:
+        required: false
+        range: string
+      
+    
   workflow execution activity:
     is_a: activity
     in_subset: 
@@ -154,14 +200,17 @@ classes:
     in_subset: 
       - workflow subset
 
-  MAG annotation activity:
+  MAGs analysis activity:
     is_a: workflow execution activity
     in_subset: 
       - workflow subset
     slots:
       - input contig num
       - binned contig num
-      - too short contig num
+      - too short contig num 
+      - lowDepth contig num
+      - unbinned contig num
+      - mags list
 
   read QC analysis activity:
     is_a: workflow execution activity
@@ -549,7 +598,16 @@ slots:
     multivalued: true
     inlined: true
     description: >-
-      This property links a database object to the set of prov activities.
+      This property links a database object to the set of workflow activities.
+  
+  mags activity set:
+    mixins: object set
+    domain: database
+    range: MAGs analysis activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of MAGs analysis activities.
   
   omics processing set:
     mixins: object set
@@ -815,6 +873,10 @@ slots:
       
   read QC analysis statistic: {}
 
+  mags list:
+    range: MAG bin
+    multivalued: true
+
   too short contig num:
     range: integer
 
@@ -823,7 +885,13 @@ slots:
 
   input contig num:
     range: integer
-  
+
+  unbinned contig num:
+    range: integer
+
+  lowDepth contig num:
+    range: integer
+      
   input read count:
     is_a: read QC analysis statistic
     description: >-

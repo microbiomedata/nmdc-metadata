@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-01-14 12:14
+# Generation date: 2021-01-19 18:17
 # Schema: NMDC
 #
 # id: https://microbiomedata/schema
@@ -168,7 +168,7 @@ class MetagenomeAnnotationActivityId(WorkflowExecutionActivityId):
     pass
 
 
-class MAGAnnotationActivityId(WorkflowExecutionActivityId):
+class MAGsAnalysisActivityId(WorkflowExecutionActivityId):
     pass
 
 
@@ -204,6 +204,10 @@ class ChemicalEntityId(OntologyClassId):
     pass
 
 
+class GeneProductId(NamedThingId):
+    pass
+
+
 @dataclass
 class Database(YAMLRoot):
     """
@@ -222,6 +226,7 @@ class Database(YAMLRoot):
     study_set: Optional[Union[Dict[Union[str, StudyId], Union[dict, "Study"]], List[Union[dict, "Study"]]]] = empty_dict()
     data_object_set: Optional[Union[Dict[Union[str, DataObjectId], Union[dict, "DataObject"]], List[Union[dict, "DataObject"]]]] = empty_dict()
     activity_set: Optional[Union[Dict[Union[str, WorkflowExecutionActivityId], Union[dict, "WorkflowExecutionActivity"]], List[Union[dict, "WorkflowExecutionActivity"]]]] = empty_dict()
+    mags_activity_set: Optional[Union[Dict[Union[str, MAGsAnalysisActivityId], Union[dict, "MAGsAnalysisActivity"]], List[Union[dict, "MAGsAnalysisActivity"]]]] = empty_dict()
     omics_processing_set: Optional[Union[Dict[Union[str, OmicsProcessingId], Union[dict, "OmicsProcessing"]], List[Union[dict, "OmicsProcessing"]]]] = empty_dict()
     functional_annotation_set: Optional[Union[Union[dict, "FunctionalAnnotation"], List[Union[dict, "FunctionalAnnotation"]]]] = empty_list()
     genome_feature_set: Optional[Union[Union[dict, "GenomeFeature"], List[Union[dict, "GenomeFeature"]]]] = empty_list()
@@ -251,6 +256,12 @@ class Database(YAMLRoot):
             self.activity_set = [self.activity_set]
         self._normalize_inlined_slot(slot_name="activity_set", slot_type=WorkflowExecutionActivity, key_name="id", inlined_as_list=None, keyed=True)
 
+        if self.mags_activity_set is None:
+            self.mags_activity_set = []
+        if not isinstance(self.mags_activity_set, (list, dict)):
+            self.mags_activity_set = [self.mags_activity_set]
+        self._normalize_inlined_slot(slot_name="mags_activity_set", slot_type=MAGsAnalysisActivity, key_name="id", inlined_as_list=None, keyed=True)
+
         if self.omics_processing_set is None:
             self.omics_processing_set = []
         if not isinstance(self.omics_processing_set, (list, dict)):
@@ -268,6 +279,88 @@ class Database(YAMLRoot):
         if not isinstance(self.genome_feature_set, list):
             self.genome_feature_set = [self.genome_feature_set]
         self._normalize_inlined_slot(slot_name="genome_feature_set", slot_type=GenomeFeature, key_name="seqid", inlined_as_list=True, keyed=False)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class MAGBin(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC.MAGBin
+    class_class_curie: ClassVar[str] = "nmdc:MAGBin"
+    class_name: ClassVar[str] = "MAG bin"
+    class_model_uri: ClassVar[URIRef] = NMDC.MAGBin
+
+    bin_name: Optional[str] = None
+    number_of_contig: Optional[int] = None
+    completeness: Optional[float] = None
+    contamination: Optional[float] = None
+    gene_count: Optional[int] = None
+    bin_quality: Optional[str] = None
+    num_16s: Optional[int] = None
+    num_5s: Optional[int] = None
+    num_23s: Optional[int] = None
+    num_tRNA: Optional[int] = None
+    gtdbtk_domain: Optional[str] = None
+    gtdbtk_phylum: Optional[str] = None
+    gtdbtk_class: Optional[str] = None
+    gtdbtk_order: Optional[str] = None
+    gtdbtk_family: Optional[str] = None
+    gtdbtk_genus: Optional[str] = None
+    gtdbtk_species: Optional[str] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.bin_name is not None and not isinstance(self.bin_name, str):
+            self.bin_name = str(self.bin_name)
+
+        if self.number_of_contig is not None and not isinstance(self.number_of_contig, int):
+            self.number_of_contig = int(self.number_of_contig)
+
+        if self.completeness is not None and not isinstance(self.completeness, float):
+            self.completeness = float(self.completeness)
+
+        if self.contamination is not None and not isinstance(self.contamination, float):
+            self.contamination = float(self.contamination)
+
+        if self.gene_count is not None and not isinstance(self.gene_count, int):
+            self.gene_count = int(self.gene_count)
+
+        if self.bin_quality is not None and not isinstance(self.bin_quality, str):
+            self.bin_quality = str(self.bin_quality)
+
+        if self.num_16s is not None and not isinstance(self.num_16s, int):
+            self.num_16s = int(self.num_16s)
+
+        if self.num_5s is not None and not isinstance(self.num_5s, int):
+            self.num_5s = int(self.num_5s)
+
+        if self.num_23s is not None and not isinstance(self.num_23s, int):
+            self.num_23s = int(self.num_23s)
+
+        if self.num_tRNA is not None and not isinstance(self.num_tRNA, int):
+            self.num_tRNA = int(self.num_tRNA)
+
+        if self.gtdbtk_domain is not None and not isinstance(self.gtdbtk_domain, str):
+            self.gtdbtk_domain = str(self.gtdbtk_domain)
+
+        if self.gtdbtk_phylum is not None and not isinstance(self.gtdbtk_phylum, str):
+            self.gtdbtk_phylum = str(self.gtdbtk_phylum)
+
+        if self.gtdbtk_class is not None and not isinstance(self.gtdbtk_class, str):
+            self.gtdbtk_class = str(self.gtdbtk_class)
+
+        if self.gtdbtk_order is not None and not isinstance(self.gtdbtk_order, str):
+            self.gtdbtk_order = str(self.gtdbtk_order)
+
+        if self.gtdbtk_family is not None and not isinstance(self.gtdbtk_family, str):
+            self.gtdbtk_family = str(self.gtdbtk_family)
+
+        if self.gtdbtk_genus is not None and not isinstance(self.gtdbtk_genus, str):
+            self.gtdbtk_genus = str(self.gtdbtk_genus)
+
+        if self.gtdbtk_species is not None and not isinstance(self.gtdbtk_species, str):
+            self.gtdbtk_species = str(self.gtdbtk_species)
 
         super().__post_init__(**kwargs)
 
@@ -310,8 +403,8 @@ class PeptideQuantification(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = NMDC.PeptideQuantification
 
     peptide_sequence: Optional[str] = None
-    best_protein: Optional[Union[dict, "GeneProduct"]] = None
-    all_proteins: Optional[Union[Union[dict, "GeneProduct"], List[Union[dict, "GeneProduct"]]]] = empty_list()
+    best_protein: Optional[Union[str, GeneProductId]] = None
+    all_proteins: Optional[Union[Union[str, GeneProductId], List[Union[str, GeneProductId]]]] = empty_list()
     min_q_value: Optional[float] = None
     peptide_spectral_count: Optional[int] = None
     peptide_sum_masic_abundance: Optional[int] = None
@@ -320,14 +413,14 @@ class PeptideQuantification(YAMLRoot):
         if self.peptide_sequence is not None and not isinstance(self.peptide_sequence, str):
             self.peptide_sequence = str(self.peptide_sequence)
 
-        if self.best_protein is not None and not isinstance(self.best_protein, GeneProduct):
-            self.best_protein = GeneProduct()
+        if self.best_protein is not None and not isinstance(self.best_protein, GeneProductId):
+            self.best_protein = GeneProductId(self.best_protein)
 
         if self.all_proteins is None:
             self.all_proteins = []
         if not isinstance(self.all_proteins, list):
             self.all_proteins = [self.all_proteins]
-        self.all_proteins = [v if isinstance(v, GeneProduct) else GeneProduct(**v) for v in self.all_proteins]
+        self.all_proteins = [v if isinstance(v, GeneProductId) else GeneProductId(v) for v in self.all_proteins]
 
         if self.min_q_value is not None and not isinstance(self.min_q_value, float):
             self.min_q_value = float(self.min_q_value)
@@ -353,21 +446,21 @@ class ProteinQuantification(YAMLRoot):
     class_name: ClassVar[str] = "protein quantification"
     class_model_uri: ClassVar[URIRef] = NMDC.ProteinQuantification
 
-    best_protein: Optional[Union[dict, "GeneProduct"]] = None
-    all_proteins: Optional[Union[Union[dict, "GeneProduct"], List[Union[dict, "GeneProduct"]]]] = empty_list()
+    best_protein: Optional[Union[str, GeneProductId]] = None
+    all_proteins: Optional[Union[Union[str, GeneProductId], List[Union[str, GeneProductId]]]] = empty_list()
     peptide_sequence_count: Optional[int] = None
     protein_spectral_count: Optional[int] = None
     protein_sum_masic_abundance: Optional[int] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.best_protein is not None and not isinstance(self.best_protein, GeneProduct):
-            self.best_protein = GeneProduct()
+        if self.best_protein is not None and not isinstance(self.best_protein, GeneProductId):
+            self.best_protein = GeneProductId(self.best_protein)
 
         if self.all_proteins is None:
             self.all_proteins = []
         if not isinstance(self.all_proteins, list):
             self.all_proteins = [self.all_proteins]
-        self.all_proteins = [v if isinstance(v, GeneProduct) else GeneProduct(**v) for v in self.all_proteins]
+        self.all_proteins = [v if isinstance(v, GeneProductId) else GeneProductId(v) for v in self.all_proteins]
 
         if self.peptide_sequence_count is not None and not isinstance(self.peptide_sequence_count, int):
             self.peptide_sequence_count = int(self.peptide_sequence_count)
@@ -1142,7 +1235,7 @@ class BooleanValue(AttributeValue):
     class_name: ClassVar[str] = "boolean value"
     class_model_uri: ClassVar[URIRef] = NMDC.BooleanValue
 
-    has_boolean_value: Optional[Bool] = None
+    has_boolean_value: Optional[Union[bool, Bool]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.has_boolean_value is not None and not isinstance(self.has_boolean_value, Bool):
@@ -1486,24 +1579,27 @@ class MetagenomeAnnotationActivity(WorkflowExecutionActivity):
 
 
 @dataclass
-class MAGAnnotationActivity(WorkflowExecutionActivity):
+class MAGsAnalysisActivity(WorkflowExecutionActivity):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMDC.MAGAnnotationActivity
-    class_class_curie: ClassVar[str] = "nmdc:MAGAnnotationActivity"
-    class_name: ClassVar[str] = "MAG annotation activity"
-    class_model_uri: ClassVar[URIRef] = NMDC.MAGAnnotationActivity
+    class_class_uri: ClassVar[URIRef] = NMDC.MAGsAnalysisActivity
+    class_class_curie: ClassVar[str] = "nmdc:MAGsAnalysisActivity"
+    class_name: ClassVar[str] = "MAGs analysis activity"
+    class_model_uri: ClassVar[URIRef] = NMDC.MAGsAnalysisActivity
 
-    id: Union[str, MAGAnnotationActivityId] = None
+    id: Union[str, MAGsAnalysisActivityId] = None
     input_contig_num: Optional[int] = None
     binned_contig_num: Optional[int] = None
     too_short_contig_num: Optional[int] = None
+    lowDepth_contig_num: Optional[int] = None
+    unbinned_contig_num: Optional[int] = None
+    mags_list: Optional[Union[Union[dict, MAGBin], List[Union[dict, MAGBin]]]] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, MAGAnnotationActivityId):
-            self.id = MAGAnnotationActivityId(self.id)
+        if not isinstance(self.id, MAGsAnalysisActivityId):
+            self.id = MAGsAnalysisActivityId(self.id)
 
         if self.input_contig_num is not None and not isinstance(self.input_contig_num, int):
             self.input_contig_num = int(self.input_contig_num)
@@ -1513,6 +1609,18 @@ class MAGAnnotationActivity(WorkflowExecutionActivity):
 
         if self.too_short_contig_num is not None and not isinstance(self.too_short_contig_num, int):
             self.too_short_contig_num = int(self.too_short_contig_num)
+
+        if self.lowDepth_contig_num is not None and not isinstance(self.lowDepth_contig_num, int):
+            self.lowDepth_contig_num = int(self.lowDepth_contig_num)
+
+        if self.unbinned_contig_num is not None and not isinstance(self.unbinned_contig_num, int):
+            self.unbinned_contig_num = int(self.unbinned_contig_num)
+
+        if self.mags_list is None:
+            self.mags_list = []
+        if not isinstance(self.mags_list, list):
+            self.mags_list = [self.mags_list]
+        self.mags_list = [v if isinstance(v, MAGBin) else MAGBin(**v) for v in self.mags_list]
 
         super().__post_init__(**kwargs)
 
@@ -1658,7 +1766,7 @@ class GenomeFeature(YAMLRoot):
     type: Optional[Union[str, OntologyClassId]] = None
     strand: Optional[str] = None
     phase: Optional[int] = None
-    encodes: Optional[Union[dict, "GeneProduct"]] = None
+    encodes: Optional[Union[str, GeneProductId]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.seqid is None:
@@ -1685,8 +1793,8 @@ class GenomeFeature(YAMLRoot):
         if self.phase is not None and not isinstance(self.phase, int):
             self.phase = int(self.phase)
 
-        if self.encodes is not None and not isinstance(self.encodes, GeneProduct):
-            self.encodes = GeneProduct()
+        if self.encodes is not None and not isinstance(self.encodes, GeneProductId):
+            self.encodes = GeneProductId(self.encodes)
 
         super().__post_init__(**kwargs)
 
@@ -1754,11 +1862,11 @@ class Reaction(FunctionalAnnotationTerm):
     right_participants: Optional[Union[Union[dict, "ReactionParticipant"], List[Union[dict, "ReactionParticipant"]]]] = empty_list()
     direction: Optional[str] = None
     smarts_string: Optional[str] = None
-    is_diastereoselective: Optional[Bool] = None
-    is_stereo: Optional[Bool] = None
-    is_balanced: Optional[Bool] = None
-    is_transport: Optional[Bool] = None
-    is_fully_characterized: Optional[Bool] = None
+    is_diastereoselective: Optional[Union[bool, Bool]] = None
+    is_stereo: Optional[Union[bool, Bool]] = None
+    is_balanced: Optional[Union[bool, Bool]] = None
+    is_transport: Optional[Union[bool, Bool]] = None
+    is_fully_characterized: Optional[Union[bool, Bool]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -1864,6 +1972,7 @@ class ChemicalEntity(OntologyClass):
     class_model_uri: ClassVar[URIRef] = NMDC.ChemicalEntity
 
     id: Union[str, ChemicalEntityId] = None
+    inchi: Optional[str] = None
     inchi_key: Optional[str] = None
     smiles: Optional[Union[str, List[str]]] = empty_list()
     chemical_formula: Optional[str] = None
@@ -1874,10 +1983,8 @@ class ChemicalEntity(OntologyClass):
         if not isinstance(self.id, ChemicalEntityId):
             self.id = ChemicalEntityId(self.id)
 
-        if self.inchi is None:
-            raise ValueError("inchi must be supplied")
-        if not isinstance(self.inchi, ChemicalEntityId):
-            self.inchi = ChemicalEntityId(self.inchi)
+        if self.inchi is not None and not isinstance(self.inchi, str):
+            self.inchi = str(self.inchi)
 
         if self.inchi_key is not None and not isinstance(self.inchi_key, str):
             self.inchi_key = str(self.inchi_key)
@@ -1894,7 +2001,8 @@ class ChemicalEntity(OntologyClass):
         super().__post_init__(**kwargs)
 
 
-class GeneProduct(YAMLRoot):
+@dataclass
+class GeneProduct(NamedThing):
     """
     A molecule encoded by a gene that has an evolved function
     """
@@ -1904,6 +2012,16 @@ class GeneProduct(YAMLRoot):
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "gene product"
     class_model_uri: ClassVar[URIRef] = NMDC.GeneProduct
+
+    id: Union[str, GeneProductId] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, GeneProductId):
+            self.id = GeneProductId(self.id)
+
+        super().__post_init__(**kwargs)
 
 
 @dataclass
@@ -1921,16 +2039,20 @@ class FunctionalAnnotation(YAMLRoot):
     class_name: ClassVar[str] = "functional annotation"
     class_model_uri: ClassVar[URIRef] = NMDC.FunctionalAnnotation
 
+    type: Optional[str] = None
     was_generated_by: Optional[Union[str, MetagenomeAnnotationActivityId]] = None
-    subject: Optional[Union[dict, GeneProduct]] = None
+    subject: Optional[Union[str, GeneProductId]] = None
     has_function: Optional[Union[str, FunctionalAnnotationTermId]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.type is not None and not isinstance(self.type, str):
+            self.type = str(self.type)
+
         if self.was_generated_by is not None and not isinstance(self.was_generated_by, MetagenomeAnnotationActivityId):
             self.was_generated_by = MetagenomeAnnotationActivityId(self.was_generated_by)
 
-        if self.subject is not None and not isinstance(self.subject, GeneProduct):
-            self.subject = GeneProduct()
+        if self.subject is not None and not isinstance(self.subject, GeneProductId):
+            self.subject = GeneProductId(self.subject)
 
         if self.has_function is not None and not isinstance(self.has_function, FunctionalAnnotationTermId):
             self.has_function = FunctionalAnnotationTermId(self.has_function)
@@ -1963,6 +2085,9 @@ slots.functional_annotation_set = Slot(uri=NMDC.functional_annotation_set, name=
 
 slots.activity_set = Slot(uri=NMDC.activity_set, name="activity set", curie=NMDC.curie('activity_set'),
                    model_uri=NMDC.activity_set, domain=Database, range=Optional[Union[Dict[Union[str, WorkflowExecutionActivityId], Union[dict, "WorkflowExecutionActivity"]], List[Union[dict, "WorkflowExecutionActivity"]]]])
+
+slots.mags_activity_set = Slot(uri=NMDC.mags_activity_set, name="mags activity set", curie=NMDC.curie('mags_activity_set'),
+                   model_uri=NMDC.mags_activity_set, domain=Database, range=Optional[Union[Dict[Union[str, MAGsAnalysisActivityId], Union[dict, "MAGsAnalysisActivity"]], List[Union[dict, "MAGsAnalysisActivity"]]]])
 
 slots.omics_processing_set = Slot(uri=NMDC.omics_processing_set, name="omics processing set", curie=NMDC.curie('omics_processing_set'),
                    model_uri=NMDC.omics_processing_set, domain=Database, range=Optional[Union[Dict[Union[str, OmicsProcessingId], Union[dict, "OmicsProcessing"]], List[Union[dict, "OmicsProcessing"]]]])
@@ -2090,6 +2215,9 @@ slots.num_aligned_reads = Slot(uri=NMDC.num_aligned_reads, name="num_aligned_rea
 slots.read_QC_analysis_statistic = Slot(uri=NMDC.read_QC_analysis_statistic, name="read QC analysis statistic", curie=NMDC.curie('read_QC_analysis_statistic'),
                    model_uri=NMDC.read_QC_analysis_statistic, domain=None, range=Optional[str])
 
+slots.mags_list = Slot(uri=NMDC.mags_list, name="mags list", curie=NMDC.curie('mags_list'),
+                   model_uri=NMDC.mags_list, domain=None, range=Optional[Union[Union[dict, MAGBin], List[Union[dict, MAGBin]]]])
+
 slots.too_short_contig_num = Slot(uri=NMDC.too_short_contig_num, name="too short contig num", curie=NMDC.curie('too_short_contig_num'),
                    model_uri=NMDC.too_short_contig_num, domain=None, range=Optional[int])
 
@@ -2098,6 +2226,12 @@ slots.binned_contig_num = Slot(uri=NMDC.binned_contig_num, name="binned contig n
 
 slots.input_contig_num = Slot(uri=NMDC.input_contig_num, name="input contig num", curie=NMDC.curie('input_contig_num'),
                    model_uri=NMDC.input_contig_num, domain=None, range=Optional[int])
+
+slots.unbinned_contig_num = Slot(uri=NMDC.unbinned_contig_num, name="unbinned contig num", curie=NMDC.curie('unbinned_contig_num'),
+                   model_uri=NMDC.unbinned_contig_num, domain=None, range=Optional[int])
+
+slots.lowDepth_contig_num = Slot(uri=NMDC.lowDepth_contig_num, name="lowDepth contig num", curie=NMDC.curie('lowDepth_contig_num'),
+                   model_uri=NMDC.lowDepth_contig_num, domain=None, range=Optional[int])
 
 slots.input_read_count = Slot(uri=NMDC.input_read_count, name="input read count", curie=NMDC.curie('input_read_count'),
                    model_uri=NMDC.input_read_count, domain=None, range=Optional[float])
@@ -4377,7 +4511,7 @@ slots.has_numeric_value = Slot(uri=NMDC.has_numeric_value, name="has numeric val
                    model_uri=NMDC.has_numeric_value, domain=None, range=Optional[float], mappings = [QUD.quantityValue, SCHEMA.value])
 
 slots.has_boolean_value = Slot(uri=NMDC.has_boolean_value, name="has boolean value", curie=NMDC.curie('has_boolean_value'),
-                   model_uri=NMDC.has_boolean_value, domain=None, range=Optional[Bool])
+                   model_uri=NMDC.has_boolean_value, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.latitude = Slot(uri=WGS.lat, name="latitude", curie=WGS.curie('lat'),
                    model_uri=NMDC.latitude, domain=GeolocationValue, range=Optional[float], mappings = [SCHEMA.latitude])
@@ -4412,11 +4546,68 @@ slots.was_generated_by = Slot(uri=NMDC.was_generated_by, name="was generated by"
 slots.used = Slot(uri=NMDC.used, name="used", curie=NMDC.curie('used'),
                    model_uri=NMDC.used, domain=Activity, range=Optional[str], mappings = [PROV.used])
 
+slots.subject = Slot(uri="str(uriorcurie)", name="subject", curie=None,
+                   model_uri=NMDC.subject, domain=None, range=Optional[Union[str, GeneProductId]])
+
+slots.has_function = Slot(uri="str(uriorcurie)", name="has function", curie=None,
+                   model_uri=NMDC.has_function, domain=None, range=Optional[Union[str, FunctionalAnnotationTermId]])
+
 slots.has_participants = Slot(uri="str(uriorcurie)", name="has participants", curie=None,
                    model_uri=NMDC.has_participants, domain=None, range=Optional[str])
 
 slots.gff_coordinate = Slot(uri="str(uriorcurie)", name="gff coordinate", curie=None,
                    model_uri=NMDC.gff_coordinate, domain=None, range=Optional[int])
+
+slots.mAGBin__bin_name = Slot(uri=NMDC.bin_name, name="mAGBin__bin_name", curie=NMDC.curie('bin_name'),
+                   model_uri=NMDC.mAGBin__bin_name, domain=None, range=Optional[str])
+
+slots.mAGBin__number_of_contig = Slot(uri=NMDC.number_of_contig, name="mAGBin__number_of_contig", curie=NMDC.curie('number_of_contig'),
+                   model_uri=NMDC.mAGBin__number_of_contig, domain=None, range=Optional[int])
+
+slots.mAGBin__completeness = Slot(uri=NMDC.completeness, name="mAGBin__completeness", curie=NMDC.curie('completeness'),
+                   model_uri=NMDC.mAGBin__completeness, domain=None, range=Optional[float])
+
+slots.mAGBin__contamination = Slot(uri=NMDC.contamination, name="mAGBin__contamination", curie=NMDC.curie('contamination'),
+                   model_uri=NMDC.mAGBin__contamination, domain=None, range=Optional[float])
+
+slots.mAGBin__gene_count = Slot(uri=NMDC.gene_count, name="mAGBin__gene_count", curie=NMDC.curie('gene_count'),
+                   model_uri=NMDC.mAGBin__gene_count, domain=None, range=Optional[int])
+
+slots.mAGBin__bin_quality = Slot(uri=NMDC.bin_quality, name="mAGBin__bin_quality", curie=NMDC.curie('bin_quality'),
+                   model_uri=NMDC.mAGBin__bin_quality, domain=None, range=Optional[str])
+
+slots.mAGBin__num_16s = Slot(uri=NMDC.num_16s, name="mAGBin__num_16s", curie=NMDC.curie('num_16s'),
+                   model_uri=NMDC.mAGBin__num_16s, domain=None, range=Optional[int])
+
+slots.mAGBin__num_5s = Slot(uri=NMDC.num_5s, name="mAGBin__num_5s", curie=NMDC.curie('num_5s'),
+                   model_uri=NMDC.mAGBin__num_5s, domain=None, range=Optional[int])
+
+slots.mAGBin__num_23s = Slot(uri=NMDC.num_23s, name="mAGBin__num_23s", curie=NMDC.curie('num_23s'),
+                   model_uri=NMDC.mAGBin__num_23s, domain=None, range=Optional[int])
+
+slots.mAGBin__num_tRNA = Slot(uri=NMDC.num_tRNA, name="mAGBin__num_tRNA", curie=NMDC.curie('num_tRNA'),
+                   model_uri=NMDC.mAGBin__num_tRNA, domain=None, range=Optional[int])
+
+slots.mAGBin__gtdbtk_domain = Slot(uri=NMDC.gtdbtk_domain, name="mAGBin__gtdbtk_domain", curie=NMDC.curie('gtdbtk_domain'),
+                   model_uri=NMDC.mAGBin__gtdbtk_domain, domain=None, range=Optional[str])
+
+slots.mAGBin__gtdbtk_phylum = Slot(uri=NMDC.gtdbtk_phylum, name="mAGBin__gtdbtk_phylum", curie=NMDC.curie('gtdbtk_phylum'),
+                   model_uri=NMDC.mAGBin__gtdbtk_phylum, domain=None, range=Optional[str])
+
+slots.mAGBin__gtdbtk_class = Slot(uri=NMDC.gtdbtk_class, name="mAGBin__gtdbtk_class", curie=NMDC.curie('gtdbtk_class'),
+                   model_uri=NMDC.mAGBin__gtdbtk_class, domain=None, range=Optional[str])
+
+slots.mAGBin__gtdbtk_order = Slot(uri=NMDC.gtdbtk_order, name="mAGBin__gtdbtk_order", curie=NMDC.curie('gtdbtk_order'),
+                   model_uri=NMDC.mAGBin__gtdbtk_order, domain=None, range=Optional[str])
+
+slots.mAGBin__gtdbtk_family = Slot(uri=NMDC.gtdbtk_family, name="mAGBin__gtdbtk_family", curie=NMDC.curie('gtdbtk_family'),
+                   model_uri=NMDC.mAGBin__gtdbtk_family, domain=None, range=Optional[str])
+
+slots.mAGBin__gtdbtk_genus = Slot(uri=NMDC.gtdbtk_genus, name="mAGBin__gtdbtk_genus", curie=NMDC.curie('gtdbtk_genus'),
+                   model_uri=NMDC.mAGBin__gtdbtk_genus, domain=None, range=Optional[str])
+
+slots.mAGBin__gtdbtk_species = Slot(uri=NMDC.gtdbtk_species, name="mAGBin__gtdbtk_species", curie=NMDC.curie('gtdbtk_species'),
+                   model_uri=NMDC.mAGBin__gtdbtk_species, domain=None, range=Optional[str])
 
 slots.has_metabolite_quantifications = Slot(uri=NMDC.has_metabolite_quantifications, name="has metabolite quantifications", curie=NMDC.curie('has_metabolite_quantifications'),
                    model_uri=NMDC.has_metabolite_quantifications, domain=None, range=Optional[Union[Union[dict, MetaboliteQuantification], List[Union[dict, MetaboliteQuantification]]]])
@@ -4434,10 +4625,10 @@ slots.peptide_sequence = Slot(uri=NMDC.peptide_sequence, name="peptide sequence"
                    model_uri=NMDC.peptide_sequence, domain=None, range=Optional[str])
 
 slots.best_protein = Slot(uri=NMDC.best_protein, name="best protein", curie=NMDC.curie('best_protein'),
-                   model_uri=NMDC.best_protein, domain=None, range=Optional[Union[dict, GeneProduct]])
+                   model_uri=NMDC.best_protein, domain=None, range=Optional[Union[str, GeneProductId]])
 
 slots.all_proteins = Slot(uri=NMDC.all_proteins, name="all proteins", curie=NMDC.curie('all_proteins'),
-                   model_uri=NMDC.all_proteins, domain=None, range=Optional[Union[Union[dict, GeneProduct], List[Union[dict, GeneProduct]]]])
+                   model_uri=NMDC.all_proteins, domain=None, range=Optional[Union[Union[str, GeneProductId], List[Union[str, GeneProductId]]]])
 
 slots.min_q_value = Slot(uri=NMDC.min_q_value, name="min_q_value", curie=NMDC.curie('min_q_value'),
                    model_uri=NMDC.min_q_value, domain=None, range=Optional[float])
@@ -4473,7 +4664,7 @@ slots.phase = Slot(uri=NMDC.phase, name="phase", curie=NMDC.curie('phase'),
                    model_uri=NMDC.phase, domain=None, range=Optional[int])
 
 slots.encodes = Slot(uri=NMDC.encodes, name="encodes", curie=NMDC.curie('encodes'),
-                   model_uri=NMDC.encodes, domain=None, range=Optional[Union[dict, GeneProduct]])
+                   model_uri=NMDC.encodes, domain=None, range=Optional[Union[str, GeneProductId]])
 
 slots.has_part = Slot(uri=NMDC.has_part, name="has_part", curie=NMDC.curie('has_part'),
                    model_uri=NMDC.has_part, domain=None, range=Optional[Union[Union[str, ReactionId], List[Union[str, ReactionId]]]])
@@ -4491,19 +4682,19 @@ slots.smarts_string = Slot(uri=NMDC.smarts_string, name="smarts string", curie=N
                    model_uri=NMDC.smarts_string, domain=None, range=Optional[str])
 
 slots.is_diastereoselective = Slot(uri=NMDC.is_diastereoselective, name="is diastereoselective", curie=NMDC.curie('is_diastereoselective'),
-                   model_uri=NMDC.is_diastereoselective, domain=None, range=Optional[Bool])
+                   model_uri=NMDC.is_diastereoselective, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.is_stereo = Slot(uri=NMDC.is_stereo, name="is stereo", curie=NMDC.curie('is_stereo'),
-                   model_uri=NMDC.is_stereo, domain=None, range=Optional[Bool])
+                   model_uri=NMDC.is_stereo, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.is_balanced = Slot(uri=NMDC.is_balanced, name="is balanced", curie=NMDC.curie('is_balanced'),
-                   model_uri=NMDC.is_balanced, domain=None, range=Optional[Bool])
+                   model_uri=NMDC.is_balanced, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.is_transport = Slot(uri=NMDC.is_transport, name="is transport", curie=NMDC.curie('is_transport'),
-                   model_uri=NMDC.is_transport, domain=None, range=Optional[Bool])
+                   model_uri=NMDC.is_transport, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.is_fully_characterized = Slot(uri=NMDC.is_fully_characterized, name="is fully characterized", curie=NMDC.curie('is_fully_characterized'),
-                   model_uri=NMDC.is_fully_characterized, domain=None, range=Optional[Bool])
+                   model_uri=NMDC.is_fully_characterized, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.chemical = Slot(uri=NMDC.chemical, name="chemical", curie=NMDC.curie('chemical'),
                    model_uri=NMDC.chemical, domain=None, range=Optional[Union[str, ChemicalEntityId]])
@@ -4512,7 +4703,7 @@ slots.stoichiometry = Slot(uri=NMDC.stoichiometry, name="stoichiometry", curie=N
                    model_uri=NMDC.stoichiometry, domain=None, range=Optional[int])
 
 slots.inchi = Slot(uri=NMDC.inchi, name="inchi", curie=NMDC.curie('inchi'),
-                   model_uri=NMDC.inchi, domain=None, range=URIRef)
+                   model_uri=NMDC.inchi, domain=None, range=Optional[str])
 
 slots.inchi_key = Slot(uri=NMDC.inchi_key, name="inchi key", curie=NMDC.curie('inchi_key'),
                    model_uri=NMDC.inchi_key, domain=None, range=Optional[str])
@@ -4522,12 +4713,6 @@ slots.smiles = Slot(uri=NMDC.smiles, name="smiles", curie=NMDC.curie('smiles'),
 
 slots.chemical_formula = Slot(uri=NMDC.chemical_formula, name="chemical formula", curie=NMDC.curie('chemical_formula'),
                    model_uri=NMDC.chemical_formula, domain=None, range=Optional[str])
-
-slots.subject = Slot(uri=NMDC.subject, name="subject", curie=NMDC.curie('subject'),
-                   model_uri=NMDC.subject, domain=None, range=Optional[Union[dict, GeneProduct]])
-
-slots.has_function = Slot(uri=NMDC.has_function, name="has function", curie=NMDC.curie('has_function'),
-                   model_uri=NMDC.has_function, domain=None, range=Optional[Union[str, FunctionalAnnotationTermId]])
 
 slots.data_object_was_generated_by = Slot(uri=NMDC.was_generated_by, name="data object_was generated by", curie=NMDC.curie('was_generated_by'),
                    model_uri=NMDC.data_object_was_generated_by, domain=DataObject, range=Optional[Union[dict, "WorkflowExecutionActivity"]])
@@ -4609,10 +4794,10 @@ slots.peptide_quantification_peptide_sequence = Slot(uri=NMDC.peptide_sequence, 
                    model_uri=NMDC.peptide_quantification_peptide_sequence, domain=PeptideQuantification, range=Optional[str])
 
 slots.peptide_quantification_best_protein = Slot(uri=NMDC.best_protein, name="peptide quantification_best protein", curie=NMDC.curie('best_protein'),
-                   model_uri=NMDC.peptide_quantification_best_protein, domain=PeptideQuantification, range=Optional[Union[dict, "GeneProduct"]])
+                   model_uri=NMDC.peptide_quantification_best_protein, domain=PeptideQuantification, range=Optional[Union[str, GeneProductId]])
 
 slots.peptide_quantification_all_proteins = Slot(uri=NMDC.all_proteins, name="peptide quantification_all proteins", curie=NMDC.curie('all_proteins'),
-                   model_uri=NMDC.peptide_quantification_all_proteins, domain=PeptideQuantification, range=Optional[Union[Union[dict, "GeneProduct"], List[Union[dict, "GeneProduct"]]]])
+                   model_uri=NMDC.peptide_quantification_all_proteins, domain=PeptideQuantification, range=Optional[Union[Union[str, GeneProductId], List[Union[str, GeneProductId]]]])
 
 slots.peptide_quantification_min_q_value = Slot(uri=NMDC.min_q_value, name="peptide quantification_min_q_value", curie=NMDC.curie('min_q_value'),
                    model_uri=NMDC.peptide_quantification_min_q_value, domain=PeptideQuantification, range=Optional[float])
@@ -4624,10 +4809,10 @@ slots.peptide_quantification_peptide_sum_masic_abundance = Slot(uri=NMDC.peptide
                    model_uri=NMDC.peptide_quantification_peptide_sum_masic_abundance, domain=PeptideQuantification, range=Optional[int])
 
 slots.protein_quantification_best_protein = Slot(uri=NMDC.best_protein, name="protein quantification_best protein", curie=NMDC.curie('best_protein'),
-                   model_uri=NMDC.protein_quantification_best_protein, domain=ProteinQuantification, range=Optional[Union[dict, "GeneProduct"]])
+                   model_uri=NMDC.protein_quantification_best_protein, domain=ProteinQuantification, range=Optional[Union[str, GeneProductId]])
 
 slots.protein_quantification_all_proteins = Slot(uri=NMDC.all_proteins, name="protein quantification_all proteins", curie=NMDC.curie('all_proteins'),
-                   model_uri=NMDC.protein_quantification_all_proteins, domain=ProteinQuantification, range=Optional[Union[Union[dict, "GeneProduct"], List[Union[dict, "GeneProduct"]]]])
+                   model_uri=NMDC.protein_quantification_all_proteins, domain=ProteinQuantification, range=Optional[Union[Union[str, GeneProductId], List[Union[str, GeneProductId]]]])
 
 slots.protein_quantification_peptide_sequence_count = Slot(uri=NMDC.peptide_sequence_count, name="protein quantification_peptide_sequence_count", curie=NMDC.curie('peptide_sequence_count'),
                    model_uri=NMDC.protein_quantification_peptide_sequence_count, domain=ProteinQuantification, range=Optional[int])
@@ -4675,7 +4860,7 @@ slots.genome_feature_phase = Slot(uri=NMDC.phase, name="genome feature_phase", c
                    model_uri=NMDC.genome_feature_phase, domain=GenomeFeature, range=Optional[int])
 
 slots.genome_feature_encodes = Slot(uri=NMDC.encodes, name="genome feature_encodes", curie=NMDC.curie('encodes'),
-                   model_uri=NMDC.genome_feature_encodes, domain=GenomeFeature, range=Optional[Union[dict, "GeneProduct"]])
+                   model_uri=NMDC.genome_feature_encodes, domain=GenomeFeature, range=Optional[Union[str, GeneProductId]])
 
 slots.pathway_has_part = Slot(uri=NMDC.has_part, name="pathway_has_part", curie=NMDC.curie('has_part'),
                    model_uri=NMDC.pathway_has_part, domain=Pathway, range=Optional[Union[Union[str, ReactionId], List[Union[str, ReactionId]]]])
@@ -4693,19 +4878,19 @@ slots.reaction_smarts_string = Slot(uri=NMDC.smarts_string, name="reaction_smart
                    model_uri=NMDC.reaction_smarts_string, domain=Reaction, range=Optional[str])
 
 slots.reaction_is_diastereoselective = Slot(uri=NMDC.is_diastereoselective, name="reaction_is diastereoselective", curie=NMDC.curie('is_diastereoselective'),
-                   model_uri=NMDC.reaction_is_diastereoselective, domain=Reaction, range=Optional[Bool])
+                   model_uri=NMDC.reaction_is_diastereoselective, domain=Reaction, range=Optional[Union[bool, Bool]])
 
 slots.reaction_is_stereo = Slot(uri=NMDC.is_stereo, name="reaction_is stereo", curie=NMDC.curie('is_stereo'),
-                   model_uri=NMDC.reaction_is_stereo, domain=Reaction, range=Optional[Bool])
+                   model_uri=NMDC.reaction_is_stereo, domain=Reaction, range=Optional[Union[bool, Bool]])
 
 slots.reaction_is_balanced = Slot(uri=NMDC.is_balanced, name="reaction_is balanced", curie=NMDC.curie('is_balanced'),
-                   model_uri=NMDC.reaction_is_balanced, domain=Reaction, range=Optional[Bool])
+                   model_uri=NMDC.reaction_is_balanced, domain=Reaction, range=Optional[Union[bool, Bool]])
 
 slots.reaction_is_transport = Slot(uri=NMDC.is_transport, name="reaction_is transport", curie=NMDC.curie('is_transport'),
-                   model_uri=NMDC.reaction_is_transport, domain=Reaction, range=Optional[Bool])
+                   model_uri=NMDC.reaction_is_transport, domain=Reaction, range=Optional[Union[bool, Bool]])
 
 slots.reaction_is_fully_characterized = Slot(uri=NMDC.is_fully_characterized, name="reaction_is fully characterized", curie=NMDC.curie('is_fully_characterized'),
-                   model_uri=NMDC.reaction_is_fully_characterized, domain=Reaction, range=Optional[Bool])
+                   model_uri=NMDC.reaction_is_fully_characterized, domain=Reaction, range=Optional[Union[bool, Bool]])
 
 slots.reaction_participant_chemical = Slot(uri=NMDC.chemical, name="reaction participant_chemical", curie=NMDC.curie('chemical'),
                    model_uri=NMDC.reaction_participant_chemical, domain=ReactionParticipant, range=Optional[Union[str, ChemicalEntityId]])
@@ -4714,7 +4899,7 @@ slots.reaction_participant_stoichiometry = Slot(uri=NMDC.stoichiometry, name="re
                    model_uri=NMDC.reaction_participant_stoichiometry, domain=ReactionParticipant, range=Optional[int])
 
 slots.chemical_entity_inchi = Slot(uri=NMDC.inchi, name="chemical entity_inchi", curie=NMDC.curie('inchi'),
-                   model_uri=NMDC.chemical_entity_inchi, domain=ChemicalEntity, range=Union[str, ChemicalEntityId])
+                   model_uri=NMDC.chemical_entity_inchi, domain=ChemicalEntity, range=Optional[str])
 
 slots.chemical_entity_inchi_key = Slot(uri=NMDC.inchi_key, name="chemical entity_inchi key", curie=NMDC.curie('inchi_key'),
                    model_uri=NMDC.chemical_entity_inchi_key, domain=ChemicalEntity, range=Optional[str])
@@ -4724,12 +4909,6 @@ slots.chemical_entity_smiles = Slot(uri=NMDC.smiles, name="chemical entity_smile
 
 slots.chemical_entity_chemical_formula = Slot(uri=NMDC.chemical_formula, name="chemical entity_chemical formula", curie=NMDC.curie('chemical_formula'),
                    model_uri=NMDC.chemical_entity_chemical_formula, domain=ChemicalEntity, range=Optional[str])
-
-slots.functional_annotation_subject = Slot(uri=NMDC.subject, name="functional annotation_subject", curie=NMDC.curie('subject'),
-                   model_uri=NMDC.functional_annotation_subject, domain=FunctionalAnnotation, range=Optional[Union[dict, GeneProduct]])
-
-slots.functional_annotation_has_function = Slot(uri=NMDC.has_function, name="functional annotation_has function", curie=NMDC.curie('has_function'),
-                   model_uri=NMDC.functional_annotation_has_function, domain=FunctionalAnnotation, range=Optional[Union[str, FunctionalAnnotationTermId]])
 
 slots.functional_annotation_was_generated_by = Slot(uri=NMDC.was_generated_by, name="functional annotation_was generated by", curie=NMDC.curie('was_generated_by'),
                    model_uri=NMDC.functional_annotation_was_generated_by, domain=FunctionalAnnotation, range=Optional[Union[str, MetagenomeAnnotationActivityId]])
