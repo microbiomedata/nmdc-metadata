@@ -221,7 +221,12 @@ classes:
       - input base count
       - output read count
       - output base count
-
+        
+  read based analysis activity:
+    is_a: workflow execution activity
+    in_subset:
+      - workflow subset    
+        
   metabolomics analysis activity:
     is_a: workflow execution activity
     in_subset: 

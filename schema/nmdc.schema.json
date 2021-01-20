@@ -1708,6 +1708,66 @@
          "title": "ReactionParticipant",
          "type": "object"
       },
+      "ReadBasedAnalysisActivity": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "ended_at_time": {
+               "type": "string"
+            },
+            "execution_resource": {
+               "description": "Example: NERSC-Cori",
+               "type": "string"
+            },
+            "git_url": {
+               "description": "Example: https://github.com/microbiomedata/mg_annotation/releases/tag/0.1",
+               "type": "string"
+            },
+            "has_input": {
+               "description": "An input to a process.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_output": {
+               "description": "An output biosample to a processing step",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human readable label for an entity",
+               "type": "string"
+            },
+            "started_at_time": {
+               "type": "string"
+            },
+            "type": {
+               "description": "The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.",
+               "type": "string"
+            },
+            "used": {
+               "type": "string"
+            },
+            "was_associated_with": {
+               "$ref": "#/definitions/Agent"
+            },
+            "was_informed_by": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "ReadBasedAnalysisActivity",
+         "type": "object"
+      },
       "ReadQCAnalysisActivity": {
          "additionalProperties": false,
          "description": "",

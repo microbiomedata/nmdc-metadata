@@ -549,6 +549,14 @@ metatype:Nodeidentifier NONLITERAL
     )
 }
 
+<ReadBasedAnalysisActivity> CLOSED {
+    (  $<ReadBasedAnalysisActivity_tes> (  &<WorkflowExecutionActivity_tes> ;
+          rdf:type [ <WorkflowExecutionActivity> ] ?
+       ) ;
+       rdf:type [ <ReadBasedAnalysisActivity> ]
+    )
+}
+
 <ReadQCAnalysisActivity> CLOSED {
     (  $<ReadQCAnalysisActivity_tes> (  &<WorkflowExecutionActivity_tes> ;
           rdf:type [ <WorkflowExecutionActivity> ] ? ;
@@ -615,7 +623,7 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <WorkflowExecutionActivity> ]
        )
     } OR @<MAGsAnalysisActivity> OR @<MetabolomicsAnalysisActivity> OR @<MetagenomeAnnotationActivity> OR @<MetagenomeAssembly> OR
-    @<MetaproteomicsAnalysisActivity> OR @<ReadQCAnalysisActivity>
+    @<MetaproteomicsAnalysisActivity> OR @<ReadQCAnalysisActivity> OR @<ReadBasedAnalysisActivity>
 )
 
 
