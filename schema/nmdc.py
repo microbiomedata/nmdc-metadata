@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-01-19 18:17
+# Generation date: 2021-01-20 16:00
 # Schema: NMDC
 #
 # id: https://microbiomedata/schema
@@ -173,6 +173,10 @@ class MAGsAnalysisActivityId(WorkflowExecutionActivityId):
 
 
 class ReadQCAnalysisActivityId(WorkflowExecutionActivityId):
+    pass
+
+
+class ReadBasedAnalysisActivityId(WorkflowExecutionActivityId):
     pass
 
 
@@ -1657,6 +1661,26 @@ class ReadQCAnalysisActivity(WorkflowExecutionActivity):
 
         if self.output_base_count is not None and not isinstance(self.output_base_count, float):
             self.output_base_count = float(self.output_base_count)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ReadBasedAnalysisActivity(WorkflowExecutionActivity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC.ReadBasedAnalysisActivity
+    class_class_curie: ClassVar[str] = "nmdc:ReadBasedAnalysisActivity"
+    class_name: ClassVar[str] = "read based analysis activity"
+    class_model_uri: ClassVar[URIRef] = NMDC.ReadBasedAnalysisActivity
+
+    id: Union[str, ReadBasedAnalysisActivityId] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ReadBasedAnalysisActivityId):
+            self.id = ReadBasedAnalysisActivityId(self.id)
 
         super().__post_init__(**kwargs)
 
