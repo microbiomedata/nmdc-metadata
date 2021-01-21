@@ -340,6 +340,8 @@ data_sources:
           values: ['Yes']
     subset_cols:
       - biosample_id
+      - soil_package_id
+      - water_package_id
       - gold_id
       - biosample_name
       - description
