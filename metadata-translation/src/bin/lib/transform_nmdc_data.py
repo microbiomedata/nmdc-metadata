@@ -254,7 +254,7 @@ def make_attribute_map(sssom_map_file:str):
     attr_map = {}
     if len(sssom_map_file) > 0:
         ## load sssom mapping file and subset to skos:exactMatch
-        mapping_df = nmdc_dataframes.make_dataframe(sssom_map_file).query("predicate_id == 'skos:exactMatch'")
+        mapping_df = nmdc_dataframes.make_dataframe(sssom_map_file, comment_str='#').query("predicate_id == 'skos:exactMatch'")
         attr_map = {subj:obj for idx, subj, obj in mapping_df[['subject_label', 'object_label']].itertuples()} # build attribute dict
     
     return attr_map

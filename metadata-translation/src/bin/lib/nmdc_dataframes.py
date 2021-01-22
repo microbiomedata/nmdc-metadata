@@ -18,8 +18,19 @@ from yaml import CLoader as Loader, CDumper as Dumper
 from dotted_dict import DottedDict
 from collections import namedtuple
 
-def make_dataframe (file_name, subset_cols=[], exclude_cols=[], nrows=None, lowercase_col_names=True,
-                    replace_spaces=True, file_type="tsv", delimiter="\t", sheet_name=0, file_archive_name=""):
+def make_dataframe (file_name, 
+                    subset_cols=[], 
+                    exclude_cols=[], 
+                    nrows=None, 
+                    lowercase_col_names=True,
+                    replace_spaces=True, 
+                    replace_hash=True,
+                    strip_spaces=True,
+                    comment_str=None,
+                    file_type="tsv", 
+                    delimiter="\t", 
+                    sheet_name=0, 
+                    file_archive_name=""):
     """
     Builds a pandas dataframe from the designated file.
     
@@ -29,7 +40,10 @@ def make_dataframe (file_name, subset_cols=[], exclude_cols=[], nrows=None, lowe
         exclude_cols: Specifies a specific of subset of columns to be excluded from the dataframe.
         nrows: Specifies the number of rows to be returned in the dataframe (useful for testing).
         lowercase_col_names: If true, the column names are converted to lower case.
-        replace_spaces: If true, spaces in column names are replaced with spaces.
+        replace_spaces: If true, spaces in column names are replaced with underscores.
+        replace_hash: If true, hashes ('#') in column names are replaced with empty strings.
+        strip_spaces: If true, extra surrounding spaces are stripped from the column names.
+        comment_str: Specifies the string that is used for comments with the data.
         file_type: Speicfies the type of file. Current acceptable file types are tsv, csv, and excel. Note that when using excel, you may need to specify a sheet name.
         delimiter: Specifies the delimiter character used between fields.
         sheet_name: If the files is an Excel spreadsheet, this parameter specifies a particular sheet.
@@ -49,23 +63,23 @@ def make_dataframe (file_name, subset_cols=[], exclude_cols=[], nrows=None, lowe
     ## load data from file
     if "tsv" == file_type.lower() or "csv" == file_type.lower():
         if None != file_archive:
-            df = pds.read_csv(file_archive.open(file_name), sep=delimiter, nrows=nrows, comment='#')
+            df = pds.read_csv(file_archive.open(file_name), sep=delimiter, nrows=nrows, comment=comment_str)
         else:
-            df = pds.read_csv(file_name, sep=delimiter, nrows=nrows, comment='#')
+            df = pds.read_csv(file_name, sep=delimiter, nrows=nrows, comment=comment_str)
     elif "excel" == file_type.lower():
         if None != file_archive:
-            df = pds.read_excel(file_archive.open(file_name), sheet_name=sheet_name, nrows=nrows)
+            df = pds.read_excel(file_archive.open(file_name), sheet_name=sheet_name, nrows=nrows, comment=comment_str)
         else:
-            df = pds.read_excel(file_name, sheet_name=sheet_name, nrows=nrows)
+            df = pds.read_excel(file_name, sheet_name=sheet_name, nrows=nrows, comment=comment_str)
     elif "multi-sheet-excel" == file_type.lower():
         if None != file_archive:
             df = pds.concat(
-                pds.read_excel(file_archive.open(file_name), sheet_name=None, ignore_index=True, nrows=nrows))
+                pds.read_excel(file_archive.open(file_name), sheet_name=None, ignore_index=True, nrows=nrows, comment=comment_str))
         else:
-            df = pds.concat(pds.read_excel(file_name, sheet_name=None, ignore_index=True, nrows=nrows))
+            df = pds.concat(pds.read_excel(file_name, sheet_name=None, ignore_index=True, nrows=nrows, comment=comment_str))
     
     ## clean column names
-    df = clean_dataframe_column_names(df, lowercase_col_names, replace_spaces)
+    df = clean_dataframe_column_names(df, lowercase_col_names, replace_spaces, replace_hash, strip_spaces)
     
     ## create subset of columns
     ## note: since column names are case sensitive, this needs to happen after cleaning column names
@@ -76,15 +90,18 @@ def make_dataframe (file_name, subset_cols=[], exclude_cols=[], nrows=None, lowe
     return df
 
 
-def clean_dataframe_column_names (df, lowercase_col_names=True, replace_spaces=True):
+def clean_dataframe_column_names (df, lowercase_col_names=True, replace_spaces=True, replace_hash=True, strip_spaces=True):
     """
     Changes the column names of a dataframe into a standard format. The default settings change the column names to:
       - lower case
-      - replaces spaces with underscores
+      - replace spaces with underscores
+      - replace hash ('#') with empty string
     Args:
         df: The dataframe whose columns will be cleaned.
         lowercase_col_names: If true, the column names are converted to lower case.
-        replace_spaces: If true, spaces in column names are replaced with spaces.
+        replace_spaces: If true, spaces in column names are replaced with underscores.
+        replace_hash: If true, hashes ('#') in column names are replaced with empty strings.
+        strip_spaces: If true, extra surrounding spaces are stripped from the column names.
     Returns:
       Pandas dataframe
     """
@@ -95,6 +112,12 @@ def clean_dataframe_column_names (df, lowercase_col_names=True, replace_spaces=T
     
     if replace_spaces:
         df.columns = [c.replace(" ", "_") for c in df.columns]
+    
+    if replace_hash:
+        df.columns = [c.replace("#", "") for c in df.columns]
+    
+    if strip_spaces:
+        df.columns = [c.strip() for c in df.columns]
     
     return df
 
@@ -114,7 +137,7 @@ def merge_dataframes (dataframes:list, data_source_names=[]):
         eavdf = data.melt(id_vars=['nmdc_record_id'], var_name='attribute')
         eavdf['nmdc_data_source'] = data_source_name
         # print(data_source_name, len(eavdf))
-
+            
         merged_df = merged_df.append(eavdf, ignore_index=True)
     
     return merged_df
@@ -295,7 +318,7 @@ def make_project_dataframe (project_table,
         return temp2_df
 
 
-def make_biosample_dataframe (biosample_table, project_biosample_table, project_table, result_cols=[]):
+def make_biosample_dataframe (biosample_table, soil_package_table, water_package_table, project_biosample_table, project_table, result_cols=[]):
     def make_collection_date_from_row(row):
         def _format_date_part_value(val):
             if pds.isnull(val): return ""
@@ -326,8 +349,12 @@ def make_biosample_dataframe (biosample_table, project_biosample_table, project_
     ## rename columns
     project_table_splice.rename(columns={'gold_id': 'project_gold_id'}, inplace=True)
     
+    ## lef join package tables to biosample table
+    temp0_df = pds.merge(biosample_table, soil_package_table, how='left', on='soil_package_id')
+    temp0_df = pds.merge(temp0_df, water_package_table, how='left', on='water_package_id')
+    
     ## inner join on project_biosample and project; i.e., biosamples must be linked to project
-    temp1_df = pds.merge(biosample_table, project_biosample_table_splice, how='inner', on='biosample_id')
+    temp1_df = pds.merge(temp0_df, project_biosample_table_splice, how='inner', on='biosample_id')
     temp2_df = pds.merge(temp1_df, project_table_splice, how='inner', on='project_id')
     
     ## add collection date and lat_lon columns
