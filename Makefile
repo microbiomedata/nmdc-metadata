@@ -14,7 +14,7 @@ env.lock:
 	cp /dev/null env.lock
 
 # TODO: nmdc-02
-schema_test_examples = nmdc-01 functional-annotation feature-set img_mg_annotation_data_objects img_mg_annotation_objects MAGs_activity read_based_analysis_activity
+schema_test_examples = nmdc-01 functional-annotation feature-set img_mg_annotation_data_objects img_mg_annotation_objects MAGs_activity read_based_analysis_activity metagenome_annotation_activity
 
 test_jsonschema: $(patsubst %, schema/test-%.valid, $(schema_test_examples))
 test: test_jsonschema pytest
