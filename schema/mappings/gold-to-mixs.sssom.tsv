@@ -1,13 +1,13 @@
-"#license: ""https://creativecommons.org/publicdomain/zero/1.0/"""									
-"#mapping_date: ""2020-06-36"""									
+#license: https://creativecommons.org/publicdomain/zero/1.0/
+#mapping_date: 2020-06-36
 #mapping_provider: https://microbiomedata.org/									
 #creator_label:									
 #  - Jagadish Sundaramurthi									
 #  - Bill Duncan									
 #curie_map:									
-"#  gold.vocab: ""https://microbiomedata/schema/ddl/"""									
-"#  mixs: ""https://microbiomedata/schema/mixs#"""									
-"#  skos: ""http://www.w3.org/2004/02/skos/core#"""									
+#  gold.vocab: ""https://microbiomedata/schema/ddl/"""									
+#  mixs: ""https://microbiomedata/schema/mixs#"""									
+#  skos: ""http://www.w3.org/2004/02/skos/core#"""									
 subject_id	subject_label	predicate_id	object_id	object_label	match_type	subject_source	object_source	confidence	comment
 gold.vocab:altitude	altitude	skos:exactMatch	mixs:alt	alt	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:salinity_concentration	salinity_concentration	skos:exactMatch	mixs:salinity	salinity	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
