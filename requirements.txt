@@ -10,8 +10,10 @@
 # `Pipfile.lock` and then regenerate `requirements*.txt`.
 ################################################################################
 
-biolinkml >= 1.6.0
+biolinkml
 click
+jupyter
 pipenv-to-requirements
+pymongo
 pyyaml
 requests
