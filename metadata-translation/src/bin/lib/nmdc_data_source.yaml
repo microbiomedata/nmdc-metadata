@@ -257,7 +257,6 @@ data_sources:
   ##  rename_slots:
   ##     defines fields that will be renamed as part of the data extraction process
   ##     this is often necessary for harmonizing data
-  ##     NOTE: This should be the last thing specified.
   
   study_table:
     id_key: study_id
@@ -301,6 +300,10 @@ data_sources:
     data_source:
       file_name: "../data/JGI-EMSL-FICUS-proposals.fnl.tsv"
       file_type: tsv
+    subset_cols:
+      - jgi_id
+      - gold_study
+      - doi
  
   project_table:
     id_key: project_id
