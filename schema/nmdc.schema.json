@@ -602,6 +602,13 @@
                },
                "type": "array"
             },
+            "metabolomics_analysis_activity_set": {
+               "description": "This property links a database object to the set of metabolomics analysis activities.",
+               "items": {
+                  "$ref": "#/definitions/MetabolomicsAnalysisActivity"
+               },
+               "type": "array"
+            },
             "omics_processing_set": {
                "description": "This property links a database object to the set of omics processings within it.",
                "items": {
@@ -2054,6 +2061,13 @@
          "description": "This property links a database object to the set of MAGs analysis activities.",
          "items": {
             "$ref": "#/definitions/MAGsAnalysisActivity"
+         },
+         "type": "array"
+      },
+      "metabolomics_analysis_activity_set": {
+         "description": "This property links a database object to the set of metabolomics analysis activities.",
+         "items": {
+            "$ref": "#/definitions/MetabolomicsAnalysisActivity"
          },
          "type": "array"
       },

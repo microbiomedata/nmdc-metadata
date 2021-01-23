@@ -77,6 +77,7 @@ classes:
       - data object set
       - activity set
       - mags activity set
+      - metabolomics analysis activity set
       - omics processing set
       - functional annotation set
       - genome feature set
@@ -613,7 +614,16 @@ slots:
     inlined: true
     description: >-
       This property links a database object to the set of MAGs analysis activities.
-  
+
+  metabolomics analysis activity set:
+    mixins: object set
+    domain: database
+    range: metabolomics analysis activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of metabolomics analysis activities.
+
   omics processing set:
     mixins: object set
     domain: database
