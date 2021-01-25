@@ -78,6 +78,7 @@ classes:
       - activity set
       - mags activity set
       - metabolomics analysis activity set
+      - nom analysis activity set
       - omics processing set
       - functional annotation set
       - genome feature set
@@ -217,6 +218,11 @@ classes:
     in_subset: 
       - workflow subset
 
+  #metatranscriptome annotation activity:
+  #  is_a: workflow execution activity
+  #  in_subset: 
+  #    - workflow subset
+
   MAGs analysis activity:
     is_a: workflow execution activity
     in_subset: 
@@ -271,7 +277,22 @@ classes:
       has peptide quantifications:
         range: peptide quantification
         multivalued: true
-      
+
+  nom analysis activity:
+    is_a: workflow execution activity
+    in_subset: 
+      - workflow subset
+    slot_usage:
+      used:
+        range: instrument
+        multivalued: false
+        description: >-
+          The instrument used to collect the data used in the analysis
+      has calibration:
+        range: string
+        description: >-
+            A reference to a file that holds calibration information.
+
   biosample:
     is_a: named thing
     in_subset: 
@@ -649,6 +670,15 @@ slots:
     inlined: true
     description: >-
       This property links a database object to the set of metabolomics analysis activities.
+
+  nom analysis activity set:
+    mixins: object set
+    domain: database
+    range: nom analysis activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of natural organic matter (NOM) analysis activities.
 
   omics processing set:
     mixins: object set

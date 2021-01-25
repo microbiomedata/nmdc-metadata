@@ -617,6 +617,13 @@
                },
                "type": "array"
             },
+            "nom_analysis_activity_set": {
+               "description": "This property links a database object to the set of natural organic matter (NOM) analysis activities.",
+               "items": {
+                  "$ref": "#/definitions/NomAnalysisActivity"
+               },
+               "type": "array"
+            },
             "omics_processing_set": {
                "description": "This property links a database object to the set of omics processings within it.",
                "items": {
@@ -1358,6 +1365,71 @@
          "title": "MetaproteomicsAnalysisActivity",
          "type": "object"
       },
+      "NomAnalysisActivity": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "ended_at_time": {
+               "type": "string"
+            },
+            "execution_resource": {
+               "description": "Example: NERSC-Cori",
+               "type": "string"
+            },
+            "git_url": {
+               "description": "Example: https://github.com/microbiomedata/mg_annotation/releases/tag/0.1",
+               "type": "string"
+            },
+            "has_calibration": {
+               "description": "A reference to a file that holds calibration information.",
+               "type": "string"
+            },
+            "has_input": {
+               "description": "An input to a process.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_output": {
+               "description": "An output biosample to a processing step",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human readable label for an entity",
+               "type": "string"
+            },
+            "started_at_time": {
+               "type": "string"
+            },
+            "type": {
+               "description": "An optional string that specified the type of object.",
+               "type": "string"
+            },
+            "used": {
+               "description": "The instrument used to collect the data used in the analysis",
+               "type": "string"
+            },
+            "was_associated_with": {
+               "$ref": "#/definitions/Agent"
+            },
+            "was_informed_by": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "NomAnalysisActivity",
+         "type": "object"
+      },
       "OmicsProcessing": {
          "additionalProperties": false,
          "description": "The methods and processes used to generate omics data from a biosample or organism.",
@@ -2084,6 +2156,13 @@
          "description": "This property links a database object to the set of metabolomics analysis activities.",
          "items": {
             "$ref": "#/definitions/MetabolomicsAnalysisActivity"
+         },
+         "type": "array"
+      },
+      "nom_analysis_activity_set": {
+         "description": "This property links a database object to the set of natural organic matter (NOM) analysis activities.",
+         "items": {
+            "$ref": "#/definitions/NomAnalysisActivity"
          },
          "type": "array"
       },
