@@ -77,6 +77,8 @@ classes:
       - data object set
       - activity set
       - mags activity set
+      - metabolomics analysis activity set
+      - nom analysis activity set
       - omics processing set
       - functional annotation set
       - genome feature set
@@ -100,7 +102,12 @@ classes:
         description: >-
           the activity that generated the file
         range: workflow execution activity
-        inlined: true
+        inlined: false # allow of strings of IDs
+      type:
+        description: >-
+            An optional string that specified the type of object.
+        required: false
+                
     id_prefixes:
       - GOLD
 
@@ -147,6 +154,11 @@ classes:
       gtdbtk species:
         required: false
         range: string
+    slot_usage:
+      type:
+        description: >-
+            An optional string that specified the type of object.
+        required: false
       
     
   workflow execution activity:
@@ -160,6 +172,12 @@ classes:
       - git url
       - has input
       - has output
+    slot_usage:
+      type:
+        description: >-
+            An optional string that specified the type of object.
+        required: false
+
 
   metagenome assembly:
     is_a: workflow execution activity
@@ -199,6 +217,11 @@ classes:
     is_a: workflow execution activity
     in_subset: 
       - workflow subset
+
+  #metatranscriptome annotation activity:
+  #  is_a: workflow execution activity
+  #  in_subset: 
+  #    - workflow subset
 
   MAGs analysis activity:
     is_a: workflow execution activity
@@ -254,7 +277,22 @@ classes:
       has peptide quantifications:
         range: peptide quantification
         multivalued: true
-      
+
+  nom analysis activity:
+    is_a: workflow execution activity
+    in_subset: 
+      - workflow subset
+    slot_usage:
+      used:
+        range: instrument
+        multivalued: false
+        description: >-
+          The instrument used to collect the data used in the analysis
+      has calibration:
+        range: string
+        description: >-
+            A reference to a file that holds calibration information.
+
   biosample:
     is_a: named thing
     in_subset: 
@@ -346,6 +384,11 @@ classes:
       alternate identifiers:
         description: >-
           The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
+          slot_usage:
+      type:
+        description: >-
+            An optional string that specified the type of object.
+        required: false
       lat_lon:
         required: true
         description: >-
@@ -448,6 +491,11 @@ classes:
         range: study
       has output:
         range: data object
+      type:
+        description: >-
+            An optional string that specified the type of object.
+        required: false
+
     broad_mappings:
       - OBI:0000070 ## assay: https://github.com/microbiomedata/nmdc-metadata/issues/171
 
@@ -613,7 +661,25 @@ slots:
     inlined: true
     description: >-
       This property links a database object to the set of MAGs analysis activities.
-  
+
+  metabolomics analysis activity set:
+    mixins: object set
+    domain: database
+    range: metabolomics analysis activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of metabolomics analysis activities.
+
+  nom analysis activity set:
+    mixins: object set
+    domain: database
+    range: nom analysis activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of natural organic matter (NOM) analysis activities.
+
   omics processing set:
     mixins: object set
     domain: database
