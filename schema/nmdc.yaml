@@ -102,6 +102,11 @@ classes:
           the activity that generated the file
         range: workflow execution activity
         inlined: false # allow of strings of IDs
+      type:
+        description: >-
+            An optional string that specified the type of object.
+        required: false
+                
     id_prefixes:
       - GOLD
 
@@ -148,6 +153,11 @@ classes:
       gtdbtk species:
         required: false
         range: string
+    slot_usage:
+      type:
+        description: >-
+            An optional string that specified the type of object.
+        required: false
       
     
   workflow execution activity:
@@ -161,6 +171,12 @@ classes:
       - git url
       - has input
       - has output
+    slot_usage:
+      type:
+        description: >-
+            An optional string that specified the type of object.
+        required: false
+
 
   metagenome assembly:
     is_a: workflow execution activity
@@ -347,6 +363,11 @@ classes:
       alternate identifiers:
         description: >-
           The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
+          slot_usage:
+      type:
+        description: >-
+            An optional string that specified the type of object.
+        required: false
       lat_lon:
         required: true
         description: >-
@@ -449,6 +470,11 @@ classes:
         range: study
       has output:
         range: data object
+      type:
+        description: >-
+            An optional string that specified the type of object.
+        required: false
+
     broad_mappings:
       - OBI:0000070 ## assay: https://github.com/microbiomedata/nmdc-metadata/issues/171
 
