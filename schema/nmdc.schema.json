@@ -546,8 +546,8 @@
                "type": "string"
             },
             "was_generated_by": {
-               "$ref": "#/definitions/WorkflowExecutionActivity",
-               "description": "the activity that generated the file"
+               "description": "the activity that generated the file",
+               "type": "string"
             }
          },
          "required": [

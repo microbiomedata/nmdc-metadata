@@ -101,7 +101,7 @@ classes:
         description: >-
           the activity that generated the file
         range: workflow execution activity
-        inlined: true
+        inlined: false # allow of strings of IDs
     id_prefixes:
       - GOLD
 
