@@ -62,7 +62,7 @@ Note: nmdc.schema.json describes each model object, its required attributes and 
 
 You can also use the jsonschema library to validate directly from within your python.
 
-# What to do if your JSON does not validate
+## What to do if your JSON does not validate
 
 There are 3 possibilities:
 
@@ -78,7 +78,7 @@ For 2, this is upon you to fix this, however debugging can be aided in pulling o
 Another common issue is that you might have incorrect syntax for grouping many instances of a JSON object into an array.  Using a small subsample of your data and an online linter as above, can aide in debugging this.
 Sometimes the validation can complain about invalid syntax if the attribute of an instance object disagrees with the schema's typing (ie: you have an integer where a string is expected).
 
-# NMDC Producer SOP
+## NMDC Producer SOP
 
 It is expected that different providers of JSON within the NMDC take
 responsibility for validating their JSON. Aim1 can help with any
