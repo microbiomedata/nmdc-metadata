@@ -6,9 +6,12 @@ description: >-
   Schema for National Microbiome Data Collaborative (NMDC).
   This schem is organized into 3 separate modules:
     
-  * a set of core types for representing data values
-  * the mixs schema (auto-translated from mixs excel)
-  * the NMDC schema itself
+  This schema is organized into distinct modules:
+    
+   * a set of core types for representing data values
+   * the mixs schema (auto-translated from mixs excel)
+   * annotation schema
+   * the NMDC schema itself
   
 license: https://creativecommons.org/publicdomain/zero/1.0/
 version: 0.1.1
