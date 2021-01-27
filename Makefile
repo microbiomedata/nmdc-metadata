@@ -103,7 +103,9 @@ jekyll-docs: schema/nmdc.yaml env.lock
 	pipenv run python scripts/jekyllmarkdowngen.py --yaml $< --dir docs
 
 schema/nmdc_schema_uml.png: schema/nmdc.yaml
-	pipenv run python schema/generate_uml.py $< $@
+#	pipenv run python schema/generate_uml.py $< $@
+# temporary hack to address issue of generate_uml.py not finding the correct directory
+	cd schema/ &&	pipenv run python generate_uml.py $(notdir $<) $(notdir $@) && cd ..
 
 # -- Mappings --
 
