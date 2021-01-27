@@ -57,7 +57,7 @@
             }
         }
     ],
-    "activity set": [
+    "activity_set": [
         {
             "id": "uuid:d392fcba605d12d5f9b3b31f6d0c620b6a89cdcc",
             "started_at_time": "2020-01-01",
