@@ -1,5 +1,5 @@
 {
-  "feature_set": [
+  "genome_feature_set": [
     {
       "id": "NMDC:Ga0185794_01_2_217",
       "type": "NMDC:GeneProduct"
