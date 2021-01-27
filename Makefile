@@ -60,6 +60,10 @@ schema/%.py: schema/%.yaml env.lock
 schema/nmdc.schema.json: schema/nmdc.yaml env.lock
 	pipenv run gen-json-schema -t database $<  > $@.tmp && jsonschema $@.tmp && mv $@.tmp $@
 
+# This is temporary fix to apply additionalProperties: false gloabally
+# see: https://github.com/biolink/biolinkml/issues/349
+	jq '. += {"additionalProperties": false}' $@ > $@.tmp && mv $@.tmp $@
+
 schema/kbase.schema.json: schema/kbase.yaml env.lock
 	pipenv run gen-json-schema -t SESAR $<  > $@.tmp && jsonschema $@.tmp && mv $@.tmp $@
 
