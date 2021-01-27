@@ -105,7 +105,7 @@ classes:
         description: >-
           the activity that generated the file
         range: workflow execution activity
-        inlined: false # allow of strings of IDs
+        inlined: false # allow for strings of IDs
       type:
         description: >-
             An optional string that specified the type of object.
@@ -180,6 +180,12 @@ classes:
         description: >-
             An optional string that specified the type of object.
         required: false
+      was associated with:
+        required: false
+        description: >-
+          the agent/entity associated with the generation of the file
+        range: workflow execution activity
+        inlined: false # allow for strings of IDs
 
 
   metagenome assembly:

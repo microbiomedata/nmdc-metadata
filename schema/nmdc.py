@@ -1,11 +1,12 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-01-25 18:11
+# Generation date: 2021-01-27 12:55
 # Schema: NMDC
 #
 # id: https://microbiomedata/schema
 # description: Schema for National Microbiome Data Collaborative (NMDC). This schem is organized into 3 separate
-#              modules: * a set of core types for representing data values * the mixs schema (auto-translated from
-#              mixs excel) * the NMDC schema itself
+#              modules: This schema is organized into distinct modules: * a set of core types for representing
+#              data values * the mixs schema (auto-translated from mixs excel) * annotation schema * the NMDC
+#              schema itself
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
 import dataclasses

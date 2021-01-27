@@ -974,7 +974,8 @@
                "type": "string"
             },
             "was_associated_with": {
-               "$ref": "#/definitions/Agent"
+               "description": "the agent/entity associated with the generation of the file",
+               "type": "string"
             },
             "was_informed_by": {
                "type": "string"
@@ -1058,7 +1059,8 @@
                "type": "string"
             },
             "was_associated_with": {
-               "$ref": "#/definitions/Agent"
+               "description": "the agent/entity associated with the generation of the file",
+               "type": "string"
             },
             "was_informed_by": {
                "type": "string"
@@ -1118,7 +1120,8 @@
                "type": "string"
             },
             "was_associated_with": {
-               "$ref": "#/definitions/Agent"
+               "description": "the agent/entity associated with the generation of the file",
+               "type": "string"
             },
             "was_informed_by": {
                "type": "string"
@@ -1286,7 +1289,8 @@
                "type": "string"
             },
             "was_associated_with": {
-               "$ref": "#/definitions/Agent"
+               "description": "the agent/entity associated with the generation of the file",
+               "type": "string"
             },
             "was_informed_by": {
                "type": "string"
@@ -1353,7 +1357,8 @@
                "type": "string"
             },
             "was_associated_with": {
-               "$ref": "#/definitions/Agent"
+               "description": "the agent/entity associated with the generation of the file",
+               "type": "string"
             },
             "was_informed_by": {
                "type": "string"
@@ -1418,7 +1423,8 @@
                "type": "string"
             },
             "was_associated_with": {
-               "$ref": "#/definitions/Agent"
+               "description": "the agent/entity associated with the generation of the file",
+               "type": "string"
             },
             "was_informed_by": {
                "type": "string"
@@ -1851,7 +1857,8 @@
                "type": "string"
             },
             "was_associated_with": {
-               "$ref": "#/definitions/Agent"
+               "description": "the agent/entity associated with the generation of the file",
+               "type": "string"
             },
             "was_informed_by": {
                "type": "string"
@@ -1927,7 +1934,8 @@
                "type": "string"
             },
             "was_associated_with": {
-               "$ref": "#/definitions/Agent"
+               "description": "the agent/entity associated with the generation of the file",
+               "type": "string"
             },
             "was_informed_by": {
                "type": "string"
@@ -2096,7 +2104,8 @@
                "type": "string"
             },
             "was_associated_with": {
-               "$ref": "#/definitions/Agent"
+               "description": "the agent/entity associated with the generation of the file",
+               "type": "string"
             },
             "was_informed_by": {
                "type": "string"
