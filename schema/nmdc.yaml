@@ -272,7 +272,10 @@ classes:
       has metabolite quantifications:
         range: metabolite quantification
         multivalued: true
-      
+      has calibration:
+        description: >-
+          TODO: Yuri to fill in
+    
   metaproteomics analysis activity:
     is_a: workflow execution activity
     in_subset: 
@@ -533,8 +536,8 @@ classes:
         multivalued: true
         description: >-
           TODO
-        range: string
 
+          
   peptide quantification:
     description: >-
       This is used to link a metaproteomics analysis workflow to a specific peptide sequence and related information

@@ -1026,6 +1026,10 @@
                "description": "Example: https://github.com/microbiomedata/mg_annotation/releases/tag/0.1",
                "type": "string"
             },
+            "has_calibration": {
+               "description": "TODO: Yuri to fill in",
+               "type": "string"
+            },
             "has_input": {
                "description": "An input to a process.",
                "items": {
