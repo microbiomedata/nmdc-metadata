@@ -529,6 +529,11 @@ classes:
         description: >-
           TODO: Yuri to fill in
         range: float
+      alternate_identifiers:
+        multivalued: true
+        description: >-
+          TODO
+        range: string
 
   peptide quantification:
     description: >-

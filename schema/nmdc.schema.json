@@ -991,6 +991,13 @@
          "additionalProperties": false,
          "description": "This is used to link a metabolomics analysis workflow to a specific metabolite",
          "properties": {
+            "alternate_identifiers": {
+               "description": "TODO",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "highest_similarity_score": {
                "description": "TODO: Yuri to fill in",
                "type": "number"
