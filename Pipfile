@@ -10,6 +10,14 @@ requests = "*"
 click = "*"
 pipenv-to-requirements = "*"
 jupyter = "*"
+<<<<<<< Updated upstream
+=======
+pymongo = "*"
+pytoolz = "*"
+mongospawn = "*"
+toolz = "*"
+tqdm = "*"
+>>>>>>> Stashed changes
 
 [dev-packages]
 jupyter = "*"
