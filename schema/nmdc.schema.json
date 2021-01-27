@@ -617,6 +617,13 @@
           },
           "type": "array"
         },
+        "metaproteomics_analysis_activity_set": {
+          "description": "This property links a database object to the set of metaproteomics analysis activities.\n  ",
+          "items": {
+            "$ref": "#/definitions/MetaproteomicsAnalysisActivity"
+          },
+          "type": "array"
+        },
         "nom_analysis_activity_set": {
           "description": "This property links a database object to the set of natural organic matter (NOM) analysis activities.",
           "items": {
@@ -2180,6 +2187,13 @@
       "description": "This property links a database object to the set of metabolomics analysis activities.",
       "items": {
         "$ref": "#/definitions/MetabolomicsAnalysisActivity"
+      },
+      "type": "array"
+    },
+    "metaproteomics_analysis_activity_set": {
+      "description": "This property links a database object to the set of metaproteomics analysis activities.\n  ",
+      "items": {
+        "$ref": "#/definitions/MetaproteomicsAnalysisActivity"
       },
       "type": "array"
     },

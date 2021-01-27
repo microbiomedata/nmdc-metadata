@@ -81,6 +81,7 @@ classes:
       - activity set
       - mags activity set
       - metabolomics analysis activity set
+      - metaproteomics analysis activity set
       - nom analysis activity set
       - omics processing set
       - functional annotation set
@@ -688,6 +689,15 @@ slots:
     description: >-
       This property links a database object to the set of metabolomics analysis activities.
 
+  metaproteomics analysis activity set:
+    mixins: object set
+    domain: database
+    range: metaproteomics analysis activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of metaproteomics analysis activities.
+        
   nom analysis activity set:
     mixins: object set
     domain: database

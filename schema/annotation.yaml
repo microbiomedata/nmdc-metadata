@@ -27,10 +27,6 @@ classes:
     see_also:
       - https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md
     slot_usage:
-      id:
-        description: The ID of the object. This may not necessarily be present.
-        range: string ## make this an object
-        required: false        
       seqid:
         description: The ID of the landmark used to establish the coordinate system for the current feature.
         range: string ## make this an object
