@@ -72,6 +72,9 @@ classes:
           Typically this is used for a CDS feature or gene feature which will encode a protein.
           It can also be used by a nc transcript ot gene feature that encoded a ncRNA
         required: false
+      feature type:
+        description: >-
+            TODO: Yuri to write
   
   functional annotation term:
     aliases:
