@@ -26,6 +26,7 @@ prefixes:
   biolinkml: https://w3id.org/biolink/biolinkml/
   OBI: http://purl.obolibrary.org/obo/OBI_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
+  igsn: https://app.geosamples.org/sample/igsn/
   
 default_prefix: nmdc
 default_range: string
