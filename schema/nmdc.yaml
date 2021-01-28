@@ -83,6 +83,7 @@ classes:
       - mags activity set
       - metabolomics analysis activity set
       - metaproteomics analysis activity set
+      - read QC analysis activity set
       - nom analysis activity set
       - omics processing set
       - functional annotation set
@@ -698,6 +699,15 @@ slots:
     inlined: true
     description: >-
       This property links a database object to the set of metaproteomics analysis activities.
+
+  read QC analysis activity set:
+    mixins: object set
+    domain: database
+    range: read QC analysis activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of read QC analysis activities.
         
   nom analysis activity set:
     mixins: object set
