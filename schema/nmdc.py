@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-01-27 18:45
+# Generation date: 2021-01-27 19:10
 # Schema: NMDC
 #
 # id: https://microbiomedata/schema
@@ -953,7 +953,7 @@ class Study(NamedThing):
     ecosystem_type: Optional[Union[dict, "AttributeValue"]] = None
     ecosystem_subtype: Optional[Union[dict, "AttributeValue"]] = None
     specific_ecosystem: Optional[Union[dict, "AttributeValue"]] = None
-    principal_investigator: Optional[Union[dict, "PersonValue"]] = None
+    principal_investigator_name: Optional[Union[dict, "PersonValue"]] = None
     doi: Optional[Union[dict, "AttributeValue"]] = None
     name: Optional[str] = None
     alternate_identifiers: Optional[Union[str, List[str]]] = empty_list()
@@ -979,8 +979,8 @@ class Study(NamedThing):
         if self.specific_ecosystem is not None and not isinstance(self.specific_ecosystem, AttributeValue):
             self.specific_ecosystem = AttributeValue(**self.specific_ecosystem)
 
-        if self.principal_investigator is not None and not isinstance(self.principal_investigator, PersonValue):
-            self.principal_investigator = PersonValue(**self.principal_investigator)
+        if self.principal_investigator_name is not None and not isinstance(self.principal_investigator_name, PersonValue):
+            self.principal_investigator_name = PersonValue(**self.principal_investigator_name)
 
         if self.doi is not None and not isinstance(self.doi, AttributeValue):
             self.doi = AttributeValue(**self.doi)
@@ -2389,8 +2389,8 @@ slots.ecosystem_subtype = Slot(uri=NMDC.ecosystem_subtype, name="ecosystem_subty
 slots.specific_ecosystem = Slot(uri=NMDC.specific_ecosystem, name="specific_ecosystem", curie=NMDC.curie('specific_ecosystem'),
                    model_uri=NMDC.specific_ecosystem, domain=None, range=Optional[Union[dict, AttributeValue]])
 
-slots.principal_investigator = Slot(uri=NMDC.principal_investigator, name="principal investigator", curie=NMDC.curie('principal_investigator'),
-                   model_uri=NMDC.principal_investigator, domain=None, range=Optional[Union[dict, PersonValue]])
+slots.principal_investigator_name = Slot(uri=NMDC.principal_investigator_name, name="principal investigator name", curie=NMDC.curie('principal_investigator_name'),
+                   model_uri=NMDC.principal_investigator_name, domain=None, range=Optional[Union[dict, PersonValue]])
 
 slots.doi = Slot(uri=NMDC.doi, name="doi", curie=NMDC.curie('doi'),
                    model_uri=NMDC.doi, domain=None, range=Optional[Union[dict, AttributeValue]])

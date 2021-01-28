@@ -443,7 +443,7 @@ classes:
       - ecosystem_type
       - ecosystem_subtype
       - specific_ecosystem
-      - principal investigator
+      - principal investigator name
       - doi
     todos:
       - determine how to get data values for submitted_to_insdc, investigation_type, experimental_factor
@@ -1051,7 +1051,7 @@ slots:
 
 ## GOLD DATABASE SPECFIC FIELDS
 
-  principal investigator:
+  principal investigator name:
     aliases:
       - PI
       - principal investigator
