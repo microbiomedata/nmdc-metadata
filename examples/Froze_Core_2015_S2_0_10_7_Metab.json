@@ -1,13 +1,13 @@
 {
-	"metabolomics_analysis_activity": [
+	"metabolomics_analysis_activity_set": [
 	 {
 		 "id": "nmdc:6fdeaf901c4c4c8fa19ec94696a2d03a",
 		 "ended_at_time": "2021-01-07 23:54:31",
 		 "execution_resource": "EMSL-RZR",
 		 "git_url": "https://github.com/microbiomedata/metaMS",
-		 "has_input": "emsl:output_499575",
+		 "has_input": ["emsl:output_499575"],
 		 "has_calibration": "emsl:output_499433",
-		 "has_output": "nmdc:eadcd3b883c0da0f9d42a9fb1162ffcf",
+		 "has_output": ["nmdc:eadcd3b883c0da0f9d42a9fb1162ffcf"],
 		 "started_at_time": "2021-01-07 23:54:31",
 		 "used": "Agilent_GC_MS",
 		 "was_informed_by": "emsl:499575",

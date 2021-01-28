@@ -26,6 +26,7 @@ prefixes:
   biolinkml: https://w3id.org/biolink/biolinkml/
   OBI: http://purl.obolibrary.org/obo/OBI_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
+  igsn: https://app.geosamples.org/sample/igsn/
   
 default_prefix: nmdc
 default_range: string
@@ -81,6 +82,7 @@ classes:
       - activity set
       - mags activity set
       - metabolomics analysis activity set
+      - metaproteomics analysis activity set
       - nom analysis activity set
       - omics processing set
       - functional annotation set
@@ -105,7 +107,7 @@ classes:
         description: >-
           the activity that generated the file
         range: workflow execution activity
-        inlined: false # allow of strings of IDs
+        inlined: false # allow for strings of IDs
       type:
         description: >-
             An optional string that specified the type of object.
@@ -180,6 +182,12 @@ classes:
         description: >-
             An optional string that specified the type of object.
         required: false
+      was associated with:
+        required: false
+        description: >-
+          the agent/entity associated with the generation of the file
+        range: workflow execution activity
+        inlined: false # allow for strings of IDs
 
 
   metagenome assembly:
@@ -266,7 +274,10 @@ classes:
       has metabolite quantifications:
         range: metabolite quantification
         multivalued: true
-      
+      has calibration:
+        description: >-
+          TODO: Yuri to fill in
+    
   metaproteomics analysis activity:
     is_a: workflow execution activity
     in_subset: 
@@ -433,7 +444,7 @@ classes:
       - ecosystem_type
       - ecosystem_subtype
       - specific_ecosystem
-      - principal investigator
+      - principal investigator name
       - doi
     todos:
       - determine how to get data values for submitted_to_insdc, investigation_type, experimental_factor
@@ -523,7 +534,12 @@ classes:
         description: >-
           TODO: Yuri to fill in
         range: float
+      alternate_identifiers:
+        multivalued: true
+        description: >-
+          TODO
 
+          
   peptide quantification:
     description: >-
       This is used to link a metaproteomics analysis workflow to a specific peptide sequence and related information
@@ -674,6 +690,15 @@ slots:
     description: >-
       This property links a database object to the set of metabolomics analysis activities.
 
+  metaproteomics analysis activity set:
+    mixins: object set
+    domain: database
+    range: metaproteomics analysis activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of metaproteomics analysis activities.
+        
   nom analysis activity set:
     mixins: object set
     domain: database
@@ -1027,7 +1052,7 @@ slots:
 
 ## GOLD DATABASE SPECFIC FIELDS
 
-  principal investigator:
+  principal investigator name:
     aliases:
       - PI
       - principal investigator
