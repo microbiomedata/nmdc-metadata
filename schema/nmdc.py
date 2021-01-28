@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-01-27 18:45
+# Generation date: 2021-01-28 10:07
 # Schema: NMDC
 #
 # id: https://microbiomedata/schema
@@ -67,6 +67,7 @@ UNIPROTKB = CurieNamespace('UniProtKB', 'http://example.org/UNKNOWN/UniProtKB/')
 BIOLINKML = CurieNamespace('biolinkml', 'https://w3id.org/biolink/biolinkml/')
 DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
 GTPO = CurieNamespace('gtpo', 'http://example.org/UNKNOWN/gtpo/')
+IGSN = CurieNamespace('igsn', 'https://app.geosamples.org/sample/igsn/')
 MIXS = CurieNamespace('mixs', 'https://w3id.org/gensc/')
 NMDC = CurieNamespace('nmdc', 'https://microbiomedata/meta/')
 PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
