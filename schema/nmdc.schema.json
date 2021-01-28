@@ -618,7 +618,7 @@
           "type": "array"
         },
         "metaproteomics_analysis_activity_set": {
-          "description": "This property links a database object to the set of metaproteomics analysis activities.\n  ",
+          "description": "This property links a database object to the set of metaproteomics analysis activities.",
           "items": {
             "$ref": "#/definitions/MetaproteomicsAnalysisActivity"
           },
@@ -635,6 +635,13 @@
           "description": "This property links a database object to the set of omics processings within it.",
           "items": {
             "$ref": "#/definitions/OmicsProcessing"
+          },
+          "type": "array"
+        },
+        "read_QC_analysis_activity_set": {
+          "description": "This property links a database object to the set of read QC analysis activities.\n  ",
+          "items": {
+            "$ref": "#/definitions/ReadQCAnalysisActivity"
           },
           "type": "array"
         },
@@ -2191,7 +2198,7 @@
       "type": "array"
     },
     "metaproteomics_analysis_activity_set": {
-      "description": "This property links a database object to the set of metaproteomics analysis activities.\n  ",
+      "description": "This property links a database object to the set of metaproteomics analysis activities.",
       "items": {
         "$ref": "#/definitions/MetaproteomicsAnalysisActivity"
       },
@@ -2208,6 +2215,13 @@
       "description": "This property links a database object to the set of omics processings within it.",
       "items": {
         "$ref": "#/definitions/OmicsProcessing"
+      },
+      "type": "array"
+    },
+    "read_QC_analysis_activity_set": {
+      "description": "This property links a database object to the set of read QC analysis activities.\n  ",
+      "items": {
+        "$ref": "#/definitions/ReadQCAnalysisActivity"
       },
       "type": "array"
     },
