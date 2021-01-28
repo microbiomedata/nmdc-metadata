@@ -2011,7 +2011,7 @@
           "description": "A human readable name or description of the study.",
           "type": "string"
         },
-        "principal_investigator": {
+        "principal_investigator_name": {
           "$ref": "#/definitions/PersonValue",
           "description": "represents the PI"
         },
