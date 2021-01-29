@@ -618,9 +618,16 @@
           "type": "array"
         },
         "metagenome_annotation_activity_set": {
-          "description": "This property links a database object to the set of metaproteomics analysis activities.\n  ",
+          "description": "This property links a database object to the set of metaproteomics analysis activities.",
           "items": {
             "$ref": "#/definitions/MetagenomeAnnotationActivity"
+          },
+          "type": "array"
+        },
+        "metagenome_assembly_set": {
+          "description": "This property links a database object to the set of metaproteomics analysis activities.\n  ",
+          "items": {
+            "$ref": "#/definitions/MetagenomeAssembly"
           },
           "type": "array"
         },
@@ -2220,9 +2227,16 @@
       "type": "array"
     },
     "metagenome_annotation_activity_set": {
-      "description": "This property links a database object to the set of metaproteomics analysis activities.\n  ",
+      "description": "This property links a database object to the set of metaproteomics analysis activities.",
       "items": {
         "$ref": "#/definitions/MetagenomeAnnotationActivity"
+      },
+      "type": "array"
+    },
+    "metagenome_assembly_set": {
+      "description": "This property links a database object to the set of metaproteomics analysis activities.\n  ",
+      "items": {
+        "$ref": "#/definitions/MetagenomeAssembly"
       },
       "type": "array"
     },
