@@ -1510,6 +1510,14 @@
           },
           "type": "array"
         },
+        "principal_investigator_name": {
+          "$ref": "#/definitions/PersonValue",
+          "description": "An optional values that specifies the PI's name. This might be needed in cases where the study cannot be identified."
+        },
+        "processing_institution": {
+          "description": "The organization that processed the sample.",
+          "type": "string"
+        },
         "type": {
           "description": "An optional string that specified the type of object.",
           "type": "string"
