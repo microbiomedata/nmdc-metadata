@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-01-28 11:40
+# Generation date: 2021-01-29 12:04
 # Schema: NMDC
 #
 # id: https://microbiomedata/schema
@@ -1055,6 +1055,8 @@ class OmicsProcessing(BiosampleProcessing):
     name: Optional[str] = None
     alternate_identifiers: Optional[Union[str, List[str]]] = empty_list()
     type: Optional[str] = None
+    principal_investigator_name: Optional[Union[dict, "PersonValue"]] = None
+    processing_institution: Optional[str] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -1088,6 +1090,12 @@ class OmicsProcessing(BiosampleProcessing):
 
         if self.type is not None and not isinstance(self.type, str):
             self.type = str(self.type)
+
+        if self.principal_investigator_name is not None and not isinstance(self.principal_investigator_name, PersonValue):
+            self.principal_investigator_name = PersonValue(**self.principal_investigator_name)
+
+        if self.processing_institution is not None and not isinstance(self.processing_institution, str):
+            self.processing_institution = str(self.processing_institution)
 
         super().__post_init__(**kwargs)
 
@@ -4956,6 +4964,12 @@ slots.omics_processing_has_output = Slot(uri=NMDC.has_output, name="omics proces
 
 slots.omics_processing_type = Slot(uri=NMDC.type, name="omics processing_type", curie=NMDC.curie('type'),
                    model_uri=NMDC.omics_processing_type, domain=OmicsProcessing, range=Optional[str])
+
+slots.omics_processing_principal_investigator_name = Slot(uri=NMDC.principal_investigator_name, name="omics processing_principal investigator name", curie=NMDC.curie('principal_investigator_name'),
+                   model_uri=NMDC.omics_processing_principal_investigator_name, domain=OmicsProcessing, range=Optional[Union[dict, "PersonValue"]])
+
+slots.omics_processing_processing_institution = Slot(uri=NMDC.processing_institution, name="omics processing_processing_institution", curie=NMDC.curie('processing_institution'),
+                   model_uri=NMDC.omics_processing_processing_institution, domain=OmicsProcessing, range=Optional[str])
 
 slots.metabolite_quantification_metabolite_quantified = Slot(uri=NMDC.metabolite_quantified, name="metabolite quantification_metabolite quantified", curie=NMDC.curie('metabolite_quantified'),
                    model_uri=NMDC.metabolite_quantification_metabolite_quantified, domain=MetaboliteQuantification, range=Optional[Union[str, ChemicalEntityId]])
