@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-01-29 15:33
+# Generation date: 2021-01-29 15:56
 # Schema: NMDC
 #
 # id: https://microbiomedata/schema
@@ -240,6 +240,7 @@ class Database(YAMLRoot):
     metabolomics_analysis_activity_set: Optional[Union[Dict[Union[str, MetabolomicsAnalysisActivityId], Union[dict, "MetabolomicsAnalysisActivity"]], List[Union[dict, "MetabolomicsAnalysisActivity"]]]] = empty_dict()
     metaproteomics_analysis_activity_set: Optional[Union[Dict[Union[str, MetaproteomicsAnalysisActivityId], Union[dict, "MetaproteomicsAnalysisActivity"]], List[Union[dict, "MetaproteomicsAnalysisActivity"]]]] = empty_dict()
     metagenome_annotation_activity_set: Optional[Union[Dict[Union[str, MetagenomeAnnotationActivityId], Union[dict, "MetagenomeAnnotationActivity"]], List[Union[dict, "MetagenomeAnnotationActivity"]]]] = empty_dict()
+    metagenome_assembly_set: Optional[Union[Dict[Union[str, MetagenomeAssemblyId], Union[dict, "MetagenomeAssembly"]], List[Union[dict, "MetagenomeAssembly"]]]] = empty_dict()
     read_QC_analysis_activity_set: Optional[Union[Dict[Union[str, ReadQCAnalysisActivityId], Union[dict, "ReadQCAnalysisActivity"]], List[Union[dict, "ReadQCAnalysisActivity"]]]] = empty_dict()
     read_based_analysis_activity_set: Optional[Union[Dict[Union[str, ReadBasedAnalysisActivityId], Union[dict, "ReadBasedAnalysisActivity"]], List[Union[dict, "ReadBasedAnalysisActivity"]]]] = empty_dict()
     nom_analysis_activity_set: Optional[Union[Dict[Union[str, NomAnalysisActivityId], Union[dict, "NomAnalysisActivity"]], List[Union[dict, "NomAnalysisActivity"]]]] = empty_dict()
@@ -295,6 +296,12 @@ class Database(YAMLRoot):
         if not isinstance(self.metagenome_annotation_activity_set, (list, dict)):
             self.metagenome_annotation_activity_set = [self.metagenome_annotation_activity_set]
         self._normalize_inlined_slot(slot_name="metagenome_annotation_activity_set", slot_type=MetagenomeAnnotationActivity, key_name="id", inlined_as_list=None, keyed=True)
+
+        if self.metagenome_assembly_set is None:
+            self.metagenome_assembly_set = []
+        if not isinstance(self.metagenome_assembly_set, (list, dict)):
+            self.metagenome_assembly_set = [self.metagenome_assembly_set]
+        self._normalize_inlined_slot(slot_name="metagenome_assembly_set", slot_type=MetagenomeAssembly, key_name="id", inlined_as_list=None, keyed=True)
 
         if self.read_QC_analysis_activity_set is None:
             self.read_QC_analysis_activity_set = []
@@ -2244,6 +2251,9 @@ slots.metaproteomics_analysis_activity_set = Slot(uri=NMDC.metaproteomics_analys
 
 slots.metagenome_annotation_activity_set = Slot(uri=NMDC.metagenome_annotation_activity_set, name="metagenome annotation activity set", curie=NMDC.curie('metagenome_annotation_activity_set'),
                    model_uri=NMDC.metagenome_annotation_activity_set, domain=Database, range=Optional[Union[Dict[Union[str, MetagenomeAnnotationActivityId], Union[dict, "MetagenomeAnnotationActivity"]], List[Union[dict, "MetagenomeAnnotationActivity"]]]])
+
+slots.metagenome_assembly_set = Slot(uri=NMDC.metagenome_assembly_set, name="metagenome assembly set", curie=NMDC.curie('metagenome_assembly_set'),
+                   model_uri=NMDC.metagenome_assembly_set, domain=Database, range=Optional[Union[Dict[Union[str, MetagenomeAssemblyId], Union[dict, "MetagenomeAssembly"]], List[Union[dict, "MetagenomeAssembly"]]]])
 
 slots.read_QC_analysis_activity_set = Slot(uri=NMDC.read_QC_analysis_activity_set, name="read QC analysis activity set", curie=NMDC.curie('read_QC_analysis_activity_set'),
                    model_uri=NMDC.read_QC_analysis_activity_set, domain=Database, range=Optional[Union[Dict[Union[str, ReadQCAnalysisActivityId], Union[dict, "ReadQCAnalysisActivity"]], List[Union[dict, "ReadQCAnalysisActivity"]]]])
