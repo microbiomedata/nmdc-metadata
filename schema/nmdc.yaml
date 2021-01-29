@@ -510,6 +510,15 @@ classes:
         description: >-
             An optional string that specified the type of object.
         required: false
+      principal investigator name:
+        description: >-
+            An optional values that specifies the PI's name.
+            This might be needed in cases where the study cannot be identified.
+        required: false
+      processing_institution:
+        description: >-
+            The organization that processed the sample.
+        required: false              
 
     broad_mappings:
       - OBI:0000070 ## assay: https://github.com/microbiomedata/nmdc-metadata/issues/171
