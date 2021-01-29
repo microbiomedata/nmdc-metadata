@@ -639,9 +639,16 @@
           "type": "array"
         },
         "read_QC_analysis_activity_set": {
-          "description": "This property links a database object to the set of read QC analysis activities.\n  ",
+          "description": "This property links a database object to the set of read QC analysis activities.",
           "items": {
             "$ref": "#/definitions/ReadQCAnalysisActivity"
+          },
+          "type": "array"
+        },
+        "read_based_analysis_activity_set": {
+          "description": "This property links a database object to the set of read based analysis activities.\n  ",
+          "items": {
+            "$ref": "#/definitions/ReadBasedAnalysisActivity"
           },
           "type": "array"
         },
@@ -2227,9 +2234,16 @@
       "type": "array"
     },
     "read_QC_analysis_activity_set": {
-      "description": "This property links a database object to the set of read QC analysis activities.\n  ",
+      "description": "This property links a database object to the set of read QC analysis activities.",
       "items": {
         "$ref": "#/definitions/ReadQCAnalysisActivity"
+      },
+      "type": "array"
+    },
+    "read_based_analysis_activity_set": {
+      "description": "This property links a database object to the set of read based analysis activities.\n  ",
+      "items": {
+        "$ref": "#/definitions/ReadBasedAnalysisActivity"
       },
       "type": "array"
     },

@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-01-29 12:04
+# Generation date: 2021-01-29 12:51
 # Schema: NMDC
 #
 # id: https://microbiomedata/schema
@@ -240,6 +240,7 @@ class Database(YAMLRoot):
     metabolomics_analysis_activity_set: Optional[Union[Dict[Union[str, MetabolomicsAnalysisActivityId], Union[dict, "MetabolomicsAnalysisActivity"]], List[Union[dict, "MetabolomicsAnalysisActivity"]]]] = empty_dict()
     metaproteomics_analysis_activity_set: Optional[Union[Dict[Union[str, MetaproteomicsAnalysisActivityId], Union[dict, "MetaproteomicsAnalysisActivity"]], List[Union[dict, "MetaproteomicsAnalysisActivity"]]]] = empty_dict()
     read_QC_analysis_activity_set: Optional[Union[Dict[Union[str, ReadQCAnalysisActivityId], Union[dict, "ReadQCAnalysisActivity"]], List[Union[dict, "ReadQCAnalysisActivity"]]]] = empty_dict()
+    read_based_analysis_activity_set: Optional[Union[Dict[Union[str, ReadBasedAnalysisActivityId], Union[dict, "ReadBasedAnalysisActivity"]], List[Union[dict, "ReadBasedAnalysisActivity"]]]] = empty_dict()
     nom_analysis_activity_set: Optional[Union[Dict[Union[str, NomAnalysisActivityId], Union[dict, "NomAnalysisActivity"]], List[Union[dict, "NomAnalysisActivity"]]]] = empty_dict()
     omics_processing_set: Optional[Union[Dict[Union[str, OmicsProcessingId], Union[dict, "OmicsProcessing"]], List[Union[dict, "OmicsProcessing"]]]] = empty_dict()
     functional_annotation_set: Optional[Union[Union[dict, "FunctionalAnnotation"], List[Union[dict, "FunctionalAnnotation"]]]] = empty_list()
@@ -293,6 +294,12 @@ class Database(YAMLRoot):
         if not isinstance(self.read_QC_analysis_activity_set, (list, dict)):
             self.read_QC_analysis_activity_set = [self.read_QC_analysis_activity_set]
         self._normalize_inlined_slot(slot_name="read_QC_analysis_activity_set", slot_type=ReadQCAnalysisActivity, key_name="id", inlined_as_list=None, keyed=True)
+
+        if self.read_based_analysis_activity_set is None:
+            self.read_based_analysis_activity_set = []
+        if not isinstance(self.read_based_analysis_activity_set, (list, dict)):
+            self.read_based_analysis_activity_set = [self.read_based_analysis_activity_set]
+        self._normalize_inlined_slot(slot_name="read_based_analysis_activity_set", slot_type=ReadBasedAnalysisActivity, key_name="id", inlined_as_list=None, keyed=True)
 
         if self.nom_analysis_activity_set is None:
             self.nom_analysis_activity_set = []
@@ -2230,6 +2237,9 @@ slots.metaproteomics_analysis_activity_set = Slot(uri=NMDC.metaproteomics_analys
 
 slots.read_QC_analysis_activity_set = Slot(uri=NMDC.read_QC_analysis_activity_set, name="read QC analysis activity set", curie=NMDC.curie('read_QC_analysis_activity_set'),
                    model_uri=NMDC.read_QC_analysis_activity_set, domain=Database, range=Optional[Union[Dict[Union[str, ReadQCAnalysisActivityId], Union[dict, "ReadQCAnalysisActivity"]], List[Union[dict, "ReadQCAnalysisActivity"]]]])
+
+slots.read_based_analysis_activity_set = Slot(uri=NMDC.read_based_analysis_activity_set, name="read based analysis activity set", curie=NMDC.curie('read_based_analysis_activity_set'),
+                   model_uri=NMDC.read_based_analysis_activity_set, domain=Database, range=Optional[Union[Dict[Union[str, ReadBasedAnalysisActivityId], Union[dict, "ReadBasedAnalysisActivity"]], List[Union[dict, "ReadBasedAnalysisActivity"]]]])
 
 slots.nom_analysis_activity_set = Slot(uri=NMDC.nom_analysis_activity_set, name="nom analysis activity set", curie=NMDC.curie('nom_analysis_activity_set'),
                    model_uri=NMDC.nom_analysis_activity_set, domain=Database, range=Optional[Union[Dict[Union[str, NomAnalysisActivityId], Union[dict, "NomAnalysisActivity"]], List[Union[dict, "NomAnalysisActivity"]]]])
