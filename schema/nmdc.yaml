@@ -503,6 +503,7 @@ classes:
     slots:
       - has output
       - omics type
+      - part of
     slot_usage:
       id:
         description: >-
