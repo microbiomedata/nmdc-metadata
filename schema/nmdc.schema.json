@@ -63,6 +63,14 @@
           "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
           "type": "string"
         },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
+          "type": "string"
+        },
         "was_generated_by": {
           "type": "string"
         }
@@ -365,6 +373,9 @@
           "description": "An optional string that specified the type of object.",
           "type": "string"
         },
+        "uriorcurie": {
+          "type": "string"
+        },
         "water_content": {
           "$ref": "#/definitions/QuantityValue",
           "description": "Water content measurement"
@@ -430,6 +441,14 @@
         },
         "has_raw_value": {
           "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+          "type": "string"
+        },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
           "type": "string"
         },
         "was_generated_by": {
@@ -498,6 +517,14 @@
         "term": {
           "$ref": "#/definitions/OntologyClass",
           "description": "pointer to an ontology class"
+        },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
+          "type": "string"
         },
         "was_generated_by": {
           "type": "string"
@@ -822,6 +849,14 @@
           "description": "longitude",
           "type": "number"
         },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
+          "type": "string"
+        },
         "was_generated_by": {
           "type": "string"
         }
@@ -870,6 +905,14 @@
         },
         "has_raw_value": {
           "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+          "type": "string"
+        },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
           "type": "string"
         },
         "was_generated_by": {
@@ -1542,6 +1585,9 @@
         "type": {
           "description": "An optional string that specified the type of object.",
           "type": "string"
+        },
+        "uriorcurie": {
+          "type": "string"
         }
       },
       "required": [
@@ -1723,6 +1769,14 @@
         "orcid": {
           "type": "string"
         },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
+          "type": "string"
+        },
         "was_generated_by": {
           "type": "string"
         }
@@ -1777,6 +1831,14 @@
         },
         "has_unit": {
           "description": "The unit of the quantity",
+          "type": "string"
+        },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
           "type": "string"
         },
         "was_generated_by": {
@@ -2054,6 +2116,13 @@
         "specific_ecosystem": {
           "$ref": "#/definitions/AttributeValue",
           "description": "TODO"
+        },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "type": "string"
         }
       },
       "required": [
@@ -2074,6 +2143,14 @@
           "description": "Should use ISO 639-1 code e.g. \"en\", \"fr\"",
           "type": "string"
         },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
+          "type": "string"
+        },
         "was_generated_by": {
           "type": "string"
         }
@@ -2090,6 +2167,14 @@
           "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
           "type": "string"
         },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
+          "type": "string"
+        },
         "was_generated_by": {
           "type": "string"
         }
@@ -2104,6 +2189,14 @@
       "properties": {
         "has_raw_value": {
           "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+          "type": "string"
+        },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
           "type": "string"
         },
         "was_generated_by": {

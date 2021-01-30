@@ -425,6 +425,8 @@ classes:
         required: true
         description: >-
           formerly known as 'material'
+      uriorcurie:
+        required: false            
     id_prefixes:
       - GOLD
     exact_mappings:
@@ -452,9 +454,7 @@ classes:
       - doi
     todos:
       - determine how to get data values for submitted_to_insdc, investigation_type, experimental_factor
-      - project_name is redundant with name, so excluding it
-      
-        
+      - project_name is redundant with name, so excluding it      
     slot_usage:
       id:
         description: >-
@@ -465,7 +465,13 @@ classes:
       alternate identifiers:
         description: >-
           The same study may have distinct identifiers in different databases (e.g. GOLD and EMSL)
-
+      type:
+        description: >-
+            An optional string that specified the type of object.
+        required: false
+      uriorcurie:
+        required: false
+          
   biosample processing:
     aliases:
       - material processing
@@ -521,7 +527,9 @@ classes:
       processing_institution:
         description: >-
             The organization that processed the sample.
-        required: false              
+        required: false
+      uriorcurie:
+        required: false          
 
     broad_mappings:
       - OBI:0000070 ## assay: https://github.com/microbiomedata/nmdc-metadata/issues/171
@@ -1072,7 +1080,7 @@ slots:
     range: attribute value
     abstract: true
     description: >-
-      This is a grouping for any of the gold path fields
+      This is a grouping for any of the gold path fields          
     
   ecosystem:
     is_a: gold_path_field
