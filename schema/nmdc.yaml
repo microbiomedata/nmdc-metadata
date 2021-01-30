@@ -116,6 +116,9 @@ classes:
         description: >-
             An optional string that specified the type of object.
         required: false
+      uriorcurie:
+        required: false            
+
                 
     id_prefixes:
       - GOLD
@@ -498,7 +501,6 @@ classes:
     comments:
       - The IDs for objects coming from GOLD will have prefixes gold:GpNNNN
     slots:
-      - part of
       - has output
       - omics type
     slot_usage:
@@ -525,12 +527,21 @@ classes:
             This might be needed in cases where the study cannot be identified.
         required: false
       processing_institution:
+        range: attribute value
         description: >-
             The organization that processed the sample.
         required: false
       uriorcurie:
-        required: false          
-
+        required: false
+      add_date:
+        range: attribute value
+        required: false
+      mod_date:
+        range: attribute value
+        required: false
+      ncbi_project_name:
+        range: attribute value
+        required: false
     broad_mappings:
       - OBI:0000070 ## assay: https://github.com/microbiomedata/nmdc-metadata/issues/171
 
@@ -824,6 +835,7 @@ slots:
 
   part of:
     aliases: ['is part of']
+    range: named thing
     domain: named thing
     multivalued: true
     slot_uri: dcterms:isPartOf
@@ -1148,6 +1160,9 @@ slots:
     
   ncbi_taxonomy_name:
     range: string
+
+  ncbi_project_name:
+    range: string
   
   sample_collection_site:
     range: string
@@ -1194,9 +1209,6 @@ slots:
   biogas_retention_time:
     range: string
 
-  ncbi_project_name:
-    range: string
-  
   processing_institution:
     range: string
   

@@ -577,6 +577,9 @@
           "description": "An optional string that specified the type of object.",
           "type": "string"
         },
+        "uriorcurie": {
+          "type": "string"
+        },
         "url": {
           "type": "string"
         },
@@ -1533,6 +1536,9 @@
       "additionalProperties": false,
       "description": "The methods and processes used to generate omics data from a biosample or organism.",
       "properties": {
+        "add_date": {
+          "$ref": "#/definitions/AttributeValue"
+        },
         "alternate_identifiers": {
           "description": "The same omics processing may have distinct identifiers in different databases (e.g. GOLD and EMSL, as well as NCBI)",
           "items": {
@@ -1560,9 +1566,15 @@
           "description": "The primary identifier for the omics processing. E.g. GOLD:GpNNNN",
           "type": "string"
         },
+        "mod_date": {
+          "$ref": "#/definitions/AttributeValue"
+        },
         "name": {
           "description": "A human readable name or description of the omics processing.",
           "type": "string"
+        },
+        "ncbi_project_name": {
+          "$ref": "#/definitions/AttributeValue"
         },
         "omics_type": {
           "$ref": "#/definitions/ControlledTermValue",
@@ -1579,8 +1591,8 @@
           "description": "An optional values that specifies the PI's name. This might be needed in cases where the study cannot be identified."
         },
         "processing_institution": {
-          "description": "The organization that processed the sample.",
-          "type": "string"
+          "$ref": "#/definitions/AttributeValue",
+          "description": "The organization that processed the sample."
         },
         "type": {
           "description": "An optional string that specified the type of object.",

@@ -209,7 +209,8 @@ metatype:Nodeidentifier NONLITERAL
           <compression_type> @metatype:String ? ;
           <was_generated_by> @<WorkflowExecutionActivity> ? ;
           <url> @metatype:String ? ;
-          <type> @metatype:String ?
+          <type> @metatype:String ? ;
+          <uriorcurie> @metatype:String ?
        ) ;
        rdf:type [ <DataObject> ]
     )
@@ -463,8 +464,11 @@ metatype:Nodeidentifier NONLITERAL
           <alternate_identifiers> @metatype:String * ;
           <type> @metatype:String ? ;
           <principal_investigator_name> @<PersonValue> ? ;
-          <processing_institution> @metatype:String ? ;
-          <uriorcurie> @metatype:String ?
+          <processing_institution> @<AttributeValue> ? ;
+          <uriorcurie> @metatype:String ? ;
+          <add_date> @<AttributeValue> ? ;
+          <mod_date> @<AttributeValue> ? ;
+          <ncbi_project_name> @<AttributeValue> ?
        ) ;
        rdf:type [ <OmicsProcessing> ]
     )
