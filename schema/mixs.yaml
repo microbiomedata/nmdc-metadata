@@ -1245,7 +1245,7 @@ slots:
     in_subset:
       - sequencing
 
-  url:
+  mixs_url:
     aliases:
       - relevant electronic resources
     description: >-
@@ -1254,7 +1254,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {URL}
     mappings:
-      - MIxS:url
+      - MIxS:mixs_url
     in_subset:
       - sequencing
 

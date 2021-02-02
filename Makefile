@@ -13,7 +13,11 @@ env.lock:
 	pipenv install
 	cp /dev/null env.lock
 
-test: schema/test-nmdc-01.valid schema/test-nmdc-02.valid pytest
+# TODO: nmdc-02
+schema_test_examples = nmdc-01 functional-annotation img_mg_annotation_data_objects img_mg_annotation_objects MAGs_activity read_based_analysis_activity metagenome_annotation_activity Froze_Core_2015_S2_0_10_7_Metab gcms_metabolomics_data_products ftms_nom_data_products nom_analysis_activity
+
+test_jsonschema: $(patsubst %, schema/test-%.valid, $(schema_test_examples))
+test: test_jsonschema pytest
 
 pytest: schema/nmdc.py
 	pipenv run python $<
@@ -49,9 +53,16 @@ schema_uml: schema/nmdc_schema_uml.png
 schema/%.py: schema/%.yaml env.lock
 	pipenv run gen-py-classes $< > $@.tmp && pipenv run python $@.tmp && mv $@.tmp $@
 
+#.PHONY: force_schema_build
+#force_schema_build: schema/nmdc.yaml schema/prov.yaml schema/core.yaml  schema/annotation.yaml
+
 # JSON Schema
 schema/nmdc.schema.json: schema/nmdc.yaml env.lock
 	pipenv run gen-json-schema -t database $<  > $@.tmp && jsonschema $@.tmp && mv $@.tmp $@
+
+# This is temporary fix to apply additionalProperties: false gloabally
+# see: https://github.com/biolink/biolinkml/issues/349
+	jq '. += {"additionalProperties": false}' $@ > $@.tmp && mv $@.tmp $@
 
 schema/kbase.schema.json: schema/kbase.yaml env.lock
 	pipenv run gen-json-schema -t SESAR $<  > $@.tmp && jsonschema $@.tmp && mv $@.tmp $@
@@ -92,7 +103,9 @@ jekyll-docs: schema/nmdc.yaml env.lock
 	pipenv run python scripts/jekyllmarkdowngen.py --yaml $< --dir docs
 
 schema/nmdc_schema_uml.png: schema/nmdc.yaml
-	pipenv run python schema/generate_uml.py $< $@
+#	pipenv run python schema/generate_uml.py $< $@
+# temporary hack to address issue of generate_uml.py not finding the correct directory
+	cd schema/ &&	pipenv run python generate_uml.py $(notdir $<) $(notdir $@) && cd ..
 
 # -- Mappings --
 

@@ -25,7 +25,7 @@ Identifiers should be:
 
 See [McMurry et al, PMID:28662064](https://www.ncbi.nlm.nih.gov/pubmed/28662064) for more desiderata.
 
-# CURIEs - prefixed IDs
+## CURIEs - prefixed IDs
 
 Following McMurry et al we adopt the use of *prefixed identifiers*
 
@@ -47,19 +47,19 @@ All prefixes should be registered with a standard identifier prefix system. Thes
  * http://identifiers.org
  * http://obofoundry.org
 
-# Examples
+## Examples
 
-## INSDC BioSamples
+### INSDC BioSamples
 
 Registry entry: https://registry.identifiers.org/registry/biosample
 
 Example ID/CURIE: BIOSAMPLE:SAMEA2397676
 
-Resolving via identifiers.org: https://identifiers.org/BIOSAMPLE:SAMEA2397676
+Resolving via identifiers.org: [https://identifiers.org/BIOSAMPLE:SAMEA2397676](https://identifiers.org/BIOSAMPLE:SAMEA2397676)
 
-Resolving via nt2.net: http://n2t.net/BIOSAMPLE:SAMEA2397676
+Resolving via nt2.net: [http://n2t.net/BIOSAMPLE:SAMEA2397676](http://n2t.net/BIOSAMPLE:SAMEA2397676)
 
-## GOLD identifiers
+### GOLD identifiers
 
 https://registry.identifiers.org/registry/gold
 
@@ -67,7 +67,7 @@ Example ID: `GOLD:Gp0119849`
 
 Resolving via identifiers.org: https://identifiers.org/GOLD:Gp0119849
 
-## identifiers for ontology terms and function descriptors
+### identifiers for ontology terms and function descriptors
 
 Most of the ontologies we use are in OBO. All OBO IDs are prefixed
 using the ontology ID space. The list of ID spaces can be found on
@@ -75,14 +75,14 @@ http://obofoundry.org
 
 For example the ID/CURIE `ENVO:00002007` represents the class `sediment` and is expanded to a URI of http://purl.obolibrary.org/obo/ENVO_00002007
 
-## KEGG
+#### KEGG
 
 KEGG is actually a set of databases, each with its own prefix, usually of form `KEGG.$database`, e.g.
 
  * [KEGG.ORTHOLOGY](https://registry.identifiers.org/registry/kegg.orthology) (aka KO), e.g. KEGG.ORTHOLOGY:K00001
  * [KEGG.COMPOUND](https://registry.identifiers.org/registry/kegg.compound), e.g. KEGG.COMPOUND:C12345
 
-# Recommended IDs for use within NMDC
+## Recommended IDs for use within NMDC
 
 The NMDC schema is annotated with the set of IDs that are allowed to act as primary keys for instances of each class.
 
@@ -109,7 +109,7 @@ The underlying yaml looks like this:
 
 The full URLs for each is in the jsonld context file
 
-# IDs minted for use within NMDC
+## IDs minted for use within NMDC
 
 Note that NMDC schema mandates IDs for most objects. These always have the field name [id](https://microbiomedata.github.io/nmdc-metadata/docs/id) 
 
@@ -214,7 +214,7 @@ When converting col9 we ensure that each ID is correctly prefixed. So for exampl
 We will also later need a policy for IDs for the sequences in col1 (ie genome or transcript), please return later for more details...
 
 
-# MIxS identifiers
+## MIxS term identifiers
 
 We are working with the GSC to provide permanent IDs for MIxS terms. Note these terms are schema-level rather than data-level.
 
@@ -224,11 +224,11 @@ For now we place these in the nmdc namespaces, e.g
 
 `nmdc:alt`
 
-# Identifier mapping
+## Identifier mapping
 
 Please check this section later
 
-# Identifiers and semantic web URIs
+## Identifiers and semantic web URIs
 
 We produce a JSON-LD context with the schema:
 
