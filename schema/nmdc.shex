@@ -82,12 +82,12 @@ metatype:Nodeidentifier NONLITERAL
     (  $<Biosample_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
           <https://microbiomedata/schema/mixs/env_package> @<TextValue> ? ;
-          <lat_lon> @<GeolocationValue> ;
+          <lat_lon> @<GeolocationValue> ? ;
           <https://microbiomedata/schema/mixs/geo_loc_name> @<TextValue> ? ;
           <https://microbiomedata/schema/mixs/collection_date> @<TimestampValue> ? ;
-          <env_broad_scale> @<ControlledTermValue> ;
-          <env_local_scale> @<ControlledTermValue> ;
-          <env_medium> @<ControlledTermValue> ;
+          <env_broad_scale> @<ControlledTermValue> ? ;
+          <env_local_scale> @<ControlledTermValue> ? ;
+          <env_medium> @<ControlledTermValue> ? ;
           <ecosystem> @<AttributeValue> ? ;
           <ecosystem_category> @<AttributeValue> ? ;
           <ecosystem_type> @<AttributeValue> ? ;
@@ -153,7 +153,31 @@ metatype:Nodeidentifier NONLITERAL
           <name> @metatype:String ? ;
           <alternate_identifiers> @metatype:String * ;
           <type> @metatype:String ? ;
-          <uriorcurie> @metatype:String ?
+          <uriorcurie> @metatype:String ? ;
+          <add_date> @<AttributeValue> ? ;
+          <mod_date> @<AttributeValue> ? ;
+          <ncbi_taxonomy_name> @<AttributeValue> ? ;
+          <community> @<AttributeValue> ? ;
+          <location> @<AttributeValue> ? ;
+          <habitat> @<AttributeValue> ? ;
+          <geographic_location> @<AttributeValue> ? ;
+          <sample_collection_site> @<AttributeValue> ? ;
+          <identifier> @<AttributeValue> ? ;
+          <host_name> @<AttributeValue> ? ;
+          <sampling_strategy> @<AttributeValue> ? ;
+          <growth_temperature> @<AttributeValue> ? ;
+          <ph> @<AttributeValue> ? ;
+          <altitude> @<AttributeValue> ? ;
+          <pressure> @<AttributeValue> ? ;
+          <subsurface_depth> @<AttributeValue> ? ;
+          <salinity_concentration> @<AttributeValue> ? ;
+          <oxygen_concentration> @<AttributeValue> ? ;
+          <nitrate_concentration> @<AttributeValue> ? ;
+          <soluble_iron_micromol> @<AttributeValue> ? ;
+          <tot_nitrogen> @<AttributeValue> ? ;
+          <chlorophyll_concentration> @<AttributeValue> ? ;
+          <sample_volume> @<AttributeValue> ? ;
+          <proport_woa_temperature> @<AttributeValue> ?
        ) ;
        rdf:type [ <Biosample> ]
     )
@@ -457,18 +481,20 @@ metatype:Nodeidentifier NONLITERAL
 <OmicsProcessing> CLOSED {
     (  $<OmicsProcessing_tes> (  &<BiosampleProcessing_tes> ;
           rdf:type [ <BiosampleProcessing> ] ? ;
+          <has_output> @metatype:String * ;
+          <omics_type> @<AttributeValue> ? ;
           <part_of> @<Study> * ;
-          <has_output> @<DataObject> * ;
-          <omics_type> @<ControlledTermValue> ? ;
           <name> @metatype:String ? ;
           <alternate_identifiers> @metatype:String * ;
+          <has_input> @<Biosample> * ;
           <type> @metatype:String ? ;
           <principal_investigator_name> @<PersonValue> ? ;
           <processing_institution> @<AttributeValue> ? ;
           <uriorcurie> @metatype:String ? ;
           <add_date> @<AttributeValue> ? ;
           <mod_date> @<AttributeValue> ? ;
-          <ncbi_project_name> @<AttributeValue> ?
+          <ncbi_project_name> @<AttributeValue> ? ;
+          <instrument_name> @<AttributeValue> ?
        ) ;
        rdf:type [ <OmicsProcessing> ]
     )

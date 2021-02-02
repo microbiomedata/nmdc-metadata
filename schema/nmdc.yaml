@@ -411,25 +411,98 @@ classes:
             An optional string that specified the type of object.
         required: false
       lat_lon:
-        required: true
+        required: false
         description: >-
           This is currently a required field but it's not clear if this should be required for human hosts
       depth:
         required: false
       env_broad_scale:
-        required: true
+        required: false
         description: >-
           formerly known as 'biome'
       env_local_scale:
-        required: true
+        required: false
         description: >-
           formerly known as 'feature'
       env_medium:
-        required: true
+        required: false
         description: >-
           formerly known as 'material'
       uriorcurie:
-        required: false            
+        required: false
+      add_date:
+        required: false
+        range: attribute value
+      mod_date:
+        required: false
+        range: attribute value
+      ncbi_taxonomy_name:
+        required: false
+        range: attribute value
+      community:
+        required: false
+        range: attribute value
+      location:
+        required: false
+        range: attribute value
+      habitat:
+        required: false
+        range: attribute value
+      geographic_location:
+        required: false
+        range: attribute value
+      sample_collection_site:
+        required: false
+        range: attribute value
+      identifier:
+        required: false
+        range: attribute value
+      host_name:
+        required: false
+        range: attribute value
+      sampling_strategy:
+        required: false
+        range: attribute value
+      growth_temperature:
+        required: false
+        range: attribute value
+      ph:
+        required: false
+        range: attribute value
+      altitude:
+        required: false
+        range: attribute value
+      pressure:
+        required: false
+        range: attribute value
+      subsurface_depth:
+        required: false
+        range: attribute value
+      salinity_concentration:
+        required: false
+        range: attribute value
+      oxygen_concentration:
+        required: false
+        range: attribute value
+      nitrate_concentration:
+        required: false
+        range: attribute value
+      soluble_iron_micromol:
+        required: false
+        range: attribute value
+      tot_nitrogen:
+        required: false
+        range: attribute value
+      chlorophyll_concentration:
+        required: false
+        range: attribute value
+      sample_volume:
+        required: false
+        range: attribute value
+      proport_woa_temperature:
+        required: false
+        range: attribute value
+          
     id_prefixes:
       - GOLD
     exact_mappings:
@@ -559,6 +632,7 @@ classes:
         required: false
       instrument_name:
         required: false
+        range: attribute value
     broad_mappings:
       - OBI:0000070 ## assay: https://github.com/microbiomedata/nmdc-metadata/issues/171
 
