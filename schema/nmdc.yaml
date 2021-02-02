@@ -515,19 +515,30 @@ classes:
         description: >-
           The same omics processing may have distinct identifiers in different databases (e.g. GOLD and EMSL, as well as NCBI)
       part of:
+        inlined: false
         range: study
       has output:
-        range: data object
+        inlined: false
+        #range: data object
+        #range: attribute value
+      has input:
+        inlined: false
+        #range: attribute value
       type:
         description: >-
             An optional string that specified the type of object.
         required: false
+      omics type:
+        inlined: true
+        range: attribute value
       principal investigator name:
+        inlined: true        
         description: >-
             An optional values that specifies the PI's name.
             This might be needed in cases where the study cannot be identified.
         required: false
       processing_institution:
+        inlined: true        
         range: attribute value
         description: >-
             The organization that processed the sample.
@@ -535,13 +546,18 @@ classes:
       uriorcurie:
         required: false
       add_date:
+        inlined: true        
         range: attribute value
         required: false
       mod_date:
+        inlined: true        
         range: attribute value
         required: false
       ncbi_project_name:
+        inlined: true        
         range: attribute value
+        required: false
+      instrument_name:
         required: false
     broad_mappings:
       - OBI:0000070 ## assay: https://github.com/microbiomedata/nmdc-metadata/issues/171
