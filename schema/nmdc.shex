@@ -68,7 +68,9 @@ metatype:Nodeidentifier NONLITERAL
 <AttributeValue>  (
     CLOSED {
        (  $<AttributeValue_tes> (  <has_raw_value> @metatype:String ? ;
-             <was_generated_by> @<Activity> ?
+             <was_generated_by> @<Activity> ? ;
+             <uriorcurie> @metatype:String ? ;
+             <type> @metatype:String ?
           ) ;
           rdf:type [ <AttributeValue> ] ?
        )
@@ -80,12 +82,12 @@ metatype:Nodeidentifier NONLITERAL
     (  $<Biosample_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
           <https://microbiomedata/schema/mixs/env_package> @<TextValue> ? ;
-          <lat_lon> @<GeolocationValue> ;
+          <lat_lon> @<GeolocationValue> ? ;
           <https://microbiomedata/schema/mixs/geo_loc_name> @<TextValue> ? ;
           <https://microbiomedata/schema/mixs/collection_date> @<TimestampValue> ? ;
-          <env_broad_scale> @<ControlledTermValue> ;
-          <env_local_scale> @<ControlledTermValue> ;
-          <env_medium> @<ControlledTermValue> ;
+          <env_broad_scale> @<ControlledTermValue> ? ;
+          <env_local_scale> @<ControlledTermValue> ? ;
+          <env_medium> @<ControlledTermValue> ? ;
           <ecosystem> @<AttributeValue> ? ;
           <ecosystem_category> @<AttributeValue> ? ;
           <ecosystem_type> @<AttributeValue> ? ;
@@ -149,7 +151,33 @@ metatype:Nodeidentifier NONLITERAL
           <https://microbiomedata/schema/mixs/al_sat_meth> @<TextValue> ? ;
           <https://microbiomedata/schema/mixs/misc_param> @<QuantityValue> ? ;
           <name> @metatype:String ? ;
-          <alternate_identifiers> @metatype:String *
+          <alternate_identifiers> @metatype:String * ;
+          <type> @metatype:String ? ;
+          <uriorcurie> @metatype:String ? ;
+          <add_date> @<AttributeValue> ? ;
+          <mod_date> @<AttributeValue> ? ;
+          <ncbi_taxonomy_name> @<AttributeValue> ? ;
+          <community> @<AttributeValue> ? ;
+          <location> @<AttributeValue> ? ;
+          <habitat> @<AttributeValue> ? ;
+          <geographic_location> @<AttributeValue> ? ;
+          <sample_collection_site> @<AttributeValue> ? ;
+          <identifier> @<AttributeValue> ? ;
+          <host_name> @<AttributeValue> ? ;
+          <sampling_strategy> @<AttributeValue> ? ;
+          <growth_temperature> @<AttributeValue> ? ;
+          <ph> @<AttributeValue> ? ;
+          <altitude> @<AttributeValue> ? ;
+          <pressure> @<AttributeValue> ? ;
+          <subsurface_depth> @<AttributeValue> ? ;
+          <salinity_concentration> @<AttributeValue> ? ;
+          <oxygen_concentration> @<AttributeValue> ? ;
+          <nitrate_concentration> @<AttributeValue> ? ;
+          <soluble_iron_micromol> @<AttributeValue> ? ;
+          <tot_nitrogen> @<AttributeValue> ? ;
+          <chlorophyll_concentration> @<AttributeValue> ? ;
+          <sample_volume> @<AttributeValue> ? ;
+          <proport_woa_temperature> @<AttributeValue> ?
        ) ;
        rdf:type [ <Biosample> ]
     )
@@ -204,7 +232,9 @@ metatype:Nodeidentifier NONLITERAL
           <data_object_type> @<ControlledTermValue> ? ;
           <compression_type> @metatype:String ? ;
           <was_generated_by> @<WorkflowExecutionActivity> ? ;
-          <url> @metatype:String ?
+          <url> @metatype:String ? ;
+          <type> @metatype:String ? ;
+          <uriorcurie> @metatype:String ?
        ) ;
        rdf:type [ <DataObject> ]
     )
@@ -216,6 +246,13 @@ metatype:Nodeidentifier NONLITERAL
           <data_object_set> @<DataObject> * ;
           <activity_set> @<WorkflowExecutionActivity> * ;
           <mags_activity_set> @<MAGsAnalysisActivity> * ;
+          <metabolomics_analysis_activity_set> @<MetabolomicsAnalysisActivity> * ;
+          <metaproteomics_analysis_activity_set> @<MetaproteomicsAnalysisActivity> * ;
+          <metagenome_annotation_activity_set> @<MetagenomeAnnotationActivity> * ;
+          <metagenome_assembly_set> @<MetagenomeAssembly> * ;
+          <read_QC_analysis_activity_set> @<ReadQCAnalysisActivity> * ;
+          <read_based_analysis_activity_set> @<ReadBasedAnalysisActivity> * ;
+          <nom_analysis_activity_set> @<NomAnalysisActivity> * ;
           <omics_processing_set> @<OmicsProcessing> * ;
           <functional_annotation_set> @<https://microbiomedata/schema/annotation/FunctionalAnnotation> * ;
           <genome_feature_set> @<https://microbiomedata/schema/annotation/GenomeFeature> *
@@ -271,7 +308,8 @@ metatype:Nodeidentifier NONLITERAL
           <end> @metatype:Integer ;
           <strand> @metatype:String ? ;
           <phase> @metatype:Integer ? ;
-          <encodes> @<https://microbiomedata/schema/annotation/GeneProduct> ?
+          <encodes> @<https://microbiomedata/schema/annotation/GeneProduct> ? ;
+          <feature_type> @metatype:String ?
        ) ;
        rdf:type [ <https://microbiomedata/schema/annotation/GenomeFeature> ] ?
     )
@@ -322,7 +360,8 @@ metatype:Nodeidentifier NONLITERAL
           <gtdbtk_order> @metatype:String ? ;
           <gtdbtk_family> @metatype:String ? ;
           <gtdbtk_genus> @metatype:String ? ;
-          <gtdbtk_species> @metatype:String ?
+          <gtdbtk_species> @metatype:String ? ;
+          <type> @metatype:String ?
        ) ;
        rdf:type [ <MAGBin> ] ?
     )
@@ -344,7 +383,8 @@ metatype:Nodeidentifier NONLITERAL
 
 <MetaboliteQuantification> CLOSED {
     (  $<MetaboliteQuantification_tes> (  <metabolite_quantified> @<https://microbiomedata/schema/annotation/ChemicalEntity> ? ;
-          <highest_similarity_score> @metatype:Float ?
+          <highest_similarity_score> @metatype:Float ? ;
+          <alternate_identifiers> @metatype:String *
        ) ;
        rdf:type [ <MetaboliteQuantification> ] ?
     )
@@ -354,7 +394,8 @@ metatype:Nodeidentifier NONLITERAL
     (  $<MetabolomicsAnalysisActivity_tes> (  &<WorkflowExecutionActivity_tes> ;
           rdf:type [ <WorkflowExecutionActivity> ] ? ;
           <used> @<Instrument> ? ;
-          <has_metabolite_quantifications> @<MetaboliteQuantification> *
+          <has_metabolite_quantifications> @<MetaboliteQuantification> * ;
+          <has_calibration> @metatype:String ?
        ) ;
        rdf:type [ <MetabolomicsAnalysisActivity> ]
     )
@@ -427,14 +468,33 @@ metatype:Nodeidentifier NONLITERAL
     )
 }
 
+<NomAnalysisActivity> CLOSED {
+    (  $<NomAnalysisActivity_tes> (  &<WorkflowExecutionActivity_tes> ;
+          rdf:type [ <WorkflowExecutionActivity> ] ? ;
+          <used> @<Instrument> ? ;
+          <has_calibration> @metatype:String ?
+       ) ;
+       rdf:type [ <NomAnalysisActivity> ]
+    )
+}
+
 <OmicsProcessing> CLOSED {
     (  $<OmicsProcessing_tes> (  &<BiosampleProcessing_tes> ;
           rdf:type [ <BiosampleProcessing> ] ? ;
+          <has_output> @metatype:String * ;
+          <omics_type> @<AttributeValue> ? ;
           <part_of> @<Study> * ;
-          <has_output> @<DataObject> * ;
-          <omics_type> @<ControlledTermValue> ? ;
           <name> @metatype:String ? ;
-          <alternate_identifiers> @metatype:String *
+          <alternate_identifiers> @metatype:String * ;
+          <has_input> @<Biosample> * ;
+          <type> @metatype:String ? ;
+          <principal_investigator_name> @<PersonValue> ? ;
+          <processing_institution> @<AttributeValue> ? ;
+          <uriorcurie> @metatype:String ? ;
+          <add_date> @<AttributeValue> ? ;
+          <mod_date> @<AttributeValue> ? ;
+          <ncbi_project_name> @<AttributeValue> ? ;
+          <instrument_name> @<AttributeValue> ?
        ) ;
        rdf:type [ <OmicsProcessing> ]
     )
@@ -577,10 +637,12 @@ metatype:Nodeidentifier NONLITERAL
           <ecosystem_type> @<AttributeValue> ? ;
           <ecosystem_subtype> @<AttributeValue> ? ;
           <specific_ecosystem> @<AttributeValue> ? ;
-          <principal_investigator> @<PersonValue> ? ;
+          <principal_investigator_name> @<PersonValue> ? ;
           <doi> @<AttributeValue> ? ;
           <name> @metatype:String ? ;
-          <alternate_identifiers> @metatype:String *
+          <alternate_identifiers> @metatype:String * ;
+          <type> @metatype:String ? ;
+          <uriorcurie> @metatype:String ?
        ) ;
        rdf:type [ <Study> ]
     )
@@ -618,12 +680,14 @@ metatype:Nodeidentifier NONLITERAL
              <execution_resource> @metatype:String ? ;
              <git_url> @metatype:String ? ;
              <has_input> @metatype:String * ;
-             <has_output> @metatype:String *
+             <has_output> @metatype:String * ;
+             <type> @metatype:String ? ;
+             <was_associated_with> @<WorkflowExecutionActivity> ?
           ) ;
           rdf:type [ <WorkflowExecutionActivity> ]
        )
     } OR @<MAGsAnalysisActivity> OR @<MetabolomicsAnalysisActivity> OR @<MetagenomeAnnotationActivity> OR @<MetagenomeAssembly> OR
-    @<MetaproteomicsAnalysisActivity> OR @<ReadQCAnalysisActivity> OR @<ReadBasedAnalysisActivity>
+    @<MetaproteomicsAnalysisActivity> OR @<NomAnalysisActivity> OR @<ReadQCAnalysisActivity> OR @<ReadBasedAnalysisActivity>
 )
 
 

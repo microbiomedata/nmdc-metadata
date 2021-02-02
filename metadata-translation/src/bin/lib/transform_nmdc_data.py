@@ -1,10 +1,11 @@
 ## author: Bill Duncan
 ## summary: Contians methods for transforming data in NMDC ETL pipeline.
 
-## add ./lib directory to sys.path so that local modules can be found
-import os, sys
+## add ./lib and rooth directory to sys.path so that local modules can be found
+import os, sys, git_root
 sys.path.append(os.path.abspath("."))
 sys.path.append(os.path.abspath("./lib"))
+sys.path.append(git_root.git_root('./schema'))
 # print(sys.path)
 
 ## system level modules
@@ -12,6 +13,7 @@ import pandas as pds
 import jq
 import jsonasobj
 import json
+import jq
 import zipfile
 import yaml
 from yaml import CLoader as Loader, CDumper as Dumper
@@ -435,3 +437,64 @@ def dataframe_to_dict(nmdc_df:pds.DataFrame,
         nmdc_dict = make_dict_from_nmdc_obj(nmdc_obj) # transform object into a dict
         nmdc_objs.append(nmdc_dict) # add object to list
     return nmdc_objs
+
+
+def get_json(file_path, replace_single_quote=False):
+    ## load json
+    with open(file_path, 'r') as in_file:
+        if replace_single_quote: # json
+            text = in_file.read()
+            json_data = json.loads(text.replace("'", '"'))
+        else:
+            json_data =  json.load(in_file)
+    return json_data
+
+
+def save_json(json_data, file_path):
+    ## if json data is a string, it will need to be
+    ## loaded into a variable to for "\" escape characters
+    if type(json_data) == type(""):
+        json_data = json.loads(json_data)
+        
+    ## save json with changed data types
+    with open(file_path, 'w') as out_file:
+        json.dump(json_data, out_file, indent=2)
+    return json_data
+
+
+def collapse_json_file(file_path, json_property, collapse_property="id", replace_single_quote=False):
+    jdata = get_json(file_path, replace_single_quote)
+    return collapse_json_data(jdata, json_property, collapse_property)
+
+
+def collapse_json_data(json_data, json_property, collapse_property="id"):
+    if type(json_data) == type(""):
+        jdata = json.loads(json_data)
+    else:
+        jdata = json_data.copy()
+    
+    print(jdata)
+    
+    for data in jdata:
+        if type(data) == type({}) and json_property in data.keys():
+            values = data[json_property]
+            if type(values) == type([]):
+                data[json_property] = [val[collapse_property] for val in values]
+            else:
+                data[json_property] = values[collapse_property]
+
+    if type(json_data == type("")):
+        return json.dumps(jdata)
+    else:
+        return jdata
+
+    
+if __name__ == "__main__":
+    ## code for testing
+    file_path = '../output/nmdc_etl/test.json'
+    # test_json = collapse_json_file(file_path, 'part_of')
+    # test_json = collapse_json_file(file_path, 'has_input')
+    test_json = collapse_json_file(file_path, 'has_output')
+    print(test_json)
+    
+

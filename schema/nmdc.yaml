@@ -116,6 +116,9 @@ classes:
         description: >-
             An optional string that specified the type of object.
         required: false
+      uriorcurie:
+        required: false            
+
                 
     id_prefixes:
       - GOLD
@@ -408,23 +411,98 @@ classes:
             An optional string that specified the type of object.
         required: false
       lat_lon:
-        required: true
+        required: false
         description: >-
           This is currently a required field but it's not clear if this should be required for human hosts
       depth:
         required: false
       env_broad_scale:
-        required: true
+        required: false
         description: >-
           formerly known as 'biome'
       env_local_scale:
-        required: true
+        required: false
         description: >-
           formerly known as 'feature'
       env_medium:
-        required: true
+        required: false
         description: >-
           formerly known as 'material'
+      uriorcurie:
+        required: false
+      add_date:
+        required: false
+        range: attribute value
+      mod_date:
+        required: false
+        range: attribute value
+      ncbi_taxonomy_name:
+        required: false
+        range: attribute value
+      community:
+        required: false
+        range: attribute value
+      location:
+        required: false
+        range: attribute value
+      habitat:
+        required: false
+        range: attribute value
+      geographic_location:
+        required: false
+        range: attribute value
+      sample_collection_site:
+        required: false
+        range: attribute value
+      identifier:
+        required: false
+        range: attribute value
+      host_name:
+        required: false
+        range: attribute value
+      sampling_strategy:
+        required: false
+        range: attribute value
+      growth_temperature:
+        required: false
+        range: attribute value
+      ph:
+        required: false
+        range: attribute value
+      altitude:
+        required: false
+        range: attribute value
+      pressure:
+        required: false
+        range: attribute value
+      subsurface_depth:
+        required: false
+        range: attribute value
+      salinity_concentration:
+        required: false
+        range: attribute value
+      oxygen_concentration:
+        required: false
+        range: attribute value
+      nitrate_concentration:
+        required: false
+        range: attribute value
+      soluble_iron_micromol:
+        required: false
+        range: attribute value
+      tot_nitrogen:
+        required: false
+        range: attribute value
+      chlorophyll_concentration:
+        required: false
+        range: attribute value
+      sample_volume:
+        required: false
+        range: attribute value
+      proport_woa_temperature:
+        required: false
+        range: attribute value
+          
     id_prefixes:
       - GOLD
     exact_mappings:
@@ -452,9 +530,7 @@ classes:
       - doi
     todos:
       - determine how to get data values for submitted_to_insdc, investigation_type, experimental_factor
-      - project_name is redundant with name, so excluding it
-      
-        
+      - project_name is redundant with name, so excluding it      
     slot_usage:
       id:
         description: >-
@@ -465,7 +541,13 @@ classes:
       alternate identifiers:
         description: >-
           The same study may have distinct identifiers in different databases (e.g. GOLD and EMSL)
-
+      type:
+        description: >-
+            An optional string that specified the type of object.
+        required: false
+      uriorcurie:
+        required: false
+          
   biosample processing:
     aliases:
       - material processing
@@ -492,9 +574,9 @@ classes:
     comments:
       - The IDs for objects coming from GOLD will have prefixes gold:GpNNNN
     slots:
-      - part of
       - has output
       - omics type
+      - part of
     slot_usage:
       id:
         description: >-
@@ -506,23 +588,51 @@ classes:
         description: >-
           The same omics processing may have distinct identifiers in different databases (e.g. GOLD and EMSL, as well as NCBI)
       part of:
+        inlined: false
         range: study
       has output:
-        range: data object
+        inlined: false
+        #range: data object
+        #range: attribute value
+      has input:
+        inlined: false
+        #range: attribute value
       type:
         description: >-
             An optional string that specified the type of object.
         required: false
+      omics type:
+        inlined: true
+        range: attribute value
       principal investigator name:
+        inlined: true        
         description: >-
             An optional values that specifies the PI's name.
             This might be needed in cases where the study cannot be identified.
         required: false
       processing_institution:
+        inlined: true        
+        range: attribute value
         description: >-
             The organization that processed the sample.
-        required: false              
-
+        required: false
+      uriorcurie:
+        required: false
+      add_date:
+        inlined: true        
+        range: attribute value
+        required: false
+      mod_date:
+        inlined: true        
+        range: attribute value
+        required: false
+      ncbi_project_name:
+        inlined: true        
+        range: attribute value
+        required: false
+      instrument_name:
+        required: false
+        range: attribute value
     broad_mappings:
       - OBI:0000070 ## assay: https://github.com/microbiomedata/nmdc-metadata/issues/171
 
@@ -816,6 +926,7 @@ slots:
 
   part of:
     aliases: ['is part of']
+    range: named thing
     domain: named thing
     multivalued: true
     slot_uri: dcterms:isPartOf
@@ -1072,7 +1183,7 @@ slots:
     range: attribute value
     abstract: true
     description: >-
-      This is a grouping for any of the gold path fields
+      This is a grouping for any of the gold path fields          
     
   ecosystem:
     is_a: gold_path_field
@@ -1140,6 +1251,9 @@ slots:
     
   ncbi_taxonomy_name:
     range: string
+
+  ncbi_project_name:
+    range: string
   
   sample_collection_site:
     range: string
@@ -1186,9 +1300,6 @@ slots:
   biogas_retention_time:
     range: string
 
-  ncbi_project_name:
-    range: string
-  
   processing_institution:
     range: string
   
