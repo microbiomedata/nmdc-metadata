@@ -63,6 +63,14 @@
           "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
           "type": "string"
         },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
+          "type": "string"
+        },
         "was_generated_by": {
           "type": "string"
         }
@@ -75,6 +83,9 @@
       "additionalProperties": false,
       "description": "A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.   An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.",
       "properties": {
+        "add_date": {
+          "$ref": "#/definitions/AttributeValue"
+        },
         "agrochem_addition": {
           "$ref": "#/definitions/QuantityValue",
           "description": "\"Addition of fertilizers, pesticides, etc. - amount and time of applications\""
@@ -98,6 +109,9 @@
           },
           "type": "array"
         },
+        "altitude": {
+          "$ref": "#/definitions/AttributeValue"
+        },
         "annual_precpt": {
           "$ref": "#/definitions/QuantityValue",
           "description": "\"The average of all annual precipitation values known, or an estimated equivalent value derived by such methods as regional indexes or Isohyetal maps. \""
@@ -110,9 +124,15 @@
           "$ref": "#/definitions/QuantityValue",
           "description": "Concentration of chlorophyll"
         },
+        "chlorophyll_concentration": {
+          "$ref": "#/definitions/AttributeValue"
+        },
         "collection_date": {
           "$ref": "#/definitions/TimestampValue",
           "description": "\"The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant\""
+        },
+        "community": {
+          "$ref": "#/definitions/AttributeValue"
         },
         "crop_rotation": {
           "$ref": "#/definitions/TextValue",
@@ -201,6 +221,15 @@
           "$ref": "#/definitions/TextValue",
           "description": "\"The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (v 1.512) (http://purl.bioontology.org/ontology/GAZ)\""
         },
+        "geographic_location": {
+          "$ref": "#/definitions/AttributeValue"
+        },
+        "growth_temperature": {
+          "$ref": "#/definitions/AttributeValue"
+        },
+        "habitat": {
+          "$ref": "#/definitions/AttributeValue"
+        },
         "heavy_metals": {
           "$ref": "#/definitions/QuantityValue",
           "description": "Heavy metals present and concentrationsany drug used by subject and the frequency of usage; can include multiple heavy metals and concentrations"
@@ -217,9 +246,15 @@
           "$ref": "#/definitions/TextValue",
           "description": "Reference or method used in determining the horizon"
         },
+        "host_name": {
+          "$ref": "#/definitions/AttributeValue"
+        },
         "id": {
           "description": "The primary identifier for the biosample. Example: GOLD:Gb0205609",
           "type": "string"
+        },
+        "identifier": {
+          "$ref": "#/definitions/AttributeValue"
         },
         "lat_lon": {
           "$ref": "#/definitions/GeolocationValue",
@@ -245,6 +280,9 @@
           "$ref": "#/definitions/TextValue",
           "description": "Reference or method used in determining the local soil classification "
         },
+        "location": {
+          "$ref": "#/definitions/AttributeValue"
+        },
         "microbial_biomass": {
           "$ref": "#/definitions/QuantityValue",
           "description": "\"The part of the organic matter in the soil that constitutes living microorganisms smaller than 5-10 micrometer. If you keep this, you would need to have correction factors used for conversion to the final units\""
@@ -257,13 +295,28 @@
           "$ref": "#/definitions/QuantityValue",
           "description": "\"Any other measurement performed or parameter collected, that is not listed here\""
         },
+        "mod_date": {
+          "$ref": "#/definitions/AttributeValue"
+        },
         "name": {
           "description": "A human readable name or description of the biosample",
           "type": "string"
         },
+        "ncbi_taxonomy_name": {
+          "$ref": "#/definitions/AttributeValue"
+        },
         "nitrate": {
           "$ref": "#/definitions/QuantityValue",
           "description": "Concentration of nitrate in the sample"
+        },
+        "nitrate_concentration": {
+          "$ref": "#/definitions/AttributeValue"
+        },
+        "oxygen_concentration": {
+          "$ref": "#/definitions/AttributeValue"
+        },
+        "ph": {
+          "$ref": "#/definitions/AttributeValue"
         },
         "ph_meth": {
           "$ref": "#/definitions/TextValue",
@@ -272,6 +325,9 @@
         "pool_dna_extracts": {
           "$ref": "#/definitions/TextValue",
           "description": "\"Indicate whether multiple DNA extractions were mixed. If the answer yes, the number of extracts that were pooled should be given\""
+        },
+        "pressure": {
+          "$ref": "#/definitions/AttributeValue"
         },
         "previous_land_use": {
           "$ref": "#/definitions/TextValue",
@@ -285,9 +341,15 @@
           "$ref": "#/definitions/TextValue",
           "description": "Cross-sectional position in the hillslope where sample was collected.sample area position in relation to surrounding areas"
         },
+        "proport_woa_temperature": {
+          "$ref": "#/definitions/AttributeValue"
+        },
         "salinity": {
           "$ref": "#/definitions/QuantityValue",
           "description": "\"Salinity is the total concentration of all dissolved salts in a water sample. While salinity can be measured by a complete chemical analysis, this method is difficult and time consuming. More often, it is instead derived from the conductivity measurement. This is known as practical salinity. These derivations compare the specific conductance of the sample to a salinity standard such as seawater\""
+        },
+        "salinity_concentration": {
+          "$ref": "#/definitions/AttributeValue"
         },
         "salinity_meth": {
           "$ref": "#/definitions/TextValue",
@@ -296,6 +358,15 @@
         "samp_vol_we_dna_ext": {
           "$ref": "#/definitions/QuantityValue",
           "description": "\"Volume (ml), weight (g) of processed sample, or surface area swabbed from sample for DNA extraction\""
+        },
+        "sample_collection_site": {
+          "$ref": "#/definitions/AttributeValue"
+        },
+        "sample_volume": {
+          "$ref": "#/definitions/AttributeValue"
+        },
+        "sampling_strategy": {
+          "$ref": "#/definitions/AttributeValue"
         },
         "season_precpt": {
           "$ref": "#/definitions/QuantityValue",
@@ -325,6 +396,9 @@
           "$ref": "#/definitions/TextValue",
           "description": "Reference or method used in determining soil series name or other lower-level classification"
         },
+        "soluble_iron_micromol": {
+          "$ref": "#/definitions/AttributeValue"
+        },
         "specific_ecosystem": {
           "$ref": "#/definitions/AttributeValue",
           "description": "TODO"
@@ -332,6 +406,9 @@
         "store_cond": {
           "$ref": "#/definitions/TextValue",
           "description": "Explain how and for how long the soil sample was stored before DNA extraction"
+        },
+        "subsurface_depth": {
+          "$ref": "#/definitions/AttributeValue"
         },
         "texture": {
           "$ref": "#/definitions/QuantityValue",
@@ -353,6 +430,9 @@
           "$ref": "#/definitions/TextValue",
           "description": "Reference or method used in determining the total nitrogen"
         },
+        "tot_nitrogen": {
+          "$ref": "#/definitions/AttributeValue"
+        },
         "tot_org_c_meth": {
           "$ref": "#/definitions/TextValue",
           "description": "Reference or method used in determining total organic carbon"
@@ -365,6 +445,9 @@
           "description": "An optional string that specified the type of object.",
           "type": "string"
         },
+        "uriorcurie": {
+          "type": "string"
+        },
         "water_content": {
           "$ref": "#/definitions/QuantityValue",
           "description": "Water content measurement"
@@ -375,10 +458,6 @@
         }
       },
       "required": [
-        "lat_lon",
-        "env_broad_scale",
-        "env_local_scale",
-        "env_medium",
         "id"
       ],
       "title": "Biosample",
@@ -430,6 +509,14 @@
         },
         "has_raw_value": {
           "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+          "type": "string"
+        },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
           "type": "string"
         },
         "was_generated_by": {
@@ -499,6 +586,14 @@
           "$ref": "#/definitions/OntologyClass",
           "description": "pointer to an ontology class"
         },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
+          "type": "string"
+        },
         "was_generated_by": {
           "type": "string"
         }
@@ -548,6 +643,9 @@
         },
         "type": {
           "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
           "type": "string"
         },
         "url": {
@@ -617,6 +715,20 @@
           },
           "type": "array"
         },
+        "metagenome_annotation_activity_set": {
+          "description": "This property links a database object to the set of metaproteomics analysis activities.",
+          "items": {
+            "$ref": "#/definitions/MetagenomeAnnotationActivity"
+          },
+          "type": "array"
+        },
+        "metagenome_assembly_set": {
+          "description": "This property links a database object to the set of metaproteomics analysis activities.\n  ",
+          "items": {
+            "$ref": "#/definitions/MetagenomeAssembly"
+          },
+          "type": "array"
+        },
         "metaproteomics_analysis_activity_set": {
           "description": "This property links a database object to the set of metaproteomics analysis activities.",
           "items": {
@@ -639,9 +751,16 @@
           "type": "array"
         },
         "read_QC_analysis_activity_set": {
-          "description": "This property links a database object to the set of read QC analysis activities.\n  ",
+          "description": "This property links a database object to the set of read QC analysis activities.",
           "items": {
             "$ref": "#/definitions/ReadQCAnalysisActivity"
+          },
+          "type": "array"
+        },
+        "read_based_analysis_activity_set": {
+          "description": "This property links a database object to the set of read based analysis activities.\n  ",
+          "items": {
+            "$ref": "#/definitions/ReadBasedAnalysisActivity"
           },
           "type": "array"
         },
@@ -801,6 +920,14 @@
           "description": "longitude",
           "type": "number"
         },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
+          "type": "string"
+        },
         "was_generated_by": {
           "type": "string"
         }
@@ -849,6 +976,14 @@
         },
         "has_raw_value": {
           "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+          "type": "string"
+        },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
           "type": "string"
         },
         "was_generated_by": {
@@ -1469,6 +1604,9 @@
       "additionalProperties": false,
       "description": "The methods and processes used to generate omics data from a biosample or organism.",
       "properties": {
+        "add_date": {
+          "$ref": "#/definitions/AttributeValue"
+        },
         "alternate_identifiers": {
           "description": "The same omics processing may have distinct identifiers in different databases (e.g. GOLD and EMSL, as well as NCBI)",
           "items": {
@@ -1496,13 +1634,21 @@
           "description": "The primary identifier for the omics processing. E.g. GOLD:GpNNNN",
           "type": "string"
         },
+        "instrument_name": {
+          "$ref": "#/definitions/AttributeValue"
+        },
+        "mod_date": {
+          "$ref": "#/definitions/AttributeValue"
+        },
         "name": {
           "description": "A human readable name or description of the omics processing.",
           "type": "string"
         },
+        "ncbi_project_name": {
+          "$ref": "#/definitions/AttributeValue"
+        },
         "omics_type": {
-          "$ref": "#/definitions/ControlledTermValue",
-          "description": "The type of omics data"
+          "$ref": "#/definitions/AttributeValue"
         },
         "part_of": {
           "items": {
@@ -1515,11 +1661,14 @@
           "description": "An optional values that specifies the PI's name. This might be needed in cases where the study cannot be identified."
         },
         "processing_institution": {
-          "description": "The organization that processed the sample.",
-          "type": "string"
+          "$ref": "#/definitions/AttributeValue",
+          "description": "The organization that processed the sample."
         },
         "type": {
           "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
           "type": "string"
         }
       },
@@ -1702,6 +1851,14 @@
         "orcid": {
           "type": "string"
         },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
+          "type": "string"
+        },
         "was_generated_by": {
           "type": "string"
         }
@@ -1756,6 +1913,14 @@
         },
         "has_unit": {
           "description": "The unit of the quantity",
+          "type": "string"
+        },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
           "type": "string"
         },
         "was_generated_by": {
@@ -2033,6 +2198,13 @@
         "specific_ecosystem": {
           "$ref": "#/definitions/AttributeValue",
           "description": "TODO"
+        },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "type": "string"
         }
       },
       "required": [
@@ -2053,6 +2225,14 @@
           "description": "Should use ISO 639-1 code e.g. \"en\", \"fr\"",
           "type": "string"
         },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
+          "type": "string"
+        },
         "was_generated_by": {
           "type": "string"
         }
@@ -2069,6 +2249,14 @@
           "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
           "type": "string"
         },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
+          "type": "string"
+        },
         "was_generated_by": {
           "type": "string"
         }
@@ -2083,6 +2271,14 @@
       "properties": {
         "has_raw_value": {
           "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
+          "type": "string"
+        },
+        "type": {
+          "description": "An optional string that specified the type of object.",
+          "type": "string"
+        },
+        "uriorcurie": {
+          "description": "A uri or curi associated with an entity.",
           "type": "string"
         },
         "was_generated_by": {
@@ -2205,6 +2401,20 @@
       },
       "type": "array"
     },
+    "metagenome_annotation_activity_set": {
+      "description": "This property links a database object to the set of metaproteomics analysis activities.",
+      "items": {
+        "$ref": "#/definitions/MetagenomeAnnotationActivity"
+      },
+      "type": "array"
+    },
+    "metagenome_assembly_set": {
+      "description": "This property links a database object to the set of metaproteomics analysis activities.\n  ",
+      "items": {
+        "$ref": "#/definitions/MetagenomeAssembly"
+      },
+      "type": "array"
+    },
     "metaproteomics_analysis_activity_set": {
       "description": "This property links a database object to the set of metaproteomics analysis activities.",
       "items": {
@@ -2227,9 +2437,16 @@
       "type": "array"
     },
     "read_QC_analysis_activity_set": {
-      "description": "This property links a database object to the set of read QC analysis activities.\n  ",
+      "description": "This property links a database object to the set of read QC analysis activities.",
       "items": {
         "$ref": "#/definitions/ReadQCAnalysisActivity"
+      },
+      "type": "array"
+    },
+    "read_based_analysis_activity_set": {
+      "description": "This property links a database object to the set of read based analysis activities.\n  ",
+      "items": {
+        "$ref": "#/definitions/ReadBasedAnalysisActivity"
       },
       "type": "array"
     },

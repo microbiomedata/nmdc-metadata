@@ -26,11 +26,11 @@ def get_json(file_path, replace_single_quote=False):
     return json_list
 
 
-def save_json(json_list, file_path):
+def save_json(json_data, file_path):
     ## save json with changed data types
     with open(file_path, 'w') as out_file:
-        json.dump(json_list, out_file, indent=2)
-    return json_list
+        json.dump(json_data, out_file, indent=2)
+    return json_data
 
 
 def make_merged_data_source(spec_file='lib/nmdc_data_source.yaml', save_path='../data/nmdc_merged_data.tsv'):
@@ -151,7 +151,7 @@ def make_nmdc_example_database():
 
     save_json(database, 'output/nmdc-04.json')
 
-    
+
 def main(data_file='../data/nmdc_merged_data.tsv.zip',
          etl_modules=['gold_study', 
                       'gold_omics_processing', 
@@ -203,6 +203,6 @@ if __name__ == '__main__':
     # main(etl_modules=['gold_omics_processing']) # test gold project etl
     # main(etl_modules=['jgi_data_object']) # test jgi data object etl
     # main(etl_modules=['emsl_data_object']) # test emsl data object etl
-    main() # run etl on all files
+    # main() # run etl on all files
     make_nmdc_database() # combines output into database json format
-    make_nmdc_example_database() # make example data
+    # make_nmdc_example_database() # make example data
