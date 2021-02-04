@@ -86,6 +86,8 @@ class NMDC_ETL():
         self.fastq_table = ex.extract_table(self.merged_dataframe, 'ficus_fastq_table')
         self.project_biosample_table = ex.extract_table(self.merged_dataframe, 'project_biosample_table')
         self.biosample_table = ex.extract_table(self.merged_dataframe, 'biosample_table')
+        self.soil_package_table = ex.extract_table(self.merged_dataframe, 'soil_package_table')
+        self.water_package_table = ex.extract_table(self.merged_dataframe, 'water_package_table')
         
         ## build dataframes from tables
         self.study = \
@@ -96,7 +98,7 @@ class NMDC_ETL():
         self.fastq = \
             nmdc_dfs.make_jgi_fastq_dataframe(self.fastq_table, self.project_table)
         self.biosample = \
-            nmdc_dfs.make_biosample_dataframe(self.biosample_table, self.project_biosample_table, self.project_table) # gold biosamples
+            nmdc_dfs.make_biosample_dataframe(self.biosample_table, self.soil_package_table, self.water_package_table, self.project_biosample_table, self.project_table) # gold biosamples
         self.project = \
             nmdc_dfs.make_project_dataframe(self.project_table, self.study_table, self.contact_table, self.fastq, self.project_biosample_table, self.biosample) # gold projects
         

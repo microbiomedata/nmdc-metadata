@@ -349,7 +349,7 @@ def make_biosample_dataframe (biosample_table, soil_package_table, water_package
     ## rename columns
     project_table_splice.rename(columns={'gold_id': 'project_gold_id'}, inplace=True)
     
-    ## lef join package tables to biosample table
+    ## left join package tables to biosample table
     temp0_df = pds.merge(biosample_table, soil_package_table, how='left', on='soil_package_id')
     temp0_df = pds.merge(temp0_df, water_package_table, how='left', on='water_package_id')
     
@@ -372,14 +372,17 @@ def make_biosample_dataframe (biosample_table, soil_package_table, water_package
     ## see: https://queirozf.com/entries/pandas-dataframe-groupby-examples
     ## see: https://stackoverflow.com/questions/18138693/replicating-group-concat-for-pandas-dataframe
     groups = \
-        temp2_df.groupby('biosample_id')['project_gold_id'].apply(lambda pid:','.join(filter(None, pid))).reset_index()
+        temp2_df.groupby('biosample_id')['project_gold_id'].apply(lambda pid: ','.join(filter(None, pid))).reset_index()
     groups.rename(columns={'project_gold_id':'project_gold_ids'}, inplace=True)
     
     # join concat groups to dataframe
     temp3_df = pds.merge(temp2_df, groups, how='left', on='biosample_id')
     
-    ## remove uneeded columns & drop dups
+    ## A biosample may belong to multiple projects 
+    # E.g. see biosample_id 247352 with gold_id "Gb0247352", belongs to projects 467278, 467306
+    ## So, remove uneeded columns & drop dups
     temp3_df.drop(columns=['project_gold_id'], inplace=True)
+    temp3_df.drop(columns=['project_id'], inplace=True)
     temp3_df.drop_duplicates(inplace=True)
     
     if len(result_cols) > 0:
