@@ -83,8 +83,8 @@ def make_nmdc_database():
     mg_assembly_activities = get_json('../data/aim-2-workflows/metagenome_assembly_activities.json')
     mg_assembly_data_objects = get_json('../data/aim-2-workflows/metagenome_assembly_data_objects.json')
 
-    readQ_annotation_activities = get_json('../data/aim-2-workflows/readQC_activities.json')
-    readQ_annotation_data_objects = get_json('../data/aim-2-workflows/readQC_data_objects.json')
+    readQC_activities = get_json('../data/aim-2-workflows/readQC_activities.json')
+    readQC_data_objects = get_json('../data/aim-2-workflows/readQC_data_objects.json')
 
     ## metaproteomic files
     hess_mp_analysis_activities = get_json('../data/aim-2-workflows/Hess_metaproteomic_analysis_activities.json')
@@ -99,16 +99,21 @@ def make_nmdc_database():
         "biosample_set": [*gold_biosample], 
         "data_object_set": [*jgi_data_object, 
                             *emsl_data_object, 
-                            *mg_annotation_data_objects, 
-                            *mg_assembly_data_objects, 
-                            *readQ_annotation_data_objects,
-                            *hess_mp_data_objects,
-                            *stegen_mp_data_objects],
-        "activity_set": [*mg_annotation_activities, 
-                         *mg_assembly_activities, 
-                         *readQ_annotation_activities,
-                         *hess_mp_analysis_activities,
-                         *stegen_mp_analysis_activities]
+                            # *mg_annotation_data_objects, ## remove for GSP
+                            *mg_assembly_data_objects,
+                            *readQC_data_objects,
+                            # *hess_mp_data_objects, ## remove for GSP
+                            # *stegen_mp_data_objects ## remove for GSP
+                            ], 
+        #"activity_set": [
+                         # *mg_annotation_activities, ## remove for GSP
+                         # *mg_assembly_activities, ## -> metagenome assembly set
+                         # *readQC_activities, ## -> read QC analysis activity set
+                         # *hess_mp_analysis_activities, ## remove for GSP
+                         # *stegen_mp_analysis_activities ## remove for GSP
+        #                 ],
+        "metagenome_assembly_set": [*mg_assembly_activities],
+        "read_QC_analysis_activity_set": [*readQC_activities]
     }
 
     save_json(database, "output/nmdc_database.json" )
