@@ -262,6 +262,13 @@ classes:
       - input base count
       - output read count
       - output base count
+    slot_usage:
+      input_read_bases:
+        description: >-
+            TODO
+      output_read_bases:
+        description: >-
+            TODO
         
   read based analysis activity:
     is_a: workflow execution activity
