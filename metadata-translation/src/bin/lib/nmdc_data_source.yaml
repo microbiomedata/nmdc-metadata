@@ -20,7 +20,7 @@ classes:
   ##
   ##        "principal_investigator_name": {
   ##           "has_raw_value": "Matthias Hess",
-  ##           "uriorcurie": "nmdc:AttributeValue"
+  ##           "type": "nmdc:AttributeValue"
   ##        }
   ##
   ##     When the attribute is a string that includes a comma and a datatype (e.g., file_size_bytes, int), the ETL output
@@ -33,14 +33,14 @@ classes:
   ##
   ##         "has_input": {
   ##                "id": "gold:Gb0108335",
-  ##                "uriorcurie": "nmdc:AttributeValue"
+  ##                "type": "nmdc:AttributeValue"
   ##              }
   ##        
-  ##      The uriorcurie value can also be overriden as needed. E.g., {has_input: biosample_gold_id, uriorcurie: nmdc:Biosample} produces:
+  ##      The type value can also be overriden as needed. E.g., {has_input: biosample_gold_id, class_type: nmdc:Biosample} produces:
   ##
   ##          "has_input": {
   ##                  "id": "gold:Gb0108335",
-  ##                  "uriorcurie": "nmdc:Biosample"
+  ##                  "class_type": "nmdc:Biosample"
   ##                }
   ##
   ##       If the value is dictionary (e.g, {part_of: {init: {id: study_gold_id}, class_type: Study}}), the ETL output is an an object built from the dictionary
@@ -50,7 +50,7 @@ classes:
   ##
   ##          "part_of": {
   ##                "id": "gold:Gs0112340",
-  ##                "uriorcurie": "nmdc:Study"
+  ##                "class_type": "nmdc:Study"
   ##              }
   ## 
   ##       In many cases, an attribute will have a one-to-many relation. For these cases, the value of the attribute is a a list. 
@@ -59,11 +59,11 @@ classes:
   ##          "has_output": [
   ##              {
   ##                "id": "jgi:551a20d30d878525404e90d5",
-  ##                "uriorcurie": "nmdc:DataObject"
+  ##                "class_type": "nmdc:DataObject"
   ##              },
   ##              {
   ##                "id": "jgi:551a20d90d878525404e90e1",
-  ##                "uriorcurie": "nmdc:DataObject"
+  ##                "class_type": "nmdc:DataObject"
   ##              }
   ##            ]
   ##
@@ -76,7 +76,7 @@ classes:
       description: description
     attributes:
       - principal_investigator_name
-      # - {ecosystem: {has_raw_value: ecosystem, uriorcurie: gold:ecosystem}} # example using just the raw value
+      # - {ecosystem: {has_raw_value: ecosystem, class_type: gold:ecosystem}} # example using just the raw value
       - ecosystem
       - ecosystem_category
       - ecosystem_type
@@ -91,8 +91,12 @@ classes:
       name: project_name
       description: description
     attributes:
-      - {part_of: [{init: {id: study_gold_id}, class_type: Study}]}
-      - {has_output: [{init: {id: output_file_ids}, class_type: DataObject}]}
+      # - {part_of: [{init: {id: study_gold_id}, class_type: Study}]}
+      # - {has_input: [{id: biosample_gold_id, class_type: nmdc:Biosample}]}
+      # - {has_output: [{init: {id: output_file_ids}, class_type: DataObject}]}
+      - part_of: [{field: study_gold_id, split_val: ','}] ## inline values
+      - has_input: [{field: biosample_gold_id, split_val: ','}] # inline values
+      - has_output: [{field: output_file_ids, split_val: ','}] # inline values
       - add_date 
       - mod_date
       - completion_date 
@@ -100,7 +104,7 @@ classes:
       - omics_type 
       - principal_investigator_name
       - processing_institution
-      - {has_input: [{id: biosample_gold_id, uriorcurie: nmdc:Biosample}]}
+      
             
   emsl_omics_processing:
     type: omics processing
@@ -112,11 +116,14 @@ classes:
       - omics_type
       - instrument_name
       - processing_institution
-      - {part_of: [{init: {id: gold_study_id}, class_type: Study}]}
+      # - {part_of: [{init: {id: gold_study_id}, class_type: Study}]}
+      - part_of: [{field: gold_study_id, split_val: ','}] ## inline values
       # - has_output: [data_object_id]
-      - {has_output: [{init: {id: data_object_id}, class_type: DataObject}]}
-      # - has_input: [biosample_gold_ids]
-      - {has_input: [{id: biosample_gold_ids, uriorcurie: nmdc:Biosample}]}
+      # - has_output: ["data_object_id, str"]
+      - has_output: [{field: data_object_id, split_val: ','}] # inline values
+      # - {has_output: [{init: {id: data_object_id}, class_type: DataObject}]}
+      - has_input: [{field: biosample_gold_ids, split_val: ','}] # inline values
+      # - {has_input: [{id: biosample_gold_ids, class_type: nmdc:Biosample}]}
       
   emsl_data_object:
     type: data object
@@ -163,7 +170,7 @@ classes:
       - sample_collection_site
       - identifier
       - host_name
-      - depth
+      - depth, float
       - subsurface_depth
       - altitude
       - proport_woa_temperature

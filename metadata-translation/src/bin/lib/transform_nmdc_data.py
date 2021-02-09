@@ -221,10 +221,16 @@ def set_nmdc_object(nmdc_obj,
             av = make_object_from_list(nmdc_record, val)
         elif type({}) == type(val):  
             av = make_object_from_dict(nmdc_record, val) # val is a dict
+        elif type("") == type(val):  # e.g. has_output: "data_object_id, str"
+            av = make_value_from_string(nmdc_record, val)    
         else:
             av = make_attribute_value_from_record(nmdc_record, val) # val names the field in the record
-    elif type("") == type(attribute_field) and "," in attribute_field:
-        field = attribute_field.split(",")[0].strip() # e.g., "file_size_bytes, int"
+    elif type("") == type(attribute_field):
+        if "," in attribute_field:
+            field = attribute_field.split(",")[0].strip() # e.g., "file_size_bytes, int"
+        else:
+            field = attribute_field.strip()
+            
         av = make_value_from_string(nmdc_record, attribute_field)
     else:
         field = attribute_field 
@@ -242,12 +248,12 @@ def set_nmdc_object(nmdc_obj,
     return nmdc_obj
 
 
-def make_attribute_value_from_record(nmdc_record:namedtuple, field, uriorcurie=''):
+def make_attribute_value_from_record(nmdc_record:namedtuple, field, object_type=''):
     """
     Creates an attribute value object linked the value in the nmdc record's field.
     """
     val = getattr(nmdc_record, field)
-    av = make_attribute_value(val, uriorcurie)
+    av = make_attribute_value(val, object_type)
     
     return av
 
@@ -262,20 +268,20 @@ def make_attribute_map(sssom_map_file:str):
     return attr_map
 
 
-def make_attribute_value(val, uriorcurie=''):
+def make_attribute_value(val, object_type=''):
     """
     Creates an attribute value object linked to value val.
     """
     av = nmdc.AttributeValue()
     if pds.notnull(val):
         av.has_raw_value = val
-        av.uriorcurie = \
-            uriorcurie if len(uriorcurie) > 0 else nmdc.AttributeValue.class_class_curie
+        av.type = \
+            object_type if len(object_type) > 0 else nmdc.AttributeValue.class_class_curie
     
     return av
 
 
-def make_nmdc_class_type(class_type):
+def make_nmdc_class(class_type):
     ## check if the class type is being passed as a string e.g., 'class_type': 'GeolocationValue'
     if type('') == type(class_type):
         class_type = getattr(nmdc, class_type)
@@ -292,23 +298,35 @@ def make_uriorcuri(object_dict={}, class_type=None, uriorcurie=''):
         return class_type.class_class_curie
 
 
-def make_object_from_dict(nmdc_record:namedtuple, object_dict:dict, uriorcurie=''):
+def make_object_type(object_dict={}, class_type=None, object_type=''):
+    ## return object type based on rules
+    if 'class_type' in object_dict.keys():
+        return object_dict['class_type']
+    elif type(class_type) == type(''):
+        return class_type
+    elif len(object_type) > 0:
+        return object_type
+    else:
+        return class_type.class_class_curie
+    
+    
+def make_object_from_dict(nmdc_record:namedtuple, object_dict:dict, ojbect_type=''):
     ## using the data from an nmdc record, create an object 
     ## There are two ways to do this:
     ##   1. using the keys init and class_type
     ##      the value of init is a dict represent the constructor(s) needed to instantiate the object
     ##      the value of class_types is a string or class reference that is the class the object instantiates
     ##      e.g., {'init': {latitude: 'latitude', longitude: 'longitude', has_raw_value: 'lat_lon'}, 'class_type': 'GeolocationValue'}
-    ##   2. using the id and uriorcurie keys
+    ##   2. using the id and class_type keys
     ##      This acts as a kind of foreign key to another object.
-    ##      The id key specifice the id of ojbect and the uriorcurie specifies the type of object referenced
+    ##      The id key specifice the id of ojbect and the class_type specifies the type of object referenced
     
     if 'init' in object_dict.keys():
         ## create param name / param value pairs from init values
         constructor_map = object_dict['init']
         constructor_args = make_constructor_dict_from_record(constructor_map, nmdc_record)
 
-        class_type = make_nmdc_class_type(object_dict['class_type']) # get class type
+        class_type = make_nmdc_class(object_dict['class_type']) # get class type
         obj = class_type(**constructor_args) # create object from type
     elif 'id' in object_dict.keys():
         class_type = nmdc.AttributeValue; obj = class_type() # create AttributeValue object
@@ -320,8 +338,8 @@ def make_object_from_dict(nmdc_record:namedtuple, object_dict:dict, uriorcurie='
     if 'has_raw_value' in object_dict.keys(): 
         obj.has_raw_value = getattr(nmdc_record, object_dict['has_raw_value'])
 
-    ## set the uriorcurie of object
-    obj.uriorcurie = make_uriorcuri(object_dict, class_type, uriorcurie)
+    ## set the type of object
+    obj.type = make_object_type(object_dict, class_type)
 
     return obj
 
@@ -330,8 +348,39 @@ def make_object_from_list(nmdc_record:namedtuple, nmdc_list:list):
     obj_list = []
     for val in nmdc_list:
         if type({}) == type(val):
+            if 'field' in val.keys():
+            ## e.g., [{field: data_object_id, dtype: str, multivalued: true}]
+                ## get record value for the field
+                record_val = getattr(nmdc_record, val['field'])
+                
+                ## set datatype for values
+                if 'dtype' in val.keys():
+                    dtype = val['dtype']
+                else:
+                    dtype = 'str'
+                
+            
+                ## check if record needs to be split
+                if 'split_val' in val.keys():
+                    split_val = val['split_val']
+                    if type(record_val) != type(""):
+                        record_val = str(record_val) # make sure record_val is a string
+                        
+                    for rv in record_val.split(split_val):
+                        ## coerce into datatype
+                        if dtype == 'str':
+                            obj_list.append(str(rv))
+                        else:
+                            obj_list.append(eval("""{dtype}({rv})"""))
+                else:
+                    ## coerce into datatype
+                    if dtype == 'str':
+                        obj_list.append(str(record_val))
+                    else:
+                        obj_list.append(eval("""{dtype}({record_val}"""))
+                
+            elif 'init' in val.keys():
             ## e.g., {part_of: {init: {id: study_gold_id}, class_type: Study}}
-            if 'init' in val.keys():
                 init_dict = val['init']
                 class_type = val['class_type']
             
@@ -368,36 +417,42 @@ def make_object_from_list(nmdc_record:namedtuple, nmdc_list:list):
 
                     ## create object and add to list
                     obj = class_type(**temp_dict)
-                    obj.uriorcurie = class_type.class_class_curie
+                    obj.type = class_type.class_class_curie
                     obj_list.append(obj)
             else:
-                ## e.g., {has_input [{id: biosample_gold_id, uriorcurie: nmdc:Biosample}]}
-                obj = make_object_from_dict(nmdc_record, val, val['uriorcurie'])
+                ## e.g., {has_input [{id: biosample_gold_id, class_type: nmdc:Biosample}]}
+                obj = make_object_from_dict(nmdc_record, val, val['class_type'])
                 obj_list.append(obj)
-
+        elif type("") == type(val):
+            ## e.g., has_output: ["data_object_id, str"]
+            record_val = make_value_from_string(nmdc_record, val)
+            obj_list.append(record_val)
         else:
-            record_vals = getattr(nmdc_record, val)
-            if pds.notnull(record_vals): # check for null
-                ## e.g. {has_output: output_file_ids}
-                for rv in record_vals.split(','):
-                    av = make_attribute_value(rv)
-                    obj_list.append(av)
-
+            ## this is default case: the record is turned into an attribute value
+            record_val = getattr(nmdc_record, val)
+            av = make_attribute_value(record_val)
+            obj_list.append(av)
+            
         return obj_list
 
 
-def make_value_from_string(nmdc_record:namedtuple, attribute_string: str):
-
-    ## e.g., "file_size_bytes, int"
-    ## get field and datatype from attribute string and strip spaces
-    field, dtype = attribute_string.split(",")
-    field, dtype = field.strip(), dtype.strip()
+def make_value_from_string(nmdc_record:namedtuple, attribute_string: str):  
+    ## get field and datatype from attribute string and strip spaces e.g., "file_size_bytes, int"
+    if "," in attribute_string:
+        field, dtype = attribute_string.split(",")
+        field, dtype = field.strip(), dtype.strip()
+    else: # default to string datatype
+        field = attribute_string.strip()
+        dtype = "str"
     
     ## get value from record
     val = getattr(nmdc_record, field)
     
     if pds.notnull(val):
-        return eval(f"""{dtype}("{val}")""") # convert value to specified datatype
+        if dtype != 'str': # only do the eval when it is not a string
+            return eval(f"""{dtype}({val})""") # convert value to specified datatype
+        else:
+            return f"""{val}"""
     else:
         return None
 
@@ -419,7 +474,7 @@ def dataframe_to_dict(nmdc_df:pds.DataFrame,
         else:
             nmdc_obj = nmdc_class()
 
-        nmdc_obj.uriorcurie = nmdc_class.class_class_curie  ## add info about the type of entity it is
+        nmdc_obj.type = nmdc_class.class_class_curie  ## add info about the type of entity it is
         
         ## get mappings for attribute fields
         for af in attribute_fields:

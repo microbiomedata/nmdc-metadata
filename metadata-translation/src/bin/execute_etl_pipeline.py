@@ -254,13 +254,16 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
         nmdc_etl.save_jgi_data_object('output/nmdc_etl/jgi_fastq_data_objects.json')
 
 if __name__ == '__main__':
+    main() # run etl on all files
+    make_nmdc_database() # combines output into database json format
+    make_test_datasets() # make nmdc test datasets
+    # make_nmdc_example_database() # make example datatabase
     # make_merged_data_source() # consolidates all nmdc data into a single tsv
+    
+    # ----- testing code ------ # 
     # main(etl_modules=['gold_biosample']) # test gold biosample etl
     # main(etl_modules=['gold_omics_processing']) # test gold project etl
     # main(etl_modules=['jgi_data_object']) # test jgi data object etl
     # main(etl_modules=['emsl_omics_processing']) # test emsl omics processing etl
     # main(etl_modules=['emsl_data_object']) # test emsl data object etl
-    # main() # run etl on all files
-    make_nmdc_database() # combines output into database json format
-    make_nmdc_example_database() # make example data
-    make_test_datasets() # make nmdc test datasets
+    

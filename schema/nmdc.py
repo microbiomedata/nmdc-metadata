@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-02-01 21:15
+# Generation date: 2021-02-09 15:42
 # Schema: NMDC
 #
 # id: https://microbiomedata/schema
@@ -655,20 +655,20 @@ class Biosample(NamedThing):
     env_package: Optional[Union[dict, "TextValue"]] = None
     lat_lon: Optional[Union[dict, "GeolocationValue"]] = None
     geo_loc_name: Optional[Union[dict, "TextValue"]] = None
-    collection_date: Optional[Union[dict, "TimestampValue"]] = None
+    collection_date: Optional[str] = None
     env_broad_scale: Optional[Union[dict, "ControlledTermValue"]] = None
     env_local_scale: Optional[Union[dict, "ControlledTermValue"]] = None
     env_medium: Optional[Union[dict, "ControlledTermValue"]] = None
-    ecosystem: Optional[Union[dict, "AttributeValue"]] = None
+    ecosystem: Optional[str] = None
     ecosystem_category: Optional[Union[dict, "AttributeValue"]] = None
     ecosystem_type: Optional[Union[dict, "AttributeValue"]] = None
     ecosystem_subtype: Optional[Union[dict, "AttributeValue"]] = None
     specific_ecosystem: Optional[Union[dict, "AttributeValue"]] = None
-    depth: Optional[Union[dict, "QuantityValue"]] = None
+    depth: Optional[float] = None
     tot_org_carb: Optional[Union[dict, "QuantityValue"]] = None
     alt: Optional[Union[dict, "QuantityValue"]] = None
     elev: Optional[Union[dict, "QuantityValue"]] = None
-    salinity: Optional[Union[dict, "QuantityValue"]] = None
+    salinity: Optional[str] = None
     diss_oxygen: Optional[Union[dict, "QuantityValue"]] = None
     nitrate: Optional[Union[dict, "QuantityValue"]] = None
     chlorophyll: Optional[Union[dict, "QuantityValue"]] = None
@@ -725,30 +725,34 @@ class Biosample(NamedThing):
     alternate_identifiers: Optional[Union[str, List[str]]] = empty_list()
     type: Optional[str] = None
     uriorcurie: Optional[str] = None
-    add_date: Optional[Union[dict, "AttributeValue"]] = None
-    mod_date: Optional[Union[dict, "AttributeValue"]] = None
-    ncbi_taxonomy_name: Optional[Union[dict, "AttributeValue"]] = None
-    community: Optional[Union[dict, "AttributeValue"]] = None
-    location: Optional[Union[dict, "AttributeValue"]] = None
-    habitat: Optional[Union[dict, "AttributeValue"]] = None
-    geographic_location: Optional[Union[dict, "AttributeValue"]] = None
-    sample_collection_site: Optional[Union[dict, "AttributeValue"]] = None
-    identifier: Optional[Union[dict, "AttributeValue"]] = None
-    host_name: Optional[Union[dict, "AttributeValue"]] = None
-    sampling_strategy: Optional[Union[dict, "AttributeValue"]] = None
-    growth_temperature: Optional[Union[dict, "AttributeValue"]] = None
-    ph: Optional[Union[dict, "AttributeValue"]] = None
-    altitude: Optional[Union[dict, "AttributeValue"]] = None
-    pressure: Optional[Union[dict, "AttributeValue"]] = None
-    subsurface_depth: Optional[Union[dict, "AttributeValue"]] = None
-    salinity_concentration: Optional[Union[dict, "AttributeValue"]] = None
-    oxygen_concentration: Optional[Union[dict, "AttributeValue"]] = None
-    nitrate_concentration: Optional[Union[dict, "AttributeValue"]] = None
-    soluble_iron_micromol: Optional[Union[dict, "AttributeValue"]] = None
-    tot_nitrogen: Optional[Union[dict, "AttributeValue"]] = None
-    chlorophyll_concentration: Optional[Union[dict, "AttributeValue"]] = None
-    sample_volume: Optional[Union[dict, "AttributeValue"]] = None
-    proport_woa_temperature: Optional[Union[dict, "AttributeValue"]] = None
+    add_date: Optional[str] = None
+    mod_date: Optional[str] = None
+    ncbi_taxonomy_name: Optional[str] = None
+    community: Optional[str] = None
+    location: Optional[str] = None
+    habitat: Optional[str] = None
+    geographic_location: Optional[str] = None
+    sample_collection_site: Optional[str] = None
+    identifier: Optional[str] = None
+    host_name: Optional[str] = None
+    sampling_strategy: Optional[str] = None
+    growth_temperature: Optional[str] = None
+    ph: Optional[str] = None
+    altitude: Optional[str] = None
+    pressure: Optional[str] = None
+    subsurface_depth: Optional[str] = None
+    salinity_concentration: Optional[str] = None
+    oxygen_concentration: Optional[str] = None
+    nitrate_concentration: Optional[str] = None
+    soluble_iron_micromol: Optional[str] = None
+    tot_nitrogen: Optional[str] = None
+    chlorophyll_concentration: Optional[str] = None
+    sample_volume: Optional[str] = None
+    proport_woa_temperature: Optional[str] = None
+    ecosystem_category: Optional[str] = None
+    ecosystem_type: Optional[str] = None
+    ecosystem_subtype: Optional[str] = None
+    specific_ecosystem: Optional[str] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -765,8 +769,8 @@ class Biosample(NamedThing):
         if self.geo_loc_name is not None and not isinstance(self.geo_loc_name, TextValue):
             self.geo_loc_name = TextValue(**self.geo_loc_name)
 
-        if self.collection_date is not None and not isinstance(self.collection_date, TimestampValue):
-            self.collection_date = TimestampValue(**self.collection_date)
+        if self.collection_date is not None and not isinstance(self.collection_date, str):
+            self.collection_date = str(self.collection_date)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, ControlledTermValue):
             self.env_broad_scale = ControlledTermValue(**self.env_broad_scale)
@@ -777,8 +781,8 @@ class Biosample(NamedThing):
         if self.env_medium is not None and not isinstance(self.env_medium, ControlledTermValue):
             self.env_medium = ControlledTermValue(**self.env_medium)
 
-        if self.ecosystem is not None and not isinstance(self.ecosystem, AttributeValue):
-            self.ecosystem = AttributeValue(**self.ecosystem)
+        if self.ecosystem is not None and not isinstance(self.ecosystem, str):
+            self.ecosystem = str(self.ecosystem)
 
         if self.ecosystem_category is not None and not isinstance(self.ecosystem_category, AttributeValue):
             self.ecosystem_category = AttributeValue(**self.ecosystem_category)
@@ -792,8 +796,8 @@ class Biosample(NamedThing):
         if self.specific_ecosystem is not None and not isinstance(self.specific_ecosystem, AttributeValue):
             self.specific_ecosystem = AttributeValue(**self.specific_ecosystem)
 
-        if self.depth is not None and not isinstance(self.depth, QuantityValue):
-            self.depth = QuantityValue(**self.depth)
+        if self.depth is not None and not isinstance(self.depth, float):
+            self.depth = float(self.depth)
 
         if self.tot_org_carb is not None and not isinstance(self.tot_org_carb, QuantityValue):
             self.tot_org_carb = QuantityValue(**self.tot_org_carb)
@@ -804,8 +808,8 @@ class Biosample(NamedThing):
         if self.elev is not None and not isinstance(self.elev, QuantityValue):
             self.elev = QuantityValue(**self.elev)
 
-        if self.salinity is not None and not isinstance(self.salinity, QuantityValue):
-            self.salinity = QuantityValue(**self.salinity)
+        if self.salinity is not None and not isinstance(self.salinity, str):
+            self.salinity = str(self.salinity)
 
         if self.diss_oxygen is not None and not isinstance(self.diss_oxygen, QuantityValue):
             self.diss_oxygen = QuantityValue(**self.diss_oxygen)
@@ -984,77 +988,89 @@ class Biosample(NamedThing):
         if self.uriorcurie is not None and not isinstance(self.uriorcurie, str):
             self.uriorcurie = str(self.uriorcurie)
 
-        if self.add_date is not None and not isinstance(self.add_date, AttributeValue):
-            self.add_date = AttributeValue(**self.add_date)
+        if self.add_date is not None and not isinstance(self.add_date, str):
+            self.add_date = str(self.add_date)
 
-        if self.mod_date is not None and not isinstance(self.mod_date, AttributeValue):
-            self.mod_date = AttributeValue(**self.mod_date)
+        if self.mod_date is not None and not isinstance(self.mod_date, str):
+            self.mod_date = str(self.mod_date)
 
-        if self.ncbi_taxonomy_name is not None and not isinstance(self.ncbi_taxonomy_name, AttributeValue):
-            self.ncbi_taxonomy_name = AttributeValue(**self.ncbi_taxonomy_name)
+        if self.ncbi_taxonomy_name is not None and not isinstance(self.ncbi_taxonomy_name, str):
+            self.ncbi_taxonomy_name = str(self.ncbi_taxonomy_name)
 
-        if self.community is not None and not isinstance(self.community, AttributeValue):
-            self.community = AttributeValue(**self.community)
+        if self.community is not None and not isinstance(self.community, str):
+            self.community = str(self.community)
 
-        if self.location is not None and not isinstance(self.location, AttributeValue):
-            self.location = AttributeValue(**self.location)
+        if self.location is not None and not isinstance(self.location, str):
+            self.location = str(self.location)
 
-        if self.habitat is not None and not isinstance(self.habitat, AttributeValue):
-            self.habitat = AttributeValue(**self.habitat)
+        if self.habitat is not None and not isinstance(self.habitat, str):
+            self.habitat = str(self.habitat)
 
-        if self.geographic_location is not None and not isinstance(self.geographic_location, AttributeValue):
-            self.geographic_location = AttributeValue(**self.geographic_location)
+        if self.geographic_location is not None and not isinstance(self.geographic_location, str):
+            self.geographic_location = str(self.geographic_location)
 
-        if self.sample_collection_site is not None and not isinstance(self.sample_collection_site, AttributeValue):
-            self.sample_collection_site = AttributeValue(**self.sample_collection_site)
+        if self.sample_collection_site is not None and not isinstance(self.sample_collection_site, str):
+            self.sample_collection_site = str(self.sample_collection_site)
 
-        if self.identifier is not None and not isinstance(self.identifier, AttributeValue):
-            self.identifier = AttributeValue(**self.identifier)
+        if self.identifier is not None and not isinstance(self.identifier, str):
+            self.identifier = str(self.identifier)
 
-        if self.host_name is not None and not isinstance(self.host_name, AttributeValue):
-            self.host_name = AttributeValue(**self.host_name)
+        if self.host_name is not None and not isinstance(self.host_name, str):
+            self.host_name = str(self.host_name)
 
-        if self.sampling_strategy is not None and not isinstance(self.sampling_strategy, AttributeValue):
-            self.sampling_strategy = AttributeValue(**self.sampling_strategy)
+        if self.sampling_strategy is not None and not isinstance(self.sampling_strategy, str):
+            self.sampling_strategy = str(self.sampling_strategy)
 
-        if self.growth_temperature is not None and not isinstance(self.growth_temperature, AttributeValue):
-            self.growth_temperature = AttributeValue(**self.growth_temperature)
+        if self.growth_temperature is not None and not isinstance(self.growth_temperature, str):
+            self.growth_temperature = str(self.growth_temperature)
 
-        if self.ph is not None and not isinstance(self.ph, AttributeValue):
-            self.ph = AttributeValue(**self.ph)
+        if self.ph is not None and not isinstance(self.ph, str):
+            self.ph = str(self.ph)
 
-        if self.altitude is not None and not isinstance(self.altitude, AttributeValue):
-            self.altitude = AttributeValue(**self.altitude)
+        if self.altitude is not None and not isinstance(self.altitude, str):
+            self.altitude = str(self.altitude)
 
-        if self.pressure is not None and not isinstance(self.pressure, AttributeValue):
-            self.pressure = AttributeValue(**self.pressure)
+        if self.pressure is not None and not isinstance(self.pressure, str):
+            self.pressure = str(self.pressure)
 
-        if self.subsurface_depth is not None and not isinstance(self.subsurface_depth, AttributeValue):
-            self.subsurface_depth = AttributeValue(**self.subsurface_depth)
+        if self.subsurface_depth is not None and not isinstance(self.subsurface_depth, str):
+            self.subsurface_depth = str(self.subsurface_depth)
 
-        if self.salinity_concentration is not None and not isinstance(self.salinity_concentration, AttributeValue):
-            self.salinity_concentration = AttributeValue(**self.salinity_concentration)
+        if self.salinity_concentration is not None and not isinstance(self.salinity_concentration, str):
+            self.salinity_concentration = str(self.salinity_concentration)
 
-        if self.oxygen_concentration is not None and not isinstance(self.oxygen_concentration, AttributeValue):
-            self.oxygen_concentration = AttributeValue(**self.oxygen_concentration)
+        if self.oxygen_concentration is not None and not isinstance(self.oxygen_concentration, str):
+            self.oxygen_concentration = str(self.oxygen_concentration)
 
-        if self.nitrate_concentration is not None and not isinstance(self.nitrate_concentration, AttributeValue):
-            self.nitrate_concentration = AttributeValue(**self.nitrate_concentration)
+        if self.nitrate_concentration is not None and not isinstance(self.nitrate_concentration, str):
+            self.nitrate_concentration = str(self.nitrate_concentration)
 
-        if self.soluble_iron_micromol is not None and not isinstance(self.soluble_iron_micromol, AttributeValue):
-            self.soluble_iron_micromol = AttributeValue(**self.soluble_iron_micromol)
+        if self.soluble_iron_micromol is not None and not isinstance(self.soluble_iron_micromol, str):
+            self.soluble_iron_micromol = str(self.soluble_iron_micromol)
 
-        if self.tot_nitrogen is not None and not isinstance(self.tot_nitrogen, AttributeValue):
-            self.tot_nitrogen = AttributeValue(**self.tot_nitrogen)
+        if self.tot_nitrogen is not None and not isinstance(self.tot_nitrogen, str):
+            self.tot_nitrogen = str(self.tot_nitrogen)
 
-        if self.chlorophyll_concentration is not None and not isinstance(self.chlorophyll_concentration, AttributeValue):
-            self.chlorophyll_concentration = AttributeValue(**self.chlorophyll_concentration)
+        if self.chlorophyll_concentration is not None and not isinstance(self.chlorophyll_concentration, str):
+            self.chlorophyll_concentration = str(self.chlorophyll_concentration)
 
-        if self.sample_volume is not None and not isinstance(self.sample_volume, AttributeValue):
-            self.sample_volume = AttributeValue(**self.sample_volume)
+        if self.sample_volume is not None and not isinstance(self.sample_volume, str):
+            self.sample_volume = str(self.sample_volume)
 
-        if self.proport_woa_temperature is not None and not isinstance(self.proport_woa_temperature, AttributeValue):
-            self.proport_woa_temperature = AttributeValue(**self.proport_woa_temperature)
+        if self.proport_woa_temperature is not None and not isinstance(self.proport_woa_temperature, str):
+            self.proport_woa_temperature = str(self.proport_woa_temperature)
+
+        if self.ecosystem_category is not None and not isinstance(self.ecosystem_category, str):
+            self.ecosystem_category = str(self.ecosystem_category)
+
+        if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
+            self.ecosystem_type = str(self.ecosystem_type)
+
+        if self.ecosystem_subtype is not None and not isinstance(self.ecosystem_subtype, str):
+            self.ecosystem_subtype = str(self.ecosystem_subtype)
+
+        if self.specific_ecosystem is not None and not isinstance(self.specific_ecosystem, str):
+            self.specific_ecosystem = str(self.specific_ecosystem)
 
         super().__post_init__(**kwargs)
 
@@ -1073,17 +1089,21 @@ class Study(NamedThing):
     class_model_uri: ClassVar[URIRef] = NMDC.Study
 
     id: Union[str, StudyId] = None
-    ecosystem: Optional[Union[dict, "AttributeValue"]] = None
+    ecosystem: Optional[str] = None
     ecosystem_category: Optional[Union[dict, "AttributeValue"]] = None
     ecosystem_type: Optional[Union[dict, "AttributeValue"]] = None
     ecosystem_subtype: Optional[Union[dict, "AttributeValue"]] = None
     specific_ecosystem: Optional[Union[dict, "AttributeValue"]] = None
     principal_investigator_name: Optional[Union[dict, "PersonValue"]] = None
-    doi: Optional[Union[dict, "AttributeValue"]] = None
+    doi: Optional[str] = None
     name: Optional[str] = None
     alternate_identifiers: Optional[Union[str, List[str]]] = empty_list()
     type: Optional[str] = None
     uriorcurie: Optional[str] = None
+    ecosystem_category: Optional[str] = None
+    ecosystem_type: Optional[str] = None
+    ecosystem_subtype: Optional[str] = None
+    specific_ecosystem: Optional[str] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -1091,8 +1111,8 @@ class Study(NamedThing):
         if not isinstance(self.id, StudyId):
             self.id = StudyId(self.id)
 
-        if self.ecosystem is not None and not isinstance(self.ecosystem, AttributeValue):
-            self.ecosystem = AttributeValue(**self.ecosystem)
+        if self.ecosystem is not None and not isinstance(self.ecosystem, str):
+            self.ecosystem = str(self.ecosystem)
 
         if self.ecosystem_category is not None and not isinstance(self.ecosystem_category, AttributeValue):
             self.ecosystem_category = AttributeValue(**self.ecosystem_category)
@@ -1109,8 +1129,8 @@ class Study(NamedThing):
         if self.principal_investigator_name is not None and not isinstance(self.principal_investigator_name, PersonValue):
             self.principal_investigator_name = PersonValue(**self.principal_investigator_name)
 
-        if self.doi is not None and not isinstance(self.doi, AttributeValue):
-            self.doi = AttributeValue(**self.doi)
+        if self.doi is not None and not isinstance(self.doi, str):
+            self.doi = str(self.doi)
 
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
@@ -1126,6 +1146,18 @@ class Study(NamedThing):
 
         if self.uriorcurie is not None and not isinstance(self.uriorcurie, str):
             self.uriorcurie = str(self.uriorcurie)
+
+        if self.ecosystem_category is not None and not isinstance(self.ecosystem_category, str):
+            self.ecosystem_category = str(self.ecosystem_category)
+
+        if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
+            self.ecosystem_type = str(self.ecosystem_type)
+
+        if self.ecosystem_subtype is not None and not isinstance(self.ecosystem_subtype, str):
+            self.ecosystem_subtype = str(self.ecosystem_subtype)
+
+        if self.specific_ecosystem is not None and not isinstance(self.specific_ecosystem, str):
+            self.specific_ecosystem = str(self.specific_ecosystem)
 
         super().__post_init__(**kwargs)
 
@@ -1175,19 +1207,19 @@ class OmicsProcessing(BiosampleProcessing):
 
     id: Union[str, OmicsProcessingId] = None
     has_output: Optional[Union[str, List[str]]] = empty_list()
-    omics_type: Optional[Union[dict, "AttributeValue"]] = None
+    omics_type: Optional[str] = None
     part_of: Optional[Union[Union[str, StudyId], List[Union[str, StudyId]]]] = empty_list()
     name: Optional[str] = None
     alternate_identifiers: Optional[Union[str, List[str]]] = empty_list()
     has_input: Optional[Union[Union[str, BiosampleId], List[Union[str, BiosampleId]]]] = empty_list()
     type: Optional[str] = None
-    principal_investigator_name: Optional[Union[dict, "PersonValue"]] = None
-    processing_institution: Optional[Union[dict, "AttributeValue"]] = None
+    principal_investigator_name: Optional[str] = None
+    processing_institution: Optional[str] = None
     uriorcurie: Optional[str] = None
-    add_date: Optional[Union[dict, "AttributeValue"]] = None
-    mod_date: Optional[Union[dict, "AttributeValue"]] = None
-    ncbi_project_name: Optional[Union[dict, "AttributeValue"]] = None
-    instrument_name: Optional[Union[dict, "AttributeValue"]] = None
+    add_date: Optional[str] = None
+    mod_date: Optional[str] = None
+    ncbi_project_name: Optional[str] = None
+    instrument_name: Optional[str] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -1201,8 +1233,8 @@ class OmicsProcessing(BiosampleProcessing):
             self.has_output = [self.has_output]
         self.has_output = [v if isinstance(v, str) else str(v) for v in self.has_output]
 
-        if self.omics_type is not None and not isinstance(self.omics_type, AttributeValue):
-            self.omics_type = AttributeValue(**self.omics_type)
+        if self.omics_type is not None and not isinstance(self.omics_type, str):
+            self.omics_type = str(self.omics_type)
 
         if self.part_of is None:
             self.part_of = []
@@ -1228,26 +1260,26 @@ class OmicsProcessing(BiosampleProcessing):
         if self.type is not None and not isinstance(self.type, str):
             self.type = str(self.type)
 
-        if self.principal_investigator_name is not None and not isinstance(self.principal_investigator_name, PersonValue):
-            self.principal_investigator_name = PersonValue(**self.principal_investigator_name)
+        if self.principal_investigator_name is not None and not isinstance(self.principal_investigator_name, str):
+            self.principal_investigator_name = str(self.principal_investigator_name)
 
-        if self.processing_institution is not None and not isinstance(self.processing_institution, AttributeValue):
-            self.processing_institution = AttributeValue(**self.processing_institution)
+        if self.processing_institution is not None and not isinstance(self.processing_institution, str):
+            self.processing_institution = str(self.processing_institution)
 
         if self.uriorcurie is not None and not isinstance(self.uriorcurie, str):
             self.uriorcurie = str(self.uriorcurie)
 
-        if self.add_date is not None and not isinstance(self.add_date, AttributeValue):
-            self.add_date = AttributeValue(**self.add_date)
+        if self.add_date is not None and not isinstance(self.add_date, str):
+            self.add_date = str(self.add_date)
 
-        if self.mod_date is not None and not isinstance(self.mod_date, AttributeValue):
-            self.mod_date = AttributeValue(**self.mod_date)
+        if self.mod_date is not None and not isinstance(self.mod_date, str):
+            self.mod_date = str(self.mod_date)
 
-        if self.ncbi_project_name is not None and not isinstance(self.ncbi_project_name, AttributeValue):
-            self.ncbi_project_name = AttributeValue(**self.ncbi_project_name)
+        if self.ncbi_project_name is not None and not isinstance(self.ncbi_project_name, str):
+            self.ncbi_project_name = str(self.ncbi_project_name)
 
-        if self.instrument_name is not None and not isinstance(self.instrument_name, AttributeValue):
-            self.instrument_name = AttributeValue(**self.instrument_name)
+        if self.instrument_name is not None and not isinstance(self.instrument_name, str):
+            self.instrument_name = str(self.instrument_name)
 
         super().__post_init__(**kwargs)
 
@@ -1876,6 +1908,10 @@ class ReadQCAnalysisActivity(WorkflowExecutionActivity):
     input_base_count: Optional[float] = None
     output_read_count: Optional[float] = None
     output_base_count: Optional[float] = None
+    input_read_bases: Optional[float] = None
+    output_read_bases: Optional[float] = None
+    has_input: Optional[Union[str, List[str]]] = empty_list()
+    has_output: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -1894,6 +1930,24 @@ class ReadQCAnalysisActivity(WorkflowExecutionActivity):
 
         if self.output_base_count is not None and not isinstance(self.output_base_count, float):
             self.output_base_count = float(self.output_base_count)
+
+        if self.input_read_bases is not None and not isinstance(self.input_read_bases, float):
+            self.input_read_bases = float(self.input_read_bases)
+
+        if self.output_read_bases is not None and not isinstance(self.output_read_bases, float):
+            self.output_read_bases = float(self.output_read_bases)
+
+        if self.has_input is None:
+            self.has_input = []
+        if not isinstance(self.has_input, list):
+            self.has_input = [self.has_input]
+        self.has_input = [v if isinstance(v, str) else str(v) for v in self.has_input]
+
+        if self.has_output is None:
+            self.has_output = []
+        if not isinstance(self.has_output, list):
+            self.has_output = [self.has_output]
+        self.has_output = [v if isinstance(v, str) else str(v) for v in self.has_output]
 
         super().__post_init__(**kwargs)
 
@@ -4926,6 +4980,12 @@ slots.mAGBin__gtdbtk_species = Slot(uri=NMDC.gtdbtk_species, name="mAGBin__gtdbt
 slots.uriorcurie = Slot(uri=NMDC.uriorcurie, name="uriorcurie", curie=NMDC.curie('uriorcurie'),
                    model_uri=NMDC.uriorcurie, domain=None, range=Optional[str])
 
+slots.input_read_bases = Slot(uri=NMDC.input_read_bases, name="input_read_bases", curie=NMDC.curie('input_read_bases'),
+                   model_uri=NMDC.input_read_bases, domain=None, range=Optional[float])
+
+slots.output_read_bases = Slot(uri=NMDC.output_read_bases, name="output_read_bases", curie=NMDC.curie('output_read_bases'),
+                   model_uri=NMDC.output_read_bases, domain=None, range=Optional[float])
+
 slots.has_metabolite_quantifications = Slot(uri=NMDC.has_metabolite_quantifications, name="has metabolite quantifications", curie=NMDC.curie('has_metabolite_quantifications'),
                    model_uri=NMDC.has_metabolite_quantifications, domain=None, range=Optional[Union[Union[dict, MetaboliteQuantification], List[Union[dict, MetaboliteQuantification]]]])
 
@@ -4936,37 +4996,49 @@ slots.has_peptide_quantifications = Slot(uri=NMDC.has_peptide_quantifications, n
                    model_uri=NMDC.has_peptide_quantifications, domain=None, range=Optional[Union[Union[dict, PeptideQuantification], List[Union[dict, PeptideQuantification]]]])
 
 slots.geographic_location = Slot(uri=NMDC.geographic_location, name="geographic_location", curie=NMDC.curie('geographic_location'),
-                   model_uri=NMDC.geographic_location, domain=None, range=Optional[Union[dict, AttributeValue]])
+                   model_uri=NMDC.geographic_location, domain=None, range=Optional[str])
 
 slots.sampling_strategy = Slot(uri=NMDC.sampling_strategy, name="sampling_strategy", curie=NMDC.curie('sampling_strategy'),
-                   model_uri=NMDC.sampling_strategy, domain=None, range=Optional[Union[dict, AttributeValue]])
+                   model_uri=NMDC.sampling_strategy, domain=None, range=Optional[str])
 
 slots.altitude = Slot(uri=NMDC.altitude, name="altitude", curie=NMDC.curie('altitude'),
-                   model_uri=NMDC.altitude, domain=None, range=Optional[Union[dict, AttributeValue]])
+                   model_uri=NMDC.altitude, domain=None, range=Optional[str])
 
 slots.salinity_concentration = Slot(uri=NMDC.salinity_concentration, name="salinity_concentration", curie=NMDC.curie('salinity_concentration'),
-                   model_uri=NMDC.salinity_concentration, domain=None, range=Optional[Union[dict, AttributeValue]])
+                   model_uri=NMDC.salinity_concentration, domain=None, range=Optional[str])
 
 slots.oxygen_concentration = Slot(uri=NMDC.oxygen_concentration, name="oxygen_concentration", curie=NMDC.curie('oxygen_concentration'),
-                   model_uri=NMDC.oxygen_concentration, domain=None, range=Optional[Union[dict, AttributeValue]])
+                   model_uri=NMDC.oxygen_concentration, domain=None, range=Optional[str])
 
 slots.nitrate_concentration = Slot(uri=NMDC.nitrate_concentration, name="nitrate_concentration", curie=NMDC.curie('nitrate_concentration'),
-                   model_uri=NMDC.nitrate_concentration, domain=None, range=Optional[Union[dict, AttributeValue]])
+                   model_uri=NMDC.nitrate_concentration, domain=None, range=Optional[str])
 
 slots.soluble_iron_micromol = Slot(uri=NMDC.soluble_iron_micromol, name="soluble_iron_micromol", curie=NMDC.curie('soluble_iron_micromol'),
-                   model_uri=NMDC.soluble_iron_micromol, domain=None, range=Optional[Union[dict, AttributeValue]])
+                   model_uri=NMDC.soluble_iron_micromol, domain=None, range=Optional[str])
 
 slots.tot_nitrogen = Slot(uri=NMDC.tot_nitrogen, name="tot_nitrogen", curie=NMDC.curie('tot_nitrogen'),
-                   model_uri=NMDC.tot_nitrogen, domain=None, range=Optional[Union[dict, AttributeValue]])
+                   model_uri=NMDC.tot_nitrogen, domain=None, range=Optional[str])
 
 slots.chlorophyll_concentration = Slot(uri=NMDC.chlorophyll_concentration, name="chlorophyll_concentration", curie=NMDC.curie('chlorophyll_concentration'),
-                   model_uri=NMDC.chlorophyll_concentration, domain=None, range=Optional[Union[dict, AttributeValue]])
+                   model_uri=NMDC.chlorophyll_concentration, domain=None, range=Optional[str])
 
 slots.sample_volume = Slot(uri=NMDC.sample_volume, name="sample_volume", curie=NMDC.curie('sample_volume'),
-                   model_uri=NMDC.sample_volume, domain=None, range=Optional[Union[dict, AttributeValue]])
+                   model_uri=NMDC.sample_volume, domain=None, range=Optional[str])
+
+slots.ecosystem_category = Slot(uri=NMDC.ecosystem_category, name="ecosystem category", curie=NMDC.curie('ecosystem_category'),
+                   model_uri=NMDC.ecosystem_category, domain=None, range=Optional[str])
+
+slots.ecosystem_type = Slot(uri=NMDC.ecosystem_type, name="ecosystem type", curie=NMDC.curie('ecosystem_type'),
+                   model_uri=NMDC.ecosystem_type, domain=None, range=Optional[str])
+
+slots.ecosystem_subtype = Slot(uri=NMDC.ecosystem_subtype, name="ecosystem subtype", curie=NMDC.curie('ecosystem_subtype'),
+                   model_uri=NMDC.ecosystem_subtype, domain=None, range=Optional[str])
+
+slots.specific_ecosystem = Slot(uri=NMDC.specific_ecosystem, name="specific ecosystem", curie=NMDC.curie('specific_ecosystem'),
+                   model_uri=NMDC.specific_ecosystem, domain=None, range=Optional[str])
 
 slots.instrument_name = Slot(uri=NMDC.instrument_name, name="instrument_name", curie=NMDC.curie('instrument_name'),
-                   model_uri=NMDC.instrument_name, domain=None, range=Optional[Union[dict, AttributeValue]])
+                   model_uri=NMDC.instrument_name, domain=None, range=Optional[str])
 
 slots.metabolite_quantified = Slot(uri=NMDC.metabolite_quantified, name="metabolite quantified", curie=NMDC.curie('metabolite_quantified'),
                    model_uri=NMDC.metabolite_quantified, domain=None, range=Optional[Union[str, ChemicalEntityId]])
@@ -5091,6 +5163,18 @@ slots.workflow_execution_activity_type = Slot(uri=NMDC.type, name="workflow exec
 slots.workflow_execution_activity_was_associated_with = Slot(uri=NMDC.was_associated_with, name="workflow execution activity_was associated with", curie=NMDC.curie('was_associated_with'),
                    model_uri=NMDC.workflow_execution_activity_was_associated_with, domain=WorkflowExecutionActivity, range=Optional[Union[str, WorkflowExecutionActivityId]])
 
+slots.read_QC_analysis_activity_input_read_bases = Slot(uri=NMDC.input_read_bases, name="read QC analysis activity_input_read_bases", curie=NMDC.curie('input_read_bases'),
+                   model_uri=NMDC.read_QC_analysis_activity_input_read_bases, domain=ReadQCAnalysisActivity, range=Optional[float])
+
+slots.read_QC_analysis_activity_output_read_bases = Slot(uri=NMDC.output_read_bases, name="read QC analysis activity_output_read_bases", curie=NMDC.curie('output_read_bases'),
+                   model_uri=NMDC.read_QC_analysis_activity_output_read_bases, domain=ReadQCAnalysisActivity, range=Optional[float])
+
+slots.read_QC_analysis_activity_has_input = Slot(uri=NMDC.has_input, name="read QC analysis activity_has input", curie=NMDC.curie('has_input'),
+                   model_uri=NMDC.read_QC_analysis_activity_has_input, domain=ReadQCAnalysisActivity, range=Optional[Union[str, List[str]]])
+
+slots.read_QC_analysis_activity_has_output = Slot(uri=NMDC.has_output, name="read QC analysis activity_has output", curie=NMDC.curie('has_output'),
+                   model_uri=NMDC.read_QC_analysis_activity_has_output, domain=ReadQCAnalysisActivity, range=Optional[Union[str, List[str]]])
+
 slots.metabolomics_analysis_activity_used = Slot(uri=NMDC.used, name="metabolomics analysis activity_used", curie=NMDC.curie('used'),
                    model_uri=NMDC.metabolomics_analysis_activity_used, domain=MetabolomicsAnalysisActivity, range=Optional[Union[str, InstrumentId]])
 
@@ -5129,7 +5213,7 @@ slots.biosample_lat_lon = Slot(uri=NMDC.lat_lon, name="biosample_lat_lon", curie
                    pattern=re.compile(r'\d+[.\d+] \d+[.\d+]'))
 
 slots.biosample_depth = Slot(uri=NMDC.depth, name="biosample_depth", curie=NMDC.curie('depth'),
-                   model_uri=NMDC.biosample_depth, domain=Biosample, range=Optional[Union[dict, "QuantityValue"]])
+                   model_uri=NMDC.biosample_depth, domain=Biosample, range=Optional[float])
 
 slots.biosample_env_broad_scale = Slot(uri=NMDC.env_broad_scale, name="biosample_env_broad_scale", curie=NMDC.curie('env_broad_scale'),
                    model_uri=NMDC.biosample_env_broad_scale, domain=Biosample, range=Optional[Union[dict, "ControlledTermValue"]],
@@ -5147,78 +5231,100 @@ slots.biosample_uriorcurie = Slot(uri=NMDC.uriorcurie, name="biosample_uriorcuri
                    model_uri=NMDC.biosample_uriorcurie, domain=Biosample, range=Optional[str])
 
 slots.biosample_add_date = Slot(uri=NMDC.add_date, name="biosample_add_date", curie=NMDC.curie('add_date'),
-                   model_uri=NMDC.biosample_add_date, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_add_date, domain=Biosample, range=Optional[str])
 
 slots.biosample_mod_date = Slot(uri=NMDC.mod_date, name="biosample_mod_date", curie=NMDC.curie('mod_date'),
-                   model_uri=NMDC.biosample_mod_date, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_mod_date, domain=Biosample, range=Optional[str])
+
+slots.biosample_collection_date = Slot(uri=NMDC.collection_date, name="biosample_collection_date", curie=NMDC.curie('collection_date'),
+                   model_uri=NMDC.biosample_collection_date, domain=Biosample, range=Optional[str])
 
 slots.biosample_ncbi_taxonomy_name = Slot(uri=NMDC.ncbi_taxonomy_name, name="biosample_ncbi_taxonomy_name", curie=NMDC.curie('ncbi_taxonomy_name'),
-                   model_uri=NMDC.biosample_ncbi_taxonomy_name, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_ncbi_taxonomy_name, domain=Biosample, range=Optional[str])
 
 slots.biosample_community = Slot(uri=NMDC.community, name="biosample_community", curie=NMDC.curie('community'),
-                   model_uri=NMDC.biosample_community, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_community, domain=Biosample, range=Optional[str])
 
 slots.biosample_location = Slot(uri=NMDC.location, name="biosample_location", curie=NMDC.curie('location'),
-                   model_uri=NMDC.biosample_location, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_location, domain=Biosample, range=Optional[str])
 
 slots.biosample_habitat = Slot(uri=NMDC.habitat, name="biosample_habitat", curie=NMDC.curie('habitat'),
-                   model_uri=NMDC.biosample_habitat, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_habitat, domain=Biosample, range=Optional[str])
 
 slots.biosample_geographic_location = Slot(uri=NMDC.geographic_location, name="biosample_geographic_location", curie=NMDC.curie('geographic_location'),
-                   model_uri=NMDC.biosample_geographic_location, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_geographic_location, domain=Biosample, range=Optional[str])
 
 slots.biosample_sample_collection_site = Slot(uri=NMDC.sample_collection_site, name="biosample_sample_collection_site", curie=NMDC.curie('sample_collection_site'),
-                   model_uri=NMDC.biosample_sample_collection_site, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_sample_collection_site, domain=Biosample, range=Optional[str])
 
 slots.biosample_identifier = Slot(uri=NMDC.identifier, name="biosample_identifier", curie=NMDC.curie('identifier'),
-                   model_uri=NMDC.biosample_identifier, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_identifier, domain=Biosample, range=Optional[str])
 
 slots.biosample_host_name = Slot(uri=NMDC.host_name, name="biosample_host_name", curie=NMDC.curie('host_name'),
-                   model_uri=NMDC.biosample_host_name, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_host_name, domain=Biosample, range=Optional[str])
 
 slots.biosample_sampling_strategy = Slot(uri=NMDC.sampling_strategy, name="biosample_sampling_strategy", curie=NMDC.curie('sampling_strategy'),
-                   model_uri=NMDC.biosample_sampling_strategy, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_sampling_strategy, domain=Biosample, range=Optional[str])
 
 slots.biosample_growth_temperature = Slot(uri=NMDC.growth_temperature, name="biosample_growth_temperature", curie=NMDC.curie('growth_temperature'),
-                   model_uri=NMDC.biosample_growth_temperature, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_growth_temperature, domain=Biosample, range=Optional[str])
 
 slots.biosample_ph = Slot(uri=NMDC.ph, name="biosample_ph", curie=NMDC.curie('ph'),
-                   model_uri=NMDC.biosample_ph, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]],
+                   model_uri=NMDC.biosample_ph, domain=Biosample, range=Optional[str],
                    pattern=re.compile(r'\d+[.\d+]'))
 
 slots.biosample_altitude = Slot(uri=NMDC.altitude, name="biosample_altitude", curie=NMDC.curie('altitude'),
-                   model_uri=NMDC.biosample_altitude, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_altitude, domain=Biosample, range=Optional[str])
 
 slots.biosample_pressure = Slot(uri=NMDC.pressure, name="biosample_pressure", curie=NMDC.curie('pressure'),
-                   model_uri=NMDC.biosample_pressure, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]],
+                   model_uri=NMDC.biosample_pressure, domain=Biosample, range=Optional[str],
                    pattern=re.compile(r'\d+[.\d+] \S+'))
 
 slots.biosample_subsurface_depth = Slot(uri=NMDC.subsurface_depth, name="biosample_subsurface_depth", curie=NMDC.curie('subsurface_depth'),
-                   model_uri=NMDC.biosample_subsurface_depth, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_subsurface_depth, domain=Biosample, range=Optional[str])
+
+slots.biosample_salinity = Slot(uri=NMDC.salinity, name="biosample_salinity", curie=NMDC.curie('salinity'),
+                   model_uri=NMDC.biosample_salinity, domain=Biosample, range=Optional[str],
+                   pattern=re.compile(r'\d+[.\d+] \S+'))
 
 slots.biosample_salinity_concentration = Slot(uri=NMDC.salinity_concentration, name="biosample_salinity_concentration", curie=NMDC.curie('salinity_concentration'),
-                   model_uri=NMDC.biosample_salinity_concentration, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_salinity_concentration, domain=Biosample, range=Optional[str])
 
 slots.biosample_oxygen_concentration = Slot(uri=NMDC.oxygen_concentration, name="biosample_oxygen_concentration", curie=NMDC.curie('oxygen_concentration'),
-                   model_uri=NMDC.biosample_oxygen_concentration, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_oxygen_concentration, domain=Biosample, range=Optional[str])
 
 slots.biosample_nitrate_concentration = Slot(uri=NMDC.nitrate_concentration, name="biosample_nitrate_concentration", curie=NMDC.curie('nitrate_concentration'),
-                   model_uri=NMDC.biosample_nitrate_concentration, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_nitrate_concentration, domain=Biosample, range=Optional[str])
 
 slots.biosample_soluble_iron_micromol = Slot(uri=NMDC.soluble_iron_micromol, name="biosample_soluble_iron_micromol", curie=NMDC.curie('soluble_iron_micromol'),
-                   model_uri=NMDC.biosample_soluble_iron_micromol, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_soluble_iron_micromol, domain=Biosample, range=Optional[str])
 
 slots.biosample_tot_nitrogen = Slot(uri=NMDC.tot_nitrogen, name="biosample_tot_nitrogen", curie=NMDC.curie('tot_nitrogen'),
-                   model_uri=NMDC.biosample_tot_nitrogen, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_tot_nitrogen, domain=Biosample, range=Optional[str])
 
 slots.biosample_chlorophyll_concentration = Slot(uri=NMDC.chlorophyll_concentration, name="biosample_chlorophyll_concentration", curie=NMDC.curie('chlorophyll_concentration'),
-                   model_uri=NMDC.biosample_chlorophyll_concentration, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_chlorophyll_concentration, domain=Biosample, range=Optional[str])
 
 slots.biosample_sample_volume = Slot(uri=NMDC.sample_volume, name="biosample_sample_volume", curie=NMDC.curie('sample_volume'),
-                   model_uri=NMDC.biosample_sample_volume, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_sample_volume, domain=Biosample, range=Optional[str])
 
 slots.biosample_proport_woa_temperature = Slot(uri=NMDC.proport_woa_temperature, name="biosample_proport_woa_temperature", curie=NMDC.curie('proport_woa_temperature'),
-                   model_uri=NMDC.biosample_proport_woa_temperature, domain=Biosample, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.biosample_proport_woa_temperature, domain=Biosample, range=Optional[str])
+
+slots.biosample_ecosystem = Slot(uri=NMDC.ecosystem, name="biosample_ecosystem", curie=NMDC.curie('ecosystem'),
+                   model_uri=NMDC.biosample_ecosystem, domain=Biosample, range=Optional[str])
+
+slots.biosample_ecosystem_category = Slot(uri=NMDC.ecosystem_category, name="biosample_ecosystem category", curie=NMDC.curie('ecosystem_category'),
+                   model_uri=NMDC.biosample_ecosystem_category, domain=Biosample, range=Optional[str])
+
+slots.biosample_ecosystem_type = Slot(uri=NMDC.ecosystem_type, name="biosample_ecosystem type", curie=NMDC.curie('ecosystem_type'),
+                   model_uri=NMDC.biosample_ecosystem_type, domain=Biosample, range=Optional[str])
+
+slots.biosample_ecosystem_subtype = Slot(uri=NMDC.ecosystem_subtype, name="biosample_ecosystem subtype", curie=NMDC.curie('ecosystem_subtype'),
+                   model_uri=NMDC.biosample_ecosystem_subtype, domain=Biosample, range=Optional[str])
+
+slots.biosample_specific_ecosystem = Slot(uri=NMDC.specific_ecosystem, name="biosample_specific ecosystem", curie=NMDC.curie('specific_ecosystem'),
+                   model_uri=NMDC.biosample_specific_ecosystem, domain=Biosample, range=Optional[str])
 
 slots.study_id = Slot(uri=NMDC.id, name="study_id", curie=NMDC.curie('id'),
                    model_uri=NMDC.study_id, domain=Study, range=Union[str, StudyId])
@@ -5234,6 +5340,24 @@ slots.study_type = Slot(uri=NMDC.type, name="study_type", curie=NMDC.curie('type
 
 slots.study_uriorcurie = Slot(uri=NMDC.uriorcurie, name="study_uriorcurie", curie=NMDC.curie('uriorcurie'),
                    model_uri=NMDC.study_uriorcurie, domain=Study, range=Optional[str])
+
+slots.study_doi = Slot(uri=NMDC.doi, name="study_doi", curie=NMDC.curie('doi'),
+                   model_uri=NMDC.study_doi, domain=Study, range=Optional[str])
+
+slots.study_ecosystem = Slot(uri=NMDC.ecosystem, name="study_ecosystem", curie=NMDC.curie('ecosystem'),
+                   model_uri=NMDC.study_ecosystem, domain=Study, range=Optional[str])
+
+slots.study_ecosystem_category = Slot(uri=NMDC.ecosystem_category, name="study_ecosystem category", curie=NMDC.curie('ecosystem_category'),
+                   model_uri=NMDC.study_ecosystem_category, domain=Study, range=Optional[str])
+
+slots.study_ecosystem_type = Slot(uri=NMDC.ecosystem_type, name="study_ecosystem type", curie=NMDC.curie('ecosystem_type'),
+                   model_uri=NMDC.study_ecosystem_type, domain=Study, range=Optional[str])
+
+slots.study_ecosystem_subtype = Slot(uri=NMDC.ecosystem_subtype, name="study_ecosystem subtype", curie=NMDC.curie('ecosystem_subtype'),
+                   model_uri=NMDC.study_ecosystem_subtype, domain=Study, range=Optional[str])
+
+slots.study_specific_ecosystem = Slot(uri=NMDC.specific_ecosystem, name="study_specific ecosystem", curie=NMDC.curie('specific_ecosystem'),
+                   model_uri=NMDC.study_specific_ecosystem, domain=Study, range=Optional[str])
 
 slots.biosample_processing_has_input = Slot(uri=NMDC.has_input, name="biosample processing_has input", curie=NMDC.curie('has_input'),
                    model_uri=NMDC.biosample_processing_has_input, domain=BiosampleProcessing, range=Optional[Union[Union[str, BiosampleId], List[Union[str, BiosampleId]]]])
@@ -5260,28 +5384,28 @@ slots.omics_processing_type = Slot(uri=NMDC.type, name="omics processing_type", 
                    model_uri=NMDC.omics_processing_type, domain=OmicsProcessing, range=Optional[str])
 
 slots.omics_processing_omics_type = Slot(uri=NMDC.omics_type, name="omics processing_omics type", curie=NMDC.curie('omics_type'),
-                   model_uri=NMDC.omics_processing_omics_type, domain=OmicsProcessing, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.omics_processing_omics_type, domain=OmicsProcessing, range=Optional[str])
 
 slots.omics_processing_principal_investigator_name = Slot(uri=NMDC.principal_investigator_name, name="omics processing_principal investigator name", curie=NMDC.curie('principal_investigator_name'),
-                   model_uri=NMDC.omics_processing_principal_investigator_name, domain=OmicsProcessing, range=Optional[Union[dict, "PersonValue"]])
+                   model_uri=NMDC.omics_processing_principal_investigator_name, domain=OmicsProcessing, range=Optional[str])
 
 slots.omics_processing_processing_institution = Slot(uri=NMDC.processing_institution, name="omics processing_processing_institution", curie=NMDC.curie('processing_institution'),
-                   model_uri=NMDC.omics_processing_processing_institution, domain=OmicsProcessing, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.omics_processing_processing_institution, domain=OmicsProcessing, range=Optional[str])
 
 slots.omics_processing_uriorcurie = Slot(uri=NMDC.uriorcurie, name="omics processing_uriorcurie", curie=NMDC.curie('uriorcurie'),
                    model_uri=NMDC.omics_processing_uriorcurie, domain=OmicsProcessing, range=Optional[str])
 
 slots.omics_processing_add_date = Slot(uri=NMDC.add_date, name="omics processing_add_date", curie=NMDC.curie('add_date'),
-                   model_uri=NMDC.omics_processing_add_date, domain=OmicsProcessing, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.omics_processing_add_date, domain=OmicsProcessing, range=Optional[str])
 
 slots.omics_processing_mod_date = Slot(uri=NMDC.mod_date, name="omics processing_mod_date", curie=NMDC.curie('mod_date'),
-                   model_uri=NMDC.omics_processing_mod_date, domain=OmicsProcessing, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.omics_processing_mod_date, domain=OmicsProcessing, range=Optional[str])
 
 slots.omics_processing_ncbi_project_name = Slot(uri=NMDC.ncbi_project_name, name="omics processing_ncbi_project_name", curie=NMDC.curie('ncbi_project_name'),
-                   model_uri=NMDC.omics_processing_ncbi_project_name, domain=OmicsProcessing, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.omics_processing_ncbi_project_name, domain=OmicsProcessing, range=Optional[str])
 
 slots.omics_processing_instrument_name = Slot(uri=NMDC.instrument_name, name="omics processing_instrument_name", curie=NMDC.curie('instrument_name'),
-                   model_uri=NMDC.omics_processing_instrument_name, domain=OmicsProcessing, range=Optional[Union[dict, "AttributeValue"]])
+                   model_uri=NMDC.omics_processing_instrument_name, domain=OmicsProcessing, range=Optional[str])
 
 slots.metabolite_quantification_metabolite_quantified = Slot(uri=NMDC.metabolite_quantified, name="metabolite quantification_metabolite quantified", curie=NMDC.curie('metabolite_quantified'),
                    model_uri=NMDC.metabolite_quantification_metabolite_quantified, domain=MetaboliteQuantification, range=Optional[Union[str, ChemicalEntityId]])
