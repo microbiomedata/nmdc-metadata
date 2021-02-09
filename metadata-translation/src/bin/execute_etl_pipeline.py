@@ -67,6 +67,56 @@ def make_json_etl(dataframe, nmdc_class, spec_class_name, spec_file='lib/nmdc_da
     return data_json_list
 
 
+def make_test_datasets():
+    gold_study = get_json("output/nmdc_etl/gold_study.json")
+    gold_biosample = get_json("output/nmdc_etl/gold_biosample.json")
+    gold_project = get_json("output/nmdc_etl/gold_omics_processing.json")
+    emsl_project = get_json("output/nmdc_etl/emsl_omics_processing.json")
+    emsl_data_object = get_json("output/nmdc_etl/emsl_data_objects.json")
+    # jgi_data_object = get_json("output/nmdc_etl/jgi_fastq_data_objects.json")
+    
+    mg_assembly_activities = get_json('../data/aim-2-workflows/metagenome_assembly_activities.json')
+    mg_assembly_data_objects = get_json('../data/aim-2-workflows/metagenome_assembly_data_objects.json')
+    readQC_activities = get_json('../data/aim-2-workflows/readQC_activities.json')
+    readQC_data_objects = get_json('../data/aim-2-workflows/readQC_data_objects.json')
+
+    ## make study_test subset
+    study_test = jq.compile('.[0:3] | .[]').input(gold_study).all()
+    save_json({ "study_set": study_test}, 'output/study_test.json')
+    
+    ## make biosample test
+    biosample_test =  jq.compile('.[0:3] | .[]').input(gold_biosample).all()
+    save_json({ "biosample_set": biosample_test}, 'output/biosample_test.json')
+    
+    ## make gold omics processing test
+    gold_project_test =  jq.compile('.[0:3] | .[]').input(gold_project).all()
+    save_json({ "omics_processing_set": gold_project_test}, 'output/gold_project_test.json')
+    
+    ## make emsl omics processing test
+    emsl_project_test =  jq.compile('.[0:3] | .[]').input(emsl_project).all()
+    save_json({ "omics_processing_set": emsl_project_test}, 'output/emsl_project_test.json')
+    
+    ## make emsl data objects test
+    emsl_data_object_test =  jq.compile('.[0:3] | .[]').input(emsl_data_object).all()
+    save_json({ "data_object_set": emsl_data_object_test}, 'output/emsl_data_object_test.json')
+
+    ## make metagenome activities test
+    mg_assembly_activities_test = jq.compile('.[0:3] | .[]').input(mg_assembly_activities).all()
+    save_json({ "metagenome_assembly_set": mg_assembly_activities_test}, 'output/mg_assembly_activities_test.json')
+    
+    ## make metagenome data objects test
+    mg_assembly_data_objects_test = jq.compile('.[0:3] | .[]').input(mg_assembly_data_objects).all()
+    save_json({ "data_object_set": mg_assembly_data_objects_test}, 'output/mg_assembly_data_objects_test.json')
+    
+    ## make read QC activities test
+    readQC_activities_test = jq.compile('.[0:3] | .[]').input(readQC_activities).all()
+    save_json({ "read_QC_analysis_activity_set": readQC_activities_test}, 'output/readQC_activities_test.json')
+    
+    ## make metagenome data objects test
+    readQC_data_objects_test = jq.compile('.[0:3] | .[]').input(readQC_data_objects).all()
+    save_json({ "data_object_set": readQC_data_objects_test}, 'output/readQC_data_objects_test.json')
+    
+    
 def make_nmdc_database():
     gold_study = get_json("output/nmdc_etl/gold_study.json")
     gold_biosample = get_json("output/nmdc_etl/gold_biosample.json")
@@ -137,7 +187,7 @@ def make_nmdc_example_database():
     study_list = jq.compile('.[] | .part_of[]| .id').input(projects_test).text()
     study_list = ','.join(set(study_list.split('\n'))) # get unique list of study ids
 
-    ## get subset of studeis
+    ## get subset of studies
     study_test = jq.compile('.[] | select(.id == (' + study_list + '))').input(study_json).all()
 
     ## get outputs of projects
@@ -208,7 +258,9 @@ if __name__ == '__main__':
     # main(etl_modules=['gold_biosample']) # test gold biosample etl
     # main(etl_modules=['gold_omics_processing']) # test gold project etl
     # main(etl_modules=['jgi_data_object']) # test jgi data object etl
+    # main(etl_modules=['emsl_omics_processing']) # test emsl omics processing etl
     # main(etl_modules=['emsl_data_object']) # test emsl data object etl
     # main() # run etl on all files
     make_nmdc_database() # combines output into database json format
-    # make_nmdc_example_database() # make example data
+    make_nmdc_example_database() # make example data
+    make_test_datasets() # make nmdc test datasets
