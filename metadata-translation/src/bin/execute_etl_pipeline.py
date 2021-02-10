@@ -269,10 +269,20 @@ if __name__ == '__main__':
     make_nmdc_example_database() # make example datatabase
     # make_merged_data_source() # consolidates all nmdc data into a single tsv
     
-    # ----- testing code ------ # 
+    # ----- testing etl pipeline ------ # 
     # main(etl_modules=['gold_biosample']) # test gold biosample etl
     # main(etl_modules=['gold_omics_processing']) # test gold project etl
     # main(etl_modules=['jgi_data_object']) # test jgi data object etl
     # main(etl_modules=['emsl_omics_processing']) # test emsl omics processing etl
     # main(etl_modules=['emsl_data_object']) # test emsl data object etl
+    
+    # ------ testing specific etl modules --------#
+    # data_file='../data/nmdc_merged_data.tsv.zip'
+    # sssom_map_file=git_root('schema/mappings/gold-to-mixs.sssom.tsv')
+    # spec_file='lib/nmdc_data_source.yaml'
+    
+    # nmdc_etl = NMDC_ETL(merged_data_file=data_file, data_source_spec_file=spec_file, sssom_file=sssom_map_file)
+    # nmdc_etl.transform_emsl_omics_processing()
+    # nmdc_etl.save_emsl_omics_processing('output/nmdc_etl/test.json')
+    # print(nmdc_etl.emsl.head())
     

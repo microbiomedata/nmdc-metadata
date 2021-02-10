@@ -444,6 +444,9 @@ def make_emsl_dataframe (emsl_table, jgi_emsl_table, study_table, emsl_biosample
     temp2_df.dataset_id = "emsl:" + temp2_df.dataset_id
     temp2_df.data_object_id = "emsl:" + temp2_df.data_object_id
 
+    ## replace NaNs with None
+    temp2_df = temp2_df.where(pds.notnull(temp2_df), None)
+    
     ## drop duplicates
     temp2_df.drop_duplicates(inplace=True)
     

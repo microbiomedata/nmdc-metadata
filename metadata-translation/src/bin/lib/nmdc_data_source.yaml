@@ -122,6 +122,7 @@ classes:
       # - has_output: ["data_object_id, str"]
       - has_output: [{field: data_object_id, split_val: ','}] # inline values
       # - {has_output: [{init: {id: data_object_id}, class_type: DataObject}]}
+      # - has_input: [biosample_gold_ids]
       - has_input: [{field: biosample_gold_ids, split_val: ','}] # inline values
       # - {has_input: [{id: biosample_gold_ids, class_type: nmdc:Biosample}]}
       

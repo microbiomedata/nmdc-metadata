@@ -145,68 +145,68 @@ def make_constructor_args_from_record(constructor_map:dict, nmdc_record:namedtup
 
 
 def make_dict_from_nmdc_obj(nmdc_obj):
-        def is_value(variable):
-            ## check if variable is None
-            if (not variable): return False 
-            
-            ## check for zero len variable
-            if (type([]) == type(variable) 
-                or type({}) == type(variable)
-                or type('') == type(variable)):
-                if len(variable) == 0:
-                    return False
-            else:
-                if pds.isnull(variable): return False  ## check for null
-            
-            ## if variable is a dict, make sure it has an id or raw value
-            if type({}) == type(variable):
-                if 'id' in variable.keys():
-                    return is_value(variable['id']) # check if id has a value
-                elif 'has_raw_value' in variable.keys():
-                    return is_value(variable['has_raw_value']) # check if has_raw_value has a value
-                else:
-                    return False # if it makes it here, there wasn't an id or has_raw_value
-            
-            return True # if it makes it here, all good
-                            
-        def make_dict(obj):
-            """
-            transforms an nmdc object into a dict
-            """
-            if obj == None: return # make sure the object has a value
-            
-            ## check if obj can convert to dict
-            if not hasattr(obj, '_as_dict'): return obj
-            
-            # temp_dict = jsonasobj.as_dict(obj) # convert obj dict
-            temp_dict = {}
-            obj_dict = {} 
-            
-            ## include only valid values in lists and dicts
-            for key, val in jsonasobj.as_dict(obj).items():
-                # print('key:', key, '\n', ' val:', val, '\n')
-                if type({}) == type(val): # check values in dict
-                    temp_dict[key] = {k:v for k,v in val.items() if is_value(v)}
-                elif type([]) == type(val): # check values in list
-                    temp_dict[key] = [element for element in val if is_value(element)]
-                else:
-                    temp_dict[key] = val
-            
-            ## check for {} or [] that may resulted from prevous loop
-            for key, val in temp_dict.items():
-                if is_value(val):
-                    obj_dict[key] = val
-                    
-            return obj_dict
+    def is_value(variable):
+        ## check if variable is None
+        if variable is None: return False 
         
-        if type([]) == type(nmdc_obj):
-            # print('nndc_obj:', nmdc_obj)
-            nmdc_dict = [make_dict(o) for o in nmdc_obj if is_value(o)]
-            # print('nmdc_dict:', nmdc_dict)
+        ## check for zero len variable
+        if (type([]) == type(variable) 
+            or type({}) == type(variable)
+            or type('') == type(variable)):
+            if len(variable) == 0:
+                return False
         else:
-            nmdc_dict = make_dict(nmdc_obj)
+            if pds.isnull(variable): return False  ## check for null
+        
+        ## if variable is a dict, make sure it has an id or raw value
+        if type({}) == type(variable):
+            if 'id' in variable.keys():
+                return is_value(variable['id']) # check if id has a value
+            elif 'has_raw_value' in variable.keys():
+                return is_value(variable['has_raw_value']) # check if has_raw_value has a value
+            else:
+                return False # if it makes it here, there wasn't an id or has_raw_value
+        
+        return True # if it makes it here, all good
+                        
+    def make_dict(obj):
+        """
+        transforms an nmdc object into a dict
+        """
+        if obj == None: return # make sure the object has a value
+        
+        ## check if obj can convert to dict
+        if not hasattr(obj, '_as_dict'): return obj
+        
+        # temp_dict = jsonasobj.as_dict(obj) # convert obj dict
+        temp_dict = {}
+        obj_dict = {} 
+        
+        ## include only valid values in lists and dicts
+        for key, val in jsonasobj.as_dict(obj).items():
+            # print('key:', key, '\n', ' val:', val, '\n')
+            if type({}) == type(val): # check values in dict
+                temp_dict[key] = {k:v for k,v in val.items() if is_value(v)}
+            elif type([]) == type(val): # check values in list
+                temp_dict[key] = [element for element in val if is_value(element)]
+            else:
+                temp_dict[key] = val
+        
+        ## check for {} or [] that may resulted from prevous loop
+        for key, val in temp_dict.items():
+            if is_value(val):
+                obj_dict[key] = val
+                
+        return obj_dict
+    
+    if type([]) == type(nmdc_obj):
+        # print('nndc_obj:', nmdc_obj)
+        nmdc_dict = [make_dict(o) for o in nmdc_obj if is_value(o)]
+        # print('nmdc_dict:', nmdc_dict)
+    else:
+        nmdc_dict = make_dict(nmdc_obj)
 
-        return nmdc_dict
+    return nmdc_dict
 
 
 def set_nmdc_object(nmdc_obj, 
@@ -353,31 +353,33 @@ def make_object_from_list(nmdc_record:namedtuple, nmdc_list:list):
                 ## get record value for the field
                 record_val = getattr(nmdc_record, val['field'])
                 
-                ## set datatype for values
-                if 'dtype' in val.keys():
-                    dtype = val['dtype']
-                else:
-                    dtype = 'str'
+                ## check the record value is not None
+                if record_val is not None:
+                    ## set datatype for values
+                    if 'dtype' in val.keys():
+                        dtype = val['dtype']
+                    else:
+                        dtype = 'str'
+                    
                 
-            
-                ## check if record needs to be split
-                if 'split_val' in val.keys():
-                    split_val = val['split_val']
-                    if type(record_val) != type(""):
-                        record_val = str(record_val) # make sure record_val is a string
-                        
-                    for rv in record_val.split(split_val):
+                    ## check if record needs to be split
+                    if 'split_val' in val.keys():
+                        split_val = val['split_val']
+                        if type(record_val) != type(""):
+                            record_val = str(record_val) # make sure record_val is a string
+                            
+                        for rv in record_val.split(split_val):
+                            ## coerce into datatype
+                            if dtype == 'str':
+                                obj_list.append(str(rv))
+                            else:
+                                obj_list.append(eval("""{dtype}({rv})"""))
+                    else:
                         ## coerce into datatype
                         if dtype == 'str':
-                            obj_list.append(str(rv))
+                            obj_list.append(str(record_val))
                         else:
-                            obj_list.append(eval("""{dtype}({rv})"""))
-                else:
-                    ## coerce into datatype
-                    if dtype == 'str':
-                        obj_list.append(str(record_val))
-                    else:
-                        obj_list.append(eval("""{dtype}({record_val}"""))
+                            obj_list.append(eval("""{dtype}({record_val}"""))
                 
             elif 'init' in val.keys():
             ## e.g., {part_of: {init: {id: study_gold_id}, class_type: Study}}
@@ -430,8 +432,11 @@ def make_object_from_list(nmdc_record:namedtuple, nmdc_list:list):
         else:
             ## this is default case: the record is turned into an attribute value
             record_val = getattr(nmdc_record, val)
-            av = make_attribute_value(record_val)
-            obj_list.append(av)
+            
+            ## check the record value is not None
+            if record_val is not None:
+                av = make_attribute_value(record_val)
+                obj_list.append(av)
             
         return obj_list
 
