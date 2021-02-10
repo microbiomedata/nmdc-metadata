@@ -15,46 +15,59 @@ classes:
   ## - attributes:
   ##     provides a list the attributes/propeties associated with the class 
   ##
-  ##     When the attribute is a simple name (e.g., principal_investigator_name) the ETL output is an attibute value object whose
-  ##     has_raw_value property is the record's value for that field. E.g.: 
+  ##     When the attribute is a simple name (e.g., principal_investigator_name) the ETL output a key value pair. E.g.: 
   ##
-  ##        "principal_investigator_name": {
-  ##           "has_raw_value": "Matthias Hess",
-  ##           "type": "nmdc:AttributeValue"
-  ##        }
+  ##        "principal_investigator_name": "Matthias Hess"
   ##
-  ##     When the attribute is a string that includes a comma and a datatype (e.g., file_size_bytes, int), the ETL output
-  ##     is a simple key/value pair. E.g.:
+  ##     The default datatype of the value is a string, but other datatypes can be specified by including a comma between the attributre and the datatype.
+  ##     For example, the attribute specification: 
   ##
-  ##       "file_size_bytes": 12060043683
+  ##        file_size_bytes, int 
   ##
-  ##     When the attribute is a dictionary, the result of the ETL output depends on the datatype of the key's value
-  ##       If the value is a simple string (e.g., {has_input: biosample_gold_id}), the ETL output is an attribute value object. E.g.:
+  ##     produces:
   ##
-  ##         "has_input": {
-  ##                "id": "gold:Gb0108335",
-  ##                "type": "nmdc:AttributeValue"
-  ##              }
-  ##        
-  ##      The type value can also be overriden as needed. E.g., {has_input: biosample_gold_id, class_type: nmdc:Biosample} produces:
+  ##        "file_size_bytes": 12060043683
   ##
-  ##          "has_input": {
-  ##                  "id": "gold:Gb0108335",
-  ##                  "class_type": "nmdc:Biosample"
-  ##                }
+  ##     If the value of key needs to be an object, you specify the keys and values of the object in a dictionary. 
+  ##     The type is of the object is specified using the clas_type key.
+  ##     For example, the attribute specification:
+  ## 
+  ##        omics_type: {has_raw_value: omics_type, class_type: AttributeValue} 
   ##
-  ##       If the value is dictionary (e.g, {part_of: {init: {id: study_gold_id}, class_type: Study}}), the ETL output is an an object built from the dictionary
+  ##     produces:
+  ##
+  ##        "omics_type": {"has_raw_value": "Metabolomics", "type": "nmdc:AttributeValue"}
+  ##
+  ##     Other types value can also be specified as needed. 
+  ## 
+  ##     If you need to specify which values are necessary to build an object, you use init and class_type keys as follows:
   ##          - the init key contains a dict of key/value pairs needed to initialize the object
   ##          - the class_type key refers to the type of object to create
-  ##       E.g.: {part_of: {init: {id: study_gold_id}, class_type: Study}]} outputs:
+  ##     E.g.: {part_of: {init: {id: study_gold_id}, class_type: Study}]} outputs:
   ##
-  ##          "part_of": {
-  ##                "id": "gold:Gs0112340",
-  ##                "class_type": "nmdc:Study"
-  ##              }
+  ##          "part_of": { "id": "gold:Gs0112340", "class_type": "nmdc:Study"}
   ## 
-  ##       In many cases, an attribute will have a one-to-many relation. For these cases, the value of the attribute is a a list. 
-  ##       E.g.: {has_output: [{init: {id: output_file_ids}, class_type: DataObject}]} outputs
+  ##     In many cases, an attribute will have a one-to-many relation. For these cases, the value of the attribute is a a list. 
+  ##     If the attribute specification is given using a simple "name: [field]" syntax, the value the field is placed between the brackets.
+  ##     For example, the attribute specification:
+  ##
+  ##        has_input: [biosample_id]
+  ##
+  ##     produces:
+  ##
+  ##        "has_input": ["gold:Gb0095970"]
+  ##
+  ##    If you want the values, to split into a list, you specifiy the field and the character to split on like so:
+  ##
+  ##       has_output: [{field: data_object_id, split_val: ','}]
+  ##
+  ##    If the data_object_id field contained the value "jgi:551a20d30d878525404e90d5,"jgi:551a20d50d878525404e90d7", the output would be:
+  ##
+  ##       "has_output": ["jgi:551a20d30d878525404e90d5", "jgi:551a20d50d878525404e90d7"]
+  ##
+  ##    If a list of objects is need, you use the init ad class_type keys within the dictionary as described above.
+  ##    In this case, init field values are split on the comma character.
+  ##    E.g.: {has_output: [{init: {id: output_file_ids}, class_type: DataObject}]} outputs
   ##
   ##          "has_output": [
   ##              {
