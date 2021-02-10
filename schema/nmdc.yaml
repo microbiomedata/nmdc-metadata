@@ -262,6 +262,19 @@ classes:
       - input base count
       - output read count
       - output base count
+    slot_usage:
+      input_read_bases:
+        range: float
+        description: >-
+          TODO
+      output_read_bases:
+        range: float
+        description: >-
+          TODO
+      has input:
+        inlined: false
+      has output:
+        inlined: false
         
   read based analysis activity:
     is_a: workflow execution activity
@@ -416,6 +429,7 @@ classes:
           This is currently a required field but it's not clear if this should be required for human hosts
       depth:
         required: false
+        range: float
       env_broad_scale:
         required: false
         description: >-
@@ -432,76 +446,93 @@ classes:
         required: false
       add_date:
         required: false
-        range: attribute value
+        range: string
       mod_date:
         required: false
-        range: attribute value
+        range: string
+      collection_date:
+        required: false
+        range: string        
       ncbi_taxonomy_name:
         required: false
-        range: attribute value
+        range: string
       community:
         required: false
-        range: attribute value
+        range: string
       location:
         required: false
-        range: attribute value
+        range: string
       habitat:
         required: false
-        range: attribute value
+        range: string
       geographic_location:
         required: false
-        range: attribute value
+        range: string
       sample_collection_site:
         required: false
-        range: attribute value
+        range: string
       identifier:
         required: false
-        range: attribute value
+        range: string
       host_name:
         required: false
-        range: attribute value
+        range: string
       sampling_strategy:
         required: false
-        range: attribute value
+        range: string
       growth_temperature:
         required: false
-        range: attribute value
+        range: string
       ph:
         required: false
-        range: attribute value
+        range: string
       altitude:
         required: false
-        range: attribute value
+        range: string
       pressure:
         required: false
-        range: attribute value
+        range: string
       subsurface_depth:
         required: false
-        range: attribute value
+        range: string
+      salinity:
+        required: false
+        range: string
       salinity_concentration:
         required: false
-        range: attribute value
+        range: string
       oxygen_concentration:
         required: false
-        range: attribute value
+        range: string
       nitrate_concentration:
         required: false
-        range: attribute value
+        range: string
       soluble_iron_micromol:
         required: false
-        range: attribute value
+        range: string
       tot_nitrogen:
         required: false
-        range: attribute value
+        range: string
       chlorophyll_concentration:
         required: false
-        range: attribute value
+        range: string
       sample_volume:
         required: false
-        range: attribute value
+        range: string
       proport_woa_temperature:
         required: false
-        range: attribute value
+        range: string
+      ecosystem:
+        range: string
+      ecosystem category:
+        range: string
+      ecosystem type:
+        range: string
+      ecosystem subtype:
+        range: string
+      specific ecosystem:
+        range: string
+
           
     id_prefixes:
       - GOLD
@@ -547,6 +578,18 @@ classes:
         required: false
       uriorcurie:
         required: false
+      doi:
+        range: string
+      ecosystem:
+        range: string
+      ecosystem category:
+        range: string
+      ecosystem type:
+        range: string
+      ecosystem subtype:
+        range: string
+      specific ecosystem:
+        range: string
           
   biosample processing:
     aliases:
@@ -593,7 +636,6 @@ classes:
       has output:
         inlined: false
         #range: data object
-        #range: attribute value
       has input:
         inlined: false
         #range: attribute value
@@ -602,37 +644,32 @@ classes:
             An optional string that specified the type of object.
         required: false
       omics type:
-        inlined: true
-        range: attribute value
+        range: string
       principal investigator name:
-        inlined: true        
+        range: string
         description: >-
             An optional values that specifies the PI's name.
             This might be needed in cases where the study cannot be identified.
         required: false
       processing_institution:
-        inlined: true        
-        range: attribute value
+        range: string
         description: >-
             The organization that processed the sample.
         required: false
       uriorcurie:
         required: false
       add_date:
-        inlined: true        
-        range: attribute value
+        range: string
         required: false
       mod_date:
-        inlined: true        
-        range: attribute value
+        range: string
         required: false
       ncbi_project_name:
-        inlined: true        
-        range: attribute value
+        range: string
         required: false
       instrument_name:
         required: false
-        range: attribute value
+        range: string
     broad_mappings:
       - OBI:0000070 ## assay: https://github.com/microbiomedata/nmdc-metadata/issues/171
 
