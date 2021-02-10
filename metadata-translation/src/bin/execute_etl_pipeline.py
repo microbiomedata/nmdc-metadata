@@ -175,27 +175,36 @@ def make_nmdc_example_database():
     projects_json = get_json('output/nmdc_etl/gold_omics_processing.json')
     study_json = get_json('output/nmdc_etl/gold_study.json')
     data_objects_json = get_json('output/nmdc_etl/jgi_fastq_data_objects.json')
+
+    ## get a list of distinct omics processing study ids, and choose the first 3 studies
+    study_ids =  set(jq.compile('.[] | .part_of[]').input(projects_json).all()) # all returns a list
+    study_ids = list(study_ids)[0:3]
+    # study_ids = 
+
+    ## build a test set of studies from the study ids
+    study_test = \
+        jq.compile('.[] | select( .id == (' + ', '.join('"{0}"'.format(id) for id in study_ids) + '))')\
+          .input(study_json).all() # all() returns a list
+       
+    ## build a test set of projects from the study ids
+    ## note: the jq query only selects first omics found for a given study id
+    projects_test = []
+    for id in study_ids:
+        j = jq.compile(f'[.[] | select( .part_of[]? |  . == "{id}")][0]').input(projects_json).all()
+        projects_test.append(*j)
+
+    ## get list of unique biossample ids from omics processing and build biosample test set
+    biosample_ids = jq.compile('.[] | .has_input[]?').input(projects_test).all() # all() returns a list
+    biosample_test = \
+        jq.compile('.[] | select( .id == (' + ', '.join('"{0}"'.format(id) for id in biosample_ids) + '))')\
+          .input(biosample_json).all() # all() returns a list
+           
+    ## get a list of data object ids and build data objects test set
+    data_objects_ids = jq.compile('.[] | .has_output[]?').input(projects_test).all() # all() returns a list
+    data_objects_test = \
+        jq.compile('.[] | select( .id == (' + ', '.join('"{0}"'.format(id) for id in data_objects_ids) + '))')\
+          .input(data_objects_json).all() # all() returns a list
     
-    ## get subset of biosamples and list of biosample ids
-    biosample_test = jq.compile('.[0:5]').input(biosample_json).all() # all() returns a list
-    biosample_list = jq.compile('.[0:5]| .[] | .id').input(biosample_json).text().replace('\n', ', ')
-
-    ## get subset of projects and list of project ids based on biosamples list
-    projects_test = jq.compile('.[] | select(.has_input[]?| .id == (' + biosample_list + '))').input(projects_json).all() # all() returns a list
-
-    ## get list of studies that projects are part of
-    study_list = jq.compile('.[] | .part_of[]| .id').input(projects_test).text()
-    study_list = ','.join(set(study_list.split('\n'))) # get unique list of study ids
-
-    ## get subset of studies
-    study_test = jq.compile('.[] | select(.id == (' + study_list + '))').input(study_json).all()
-
-    ## get outputs of projects
-    data_objects_list = jq.compile('.[] | .has_output[] | .id').input(projects_test).text().replace('\n', ', ')
-
-    # create subset of data object outputs
-    data_objects_test = jq.compile('.[] | select(.id == (' + data_objects_list + '))').input(data_objects_json).all()
-
     ## compile into database object
     database = \
     {
@@ -257,7 +266,7 @@ if __name__ == '__main__':
     main() # run etl on all files
     make_nmdc_database() # combines output into database json format
     make_test_datasets() # make nmdc test datasets
-    # make_nmdc_example_database() # make example datatabase
+    make_nmdc_example_database() # make example datatabase
     # make_merged_data_source() # consolidates all nmdc data into a single tsv
     
     # ----- testing code ------ # 
