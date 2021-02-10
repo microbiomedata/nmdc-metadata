@@ -84,20 +84,20 @@ metatype:Nodeidentifier NONLITERAL
           <https://microbiomedata/schema/mixs/env_package> @<TextValue> ? ;
           <lat_lon> @<GeolocationValue> ? ;
           <https://microbiomedata/schema/mixs/geo_loc_name> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/collection_date> @<TimestampValue> ? ;
+          <collection_date> @metatype:String ? ;
           <env_broad_scale> @<ControlledTermValue> ? ;
           <env_local_scale> @<ControlledTermValue> ? ;
           <env_medium> @<ControlledTermValue> ? ;
-          <ecosystem> @<AttributeValue> ? ;
+          <ecosystem> @metatype:String ? ;
           <ecosystem_category> @<AttributeValue> ? ;
           <ecosystem_type> @<AttributeValue> ? ;
           <ecosystem_subtype> @<AttributeValue> ? ;
           <specific_ecosystem> @<AttributeValue> ? ;
-          <depth> @<QuantityValue> ? ;
+          <depth> @metatype:Float ? ;
           <https://microbiomedata/schema/mixs/tot_org_carb> @<QuantityValue> ? ;
           <https://microbiomedata/schema/mixs/alt> @<QuantityValue> ? ;
           <https://microbiomedata/schema/mixs/elev> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/salinity> @<QuantityValue> ? ;
+          <salinity> @metatype:String ? ;
           <https://microbiomedata/schema/mixs/diss_oxygen> @<QuantityValue> ? ;
           <https://microbiomedata/schema/mixs/nitrate> @<QuantityValue> ? ;
           <https://microbiomedata/schema/mixs/chlorophyll> @<QuantityValue> ? ;
@@ -154,30 +154,34 @@ metatype:Nodeidentifier NONLITERAL
           <alternate_identifiers> @metatype:String * ;
           <type> @metatype:String ? ;
           <uriorcurie> @metatype:String ? ;
-          <add_date> @<AttributeValue> ? ;
-          <mod_date> @<AttributeValue> ? ;
-          <ncbi_taxonomy_name> @<AttributeValue> ? ;
-          <community> @<AttributeValue> ? ;
-          <location> @<AttributeValue> ? ;
-          <habitat> @<AttributeValue> ? ;
-          <geographic_location> @<AttributeValue> ? ;
-          <sample_collection_site> @<AttributeValue> ? ;
-          <identifier> @<AttributeValue> ? ;
-          <host_name> @<AttributeValue> ? ;
-          <sampling_strategy> @<AttributeValue> ? ;
-          <growth_temperature> @<AttributeValue> ? ;
-          <ph> @<AttributeValue> ? ;
-          <altitude> @<AttributeValue> ? ;
-          <pressure> @<AttributeValue> ? ;
-          <subsurface_depth> @<AttributeValue> ? ;
-          <salinity_concentration> @<AttributeValue> ? ;
-          <oxygen_concentration> @<AttributeValue> ? ;
-          <nitrate_concentration> @<AttributeValue> ? ;
-          <soluble_iron_micromol> @<AttributeValue> ? ;
-          <tot_nitrogen> @<AttributeValue> ? ;
-          <chlorophyll_concentration> @<AttributeValue> ? ;
-          <sample_volume> @<AttributeValue> ? ;
-          <proport_woa_temperature> @<AttributeValue> ?
+          <add_date> @metatype:String ? ;
+          <mod_date> @metatype:String ? ;
+          <ncbi_taxonomy_name> @metatype:String ? ;
+          <community> @metatype:String ? ;
+          <location> @metatype:String ? ;
+          <habitat> @metatype:String ? ;
+          <geographic_location> @metatype:String ? ;
+          <sample_collection_site> @metatype:String ? ;
+          <identifier> @metatype:String ? ;
+          <host_name> @metatype:String ? ;
+          <sampling_strategy> @metatype:String ? ;
+          <growth_temperature> @metatype:String ? ;
+          <ph> @metatype:String ? ;
+          <altitude> @metatype:String ? ;
+          <pressure> @metatype:String ? ;
+          <subsurface_depth> @metatype:String ? ;
+          <salinity_concentration> @metatype:String ? ;
+          <oxygen_concentration> @metatype:String ? ;
+          <nitrate_concentration> @metatype:String ? ;
+          <soluble_iron_micromol> @metatype:String ? ;
+          <tot_nitrogen> @metatype:String ? ;
+          <chlorophyll_concentration> @metatype:String ? ;
+          <sample_volume> @metatype:String ? ;
+          <proport_woa_temperature> @metatype:String ? ;
+          <ecosystem_category> @metatype:String ? ;
+          <ecosystem_type> @metatype:String ? ;
+          <ecosystem_subtype> @metatype:String ? ;
+          <specific_ecosystem> @metatype:String ?
        ) ;
        rdf:type [ <Biosample> ]
     )
@@ -482,19 +486,19 @@ metatype:Nodeidentifier NONLITERAL
     (  $<OmicsProcessing_tes> (  &<BiosampleProcessing_tes> ;
           rdf:type [ <BiosampleProcessing> ] ? ;
           <has_output> @metatype:String * ;
-          <omics_type> @<AttributeValue> ? ;
+          <omics_type> @metatype:String ? ;
           <part_of> @<Study> * ;
           <name> @metatype:String ? ;
           <alternate_identifiers> @metatype:String * ;
           <has_input> @<Biosample> * ;
           <type> @metatype:String ? ;
-          <principal_investigator_name> @<PersonValue> ? ;
-          <processing_institution> @<AttributeValue> ? ;
+          <principal_investigator_name> @metatype:String ? ;
+          <processing_institution> @metatype:String ? ;
           <uriorcurie> @metatype:String ? ;
-          <add_date> @<AttributeValue> ? ;
-          <mod_date> @<AttributeValue> ? ;
-          <ncbi_project_name> @<AttributeValue> ? ;
-          <instrument_name> @<AttributeValue> ?
+          <add_date> @metatype:String ? ;
+          <mod_date> @metatype:String ? ;
+          <ncbi_project_name> @metatype:String ? ;
+          <instrument_name> @metatype:String ?
        ) ;
        rdf:type [ <OmicsProcessing> ]
     )
@@ -623,7 +627,11 @@ metatype:Nodeidentifier NONLITERAL
           <input_read_count> @metatype:Float ? ;
           <input_base_count> @metatype:Float ? ;
           <output_read_count> @metatype:Float ? ;
-          <output_base_count> @metatype:Float ?
+          <output_base_count> @metatype:Float ? ;
+          <input_read_bases> @metatype:Float ? ;
+          <output_read_bases> @metatype:Float ? ;
+          <has_input> @metatype:String * ;
+          <has_output> @metatype:String *
        ) ;
        rdf:type [ <ReadQCAnalysisActivity> ]
     )
@@ -632,17 +640,21 @@ metatype:Nodeidentifier NONLITERAL
 <Study> CLOSED {
     (  $<Study_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
-          <ecosystem> @<AttributeValue> ? ;
+          <ecosystem> @metatype:String ? ;
           <ecosystem_category> @<AttributeValue> ? ;
           <ecosystem_type> @<AttributeValue> ? ;
           <ecosystem_subtype> @<AttributeValue> ? ;
           <specific_ecosystem> @<AttributeValue> ? ;
           <principal_investigator_name> @<PersonValue> ? ;
-          <doi> @<AttributeValue> ? ;
+          <doi> @metatype:String ? ;
           <name> @metatype:String ? ;
           <alternate_identifiers> @metatype:String * ;
           <type> @metatype:String ? ;
-          <uriorcurie> @metatype:String ?
+          <uriorcurie> @metatype:String ? ;
+          <ecosystem_category> @metatype:String ? ;
+          <ecosystem_type> @metatype:String ? ;
+          <ecosystem_subtype> @metatype:String ? ;
+          <specific_ecosystem> @metatype:String ?
        ) ;
        rdf:type [ <Study> ]
     )
