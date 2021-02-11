@@ -896,9 +896,9 @@ preferred unit and example value when available are listed below.
     the environmental package, a selection of fields can be made from
     the subtables and can be reported.
 
-Section : mixs extension
+    Section : mixs extension
 
-Expected value : enumeration
+    Expected value : enumeration
 
     Value syntax : \[air\|built
     environment\|host-associated\|human-associated\|human-skin\|human-oral\|human-gut\|human-vaginal\|hydrocarbon
