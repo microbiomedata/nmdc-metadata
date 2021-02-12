@@ -240,8 +240,13 @@ def make_study_dataframe (study_table, contact_table, proposals_table, result_co
     contact_table_splice = contact_table[['contact_id', 'principal_investigator_name']].copy()
     proposals_table_splice = proposals_table[['gold_study', 'doi']].copy()
     
+    ## make sure the contact ids are strings with the ".0" removed from the end (i.e., the strings aren't floats)
+    study_table['contact_id'] = study_table['contact_id'].astype(str).replace('\.0', '', regex=True)
+    contact_table_splice['contact_id'] = contact_table_splice['contact_id'].astype(str).replace('\.0', '', regex=True)
+    # print(study_table[['contact_id', 'principal_investigator_name']].head())
+    
     ## left join data from contact
-    temp1_df = pds.merge(study_table.copy(), contact_table_splice, how='left', on='contact_id')
+    temp1_df = pds.merge(study_table, contact_table_splice, how='left', on='contact_id')
     
     ## left join data from proposals
     temp2_df = pds.merge(temp1_df, proposals_table_splice, how='left', left_on='gold_id', right_on='gold_study')

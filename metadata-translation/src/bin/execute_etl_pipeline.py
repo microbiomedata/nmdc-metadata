@@ -280,9 +280,14 @@ if __name__ == '__main__':
     # data_file='../data/nmdc_merged_data.tsv.zip'
     # sssom_map_file=git_root('schema/mappings/gold-to-mixs.sssom.tsv')
     # spec_file='lib/nmdc_data_source.yaml'
-    
     # nmdc_etl = NMDC_ETL(merged_data_file=data_file, data_source_spec_file=spec_file, sssom_file=sssom_map_file)
+    
     # nmdc_etl.transform_emsl_omics_processing()
     # nmdc_etl.save_emsl_omics_processing('output/nmdc_etl/test.json')
     # print(nmdc_etl.emsl.head())
+    
+    # nmdc_etl.transform_study()
+    # nmdc_etl.save_study('output/nmdc_etl/test.json')
+    # print(list(nmdc_etl.study.columns))
+    # print(nmdc_etl.study.head())
     
