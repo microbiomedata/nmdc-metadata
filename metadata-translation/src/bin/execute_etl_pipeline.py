@@ -214,7 +214,7 @@ def make_nmdc_example_database():
       "data_object_set": [*data_objects_test]
     }
 
-    save_json(database, 'output/nmdc-04.json')
+    save_json(database, 'output/nmdc_example_database.json')
 
 
 def main(data_file='../data/nmdc_merged_data.tsv.zip',
