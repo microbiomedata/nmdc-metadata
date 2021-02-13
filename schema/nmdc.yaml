@@ -580,6 +580,8 @@ classes:
         required: false
       doi:
         range: string
+      principal investigator name:
+        range: string
       ecosystem:
         range: string
       ecosystem category:

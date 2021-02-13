@@ -645,7 +645,7 @@ metatype:Nodeidentifier NONLITERAL
           <ecosystem_type> @<AttributeValue> ? ;
           <ecosystem_subtype> @<AttributeValue> ? ;
           <specific_ecosystem> @<AttributeValue> ? ;
-          <principal_investigator_name> @<PersonValue> ? ;
+          <principal_investigator_name> @metatype:String ? ;
           <doi> @metatype:String ? ;
           <name> @metatype:String ? ;
           <alternate_identifiers> @metatype:String * ;

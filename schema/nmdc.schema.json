@@ -2187,8 +2187,7 @@
           "type": "string"
         },
         "principal_investigator_name": {
-          "$ref": "#/definitions/PersonValue",
-          "description": "represents the PI"
+          "type": "string"
         },
         "specific_ecosystem": {
           "type": "string"
