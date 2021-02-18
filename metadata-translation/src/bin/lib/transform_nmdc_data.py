@@ -556,5 +556,3 @@ if __name__ == "__main__":
     # test_json = collapse_json_file(file_path, 'has_input')
     test_json = collapse_json_file(file_path, 'has_output')
     print(test_json)
-    
-
