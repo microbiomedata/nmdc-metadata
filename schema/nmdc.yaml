@@ -465,7 +465,7 @@ classes:
       habitat:
         required: false
         range: string
-      geographic_location:
+      geo_loc_name:
         required: false
         range: string
       sample_collection_site:

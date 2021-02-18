@@ -83,7 +83,7 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <NamedThing> ] ? ;
           <https://microbiomedata/schema/mixs/env_package> @<TextValue> ? ;
           <lat_lon> @<GeolocationValue> ? ;
-          <https://microbiomedata/schema/mixs/geo_loc_name> @<TextValue> ? ;
+          <geo_loc_name> @metatype:String ? ;
           <collection_date> @metatype:String ? ;
           <env_broad_scale> @<ControlledTermValue> ? ;
           <env_local_scale> @<ControlledTermValue> ? ;
@@ -160,7 +160,6 @@ metatype:Nodeidentifier NONLITERAL
           <community> @metatype:String ? ;
           <location> @metatype:String ? ;
           <habitat> @metatype:String ? ;
-          <geographic_location> @metatype:String ? ;
           <sample_collection_site> @metatype:String ? ;
           <identifier> @metatype:String ? ;
           <host_name> @metatype:String ? ;

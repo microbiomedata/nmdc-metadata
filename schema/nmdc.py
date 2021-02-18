@@ -1,5 +1,5 @@
 # Auto generated from nmdc.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-02-12 23:29
+# Generation date: 2021-02-17 19:10
 # Schema: NMDC
 #
 # id: https://microbiomedata/schema
@@ -654,7 +654,7 @@ class Biosample(NamedThing):
     id: Union[str, BiosampleId] = None
     env_package: Optional[Union[dict, "TextValue"]] = None
     lat_lon: Optional[Union[dict, "GeolocationValue"]] = None
-    geo_loc_name: Optional[Union[dict, "TextValue"]] = None
+    geo_loc_name: Optional[str] = None
     collection_date: Optional[str] = None
     env_broad_scale: Optional[Union[dict, "ControlledTermValue"]] = None
     env_local_scale: Optional[Union[dict, "ControlledTermValue"]] = None
@@ -731,7 +731,6 @@ class Biosample(NamedThing):
     community: Optional[str] = None
     location: Optional[str] = None
     habitat: Optional[str] = None
-    geographic_location: Optional[str] = None
     sample_collection_site: Optional[str] = None
     identifier: Optional[str] = None
     host_name: Optional[str] = None
@@ -766,8 +765,8 @@ class Biosample(NamedThing):
         if self.lat_lon is not None and not isinstance(self.lat_lon, GeolocationValue):
             self.lat_lon = GeolocationValue(**self.lat_lon)
 
-        if self.geo_loc_name is not None and not isinstance(self.geo_loc_name, TextValue):
-            self.geo_loc_name = TextValue(**self.geo_loc_name)
+        if self.geo_loc_name is not None and not isinstance(self.geo_loc_name, str):
+            self.geo_loc_name = str(self.geo_loc_name)
 
         if self.collection_date is not None and not isinstance(self.collection_date, str):
             self.collection_date = str(self.collection_date)
@@ -1005,9 +1004,6 @@ class Biosample(NamedThing):
 
         if self.habitat is not None and not isinstance(self.habitat, str):
             self.habitat = str(self.habitat)
-
-        if self.geographic_location is not None and not isinstance(self.geographic_location, str):
-            self.geographic_location = str(self.geographic_location)
 
         if self.sample_collection_site is not None and not isinstance(self.sample_collection_site, str):
             self.sample_collection_site = str(self.sample_collection_site)
@@ -4995,9 +4991,6 @@ slots.has_calibration = Slot(uri=NMDC.has_calibration, name="has calibration", c
 slots.has_peptide_quantifications = Slot(uri=NMDC.has_peptide_quantifications, name="has peptide quantifications", curie=NMDC.curie('has_peptide_quantifications'),
                    model_uri=NMDC.has_peptide_quantifications, domain=None, range=Optional[Union[Union[dict, PeptideQuantification], List[Union[dict, PeptideQuantification]]]])
 
-slots.geographic_location = Slot(uri=NMDC.geographic_location, name="geographic_location", curie=NMDC.curie('geographic_location'),
-                   model_uri=NMDC.geographic_location, domain=None, range=Optional[str])
-
 slots.sampling_strategy = Slot(uri=NMDC.sampling_strategy, name="sampling_strategy", curie=NMDC.curie('sampling_strategy'),
                    model_uri=NMDC.sampling_strategy, domain=None, range=Optional[str])
 
@@ -5251,8 +5244,8 @@ slots.biosample_location = Slot(uri=NMDC.location, name="biosample_location", cu
 slots.biosample_habitat = Slot(uri=NMDC.habitat, name="biosample_habitat", curie=NMDC.curie('habitat'),
                    model_uri=NMDC.biosample_habitat, domain=Biosample, range=Optional[str])
 
-slots.biosample_geographic_location = Slot(uri=NMDC.geographic_location, name="biosample_geographic_location", curie=NMDC.curie('geographic_location'),
-                   model_uri=NMDC.biosample_geographic_location, domain=Biosample, range=Optional[str])
+slots.biosample_geo_loc_name = Slot(uri=NMDC.geo_loc_name, name="biosample_geo_loc_name", curie=NMDC.curie('geo_loc_name'),
+                   model_uri=NMDC.biosample_geo_loc_name, domain=Biosample, range=Optional[str])
 
 slots.biosample_sample_collection_site = Slot(uri=NMDC.sample_collection_site, name="biosample_sample_collection_site", curie=NMDC.curie('sample_collection_site'),
                    model_uri=NMDC.biosample_sample_collection_site, domain=Biosample, range=Optional[str])
