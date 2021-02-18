@@ -281,11 +281,17 @@ if __name__ == '__main__':
     # sssom_map_file=git_root('schema/mappings/gold-to-mixs.sssom.tsv')
     # spec_file='lib/nmdc_data_source.yaml'
     # nmdc_etl = NMDC_ETL(merged_data_file=data_file, data_source_spec_file=spec_file, sssom_file=sssom_map_file)
+
+    ## test GOLD biosample etl
+    # nmdc_etl.transform_biosample(test_rows=5)
+    # nmdc_etl.save_biosample('output/nmdc_etl/test.json')
     
+    ## test emsl omic processing etl
     # nmdc_etl.transform_emsl_omics_processing()
     # nmdc_etl.save_emsl_omics_processing('output/nmdc_etl/test.json')
     # print(nmdc_etl.emsl.head())
     
+    ## test GOLD study etl
     # nmdc_etl.transform_study()
     # nmdc_etl.save_study('output/nmdc_etl/test.json')
     # print(list(nmdc_etl.study.columns))

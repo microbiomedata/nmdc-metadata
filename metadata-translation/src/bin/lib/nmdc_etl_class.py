@@ -147,6 +147,7 @@ class NMDC_ETL():
                                          nmdc_class=nmdc.Study,
                                          constructor_map=constructor,
                                          attribute_fields=attributes,
+                                         attribute_map=self.sssom_map,
                                          test_rows=test_rows,
                                          print_df=print_df,
                                          print_dict=print_dict)
@@ -167,6 +168,7 @@ class NMDC_ETL():
                                          nmdc_class=nmdc.OmicsProcessing,
                                          constructor_map=constructor,
                                          attribute_fields=attributes,
+                                         attribute_map=self.sssom_map,
                                          test_rows=test_rows,
                                          print_df=print_df,
                                          print_dict=print_dict)
@@ -187,6 +189,7 @@ class NMDC_ETL():
                                          nmdc_class=nmdc.Biosample,
                                          constructor_map=constructor,
                                          attribute_fields=attributes,
+                                         attribute_map=self.sssom_map,
                                          test_rows=test_rows,
                                          print_df=print_df,
                                          print_dict=print_dict)
@@ -207,6 +210,7 @@ class NMDC_ETL():
                                          nmdc_class=nmdc.OmicsProcessing,
                                          constructor_map=constructor,
                                          attribute_fields=attributes,
+                                         attribute_map=self.sssom_map,
                                          test_rows=test_rows,
                                          print_df=print_df,
                                          print_dict=print_dict)
@@ -228,6 +232,7 @@ class NMDC_ETL():
                                          nmdc_class=nmdc.DataObject,
                                          constructor_map=constructor,
                                          attribute_fields=attributes,
+                                         attribute_map=self.sssom_map,
                                          test_rows=test_rows,
                                          print_df=print_df,
                                          print_dict=print_dict)
@@ -249,6 +254,7 @@ class NMDC_ETL():
                                          nmdc_class=nmdc.DataObject,
                                          constructor_map=constructor,
                                          attribute_fields=attributes,
+                                         attribute_map=self.sssom_map,
                                          test_rows=test_rows,
                                          print_df=print_df,
                                          print_dict=print_dict)

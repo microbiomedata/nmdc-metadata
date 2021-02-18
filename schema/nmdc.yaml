@@ -465,11 +465,15 @@ classes:
       habitat:
         required: false
         range: string
-      geographic_location:
+      geo_loc_name:
         required: false
         range: string
       sample_collection_site:
         required: false
+        range: string
+      tot_nitro_content:
+        range: string
+      tot_nitro_content_meth:
         range: string
       identifier:
         required: false
@@ -486,6 +490,11 @@ classes:
       ph:
         required: false
         range: string
+      alt:
+        range: float
+      diss_oxygen:
+        range: string
+      
       altitude:
         required: false
         range: string
@@ -504,6 +513,8 @@ classes:
       oxygen_concentration:
         required: false
         range: string
+      nitrate:
+        range: string
       nitrate_concentration:
         required: false
         range: string
@@ -512,6 +523,8 @@ classes:
         range: string
       tot_nitrogen:
         required: false
+        range: string
+      chlorophyll:
         range: string
       chlorophyll_concentration:
         required: false

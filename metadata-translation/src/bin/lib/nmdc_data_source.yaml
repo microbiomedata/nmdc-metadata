@@ -186,7 +186,7 @@ classes:
       - host_name
       - depth, float
       - subsurface_depth
-      - altitude
+      - altitude, float
       - proport_woa_temperature
       - biogas_temperature
       - growth_temperature

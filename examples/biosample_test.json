@@ -10,6 +10,7 @@
         "latitude": -33.460524,
         "longitude": 150.168149
       },
+      "geo_loc_name": "Lithgow",
       "env_broad_scale": {
         "has_raw_value": "ENVO_00002030",
         "type": "ControlledTermValue"
@@ -34,7 +35,6 @@
       "community": "microbial communities",
       "location": "from the Lithgow State Coal Mine, New South Wales, Australia",
       "habitat": "Coalbed water",
-      "geographic_location": "Lithgow",
       "sample_collection_site": "Lithgow State Coal Mine"
     },
     {
@@ -47,6 +47,7 @@
         "latitude": -33.460524,
         "longitude": 150.168149
       },
+      "geo_loc_name": "Lithgow",
       "env_broad_scale": {
         "has_raw_value": "ENVO_00002030",
         "type": "ControlledTermValue"
@@ -71,7 +72,6 @@
       "community": "microbial communities",
       "location": "from the Lithgow State Coal Mine, New South Wales, Australia",
       "habitat": "Coalbed water",
-      "geographic_location": "Lithgow",
       "sample_collection_site": "Lithgow State Coal Mine"
     },
     {
@@ -84,6 +84,7 @@
         "latitude": -33.460524,
         "longitude": 150.168149
       },
+      "geo_loc_name": "Lithgow",
       "env_broad_scale": {
         "has_raw_value": "ENVO_00002030",
         "type": "ControlledTermValue"
@@ -108,7 +109,6 @@
       "community": "microbial communities",
       "location": "from the Lithgow State Coal Mine, New South Wales, Australia",
       "habitat": "Coalbed water",
-      "geographic_location": "Lithgow",
       "sample_collection_site": "Lithgow State Coal Mine"
     }
   ]
