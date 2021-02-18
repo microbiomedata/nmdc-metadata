@@ -95,12 +95,12 @@ metatype:Nodeidentifier NONLITERAL
           <specific_ecosystem> @<AttributeValue> ? ;
           <depth> @metatype:Float ? ;
           <https://microbiomedata/schema/mixs/tot_org_carb> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/alt> @<QuantityValue> ? ;
+          <alt> @metatype:Float ? ;
           <https://microbiomedata/schema/mixs/elev> @<QuantityValue> ? ;
           <salinity> @metatype:String ? ;
-          <https://microbiomedata/schema/mixs/diss_oxygen> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/nitrate> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/chlorophyll> @<QuantityValue> ? ;
+          <diss_oxygen> @metatype:String ? ;
+          <nitrate> @metatype:String ? ;
+          <chlorophyll> @metatype:String ? ;
           <https://microbiomedata/schema/mixs/cur_land_use> @<TextValue> ? ;
           <https://microbiomedata/schema/mixs/cur_vegetation> @<TextValue> ? ;
           <https://microbiomedata/schema/mixs/cur_vegetation_meth> @<TextValue> ? ;
@@ -139,8 +139,8 @@ metatype:Nodeidentifier NONLITERAL
           <https://microbiomedata/schema/mixs/texture_meth> @<TextValue> ? ;
           <https://microbiomedata/schema/mixs/ph_meth> @<TextValue> ? ;
           <https://microbiomedata/schema/mixs/tot_org_c_meth> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/tot_nitro_content> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/tot_nitro_content_meth> @<TextValue> ? ;
+          <tot_nitro_content> @metatype:String ? ;
+          <tot_nitro_content_meth> @metatype:String ? ;
           <https://microbiomedata/schema/mixs/microbial_biomass> @<QuantityValue> ? ;
           <https://microbiomedata/schema/mixs/microbial_biomass_meth> @<TextValue> ? ;
           <https://microbiomedata/schema/mixs/link_addit_analys> @<TextValue> ? ;
