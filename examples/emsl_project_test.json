@@ -1,0 +1,49 @@
+{
+  "omics_processing_set": [
+    {
+      "id": "emsl:359123",
+      "name": "GCMS_Blank_01_29Jan14",
+      "description": "Full scan GC-MS (but not GC QExactive, which is EI-HMS)",
+      "has_output": [
+        "emsl:output_359123"
+      ],
+      "omics_type": "Metabolomics",
+      "part_of": [
+        "gold:Gs0110132"
+      ],
+      "type": "nmdc:OmicsProcessing",
+      "processing_institution": "Environmental Molecular Sciences Lab",
+      "instrument_name": "Agilent_GC_MS_01"
+    },
+    {
+      "id": "emsl:359124",
+      "name": "GCMS_FAMEs_01_29Jan14",
+      "description": "Full scan GC-MS (but not GC QExactive, which is EI-HMS)",
+      "has_output": [
+        "emsl:output_359124"
+      ],
+      "omics_type": "Metabolomics",
+      "part_of": [
+        "gold:Gs0110132"
+      ],
+      "type": "nmdc:OmicsProcessing",
+      "processing_institution": "Environmental Molecular Sciences Lab",
+      "instrument_name": "Agilent_GC_MS_01"
+    },
+    {
+      "id": "emsl:359129",
+      "name": "GCMS_Blank_02_29Jan14",
+      "description": "Full scan GC-MS (but not GC QExactive, which is EI-HMS)",
+      "has_output": [
+        "emsl:output_359129"
+      ],
+      "omics_type": "Metabolomics",
+      "part_of": [
+        "gold:Gs0110132"
+      ],
+      "type": "nmdc:OmicsProcessing",
+      "processing_institution": "Environmental Molecular Sciences Lab",
+      "instrument_name": "Agilent_GC_MS_01"
+    }
+  ]
+}
