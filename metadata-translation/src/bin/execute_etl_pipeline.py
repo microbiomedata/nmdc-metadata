@@ -110,7 +110,7 @@ def make_test_datasets():
     
     ## make read QC activities test
     readQC_activities_test = jq.compile('.[0:3] | .[]').input(readQC_activities).all()
-    save_json({ "read_QC_analysis_activity_set": readQC_activities_test}, 'output/`readQC_activities_test.json`')
+    save_json({ "read_QC_analysis_activity_set": readQC_activities_test}, 'output/readQC_activities_test.json')
     
     ## make metagenome data objects test
     readQC_data_objects_test = jq.compile('.[0:3] | .[]').input(readQC_data_objects).all()
