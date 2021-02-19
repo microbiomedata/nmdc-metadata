@@ -121,3 +121,71 @@ docs/%-slides.pptx: docs/%-slides.md
 docs/%-slides.html: docs/%-slides.md
 	pandoc $< -s -t slidy -o $@
 
+# -- ETL commands --
+.PHONY: run-etl build-test-datasets build-example-db build-merged-db
+
+run-etl:
+# runs the ETL script, creates the nmdc datbase and test/example files
+# create needed dirs
+	mkdir -p metadata-translation/src/bin/output/nmdc_etl
+
+# navigate to directory and execute pipeline script
+	cd metadata-translation/src/bin/ && python execute_etl_pipeline.py
+
+# zip output and move to data directory
+	rm -f metadata-translation/src/bin/output/nmdc_database.json.zip # remove old copy
+	zip metadata-translation/src/bin/output/nmdc_database.json.zip metadata-translation/src/bin/output/nmdc_database.json
+	mv metadata-translation/src/bin/output/nmdc_database.json.zip metadata-translation/src/data/nmdc_database.json.zip
+
+# copy example database to examples directory
+	cp metadata-translation/src/bin/output/nmdc_example_database.json examples/
+
+# copy test datasets to examples
+	cp metadata-translation/src/bin/output/study_test.json examples/
+	cp metadata-translation/src/bin/output/gold_project_test.json examples/
+	cp metadata-translation/src/bin/output/biosample_test.json examples/
+	cp metadata-translation/src/bin/output/readQC_data_objects_test.json examples/
+	cp metadata-translation/src/bin/output/readQC_activities_test.json examples/
+	cp metadata-translation/src/bin/output/mg_assembly_data_objects_test.json examples/
+	cp metadata-translation/src/bin/output/mg_assembly_activities_test.json examples/
+	cp metadata-translation/src/bin/output/emsl_data_object_test.json examples/
+	cp metadata-translation/src/bin/output/emsl_project_test.json examples/
+
+
+build-test-datasets:
+# runs the ETL scipt, but ONLY creates the test dataset
+# create needed dirs
+	mkdir -p metadata-translation/src/bin/output/nmdc_etl
+
+# navigate to directory and execute pipeline script
+	cd metadata-translation/src/bin/ && python execute_etl_pipeline.py --testdata --no-etl --no-exdb --no-mergedb
+
+# copy test datasets to examples
+	cp metadata-translation/src/bin/output/study_test.json examples/
+	cp metadata-translation/src/bin/output/gold_project_test.json examples/
+	cp metadata-translation/src/bin/output/biosample_test.json examples/
+	cp metadata-translation/src/bin/output/readQC_data_objects_test.json examples/
+	cp metadata-translation/src/bin/output/readQC_activities_test.json examples/
+	cp metadata-translation/src/bin/output/mg_assembly_data_objects_test.json examples/
+	cp metadata-translation/src/bin/output/mg_assembly_activities_test.json examples/
+	cp metadata-translation/src/bin/output/emsl_data_object_test.json examples/
+	cp metadata-translation/src/bin/output/emsl_project_test.json examples/
+
+build-example-db:
+# runs the ETL scipt, but ONLY creates the example database
+# create needed dirs
+	mkdir -p metadata-translation/src/bin/output/nmdc_etl
+
+# navigate to directory and execute pipeline script
+	cd metadata-translation/src/bin/ && python execute_etl_pipeline.py --exdb --no-testdata --no-etl --no-mergedb
+
+# copy example database to examples directory
+	cp metadata-translation/src/bin/output/nmdc_example_database.json examples/
+
+build-merged-db:
+# runs the ETL scipt, but ONLY creates the merged data source used as input for the ETL pipeline
+# create needed dirs
+	mkdir -p metadata-translation/src/bin/output/nmdc_etl
+
+# navigate to directory and execute pipeline script
+	cd metadata-translation/src/bin/ && python execute_etl_pipeline.py --only-mergedb
