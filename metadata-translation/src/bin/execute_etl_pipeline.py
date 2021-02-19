@@ -264,11 +264,11 @@ def execute_etl(data_file='../data/nmdc_merged_data.tsv.zip',
               default=git_root('metadata-translation/src/bin/lib/nmdc_data_source.yaml'))
 @click.option('--etl/--no-etl', is_flag=True, default=True,
               help='specifies whether to exectute the ETL pipeline and build the NMDC datbase; default true')
-@click.option('--exdb/-no-exdb', is_flag=True, default=True,
+@click.option('--exdb/--no-exdb', is_flag=True, default=True,
               help='specifies whether to build the example NMDC database; default true')
-@click.option('--testdata/-no-testdata', is_flag=True, default=True,
+@click.option('--testdata/--no-testdata', is_flag=True, default=True,
               help='specifies whether to build test datasets; default true')
-@click.option('--mergedb/-no-mergedb', is_flag=True, default=False,
+@click.option('--mergedb/--no-mergedb', is_flag=True, default=False,
               help='specifies whether to build a new merged data source used for input into the ETL pipeline; default false')
 @click.option('--only-mergedb', is_flag=True, default=False,
               help='specifies whether to ONLY build a new merged data source used for input into the ETL pipeline and NOT build the NMDC database, example dataase, and test datasets; default false')
