@@ -462,7 +462,7 @@ data_sources:
       - soil_prev_land_use_meth
       - soil_profile_position
       - soil_salinity_method
-      - soil_seiving
+      - soil_sieving
       - soil_slope_aspect
       - soil_slope_gradient
       - soil_texture
