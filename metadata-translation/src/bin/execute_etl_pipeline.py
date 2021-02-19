@@ -1,6 +1,8 @@
-import os, sys
+import os, sys, click
 from git_root import git_root
 sys.path.append(os.path.abspath(git_root('schema'))) # add path nmdc schema files and modules
+sys.path.append(os.path.abspath(git_root('metadata-translation/src/bin')))
+sys.path.append(os.path.abspath(git_root('metadata-translation/src/bin/lib')))
 
 from lib.nmdc_etl_class import NMDC_ETL
 import yaml
@@ -12,7 +14,8 @@ import pandas as pds
 import jsonasobj
 import nmdc
 import lib.data_operations as dop
-import align_nmdc_datatypes
+import nmdc_dataframes
+# import align_nmdc_datatypes
 import jq
 from git_root import git_root
 
@@ -36,35 +39,15 @@ def save_json(json_data, file_path):
 
 def make_merged_data_source(spec_file='lib/nmdc_data_source.yaml', save_path='../data/nmdc_merged_data.tsv'):
     """Create a new data source containing the merged data sources"""
-
-    mdf = dop.make_dataframe_from_spec_file (spec_file) # build merged data frame (mdf)
-    mdf.to_csv(save_path, sep='\t', index=False) # save merged data
-    print ('merged data frame length: ', len(mdf))
+    mdf = nmdc_dataframes.make_dataframe_from_spec_file (spec_file) # build merged data frame (mdf)
+    
+    # save merged dataframe (mdf)
+    compression_options = dict(method='zip', archive_name=f'{save_path}')
+    # mdf.to_csv(save_path, sep='\t', index=False)
+    mdf.to_csv(f'{save_path}.zip', compression=compression_options, sep='\t', index=False)
+    print ('merged data frame length:', len(mdf))
 
     return mdf
-
-
-def make_json_etl(dataframe, nmdc_class, spec_class_name, spec_file='lib/nmdc_data_source.yaml', sssom_map_file=''):
-    with open(spec_file, 'r') as input_file: # load data specificaiton info
-        spec = yaml.load(input_file, Loader=Loader)
-    
-    ## specify attributes and constructor args
-    attributes = spec['classes'][spec_class_name]['attributes']
-    constructor = spec['classes'][spec_class_name]['constructor']
-
-    attr_map = {}
-    if len(sssom_map_file) > 0:
-        ## load sssom mapping file and subset to skos:exactMatch
-        mapping_df = dop.make_dataframe(sssom_map_file).query("predicate_id == 'skos:exactMatch'")
-        attr_map = {subj:obj for idx, subj, obj in mapping_df[['subject_label', 'object_label']].itertuples()} # build attribute dict
-
-    ## build json
-    data_dictdf = dataframe.to_dict(orient="records") # transorm dataframe to dictionary
-    data_json_list = dop.make_json_string_list \
-        (data_dictdf, nmdc_class, constructor_map=constructor, attribute_fields=attributes, attribute_map=attr_map)
-    
-    ## return json
-    return data_json_list
 
 
 def make_test_datasets():
@@ -126,9 +109,9 @@ def make_nmdc_database():
     jgi_data_object = get_json("output/nmdc_etl/jgi_fastq_data_objects.json")
 
 
-    ## load aim 2 json files
-    mg_annotation_activities = get_json('../data/aim-2-workflows/metagenome_annotation_activities.json')
-    mg_annotation_data_objects = get_json('../data/aim-2-workflows/metagenome_annotation_data_objects.json')
+    ## load aim 2 json files ## removed for GSP 02/2021
+    # mg_annotation_activities = get_json('../data/aim-2-workflows/metagenome_annotation_activities.json')
+    # mg_annotation_data_objects = get_json('../data/aim-2-workflows/metagenome_annotation_data_objects.json')
 
     mg_assembly_activities = get_json('../data/aim-2-workflows/metagenome_assembly_activities.json')
     mg_assembly_data_objects = get_json('../data/aim-2-workflows/metagenome_assembly_data_objects.json')
@@ -136,32 +119,18 @@ def make_nmdc_database():
     readQC_activities = get_json('../data/aim-2-workflows/readQC_activities.json')
     readQC_data_objects = get_json('../data/aim-2-workflows/readQC_data_objects.json')
 
-    ## metaproteomic files
-    hess_mp_analysis_activities = get_json('../data/aim-2-workflows/Hess_metaproteomic_analysis_activities.json')
-    hess_mp_data_objects = get_json('../data/aim-2-workflows/Hess_emsl_analysis_data_objects.json')
-    stegen_mp_analysis_activities = get_json('../data/aim-2-workflows/Stegen_metaproteomic_analysis_activities.json')
-    stegen_mp_data_objects = get_json('../data/aim-2-workflows/Stegen_emsl_analysis_data_objects.json')
+    ## metaproteomic files ## removed for GSP 02/2021
+    # hess_mp_analysis_activities = get_json('../data/aim-2-workflows/Hess_metaproteomic_analysis_activities.json')
+    # hess_mp_data_objects = get_json('../data/aim-2-workflows/Hess_emsl_analysis_data_objects.json')
+    # stegen_mp_analysis_activities = get_json('../data/aim-2-workflows/Stegen_metaproteomic_analysis_activities.json')
+    # stegen_mp_data_objects = get_json('../data/aim-2-workflows/Stegen_emsl_analysis_data_objects.json')
 
     database = \
     {
         "study_set": [*gold_study], 
         "omics_processing_set": [*gold_project, *emsl_project], 
         "biosample_set": [*gold_biosample], 
-        "data_object_set": [*jgi_data_object, 
-                            *emsl_data_object, 
-                            # *mg_annotation_data_objects, ## remove for GSP
-                            *mg_assembly_data_objects,
-                            *readQC_data_objects,
-                            # *hess_mp_data_objects, ## remove for GSP
-                            # *stegen_mp_data_objects ## remove for GSP
-                            ], 
-        #"activity_set": [
-                         # *mg_annotation_activities, ## remove for GSP
-                         # *mg_assembly_activities, ## -> metagenome assembly set
-                         # *readQC_activities, ## -> read QC analysis activity set
-                         # *hess_mp_analysis_activities, ## remove for GSP
-                         # *stegen_mp_analysis_activities ## remove for GSP
-        #                 ],
+        "data_object_set": [*jgi_data_object, *emsl_data_object, *mg_assembly_data_objects,*readQC_data_objects], 
         "metagenome_assembly_set": [*mg_assembly_activities],
         "read_QC_analysis_activity_set": [*readQC_activities]
     }
@@ -217,17 +186,16 @@ def make_nmdc_example_database():
     save_json(database, 'output/nmdc_example_database.json')
 
 
-def main(data_file='../data/nmdc_merged_data.tsv.zip',
-         etl_modules=['gold_study', 
-                      'gold_omics_processing', 
-                      'gold_biosample', 
-                      'emsl_omics_processing',
-                      'emsl_data_object', 
-                      'jgi_data_object'],
-         sssom_map_file=git_root('schema/mappings/gold-to-mixs.sssom.tsv'),
-         spec_file='lib/nmdc_data_source.yaml'):
+def execute_etl(data_file='../data/nmdc_merged_data.tsv.zip',
+                etl_modules=['gold_study', 
+                            'gold_omics_processing', 
+                            'gold_biosample', 
+                            'emsl_omics_processing',
+                            'emsl_data_object', 
+                            'jgi_data_object'],
+                sssom_map_file=git_root('schema/mappings/gold-to-mixs.sssom.tsv'),
+                spec_file='lib/nmdc_data_source.yaml'):
 
-    
     nmdc_etl = NMDC_ETL(merged_data_file=data_file, data_source_spec_file=spec_file, sssom_file=sssom_map_file)
     
     if 'gold_study' in etl_modules:
@@ -262,11 +230,59 @@ def main(data_file='../data/nmdc_merged_data.tsv.zip',
         # nmdc_etl.transform_jgi_data_object(test_rows=1, print_df=True, print_dict=True)
         nmdc_etl.save_jgi_data_object('output/nmdc_etl/jgi_fastq_data_objects.json')
 
+
+################################# CLI interface ##########################################
+@click.command(context_settings=dict(help_option_names=['-h', '--help']))
+@click.option('--datafile', '-df', 
+              help='the path to data that input into the ETL pipeline', 
+              default=git_root('metadata-translation/src/data/nmdc_merged_data.tsv.zip'))
+@click.option('--etlmodules', '-em',
+              help='string of comma separated modules (e.g., "gold_study, gold_biosample") to transform',
+              default="gold_study, gold_omics_processing, gold_biosample, emsl_omics_processing,emsl_data_object, jgi_data_object")
+@click.option('--sssomfile', '-ssom', 
+              help="path to the sssom file to use for mapping",
+              default=git_root('schema/mappings/gold-to-mixs.sssom.tsv'))    
+@click.option('--specfile', '-sf',
+              help='the data source specification yaml file used to define the data sources',
+              default=git_root('metadata-translation/src/bin/lib/nmdc_data_source.yaml'))
+@click.option('--etl/--no-etl', is_flag=True, default=True,
+              help='specifies whether to exectute the ETL pipeline and build the NMDC datbase; default true')
+@click.option('--exdb/--no-exdb', is_flag=True, default=True,
+              help='specifies whether to build the example NMDC database; default true')
+@click.option('--testdata/--no-testdata', is_flag=True, default=True,
+              help='specifies whether to build test datasets; default true')
+@click.option('--mergedb/--no-mergedb', is_flag=True, default=False,
+              help='specifies whether to build a new merged data source used for input into the ETL pipeline; default false')
+@click.option('--only-mergedb', is_flag=True, default=False,
+              help='specifies whether to ONLY build a new merged data source used for input into the ETL pipeline and NOT build the NMDC database, example dataase, and test datasets; default false')
+def main(datafile, etlmodules, sssomfile, specfile, etl, exdb, testdata, mergedb, only_mergedb):
+    if mergedb or only_mergedb:
+        click.echo('building new merged database for input into ETL pipeline.')
+        make_merged_data_source()
+        click.echo('finished merged database')
+        
+    if etl and not only_mergedb:
+        etl_modules = [m.strip() for m in etlmodules.split(",")]
+        click.echo(f'executing etl for modules: {etl_modules}')
+        execute_etl(datafile, etl_modules, sssomfile, specfile)
+        click.echo('building NMDC database')
+        make_nmdc_database()
+        click.echo('finished NMDC database')
+    
+    if exdb and not only_mergedb:
+        click.echo('building example NMDC database')
+        make_nmdc_example_database()
+        click.echo('finished example NMDC database')
+    
+    if testdata and not only_mergedb:
+        click.echo('building NMDC test datasets')
+        make_test_datasets()
+        click.echo('finished NMDC test datasets')
+        
+    
 if __name__ == '__main__':
-    main() # run etl on all files
-    make_nmdc_database() # combines output into database json format
-    make_test_datasets() # make nmdc test datasets
-    make_nmdc_example_database() # make example datatabase
+    main() # CLI interface
+    
     # make_merged_data_source() # consolidates all nmdc data into a single tsv
     
     # ----- testing etl pipeline ------ # 
