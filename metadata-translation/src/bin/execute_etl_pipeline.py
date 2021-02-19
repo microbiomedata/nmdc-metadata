@@ -255,28 +255,30 @@ def execute_etl(data_file='../data/nmdc_merged_data.tsv.zip',
               help='specifies whether to build a new merged data source used for input into the ETL pipeline; default false')
 @click.option('--only-mergedb', is_flag=True, default=False,
               help='specifies whether to ONLY build a new merged data source used for input into the ETL pipeline and NOT build the NMDC database, example dataase, and test datasets; default false')
-def main(datafile, etlmodules, sssomfile, specfile, etl, exdb, testdata, mergedb, only_mergedb):
+@click.option('--skip-build', is_flag=True, default=False,
+              help='specifies whether to SKIP building ETL artificats and ONLY echo progress outputs (useful for testing); default false')
+def main(datafile, etlmodules, sssomfile, specfile, etl, exdb, testdata, mergedb, only_mergedb, skip_build):
     if mergedb or only_mergedb:
         click.echo('building new merged database for input into ETL pipeline.')
-        make_merged_data_source()
+        if not skip_build: make_merged_data_source()
         click.echo('finished merged database')
         
     if etl and not only_mergedb:
         etl_modules = [m.strip() for m in etlmodules.split(",")]
         click.echo(f'executing etl for modules: {etl_modules}')
-        execute_etl(datafile, etl_modules, sssomfile, specfile)
+        if not skip_build: execute_etl(datafile, etl_modules, sssomfile, specfile)
         click.echo('building NMDC database')
-        make_nmdc_database()
+        if not skip_build: make_nmdc_database()
         click.echo('finished NMDC database')
     
     if exdb and not only_mergedb:
         click.echo('building example NMDC database')
-        make_nmdc_example_database()
+        if not skip_build: make_nmdc_example_database()
         click.echo('finished example NMDC database')
     
     if testdata and not only_mergedb:
         click.echo('building NMDC test datasets')
-        make_test_datasets()
+        if not skip_build: make_test_datasets()
         click.echo('finished NMDC test datasets')
         
     
