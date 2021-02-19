@@ -44,29 +44,6 @@ def make_merged_data_source(spec_file='lib/nmdc_data_source.yaml', save_path='..
     return mdf
 
 
-def make_json_etl(dataframe, nmdc_class, spec_class_name, spec_file='lib/nmdc_data_source.yaml', sssom_map_file=''):
-    with open(spec_file, 'r') as input_file: # load data specificaiton info
-        spec = yaml.load(input_file, Loader=Loader)
-    
-    ## specify attributes and constructor args
-    attributes = spec['classes'][spec_class_name]['attributes']
-    constructor = spec['classes'][spec_class_name]['constructor']
-
-    attr_map = {}
-    if len(sssom_map_file) > 0:
-        ## load sssom mapping file and subset to skos:exactMatch
-        mapping_df = dop.make_dataframe(sssom_map_file).query("predicate_id == 'skos:exactMatch'")
-        attr_map = {subj:obj for idx, subj, obj in mapping_df[['subject_label', 'object_label']].itertuples()} # build attribute dict
-
-    ## build json
-    data_dictdf = dataframe.to_dict(orient="records") # transorm dataframe to dictionary
-    data_json_list = dop.make_json_string_list \
-        (data_dictdf, nmdc_class, constructor_map=constructor, attribute_fields=attributes, attribute_map=attr_map)
-    
-    ## return json
-    return data_json_list
-
-
 def make_test_datasets():
     gold_study = get_json("output/nmdc_etl/gold_study.json")
     gold_biosample = get_json("output/nmdc_etl/gold_biosample.json")
@@ -275,25 +252,25 @@ def execute_etl(data_file='../data/nmdc_merged_data.tsv.zip',
 def main(datafile, etlmodules, sssomfile, specfile, etl, exdb, testdata, mergedb, only_mergedb):
     if mergedb or only_mergedb:
         click.echo('building new merged database for input into ETL pipeline.')
-        # make_merged_data_source()
+        make_merged_data_source()
         click.echo('finished merged database')
         
     if etl and not only_mergedb:
         etl_modules = [m.strip() for m in etlmodules.split(",")]
         click.echo(f'executing etl for modules: {etl_modules}')
-        # execute_etl(datafile, etl_modules, sssomfile, specfile)
+        execute_etl(datafile, etl_modules, sssomfile, specfile)
         click.echo('building NMDC database')
-        # make_nmdc_database()
+        make_nmdc_database()
         click.echo('finished NMDC database')
     
     if exdb and not only_mergedb:
         click.echo('building example NMDC database')
-        # make_nmdc_example_database()
+        make_nmdc_example_database()
         click.echo('finished example NMDC database')
     
     if testdata and not only_mergedb:
         click.echo('building NMDC test datasets')
-        # make_test_datasets()
+        make_test_datasets()
         click.echo('finished NMDC test datasets')
         
     
