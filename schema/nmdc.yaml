@@ -24,6 +24,7 @@ prefixes:
   qud: http://qudt.org/1.1/schema/qudt#
   dcterms: http://purl.org/dc/terms/
   biolinkml: https://w3id.org/biolink/biolinkml/
+  MS: http://purl.obolibrary.org/obo/MS_
   OBI: http://purl.obolibrary.org/obo/OBI_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   igsn: https://app.geosamples.org/sample/igsn/
@@ -415,6 +416,8 @@ classes:
       name:
         description: >-
           A human readable name or description of the biosample
+        exact_mappings:
+          - MS:1000002
       alternate identifiers:
         description: >-
           The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
@@ -734,6 +737,8 @@ classes:
         description: >-
           smallest Q-Value associated with the peptide sequence as provided by MSGFPlus tool
         range: float
+        see_also:
+          - OBI:0001442
       peptide_spectral_count:
         description: >-
           sum of filter passing MS2 spectra associated with the peptide sequence within a given LC-MS/MS data file
