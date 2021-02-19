@@ -1,6 +1,8 @@
 import os, sys, click
 from git_root import git_root
 sys.path.append(os.path.abspath(git_root('schema'))) # add path nmdc schema files and modules
+sys.path.append(os.path.abspath(git_root('metadata-translation/src/bin')))
+sys.path.append(os.path.abspath(git_root('metadata-translation/src/bin/lib')))
 
 from lib.nmdc_etl_class import NMDC_ETL
 import yaml
@@ -12,8 +14,8 @@ import pandas as pds
 import jsonasobj
 import nmdc
 import lib.data_operations as dop
-import lib.nmdc_dataframes
-import align_nmdc_datatypes
+import nmdc_dataframes
+# import align_nmdc_datatypes
 import jq
 from git_root import git_root
 
@@ -37,10 +39,13 @@ def save_json(json_data, file_path):
 
 def make_merged_data_source(spec_file='lib/nmdc_data_source.yaml', save_path='../data/nmdc_merged_data.tsv'):
     """Create a new data source containing the merged data sources"""
-
-    mdf = dop.make_dataframe_from_spec_file (spec_file) # build merged data frame (mdf)
-    mdf.to_csv(save_path, sep='\t', index=False) # save merged data
-    print ('merged data frame length: ', len(mdf))
+    mdf = nmdc_dataframes.make_dataframe_from_spec_file (spec_file) # build merged data frame (mdf)
+    
+    # save merged dataframe (mdf)
+    compression_options = dict(method='zip', archive_name=f'{save_path}')
+    # mdf.to_csv(save_path, sep='\t', index=False)
+    mdf.to_csv(f'{save_path}.zip', compression=compression_options, sep='\t', index=False)
+    print ('merged data frame length:', len(mdf))
 
     return mdf
 
