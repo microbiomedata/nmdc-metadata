@@ -12,6 +12,7 @@ prefixes:
   qud: http://qudt.org/1.1/schema/qudt#
   dcterms: http://purl.org/dc/terms/
   schema: http://schema.org/
+  MS: http://purl.obolibrary.org/obo/MS_
   igsnvoc: https://igsn.org/voc/v1/
   biolinkml: https://w3id.org/biolink/biolinkml/
   
