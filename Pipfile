@@ -10,6 +10,11 @@ requests = "*"
 click = "*"
 pipenv-to-requirements = "*"
 jupyter = "*"
+pymongo = "*"
+pytoolz = "*"
+mongospawn = "*"
+toolz = "*"
+tqdm = "*"
 
 [dev-packages]
 jupyter = "*"
