@@ -1,6 +1,8 @@
 type Activity
   {
-    activityId: String!
+    id: String!
+    name: String
+    type: String
     startedAtTime: String
     endedAtTime: String
     wasInformedBy: Activity
@@ -95,6 +97,7 @@ type Biosample
     id: String!
     name: String
     alternateIdentifiers: [String]
+    type: String
   }
 
 type BiosampleProcessing
@@ -119,7 +122,7 @@ type ChemicalEntity
     name: String
     description: String
     alternateIdentifiers: [String]
-    inchi: String!
+    inchi: String
     inchiKey: String
     smiles: [String]
     chemicalFormula: String
@@ -143,7 +146,8 @@ type DataObject
     dataObjectType: ControlledTermValue
     compressionType: String
     wasGeneratedBy: WorkflowExecutionActivity
-    url: TextValue
+    url: String
+    type: String
   }
 
 type Database
@@ -151,8 +155,13 @@ type Database
     biosampleSet: [Biosample]
     studySet: [Study]
     dataObjectSet: [DataObject]
-    activitySet: [Activity]
+    activitySet: [WorkflowExecutionActivity]
+    magsActivitySet: [MAGsAnalysisActivity]
+    metabolomicsAnalysisActivitySet: [MetabolomicsAnalysisActivity]
+    nomAnalysisActivitySet: [NomAnalysisActivity]
     omicsProcessingSet: [OmicsProcessing]
+    functionalAnnotationSet: [FunctionalAnnotation]
+    genomeFeatureSet: [GenomeFeature]
   }
 
 type EnvironmentalMaterialTerm
@@ -165,7 +174,8 @@ type EnvironmentalMaterialTerm
 
 type FunctionalAnnotation
   {
-    wasGeneratedBy: Activity
+    type: String
+    wasGeneratedBy: MetagenomeAnnotationActivity
     subject: GeneProduct
     hasFunction: FunctionalAnnotationTerm
   }
@@ -180,6 +190,10 @@ interface FunctionalAnnotationTerm
 
 type GeneProduct
   {
+    id: String!
+    name: String
+    description: String
+    alternateIdentifiers: [String]
   }
 
 type GenomeFeature
@@ -216,9 +230,32 @@ type IntegerValue
     hasNumericValue: Float
   }
 
-type MAGAnnotationActivity
+type MAGBin
   {
-    activityId: String!
+    binName: String
+    numberOfContig: Integer
+    completeness: Float
+    contamination: Float
+    geneCount: Integer
+    binQuality: String
+    num16s: Integer
+    num5s: Integer
+    num23s: Integer
+    numTRNA: Integer
+    gtdbtkDomain: String
+    gtdbtkPhylum: String
+    gtdbtkClass: String
+    gtdbtkOrder: String
+    gtdbtkFamily: String
+    gtdbtkGenus: String
+    gtdbtkSpecies: String
+    type: String
+  }
+
+type MAGsAnalysisActivity
+  {
+    id: String!
+    name: String
     startedAtTime: String
     endedAtTime: String
     wasInformedBy: Activity
@@ -228,9 +265,13 @@ type MAGAnnotationActivity
     gitUrl: String
     hasInput: [String]
     hasOutput: [String]
+    type: String
     inputContigNum: Integer
     binnedContigNum: Integer
     tooShortContigNum: Integer
+    lowDepthContigNum: Integer
+    unbinnedContigNum: Integer
+    magsList: [MAGBin]
   }
 
 type MetaboliteQuantification
@@ -241,7 +282,8 @@ type MetaboliteQuantification
 
 type MetabolomicsAnalysisActivity
   {
-    activityId: String!
+    id: String!
+    name: String
     startedAtTime: String
     endedAtTime: String
     wasInformedBy: Activity
@@ -250,13 +292,15 @@ type MetabolomicsAnalysisActivity
     gitUrl: String
     hasInput: [String]
     hasOutput: [String]
+    type: String
     used: Instrument
     hasMetaboliteQuantifications: [MetaboliteQuantification]
   }
 
 type MetagenomeAnnotationActivity
   {
-    activityId: String!
+    id: String!
+    name: String
     startedAtTime: String
     endedAtTime: String
     wasInformedBy: Activity
@@ -266,11 +310,13 @@ type MetagenomeAnnotationActivity
     gitUrl: String
     hasInput: [String]
     hasOutput: [String]
+    type: String
   }
 
 type MetagenomeAssembly
   {
-    activityId: String!
+    id: String!
+    name: String
     startedAtTime: String
     endedAtTime: String
     wasInformedBy: Activity
@@ -280,6 +326,7 @@ type MetagenomeAssembly
     gitUrl: String
     hasInput: [String]
     hasOutput: [String]
+    type: String
     asmScore: Float
     scaffolds: Float
     scafLogsum: Float
@@ -311,7 +358,8 @@ type MetagenomeAssembly
 
 type MetaproteomicsAnalysisActivity
   {
-    activityId: String!
+    id: String!
+    name: String
     startedAtTime: String
     endedAtTime: String
     wasInformedBy: Activity
@@ -320,6 +368,7 @@ type MetaproteomicsAnalysisActivity
     gitUrl: String
     hasInput: [String]
     hasOutput: [String]
+    type: String
     used: Instrument
     hasPeptideQuantifications: [PeptideQuantification]
   }
@@ -332,6 +381,23 @@ interface NamedThing
     alternateIdentifiers: [String]
   }
 
+type NomAnalysisActivity
+  {
+    id: String!
+    name: String
+    startedAtTime: String
+    endedAtTime: String
+    wasInformedBy: Activity
+    wasAssociatedWith: Agent
+    executionResource: String
+    gitUrl: String
+    hasInput: [String]
+    hasOutput: [String]
+    type: String
+    used: Instrument
+    hasCalibration: String
+  }
+
 type OmicsProcessing
   {
     description: String
@@ -342,6 +408,7 @@ type OmicsProcessing
     id: String!
     name: String
     alternateIdentifiers: [String]
+    type: String
   }
 
 type OntologyClass
@@ -434,9 +501,10 @@ type ReactionParticipant
     stoichiometry: Integer
   }
 
-type ReadQCAnalysisActivity
+type ReadBasedAnalysisActivity
   {
-    activityId: String!
+    id: String!
+    name: String
     startedAtTime: String
     endedAtTime: String
     wasInformedBy: Activity
@@ -446,6 +514,23 @@ type ReadQCAnalysisActivity
     gitUrl: String
     hasInput: [String]
     hasOutput: [String]
+    type: String
+  }
+
+type ReadQCAnalysisActivity
+  {
+    id: String!
+    name: String
+    startedAtTime: String
+    endedAtTime: String
+    wasInformedBy: Activity
+    wasAssociatedWith: Agent
+    used: String
+    executionResource: String
+    gitUrl: String
+    hasInput: [String]
+    hasOutput: [String]
+    type: String
     inputReadCount: Float
     inputBaseCount: Float
     outputReadCount: Float
@@ -488,7 +573,8 @@ type UrlValue
 
 type WorkflowExecutionActivity
   {
-    activityId: String!
+    id: String!
+    name: String
     startedAtTime: String
     endedAtTime: String
     wasInformedBy: Activity
@@ -498,6 +584,7 @@ type WorkflowExecutionActivity
     gitUrl: String
     hasInput: [String]
     hasOutput: [String]
+    type: String
   }
 
 

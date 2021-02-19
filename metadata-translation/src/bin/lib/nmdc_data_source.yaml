@@ -15,55 +15,68 @@ classes:
   ## - attributes:
   ##     provides a list the attributes/propeties associated with the class 
   ##
-  ##     When the attribute is a simple name (e.g., principal_investigator_name) the ETL output is an attibute value object whose
-  ##     has_raw_value property is the record's value for that field. E.g.: 
+  ##     When the attribute is a simple name (e.g., principal_investigator_name) the ETL output a key value pair. E.g.: 
   ##
-  ##        "principal_investigator_name": {
-  ##           "has_raw_value": "Matthias Hess",
-  ##           "uriorcurie": "nmdc:AttributeValue"
-  ##        }
+  ##        "principal_investigator_name": "Matthias Hess"
   ##
-  ##     When the attribute is a string that includes a comma and a datatype (e.g., file_size_bytes, int), the ETL output
-  ##     is a simple key/value pair. E.g.:
+  ##     The default datatype of the value is a string, but other datatypes can be specified by including a comma between the attributre and the datatype.
+  ##     For example, the attribute specification: 
   ##
-  ##       "file_size_bytes": 12060043683
+  ##        file_size_bytes, int 
   ##
-  ##     When the attribute is a dictionary, the result of the ETL output depends on the datatype of the key's value
-  ##       If the value is a simple string (e.g., {has_input: biosample_gold_id}), the ETL output is an attribute value object. E.g.:
+  ##     produces:
   ##
-  ##         "has_input": {
-  ##                "id": "gold:Gb0108335",
-  ##                "uriorcurie": "nmdc:AttributeValue"
-  ##              }
-  ##        
-  ##      The uriorcurie value can also be overriden as needed. E.g., {has_input: biosample_gold_id, uriorcurie: nmdc:Biosample} produces:
+  ##        "file_size_bytes": 12060043683
   ##
-  ##          "has_input": {
-  ##                  "id": "gold:Gb0108335",
-  ##                  "uriorcurie": "nmdc:Biosample"
-  ##                }
+  ##     If the value of key needs to be an object, you specify the keys and values of the object in a dictionary. 
+  ##     The type is of the object is specified using the clas_type key.
+  ##     For example, the attribute specification:
+  ## 
+  ##        omics_type: {has_raw_value: omics_type, class_type: AttributeValue} 
   ##
-  ##       If the value is dictionary (e.g, {part_of: {init: {id: study_gold_id}, class_type: Study}}), the ETL output is an an object built from the dictionary
+  ##     produces:
+  ##
+  ##        "omics_type": {"has_raw_value": "Metabolomics", "type": "nmdc:AttributeValue"}
+  ##
+  ##     Other types value can also be specified as needed. 
+  ## 
+  ##     If you need to specify which values are necessary to build an object, you use init and class_type keys as follows:
   ##          - the init key contains a dict of key/value pairs needed to initialize the object
   ##          - the class_type key refers to the type of object to create
-  ##       E.g.: {part_of: {init: {id: study_gold_id}, class_type: Study}]} outputs:
+  ##     E.g.: {part_of: {init: {id: study_gold_id}, class_type: Study}]} outputs:
   ##
-  ##          "part_of": {
-  ##                "id": "gold:Gs0112340",
-  ##                "uriorcurie": "nmdc:Study"
-  ##              }
+  ##          "part_of": { "id": "gold:Gs0112340", "class_type": "nmdc:Study"}
   ## 
-  ##       In many cases, an attribute will have a one-to-many relation. For these cases, the value of the attribute is a a list. 
-  ##       E.g.: {has_output: [{init: {id: output_file_ids}, class_type: DataObject}]} outputs
+  ##     In many cases, an attribute will have a one-to-many relation. For these cases, the value of the attribute is a a list. 
+  ##     If the attribute specification is given using a simple "name: [field]" syntax, the value the field is placed between the brackets.
+  ##     For example, the attribute specification:
+  ##
+  ##        has_input: [biosample_id]
+  ##
+  ##     produces:
+  ##
+  ##        "has_input": ["gold:Gb0095970"]
+  ##
+  ##    If you want the values, to split into a list, you specifiy the field and the character to split on like so:
+  ##
+  ##       has_output: [{field: data_object_id, split_val: ','}]
+  ##
+  ##    If the data_object_id field contained the value "jgi:551a20d30d878525404e90d5,"jgi:551a20d50d878525404e90d7", the output would be:
+  ##
+  ##       "has_output": ["jgi:551a20d30d878525404e90d5", "jgi:551a20d50d878525404e90d7"]
+  ##
+  ##    If a list of objects is need, you use the init ad class_type keys within the dictionary as described above.
+  ##    In this case, init field values are split on the comma character.
+  ##    E.g.: {has_output: [{init: {id: output_file_ids}, class_type: DataObject}]} outputs
   ##
   ##          "has_output": [
   ##              {
   ##                "id": "jgi:551a20d30d878525404e90d5",
-  ##                "uriorcurie": "nmdc:DataObject"
+  ##                "class_type": "nmdc:DataObject"
   ##              },
   ##              {
   ##                "id": "jgi:551a20d90d878525404e90e1",
-  ##                "uriorcurie": "nmdc:DataObject"
+  ##                "class_type": "nmdc:DataObject"
   ##              }
   ##            ]
   ##
@@ -76,7 +89,7 @@ classes:
       description: description
     attributes:
       - principal_investigator_name
-      # - {ecosystem: {has_raw_value: ecosystem, uriorcurie: gold:ecosystem}} # example using just the raw value
+      # - {ecosystem: {has_raw_value: ecosystem, class_type: gold:ecosystem}} # example using just the raw value
       - ecosystem
       - ecosystem_category
       - ecosystem_type
@@ -91,8 +104,12 @@ classes:
       name: project_name
       description: description
     attributes:
-      - {part_of: [{init: {id: study_gold_id}, class_type: Study}]}
-      - {has_output: [{init: {id: output_file_ids}, class_type: DataObject}]}
+      # - {part_of: [{init: {id: study_gold_id}, class_type: Study}]}
+      # - {has_input: [{id: biosample_gold_id, class_type: nmdc:Biosample}]}
+      # - {has_output: [{init: {id: output_file_ids}, class_type: DataObject}]}
+      - part_of: [{field: study_gold_id, split_val: ','}] ## inline values
+      - has_input: [{field: biosample_gold_id, split_val: ','}] # inline values
+      - has_output: [{field: output_file_ids, split_val: ','}] # inline values
       - add_date 
       - mod_date
       - completion_date 
@@ -100,7 +117,7 @@ classes:
       - omics_type 
       - principal_investigator_name
       - processing_institution
-      - {has_input: [{id: biosample_gold_id, uriorcurie: nmdc:Biosample}]}
+      
             
   emsl_omics_processing:
     type: omics processing
@@ -112,11 +129,15 @@ classes:
       - omics_type
       - instrument_name
       - processing_institution
-      - {part_of: [{init: {id: gold_study_id}, class_type: Study}]}
+      # - {part_of: [{init: {id: gold_study_id}, class_type: Study}]}
+      - part_of: [{field: gold_study_id, split_val: ','}] ## inline values
       # - has_output: [data_object_id]
-      - {has_output: [{init: {id: data_object_id}, class_type: DataObject}]}
+      # - has_output: ["data_object_id, str"]
+      - has_output: [{field: data_object_id, split_val: ','}] # inline values
+      # - {has_output: [{init: {id: data_object_id}, class_type: DataObject}]}
       # - has_input: [biosample_gold_ids]
-      - {has_input: [{id: biosample_gold_ids, uriorcurie: nmdc:Biosample}]}
+      - has_input: [{field: biosample_gold_ids, split_val: ','}] # inline values
+      # - {has_input: [{id: biosample_gold_ids, class_type: nmdc:Biosample}]}
       
   emsl_data_object:
     type: data object
@@ -163,9 +184,9 @@ classes:
       - sample_collection_site
       - identifier
       - host_name
-      - depth
+      - depth, float
       - subsurface_depth
-      - altitude
+      - altitude, float
       - proport_woa_temperature
       - biogas_temperature
       - growth_temperature
@@ -179,7 +200,6 @@ classes:
       - oxygen_concentration
       - salinity_concentration
       - sample_volume
-      - sample_weight_dna_ext
       - sampling_strategy
       - soil_link_climate_info
       - soil_misc_param
@@ -253,17 +273,18 @@ data_sources:
   ##   filters:
   ##     define how the original data source should be filtered (records included/exclued)
   ##     when the data source is extracted
+  ##  append_columns:
+  ##     defines new columns to append to the extracted dataset
   ##  rename_slots:
   ##     defines fields that will be renamed as part of the data extraction process
   ##     this is often necessary for harmonizing data
-  ##  append_columns:
-  ##     defines new columns to append to the extracted dataset
+  
   study_table:
     id_key: study_id
     data_source:
-      file_name: "export.sql/STUDY_DATA_TABLE.dsv"
+      file_name: "NMDC_DUMP/STUDY_DATA_TABLE.dsv"
       file_type: tsv
-      file_archive_name: "../data/nmdc-version5.zip"
+      file_archive_name: "../data/GOLD_NMDC_DUMP_10162020.zip"
     filters:
       - include:
           field: gold_id
@@ -288,9 +309,9 @@ data_sources:
   contact_table:
     id_key: contact_id
     data_source:
-      file_name: "export.sql/CONTACT_DATA_TABLE.dsv"
+      file_name: "NMDC_DUMP/CONTACT_DATA_TABLE.dsv"
       file_type: tsv
-      file_archive_name: "../data/nmdc-version5.zip"
+      file_archive_name: "../data/GOLD_NMDC_DUMP_10162020.zip"
     rename_slots:
       - old_name: name
         new_name: principal_investigator_name
@@ -300,52 +321,51 @@ data_sources:
     data_source:
       file_name: "../data/JGI-EMSL-FICUS-proposals.fnl.tsv"
       file_type: tsv
+    subset_cols:
+      - jgi_id
+      - gold_study
+      - doi
  
   project_table:
     id_key: project_id
     data_source:
-      file_name: "export.sql/PROJECT_DATA_TABLE.dsv"
+      file_name: "NMDC_DUMP/PROJECT_DATA_TABLE.dsv"
       file_type: tsv
-      file_archive_name: "../data/nmdc-version5.zip"
-    rename_slots:
-      - old_name: sequencing_strategy
-        new_name: omics_type
+      file_archive_name: "../data/GOLD_NMDC_DUMP_10162020.zip"
     filters:              
       - include:
           field: active
           values: ['Yes']
       - exclude:
-          field: omics_type
+          field: sequencing_strategy
           values: ['Whole Genome Sequencing']
     append_columns:
       - name: processing_institution
         value: Joint Genome Institute
+    rename_slots:
+      - old_name: sequencing_strategy
+        new_name: omics_type
 
   project_biosample_table:
     data_source:
-      file_name: "export.sql/PROJECT_BIOSAMPLE_DATA_TABLE.dsv"
+      file_name: "NMDC_DUMP/PROJECT_BIOSAMPLE_DATA_TABLE.dsv"
       file_type: tsv
-      file_archive_name: "../data/nmdc-version5.zip"
+      file_archive_name: "../data/GOLD_NMDC_DUMP_10162020.zip"
     
   biosample_table:
     id_key: biosample_id
     data_source:
-      file_name: "export.sql/BIOSAMPLE_DATA_TABLE.dsv" 
+      file_name: "NMDC_DUMP/BIOSAMPLE_DATA_TABLE.dsv" 
       file_type: tsv
-      file_archive_name: "../data/nmdc-version5.zip"
+      file_archive_name: "../data/GOLD_NMDC_DUMP_10162020.zip"
     filters:              
       - include:
           field: active
           values: ['Yes']
-    rename_slots:
-      - old_name: envo_biome_id
-        new_name: env_broad_scale
-      - old_name: envo_feature_id
-        new_name: env_local_scale
-      - old_name: envo_material_id
-        new_name: env_medium
     subset_cols:
       - biosample_id
+      - soil_package_id
+      - water_package_id
       - gold_id
       - biosample_name
       - description
@@ -374,32 +394,106 @@ data_sources:
       - sample_collection_site
       - identifier
       - host_name
-      - depth
+      - depth # BIOSAMPLE, MICROBIAL_MAT_PACKAGE, PLANT_PACKAGE, SEDIMENT_PACKAGE, SOIL_PACKAGE, WATER_PACKAGE
       - subsurface_depth
       - altitude
       - proport_woa_temperature
       - biogas_temperature
-      - growth_temperature
-      - water_samp_store_temp
+      - growth_temperature # BIOSAMPLE, PLANT_PACKAGE
       - biogas_retention_time
-      - salinity
-      - pressure
-      - ph
+      - salinity # BIOSAMPLE, MICROBIAL_MAT_PACKAGE
+      - pressure # BIOSAMPLE, HYDROCARBON_CORE_PACKAGE, HYDROCARBON_FS_PACKAGE, MICROBIAL_MAT_PACKAGE, SEDIMENT_PACKAGE, WATER_PACKAGE
+      - ph # BIOSAMPLE, HYDROCARBON_CORE_PACKAGE, HYDROCARBON_FS_PACKAGE, MICROBIAL_MAT_PACKAGE, SEDIMENT_PACKAGE, SOIL_PACKAGE, WATER_PACKAGE
       - chlorophyll_concentration
       - nitrate_concentration
       - oxygen_concentration
       - salinity_concentration
-      - sample_volume
-      - sample_weight_dna_ext
+      - sample_volume # BIOSAMPLE, PLANT_PACKAGE, SOIL_PACKAGE, WATER_PACKAGE
       - sampling_strategy
-      - soil_link_climate_info
-      - soil_misc_param
-      - soil_water_content
       - soluble_iron_micromol
       - subsurface_depth2
-      - tot_nitrogen
-      - tot_org_carbon
-      - water_alkalinity
+      - tot_nitrogen # BIOSAMPLE, MICROBIAL_MAT_PACKAGE, SEDIMENT_PACKAGE, SOIL_PACKAGE, WATER_PACKAGE
+      - tot_org_carbon # BIOSAMPLE, SOIL_PACKAGE
+    rename_slots:
+      - old_name: envo_biome_id
+        new_name: env_broad_scale
+      - old_name: envo_feature_id
+        new_name: env_local_scale
+      - old_name: envo_material_id
+        new_name: env_medium
+      
+
+  soil_package_table:
+    id_key: soil_package_id
+    data_source:
+      file_name: "NMDC_DUMP/SOIL_PACKAGE_DATA_TABLE.dsv" 
+      file_type: tsv
+      file_archive_name: "../data/GOLD_NMDC_DUMP_10162020.zip"
+    subset_cols:
+      - soil_package_id
+      - soil_agrochem_addition
+      - soil_aluminium_sat
+      - soil_aluminium_sat_method
+      - soil_crop_rotation
+      - soil_curr_land_use
+      - soil_curr_vegetation
+      - soil_curr_vegetation_method
+      - soil_drainage_class
+      - soil_extreme_event
+      - soil_fao_class
+      - soil_fire
+      - soil_flooding
+      - soil_heavy_metals
+      - soil_heavy_metals_method
+      - soil_horizon
+      - soil_horizon_method
+      - soil_link_addit_analys
+      - soil_link_climate_info
+      - soil_local_class
+      - soil_local_class_method
+      - soil_microbial_biomass
+      - soil_microbial_biomass_method
+      - soil_misc_param
+      - soil_depth
+      - soil_ph
+      - soil_ph_method
+      - soil_pool_dna_extracts
+      - soil_prev_land_use
+      - soil_prev_land_use_meth
+      - soil_profile_position
+      - soil_salinity_method
+      - soil_sieving
+      - soil_slope_aspect
+      - soil_slope_gradient
+      - soil_texture
+      - soil_texture_method
+      - soil_tillage
+      - soil_type
+      - soil_type_method
+      - soil_water_content_soil_meth
+      - soil_water_content
+      - soil_sample_volume
+      - sample_weight_dna_ext # rename to soil_sample_weight_dna_ext
+      - tot_nitrogen # rename to soil_tot_nitrogen
+      - tot_org_carbon # rename to soil_tot_org_carbon
+    rename_slots:
+      - old_name: sample_weight_dna_ext
+        new_name: soil_sample_weight_dna_ext
+      - old_name: tot_nitrogen
+        new_name: soil_tot_nitrogen
+      - old_name: tot_org_carbon
+        new_name: soil_tot_org_carbon
+      
+  water_package_table:
+    id_key: water_package_id
+    data_source:
+      file_name: "NMDC_DUMP/WATER_PACKAGE_DATA_TABLE.dsv" 
+      file_type: tsv
+      file_archive_name: "../data/GOLD_NMDC_DUMP_10162020.zip"
+    subset_cols:
+      - water_package_id
+      - water_depth
+      - water_alkalinity 
       - water_alkalinity_method
       - water_alkyl_diethers
       - water_aminopept_act
@@ -416,6 +510,7 @@ data_sources:
       - water_diss_carbon_dioxide
       - water_diss_hydrogen
       - water_diss_inorg_carbon
+      - water_diss_inorg_nitro
       - water_diss_inorg_phosphorus
       - water_diss_org_carbon
       - water_diss_org_nitrogen
@@ -439,6 +534,8 @@ data_sources:
       - water_redox_potential
       - water_samp_store_dur
       - water_samp_store_loc
+      - water_samp_store_temp
+      - water_sample_weight_dna_ext
       - water_size_frac_low
       - water_size_frac_up
       - water_sodium
@@ -497,14 +594,14 @@ data_sources:
     data_source: 
       file_name: "../data/EMSL_FICUS_project_process_data_export.xlsx"
       file_type: multi-sheet-excel
+    append_columns:
+      - name: processing_institution
+        value: Environmental Molecular Sciences Lab
     rename_slots:
       - old_name: experimental_data_type
         new_name: omics_type
       - old_name: dataset_file_size_bytes
         new_name: file_size_bytes
-    append_columns:
-      - name: processing_institution
-        value: Environmental Molecular Sciences Lab
   
   ficus_emsl_biosample:
     # id_key: dataset_id # since the key is the same as ficus_emsl don't use it

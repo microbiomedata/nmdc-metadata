@@ -1,6 +1,7 @@
 *.old
 *.lock
-
-.idea/
-.ipynb_checkpoints/
 .DS_Store
+.ipynb_checkpoints/
+
+# PyCharm project config
+.idea/

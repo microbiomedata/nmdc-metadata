@@ -1,0 +1,238 @@
+{
+  "study_set": [
+    {
+      "id": "gold:Gs0110132",
+      "name": "Cyanobacterial communities from the Joint Genome Institute, California, USA",
+      "description": "We propose to utilize the unique resources at EMSL and the JGI to obtain a better understanding of the phylogenetic and functional diversity of cyanobacteria that have been collected from DOE mission relevant environments (e.g. alkaline and acidic hot springs, and hypersaline terrestrial and water habitats) and deposited in a culture collection that contains &gt;1,200 strains. The Cyanobacteria are one of the most metabolically and morphologically diverse bacterial phyla and it has been hypothesized that they are the origin of oxygenic photosynthesis. The project proposed here would complement and utilize the genomic information that was generated during JGI\u2019s GEBA Cyano project to add valuable insights about the metabolic processes that are active in members of this phylum and that have been - and still are - key factors in shaping our planet. In contrast to the GEBA Cyano project, the project proposed here include mixed cultures of organisms that are recalcitrant to separation. A comprehensive omics approach of these simple consortia will allow us to develop tools for Systems Microbiology and for analyzing microbe-microbe and microbe-climate interactions and the single-cell and whole system level. Phylogenomics: We will request 16S rRNA data from our culture collections to classify phenotypes that are most promising for addressing questions related to carbon and nitrogen cycling and developing new chassis for biofuel production strains. To obtain a complete 16S rRNA-based inventory of the Cyanobacteria collection we would request ~40 Gb of iTag data from the JGI. In addition, we would request Fluorescence in situ hybridization (FISH) microscopy from EMSL for selected samples that contain more than one phylotype, to obtain a better understanding of the special organization within mixed populations. We will request an additional ~10 Gb of iTag data to monitor phylogenetic changes in mixed cultures with phenotypes that are in particular relevant to carbon and nitrogen cycling.   Single Cell Genomics and Metagenomics: We will request sorting of mixed cultures targeting ~100 single cells and genomic sequencing of the obtained isolates using JGI's PacBio pipeline (total of ~50 Gb genomic data). For mixed cultured from which no ? or only a fraction of the community - can be isolated as single cell, we will request a total of ~50 Gb of metagenomics data. This will provide us with the genomic data that will be necessary to reconstruct metabolic pathways of hitherto uncultured cyanobacteria and to identify the key factors that make the individual members of these mixed cultures recalcitrant to cultivation under axenic conditions. Physiology and chemistry: To determine the physical and chemical changes that occur during Cyanobacteria mediated carbon and nitrogen cycling, we will request access to cryo-transmission electron microscopy, scanning electron microscopy coupled with focused ion beam, X ray spectroscopy and electron diffraction analyses, confocal microscopy, Raman spectroscopy, synchrotron-based computed x-ray microtomography, nano secondary ion mass spectrometry, and high field Fourier transform ion cyclotron resonance mass spectrometry at EMSL.   Functional dynamics: To determine the dynamics of the genetic modules that are being transcribed into mRNA during Cyanobacteria mediated carbon and nitrogen cycling, we propose to generate expression profiles from 10 selected axenic and 10 mixed cultures. We will request a total of ~10 Gb and ~50 Gb of transcriptome and metatranscriptomic data from the JGI, respectively. To determine the dynamics of genetic modules being translated and converted into proteins and metabolites during Cyanobacteria mediated carbon and nitrogen cycling, we will generate metaproteomic and metametabolomic data from 10 selected axenic and 10 mixed cultures. We will request access and support to and with mass spectrometry, NMR spectrometry, and computation time on Chinook from EMSL.",
+      "ecosystem": "Host-associated",
+      "ecosystem_category": "Microbial",
+      "ecosystem_type": "Bacteria",
+      "ecosystem_subtype": "Unclassified",
+      "specific_ecosystem": "Unclassified",
+      "principal_investigator_name": "Matthias Hess",
+      "doi": "10.25585/1487758",
+      "type": "nmdc:Study"
+    },
+    {
+      "id": "gold:Gs0114663",
+      "name": "Groundwater microbial communities from the Columbia River, Washington, USA",
+      "description": "A metagenomic study to couple microbial communities to carbon and contaminant biogeochemistry in the groundwater-surface water interaction zone",
+      "ecosystem": "Environmental",
+      "ecosystem_category": "Aquatic",
+      "ecosystem_type": "Freshwater",
+      "ecosystem_subtype": "Groundwater",
+      "specific_ecosystem": "Unclassified",
+      "principal_investigator_name": "James Stegen",
+      "doi": "10.25585/1487765",
+      "type": "nmdc:Study"
+    },
+    {
+      "id": "gold:Gs0128849",
+      "name": "Permafrost microbial communities from Stordalen Mire, Sweden",
+      "description": "Thawing permafrost is one of the largest soil carbon pools on the planet. The goal of this project is to study microbial communities that participate in the soil carbon cycle.",
+      "ecosystem": "Environmental",
+      "ecosystem_category": "Terrestrial",
+      "ecosystem_type": "Soil",
+      "ecosystem_subtype": "Wetlands",
+      "specific_ecosystem": "Permafrost",
+      "principal_investigator_name": "Virginia Rich",
+      "doi": "10.25585/1488217",
+      "type": "nmdc:Study"
+    }
+  ],
+  "omics_processing_set": [
+    {
+      "id": "gold:Gp0208560",
+      "name": "Permafrost microbial communities from Stordalen Mire, Sweden - 611E1M metaG",
+      "description": "Permafrost microbial communities from Stordalen Mire, Sweden",
+      "has_input": [
+        "gold:Gb0150408"
+      ],
+      "has_output": [
+        "jgi:58b653757ded5e7a2af951c4"
+      ],
+      "omics_type": "Metagenome",
+      "part_of": [
+        "gold:Gs0128849"
+      ],
+      "type": "nmdc:OmicsProcessing",
+      "processing_institution": "Joint Genome Institute",
+      "add_date": "17-MAR-17 04.55.44.822000000 PM",
+      "mod_date": "22-MAY-20 06.38.19.576000000 PM",
+      "ncbi_project_name": "Permafrost microbial communities from Stordalen Mire, Sweden - 611E1M metaG"
+    },
+    {
+      "id": "gold:Gp0115663",
+      "name": "Groundwater microbial communities from the Columbia River, Washington, USA, for microbe roles in carbon and contaminant biogeochemistry - GW-RW metaG T2_23-Sept-14",
+      "description": "Coupling Microbial Communities to Carbon and Contaminant Biogeochemistry in the Groundwater-Surface Water Interaction Zone",
+      "has_input": [
+        "gold:Gb0115217"
+      ],
+      "has_output": [
+        "jgi:55d740280d8785342fcf7e39"
+      ],
+      "omics_type": "Metagenome",
+      "part_of": [
+        "gold:Gs0114663"
+      ],
+      "type": "nmdc:OmicsProcessing",
+      "processing_institution": "Joint Genome Institute",
+      "add_date": "28-MAY-15 12.00.00.000000000 AM",
+      "mod_date": "05-APR-20 09.24.19.579000000 AM",
+      "ncbi_project_name": "Groundwater microbial communities from the Columbia River, Washington, USA, for microbe roles in carbon and contaminant biogeochemistry - GW-RW metaG T2_23-Sept-14"
+    },
+    {
+      "id": "gold:Gp0507243",
+      "name": "Anaerobic lake sediment cyanobacterial communities from Washington, USA - FECB-40",
+      "description": "Anaerobic lake sediment cyanobacterial communities from Washington, USA",
+      "has_input": [
+        "gold:Gb0259532"
+      ],
+      "has_output": [
+        "nan"
+      ],
+      "omics_type": "Targeted Gene Survey",
+      "part_of": [
+        "gold:Gs0110132"
+      ],
+      "type": "nmdc:OmicsProcessing",
+      "processing_institution": "Joint Genome Institute",
+      "add_date": "09-OCT-20 03.15.22.633000000 PM",
+      "mod_date": "11-OCT-20 05.03.57.573000000 PM"
+    }
+  ],
+  "biosample_set": [
+    {
+      "id": "gold:Gb0115217",
+      "name": "Groundwater microbial communities from the Columbia River, Washington, USA, for microbe roles in carbon and contaminant biogeochemistry - GW-RW metaG T2_23-Sept-14",
+      "lat_lon": {
+        "has_raw_value": "46.372 -119.272",
+        "type": "GeolocationValue",
+        "latitude": 46.372,
+        "longitude": -119.272
+      },
+      "geo_loc_name": "USA: Columbia River, Washington",
+      "collection_date": "2014-09-23",
+      "env_broad_scale": {
+        "has_raw_value": "ENVO_00000446",
+        "type": "ControlledTermValue"
+      },
+      "env_local_scale": {
+        "has_raw_value": "ENVO_00000022",
+        "type": "ControlledTermValue"
+      },
+      "env_medium": {
+        "has_raw_value": "ENVO_01000017",
+        "type": "ControlledTermValue"
+      },
+      "ecosystem": "Environmental",
+      "ecosystem_category": "Terrestrial",
+      "ecosystem_type": "Soil",
+      "ecosystem_subtype": "Sand",
+      "specific_ecosystem": "Unclassified",
+      "type": "nmdc:Biosample",
+      "add_date": "28-MAY-15 12.00.00.000000000 AM",
+      "mod_date": "08-JAN-20 02.49.24.000000000 PM",
+      "ncbi_taxonomy_name": "groundwater metagenome",
+      "community": "microbial communities",
+      "location": "groundwater-surface water interaction zone in Washington, USA",
+      "habitat": "Sand",
+      "sample_collection_site": "sand",
+      "identifier": "GW-RW metaG T2_23-Sept-14"
+    },
+    {
+      "id": "gold:Gb0150408",
+      "name": "Permafrost microbial communities from Stordalen Mire, Sweden - 611E1M metaG",
+      "description": "Permafrost microbial communities from Stordalen Mire, Sweden",
+      "lat_lon": {
+        "has_raw_value": "68.35 19.05",
+        "type": "GeolocationValue",
+        "latitude": 68.35,
+        "longitude": 19.05
+      },
+      "geo_loc_name": "Sweden: Stordalen",
+      "collection_date": "2011-06-15",
+      "env_broad_scale": {
+        "has_raw_value": "ENVO_00000446",
+        "type": "ControlledTermValue"
+      },
+      "env_local_scale": {
+        "has_raw_value": "ENVO_00000232",
+        "type": "ControlledTermValue"
+      },
+      "env_medium": {
+        "has_raw_value": "ENVO_00000134",
+        "type": "ControlledTermValue"
+      },
+      "ecosystem": "Environmental",
+      "ecosystem_category": "Terrestrial",
+      "ecosystem_type": "Soil",
+      "ecosystem_subtype": "Wetlands",
+      "specific_ecosystem": "Permafrost",
+      "type": "nmdc:Biosample",
+      "add_date": "17-MAR-17 04.55.54.717000000 PM",
+      "mod_date": "08-JAN-20 02.49.23.000000000 PM",
+      "ncbi_taxonomy_name": "permafrost metagenome",
+      "community": "microbial communities",
+      "location": "Stordalen Mire, Sweden",
+      "habitat": "Fen",
+      "sample_collection_site": "Mire fen",
+      "identifier": "611E1M metaG"
+    },
+    {
+      "id": "gold:Gb0259532",
+      "name": "Anaerobic lake sediment cyanobacterial communities from Washington, USA - FECB-40",
+      "description": "Anaerobic lake sediment cyanobacterial communities from Washington, USA",
+      "lat_lon": {
+        "has_raw_value": "47.3893 -119.4905",
+        "type": "GeolocationValue",
+        "latitude": 47.3893,
+        "longitude": -119.4905
+      },
+      "geo_loc_name": "USA: Washington",
+      "collection_date": "2013-11-08",
+      "env_broad_scale": {
+        "has_raw_value": "ENVO_01000252",
+        "type": "ControlledTermValue"
+      },
+      "env_local_scale": {
+        "has_raw_value": "ENVO_01001072",
+        "type": "ControlledTermValue"
+      },
+      "env_medium": {
+        "has_raw_value": "ENVO_00000546",
+        "type": "ControlledTermValue"
+      },
+      "ecosystem": "Environmental",
+      "ecosystem_category": "Aquatic",
+      "ecosystem_type": "Freshwater",
+      "ecosystem_subtype": "Lake",
+      "specific_ecosystem": "Sediment",
+      "alt": 336,
+      "type": "nmdc:Biosample",
+      "add_date": "09-OCT-20 03.15.26.224000000 PM",
+      "ncbi_taxonomy_name": "sediment metagenome",
+      "community": "cyanobacterial communities",
+      "location": "Washington, USA",
+      "habitat": "Anaerobic lake sediment",
+      "sample_collection_site": "Anaerobic lake sediment",
+      "identifier": "FECB-40"
+    }
+  ],
+  "data_object_set": [
+    {
+      "id": "jgi:55d740280d8785342fcf7e39",
+      "name": "9422.8.132674.GTTTCG.fastq.gz",
+      "description": "Raw sequencer read data",
+      "file_size_bytes": 2861414297,
+      "type": "nmdc:DataObject"
+    },
+    {
+      "id": "jgi:58b653757ded5e7a2af951c4",
+      "name": "11340.8.202049.GTCTCCT-AAGGAGA.fastq.gz",
+      "description": "Raw sequencer read data",
+      "file_size_bytes": 9208349052,
+      "type": "nmdc:DataObject"
+    }
+  ]
+}

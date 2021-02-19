@@ -1,19 +1,5 @@
 {
-  "feature_set": [
-    {
-      "id": "NMDC:Ga0185794_01_2_217",
-      "type": "NMDC:GeneProduct"
-    },
-    {
-      "encodes": "NMDC:Ga0185794_01_2_217",
-      "end": 217,
-      "feature_type": "SO:0000316",
-      "phase": 0,
-      "seqid": "Ga0185794_01",
-      "start": 2,
-      "strand": "-",
-      "type": "NMDC:GenomeFeature"
-    },
+  "genome_feature_set": [
     {
       "id": "NMDC:Ga0185794_01_249_1208",
       "type": "NMDC:GeneProduct"

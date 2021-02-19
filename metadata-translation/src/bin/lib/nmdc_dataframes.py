@@ -18,8 +18,19 @@ from yaml import CLoader as Loader, CDumper as Dumper
 from dotted_dict import DottedDict
 from collections import namedtuple
 
-def make_dataframe (file_name, subset_cols=[], exclude_cols=[], nrows=None, lowercase_col_names=True,
-                    replace_spaces=True, file_type="tsv", delimiter="\t", sheet_name=0, file_archive_name=""):
+def make_dataframe (file_name, 
+                    subset_cols=[], 
+                    exclude_cols=[], 
+                    nrows=None, 
+                    lowercase_col_names=True,
+                    replace_spaces=True, 
+                    replace_hash=True,
+                    strip_spaces=True,
+                    comment_str=None,
+                    file_type="tsv", 
+                    delimiter="\t", 
+                    sheet_name=0, 
+                    file_archive_name=""):
     """
     Builds a pandas dataframe from the designated file.
     
@@ -29,7 +40,10 @@ def make_dataframe (file_name, subset_cols=[], exclude_cols=[], nrows=None, lowe
         exclude_cols: Specifies a specific of subset of columns to be excluded from the dataframe.
         nrows: Specifies the number of rows to be returned in the dataframe (useful for testing).
         lowercase_col_names: If true, the column names are converted to lower case.
-        replace_spaces: If true, spaces in column names are replaced with spaces.
+        replace_spaces: If true, spaces in column names are replaced with underscores.
+        replace_hash: If true, hashes ('#') in column names are replaced with empty strings.
+        strip_spaces: If true, extra surrounding spaces are stripped from the column names.
+        comment_str: Specifies the string that is used for comments with the data.
         file_type: Speicfies the type of file. Current acceptable file types are tsv, csv, and excel. Note that when using excel, you may need to specify a sheet name.
         delimiter: Specifies the delimiter character used between fields.
         sheet_name: If the files is an Excel spreadsheet, this parameter specifies a particular sheet.
@@ -49,23 +63,23 @@ def make_dataframe (file_name, subset_cols=[], exclude_cols=[], nrows=None, lowe
     ## load data from file
     if "tsv" == file_type.lower() or "csv" == file_type.lower():
         if None != file_archive:
-            df = pds.read_csv(file_archive.open(file_name), sep=delimiter, nrows=nrows, comment='#')
+            df = pds.read_csv(file_archive.open(file_name), sep=delimiter, nrows=nrows, comment=comment_str)
         else:
-            df = pds.read_csv(file_name, sep=delimiter, nrows=nrows, comment='#')
+            df = pds.read_csv(file_name, sep=delimiter, nrows=nrows, comment=comment_str)
     elif "excel" == file_type.lower():
         if None != file_archive:
-            df = pds.read_excel(file_archive.open(file_name), sheet_name=sheet_name, nrows=nrows)
+            df = pds.read_excel(file_archive.open(file_name), sheet_name=sheet_name, nrows=nrows, comment=comment_str)
         else:
-            df = pds.read_excel(file_name, sheet_name=sheet_name, nrows=nrows)
+            df = pds.read_excel(file_name, sheet_name=sheet_name, nrows=nrows, comment=comment_str)
     elif "multi-sheet-excel" == file_type.lower():
         if None != file_archive:
             df = pds.concat(
-                pds.read_excel(file_archive.open(file_name), sheet_name=None, ignore_index=True, nrows=nrows))
+                pds.read_excel(file_archive.open(file_name), sheet_name=None, ignore_index=True, nrows=nrows, comment=comment_str))
         else:
-            df = pds.concat(pds.read_excel(file_name, sheet_name=None, ignore_index=True, nrows=nrows))
+            df = pds.concat(pds.read_excel(file_name, sheet_name=None, ignore_index=True, nrows=nrows, comment=comment_str))
     
     ## clean column names
-    df = clean_dataframe_column_names(df, lowercase_col_names, replace_spaces)
+    df = clean_dataframe_column_names(df, lowercase_col_names, replace_spaces, replace_hash, strip_spaces)
     
     ## create subset of columns
     ## note: since column names are case sensitive, this needs to happen after cleaning column names
@@ -76,15 +90,18 @@ def make_dataframe (file_name, subset_cols=[], exclude_cols=[], nrows=None, lowe
     return df
 
 
-def clean_dataframe_column_names (df, lowercase_col_names=True, replace_spaces=True):
+def clean_dataframe_column_names (df, lowercase_col_names=True, replace_spaces=True, replace_hash=True, strip_spaces=True):
     """
     Changes the column names of a dataframe into a standard format. The default settings change the column names to:
       - lower case
-      - replaces spaces with underscores
+      - replace spaces with underscores
+      - replace hash ('#') with empty string
     Args:
         df: The dataframe whose columns will be cleaned.
         lowercase_col_names: If true, the column names are converted to lower case.
-        replace_spaces: If true, spaces in column names are replaced with spaces.
+        replace_spaces: If true, spaces in column names are replaced with underscores.
+        replace_hash: If true, hashes ('#') in column names are replaced with empty strings.
+        strip_spaces: If true, extra surrounding spaces are stripped from the column names.
     Returns:
       Pandas dataframe
     """
@@ -95,6 +112,12 @@ def clean_dataframe_column_names (df, lowercase_col_names=True, replace_spaces=T
     
     if replace_spaces:
         df.columns = [c.replace(" ", "_") for c in df.columns]
+    
+    if replace_hash:
+        df.columns = [c.replace("#", "") for c in df.columns]
+    
+    if strip_spaces:
+        df.columns = [c.strip() for c in df.columns]
     
     return df
 
@@ -114,7 +137,7 @@ def merge_dataframes (dataframes:list, data_source_names=[]):
         eavdf = data.melt(id_vars=['nmdc_record_id'], var_name='attribute')
         eavdf['nmdc_data_source'] = data_source_name
         # print(data_source_name, len(eavdf))
-
+            
         merged_df = merged_df.append(eavdf, ignore_index=True)
     
     return merged_df
@@ -217,8 +240,13 @@ def make_study_dataframe (study_table, contact_table, proposals_table, result_co
     contact_table_splice = contact_table[['contact_id', 'principal_investigator_name']].copy()
     proposals_table_splice = proposals_table[['gold_study', 'doi']].copy()
     
+    ## make sure the contact ids are strings with the ".0" removed from the end (i.e., the strings aren't floats)
+    study_table['contact_id'] = study_table['contact_id'].astype(str).replace('\.0', '', regex=True)
+    contact_table_splice['contact_id'] = contact_table_splice['contact_id'].astype(str).replace('\.0', '', regex=True)
+    # print(study_table[['contact_id', 'principal_investigator_name']].head())
+    
     ## left join data from contact
-    temp1_df = pds.merge(study_table.copy(), contact_table_splice, how='left', on='contact_id')
+    temp1_df = pds.merge(study_table, contact_table_splice, how='left', on='contact_id')
     
     ## left join data from proposals
     temp2_df = pds.merge(temp1_df, proposals_table_splice, how='left', left_on='gold_id', right_on='gold_study')
@@ -295,7 +323,7 @@ def make_project_dataframe (project_table,
         return temp2_df
 
 
-def make_biosample_dataframe (biosample_table, project_biosample_table, project_table, result_cols=[]):
+def make_biosample_dataframe (biosample_table, soil_package_table, water_package_table, project_biosample_table, project_table, result_cols=[]):
     def make_collection_date_from_row(row):
         def _format_date_part_value(val):
             if pds.isnull(val): return ""
@@ -326,8 +354,12 @@ def make_biosample_dataframe (biosample_table, project_biosample_table, project_
     ## rename columns
     project_table_splice.rename(columns={'gold_id': 'project_gold_id'}, inplace=True)
     
+    ## left join package tables to biosample table
+    temp0_df = pds.merge(biosample_table, soil_package_table, how='left', on='soil_package_id')
+    temp0_df = pds.merge(temp0_df, water_package_table, how='left', on='water_package_id')
+    
     ## inner join on project_biosample and project; i.e., biosamples must be linked to project
-    temp1_df = pds.merge(biosample_table, project_biosample_table_splice, how='inner', on='biosample_id')
+    temp1_df = pds.merge(temp0_df, project_biosample_table_splice, how='inner', on='biosample_id')
     temp2_df = pds.merge(temp1_df, project_table_splice, how='inner', on='project_id')
     
     ## add collection date and lat_lon columns
@@ -345,14 +377,17 @@ def make_biosample_dataframe (biosample_table, project_biosample_table, project_
     ## see: https://queirozf.com/entries/pandas-dataframe-groupby-examples
     ## see: https://stackoverflow.com/questions/18138693/replicating-group-concat-for-pandas-dataframe
     groups = \
-        temp2_df.groupby('biosample_id')['project_gold_id'].apply(lambda pid:','.join(filter(None, pid))).reset_index()
+        temp2_df.groupby('biosample_id')['project_gold_id'].apply(lambda pid: ','.join(filter(None, pid))).reset_index()
     groups.rename(columns={'project_gold_id':'project_gold_ids'}, inplace=True)
     
     # join concat groups to dataframe
     temp3_df = pds.merge(temp2_df, groups, how='left', on='biosample_id')
     
-    ## remove uneeded columns & drop dups
+    ## A biosample may belong to multiple projects 
+    # E.g. see biosample_id 247352 with gold_id "Gb0247352", belongs to projects 467278, 467306
+    ## So, remove uneeded columns & drop dups
     temp3_df.drop(columns=['project_gold_id'], inplace=True)
+    temp3_df.drop(columns=['project_id'], inplace=True)
     temp3_df.drop_duplicates(inplace=True)
     
     if len(result_cols) > 0:
@@ -414,6 +449,9 @@ def make_emsl_dataframe (emsl_table, jgi_emsl_table, study_table, emsl_biosample
     temp2_df.dataset_id = "emsl:" + temp2_df.dataset_id
     temp2_df.data_object_id = "emsl:" + temp2_df.data_object_id
 
+    ## replace NaNs with None
+    temp2_df = temp2_df.where(pds.notnull(temp2_df), None)
+    
     ## drop duplicates
     temp2_df.drop_duplicates(inplace=True)
     
@@ -508,11 +546,6 @@ def make_dataframe_from_spec_file (data_spec_file, nrows=None):
             for col in data['append_columns']: 
                 df[col['name']] = col['value']
         
-        ## rename columns
-        if 'rename_slots' in data.keys():
-            for slot in data['rename_slots']: 
-                df.rename(columns={slot['old_name']: slot['new_name']}, inplace=True)
-        
         ## filter rows by specific values
         if 'filters' in data.keys():
             for fltr in data['filters']:
@@ -526,6 +559,11 @@ def make_dataframe_from_spec_file (data_spec_file, nrows=None):
         ## select a subset of the columns
         if 'subset_cols' in data.keys():
             df = df[data['subset_cols']]
+        
+        ## rename columns
+        if 'rename_slots' in data.keys():
+            for slot in data['rename_slots']: 
+                df.rename(columns={slot['old_name']: slot['new_name']}, inplace=True)
         
         ## add 'nmdc_record_id' as a primary key
         if 'id_key' in data.keys():
@@ -549,7 +587,7 @@ def make_dataframe_from_spec_file (data_spec_file, nrows=None):
         df = make_df(source)
         ds = Data_source(df, source[0])
         dataframes.append(ds)
-        # print(source[0], len(df))
+        print(source[0], len(df))
     
     merged_df = merge_dataframes(dataframes)
     return merged_df

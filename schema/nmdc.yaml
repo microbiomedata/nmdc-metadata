@@ -6,9 +6,12 @@ description: >-
   Schema for National Microbiome Data Collaborative (NMDC).
   This schem is organized into 3 separate modules:
     
-  * a set of core types for representing data values
-  * the mixs schema (auto-translated from mixs excel)
-  * the NMDC schema itself
+  This schema is organized into distinct modules:
+    
+   * a set of core types for representing data values
+   * the mixs schema (auto-translated from mixs excel)
+   * annotation schema
+   * the NMDC schema itself
   
 license: https://creativecommons.org/publicdomain/zero/1.0/
 version: 0.1.1
@@ -21,8 +24,10 @@ prefixes:
   qud: http://qudt.org/1.1/schema/qudt#
   dcterms: http://purl.org/dc/terms/
   biolinkml: https://w3id.org/biolink/biolinkml/
+  MS: http://purl.obolibrary.org/obo/MS_
   OBI: http://purl.obolibrary.org/obo/OBI_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
+  igsn: https://app.geosamples.org/sample/igsn/
   
 default_prefix: nmdc
 default_range: string
@@ -76,6 +81,14 @@ classes:
       - study set
       - data object set
       - activity set
+      - mags activity set
+      - metabolomics analysis activity set
+      - metaproteomics analysis activity set
+      - metagenome annotation activity set
+      - metagenome assembly set
+      - read QC analysis activity set
+      - read based analysis activity set
+      - nom analysis activity set
       - omics processing set
       - functional annotation set
       - genome feature set
@@ -99,10 +112,68 @@ classes:
         description: >-
           the activity that generated the file
         range: workflow execution activity
-        inlined: true
+        inlined: false # allow for strings of IDs
+      type:
+        description: >-
+            An optional string that specified the type of object.
+        required: false
+      uriorcurie:
+        required: false            
+
+                
     id_prefixes:
       - GOLD
 
+  MAG bin:
+    attributes:
+      bin name:
+        range: string
+      number of contig:
+        range: integer
+      completeness:
+        range: float
+      contamination:
+        range: float
+      gene count:
+        range: integer
+      bin quality:
+        range: string
+      num 16s:
+        range: integer
+      num 5s:
+        range: integer
+      num 23s:
+        range: integer
+      num tRNA:
+        range: integer
+      gtdbtk domain:
+        required: false
+        range: string
+      gtdbtk phylum:
+        required: false
+        range: string
+      gtdbtk class:
+        required: false
+        range: string
+      gtdbtk order:
+        required: false
+        range: string
+      gtdbtk family:
+        required: false
+        range: string
+      gtdbtk genus:
+        required: false
+        range: string
+      gtdbtk species:
+        required: false
+        range: string
+    slot_usage:
+      type:
+        description: >-
+            An optional string that specified the type of object.
+        required: false
+      
+    
   workflow execution activity:
     is_a: activity
     in_subset: 
@@ -114,6 +185,18 @@ classes:
       - git url
       - has input
       - has output
+    slot_usage:
+      type:
+        description: >-
+            An optional string that specified the type of object.
+        required: false
+      was associated with:
+        required: false
+        description: >-
+          the agent/entity associated with the generation of the file
+        range: workflow execution activity
+        inlined: false # allow for strings of IDs
+
 
   metagenome assembly:
     is_a: workflow execution activity
@@ -154,14 +237,22 @@ classes:
     in_subset: 
       - workflow subset
 
-  MAG annotation activity:
+  #metatranscriptome annotation activity:
+  #  is_a: workflow execution activity
+  #  in_subset: 
+  #    - workflow subset
+
+  MAGs analysis activity:
     is_a: workflow execution activity
     in_subset: 
       - workflow subset
     slots:
       - input contig num
       - binned contig num
-      - too short contig num
+      - too short contig num 
+      - lowDepth contig num
+      - unbinned contig num
+      - mags list
 
   read QC analysis activity:
     is_a: workflow execution activity
@@ -172,7 +263,25 @@ classes:
       - input base count
       - output read count
       - output base count
-
+    slot_usage:
+      input_read_bases:
+        range: float
+        description: >-
+          TODO
+      output_read_bases:
+        range: float
+        description: >-
+          TODO
+      has input:
+        inlined: false
+      has output:
+        inlined: false
+        
+  read based analysis activity:
+    is_a: workflow execution activity
+    in_subset:
+      - workflow subset    
+        
   metabolomics analysis activity:
     is_a: workflow execution activity
     in_subset: 
@@ -186,7 +295,10 @@ classes:
       has metabolite quantifications:
         range: metabolite quantification
         multivalued: true
-      
+      has calibration:
+        description: >-
+          TODO: Yuri to fill in
+    
   metaproteomics analysis activity:
     is_a: workflow execution activity
     in_subset: 
@@ -200,7 +312,22 @@ classes:
       has peptide quantifications:
         range: peptide quantification
         multivalued: true
-      
+
+  nom analysis activity:
+    is_a: workflow execution activity
+    in_subset: 
+      - workflow subset
+    slot_usage:
+      used:
+        range: instrument
+        multivalued: false
+        description: >-
+          The instrument used to collect the data used in the analysis
+      has calibration:
+        range: string
+        description: >-
+            A reference to a file that holds calibration information.
+
   biosample:
     is_a: named thing
     in_subset: 
@@ -289,27 +416,140 @@ classes:
       name:
         description: >-
           A human readable name or description of the biosample
+        exact_mappings:
+          - MS:1000002
       alternate identifiers:
         description: >-
           The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
+          slot_usage:
+      type:
+        description: >-
+            An optional string that specified the type of object.
+        required: false
       lat_lon:
-        required: true
+        required: false
         description: >-
           This is currently a required field but it's not clear if this should be required for human hosts
       depth:
         required: false
+        range: float
       env_broad_scale:
-        required: true
+        required: false
         description: >-
           formerly known as 'biome'
       env_local_scale:
-        required: true
+        required: false
         description: >-
           formerly known as 'feature'
       env_medium:
-        required: true
+        required: false
         description: >-
           formerly known as 'material'
+      uriorcurie:
+        required: false
+      add_date:
+        required: false
+        range: string
+      mod_date:
+        required: false
+        range: string
+      collection_date:
+        required: false
+        range: string        
+      ncbi_taxonomy_name:
+        required: false
+        range: string
+      community:
+        required: false
+        range: string
+      location:
+        required: false
+        range: string
+      habitat:
+        required: false
+        range: string
+      geo_loc_name:
+        required: false
+        range: string
+      sample_collection_site:
+        required: false
+        range: string
+      tot_nitro_content:
+        range: string
+      tot_nitro_content_meth:
+        range: string
+      identifier:
+        required: false
+        range: string
+      host_name:
+        required: false
+        range: string
+      sampling_strategy:
+        required: false
+        range: string
+      growth_temperature:
+        required: false
+        range: string
+      ph:
+        required: false
+        range: string
+      alt:
+        range: float
+      diss_oxygen:
+        range: string
+      
+      altitude:
+        required: false
+        range: string
+      pressure:
+        required: false
+        range: string
+      subsurface_depth:
+        required: false
+        range: string
+      salinity:
+        required: false
+        range: string
+      salinity_concentration:
+        required: false
+        range: string
+      oxygen_concentration:
+        required: false
+        range: string
+      nitrate:
+        range: string
+      nitrate_concentration:
+        required: false
+        range: string
+      soluble_iron_micromol:
+        required: false
+        range: string
+      tot_nitrogen:
+        required: false
+        range: string
+      chlorophyll:
+        range: string
+      chlorophyll_concentration:
+        required: false
+        range: string
+      sample_volume:
+        required: false
+        range: string
+      proport_woa_temperature:
+        required: false
+        range: string
+      ecosystem:
+        range: string
+      ecosystem category:
+        range: string
+      ecosystem type:
+        range: string
+      ecosystem subtype:
+        range: string
+      specific ecosystem:
+        range: string
+
+          
     id_prefixes:
       - GOLD
     exact_mappings:
@@ -333,13 +573,11 @@ classes:
       - ecosystem_type
       - ecosystem_subtype
       - specific_ecosystem
-      - principal investigator
+      - principal investigator name
       - doi
     todos:
       - determine how to get data values for submitted_to_insdc, investigation_type, experimental_factor
-      - project_name is redundant with name, so excluding it
-      
-        
+      - project_name is redundant with name, so excluding it      
     slot_usage:
       id:
         description: >-
@@ -350,7 +588,27 @@ classes:
       alternate identifiers:
         description: >-
           The same study may have distinct identifiers in different databases (e.g. GOLD and EMSL)
-
+      type:
+        description: >-
+            An optional string that specified the type of object.
+        required: false
+      uriorcurie:
+        required: false
+      doi:
+        range: string
+      principal investigator name:
+        range: string
+      ecosystem:
+        range: string
+      ecosystem category:
+        range: string
+      ecosystem type:
+        range: string
+      ecosystem subtype:
+        range: string
+      specific ecosystem:
+        range: string
+          
   biosample processing:
     aliases:
       - material processing
@@ -377,9 +635,9 @@ classes:
     comments:
       - The IDs for objects coming from GOLD will have prefixes gold:GpNNNN
     slots:
-      - part of
       - has output
       - omics type
+      - part of
     slot_usage:
       id:
         description: >-
@@ -391,9 +649,45 @@ classes:
         description: >-
           The same omics processing may have distinct identifiers in different databases (e.g. GOLD and EMSL, as well as NCBI)
       part of:
+        inlined: false
         range: study
       has output:
-        range: data object
+        inlined: false
+        #range: data object
+      has input:
+        inlined: false
+        #range: attribute value
+      type:
+        description: >-
+            An optional string that specified the type of object.
+        required: false
+      omics type:
+        range: string
+      principal investigator name:
+        range: string
+        description: >-
+            An optional values that specifies the PI's name.
+            This might be needed in cases where the study cannot be identified.
+        required: false
+      processing_institution:
+        range: string
+        description: >-
+            The organization that processed the sample.
+        required: false
+      uriorcurie:
+        required: false
+      add_date:
+        range: string
+        required: false
+      mod_date:
+        range: string
+        required: false
+      ncbi_project_name:
+        range: string
+        required: false
+      instrument_name:
+        required: false
+        range: string
     broad_mappings:
       - OBI:0000070 ## assay: https://github.com/microbiomedata/nmdc-metadata/issues/171
 
@@ -418,7 +712,12 @@ classes:
         description: >-
           TODO: Yuri to fill in
         range: float
+      alternate_identifiers:
+        multivalued: true
+        description: >-
+          TODO
 
+          
   peptide quantification:
     description: >-
       This is used to link a metaproteomics analysis workflow to a specific peptide sequence and related information
@@ -438,6 +737,8 @@ classes:
         description: >-
           smallest Q-Value associated with the peptide sequence as provided by MSGFPlus tool
         range: float
+        see_also:
+          - OBI:0001442
       peptide_spectral_count:
         description: >-
           sum of filter passing MS2 spectra associated with the peptide sequence within a given LC-MS/MS data file
@@ -549,8 +850,80 @@ slots:
     multivalued: true
     inlined: true
     description: >-
-      This property links a database object to the set of prov activities.
+      This property links a database object to the set of workflow activities.
   
+  mags activity set:
+    mixins: object set
+    domain: database
+    range: MAGs analysis activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of MAGs analysis activities.
+
+  metabolomics analysis activity set:
+    mixins: object set
+    domain: database
+    range: metabolomics analysis activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of metabolomics analysis activities.
+
+  metaproteomics analysis activity set:
+    mixins: object set
+    domain: database
+    range: metaproteomics analysis activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of metaproteomics analysis activities.
+
+  metagenome annotation activity set:
+    mixins: object set
+    domain: database
+    range: metagenome annotation activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of metaproteomics analysis activities.
+
+  metagenome assembly set:
+    mixins: object set
+    domain: database
+    range: metagenome assembly
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of metaproteomics analysis activities.
+        
+  read QC analysis activity set:
+    mixins: object set
+    domain: database
+    range: read QC analysis activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of read QC analysis activities.
+
+  read based analysis activity set:
+    mixins: object set
+    domain: database
+    range: read based analysis activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of read based analysis activities.
+        
+  nom analysis activity set:
+    mixins: object set
+    domain: database
+    range: nom analysis activity
+    multivalued: true
+    inlined: true
+    description: >-
+      This property links a database object to the set of natural organic matter (NOM) analysis activities.
+
   omics processing set:
     mixins: object set
     domain: database
@@ -601,6 +974,7 @@ slots:
 
   part of:
     aliases: ['is part of']
+    range: named thing
     domain: named thing
     multivalued: true
     slot_uri: dcterms:isPartOf
@@ -806,6 +1180,10 @@ slots:
       
   read QC analysis statistic: {}
 
+  mags list:
+    range: MAG bin
+    multivalued: true
+
   too short contig num:
     range: integer
 
@@ -814,7 +1192,13 @@ slots:
 
   input contig num:
     range: integer
-  
+
+  unbinned contig num:
+    range: integer
+
+  lowDepth contig num:
+    range: integer
+      
   input read count:
     is_a: read QC analysis statistic
     description: >-
@@ -847,7 +1231,7 @@ slots:
     range: attribute value
     abstract: true
     description: >-
-      This is a grouping for any of the gold path fields
+      This is a grouping for any of the gold path fields          
     
   ecosystem:
     is_a: gold_path_field
@@ -876,7 +1260,7 @@ slots:
 
 ## GOLD DATABASE SPECFIC FIELDS
 
-  principal investigator:
+  principal investigator name:
     aliases:
       - PI
       - principal investigator
@@ -914,6 +1298,9 @@ slots:
     range: string
     
   ncbi_taxonomy_name:
+    range: string
+
+  ncbi_project_name:
     range: string
   
   sample_collection_site:
@@ -961,9 +1348,6 @@ slots:
   biogas_retention_time:
     range: string
 
-  ncbi_project_name:
-    range: string
-  
   processing_institution:
     range: string
   
