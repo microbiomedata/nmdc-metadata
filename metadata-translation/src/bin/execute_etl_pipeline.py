@@ -12,6 +12,7 @@ import pandas as pds
 import jsonasobj
 import nmdc
 import lib.data_operations as dop
+import lib.nmdc_dataframes
 import align_nmdc_datatypes
 import jq
 from git_root import git_root
