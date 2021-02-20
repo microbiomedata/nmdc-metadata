@@ -13,7 +13,7 @@ Were Afraid to Ask)*
 ([<u>https://doi.org/10.25979/1607365</u>](https://doi.org/10.25979/1607365)).
 
 <div align="center">
-	<img src="images/NMDC_metadata_img1.png" style="width:10in;height:2.5in"/>
+	<img src="./images/NMDC_metadata_img1.png" style="width:10in;height:2.5in"/>
 </div>
 
 Figure 1: Microbiome metadata types: Information that contextualizes
