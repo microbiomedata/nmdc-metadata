@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Class: OmicsProcessing - NMDC Metadata Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Class: OmicsProcessing";
+    var mkdocs_page_input_path = "OmicsProcessing.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> NMDC Metadata Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Metadata_Documentation_Overview/">NMDC Metadata Standards Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../schema-validation/">NMDC Schema Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../identifiers/">Identifiers in NMDC</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../NMDC_MIxS_Soil_documentation/">MIxS Soil Package</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">NMDC Metadata Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Class: OmicsProcessing</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="class-omicsprocessing">Class: OmicsProcessing</h1>
+<p>The methods and processes used to generate omics data from a biosample or organism.</p>
+<p>URI: <a href="https://microbiomedata/meta/OmicsProcessing">nmdc:OmicsProcessing</a></p>
+<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Biosample]&lt;has%20input%200..*-%20[OmicsProcessing&#124;has_output:string%20*;omics_type:string%20%3F;id:string;name:string%20%3F;alternate_identifiers:string%20*;type:string%20%3F;principal_investigator_name:string%20%3F;processing_institution:string%20%3F;uriorcurie:string%20%3F;add_date:string%20%3F;mod_date:string%20%3F;ncbi_project_name:string%20%3F;instrument_name:string%20%3F;description(i):string%20%3F],[Study]&lt;part%20of%200..*-%20[OmicsProcessing],[Database]++-%20omics%20processing%20set%200..*&gt;[OmicsProcessing],[BiosampleProcessing]^-[OmicsProcessing],[Database],[BiosampleProcessing],[Biosample]" /></p>
+<h2 id="parents">Parents</h2>
+<ul>
+<li>is_a: <a href="../BiosampleProcessing/">BiosampleProcessing</a> - A process that takes one or more biosamples as inputs and generates one or as outputs. Examples of outputs include samples cultivated from another sample or data objects created by instruments runs.</li>
+</ul>
+<h2 id="referenced-by-class">Referenced by class</h2>
+<ul>
+<li><strong><a href="../Database/">Database</a></strong> <em><a href="../omics_processing_set/">omics processing set</a></em>  <sub>0..<em></sub>  </em><em><a href="./">OmicsProcessing</a></em>*</li>
+</ul>
+<h2 id="attributes">Attributes</h2>
+<h3 id="own">Own</h3>
+<ul>
+<li><a href="../omics_processing_add_date/">omics processing➞add_date</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../omics_processing_alternate_identifiers/">omics processing➞alternate identifiers</a>  <sub>0..*</sub><ul>
+<li>Description: The same omics processing may have distinct identifiers in different databases (e.g. GOLD and EMSL, as well as NCBI)</li>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../omics_processing_has_input/">omics processing➞has input</a>  <sub>0..*</sub><ul>
+<li>range: <a href="../Biosample/">Biosample</a></li>
+</ul>
+</li>
+<li><a href="../omics_processing_has_output/">omics processing➞has output</a>  <sub>0..*</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../omics_processing_id/">omics processing➞id</a>  <sub>REQ</sub><ul>
+<li>Description: The primary identifier for the omics processing. E.g. GOLD:GpNNNN</li>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../omics_processing_instrument_name/">omics processing➞instrument_name</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../omics_processing_mod_date/">omics processing➞mod_date</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../omics_processing_name/">omics processing➞name</a>  <sub>OPT</sub><ul>
+<li>Description: A human readable name or description of the omics processing.</li>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../omics_processing_ncbi_project_name/">omics processing➞ncbi_project_name</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../omics_processing_omics_type/">omics processing➞omics type</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../omics_processing_part_of/">omics processing➞part of</a>  <sub>0..*</sub><ul>
+<li>range: <a href="../Study/">Study</a></li>
+</ul>
+</li>
+<li><a href="../omics_processing_principal_investigator_name/">omics processing➞principal investigator name</a>  <sub>OPT</sub><ul>
+<li>Description: An optional values that specifies the PI's name. This might be needed in cases where the study cannot be identified.</li>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../omics_processing_processing_institution/">omics processing➞processing_institution</a>  <sub>OPT</sub><ul>
+<li>Description: The organization that processed the sample.</li>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../omics_processing_type/">omics processing➞type</a>  <sub>OPT</sub><ul>
+<li>Description: An optional string that specified the type of object.</li>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../omics_processing_uriorcurie/">omics processing➞uriorcurie</a>  <sub>OPT</sub><ul>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="inherited-from-biosample-processing">Inherited from biosample processing:</h3>
+<ul>
+<li><a href="../description/">description</a>  <sub>OPT</sub><ul>
+<li>Description: a human-readable description of a thing</li>
+<li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="other-properties">Other properties</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aliases:</strong></td>
+<td></td>
+<td>omics assay</td>
+</tr>
+<tr>
+<td><strong>Comments:</strong></td>
+<td></td>
+<td>The IDs for objects coming from GOLD will have prefixes gold:GpNNNN</td>
+</tr>
+<tr>
+<td><strong>In Subsets:</strong></td>
+<td></td>
+<td>sample subset</td>
+</tr>
+<tr>
+<td><strong>Broad Mappings:</strong></td>
+<td></td>
+<td>OBI:0000070</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
