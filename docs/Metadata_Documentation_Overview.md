@@ -114,7 +114,7 @@ schema also uses this ecosystem classification to describe sample
 environments.
 
 <div align="center">
-<img src="images/NMDC_metadata_img2.png" style="width:13in;height:8in"/>
+<img src="./images/NMDC_metadata_img2.png" style="width:13in;height:8in"/>
 </div>
 
 Figure 2. The GOLD five-level ecosystem classification paths
