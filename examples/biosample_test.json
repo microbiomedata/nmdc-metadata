@@ -12,15 +12,15 @@
       },
       "geo_loc_name": "Lithgow",
       "env_broad_scale": {
-        "has_raw_value": "ENVO_00002030",
+        "has_raw_value": "ENVO:00002030",
         "type": "ControlledTermValue"
       },
       "env_local_scale": {
-        "has_raw_value": "ENVO_00002169",
+        "has_raw_value": "ENVO:00002169",
         "type": "ControlledTermValue"
       },
       "env_medium": {
-        "has_raw_value": "ENVO_00005792",
+        "has_raw_value": "ENVO:00005792",
         "type": "ControlledTermValue"
       },
       "ecosystem": "Environmental",
@@ -49,15 +49,15 @@
       },
       "geo_loc_name": "Lithgow",
       "env_broad_scale": {
-        "has_raw_value": "ENVO_00002030",
+        "has_raw_value": "ENVO:00002030",
         "type": "ControlledTermValue"
       },
       "env_local_scale": {
-        "has_raw_value": "ENVO_00002169",
+        "has_raw_value": "ENVO:00002169",
         "type": "ControlledTermValue"
       },
       "env_medium": {
-        "has_raw_value": "ENVO_00005792",
+        "has_raw_value": "ENVO:00005792",
         "type": "ControlledTermValue"
       },
       "ecosystem": "Environmental",
@@ -86,15 +86,15 @@
       },
       "geo_loc_name": "Lithgow",
       "env_broad_scale": {
-        "has_raw_value": "ENVO_00002030",
+        "has_raw_value": "ENVO:00002030",
         "type": "ControlledTermValue"
       },
       "env_local_scale": {
-        "has_raw_value": "ENVO_00002169",
+        "has_raw_value": "ENVO:00002169",
         "type": "ControlledTermValue"
       },
       "env_medium": {
-        "has_raw_value": "ENVO_00005792",
+        "has_raw_value": "ENVO:00005792",
         "type": "ControlledTermValue"
       },
       "ecosystem": "Environmental",
