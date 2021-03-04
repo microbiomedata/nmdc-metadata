@@ -1,237 +1,246 @@
 {
   "study_set": [
     {
-      "id": "gold:Gs0110132",
-      "name": "Cyanobacterial communities from the Joint Genome Institute, California, USA",
-      "description": "We propose to utilize the unique resources at EMSL and the JGI to obtain a better understanding of the phylogenetic and functional diversity of cyanobacteria that have been collected from DOE mission relevant environments (e.g. alkaline and acidic hot springs, and hypersaline terrestrial and water habitats) and deposited in a culture collection that contains &gt;1,200 strains. The Cyanobacteria are one of the most metabolically and morphologically diverse bacterial phyla and it has been hypothesized that they are the origin of oxygenic photosynthesis. The project proposed here would complement and utilize the genomic information that was generated during JGI\u2019s GEBA Cyano project to add valuable insights about the metabolic processes that are active in members of this phylum and that have been - and still are - key factors in shaping our planet. In contrast to the GEBA Cyano project, the project proposed here include mixed cultures of organisms that are recalcitrant to separation. A comprehensive omics approach of these simple consortia will allow us to develop tools for Systems Microbiology and for analyzing microbe-microbe and microbe-climate interactions and the single-cell and whole system level. Phylogenomics: We will request 16S rRNA data from our culture collections to classify phenotypes that are most promising for addressing questions related to carbon and nitrogen cycling and developing new chassis for biofuel production strains. To obtain a complete 16S rRNA-based inventory of the Cyanobacteria collection we would request ~40 Gb of iTag data from the JGI. In addition, we would request Fluorescence in situ hybridization (FISH) microscopy from EMSL for selected samples that contain more than one phylotype, to obtain a better understanding of the special organization within mixed populations. We will request an additional ~10 Gb of iTag data to monitor phylogenetic changes in mixed cultures with phenotypes that are in particular relevant to carbon and nitrogen cycling.   Single Cell Genomics and Metagenomics: We will request sorting of mixed cultures targeting ~100 single cells and genomic sequencing of the obtained isolates using JGI's PacBio pipeline (total of ~50 Gb genomic data). For mixed cultured from which no ? or only a fraction of the community - can be isolated as single cell, we will request a total of ~50 Gb of metagenomics data. This will provide us with the genomic data that will be necessary to reconstruct metabolic pathways of hitherto uncultured cyanobacteria and to identify the key factors that make the individual members of these mixed cultures recalcitrant to cultivation under axenic conditions. Physiology and chemistry: To determine the physical and chemical changes that occur during Cyanobacteria mediated carbon and nitrogen cycling, we will request access to cryo-transmission electron microscopy, scanning electron microscopy coupled with focused ion beam, X ray spectroscopy and electron diffraction analyses, confocal microscopy, Raman spectroscopy, synchrotron-based computed x-ray microtomography, nano secondary ion mass spectrometry, and high field Fourier transform ion cyclotron resonance mass spectrometry at EMSL.   Functional dynamics: To determine the dynamics of the genetic modules that are being transcribed into mRNA during Cyanobacteria mediated carbon and nitrogen cycling, we propose to generate expression profiles from 10 selected axenic and 10 mixed cultures. We will request a total of ~10 Gb and ~50 Gb of transcriptome and metatranscriptomic data from the JGI, respectively. To determine the dynamics of genetic modules being translated and converted into proteins and metabolites during Cyanobacteria mediated carbon and nitrogen cycling, we will generate metaproteomic and metametabolomic data from 10 selected axenic and 10 mixed cultures. We will request access and support to and with mass spectrometry, NMR spectrometry, and computation time on Chinook from EMSL.",
+      "id": "gold:Gs0110115",
+      "name": "Avena fatua rhizosphere microbial communities from Hopland, California, USA, for root-enhanced decomposition of organic matter studies",
+      "description": "Using analytical expertise at both the JGI and EMSL, we plan to follow successional patterns of protein expression by root-associated microorganisms. This work builds on foundational research we are conducting with the common California grassland plant, Avena fatua, grown in Hopland, CA soil (FOA DE-PS02-09ER09-25). Using our 16-chamber 13C labeling facility at UC Berkeley, we have shown that elevated CO2 increased the amount of C allocated belowground, and increased the yield of root biomass. The rhizosphere microbial community undergoes a succession as the root grows, senesces, and dies. In elevated CO2 treatments, we also detect a greater amount of root-derived 13C in the mineral-associated heavy fraction of the soil, which is commonly assumed to reflect longer term stabilization. \\n \\nIn our JGI-EMSL project, we will follow over time how roots impact the functional capacity of the rhizosphere microbiome to enzymatically mediate decomposition processes. We hypothesize that root-exudate stimulation of soil microbial populations results in elevated expression of biomolecules (transcripts, enzymes, metabolites) for the decomposition of macromolecular C compounds.",
       "ecosystem": "Host-associated",
-      "ecosystem_category": "Microbial",
-      "ecosystem_type": "Bacteria",
-      "ecosystem_subtype": "Unclassified",
+      "ecosystem_category": "Plants",
+      "ecosystem_type": "Rhizosphere",
+      "ecosystem_subtype": "Soil",
       "specific_ecosystem": "Unclassified",
-      "principal_investigator_name": "Matthias Hess",
-      "doi": "10.25585/1487758",
+      "principal_investigator_name": "Mary Firestone",
+      "doi": "10.25585/1487760",
       "type": "nmdc:Study"
     },
     {
-      "id": "gold:Gs0114663",
-      "name": "Groundwater microbial communities from the Columbia River, Washington, USA",
-      "description": "A metagenomic study to couple microbial communities to carbon and contaminant biogeochemistry in the groundwater-surface water interaction zone",
+      "id": "gold:Gs0120351",
+      "name": "Continental margin sediment microbial communities from various locations",
       "ecosystem": "Environmental",
       "ecosystem_category": "Aquatic",
-      "ecosystem_type": "Freshwater",
-      "ecosystem_subtype": "Groundwater",
+      "ecosystem_type": "Marine",
+      "ecosystem_subtype": "Unclassified",
       "specific_ecosystem": "Unclassified",
-      "principal_investigator_name": "James Stegen",
-      "doi": "10.25585/1487765",
+      "principal_investigator_name": "Frederick Colwell",
+      "doi": "10.25585/1488205",
       "type": "nmdc:Study"
     },
     {
-      "id": "gold:Gs0128849",
-      "name": "Permafrost microbial communities from Stordalen Mire, Sweden",
-      "description": "Thawing permafrost is one of the largest soil carbon pools on the planet. The goal of this project is to study microbial communities that participate in the soil carbon cycle.",
+      "id": "gold:Gs0130354",
+      "name": "Forest soil microbial communities from Barre Woods Harvard Forest LTER site, Petersham, Massachusetts, United States",
+      "description": "The goal of this study is to learn the molecular mechanisms underlying changes in the temperature sensitive respiration response of forest soils to long-term experimental warming",
       "ecosystem": "Environmental",
       "ecosystem_category": "Terrestrial",
       "ecosystem_type": "Soil",
-      "ecosystem_subtype": "Wetlands",
-      "specific_ecosystem": "Permafrost",
-      "principal_investigator_name": "Virginia Rich",
-      "doi": "10.25585/1488217",
+      "ecosystem_subtype": "Unclassified",
+      "specific_ecosystem": "Forest Soil",
+      "principal_investigator_name": "Jeffrey Blanchard",
+      "doi": "10.25585/1488215",
       "type": "nmdc:Study"
     }
   ],
   "omics_processing_set": [
     {
-      "id": "gold:Gp0208560",
-      "name": "Permafrost microbial communities from Stordalen Mire, Sweden - 611E1M metaG",
-      "description": "Permafrost microbial communities from Stordalen Mire, Sweden",
+      "id": "gold:Gp0225767",
+      "name": "Forest soil microbial communities from Barre Woods Harvard Forest LTER site, Petersham, Massachusetts, United States - Inc-BW-C-14-O",
+      "description": "Forest soil from Barre Woods Harvard Forest LTER site was incubated at 10C with heavy water. Sample is from a control plot at ambient soil temperature, organic horizon - top 4cm of soil",
       "has_input": [
-        "gold:Gb0150408"
+        "gold:Gb0157174"
       ],
       "has_output": [
-        "jgi:58b653757ded5e7a2af951c4"
+        "jgi:599c3a117ded5e41edd7da77"
       ],
       "omics_type": "Metagenome",
       "part_of": [
-        "gold:Gs0128849"
+        "gold:Gs0130354"
       ],
       "type": "nmdc:OmicsProcessing",
       "processing_institution": "Joint Genome Institute",
-      "add_date": "17-MAR-17 04.55.44.822000000 PM",
-      "mod_date": "22-MAY-20 06.38.19.576000000 PM",
-      "ncbi_project_name": "Permafrost microbial communities from Stordalen Mire, Sweden - 611E1M metaG"
+      "add_date": "17-AUG-17 05.08.38.451000000 PM",
+      "mod_date": "16-OCT-20 02.04.01.374000000 AM",
+      "ncbi_project_name": "Forest soil microbial communities from Barre Woods Harvard Forest LTER site, Petersham, Massachusetts, United States - Inc-BW-C-14-O"
     },
     {
-      "id": "gold:Gp0115663",
-      "name": "Groundwater microbial communities from the Columbia River, Washington, USA, for microbe roles in carbon and contaminant biogeochemistry - GW-RW metaG T2_23-Sept-14",
-      "description": "Coupling Microbial Communities to Carbon and Contaminant Biogeochemistry in the Groundwater-Surface Water Interaction Zone",
+      "id": "gold:Gp0507254",
+      "name": "Bulk soil microbial communities from Hopland, California, USA - 21_Bulk_cDNA",
+      "description": "Bulk soil microbial communities from Hopland, California, USA",
       "has_input": [
-        "gold:Gb0115217"
-      ],
-      "has_output": [
-        "jgi:55d740280d8785342fcf7e39"
-      ],
-      "omics_type": "Metagenome",
-      "part_of": [
-        "gold:Gs0114663"
-      ],
-      "type": "nmdc:OmicsProcessing",
-      "processing_institution": "Joint Genome Institute",
-      "add_date": "28-MAY-15 12.00.00.000000000 AM",
-      "mod_date": "05-APR-20 09.24.19.579000000 AM",
-      "ncbi_project_name": "Groundwater microbial communities from the Columbia River, Washington, USA, for microbe roles in carbon and contaminant biogeochemistry - GW-RW metaG T2_23-Sept-14"
-    },
-    {
-      "id": "gold:Gp0507243",
-      "name": "Anaerobic lake sediment cyanobacterial communities from Washington, USA - FECB-40",
-      "description": "Anaerobic lake sediment cyanobacterial communities from Washington, USA",
-      "has_input": [
-        "gold:Gb0259532"
+        "gold:Gb0259543"
       ],
       "has_output": [
         "nan"
       ],
       "omics_type": "Targeted Gene Survey",
       "part_of": [
-        "gold:Gs0110132"
+        "gold:Gs0110115"
       ],
       "type": "nmdc:OmicsProcessing",
       "processing_institution": "Joint Genome Institute",
       "add_date": "09-OCT-20 03.15.22.633000000 PM",
-      "mod_date": "11-OCT-20 05.03.57.573000000 PM"
+      "mod_date": "11-OCT-20 03.45.35.940000000 PM"
+    },
+    {
+      "id": "gold:Gp0146713",
+      "name": "Continental margin sediment microbial communities from North Pacific Ocean - ANME2c_DSS_Sorted",
+      "description": "Metagenomics of methane hydrate-bearing continental margin sediments",
+      "has_input": [
+        "gold:Gb0139759"
+      ],
+      "has_output": [
+        "jgi:58d1cf127ded5e7a2afbda22",
+        "jgi:58eed9907ded5e6ece7e624f"
+      ],
+      "omics_type": "Metagenome",
+      "part_of": [
+        "gold:Gs0120351"
+      ],
+      "type": "nmdc:OmicsProcessing",
+      "processing_institution": "Joint Genome Institute",
+      "add_date": "28-MAY-16 12.00.00.000000000 AM",
+      "mod_date": "11-AUG-20 03.58.13.137000000 PM",
+      "ncbi_project_name": "Continental margin sediment microbial communities from North Pacific Ocean - ANME2c_DSS_Sorted"
     }
   ],
   "biosample_set": [
     {
-      "id": "gold:Gb0115217",
-      "name": "Groundwater microbial communities from the Columbia River, Washington, USA, for microbe roles in carbon and contaminant biogeochemistry - GW-RW metaG T2_23-Sept-14",
+      "id": "gold:Gb0139759",
+      "name": "Continental margin sediment microbial communities from North Pacific Ocean - ANME2c_DSS_Sorted",
       "lat_lon": {
-        "has_raw_value": "46.372 -119.272",
+        "has_raw_value": "47.5233 -125.0078",
         "type": "GeolocationValue",
-        "latitude": 46.372,
-        "longitude": -119.272
+        "latitude": 47.5233,
+        "longitude": -125.0078
       },
-      "geo_loc_name": "USA: Columbia River, Washington",
-      "collection_date": "2014-09-23",
+      "geo_loc_name": "Pacific Ocean",
+      "collection_date": "2014-10-16",
       "env_broad_scale": {
-        "has_raw_value": "ENVO_00000446",
+        "has_raw_value": "ENVO:00000447",
         "type": "ControlledTermValue"
       },
       "env_local_scale": {
-        "has_raw_value": "ENVO_00000022",
+        "has_raw_value": "ENVO:01000298",
         "type": "ControlledTermValue"
       },
       "env_medium": {
-        "has_raw_value": "ENVO_01000017",
-        "type": "ControlledTermValue"
-      },
-      "ecosystem": "Environmental",
-      "ecosystem_category": "Terrestrial",
-      "ecosystem_type": "Soil",
-      "ecosystem_subtype": "Sand",
-      "specific_ecosystem": "Unclassified",
-      "type": "nmdc:Biosample",
-      "add_date": "28-MAY-15 12.00.00.000000000 AM",
-      "mod_date": "08-JAN-20 02.49.24.000000000 PM",
-      "ncbi_taxonomy_name": "groundwater metagenome",
-      "community": "microbial communities",
-      "location": "groundwater-surface water interaction zone in Washington, USA",
-      "habitat": "Sand",
-      "sample_collection_site": "sand",
-      "identifier": "GW-RW metaG T2_23-Sept-14"
-    },
-    {
-      "id": "gold:Gb0150408",
-      "name": "Permafrost microbial communities from Stordalen Mire, Sweden - 611E1M metaG",
-      "description": "Permafrost microbial communities from Stordalen Mire, Sweden",
-      "lat_lon": {
-        "has_raw_value": "68.35 19.05",
-        "type": "GeolocationValue",
-        "latitude": 68.35,
-        "longitude": 19.05
-      },
-      "geo_loc_name": "Sweden: Stordalen",
-      "collection_date": "2011-06-15",
-      "env_broad_scale": {
-        "has_raw_value": "ENVO_00000446",
-        "type": "ControlledTermValue"
-      },
-      "env_local_scale": {
-        "has_raw_value": "ENVO_00000232",
-        "type": "ControlledTermValue"
-      },
-      "env_medium": {
-        "has_raw_value": "ENVO_00000134",
-        "type": "ControlledTermValue"
-      },
-      "ecosystem": "Environmental",
-      "ecosystem_category": "Terrestrial",
-      "ecosystem_type": "Soil",
-      "ecosystem_subtype": "Wetlands",
-      "specific_ecosystem": "Permafrost",
-      "type": "nmdc:Biosample",
-      "add_date": "17-MAR-17 04.55.54.717000000 PM",
-      "mod_date": "08-JAN-20 02.49.23.000000000 PM",
-      "ncbi_taxonomy_name": "permafrost metagenome",
-      "community": "microbial communities",
-      "location": "Stordalen Mire, Sweden",
-      "habitat": "Fen",
-      "sample_collection_site": "Mire fen",
-      "identifier": "611E1M metaG"
-    },
-    {
-      "id": "gold:Gb0259532",
-      "name": "Anaerobic lake sediment cyanobacterial communities from Washington, USA - FECB-40",
-      "description": "Anaerobic lake sediment cyanobacterial communities from Washington, USA",
-      "lat_lon": {
-        "has_raw_value": "47.3893 -119.4905",
-        "type": "GeolocationValue",
-        "latitude": 47.3893,
-        "longitude": -119.4905
-      },
-      "geo_loc_name": "USA: Washington",
-      "collection_date": "2013-11-08",
-      "env_broad_scale": {
-        "has_raw_value": "ENVO_01000252",
-        "type": "ControlledTermValue"
-      },
-      "env_local_scale": {
-        "has_raw_value": "ENVO_01001072",
-        "type": "ControlledTermValue"
-      },
-      "env_medium": {
-        "has_raw_value": "ENVO_00000546",
+        "has_raw_value": "ENVO:03000033",
         "type": "ControlledTermValue"
       },
       "ecosystem": "Environmental",
       "ecosystem_category": "Aquatic",
-      "ecosystem_type": "Freshwater",
-      "ecosystem_subtype": "Lake",
+      "ecosystem_type": "Marine",
+      "ecosystem_subtype": "Continental margin",
       "specific_ecosystem": "Sediment",
-      "alt": 336,
+      "depth": 0,
       "type": "nmdc:Biosample",
-      "add_date": "09-OCT-20 03.15.26.224000000 PM",
+      "add_date": "28-MAY-16 12.00.00.000000000 AM",
+      "mod_date": "11-AUG-20 04.03.33.631000000 PM",
       "ncbi_taxonomy_name": "sediment metagenome",
-      "community": "cyanobacterial communities",
-      "location": "Washington, USA",
-      "habitat": "Anaerobic lake sediment",
-      "sample_collection_site": "Anaerobic lake sediment",
-      "identifier": "FECB-40"
+      "community": "microbial communities",
+      "location": "North Pacific Ocean",
+      "habitat": "Continental margin sediment",
+      "sample_collection_site": "Marine Sediment",
+      "identifier": "ANME2c_DSS_Sorted"
+    },
+    {
+      "id": "gold:Gb0157174",
+      "name": "Forest soil microbial communities from Barre Woods Harvard Forest LTER site, Petersham, Massachusetts, United States - Inc-BW-C-14-O",
+      "description": "Forest soil from Barre Woods Harvard Forest LTER site was incubated at 10C with heavy water. Sample is from a control plot at ambient soil temperature, organic horizon - top 4cm of soil",
+      "lat_lon": {
+        "has_raw_value": "42.481016 -72.178343",
+        "type": "GeolocationValue",
+        "latitude": 42.481016,
+        "longitude": -72.178343
+      },
+      "geo_loc_name": "USA: Massachusetts",
+      "collection_date": "2017-05-24",
+      "env_broad_scale": {
+        "has_raw_value": "ENVO:01000174",
+        "type": "ControlledTermValue"
+      },
+      "env_local_scale": {
+        "has_raw_value": "ENVO:01000159",
+        "type": "ControlledTermValue"
+      },
+      "env_medium": {
+        "has_raw_value": "ENVO:00002261",
+        "type": "ControlledTermValue"
+      },
+      "ecosystem": "Environmental",
+      "ecosystem_category": "Terrestrial",
+      "ecosystem_type": "Soil",
+      "ecosystem_subtype": "Unclassified",
+      "specific_ecosystem": "Forest Soil",
+      "type": "nmdc:Biosample",
+      "add_date": "17-AUG-17 05.38.34.719000000 PM",
+      "mod_date": "08-JAN-20 02.49.23.000000000 PM",
+      "ncbi_taxonomy_name": "soil metagenome",
+      "community": "microbial communities",
+      "location": "Barre Woods Harvard Forest LTER site, Petersham, Massachusetts, United States",
+      "habitat": "soil",
+      "sample_collection_site": "forest soil",
+      "identifier": "Inc-BW-C-14-O"
+    },
+    {
+      "id": "gold:Gb0259543",
+      "name": "Bulk soil microbial communities from Hopland, California, USA - 21_Bulk_cDNA",
+      "description": "Bulk soil microbial communities from Hopland, California, USA",
+      "lat_lon": {
+        "has_raw_value": "38.9929 -123.0674",
+        "type": "GeolocationValue",
+        "latitude": 38.9929,
+        "longitude": -123.0674
+      },
+      "geo_loc_name": "USA: Hopland, California",
+      "collection_date": "2013-03-15",
+      "env_broad_scale": {
+        "has_raw_value": "ENVO:00000446",
+        "type": "ControlledTermValue"
+      },
+      "env_local_scale": {
+        "has_raw_value": "ENVO:00005801",
+        "type": "ControlledTermValue"
+      },
+      "env_medium": {
+        "has_raw_value": "ENVO:00005802",
+        "type": "ControlledTermValue"
+      },
+      "ecosystem": "Host-associated",
+      "ecosystem_category": "Plants",
+      "ecosystem_type": "Roots",
+      "ecosystem_subtype": "Bulk soil",
+      "specific_ecosystem": "Unclassified",
+      "depth": 0,
+      "alt": 0,
+      "type": "nmdc:Biosample",
+      "add_date": "09-OCT-20 03.15.44.048000000 PM",
+      "ncbi_taxonomy_name": "soil metagenome",
+      "community": "microbial communities",
+      "location": "Hopland, California, USA",
+      "habitat": "Bulk soil",
+      "sample_collection_site": "Soil",
+      "identifier": "21_Bulk_cDNA"
     }
   ],
   "data_object_set": [
     {
-      "id": "jgi:55d740280d8785342fcf7e39",
-      "name": "9422.8.132674.GTTTCG.fastq.gz",
+      "id": "jgi:58d1cf127ded5e7a2afbda22",
+      "name": "11399.2.204685.CCGTCC.fastq.gz",
       "description": "Raw sequencer read data",
-      "file_size_bytes": 2861414297,
+      "file_size_bytes": 5581979502,
       "type": "nmdc:DataObject"
     },
     {
-      "id": "jgi:58b653757ded5e7a2af951c4",
-      "name": "11340.8.202049.GTCTCCT-AAGGAGA.fastq.gz",
+      "id": "jgi:58eed9907ded5e6ece7e624f",
+      "name": "11456.2.207753.CCGTCC.fastq.gz",
       "description": "Raw sequencer read data",
-      "file_size_bytes": 9208349052,
+      "file_size_bytes": 5259056481,
+      "type": "nmdc:DataObject"
+    },
+    {
+      "id": "jgi:599c3a117ded5e41edd7da77",
+      "name": "11839.4.222578.GAGCTCA-TTGAGCT.fastq.gz",
+      "description": "Raw sequencer read data",
+      "file_size_bytes": 34243309819,
       "type": "nmdc:DataObject"
     }
   ]

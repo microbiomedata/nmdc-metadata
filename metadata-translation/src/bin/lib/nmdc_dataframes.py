@@ -390,6 +390,16 @@ def make_biosample_dataframe (biosample_table, soil_package_table, water_package
     temp3_df.drop(columns=['project_id'], inplace=True)
     temp3_df.drop_duplicates(inplace=True)
     
+    ## for 'env_broad_scale', 'env_local_scale', 'env_medium' fields change 'ENVO_' to 'ENVO:'
+    # temp3_df['env_broad_scale'] = temp3_df
+    for idx in temp3_df.index:
+        if pds.notnull(temp3_df.loc[idx, 'env_broad_scale']):
+            temp3_df.loc[idx, 'env_broad_scale'] = str(temp3_df.loc[idx, 'env_broad_scale']).replace('_', ':', 1)
+        if pds.notnull(temp3_df.loc[idx, 'env_local_scale']):
+            temp3_df.loc[idx, 'env_local_scale'] = str(temp3_df.loc[idx, 'env_local_scale']).replace('_', ':', 1)
+        if pds.notnull(temp3_df.loc[idx, 'env_medium']):
+            temp3_df.loc[idx, 'env_medium'] = str(temp3_df.loc[idx, 'env_medium']).replace('_', ':', 1)    
+    
     if len(result_cols) > 0:
         return temp3_df[result_cols]
     else:
