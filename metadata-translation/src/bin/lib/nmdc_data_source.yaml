@@ -61,7 +61,7 @@ classes:
   ##
   ##       has_output: [{field: data_object_id, split_val: ','}]
   ##
-  ##    If the data_object_id field contained the value "jgi:551a20d30d878525404e90d5,"jgi:551a20d50d878525404e90d7", the output would be:
+  ##    If the data_object_id field contained the value "jgi:551a20d30d878525404e90d5,jgi:551a20d50d878525404e90d7", the output would be:
   ##
   ##       "has_output": ["jgi:551a20d30d878525404e90d5", "jgi:551a20d50d878525404e90d7"]
   ##
@@ -80,6 +80,13 @@ classes:
   ##              }
   ##            ]
   ##
+  ##    For some objects a constant values may need to be specified; e.g., depth has unit 'meter'.
+  ##    To do this, the value inside the dict is also a dict; e.g."has_unit: {const: meter}" in:
+  ##    
+  ##       depth: {has_numeric_value: "depth, float", has_unit: {const: meter}, has_raw_value: depth, class_type: QuantityValue}
+  ##
+  ##    sets the value of the 'has unit' slot to 'meter'. The 'const' key is only a mnemonic device. In the code, the constant value
+  ##    is set to whatever the value is regardless of the key.
   
   gold_study:
     type: study
@@ -89,7 +96,6 @@ classes:
       description: description
     attributes:
       - principal_investigator_name
-      # - {ecosystem: {has_raw_value: ecosystem, class_type: gold:ecosystem}} # example using just the raw value
       - ecosystem
       - ecosystem_category
       - ecosystem_type
@@ -104,12 +110,9 @@ classes:
       name: project_name
       description: description
     attributes:
-      # - {part_of: [{init: {id: study_gold_id}, class_type: Study}]}
-      # - {has_input: [{id: biosample_gold_id, class_type: nmdc:Biosample}]}
-      # - {has_output: [{init: {id: output_file_ids}, class_type: DataObject}]}
-      - part_of: [{field: study_gold_id, split_val: ','}] ## inline values
-      - has_input: [{field: biosample_gold_id, split_val: ','}] # inline values
-      - has_output: [{field: output_file_ids, split_val: ','}] # inline values
+      - part_of: [{field: study_gold_id, split_val: ','}]
+      - has_input: [{field: biosample_gold_id, split_val: ','}]
+      - has_output: [{field: output_file_ids, split_val: ','}]
       - add_date 
       - mod_date
       - completion_date 
@@ -117,8 +120,7 @@ classes:
       - omics_type 
       - principal_investigator_name
       - processing_institution
-      
-            
+   
   emsl_omics_processing:
     type: omics processing
     constructor:
@@ -129,15 +131,9 @@ classes:
       - omics_type
       - instrument_name
       - processing_institution
-      # - {part_of: [{init: {id: gold_study_id}, class_type: Study}]}
-      - part_of: [{field: gold_study_id, split_val: ','}] ## inline values
-      # - has_output: [data_object_id]
-      # - has_output: ["data_object_id, str"]
-      - has_output: [{field: data_object_id, split_val: ','}] # inline values
-      # - {has_output: [{init: {id: data_object_id}, class_type: DataObject}]}
-      # - has_input: [biosample_gold_ids]
-      - has_input: [{field: biosample_gold_ids, split_val: ','}] # inline values
-      # - {has_input: [{id: biosample_gold_ids, class_type: nmdc:Biosample}]}
+      - part_of: [{field: gold_study_id, split_val: ','}]
+      - has_output: [{field: data_object_id, split_val: ','}]
+      - has_input: [{field: biosample_gold_ids, split_val: ','}]
       
   emsl_data_object:
     type: data object
@@ -184,7 +180,7 @@ classes:
       - sample_collection_site
       - identifier
       - host_name
-      - depth, float
+      - depth: {has_numeric_value: "depth, float", has_unit: {const: meter}, has_raw_value: depth, class_type: QuantityValue}
       - subsurface_depth
       - altitude, float
       - proport_woa_temperature
