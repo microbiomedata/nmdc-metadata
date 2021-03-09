@@ -27,45 +27,6 @@ import nmdc_dataframes
 import nmdc
 
 
-def make_json_string_list(
-    dictionary,
-    nmdc_class,
-    constructor_map={},
-    attribute_fields=[],
-    attribute_map={},
-    remove_key_attributes=True,
-    add_attribute=True,
-):
-    """
-    Takes a dictionary in which each item is a record and returns a list of json strings build from each record.
-    Args:
-        dictionary: A python dictionary containing each record as an item.
-        nmdc_class: The NMDC class (found in nmdc.py) that will be used to convert each record.
-        id_key: The key in each record whose value is to be used as the id.
-        name_key: The key in each record whose value is to be used as the name.
-        description_key: The key in each record whose value is to be used as the description.
-        part_of_key: The key in each record whose value is to be used as the part of value.
-        has_input_key: The key in each record whose value is to be used as the has input value.
-        has_output_key: The key in each record whose value is to be used as the has output value.
-        characteristic_fields: A list that contains the names of fields whose values will transformed into characteristics.
-        remove_key_attributes: Specifies whether to remove the named keys (e.g, id_key, part_of_key) from the attributes list.
-    Returns:
-        A list in which each item is a json string.
-
-    """
-    dict_list = make_nmdc_dict_list(
-        dictionary,
-        nmdc_class,
-        constructor_map=constructor_map,
-        attribute_fields=attribute_fields,
-        attribute_map=attribute_map,
-        remove_key_attributes=remove_key_attributes,
-        add_attribute=add_attribute,
-    )
-
-    return convert_dict_list_to_json_list(dict_list)
-
-
 def convert_dict_list_to_json_list(dict_list: list):
     """
     Takes a list of dictionaries, converts each dictionary into json, and returns a list the json strings.
@@ -513,23 +474,10 @@ def make_object_from_list(nmdc_record: namedtuple, nmdc_list: list):
 
 
 def make_value_from_string(nmdc_record: namedtuple, attribute_string: str):
-    ## get field and datatype from attribute string and strip spaces e.g., "file_size_bytes, int"
-    if "," in attribute_string:
-        field, dtype = attribute_string.split(",")
-        field, dtype = field.strip(), dtype.strip()
-    else:  # default to string datatype
-        field = attribute_string.strip()
-        dtype = "str"
-
-    ## get value from record
-    # val = getattr(nmdc_record, field)
-    val = get_record_attr(nmdc_record, field)
+    val = get_record_attr(nmdc_record, attribute_string)
 
     if pds.notnull(val):
-        if dtype != "str":  # only do the eval when it is not a string
-            return eval(f"""{dtype}({val})""")  # convert value to specified datatype
-        else:
-            return f"""{val}"""
+        return val
     else:
         return None
 
@@ -559,6 +507,8 @@ def dataframe_to_dict(
 
         ## get mappings for attribute fields
         for af in attribute_fields:
+            if af == "depth":
+                print(nmdc_record)
             nmdc_obj = set_nmdc_object(nmdc_obj, nmdc_record, attribute_map, af)
 
         return nmdc_obj
