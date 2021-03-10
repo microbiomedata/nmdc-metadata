@@ -291,11 +291,6 @@ def make_attribute_value(val, object_type=""):
     av = nmdc.AttributeValue()
     if pds.notnull(val):
         av.has_raw_value = val
-        av.type = (
-            object_type
-            if len(object_type) > 0
-            else nmdc.AttributeValue.class_class_curie
-        )
 
     return av
 
@@ -362,9 +357,6 @@ def make_object_from_dict(nmdc_record: namedtuple, object_dict: dict, ojbect_typ
                     # set_value = getattr(nmdc_record, obj_val)
                     set_value = get_record_attr(nmdc_record, obj_val)
                 setattr(obj, obj_key, set_value)
-
-    ## set the type of object
-    obj.type = make_object_type(object_dict, class_type)
 
     return obj
 
@@ -507,8 +499,6 @@ def dataframe_to_dict(
 
         ## get mappings for attribute fields
         for af in attribute_fields:
-            if af == "depth":
-                print(nmdc_record)
             nmdc_obj = set_nmdc_object(nmdc_obj, nmdc_record, attribute_map, af)
 
         return nmdc_obj
