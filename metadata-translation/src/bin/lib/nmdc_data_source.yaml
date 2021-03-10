@@ -159,10 +159,24 @@ classes:
       id: gold_id
       name: biosample_name
       description: description
-      env_broad_scale: {init: {has_raw_value: env_broad_scale}, class_type: ControlledTermValue}
-      env_local_scale: {init: {has_raw_value: env_local_scale}, class_type: ControlledTermValue}
-      env_medium: {init: {has_raw_value: env_medium}, class_type: ControlledTermValue}
-      lat_lon: {init: {latitude: latitude, longitude: longitude, has_raw_value: lat_lon}, class_type: GeolocationValue}
+      env_broad_scale: 
+        init: 
+          has_raw_value: env_broad_scale
+        class_type: ControlledTermValue
+      env_local_scale: 
+        init: 
+          has_raw_value: env_local_scale
+        class_type: ControlledTermValue
+      env_medium: 
+        init: 
+          has_raw_value: env_medium
+        class_type: ControlledTermValue
+      lat_lon: 
+        init:
+          latitude: latitude
+          longitude: longitude
+          has_raw_value: lat_lon
+        class_type: GeolocationValue
     attributes:
       - add_date
       - mod_date
@@ -180,9 +194,17 @@ classes:
       - sample_collection_site
       - identifier
       - host_name
-      - depth: {has_numeric_value: "depth, float", has_unit: {const: meter}, has_raw_value: depth, class_type: QuantityValue}
+      - depth: 
+          has_numeric_value: depth, float
+          has_unit: {const: meter}
+          has_raw_value: depth, float
+          class_type: QuantityValue
       - subsurface_depth
-      - altitude, float
+      - altitude:
+          has_numeric_value: depth, float
+          has_unit: {const: meter}
+          has_raw_value: depth, float
+          class_type: QuantityValue
       - proport_woa_temperature
       - biogas_temperature
       - growth_temperature
