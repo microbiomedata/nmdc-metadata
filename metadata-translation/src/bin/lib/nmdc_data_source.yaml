@@ -87,6 +87,44 @@ classes:
   ##
   ##    sets the value of the 'has unit' slot to 'meter'. The 'const' key is only a mnemonic device. In the code, the constant value
   ##    is set to whatever the value is regardless of the key.
+  ##
+  ##    Internally, using 'init' and 'class_type' as keys within the attribute's value (i.e. attribute: {init: {...}, class_type: ...})
+  ##    produces an instance of have object. NB: 'init' MUST always be used with 'class_type'
+  ##    If the 'init' key is not present, at dict is produced.
+  ##
+  ##    For example, if the depth attribute is specified using 'init' and 'class_type' as:
+  ##
+  ##    depth: 
+  ##        init:
+  ##          has_numeric_value: depth, float
+  ##          has_unit: {const: meter}
+  ##          has_raw_value: depth
+  ##        class_type: QuantityValue
+  ##    
+  ##    The internal representation of the output of an object of depth '29' will be:
+  ##
+  ##      depth=QuantityValue(has_raw_value='29.0', has_unit='meter', has_numeric_value=29.0)
+  ##
+  ##    But, if the 'init' is omitted like this:
+  ##       
+  ##      depth: 
+  ##          has_numeric_value: depth, float
+  ##          has_unit: {const: meter}
+  ##          has_raw_value: depth
+  ##
+  ##     The internal representation will be a dict:
+  ##
+  ##        depth={'has_raw_value': 29.0, 'has_unit': 'meter', 'has_numeric_value': 29.0}
+  ##
+  ##     Using the dict option (i.e., w/o 'inti') is quite flexible. For exmaple, if you add "type: QuantityValue"
+  ##     to the above example using depth, it will produce:
+  ##
+  ##        depth={'has_raw_value': 29.0, 'has_unit': 'meter', 'has_numeric_value': 29.0, 'type': 'QuantityValue'}
+  ##
+  ##     This allows for a lot of flexibility for adding extra information to the attribute values.
+  ##     However, you CANNOT use 'init' and 'class_type' as exta informational keys. Those keys are reserved for
+  ##     creating objects and will result in an error.
+
   
   gold_study:
     type: study
@@ -177,6 +215,11 @@ classes:
           longitude: longitude
           has_raw_value: lat_lon
         class_type: GeolocationValue
+    transforms:
+      - function: make_quantity_value
+        attributes:
+          - nitrate
+          - chlorophyll
     attributes:
       - add_date
       - mod_date
@@ -197,14 +240,12 @@ classes:
       - depth: 
           has_numeric_value: depth, float
           has_unit: {const: meter}
-          has_raw_value: depth, float
-          class_type: QuantityValue
+          has_raw_value: depth
       - subsurface_depth
       - altitude:
-          has_numeric_value: depth, float
+          has_numeric_value: altitude, float
           has_unit: {const: meter}
-          has_raw_value: depth, float
-          class_type: QuantityValue
+          has_raw_value: altitude
       - proport_woa_temperature
       - biogas_temperature
       - growth_temperature
@@ -213,8 +254,10 @@ classes:
       - salinity
       - pressure
       - ph
-      - chlorophyll_concentration
-      - nitrate_concentration
+      - chlorophyll:
+          has_raw_value: chlorophyll_concentration
+      - nitrate:
+          has_raw_value: nitrate_concentration
       - oxygen_concentration
       - salinity_concentration
       - sample_volume

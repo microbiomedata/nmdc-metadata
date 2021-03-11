@@ -27,54 +27,44 @@ import nmdc_dataframes
 import nmdc
 
 
-def convert_dict_list_to_json_list(dict_list: list):
+def has_raw_value(obj, attribute):
     """
-    Takes a list of dictionaries, converts each dictionary into json, and returns a list the json strings.
-    Args:
-      dict_list: A list in which each item is a dictionary.
-    Returns:
-      A list in which each item is a json string.
+    Helper function that returns True/False if a an object
+    has a has_raw_value property.
     """
-    json_list = []  # list to hold json
+    val = getattr(obj, attribute)  # get value of object
 
-    ## iterate over dict list
-    for d in dict_list:
-        json_list.append(json.dumps(d))
+    if val is None:  # check that value exists
+        return False
 
-    ## return final list
-    return json_list
+    ## if val is a dict, check that it has a has_raw_value key
+    ## and that the value is not null
+    if type(val) == type({}):
+        if "has_raw_value" in val.keys():
+            return pds.notnull(val["has_raw_value"])
+        else:
+            return False
+
+    ## if val is not a dict, assume it is a class
+    ## and check has_raw_value
+    obj_vars = vars(val)
+    if "has_raw_value" in obj_vars.keys():
+        return pds.notnull(obj_vars["has_raw_value"])
+    else:
+        return False
 
 
-def config_nmdc_class(
-    nmdc_class,
-    constructor_map={},
-    attribute_fields=[],
-    attribute_map={},
-    remove_key_attributes=True,
-    add_attribute=True,
-):
-    ## add a 'type' slot to the nmdc class
-    ## this allows us to easily inspect the type of entity in the json
-    # setattr(nmdc_class, 'type', None)
+def record_has_field(nmdc_record: namedtuple, attribute_field):
+    """
+    Helper fuction that returns True/False if a field is in
+    an nmdc record (a namedtuple)
+    """
+    if "," in attribute_field:  # e.g., "file_size_bytes, int"
+        field = attribute_field.split(",")[0].strip()
+    else:  # default to string datatype
+        field = attribute_field.strip()
 
-    ## by default, we don't want the constructors for the class
-    ## to also be attributes of the object, these keys link objects other objects
-    # for key in constructor_map.keys():
-    #     if key in attribute_fields:
-    #         attribute_fields.remove(key)
-
-    # ## add attribute to the nmdc class if not present
-    # if add_attribute:
-    #     for af in attribute_fields:
-    #         if type({}) == type(af): af = list(af.keys())[0] # needed for attributes given as a dict
-    #         if not hasattr(nmdc_class, str(af)): setattr(nmdc_class, str(af), None)
-    #         ### TODO ! throw a a warning ###
-
-    #     if len(attribute_map) > 0:
-    #         for af in attribute_map.values():
-    #             if not hasattr(nmdc_class, af): setattr(nmdc_class, af, None)
-
-    return nmdc_class
+    return field in nmdc_record._fields
 
 
 def get_record_attr(record: namedtuple, attribute_field):
@@ -86,7 +76,10 @@ def get_record_attr(record: namedtuple, attribute_field):
         dtype = "str"
 
     ## get value from record
-    val = getattr(record, field)
+    if record_has_field(record, field):  # check field
+        val = getattr(record, field)
+    else:
+        val = None
 
     if pds.notnull(val):
         if dtype != "str":  # only do the eval when it is not a string
@@ -108,13 +101,12 @@ def make_constructor_dict_from_record(constructor_map: dict, nmdc_record: namedt
             constructor_dict = {}
             for param_name, field in constructor_map.items():
                 ## if the field is a dict, then a constant value is being supplied
-                ## e.g., {init: {has_unit: {const: 'meter'}}}
+                ## e.g., {init: {has_numeric_value: "depth, float", has_unit: {const: 'meter'}}, class_type: QuantityValue}
                 if type({}) == type(field):
                     constructor_dict[param_name] = list(field.values())[0]
                 else:
-                    ## get value from record
-                    # constructor_dict[field] = getattr(nmdc_record, field)
-                    constructor_dict[field] = get_record_attr(nmdc_record, field)
+                    ## get value for paramater from record
+                    constructor_dict[param_name] = get_record_attr(nmdc_record, field)
         else:
             # constructor_dict[key] = getattr(nmdc_record, field)
             constructor_dict[key] = get_record_attr(nmdc_record, field)
@@ -128,12 +120,10 @@ def make_constructor_args_from_record(constructor_map: dict, nmdc_record: namedt
     constructor_dict = {}
     for key, field in constructor_map.items():
         ## if the fields is a dict, constructor param takes an object
-        ## e.g., {'init': {'latitude': 'latitude', 'longitude': 'longitude', 'has_raw_value': 'lat_lon'}, 'class_type': 'GeolocationValue']
+        ## e.g., {'init': {'latitude': 'latitude', 'longitude': 'longitude', 'has_raw_value': 'lat_lon'}, 'class_type': 'GeolocationValue'}
         if type({}) == type(field):
             constructor_dict[key] = make_object_from_dict(nmdc_record, field)
         else:
-            # print(field)
-            # constructor_dict[key] = getattr(nmdc_record, field)
             constructor_dict[key] = get_record_attr(nmdc_record, field)
 
     return constructor_dict
@@ -215,27 +205,34 @@ def make_dict_from_nmdc_obj(nmdc_obj):
 def set_nmdc_object(
     nmdc_obj, nmdc_record: namedtuple, attribute_map: dict, attribute_field
 ):
+    ## by default property values are represented as dicts
+    ## the exception is when an value is created using 'init'
+    ## e.g. {'init': {'latitude': 'latitude', 'longitude': 'longitude', 'has_raw_value': 'lat_lon'}, 'class_type': 'GeolocationValue'}
+    ## when 'init' is used the represent as dict flag is changed
+    represent_as_dict = True
 
     ## check if attribute is a dict; e.g. part_of: gold_study_id
     if type({}) == type(attribute_field):
-        field, val = list(attribute_field.items())[
-            0
-        ]  # get the field and value parts from dict
+        ## get the field and value parts from dict
+        field, val = list(attribute_field.items())[0]
         if type([]) == type(val):
             av = make_object_from_list(nmdc_record, val)
         elif type({}) == type(val):
             av = make_object_from_dict(nmdc_record, val)  # val is a dict
+
+            ## check if the av needs to be represented as an object
+            if "init" in val.keys():
+                represent_as_dict = False
+
         elif type("") == type(val):  # e.g. has_output: "data_object_id, str"
             av = make_value_from_string(nmdc_record, val)
         else:
-            av = make_attribute_value_from_record(
-                nmdc_record, val
-            )  # val names the field in the record
+            ## val names the field in the record
+            av = make_attribute_value_from_record(nmdc_record, val)
     elif type("") == type(attribute_field):
         if "," in attribute_field:
-            field = attribute_field.split(",")[
-                0
-            ].strip()  # e.g., "file_size_bytes, int"
+            ## e.g., "file_size_bytes, int"
+            field = attribute_field.split(",")[0].strip()
         else:
             field = attribute_field.strip()
 
@@ -245,7 +242,8 @@ def set_nmdc_object(
         av = make_attribute_value_from_record(nmdc_record, field)
 
     ## convert attribute value into a dict
-    av = make_dict_from_nmdc_obj(av)
+    if represent_as_dict == True:
+        av = make_dict_from_nmdc_obj(av)
 
     ## check if attribute has been mapped in the sssom file
     if (len(attribute_map) > 0) and (field in attribute_map.keys()):
@@ -324,39 +322,49 @@ def make_object_type(object_dict={}, class_type=None, object_type=""):
         return class_type.class_class_curie
 
 
-def make_object_from_dict(nmdc_record: namedtuple, object_dict: dict, ojbect_type=""):
+def make_object_from_dict(nmdc_record: namedtuple, object_dict: dict):
     ## using the data from an nmdc record, create an object
     ## There are two ways to do this:
     ##   1. using the keys init and class_type
     ##      the value of init is a dict represent the constructor(s) needed to instantiate the object
     ##      the value of class_types is a string or class reference that is the class the object instantiates
     ##      e.g., {'init': {latitude: 'latitude', longitude: 'longitude', has_raw_value: 'lat_lon'}, 'class_type': 'GeolocationValue'}
-    ##   2. using the id and class_type keys
-    ##      This acts as a kind of foreign key to another object.
-    ##      The id key specifice the id of ojbect and the class_type specifies the type of object referenced
+    ##   2. using dict to specify the properties of an attibute value object
+
+    ## determine the type of class
+    if "class_type" in object_dict.keys():
+        class_type = make_nmdc_class(object_dict["class_type"])
+    else:
+        class_type = nmdc.AttributeValue
 
     if "init" in object_dict.keys():
-        ## create param name / param value pairs from init values
+        ## get this intitialization dict and use it build constructor arguments
         constructor_map = object_dict["init"]
+
+        ## create constructor arguments from the intitialization dict
         constructor_args = make_constructor_dict_from_record(
             constructor_map, nmdc_record
         )
-
-        class_type = make_nmdc_class(object_dict["class_type"])  # get class type
         obj = class_type(**constructor_args)  # create object from type
     else:
-        class_type = nmdc.AttributeValue
         obj = class_type()  # create AttributeValue object
         for obj_key, obj_val in object_dict.items():
-            if obj_key != "class_type":  # ignore key specifying the class type
-                if type({}) == type(obj_val):
-                    ## if the object value is a dict then set the value to the dict's value
-                    set_value = list(obj_val.values())[0]
-                else:
-                    ## set value to records value
-                    # set_value = getattr(nmdc_record, obj_val)
-                    set_value = get_record_attr(nmdc_record, obj_val)
-                setattr(obj, obj_key, set_value)
+            # if obj_key != "class_type":  # ignore key specifying the class type
+            if type({}) == type(obj_val):
+                ## if the object value is a dict (e.g., {has_unit: {const: 'meter'}})
+                ## then set the value to the dict's value
+                record_value = list(obj_val.values())[0]
+            elif record_has_field(nmdc_record, obj_val):
+                ## get records value from nmdc record
+                record_value = get_record_attr(nmdc_record, obj_val)
+            else:
+                ## catch all condition: simply add key/val to ojbect
+                ## this is useful for adding extra informaton to the dict; e.g:
+                ##   {has_raw_value: '10', type: QuantityValue}
+                ## NB: the keys 'init' and 'class_type' has special meaning and will throw an error if used
+                record_value = obj_val
+
+            setattr(obj, obj_key, record_value)
 
     return obj
 
@@ -446,7 +454,7 @@ def make_object_from_list(nmdc_record: namedtuple, nmdc_list: list):
                     obj_list.append(obj)
             else:
                 ## e.g., {has_input [{id: biosample_gold_id, class_type: nmdc:Biosample}]}
-                obj = make_object_from_dict(nmdc_record, val, val["class_type"])
+                obj = make_object_from_dict(nmdc_record, val)
                 obj_list.append(obj)
         elif type("") == type(val):
             ## e.g., has_output: ["data_object_id, str"]
@@ -480,8 +488,7 @@ def dataframe_to_dict(
     constructor_map={},
     attribute_fields=[],
     attribute_map={},
-    remove_key_attributes=True,
-    add_attribute=True,
+    transforms=[],
 ):
     def make_nmdc_object(nmdc_record: namedtuple, nmdc_class):
         ## check for constructor_map  containing the paramaters necessary to instantiate the class
@@ -503,22 +510,77 @@ def dataframe_to_dict(
 
         return nmdc_obj
 
-    nmdc_class = config_nmdc_class(
-        nmdc_class,
-        constructor_map,
-        attribute_fields,
-        attribute_map,
-        remove_key_attributes,
-        add_attribute,
-    )
+    ## transform each record into an nmdc object and store in list
+    nmdc_objs = [
+        make_nmdc_object(record, nmdc_class)
+        for record in nmdc_df.itertuples(index=False)
+    ]
 
-    ## transform each record into an nmdc dict and store in list
-    nmdc_objs = []
-    for record in nmdc_df.itertuples(index=False):
-        nmdc_obj = make_nmdc_object(record, nmdc_class)  # create individual object
-        nmdc_dict = make_dict_from_nmdc_obj(nmdc_obj)  # transform object into a dict
-        nmdc_objs.append(nmdc_dict)  # add object to list
-    return nmdc_objs
+    ## set value to None for fields that have dicts as values
+    ## but not an id or has_raw_value key
+    ## this needed in case conversions resulted in junk values
+    for obj in nmdc_objs:
+        for key, val in obj.__dict__.items():
+            if type(val) == type({}):
+                if (not "id" in val.keys()) and (not "has_raw_value" in val.keys()):
+                    obj.__dict__[key] = None
+
+    ## execute specified transforms on attributes
+    for transform in transforms:
+        tx_function = eval(transform["function"])  # dynamically load function
+        tx_attributes = transform["attributes"]  # get list of attibutes
+
+        ## apply transform funciton to each specified attribute in each object
+        for attr in tx_attributes:
+            for obj in nmdc_objs:
+                obj = tx_function(obj, attr)
+
+    ## transform each nmdc object in a dict and store in list
+    nmdc_dicts = [make_dict_from_nmdc_obj(obj) for obj in nmdc_objs]
+
+    ## return list of dicts
+    return nmdc_dicts
+
+
+def make_quantity_value(obj, attribute):
+    """
+    Takes an object (either a dict or class instance) and adds
+    has_numeric_value and has_unity information.
+    """
+
+    if not has_raw_value(obj, attribute):
+        return obj
+
+    val = getattr(obj, attribute)
+    print("*** pre ***", val)
+
+    ## split raw value after first space
+    if type(val) == type({}):
+        value_list = str(val["has_raw_value"]).split(" ", 1)
+    else:
+        value_list = str(getattr(val, "has_raw_value")).split(" ", 1)
+
+    ## assign numeric quantity value
+    if type(val) == type({}):
+        try:
+            val["has_numeric_value"] = float(value_list[0].strip())
+        except Exception as ex:
+            pass
+    else:
+        try:
+            val.has_numeric_value = float(value_list[0].strip())
+        except Exception as ex:
+            pass
+
+    ## assign unit if present
+    if len(value_list) > 1:
+        if type(val) == type({}):
+            val["has_unit"] = value_list[1].strip()
+        else:
+            val.has_unit = value_list[1].strip()
+
+    print("*** post ***", val)
+    return obj
 
 
 def get_json(file_path, replace_single_quote=False):
