@@ -206,8 +206,6 @@ class NMDC_ETL:
         test_rows=0,
         print_df=False,
         print_dict=False,
-        remove_key_attributes=True,
-        add_attribute=True,
     ):
 
         ## used for testing
@@ -223,8 +221,6 @@ class NMDC_ETL:
             constructor_map=constructor_map,
             attribute_fields=attribute_fields,
             attribute_map=attribute_map,
-            remove_key_attributes=remove_key_attributes,
-            add_attribute=add_attribute,
         )
 
         ## used for testing
