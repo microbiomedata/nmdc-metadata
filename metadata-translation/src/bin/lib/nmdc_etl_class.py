@@ -236,7 +236,7 @@ class NMDC_ETL:
         print_df=False,
         print_dict=False,
     ):
-        ## specify constructor args adn attributes
+        ## specify constructor args and attributes
         constructor = self.data_source_spec["classes"][data_source_class]["constructor"]
         attributes = self.data_source_spec["classes"][data_source_class]["attributes"]
 
@@ -264,7 +264,7 @@ class NMDC_ETL:
         print_df=False,
         print_dict=False,
     ):
-        ## specify constructor args adn attributes
+        ## specify constructor args and attributes
         constructor = self.data_source_spec["classes"][data_source_class]["constructor"]
         attributes = self.data_source_spec["classes"][data_source_class]["attributes"]
 
@@ -292,7 +292,7 @@ class NMDC_ETL:
         print_df=False,
         print_dict=False,
     ):
-        ## specify constructor args adn attributes
+        ## specify constructor args and attributes
         constructor = self.data_source_spec["classes"][data_source_class]["constructor"]
         attributes = self.data_source_spec["classes"][data_source_class]["attributes"]
 
@@ -320,7 +320,7 @@ class NMDC_ETL:
         print_df=False,
         print_dict=False,
     ):
-        ## specify constructor args adn attributes
+        ## specify constructor args and attributes
         constructor = self.data_source_spec["classes"][data_source_class]["constructor"]
         attributes = self.data_source_spec["classes"][data_source_class]["attributes"]
 
@@ -351,7 +351,7 @@ class NMDC_ETL:
         print_df=False,
         print_dict=False,
     ):
-        ## specify constructor args adn attributes
+        ## specify constructor args and attributes
         constructor = self.data_source_spec["classes"][data_source_class]["constructor"]
         attributes = self.data_source_spec["classes"][data_source_class]["attributes"]
 
@@ -380,7 +380,7 @@ class NMDC_ETL:
         print_df=False,
         print_dict=False,
     ):
-        ## specify constructor args adn attributes
+        ## specify constructor args and attributes
         constructor = self.data_source_spec["classes"][data_source_class]["constructor"]
         attributes = self.data_source_spec["classes"][data_source_class]["attributes"]
 
