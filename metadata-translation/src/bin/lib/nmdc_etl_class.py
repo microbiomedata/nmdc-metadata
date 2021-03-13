@@ -203,7 +203,7 @@ class NMDC_ETL:
         constructor_map={},
         attribute_fields=[],
         attribute_map={},
-        transforms=[],
+        transform_map={},
         test_rows=0,
         print_df=False,
         print_dict=False,
@@ -222,7 +222,7 @@ class NMDC_ETL:
             constructor_map=constructor_map,
             attribute_fields=attribute_fields,
             attribute_map=attribute_map,
-            transforms=transforms,
+            transform_map=transform_map,
         )
 
         ## used for testing
@@ -297,7 +297,9 @@ class NMDC_ETL:
         ## specify constructor args and attributes
         constructor = self.data_source_spec["classes"][data_source_class]["constructor"]
         attributes = self.data_source_spec["classes"][data_source_class]["attributes"]
-        transforms = self.data_source_spec["classes"][data_source_class]["transforms"]
+        transform_map = self.data_source_spec["classes"][data_source_class][
+            "transforms"
+        ]
 
         self.biosample_dict = NMDC_ETL.transform_dataframe(
             nmdc_df=self.nmdc_data.biosample,
@@ -305,7 +307,7 @@ class NMDC_ETL:
             constructor_map=constructor,
             attribute_fields=attributes,
             attribute_map=self.sssom_map,
-            transforms=transforms,
+            transform_map=transform_map,
             test_rows=test_rows,
             print_df=print_df,
             print_dict=print_dict,

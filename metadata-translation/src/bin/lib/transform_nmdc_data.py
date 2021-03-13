@@ -96,12 +96,12 @@ def make_constructor_dict_from_record(constructor_map: dict, nmdc_record: namedt
     constructor_dict = {}
     for key, field in constructor_map.items():
         ## if the fields is a dict, constructor param takes an object
-        ## e.g., {'init': {'latitude': 'latitude', 'longitude': 'longitude', 'has_raw_value': 'lat_lon'}, 'class_type': 'GeolocationValue']
+        ## e.g., {'$init': {'latitude': 'latitude', 'longitude': 'longitude', 'has_raw_value': 'lat_lon'}, '$class_type': 'GeolocationValue']
         if type({}) == type(field):
             constructor_dict = {}
             for param_name, field in constructor_map.items():
                 ## if the field is a dict, then a constant value is being supplied
-                ## e.g., {init: {has_numeric_value: "depth, float", has_unit: {const: 'meter'}}, class_type: QuantityValue}
+                ## e.g., {$init: {has_numeric_value: "depth, float", has_unit: {const: 'meter'}}, $class_type: QuantityValue}
                 if type({}) == type(field):
                     constructor_dict[param_name] = list(field.values())[0]
                 else:
@@ -120,7 +120,7 @@ def make_constructor_args_from_record(constructor_map: dict, nmdc_record: namedt
     constructor_dict = {}
     for key, field in constructor_map.items():
         ## if the fields is a dict, constructor param takes an object
-        ## e.g., {'init': {'latitude': 'latitude', 'longitude': 'longitude', 'has_raw_value': 'lat_lon'}, 'class_type': 'GeolocationValue'}
+        ## e.g., {'$init': {'latitude': 'latitude', 'longitude': 'longitude', 'has_raw_value': 'lat_lon'}, '$lass_type': 'GeolocationValue'}
         if type({}) == type(field):
             constructor_dict[key] = make_object_from_dict(nmdc_record, field)
         else:
@@ -206,9 +206,9 @@ def set_nmdc_object(
     nmdc_obj, nmdc_record: namedtuple, attribute_map: dict, attribute_field
 ):
     ## by default property values are represented as dicts
-    ## the exception is when an value is created using 'init'
-    ## e.g. {'init': {'latitude': 'latitude', 'longitude': 'longitude', 'has_raw_value': 'lat_lon'}, 'class_type': 'GeolocationValue'}
-    ## when 'init' is used the represent as dict flag is changed
+    ## the exception is when an value is created using '$init'
+    ## e.g. {'$init': {'latitude': 'latitude', 'longitude': 'longitude', 'has_raw_value': 'lat_lon'}, '$class_type': 'GeolocationValue'}
+    ## when '$init' is used the represent as dict flag is changed
     represent_as_dict = True
 
     ## check if attribute is a dict; e.g. part_of: gold_study_id
@@ -221,7 +221,7 @@ def set_nmdc_object(
             av = make_object_from_dict(nmdc_record, val)  # val is a dict
 
             ## check if the av needs to be represented as an object
-            if "init" in val.keys():
+            if "$init" in val.keys():
                 represent_as_dict = False
 
         elif type("") == type(val):  # e.g. has_output: "data_object_id, str"
@@ -294,7 +294,7 @@ def make_attribute_value(val, object_type=""):
 
 
 def make_nmdc_class(class_type):
-    ## check if the class type is being passed as a string e.g., 'class_type': 'GeolocationValue'
+    ## check if the class type is being passed as a string e.g., '$class_type': 'GeolocationValue'
     if type("") == type(class_type):
         class_type = getattr(nmdc, class_type)
     return class_type
@@ -312,8 +312,8 @@ def make_uriorcuri(object_dict={}, class_type=None, uriorcurie=""):
 
 def make_object_type(object_dict={}, class_type=None, object_type=""):
     ## return object type based on rules
-    if "class_type" in object_dict.keys():
-        return object_dict["class_type"]
+    if "$class_type" in object_dict.keys():
+        return object_dict["$class_type"]
     elif type(class_type) == type(""):
         return class_type
     elif len(object_type) > 0:
@@ -325,21 +325,21 @@ def make_object_type(object_dict={}, class_type=None, object_type=""):
 def make_object_from_dict(nmdc_record: namedtuple, object_dict: dict):
     ## using the data from an nmdc record, create an object
     ## There are two ways to do this:
-    ##   1. using the keys init and class_type
-    ##      the value of init is a dict represent the constructor(s) needed to instantiate the object
-    ##      the value of class_types is a string or class reference that is the class the object instantiates
-    ##      e.g., {'init': {latitude: 'latitude', longitude: 'longitude', has_raw_value: 'lat_lon'}, 'class_type': 'GeolocationValue'}
+    ##   1. using the keys $init and $class_type
+    ##      the value of $init is a dict represent the constructor(s) needed to instantiate the object
+    ##      the value of $class_typ is a string or class reference that is the class the object instantiates
+    ##      e.g., {'$init': {latitude: 'latitude', longitude: 'longitude', has_raw_value: 'lat_lon'}, '$class_type': 'GeolocationValue'}
     ##   2. using dict to specify the properties of an attibute value object
 
     ## determine the type of class
-    if "class_type" in object_dict.keys():
-        class_type = make_nmdc_class(object_dict["class_type"])
+    if "$class_type" in object_dict.keys():
+        class_type = make_nmdc_class(object_dict["$class_type"])
     else:
         class_type = nmdc.AttributeValue
 
-    if "init" in object_dict.keys():
+    if "$init" in object_dict.keys():
         ## get this intitialization dict and use it build constructor arguments
-        constructor_map = object_dict["init"]
+        constructor_map = object_dict["$init"]
 
         ## create constructor arguments from the intitialization dict
         constructor_args = make_constructor_dict_from_record(
@@ -349,7 +349,7 @@ def make_object_from_dict(nmdc_record: namedtuple, object_dict: dict):
     else:
         obj = class_type()  # create AttributeValue object
         for obj_key, obj_val in object_dict.items():
-            # if obj_key != "class_type":  # ignore key specifying the class type
+            # if obj_key != "$class_type":  # ignore key specifying the class type
             if type({}) == type(obj_val):
                 ## if the object value is a dict (e.g., {has_unit: {const: 'meter'}})
                 ## then set the value to the dict's value
@@ -361,7 +361,7 @@ def make_object_from_dict(nmdc_record: namedtuple, object_dict: dict):
                 ## catch all condition: simply add key/val to ojbect
                 ## this is useful for adding extra informaton to the dict; e.g:
                 ##   {has_raw_value: '10', type: QuantityValue}
-                ## NB: the keys 'init' and 'class_type' has special meaning and will throw an error if used
+                ## NB: the keys '$init' and '$class_type' has special meaning and will throw an error if used
                 record_value = obj_val
 
             setattr(obj, obj_key, record_value)
@@ -408,13 +408,13 @@ def make_object_from_list(nmdc_record: namedtuple, nmdc_list: list):
                         else:
                             obj_list.append(eval("""{dtype}({record_val}"""))
 
-            elif "init" in val.keys():
-                ## e.g., {part_of: {init: {id: study_gold_id}, class_type: Study}}
-                init_dict = val["init"]
-                class_type = val["class_type"]
+            elif "$init" in val.keys():
+                ## e.g., {part_of: {$init: {id: study_gold_id}, $class_type: Study}}
+                init_dict = val["$init"]
+                class_type = val["$class_type"]
 
                 ## get each value from the nmdc record as specified
-                ## by the key in the init dictionary
+                ## by the key in the $init dictionary
                 ## e.g., {'part_of': 'study_ids', 'name': 'study_names'}
                 ##       -> {'part_of': [1, 2], 'name': ['foo', 'bar']}
                 values_dict = {}
@@ -446,14 +446,14 @@ def make_object_from_list(nmdc_record: namedtuple, nmdc_list: list):
                     temp_dict = dict(
                         zip(keys, ith_vals)
                     )  # e.g., {'id': '1', 'name': 'foo'}
-                    class_type = getattr(nmdc, val["class_type"])
+                    class_type = getattr(nmdc, val["$class_type"])
 
                     ## create object and add to list
                     obj = class_type(**temp_dict)
                     obj.type = class_type.class_class_curie
                     obj_list.append(obj)
             else:
-                ## e.g., {has_input [{id: biosample_gold_id, class_type: nmdc:Biosample}]}
+                ## e.g., {has_input [{id: biosample_gold_id, $class_type: nmdc:Biosample}]}
                 obj = make_object_from_dict(nmdc_record, val)
                 obj_list.append(obj)
         elif type("") == type(val):
@@ -488,7 +488,7 @@ def dataframe_to_dict(
     constructor_map={},
     attribute_fields=[],
     attribute_map={},
-    transforms=[],
+    transform_map={},
 ):
     def make_nmdc_object(nmdc_record: namedtuple, nmdc_class):
         ## check for constructor_map  containing the paramaters necessary to instantiate the class
@@ -510,7 +510,26 @@ def dataframe_to_dict(
 
         return nmdc_obj
 
+    ## create transform kwargs and pre and post transform lists
+    tx_kwargs = {
+        "nmdc_class": nmdc_class,
+        "constructor_map": constructor_map,
+        "attribute_fields": attribute_fields,
+        "attribute_map": attribute_map,
+    }
+    pre_transforms = transform_map["pre"] if "pre" in transform_map.keys() else []
+    post_transforms = transform_map["post"] if "post" in transform_map.keys() else []
+
+    ## execute specified pre transformations; note: this transforms the dataframe
+    for transform in pre_transforms:
+        tx_function = eval(transform["function"])  # dynamically load function
+        tx_attributes = transform["attributes"]  # get list of attibutes
+
+        ## apply transform funciton
+        nmdc_df = tx_function(nmdc_df, tx_attributes)
+
     ## transform each record into an nmdc object and store in list
+    ## NB: SSSOM mapping is performed during this step
     nmdc_objs = [
         make_nmdc_object(record, nmdc_class)
         for record in nmdc_df.itertuples(index=False)
@@ -525,15 +544,13 @@ def dataframe_to_dict(
                 if (not "id" in val.keys()) and (not "has_raw_value" in val.keys()):
                     obj.__dict__[key] = None
 
-    ## execute specified transforms on attributes
-    for transform in transforms:
+    ## execute specified post transformations; note: this transforms the nmdc objects
+    for transform in post_transforms:
         tx_function = eval(transform["function"])  # dynamically load function
         tx_attributes = transform["attributes"]  # get list of attibutes
 
-        ## apply transform funciton to each specified attribute in each object
-        for attr in tx_attributes:
-            for obj in nmdc_objs:
-                obj = tx_function(obj, attr)
+        ## apply transform funciton
+        nmdc_objs = tx_function(nmdc_objs, tx_attributes, **tx_kwargs)
 
     ## transform each nmdc object in a dict and store in list
     nmdc_dicts = [make_dict_from_nmdc_obj(obj) for obj in nmdc_objs]
@@ -542,45 +559,51 @@ def dataframe_to_dict(
     return nmdc_dicts
 
 
-def make_quantity_value(obj, attribute):
+def test_pre_transform(nmdc_df, tx_attributes, **kwargs):
+    print("*** test pre-transform ******")
+    return nmdc_df
+
+
+def make_quantity_value(nmdc_objs, tx_attributes, **kwargs):
     """
-    Takes an object (either a dict or class instance) and adds
-    has_numeric_value and has_unity information.
+    Takes each nmdc object (either a dict or class instance) and
+    and adds has_numeric_value and has_unit information.
     """
+    for attribute in tx_attributes:
+        for obj in nmdc_objs:
+            if has_raw_value(obj, attribute):
 
-    if not has_raw_value(obj, attribute):
-        return obj
+                val = getattr(obj, attribute)
+                # print("*** pre ***", val)
 
-    val = getattr(obj, attribute)
-    print("*** pre ***", val)
+                ## split raw value after first space
+                if type(val) == type({}):
+                    value_list = str(val["has_raw_value"]).split(" ", 1)
+                else:
+                    value_list = str(getattr(val, "has_raw_value")).split(" ", 1)
 
-    ## split raw value after first space
-    if type(val) == type({}):
-        value_list = str(val["has_raw_value"]).split(" ", 1)
-    else:
-        value_list = str(getattr(val, "has_raw_value")).split(" ", 1)
+                ## assign numeric quantity value
+                if type(val) == type({}):
+                    try:
+                        val["has_numeric_value"] = float(value_list[0].strip())
+                    except Exception as ex:
+                        pass
+                else:
+                    try:
+                        val.has_numeric_value = float(value_list[0].strip())
+                    except Exception as ex:
+                        pass
 
-    ## assign numeric quantity value
-    if type(val) == type({}):
-        try:
-            val["has_numeric_value"] = float(value_list[0].strip())
-        except Exception as ex:
-            pass
-    else:
-        try:
-            val.has_numeric_value = float(value_list[0].strip())
-        except Exception as ex:
-            pass
+                ## assign unit if present
+                if len(value_list) > 1:
+                    if type(val) == type({}):
+                        val["has_unit"] = value_list[1].strip()
+                    else:
+                        val.has_unit = value_list[1].strip()
 
-    ## assign unit if present
-    if len(value_list) > 1:
-        if type(val) == type({}):
-            val["has_unit"] = value_list[1].strip()
-        else:
-            val.has_unit = value_list[1].strip()
+                # print("*** post ***", val)
 
-    print("*** post ***", val)
-    return obj
+    return nmdc_objs
 
 
 def get_json(file_path, replace_single_quote=False):

@@ -29,10 +29,10 @@ classes:
   ##        "file_size_bytes": 12060043683
   ##
   ##     If the value of key needs to be an object, you specify the keys and values of the object in a dictionary. 
-  ##     The type is of the object is specified using the clas_type key.
+  ##     The type is of the object is specified using the $class_type key.
   ##     For example, the attribute specification:
   ## 
-  ##        omics_type: {has_raw_value: omics_type, class_type: AttributeValue} 
+  ##        omics_type: {has_raw_value: omics_type, $class_type: AttributeValue} 
   ##
   ##     produces:
   ##
@@ -40,12 +40,12 @@ classes:
   ##
   ##     Other types value can also be specified as needed. 
   ## 
-  ##     If you need to specify which values are necessary to build an object, you use init and class_type keys as follows:
-  ##          - the init key contains a dict of key/value pairs needed to initialize the object
-  ##          - the class_type key refers to the type of object to create
-  ##     E.g.: {part_of: {init: {id: study_gold_id}, class_type: Study}]} outputs:
+  ##     If you need to specify which values are necessary to build an object, you use $init and $class_type keys as follows:
+  ##          - the $init key contains a dict of key/value pairs needed to initialize the object
+  ##          - the $class_type key refers to the type of object to create
+  ##     E.g.: {part_of: {$init: {id: study_gold_id}, $class_type: Study}]} outputs:
   ##
-  ##          "part_of": { "id": "gold:Gs0112340", "class_type": "nmdc:Study"}
+  ##          "part_of": { "id": "gold:Gs0112340", "$class_type": "nmdc:Study"}
   ## 
   ##     In many cases, an attribute will have a one-to-many relation. For these cases, the value of the attribute is a a list. 
   ##     If the attribute specification is given using a simple "name: [field]" syntax, the value the field is placed between the brackets.
@@ -65,9 +65,9 @@ classes:
   ##
   ##       "has_output": ["jgi:551a20d30d878525404e90d5", "jgi:551a20d50d878525404e90d7"]
   ##
-  ##    If a list of objects is need, you use the init ad class_type keys within the dictionary as described above.
-  ##    In this case, init field values are split on the comma character.
-  ##    E.g.: {has_output: [{init: {id: output_file_ids}, class_type: DataObject}]} outputs
+  ##    If a list of objects is need, you use the $init ad class_type keys within the dictionary as described above.
+  ##    In this case, $init field values are split on the comma character.
+  ##    E.g.: {has_output: [{$init: {id: output_file_ids}, $class_type: DataObject}]} outputs
   ##
   ##          "has_output": [
   ##              {
@@ -88,24 +88,24 @@ classes:
   ##    sets the value of the 'has unit' slot to 'meter'. The 'const' key is only a mnemonic device. In the code, the constant value
   ##    is set to whatever the value is regardless of the key.
   ##
-  ##    Internally, using 'init' and 'class_type' as keys within the attribute's value (i.e. attribute: {init: {...}, class_type: ...})
-  ##    produces an instance of have object. NB: 'init' MUST always be used with 'class_type'
-  ##    If the 'init' key is not present, at dict is produced.
+  ##    Internally, using '$init' and '$class_type' as keys within the attribute's value (i.e. attribute: {$init: {...}, $class_type: ...})
+  ##    produces an instance of have object. NB: '$init' MUST always be used with '$class_type'
+  ##    If the '$init' key is not present, a dict is produced.
   ##
-  ##    For example, if the depth attribute is specified using 'init' and 'class_type' as:
+  ##    For example, if the depth attribute is specified using '$init' and '$class_type' as:
   ##
   ##    depth: 
-  ##        init:
+  ##        $init:
   ##          has_numeric_value: depth, float
   ##          has_unit: {const: meter}
   ##          has_raw_value: depth
-  ##        class_type: QuantityValue
+  ##        $class_type: QuantityValue
   ##    
   ##    The internal representation of the output of an object of depth '29' will be:
   ##
   ##      depth=QuantityValue(has_raw_value='29.0', has_unit='meter', has_numeric_value=29.0)
   ##
-  ##    But, if the 'init' is omitted like this:
+  ##    But, if the '$init' is omitted like this:
   ##       
   ##      depth: 
   ##          has_numeric_value: depth, float
@@ -122,7 +122,7 @@ classes:
   ##        depth={'has_raw_value': 29.0, 'has_unit': 'meter', 'has_numeric_value': 29.0, 'type': 'QuantityValue'}
   ##
   ##     This allows for a lot of flexibility for adding extra information to the attribute values.
-  ##     However, you CANNOT use 'init' and 'class_type' as exta informational keys. Those keys are reserved for
+  ##     However, you CANNOT use '$init' and '$class_type' as exta informational keys. Those keys are reserved for
   ##     creating objects and will result in an error.
 
   
@@ -198,28 +198,34 @@ classes:
       name: biosample_name
       description: description
       env_broad_scale: 
-        init: 
+        $init: 
           has_raw_value: env_broad_scale
-        class_type: ControlledTermValue
+        $class_type: ControlledTermValue
       env_local_scale: 
-        init: 
+        $init: 
           has_raw_value: env_local_scale
-        class_type: ControlledTermValue
+        $class_type: ControlledTermValue
       env_medium: 
-        init: 
+        $init: 
           has_raw_value: env_medium
-        class_type: ControlledTermValue
+        $class_type: ControlledTermValue
       lat_lon: 
-        init:
+        $init:
           latitude: latitude
           longitude: longitude
           has_raw_value: lat_lon
-        class_type: GeolocationValue
+        $class_type: GeolocationValue
     transforms:
-      - function: make_quantity_value
-        attributes:
-          - nitrate
-          - chlorophyll
+      pre:
+        - function: test_pre_transform
+          attributes:
+            - test_attribute
+      post:
+        # note: attribute names must match names in nmdc.yaml
+        - function: make_quantity_value
+          attributes:
+            - nitrate
+            - chlorophyll
     attributes:
       - add_date
       - mod_date
