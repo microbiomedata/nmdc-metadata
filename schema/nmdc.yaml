@@ -335,18 +335,32 @@ classes:
     slots:
       # MIXS slots
       - agrochem_addition
+      - alkalinity
+      - alkalinity_method
+      - alkyl_diethers
       - alt
       - al_sat
       - al_sat_meth
+      - aminopept_act
+      - ammonium
       - annual_precpt      
       - annual_temp
+      - bacteria_carb_prod
+      - bishomohopanol
+      - bromide
+      - calcium
+      - carb_nitro_ratio
+      - chem_administration
+      - chloride
       - chlorophyll
       - collection_date
       - cur_land_use
       - cur_vegetation
       - cur_vegetation_meth
       - crop_rotation
+      - density
       - depth
+      - diss_carb_dioxide
       - diss_oxygen
       - drainage_class      
       - elev
