@@ -569,7 +569,7 @@ def make_quantity_value(nmdc_objs, tx_attributes, **kwargs):
     Takes each nmdc object (either a dict or class instance) and
     and adds has_numeric_value and has_unit information.
     """
-    print(f"execting make_quantity_value for attributes {tx_attributes}")
+    print(f"*** executint make_quantity_value for attributes {tx_attributes}")
     for attribute in tx_attributes:
         for obj in nmdc_objs:
             if has_raw_value(obj, attribute):
