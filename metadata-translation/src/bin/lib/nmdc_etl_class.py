@@ -259,7 +259,7 @@ class NMDC_ETL:
     ):
         return lx.save_nmdc_dict(self.study_dict, file_path, data_format)
 
-    def transform_omics_proccessing(
+    def transform_omics_processing(
         self,
         data_source_class="gold_omics_processing",
         test_rows=0,
@@ -282,7 +282,7 @@ class NMDC_ETL:
         )
         return self.omics_processing_dict
 
-    def save_omics_proccessing(
+    def save_omics_processing(
         self, file_path="output/nmdc_etl/gold_omics_processing.json", data_format="json"
     ):
         return lx.save_nmdc_dict(self.omics_processing_dict, file_path, data_format)
