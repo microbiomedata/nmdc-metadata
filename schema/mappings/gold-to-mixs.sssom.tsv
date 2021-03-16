@@ -17,6 +17,7 @@ gold.vocab:ph	ph	skos:exactMatch	mixs:ph	ph	SSSOMC:HumanCurated	gold.vocab	mixs	
 gold.vocab:geographic_location	geographic_location	skos:exactMatch	mixs:geo_loc_name	geo_loc_name	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:nitrate_concentration	nitrate_concentration	skos:exactMatch	mixs:nitrate	nitrate	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:chlorophyll_concentration	chlorophyll_concentration	skos:exactMatch	mixs:chlorophyll	chlorophyll	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
+gold.vocab:sample_volume	sample_volume	skos:exactMatch	mixs:samp_vol_we_dna_ext	samp_vol_we_dna_ext	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:soil_curr_land_use	soil_curr_land_use	skos:exactMatch	mixs:cur_land_use	cur_land_use	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:soil_curr_vegetation	soil_curr_vegetation	skos:exactMatch	mixs:cur_vegetation	cur_vegetation	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:soil_curr_vegetation_method	soil_curr_vegetation_method	skos:exactMatch	mixs:cur_vegetation_meth	cur_vegetation_meth	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
