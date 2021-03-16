@@ -116,11 +116,7 @@ classes:
       type:
         description: >-
             An optional string that specified the type of object.
-        required: false
-      uriorcurie:
-        required: false            
-
-                
+        required: false                
     id_prefixes:
       - GOLD
 
@@ -337,7 +333,7 @@ classes:
       A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.  
       An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.
     slots:
-      # any mixs slot can be added here
+      # MIXS slots
       - agrochem_addition
       - alt
       - al_sat
@@ -354,11 +350,6 @@ classes:
       - diss_oxygen
       - drainage_class      
       - elev
-      - ecosystem
-      - ecosystem_category
-      - ecosystem_type
-      - ecosystem_subtype
-      - specific_ecosystem
       - env_package
       - env_broad_scale
       - env_local_scale
@@ -366,7 +357,7 @@ classes:
       - extreme_event      
       - fao_class      
       - fire
-      - flooding      
+      - flooding  
       - geo_loc_name
       - heavy_metals
       - heavy_metals_meth
@@ -382,13 +373,17 @@ classes:
       - microbial_biomass_meth      
       - misc_param
       - nitrate
+      - ph
       - ph_meth
       - pool_dna_extracts
+      - pressure
       - previous_land_use
       - previous_land_use_meth
       - profile_position
       - salinity
-      - salinity_meth      
+      - salinity_meth
+      - samp_collect_device
+      - samp_store_temp     
       - samp_vol_we_dna_ext
       - season_temp
       - season_precpt      
@@ -397,7 +392,8 @@ classes:
       - soil_type_meth
       - slope_gradient
       - slope_aspect
-      - store_cond      
+      - store_cond
+      - temp     
       - texture
       - texture_meth      
       - tillage
@@ -407,19 +403,29 @@ classes:
       - tot_nitro_content_meth
       - water_content
       - water_content_soil_meth
+      
+      # GOLD path fields
+      - ecosystem
+      - ecosystem_category
+      - ecosystem_type
+      - ecosystem_subtype
+      - specific_ecosystem
+
+      # GOLD specific fields
+      - add_date
+      - community
+      - habitat
+      - host_name
+      - identifier
+      - location
+      - mod_date
+      - ncbi_taxonomy_name
+      - proport_woa_temperature
+      - salinity_category
+      - sample_collection_site
+      - soluble_iron_micromol
+      - subsurface_depth
     slot_usage:
-      id:
-        description: >-
-          The primary identifier for the biosample. Example: GOLD:Gb0205609
-      name:
-        description: >-
-          A human readable name or description of the biosample
-        exact_mappings:
-          - MS:1000002
-      alternate identifiers:
-        description: >-
-          The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL)
-          slot_usage:
       type:
         description: >-
             An optional string that specified the type of object.
@@ -428,119 +434,6 @@ classes:
         required: false
         description: >-
           This is currently a required field but it's not clear if this should be required for human hosts
-      env_broad_scale:
-        required: false
-        description: >-
-          formerly known as 'biome'
-      env_local_scale:
-        required: false
-        description: >-
-          formerly known as 'feature'
-      env_medium:
-        required: false
-        description: >-
-          formerly known as 'material'
-      uriorcurie:
-        required: false
-      add_date:
-        required: false
-        range: string
-      mod_date:
-        required: false
-        range: string
-      collection_date:
-        required: false
-        range: string        
-      ncbi_taxonomy_name:
-        required: false
-        range: string
-      community:
-        required: false
-        range: string
-      location:
-        required: false
-      habitat:
-        required: false
-      geo_loc_name:
-        required: false
-        range: string
-      sample_collection_site:
-        required: false
-        range: string
-      tot_nitro_content:
-        range: string
-      tot_nitro_content_meth:
-        range: string
-      identifier:
-        required: false
-        range: string
-      host_name:
-        required: false
-        range: string
-      sampling_strategy:
-        required: false
-        range: string
-      growth_temperature:
-        required: false
-        range: string
-      ph:
-        required: false
-        range: string
-      diss_oxygen:
-        range: string
-      
-      altitude:
-        required: false
-        range: string
-      pressure:
-        required: false
-        range: string
-      subsurface_depth:
-        required: false
-        range: string
-      salinity:
-        required: false
-        range: string
-      salinity_concentration:
-        required: false
-        range: string
-      oxygen_concentration:
-        required: false
-        range: string
-      nitrate:
-        range: string
-      nitrate_concentration:
-        required: false
-        range: string
-      soluble_iron_micromol:
-        required: false
-        range: string
-      tot_nitrogen:
-        required: false
-        range: string
-      chlorophyll:
-        range: string
-      chlorophyll_concentration:
-        required: false
-        range: string
-      sample_volume:
-        required: false
-        range: string
-      proport_woa_temperature:
-        required: false
-        range: string
-      ecosystem:
-        range: string
-      ecosystem category:
-        range: string
-      ecosystem type:
-        range: string
-      ecosystem subtype:
-        range: string
-      specific ecosystem:
-        range: string
-
-          
     id_prefixes:
       - GOLD
     exact_mappings:
@@ -555,10 +448,6 @@ classes:
     description: >-
       A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.  
     slots:
-      #- submitted_to_insdc
-      #- investigation_type
-      #- project_name
-      #- experimental_factor
       - ecosystem
       - ecosystem_category
       - ecosystem_type
@@ -582,8 +471,6 @@ classes:
       type:
         description: >-
             An optional string that specified the type of object.
-        required: false
-      uriorcurie:
         required: false
       doi:
         range: string
@@ -664,8 +551,6 @@ classes:
         range: string
         description: >-
             The organization that processed the sample.
-        required: false
-      uriorcurie:
         required: false
       add_date:
         range: string
@@ -1228,7 +1113,7 @@ slots:
 
   gold_path_field:
     is_a: attribute
-    range: attribute value
+    range: string
     abstract: true
     description: >-
       This is a grouping for any of the gold path fields          
@@ -1324,6 +1209,15 @@ slots:
   sample_collection_minute:
     range: integer
     
+  salinity_category:
+    description: >-
+      Categorcial description of the sample's salinity.
+      Examples: halophile, halotolerant, hypersaline, huryhaline
+    range: string
+      
+  soluble_iron_micromol:
+    range: string
+    
   host_name:
     range: string
     
@@ -1336,13 +1230,7 @@ slots:
   biogas_temperature:
     range: string
     
-  growth_temperature:
-    range: string
-    
   soil_annual_season_temp:
-    range: string
-    
-  water_samp_store_temp:
     range: string
     
   biogas_retention_time:
