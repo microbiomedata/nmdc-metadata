@@ -361,6 +361,11 @@ classes:
       - density
       - depth
       - diss_carb_dioxide
+      - diss_hydrogen
+      - diss_inorg_carb
+      - diss_inorg_phosp
+      - diss_org_carb
+      - diss_org_nitro
       - diss_oxygen
       - drainage_class      
       - elev
@@ -373,6 +378,7 @@ classes:
       - fire
       - flooding  
       - geo_loc_name
+      - glucosidase_act
       - heavy_metals
       - heavy_metals_meth
       - horizon
@@ -383,38 +389,65 @@ classes:
       - link_climate_info
       - local_class
       - local_class_meth
+      - magnesium
+      - mean_frict_vel
+      - mean_peak_frict_vel
       - microbial_biomass
       - microbial_biomass_meth      
       - misc_param
+      - n_alkanes
       - nitrate
+      - nitrite
+      - org_matter
+      - org_nitro
+      - organism_count
+      - oxy_stat_samp
+      - part_org_carb
+      - perturbation
+      - petroleum_hydrocarb
       - ph
       - ph_meth
+      - phaeopigments
+      - phosplipid_fatt_acid
       - pool_dna_extracts
+      - potassium
       - pressure
       - previous_land_use
       - previous_land_use_meth
       - profile_position
+      - redox_potential
       - salinity
       - salinity_meth
       - samp_collect_device
+      - samp_store_dur
+      - samp_store_loc
       - samp_store_temp     
       - samp_vol_we_dna_ext
       - season_temp
       - season_precpt      
       - sieving
-      - soil_type
-      - soil_type_meth
+      - size_frac_low
+      - size_frac_up
       - slope_gradient
       - slope_aspect
+      - sodium
+      - soil_type
+      - soil_type_meth
       - store_cond
+      - sulfate
+      - sulfide
       - temp     
       - texture
       - texture_meth      
       - tillage
+      - tidal_stage
+      - tot_depth_water_col
+      - tot_diss_nitro
       - tot_org_carb
       - tot_org_c_meth
       - tot_nitro_content
       - tot_nitro_content_meth
+      - tot_phosp
       - water_content
       - water_content_soil_meth
       
@@ -435,7 +468,7 @@ classes:
       - mod_date
       - ncbi_taxonomy_name
       - proport_woa_temperature
-      - salinity_category
+      - salinity_category # note: maps to gold:salinity
       - sample_collection_site
       - soluble_iron_micromol
       - subsurface_depth
