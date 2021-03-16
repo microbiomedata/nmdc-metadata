@@ -224,12 +224,15 @@ classes:
         # note: attribute names must match names in nmdc.yaml
         - function: make_quantity_value
           attributes:
-            - nitrate
             - chlorophyll
+            - nitrate
+            - pressure
+            - samp_vol_we_dna_ext
     attributes:
       - add_date
       - mod_date
-      - collection_date
+      - collection_date:
+          has_numeric_value: collection_date # mixs:collection_date
       - ecosystem
       - ecosystem_category
       - ecosystem_type
@@ -239,7 +242,8 @@ classes:
       - location
       - community
       - ncbi_taxonomy_name
-      - geographic_location
+      - geographic_location:
+          has_raw_value: geographic_location
       - sample_collection_site
       - identifier
       - host_name
@@ -247,35 +251,60 @@ classes:
           has_numeric_value: depth, float
           has_unit: {const: meter}
           has_raw_value: depth
-      - subsurface_depth
+      - subsurface_depth:
+          has_numeric_value: subsurface_depth, float
+          has_unit: {const: meter}
+          has_raw_value: subsurface_depth
       - altitude:
-          has_numeric_value: altitude, float
+          has_numeric_value: altitude, float # mixs:alt
           has_unit: {const: meter}
           has_raw_value: altitude
       - proport_woa_temperature
       - biogas_temperature
-      - growth_temperature
-      - water_samp_store_temp
+      - growth_temperature:
+          has_raw_value: growth_temperature # mixs:temp
+          has_unit: {const: Celsius}
+          has_numeric_value: growth_temperature, float
+      - water_samp_store_temp:
+          has_raw_value: water_samp_store_temp # mixs:samp_store_temp
+          has_unit: {const: Celsius}
+          has_numeric_value: water_samp_store_temp, float
       - biogas_retention_time
-      - salinity
-      - pressure
-      - ph
+      - salinity_category
+      - pressure:
+          has_raw_value: pressure
+      - ph:
+          has_raw_value: ph # mixs:ph
       - chlorophyll:
           has_raw_value: chlorophyll_concentration
       - nitrate:
           has_raw_value: nitrate_concentration
-      - oxygen_concentration
-      - salinity_concentration
-      - sample_volume
-      - sampling_strategy
-      - soil_link_climate_info
-      - soil_misc_param
-      - soil_water_content
+      - oxygen_concentration:
+          has_raw_value: oxygen_concentration # mixs:diss_oxygen
+      - salinity_concentration:
+          has_raw_value: salinity_concentration # mixs:salinity
+      - sample_volume:
+          has_raw_value: sample_volume # mixs:samp_vol_we_dna_ext
+      - sampling_strategy:
+          has_raw_value: sampling_strategy
+      - soil_link_climate_info:
+          has_raw_value: soil_link_climate_info # mixs:link_climate_info
+      - soil_misc_param:
+          has_raw_value: soil_misc_param # mixs:misc_param
+      - soil_tot_n_method:
+          has_raw_value: soil_tot_n_method # mixs:tot_nitro_content_meth
+      - soil_water_content:
+          has_raw_value: soil_water_content # mixs:water_content
+      - soil_water_content_soil_meth:
+          has_raw_value: soil_water_content_soil_meth
       - soluble_iron_micromol
       - subsurface_depth2
-      - tot_nitrogen
-      - tot_org_carbon
-      - water_alkalinity
+      - tot_nitrogen:
+          has_raw_value: tot_nitrogen # mixs:tot_nitro_content
+      - tot_org_carbon:
+          has_raw_value: tot_org_carbon # mixs:tot_org_carb
+      - water_alkalinity:
+          has_raw_value: water_alkalinity # mixs:alkalinity
       - water_alkalinity_method
       - water_alkyl_diethers
       - water_aminopept_act
@@ -482,6 +511,8 @@ data_sources:
       - tot_nitrogen # BIOSAMPLE, MICROBIAL_MAT_PACKAGE, SEDIMENT_PACKAGE, SOIL_PACKAGE, WATER_PACKAGE
       - tot_org_carbon # BIOSAMPLE, SOIL_PACKAGE
     rename_slots:
+      - old_name: salinity
+        new_name: salinity_category
       - old_name: envo_biome_id
         new_name: env_broad_scale
       - old_name: envo_feature_id
@@ -535,6 +566,7 @@ data_sources:
       - soil_texture
       - soil_texture_method
       - soil_tillage
+      - soil_tot_n_method
       - soil_type
       - soil_type_method
       - soil_water_content_soil_meth
