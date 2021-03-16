@@ -66,7 +66,6 @@ subsets:
     description: >-
       Subset consisting of the data objects that either inputs or outputs of processes or workflows.
 
-
 classes:
 
   database:
@@ -112,6 +111,8 @@ classes:
       - GOLD
 
   MAG bin:
+    slots:
+       - type  # custom slot that specifies object type
     attributes:
       bin name:
         range: string
@@ -154,13 +155,7 @@ classes:
       gtdbtk species:
         required: false
         range: string
-    slot_usage:
-      type:
-        description: >-
-            An optional string that specified the type of object.
-        required: false
       
-    
   workflow execution activity:
     is_a: activity
     in_subset: 
@@ -172,18 +167,14 @@ classes:
       - git url
       - has input
       - has output
+      - type  # custom slot that specifies object type
     slot_usage:
-      type:
-        description: >-
-            An optional string that specified the type of object.
-        required: false
       was associated with:
         required: false
         description: >-
           the agent/entity associated with the generation of the file
         range: workflow execution activity
         inlined: false # allow for strings of IDs
-
 
   metagenome assembly:
     is_a: workflow execution activity
@@ -217,7 +208,6 @@ classes:
       - gc_avg
       - num_input_reads
       - num_aligned_reads
-
 
   metagenome annotation activity:
     is_a: workflow execution activity
@@ -528,7 +518,6 @@ classes:
       - principal investigator name
       - processing_institution
       - type  # custom slot that specifies object type
-
     broad_mappings:
       - OBI:0000070 ## assay: https://github.com/microbiomedata/nmdc-metadata/issues/171
 
@@ -557,7 +546,6 @@ classes:
         multivalued: true
         description: >-
           TODO
-
           
   peptide quantification:
     description: >-
@@ -775,7 +763,8 @@ slots:
       This property links a database object to the set of omics processings within it.
 
   omics type:
-    range: controlled term value
+    #range: controlled term value 
+    range: string
     description: >-
       The type of omics data
     examples:
@@ -1077,10 +1066,8 @@ slots:
     description: >-
       After QC analysis nucleotide base count number.
     range: float
-    
-    
+     
   ## GOLD PATHS
-
   gold_path_field:
     is_a: attribute
     range: string
@@ -1113,8 +1100,7 @@ slots:
     description: >-
       TODO
 
-## GOLD DATABASE SPECFIC FIELDS
-
+  ## GOLD DATABASE SPECFIC FIELDS
   principal investigator name:
     aliases:
       - PI
