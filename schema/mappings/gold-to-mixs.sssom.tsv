@@ -10,6 +10,7 @@
 #  skos: ""http://www.w3.org/2004/02/skos/core#"""									
 subject_id	subject_label	predicate_id	object_id	object_label	match_type	subject_source	object_source	confidence	comment
 gold.vocab:altitude	altitude	skos:exactMatch	mixs:alt	alt	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
+gold.vocab:growth_temperature	growth_temperature	skos:exactMatch	mixs:temp	temp	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:salinity_concentration	salinity_concentration	skos:exactMatch	mixs:salinity	salinity	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:oxygen_concentration	oxygen_concentration	skos:exactMatch	mixs:diss_oxygen	diss_oxygen	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:ph	ph	skos:exactMatch	mixs:ph	ph	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
@@ -40,8 +41,8 @@ gold.vocab:soil_store_condition	soil_store_condition	skos:exactMatch	mixs:store_
 gold.vocab:soil_link_climate_info	soil_link_climate_info	skos:exactMatch	mixs:link_climate_info	link_climate_info	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:soil_annual_season_temp	soil_annual_season_temp	skos:closeMatch	mixs:annual_temp	annual_temp	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:soil_annual_season_temp	soil_annual_season_temp	skos:closeMatch	mixs:season_temp	season_temp	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
-gold.vocab:soil_annual_season_precpt	soil_annual_season_precpt 	skos:closeMatch	mixs:season_precpt	season_precpt	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
-gold.vocab:soil_annual_season_precpt	soil_annual_season_precpt 	skos:closeMatch	mixs:annual_precpt	annual_precpt	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
+gold.vocab:soil_annual_season_precpt	"soil_annual_season_precpt "	skos:closeMatch	mixs:season_precpt	season_precpt	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
+gold.vocab:soil_annual_season_precpt	"soil_annual_season_precpt "	skos:closeMatch	mixs:annual_precpt	annual_precpt	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:soil_link_class_info	soil_link_class_info	skos:exactMatch	mixs:link_class_info	link_class_info	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:soil_fao_class	soil_fao_class	skos:exactMatch	mixs:fao_class	fao_class	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
 gold.vocab:soil_local_class	soil_local_class	skos:exactMatch	mixs:local_class	local_class	SSSOMC:HumanCurated	gold.vocab	mixs	1	.
