@@ -1170,6 +1170,8 @@ slots:
       Categorcial description of the sample's salinity.
       Examples: halophile, halotolerant, hypersaline, huryhaline
     range: string
+    see_also:
+      - https://github.com/microbiomedata/nmdc-metadata/pull/297
       
   soluble_iron_micromol:
     range: string
