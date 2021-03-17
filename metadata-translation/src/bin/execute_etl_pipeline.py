@@ -1,4 +1,4 @@
-import os, sys, click
+import os, sys, click, pickle
 from git_root import git_root
 
 sys.path.append(
@@ -40,6 +40,41 @@ def save_json(json_data, file_path):
     with open(file_path, "w") as out_file:
         json.dump(json_data, out_file, indent=2)
     return json_data
+
+
+def make_test_merged_data_source(
+    sample_size=1000,
+    random_state=1,
+    merged_data_source="../data/nmdc_merged_data.tsv",
+    save_path="../data/nmdc_test_merged_data.tsv",
+):
+    """
+    Using the merged data source, creates a smaller merged data source for use in testing.
+    This is needed b/c testing takes bit of time when using the full merged data source.
+    """
+    merged_df = pds.read_csv(merged_data_source, sep="\t", dtype=str)
+    test_df = pds.DataFrame(columns=list(merged_df.columns))
+
+    ## get list of data sources
+    data_sources = merged_df["nmdc_data_source"].unique()
+    sample_dfs = []
+    for ds in data_sources:
+        subset_df = merged_df[
+            merged_df["nmdc_data_source"] == ds
+        ]  # extract data source subset
+
+        if len(subset_df) > sample_size:
+            temp_df = subset_df.sample(n=sample_size, random_state=random_state)
+        else:
+            temp_df = subset_df  # get a sample from the subset
+
+        sample_dfs.append(temp_df)
+
+    ## concatenate all the sampled subsets & save
+    test_df = pds.concat(sample_dfs)
+    test_df.to_csv(save_path, sep="\t", index=False)
+
+    return test_df
 
 
 def make_merged_data_source(
@@ -285,9 +320,9 @@ def execute_etl(
         nmdc_etl.save_study(file_path="output/nmdc_etl/gold_study.json")
 
     if "gold_omics_processing" in etl_modules:
-        nmdc_etl.transform_omics_proccessing()
+        nmdc_etl.transform_omics_processing()
         # nmdc_etl.transform_omics_proccessing(test_rows=1, print_df=True, print_dict=True)
-        nmdc_etl.save_omics_proccessing(
+        nmdc_etl.save_omics_processing(
             file_path="output/nmdc_etl/gold_omics_processing.json"
         )
 
@@ -420,31 +455,43 @@ def main(
 
 
 if __name__ == "__main__":
-    # main() # CLI interface
+    main()  # CLI interface
 
-    # make_merged_data_source() # consolidates all nmdc data into a single tsv
+    # make_merged_data_source()  # consolidates all nmdc data into a single tsv
+    # make_test_merged_data_source()  # build a testing subset from merged data source
 
     ## ------ testing specific etl modules -------- ##
-    data_file = "../data/nmdc_merged_data.tsv.zip"
-    sssom_map_file = git_root("schema/mappings/gold-to-mixs.sssom.tsv")
-    spec_file = "lib/nmdc_data_source.yaml"
-    nmdc_etl = NMDC_ETL(
-        merged_data_file=data_file,
-        data_source_spec_file=spec_file,
-        sssom_file=sssom_map_file,
-    )
+    # data_file = "../data/nmdc_merged_data.tsv.zip"
+    # data_file = "../data/nmdc_test_merged_data.tsv"  # test merged data source
+    # sssom_map_file = git_root("schema/mappings/gold-to-mixs.sssom.tsv")
+    # spec_file = "lib/nmdc_data_source.yaml"
+    # nmdc_etl = NMDC_ETL(
+    # merged_data_file=data_file,
+    # data_source_spec_file=spec_file,
+    # sssom_file=sssom_map_file,
+    # pickled_data="nmdc_etl_data.pickle",  # change this to load different data
+    # )
+
+    ## pickle nmdc data to speed up future loads
+    ## uncomment to create new pickled data
+    # nmdc_etl.pickle_nmdc_data("nmdc_etl_data.pickle")
 
     ## test GOLD biosample etl
-    nmdc_etl.transform_biosample(test_rows=5)
-    nmdc_etl.save_biosample("output/nmdc_etl/test.json")
+    # nmdc_etl.transform_biosample(test_rows=100)
+    # nmdc_etl.transform_biosample()
+    # nmdc_etl.save_biosample("output/nmdc_etl/test.json")
 
     ## test emsl omic processing etl
     # nmdc_etl.transform_emsl_omics_processing()
     # nmdc_etl.save_emsl_omics_processing('output/nmdc_etl/test.json')
     # print(nmdc_etl.emsl.head())
 
+    ## test omic processing etl
+    # nmdc_etl.transform_omics_processing()
+    # nmdc_etl.save_omics_processing("output/nmdc_etl/test.json")
+
     ## test GOLD study etl
     # nmdc_etl.transform_study()
-    # nmdc_etl.save_study('output/nmdc_etl/test.json')
+    # nmdc_etl.save_study("output/nmdc_etl/test.json")
     # print(list(nmdc_etl.study.columns))
     # print(nmdc_etl.study.head())
