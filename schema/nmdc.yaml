@@ -763,8 +763,8 @@ slots:
       This property links a database object to the set of omics processings within it.
 
   omics type:
-    #range: controlled term value 
-    range: string
+    range: controlled term value 
+#    range: string
     description: >-
       The type of omics data
     examples:
