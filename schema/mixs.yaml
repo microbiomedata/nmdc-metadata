@@ -14,7 +14,7 @@ slots:
     range: boolean value  ## syntax: {boolean}
     pattern: "[true|false]"
     mappings:
-      - MIxS:submitted_to_insdc
+      - mixs:submitted_to_insdc
     in_subset:
       - investigation
 
@@ -28,7 +28,7 @@ slots:
     range: text value  ## syntax: [eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|metatranscriptome|mimarks-survey|mimarks-specimen|misag|mimag|miuvig]
     pattern: "[eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|metatranscriptome|mimarks\\-survey|mimarks\\-specimen|misag|mimag|miuvig]"
     mappings:
-      - MIxS:investigation_type
+      - mixs:investigation_type
     in_subset:
       - investigation
 
@@ -41,7 +41,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:project_name
+      - mixs:project_name
     in_subset:
       - investigation
 
@@ -54,7 +54,7 @@ slots:
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}|{text}
     mappings:
-      - MIxS:experimental_factor
+      - mixs:experimental_factor
     in_subset:
       - investigation
 
@@ -69,7 +69,7 @@ slots:
     pattern: "\\d+[.\\d+] \\d+[.\\d+]"
     string_serialization: "{float} {float}"
     mappings:
-      - MIxS:lat_lon
+      - mixs:lat_lon
     in_subset:
       - environment
 
@@ -82,7 +82,7 @@ slots:
     is_a: attribute
     range: quantity value  ## syntax: -
     mappings:
-      - MIxS:depth
+      - mixs:depth
     in_subset:
       - environment
 
@@ -97,7 +97,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:alt
+      - mixs:alt
     in_subset:
       - environment
 
@@ -112,7 +112,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:elev
+      - mixs:elev
     in_subset:
       - environment
 
@@ -125,7 +125,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {term};{term};{text}
     mappings:
-      - MIxS:geo_loc_name
+      - mixs:geo_loc_name
     in_subset:
       - environment
 
@@ -138,7 +138,7 @@ slots:
     is_a: attribute
     range: timestamp value  ## syntax: {timestamp}
     mappings:
-      - MIxS:collection_date
+      - mixs:collection_date
     in_subset:
       - environment
 
@@ -152,7 +152,7 @@ slots:
     range: controlled term value  ## syntax: {termLabel} {[termID]}
     pattern: ".* \\S+:\\S+"
     mappings:
-      - MIxS:env_broad_scale
+      - mixs:env_broad_scale
     in_subset:
       - environment
 
@@ -166,7 +166,7 @@ slots:
     range: controlled term value  ## syntax: {termLabel} {[termID]}
     pattern: ".* \\S+:\\S+"
     mappings:
-      - MIxS:env_local_scale
+      - mixs:env_local_scale
     in_subset:
       - environment
 
@@ -180,7 +180,7 @@ slots:
     range: controlled term value  ## syntax: {termLabel} {[termID]}
     pattern: ".* \\S+:\\S+"
     mappings:
-      - MIxS:env_medium
+      - mixs:env_medium
     in_subset:
       - environment
 
@@ -194,7 +194,7 @@ slots:
     range: text value  ## syntax: [air|built environment|host-associated|human-associated|human-skin|human-oral|human-gut|human-vaginal|hydrocarbon resources-cores|hydrocarbon resources-fluids/swabs|microbial mat/biofilm|misc environment|plant-associated|sediment|soil|wastewater/sludge|water]
     pattern: "[air|built environment|host\\-associated|human\\-associated|human\\-skin|human\\-oral|human\\-gut|human\\-vaginal|hydrocarbon resources\\-cores|hydrocarbon resources\\-fluids\\/swabs|microbial mat\\/biofilm|misc environment|plant\\-associated|sediment|soil|wastewater\\/sludge|water]"
     mappings:
-      - MIxS:env_package
+      - mixs:env_package
     in_subset:
       - mixs extension
 
@@ -207,7 +207,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {rank name}:{text}
     mappings:
-      - MIxS:subspecf_gen_lin
+      - mixs:subspecf_gen_lin
     in_subset:
       - nucleic acid sequence source
 
@@ -221,7 +221,7 @@ slots:
     range: controlled term value  ## syntax: {termLabel} {[termID]}
     pattern: ".* \\S+:\\S+"
     mappings:
-      - MIxS:ploidy
+      - mixs:ploidy
     in_subset:
       - nucleic acid sequence source
 
@@ -234,7 +234,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:num_replicons
+      - mixs:num_replicons
     in_subset:
       - nucleic acid sequence source
 
@@ -247,7 +247,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:extrachrom_elements
+      - mixs:extrachrom_elements
     in_subset:
       - nucleic acid sequence source
 
@@ -260,7 +260,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer} bp
     mappings:
-      - MIxS:estimated_size
+      - mixs:estimated_size
     in_subset:
       - nucleic acid sequence source
 
@@ -273,7 +273,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:ref_biomaterial
+      - mixs:ref_biomaterial
     in_subset:
       - nucleic acid sequence source
 
@@ -286,7 +286,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:source_mat_id
+      - mixs:source_mat_id
     in_subset:
       - nucleic acid sequence source
 
@@ -299,7 +299,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:pathogenicity
+      - mixs:pathogenicity
     in_subset:
       - nucleic acid sequence source
 
@@ -313,7 +313,7 @@ slots:
     range: text value  ## syntax: [free living|parasitism|commensalism|symbiotic|mutualism]
     pattern: "[free living|parasitism|commensalism|symbiotic|mutualism]"
     mappings:
-      - MIxS:biotic_relationship
+      - mixs:biotic_relationship
     in_subset:
       - nucleic acid sequence source
 
@@ -326,7 +326,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {NCBI taxid}|{text}
     mappings:
-      - MIxS:specific_host
+      - mixs:specific_host
     in_subset:
       - nucleic acid sequence source
 
@@ -339,7 +339,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:host_spec_range
+      - mixs:host_spec_range
     in_subset:
       - nucleic acid sequence source
 
@@ -353,7 +353,7 @@ slots:
     range: text value  ## syntax: [healthy|diseased|dead|disease-free|undetermined|recovering|resolving|pre-existing condition|pathological|life threatening|congenital]
     pattern: "[healthy|diseased|dead|disease\\-free|undetermined|recovering|resolving|pre\\-existing condition|pathological|life threatening|congenital]"
     mappings:
-      - MIxS:health_disease_stat
+      - mixs:health_disease_stat
     in_subset:
       - nucleic acid sequence source
 
@@ -367,7 +367,7 @@ slots:
     range: text value  ## syntax: [autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]
     pattern: "[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]"
     mappings:
-      - MIxS:trophic_level
+      - mixs:trophic_level
     in_subset:
       - nucleic acid sequence source
 
@@ -380,7 +380,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:propagation
+      - mixs:propagation
     in_subset:
       - nucleic acid sequence source
 
@@ -393,7 +393,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:encoded_traits
+      - mixs:encoded_traits
     in_subset:
       - nucleic acid sequence source
 
@@ -407,7 +407,7 @@ slots:
     range: text value  ## syntax: [aerobe|anaerobe|facultative|microaerophilic|microanaerobe|obligate aerobe|obligate anaerobe]
     pattern: "[aerobe|anaerobe|facultative|microaerophilic|microanaerobe|obligate aerobe|obligate anaerobe]"
     mappings:
-      - MIxS:rel_to_oxygen
+      - mixs:rel_to_oxygen
     in_subset:
       - nucleic acid sequence source
 
@@ -420,7 +420,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:isol_growth_condt
+      - mixs:isol_growth_condt
     in_subset:
       - nucleic acid sequence source
 
@@ -433,7 +433,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:samp_collect_device
+      - mixs:samp_collect_device
     in_subset:
       - nucleic acid sequence source
 
@@ -446,7 +446,7 @@ slots:
     is_a: attribute
     range: controlled term value  ## syntax: {text}|{termLabel} {[termID]}
     mappings:
-      - MIxS:samp_mat_process
+      - mixs:samp_mat_process
     in_subset:
       - nucleic acid sequence source
 
@@ -461,7 +461,7 @@ slots:
     pattern: "\\d+[.\\d+]\\-\\d+[.\\d+] \\S+"
     string_serialization: "{float}-{float} {unit}"
     mappings:
-      - MIxS:size_frac
+      - mixs:size_frac
     in_subset:
       - nucleic acid sequence source
 
@@ -476,7 +476,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:samp_size
+      - mixs:samp_size
     in_subset:
       - nucleic acid sequence source
 
@@ -490,7 +490,7 @@ slots:
     range: text value  ## syntax: [metagenome (not viral targeted)|viral fraction metagenome (virome)|sequence-targeted metagenome|metatranscriptome (not viral targeted)|viral fraction RNA metagenome (RNA virome)|sequence-targeted RNA metagenome|microbial single amplified genome (SAG)|viral single amplified genome (vSAG)|isolate microbial genome|other]
     pattern: "[metagenome (not viral targeted)|viral fraction metagenome (virome)|sequence\\-targeted metagenome|metatranscriptome (not viral targeted)|viral fraction RNA metagenome (RNA virome)|sequence\\-targeted RNA metagenome|microbial single amplified genome (SAG)|viral single amplified genome (vSAG)|isolate microbial genome|other]"
     mappings:
-      - MIxS:source_uvig
+      - mixs:source_uvig
     in_subset:
       - nucleic acid sequence source
 
@@ -504,7 +504,7 @@ slots:
     range: text value  ## syntax: [filtration|ultrafiltration|centrifugation|ultracentrifugation|PEG Precipitation|FeCl Precipitation|CsCl density gradient|DNAse|RNAse|targeted sequence capture|other|none]
     pattern: "[filtration|ultrafiltration|centrifugation|ultracentrifugation|PEG Precipitation|FeCl Precipitation|CsCl density gradient|DNAse|RNAse|targeted sequence capture|other|none]"
     mappings:
-      - MIxS:virus_enrich_appr
+      - mixs:virus_enrich_appr
     in_subset:
       - nucleic acid sequence source
 
@@ -517,7 +517,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:nucl_acid_ext
+      - mixs:nucl_acid_ext
     in_subset:
       - sequencing
 
@@ -530,7 +530,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:nucl_acid_amp
+      - mixs:nucl_acid_amp
     in_subset:
       - sequencing
 
@@ -543,7 +543,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:lib_size
+      - mixs:lib_size
     in_subset:
       - sequencing
 
@@ -556,7 +556,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:lib_reads_seqd
+      - mixs:lib_reads_seqd
     in_subset:
       - sequencing
 
@@ -570,7 +570,7 @@ slots:
     range: text value  ## syntax: [paired|single|vector|other]
     pattern: "[paired|single|vector|other]"
     mappings:
-      - MIxS:lib_layout
+      - mixs:lib_layout
     in_subset:
       - sequencing
 
@@ -583,7 +583,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:lib_vector
+      - mixs:lib_vector
     in_subset:
       - sequencing
 
@@ -596,7 +596,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:lib_screen
+      - mixs:lib_screen
     in_subset:
       - sequencing
 
@@ -609,7 +609,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:target_gene
+      - mixs:target_gene
     in_subset:
       - sequencing
 
@@ -622,7 +622,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:target_subfragment
+      - mixs:target_subfragment
     in_subset:
       - sequencing
 
@@ -635,7 +635,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: FWD:{dna};REV:{dna}
     mappings:
-      - MIxS:pcr_primers
+      - mixs:pcr_primers
     in_subset:
       - sequencing
 
@@ -648,7 +648,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {dna}
     mappings:
-      - MIxS:mid
+      - mixs:mid
     in_subset:
       - sequencing
 
@@ -661,7 +661,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {dna};{dna}
     mappings:
-      - MIxS:adapters
+      - mixs:adapters
     in_subset:
       - sequencing
 
@@ -675,7 +675,7 @@ slots:
     range: text value  ## syntax: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles
     pattern: "initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles"
     mappings:
-      - MIxS:pcr_cond
+      - mixs:pcr_cond
     in_subset:
       - sequencing
 
@@ -689,7 +689,7 @@ slots:
     range: text value  ## syntax: [MinION|GridION|PromethION|454 GS|454 GS 20|454 GS FLX|454 GS FLX+|454 GS FLX Titanium|454 GS Junior|Illumina Genome Analyzer|Illumina Genome Analyzer II|Illumina Genome Analyzer IIx|Illumina HiSeq 4000|Illumina HiSeq 3000|Illumina HiSeq 2500|Illumina HiSeq 2000|Illumina HiSeq 1500|Illumina HiSeq 1000|Illumina HiScanSQ|Illumina MiSeq|Illumina HiSeq X Five|Illumina HiSeq X Ten|Illumina NextSeq 500|Illumina NextSeq 550|AB SOLiD System|AB SOLiD System 2.0|AB SOLiD System 3.0|AB SOLiD 3 Plus System|AB SOLiD 4 System|AB SOLiD 4hq System|AB SOLiD PI System|AB 5500 Genetic Analyzer|AB 5500xl Genetic Analyzer|AB 5500xl-W Genetic Analysis System|Ion Torrent PGM|Ion Torrent Proton|Ion Torrent S5|Ion Torrent S5 XL|PacBio RS|PacBio RS II|Sequel|AB 3730xL Genetic Analyzer|AB 3730 Genetic Analyzer|AB 3500xL Genetic Analyzer|AB 3500 Genetic Analyzer|AB 3130xL Genetic Analyzer|AB 3130 Genetic Analyzer|AB 310 Genetic Analyzer|BGISEQ-500]
     pattern: "[MinION|GridION|PromethION|454 GS|454 GS 20|454 GS FLX|454 GS FLX+|454 GS FLX Titanium|454 GS Junior|Illumina Genome Analyzer|Illumina Genome Analyzer II|Illumina Genome Analyzer IIx|Illumina HiSeq 4000|Illumina HiSeq 3000|Illumina HiSeq 2500|Illumina HiSeq 2000|Illumina HiSeq 1500|Illumina HiSeq 1000|Illumina HiScanSQ|Illumina MiSeq|Illumina HiSeq X Five|Illumina HiSeq X Ten|Illumina NextSeq 500|Illumina NextSeq 550|AB SOLiD System|AB SOLiD System 2.0|AB SOLiD System 3.0|AB SOLiD 3 Plus System|AB SOLiD 4 System|AB SOLiD 4hq System|AB SOLiD PI System|AB 5500 Genetic Analyzer|AB 5500xl Genetic Analyzer|AB 5500xl\\-W Genetic Analysis System|Ion Torrent PGM|Ion Torrent Proton|Ion Torrent S5|Ion Torrent S5 XL|PacBio RS|PacBio RS II|Sequel|AB 3730xL Genetic Analyzer|AB 3730 Genetic Analyzer|AB 3500xL Genetic Analyzer|AB 3500 Genetic Analyzer|AB 3130xL Genetic Analyzer|AB 3130 Genetic Analyzer|AB 310 Genetic Analyzer|BGISEQ\\-500]"
     mappings:
-      - MIxS:seq_meth
+      - mixs:seq_meth
     in_subset:
       - sequencing
 
@@ -703,7 +703,7 @@ slots:
     range: text value  ## syntax: [none|manually edited]
     pattern: "[none|manually edited]"
     mappings:
-      - MIxS:seq_quality_check
+      - mixs:seq_quality_check
     in_subset:
       - sequencing
 
@@ -716,7 +716,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {software};{version};{parameters}
     mappings:
-      - MIxS:chimera_check
+      - mixs:chimera_check
     in_subset:
       - sequencing
 
@@ -730,7 +730,7 @@ slots:
     range: text value  ## syntax: [16S rRNA gene|multi-marker approach|other]
     pattern: "[16S rRNA gene|multi\\-marker approach|other]"
     mappings:
-      - MIxS:tax_ident
+      - mixs:tax_ident
     in_subset:
       - sequencing
 
@@ -744,7 +744,7 @@ slots:
     range: text value  ## syntax: [Finished genome|High-quality draft genome|Medium-quality draft genome|Low-quality draft genome|Genome fragment(s)]
     pattern: "[Finished genome|High\\-quality draft genome|Medium\\-quality draft genome|Low\\-quality draft genome|Genome fragment(s)]"
     mappings:
-      - MIxS:assembly_qual
+      - mixs:assembly_qual
     in_subset:
       - sequencing
 
@@ -757,7 +757,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text} {text}
     mappings:
-      - MIxS:assembly_name
+      - mixs:assembly_name
     in_subset:
       - sequencing
 
@@ -770,7 +770,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {software};{version};{parameters}
     mappings:
-      - MIxS:assembly_software
+      - mixs:assembly_software
     in_subset:
       - sequencing
 
@@ -783,7 +783,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:annot
+      - mixs:annot
     in_subset:
       - sequencing
 
@@ -796,7 +796,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:number_contig
+      - mixs:number_contig
     in_subset:
       - sequencing
 
@@ -809,7 +809,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {software};{version};{parameters}
     mappings:
-      - MIxS:feat_pred
+      - mixs:feat_pred
     in_subset:
       - sequencing
 
@@ -822,7 +822,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {database};{version};{reference}
     mappings:
-      - MIxS:ref_db
+      - mixs:ref_db
     in_subset:
       - sequencing
 
@@ -835,7 +835,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {software};{version};{parameters}
     mappings:
-      - MIxS:sim_search_meth
+      - mixs:sim_search_meth
     in_subset:
       - sequencing
 
@@ -848,7 +848,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:tax_class
+      - mixs:tax_class
     in_subset:
       - sequencing
 
@@ -862,7 +862,7 @@ slots:
     range: boolean value  ## syntax: {boolean}
     pattern: "[true|false]"
     mappings:
-      - MIxS:_16s_recover
+      - mixs:_16s_recover
     in_subset:
       - sequencing
 
@@ -875,7 +875,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {software};{version};{parameters}
     mappings:
-      - MIxS:_16s_recover_software
+      - mixs:_16s_recover_software
     in_subset:
       - sequencing
 
@@ -888,7 +888,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:trnas
+      - mixs:trnas
     in_subset:
       - sequencing
 
@@ -901,7 +901,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {software};{version};{parameters}
     mappings:
-      - MIxS:trna_ext_software
+      - mixs:trna_ext_software
     in_subset:
       - sequencing
 
@@ -914,7 +914,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: [high|med|low];{percentage}
     mappings:
-      - MIxS:compl_score
+      - mixs:compl_score
     in_subset:
       - sequencing
 
@@ -927,7 +927,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {software};{version}
     mappings:
-      - MIxS:compl_software
+      - mixs:compl_software
     in_subset:
       - sequencing
 
@@ -941,7 +941,7 @@ slots:
     range: text value  ## syntax: [marker gene|reference based|other]
     pattern: "[marker gene|reference based|other]"
     mappings:
-      - MIxS:compl_appr
+      - mixs:compl_appr
     in_subset:
       - sequencing
 
@@ -955,7 +955,7 @@ slots:
     range: text value  ## syntax: {float} percentage
     pattern: "\\d+[.\\d+] percentage"
     mappings:
-      - MIxS:contam_score
+      - mixs:contam_score
     in_subset:
       - sequencing
 
@@ -969,7 +969,7 @@ slots:
     range: text value  ## syntax: [reads| contigs]
     pattern: "[reads| contigs]"
     mappings:
-      - MIxS:contam_screen_input
+      - mixs:contam_screen_input
     in_subset:
       - sequencing
 
@@ -982,7 +982,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: [ref db|kmer|coverage|combination];{text|integer}
     mappings:
-      - MIxS:contam_screen_param
+      - mixs:contam_screen_param
     in_subset:
       - sequencing
 
@@ -996,7 +996,7 @@ slots:
     range: text value  ## syntax: [checkm/refinem|anvi'o|prodege|bbtools:decontaminate.sh|acdc|combination]
     pattern: "[checkm\\/refinem|anvi\\'o|prodege|bbtools:decontaminate.sh|acdc|combination]"
     mappings:
-      - MIxS:decontam_software
+      - mixs:decontam_software
     in_subset:
       - sequencing
 
@@ -1010,7 +1010,7 @@ slots:
     range: text value  ## syntax: [flow cytometric cell sorting|microfluidics|lazer-tweezing|optical manipulation|micromanipulation|other]
     pattern: "[flow cytometric cell sorting|microfluidics|lazer\\-tweezing|optical manipulation|micromanipulation|other]"
     mappings:
-      - MIxS:sort_tech
+      - mixs:sort_tech
     in_subset:
       - sequencing
 
@@ -1024,7 +1024,7 @@ slots:
     range: text value  ## syntax: [chemical|enzymatic|physical|combination]
     pattern: "[chemical|enzymatic|physical|combination]"
     mappings:
-      - MIxS:single_cell_lysis_appr
+      - mixs:single_cell_lysis_appr
     in_subset:
       - sequencing
 
@@ -1037,7 +1037,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:single_cell_lysis_prot
+      - mixs:single_cell_lysis_prot
     in_subset:
       - sequencing
 
@@ -1051,7 +1051,7 @@ slots:
     range: text value  ## syntax: [pcr based|mda based]
     pattern: "[pcr based|mda based]"
     mappings:
-      - MIxS:wga_amp_appr
+      - mixs:wga_amp_appr
     in_subset:
       - sequencing
 
@@ -1064,7 +1064,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:wga_amp_kit
+      - mixs:wga_amp_kit
     in_subset:
       - sequencing
 
@@ -1078,7 +1078,7 @@ slots:
     range: text value  ## syntax: [homology search|kmer|coverage|codon usage|combination]
     pattern: "[homology search|kmer|coverage|codon usage|combination]"
     mappings:
-      - MIxS:bin_param
+      - mixs:bin_param
     in_subset:
       - sequencing
 
@@ -1092,7 +1092,7 @@ slots:
     range: text value  ## syntax: [metabat|maxbin|concoct|groupm|esom|metawatt|combination|other]
     pattern: "[metabat|maxbin|concoct|groupm|esom|metawatt|combination|other]"
     mappings:
-      - MIxS:bin_software
+      - mixs:bin_software
     in_subset:
       - sequencing
 
@@ -1106,7 +1106,7 @@ slots:
     range: boolean value  ## syntax: {boolean}
     pattern: "[true|false]"
     mappings:
-      - MIxS:reassembly_bin
+      - mixs:reassembly_bin
     in_subset:
       - sequencing
 
@@ -1120,7 +1120,7 @@ slots:
     range: text value  ## syntax: [bwa|bbmap|bowtie|other]
     pattern: "[bwa|bbmap|bowtie|other]"
     mappings:
-      - MIxS:mag_cov_software
+      - mixs:mag_cov_software
     in_subset:
       - sequencing
 
@@ -1133,7 +1133,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {software};{version};{parameters}
     mappings:
-      - MIxS:vir_ident_software
+      - mixs:vir_ident_software
     in_subset:
       - sequencing
 
@@ -1147,7 +1147,7 @@ slots:
     range: text value  ## syntax: [DNA|dsDNA|ssDNA|RNA|dsRNA|ssRNA|ssRNA (+)|ssRNA (-)|mixed|uncharacterized]
     pattern: "[DNA|dsDNA|ssDNA|RNA|dsRNA|ssRNA|ssRNA (+)|ssRNA (\\-)|mixed|uncharacterized]"
     mappings:
-      - MIxS:pred_genome_type
+      - mixs:pred_genome_type
     in_subset:
       - sequencing
 
@@ -1161,7 +1161,7 @@ slots:
     range: text value  ## syntax: [segmented|non-segmented|undetermined]
     pattern: "[segmented|non\\-segmented|undetermined]"
     mappings:
-      - MIxS:pred_genome_struc
+      - mixs:pred_genome_struc
     in_subset:
       - sequencing
 
@@ -1175,7 +1175,7 @@ slots:
     range: text value  ## syntax: [independent sequence (UViG)|provirus (UpViG)]
     pattern: "[independent sequence (UViG)|provirus (UpViG)]"
     mappings:
-      - MIxS:detec_type
+      - mixs:detec_type
     in_subset:
       - sequencing
 
@@ -1188,7 +1188,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {ANI cutoff};{AF cutoff};{clustering method}
     mappings:
-      - MIxS:votu_class_appr
+      - mixs:votu_class_appr
     in_subset:
       - sequencing
 
@@ -1201,7 +1201,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {software};{version};{parameters}
     mappings:
-      - MIxS:votu_seq_comp_appr
+      - mixs:votu_seq_comp_appr
     in_subset:
       - sequencing
 
@@ -1214,7 +1214,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {database};{version}
     mappings:
-      - MIxS:votu_db
+      - mixs:votu_db
     in_subset:
       - sequencing
 
@@ -1228,7 +1228,7 @@ slots:
     range: text value  ## syntax: [provirus|host sequence similarity|CRISPR spacer match|kmer similarity|co-occurrence|combination|other]
     pattern: "[provirus|host sequence similarity|CRISPR spacer match|kmer similarity|co\\-occurrence|combination|other]"
     mappings:
-      - MIxS:host_pred_appr
+      - mixs:host_pred_appr
     in_subset:
       - sequencing
 
@@ -1241,7 +1241,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:host_pred_est_acc
+      - mixs:host_pred_est_acc
     in_subset:
       - sequencing
 
@@ -1254,7 +1254,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {URL}
     mappings:
-      - MIxS:mixs_url
+      - mixs:mixs_url
     in_subset:
       - sequencing
 
@@ -1267,7 +1267,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:sop
+      - mixs:sop
     in_subset:
       - sequencing
 
@@ -1282,7 +1282,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:barometric_press
+      - mixs:barometric_press
 
   carb_dioxide:
     aliases:
@@ -1295,7 +1295,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:carb_dioxide
+      - mixs:carb_dioxide
 
   carb_monoxide:
     aliases:
@@ -1308,7 +1308,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:carb_monoxide
+      - mixs:carb_monoxide
 
   chem_administration:
     aliases:
@@ -1319,7 +1319,7 @@ slots:
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]};{timestamp}
     mappings:
-      - MIxS:chem_administration
+      - mixs:chem_administration
 
   humidity:
     aliases:
@@ -1332,7 +1332,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:humidity
+      - mixs:humidity
 
   methane:
     aliases:
@@ -1345,7 +1345,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:methane
+      - mixs:methane
 
   misc_param:
     aliases:
@@ -1357,7 +1357,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:misc_param
+      - mixs:misc_param
 
   organism_count:
     aliases:
@@ -1369,7 +1369,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit};[qPCR|ATP|MPN|other]
     string_serialization: "{text};{float} {unit};[qPCR|ATP|MPN|other]"
     mappings:
-      - MIxS:organism_count
+      - mixs:organism_count
 
   oxygen:
     aliases:
@@ -1382,7 +1382,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:oxygen
+      - mixs:oxygen
 
   oxy_stat_samp:
     aliases:
@@ -1394,7 +1394,7 @@ slots:
     range: text value  ## syntax: [aerobic|anaerobic|other]
     pattern: "[aerobic|anaerobic|other]"
     mappings:
-      - MIxS:oxy_stat_samp
+      - mixs:oxy_stat_samp
 
   perturbation:
     aliases:
@@ -1405,7 +1405,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text};{Rn/start_time/end_time/duration}
     mappings:
-      - MIxS:perturbation
+      - mixs:perturbation
 
   pollutants:
     aliases:
@@ -1417,7 +1417,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:pollutants
+      - mixs:pollutants
 
   resp_part_matter:
     aliases:
@@ -1429,7 +1429,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:resp_part_matter
+      - mixs:resp_part_matter
 
   samp_salinity:
     aliases:
@@ -1442,7 +1442,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:samp_salinity
+      - mixs:samp_salinity
 
   samp_store_dur:
     aliases:
@@ -1453,7 +1453,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {duration}
     mappings:
-      - MIxS:samp_store_dur
+      - mixs:samp_store_dur
 
   samp_store_loc:
     aliases:
@@ -1464,7 +1464,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:samp_store_loc
+      - mixs:samp_store_loc
 
   samp_store_temp:
     aliases:
@@ -1477,7 +1477,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:samp_store_temp
+      - mixs:samp_store_temp
 
   samp_vol_we_dna_ext:
     aliases:
@@ -1490,7 +1490,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:samp_vol_we_dna_ext
+      - mixs:samp_vol_we_dna_ext
 
   solar_irradiance:
     aliases:
@@ -1503,7 +1503,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:solar_irradiance
+      - mixs:solar_irradiance
 
   temp:
     aliases:
@@ -1516,7 +1516,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:temp
+      - mixs:temp
 
   ventilation_rate:
     aliases:
@@ -1529,7 +1529,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:ventilation_rate
+      - mixs:ventilation_rate
 
   ventilation_type:
     aliases:
@@ -1540,7 +1540,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:ventilation_type
+      - mixs:ventilation_type
 
   volatile_org_comp:
     aliases:
@@ -1552,7 +1552,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:volatile_org_comp
+      - mixs:volatile_org_comp
 
   wind_direction:
     aliases:
@@ -1563,7 +1563,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:wind_direction
+      - mixs:wind_direction
 
   wind_speed:
     aliases:
@@ -1576,7 +1576,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:wind_speed
+      - mixs:wind_speed
 
   surf_material:
     aliases:
@@ -1588,7 +1588,7 @@ slots:
     range: text value  ## syntax: [concrete|wood|stone|tile|plastic|glass|vinyl|metal|carpet|stainless steel|paint|cinder blocks|hay bales|stucco|adobe]
     pattern: "[concrete|wood|stone|tile|plastic|glass|vinyl|metal|carpet|stainless steel|paint|cinder blocks|hay bales|stucco|adobe]"
     mappings:
-      - MIxS:surf_material
+      - mixs:surf_material
 
   surf_air_cont:
     aliases:
@@ -1600,7 +1600,7 @@ slots:
     range: text value  ## syntax: [dust|organic matter|particulate matter|volatile organic compounds|biological contaminants|radon|nutrients|biocides]
     pattern: "[dust|organic matter|particulate matter|volatile organic compounds|biological contaminants|radon|nutrients|biocides]"
     mappings:
-      - MIxS:surf_air_cont
+      - mixs:surf_air_cont
 
   rel_air_humidity:
     aliases:
@@ -1613,7 +1613,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:rel_air_humidity
+      - mixs:rel_air_humidity
 
   abs_air_humidity:
     aliases:
@@ -1626,7 +1626,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:abs_air_humidity
+      - mixs:abs_air_humidity
 
   surf_humidity:
     aliases:
@@ -1639,7 +1639,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:surf_humidity
+      - mixs:surf_humidity
 
   air_temp:
     aliases:
@@ -1652,7 +1652,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:air_temp
+      - mixs:air_temp
 
   surf_temp:
     aliases:
@@ -1665,7 +1665,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:surf_temp
+      - mixs:surf_temp
 
   surf_moisture_ph:
     aliases:
@@ -1677,7 +1677,7 @@ slots:
     range: quantity value  ## syntax: {float}
     pattern: "\\d+[.\\d+]"
     mappings:
-      - MIxS:surf_moisture_ph
+      - mixs:surf_moisture_ph
 
   build_occup_type:
     aliases:
@@ -1689,7 +1689,7 @@ slots:
     range: text value  ## syntax: [office|market|restaurant|residence|school|residential|commercial|low rise|high rise|wood framed|office|health care|school|airport|sports complex]
     pattern: "[office|market|restaurant|residence|school|residential|commercial|low rise|high rise|wood framed|office|health care|school|airport|sports complex]"
     mappings:
-      - MIxS:build_occup_type
+      - mixs:build_occup_type
 
   surf_moisture:
     aliases:
@@ -1702,7 +1702,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:surf_moisture
+      - mixs:surf_moisture
 
   dew_point:
     aliases:
@@ -1715,7 +1715,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:dew_point
+      - mixs:dew_point
 
   indoor_space:
     aliases:
@@ -1727,7 +1727,7 @@ slots:
     range: text value  ## syntax: [bedroom|office|bathroom|foyer|kitchen|locker room|hallway|elevator]
     pattern: "[bedroom|office|bathroom|foyer|kitchen|locker room|hallway|elevator]"
     mappings:
-      - MIxS:indoor_space
+      - mixs:indoor_space
 
   indoor_surf:
     aliases:
@@ -1739,7 +1739,7 @@ slots:
     range: text value  ## syntax: [counter top|window|wall|cabinet|ceiling|door|shelving|vent cover]
     pattern: "[counter top|window|wall|cabinet|ceiling|door|shelving|vent cover]"
     mappings:
-      - MIxS:indoor_surf
+      - mixs:indoor_surf
 
   filter_type:
     aliases:
@@ -1751,7 +1751,7 @@ slots:
     range: text value  ## syntax: [particulate air filter|chemical air filter|low-MERV pleated media|HEPA|electrostatic|gas-phase or ultraviolet air treatments]
     pattern: "[particulate air filter|chemical air filter|low\\-MERV pleated media|HEPA|electrostatic|gas\\-phase or ultraviolet air treatments]"
     mappings:
-      - MIxS:filter_type
+      - mixs:filter_type
 
   heat_cool_type:
     aliases:
@@ -1763,7 +1763,7 @@ slots:
     range: text value  ## syntax: [radiant system|heat pump|forced air system|steam forced heat|wood stove]
     pattern: "[radiant system|heat pump|forced air system|steam forced heat|wood stove]"
     mappings:
-      - MIxS:heat_cool_type
+      - mixs:heat_cool_type
 
   substructure_type:
     aliases:
@@ -1775,7 +1775,7 @@ slots:
     range: text value  ## syntax: [crawlspace|slab on grade|basement]
     pattern: "[crawlspace|slab on grade|basement]"
     mappings:
-      - MIxS:substructure_type
+      - mixs:substructure_type
 
   building_setting:
     aliases:
@@ -1787,7 +1787,7 @@ slots:
     range: text value  ## syntax: [urban|suburban|exurban|rural]
     pattern: "[urban|suburban|exurban|rural]"
     mappings:
-      - MIxS:building_setting
+      - mixs:building_setting
 
   light_type:
     aliases:
@@ -1799,7 +1799,7 @@ slots:
     range: text value  ## syntax: [natural light|electric light|desk lamp|flourescent lights|natural light|none]
     pattern: "[natural light|electric light|desk lamp|flourescent lights|natural light|none]"
     mappings:
-      - MIxS:light_type
+      - mixs:light_type
 
   samp_sort_meth:
     aliases:
@@ -1810,7 +1810,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:samp_sort_meth
+      - mixs:samp_sort_meth
 
   space_typ_state:
     aliases:
@@ -1822,7 +1822,7 @@ slots:
     range: text value  ## syntax: [typically occupied|typically unoccupied]
     pattern: "[typically occupied|typically unoccupied]"
     mappings:
-      - MIxS:space_typ_state
+      - mixs:space_typ_state
 
   typ_occup_density:
     aliases:
@@ -1834,7 +1834,7 @@ slots:
     range: quantity value  ## syntax: {float}
     pattern: "\\d+[.\\d+]"
     mappings:
-      - MIxS:typ_occup_density
+      - mixs:typ_occup_density
 
   occup_samp:
     aliases:
@@ -1845,7 +1845,7 @@ slots:
     is_a: attribute
     range: quantity value  ## syntax: {integer}
     mappings:
-      - MIxS:occup_samp
+      - mixs:occup_samp
 
   occup_density_samp:
     aliases:
@@ -1857,7 +1857,7 @@ slots:
     range: quantity value  ## syntax: {float}
     pattern: "\\d+[.\\d+]"
     mappings:
-      - MIxS:occup_density_samp
+      - mixs:occup_density_samp
 
   address:
     aliases:
@@ -1868,7 +1868,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}{text}
     mappings:
-      - MIxS:address
+      - mixs:address
 
   adj_room:
     aliases:
@@ -1879,7 +1879,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text};{integer}
     mappings:
-      - MIxS:adj_room
+      - mixs:adj_room
 
   aero_struc:
     aliases:
@@ -1891,7 +1891,7 @@ slots:
     range: text value  ## syntax: [plane|glider]
     pattern: "[plane|glider]"
     mappings:
-      - MIxS:aero_struc
+      - mixs:aero_struc
 
   amount_light:
     aliases:
@@ -1904,7 +1904,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:amount_light
+      - mixs:amount_light
 
   arch_struc:
     aliases:
@@ -1916,7 +1916,7 @@ slots:
     range: text value  ## syntax: [building|shed|home]
     pattern: "[building|shed|home]"
     mappings:
-      - MIxS:arch_struc
+      - mixs:arch_struc
 
   avg_occup:
     aliases:
@@ -1928,7 +1928,7 @@ slots:
     range: text value  ## syntax: {float}
     pattern: "\\d+[.\\d+]"
     mappings:
-      - MIxS:avg_occup
+      - mixs:avg_occup
 
   avg_dew_point:
     aliases:
@@ -1941,7 +1941,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:avg_dew_point
+      - mixs:avg_dew_point
 
   avg_temp:
     aliases:
@@ -1954,7 +1954,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:avg_temp
+      - mixs:avg_temp
 
   bathroom_count:
     aliases:
@@ -1965,7 +1965,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:bathroom_count
+      - mixs:bathroom_count
 
   bedroom_count:
     aliases:
@@ -1976,7 +1976,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:bedroom_count
+      - mixs:bedroom_count
 
   built_struc_age:
     aliases:
@@ -1989,7 +1989,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:built_struc_age
+      - mixs:built_struc_age
 
   built_struc_set:
     aliases:
@@ -2001,7 +2001,7 @@ slots:
     range: text value  ## syntax: [urban|rural]
     pattern: "[urban|rural]"
     mappings:
-      - MIxS:built_struc_set
+      - mixs:built_struc_set
 
   built_struc_type:
     aliases:
@@ -2012,7 +2012,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:built_struc_type
+      - mixs:built_struc_type
 
   ceil_area:
     aliases:
@@ -2025,7 +2025,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:ceil_area
+      - mixs:ceil_area
 
   ceil_cond:
     aliases:
@@ -2037,7 +2037,7 @@ slots:
     range: text value  ## syntax: [new|visible wear|needs repair|damaged|rupture]
     pattern: "[new|visible wear|needs repair|damaged|rupture]"
     mappings:
-      - MIxS:ceil_cond
+      - mixs:ceil_cond
 
   ceil_finish_mat:
     aliases:
@@ -2049,7 +2049,7 @@ slots:
     range: text value  ## syntax: [drywall|mineral fibre|tiles|PVC|plasterboard|metal|fiberglass|stucco|mineral wool/calcium silicate|wood]
     pattern: "[drywall|mineral fibre|tiles|PVC|plasterboard|metal|fiberglass|stucco|mineral wool\\/calcium silicate|wood]"
     mappings:
-      - MIxS:ceil_finish_mat
+      - mixs:ceil_finish_mat
 
   ceil_water_mold:
     aliases:
@@ -2061,7 +2061,7 @@ slots:
     range: text value  ## syntax: [presence of mold visible|no presence of mold visible]
     pattern: "[presence of mold visible|no presence of mold visible]"
     mappings:
-      - MIxS:ceil_water_mold
+      - mixs:ceil_water_mold
 
   ceil_struc:
     aliases:
@@ -2073,7 +2073,7 @@ slots:
     range: text value  ## syntax: [wood frame|concrete]
     pattern: "[wood frame|concrete]"
     mappings:
-      - MIxS:ceil_struc
+      - mixs:ceil_struc
 
   ceil_texture:
     aliases:
@@ -2085,7 +2085,7 @@ slots:
     range: text value  ## syntax: [crows feet|crows-foot stomp|double skip|hawk and trowel|knockdown|popcorn|orange peel|rosebud stomp|Santa-Fe texture|skip trowel|smooth|stomp knockdown|swirl]
     pattern: "[crows feet|crows\\-foot stomp|double skip|hawk and trowel|knockdown|popcorn|orange peel|rosebud stomp|Santa\\-Fe texture|skip trowel|smooth|stomp knockdown|swirl]"
     mappings:
-      - MIxS:ceil_texture
+      - mixs:ceil_texture
 
   ceil_thermal_mass:
     aliases:
@@ -2098,7 +2098,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:ceil_thermal_mass
+      - mixs:ceil_thermal_mass
 
   ceil_type:
     aliases:
@@ -2110,7 +2110,7 @@ slots:
     range: text value  ## syntax: [cathedral|dropped|concave|barrel-shaped|coffered|cove|stretched]
     pattern: "[cathedral|dropped|concave|barrel\\-shaped|coffered|cove|stretched]"
     mappings:
-      - MIxS:ceil_type
+      - mixs:ceil_type
 
   cool_syst_id:
     aliases:
@@ -2121,7 +2121,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:cool_syst_id
+      - mixs:cool_syst_id
 
   date_last_rain:
     aliases:
@@ -2132,7 +2132,7 @@ slots:
     is_a: attribute
     range: timestamp value  ## syntax: {timestamp}
     mappings:
-      - MIxS:date_last_rain
+      - mixs:date_last_rain
 
   build_docs:
     aliases:
@@ -2144,7 +2144,7 @@ slots:
     range: text value  ## syntax: [building information model|commissioning report|complaint logs|contract administration|cost estimate|janitorial schedules or logs|maintenance plans|schedule|sections|shop drawings|submittals|ventilation system|windows] 
     pattern: "[building information model|commissioning report|complaint logs|contract administration|cost estimate|janitorial schedules or logs|maintenance plans|schedule|sections|shop drawings|submittals|ventilation system|windows] "
     mappings:
-      - MIxS:build_docs
+      - mixs:build_docs
 
   door_size:
     aliases:
@@ -2157,7 +2157,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:door_size
+      - mixs:door_size
 
   door_cond:
     aliases:
@@ -2169,7 +2169,7 @@ slots:
     range: text value  ## syntax: [damaged|needs repair|new|rupture|visible wear]
     pattern: "[damaged|needs repair|new|rupture|visible wear]"
     mappings:
-      - MIxS:door_cond
+      - mixs:door_cond
 
   door_direct:
     aliases:
@@ -2181,7 +2181,7 @@ slots:
     range: text value  ## syntax: [inward|outward|sideways]
     pattern: "[inward|outward|sideways]"
     mappings:
-      - MIxS:door_direct
+      - mixs:door_direct
 
   door_loc:
     aliases:
@@ -2193,7 +2193,7 @@ slots:
     range: text value  ## syntax: [north|south|east|west]
     pattern: "[north|south|east|west]"
     mappings:
-      - MIxS:door_loc
+      - mixs:door_loc
 
   door_mat:
     aliases:
@@ -2205,7 +2205,7 @@ slots:
     range: text value  ## syntax: [aluminum|cellular PVC|engineered plastic|fiberboard|fiberglass|metal|thermoplastic alloy|vinyl|wood|wood/plastic composite]
     pattern: "[aluminum|cellular PVC|engineered plastic|fiberboard|fiberglass|metal|thermoplastic alloy|vinyl|wood|wood\\/plastic composite]"
     mappings:
-      - MIxS:door_mat
+      - mixs:door_mat
 
   door_move:
     aliases:
@@ -2217,7 +2217,7 @@ slots:
     range: text value  ## syntax: [collapsible|folding|revolving|rolling shutter|sliding|swinging] 
     pattern: "[collapsible|folding|revolving|rolling shutter|sliding|swinging] "
     mappings:
-      - MIxS:door_move
+      - mixs:door_move
 
   door_water_mold:
     aliases:
@@ -2229,7 +2229,7 @@ slots:
     range: text value  ## syntax: [presence of mold visible|no presence of mold visible]
     pattern: "[presence of mold visible|no presence of mold visible]"
     mappings:
-      - MIxS:door_water_mold
+      - mixs:door_water_mold
 
   door_type:
     aliases:
@@ -2241,7 +2241,7 @@ slots:
     range: text value  ## syntax: [composite|metal|wooden]
     pattern: "[composite|metal|wooden]"
     mappings:
-      - MIxS:door_type
+      - mixs:door_type
 
   door_comp_type:
     aliases:
@@ -2253,7 +2253,7 @@ slots:
     range: text value  ## syntax: [metal covered|revolving|sliding|telescopic]
     pattern: "[metal covered|revolving|sliding|telescopic]"
     mappings:
-      - MIxS:door_comp_type
+      - mixs:door_comp_type
 
   door_type_metal:
     aliases:
@@ -2265,7 +2265,7 @@ slots:
     range: text value  ## syntax: [collapsible|corrugated steel|hollow|rolling shutters|steel plate]
     pattern: "[collapsible|corrugated steel|hollow|rolling shutters|steel plate]"
     mappings:
-      - MIxS:door_type_metal
+      - mixs:door_type_metal
 
   door_type_wood:
     aliases:
@@ -2277,7 +2277,7 @@ slots:
     range: text value  ## syntax: "[bettened and ledged|battened|ledged and braced|battened|ledged and framed|battened|ledged, braced and frame|framed and paneled|glashed or sash|flush|louvered|wire gauged]"
     pattern: "[bettened and ledged|battened|ledged and braced|battened|ledged and framed|battened|ledged, braced and frame|framed and paneled|glashed or sash|flush|louvered|wire gauged]"
     mappings:
-      - MIxS:door_type_wood
+      - mixs:door_type_wood
 
   drawings:
     aliases:
@@ -2289,7 +2289,7 @@ slots:
     range: text value  ## syntax: [operation|as built|construction|bid|design|building navigation map|diagram|sketch]
     pattern: "[operation|as built|construction|bid|design|building navigation map|diagram|sketch]"
     mappings:
-      - MIxS:drawings
+      - mixs:drawings
 
   elevator:
     aliases:
@@ -2300,7 +2300,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:elevator
+      - mixs:elevator
 
   escalator:
     aliases:
@@ -2311,7 +2311,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:escalator
+      - mixs:escalator
 
   exp_duct:
     aliases:
@@ -2324,7 +2324,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:exp_duct
+      - mixs:exp_duct
 
   exp_pipe:
     aliases:
@@ -2335,7 +2335,7 @@ slots:
     is_a: attribute
     range: quantity value  ## syntax: {integer}
     mappings:
-      - MIxS:exp_pipe
+      - mixs:exp_pipe
 
   ext_door:
     aliases:
@@ -2346,7 +2346,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:ext_door
+      - mixs:ext_door
 
   fireplace_type:
     aliases:
@@ -2358,7 +2358,7 @@ slots:
     range: text value  ## syntax: [gas burning|wood burning]
     pattern: "[gas burning|wood burning]"
     mappings:
-      - MIxS:fireplace_type
+      - mixs:fireplace_type
 
   floor_age:
     aliases:
@@ -2371,7 +2371,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:floor_age
+      - mixs:floor_age
 
   floor_area:
     aliases:
@@ -2384,7 +2384,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:floor_area
+      - mixs:floor_area
 
   floor_cond:
     aliases:
@@ -2396,7 +2396,7 @@ slots:
     range: text value  ## syntax: [new|visible wear|needs repair|damaged|rupture]
     pattern: "[new|visible wear|needs repair|damaged|rupture]"
     mappings:
-      - MIxS:floor_cond
+      - mixs:floor_cond
 
   floor_count:
     aliases:
@@ -2407,7 +2407,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:floor_count
+      - mixs:floor_count
 
   floor_finish_mat:
     aliases:
@@ -2419,7 +2419,7 @@ slots:
     range: text value  ## syntax: [tile|wood strip or parquet|carpet|rug|laminate wood|lineoleum|vinyl composition tile|sheet vinyl|stone|bamboo|cork|terrazo|concrete|none;specify unfinished|sealed|clear finish|paint]
     pattern: "[tile|wood strip or parquet|carpet|rug|laminate wood|lineoleum|vinyl composition tile|sheet vinyl|stone|bamboo|cork|terrazo|concrete|none;specify unfinished|sealed|clear finish|paint]"
     mappings:
-      - MIxS:floor_finish_mat
+      - mixs:floor_finish_mat
 
   floor_water_mold:
     aliases:
@@ -2431,7 +2431,7 @@ slots:
     range: text value  ## syntax: [mold odor|wet floor|water stains|wall discoloration|floor discoloration|ceiling discoloration|peeling paint or wallpaper|bulging walls|condensation]
     pattern: "[mold odor|wet floor|water stains|wall discoloration|floor discoloration|ceiling discoloration|peeling paint or wallpaper|bulging walls|condensation]"
     mappings:
-      - MIxS:floor_water_mold
+      - mixs:floor_water_mold
 
   floor_struc:
     aliases:
@@ -2443,7 +2443,7 @@ slots:
     range: text value  ## syntax: [balcony|floating floor|glass floor|raised floor|sprung floor|wood-framed|concrete]
     pattern: "[balcony|floating floor|glass floor|raised floor|sprung floor|wood\\-framed|concrete]"
     mappings:
-      - MIxS:floor_struc
+      - mixs:floor_struc
 
   floor_thermal_mass:
     aliases:
@@ -2456,7 +2456,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:floor_thermal_mass
+      - mixs:floor_thermal_mass
 
   freq_clean:
     aliases:
@@ -2467,7 +2467,7 @@ slots:
     is_a: attribute
     range: quantity value  ## syntax: {integer}
     mappings:
-      - MIxS:freq_clean
+      - mixs:freq_clean
 
   freq_cook:
     aliases:
@@ -2478,7 +2478,7 @@ slots:
     is_a: attribute
     range: quantity value  ## syntax: {integer}
     mappings:
-      - MIxS:freq_cook
+      - mixs:freq_cook
 
   furniture:
     aliases:
@@ -2490,7 +2490,7 @@ slots:
     range: text value  ## syntax: [cabinet|chair|desks]
     pattern: "[cabinet|chair|desks]"
     mappings:
-      - MIxS:furniture
+      - mixs:furniture
 
   gender_restroom:
     aliases:
@@ -2502,7 +2502,7 @@ slots:
     range: text value  ## syntax: [male|female]
     pattern: "[male|female]"
     mappings:
-      - MIxS:gender_restroom
+      - mixs:gender_restroom
 
   hall_count:
     aliases:
@@ -2513,7 +2513,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:hall_count
+      - mixs:hall_count
 
   handidness:
     aliases:
@@ -2525,7 +2525,7 @@ slots:
     range: text value  ## syntax: [ambidexterity|left handedness|mixed-handedness|right handedness]
     pattern: "[ambidexterity|left handedness|mixed\\-handedness|right handedness]"
     mappings:
-      - MIxS:handidness
+      - mixs:handidness
 
   heat_deliv_loc:
     aliases:
@@ -2537,7 +2537,7 @@ slots:
     range: text value  ## syntax: [north|south|east|west]
     pattern: "[north|south|east|west]"
     mappings:
-      - MIxS:heat_deliv_loc
+      - mixs:heat_deliv_loc
 
   heat_system_deliv_meth:
     aliases:
@@ -2549,7 +2549,7 @@ slots:
     range: text value  ## syntax: [conductive|radiant]
     pattern: "[conductive|radiant]"
     mappings:
-      - MIxS:heat_system_deliv_meth
+      - mixs:heat_system_deliv_meth
 
   heat_system_id:
     aliases:
@@ -2560,7 +2560,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:heat_system_id
+      - mixs:heat_system_id
 
   height_carper_fiber:
     aliases:
@@ -2573,7 +2573,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:height_carper_fiber
+      - mixs:height_carper_fiber
 
   inside_lux:
     aliases:
@@ -2586,7 +2586,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:inside_lux
+      - mixs:inside_lux
 
   int_wall_cond:
     aliases:
@@ -2598,7 +2598,7 @@ slots:
     range: text value  ## syntax: [new|visible wear|needs repair|damaged|rupture]
     pattern: "[new|visible wear|needs repair|damaged|rupture]"
     mappings:
-      - MIxS:int_wall_cond
+      - mixs:int_wall_cond
 
   last_clean:
     aliases:
@@ -2609,7 +2609,7 @@ slots:
     is_a: attribute
     range: timestamp value  ## syntax: {timestamp}
     mappings:
-      - MIxS:last_clean
+      - mixs:last_clean
 
   max_occup:
     aliases:
@@ -2620,7 +2620,7 @@ slots:
     is_a: attribute
     range: quantity value  ## syntax: {integer}
     mappings:
-      - MIxS:max_occup
+      - mixs:max_occup
 
   mech_struc:
     aliases:
@@ -2632,7 +2632,7 @@ slots:
     range: text value  ## syntax: [subway|coach|carriage|elevator|escalator|boat|train|car|bus]
     pattern: "[subway|coach|carriage|elevator|escalator|boat|train|car|bus]"
     mappings:
-      - MIxS:mech_struc
+      - mixs:mech_struc
 
   number_plants:
     aliases:
@@ -2643,7 +2643,7 @@ slots:
     is_a: attribute
     range: quantity value  ## syntax: {integer}
     mappings:
-      - MIxS:number_plants
+      - mixs:number_plants
 
   number_pets:
     aliases:
@@ -2654,7 +2654,7 @@ slots:
     is_a: attribute
     range: quantity value  ## syntax: {integer}
     mappings:
-      - MIxS:number_pets
+      - mixs:number_pets
 
   number_resident:
     aliases:
@@ -2665,7 +2665,7 @@ slots:
     is_a: attribute
     range: quantity value  ## syntax: {integer}
     mappings:
-      - MIxS:number_resident
+      - mixs:number_resident
 
   occup_document:
     aliases:
@@ -2677,7 +2677,7 @@ slots:
     range: text value  ## syntax: [automated count|estimate|manual count|videos]
     pattern: "[automated count|estimate|manual count|videos]"
     mappings:
-      - MIxS:occup_document
+      - mixs:occup_document
 
   ext_wall_orient:
     aliases:
@@ -2689,7 +2689,7 @@ slots:
     range: text value  ## syntax: [north|south|east|west|northeast|southeast|southwest|northwest]
     pattern: "[north|south|east|west|northeast|southeast|southwest|northwest]"
     mappings:
-      - MIxS:ext_wall_orient
+      - mixs:ext_wall_orient
 
   ext_window_orient:
     aliases:
@@ -2701,7 +2701,7 @@ slots:
     range: text value  ## syntax: [north|south|east|west|northeast|southeast|southwest|northwest]
     pattern: "[north|south|east|west|northeast|southeast|southwest|northwest]"
     mappings:
-      - MIxS:ext_window_orient
+      - mixs:ext_window_orient
 
   rel_humidity_out:
     aliases:
@@ -2714,7 +2714,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:rel_humidity_out
+      - mixs:rel_humidity_out
 
   pres_animal:
     aliases:
@@ -2725,7 +2725,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: [cat|dog|rodent|snake|other];{integer}
     mappings:
-      - MIxS:pres_animal
+      - mixs:pres_animal
 
   quad_pos:
     aliases:
@@ -2737,7 +2737,7 @@ slots:
     range: text value  ## syntax: [North side|West side|South side|East side]
     pattern: "[North side|West side|South side|East side]"
     mappings:
-      - MIxS:quad_pos
+      - mixs:quad_pos
 
   rel_samp_loc:
     aliases:
@@ -2749,7 +2749,7 @@ slots:
     range: text value  ## syntax: [edge of car|center of car|under a seat]
     pattern: "[edge of car|center of car|under a seat]"
     mappings:
-      - MIxS:rel_samp_loc
+      - mixs:rel_samp_loc
 
   room_air_exch_rate:
     aliases:
@@ -2762,7 +2762,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:room_air_exch_rate
+      - mixs:room_air_exch_rate
 
   room_architec_element:
     aliases:
@@ -2773,7 +2773,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:room_architec_element
+      - mixs:room_architec_element
 
   room_condt:
     aliases:
@@ -2785,7 +2785,7 @@ slots:
     range: text value  ## syntax: [new|visible wear|needs repair|damaged|rupture|visible signs of mold/mildew]
     pattern: "[new|visible wear|needs repair|damaged|rupture|visible signs of mold\\/mildew]"
     mappings:
-      - MIxS:room_condt
+      - mixs:room_condt
 
   room_count:
     aliases:
@@ -2796,7 +2796,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:room_count
+      - mixs:room_count
 
   room_dim:
     aliases:
@@ -2808,7 +2808,7 @@ slots:
     range: quantity value  ## syntax: {integer} {unit} x {integer} {unit} x {integer} {unit}
     string_serialization: "{integer} {unit} x {integer} {unit} x {integer} {unit}"
     mappings:
-      - MIxS:room_dim
+      - mixs:room_dim
 
   room_door_dist:
     aliases:
@@ -2820,7 +2820,7 @@ slots:
     range: quantity value  ## syntax: {integer} {unit}
     string_serialization: "{integer} {unit}"
     mappings:
-      - MIxS:room_door_dist
+      - mixs:room_door_dist
 
   room_loc:
     aliases:
@@ -2832,7 +2832,7 @@ slots:
     range: text value  ## syntax: [corner room|interior room|exterior wall]
     pattern: "[corner room|interior room|exterior wall]"
     mappings:
-      - MIxS:room_loc
+      - mixs:room_loc
 
   room_moist_damage_hist:
     aliases:
@@ -2843,7 +2843,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:room_moist_damage_hist
+      - mixs:room_moist_damage_hist
 
   room_net_area:
     aliases:
@@ -2855,7 +2855,7 @@ slots:
     range: quantity value  ## syntax: {integer} {unit}
     string_serialization: "{integer} {unit}"
     mappings:
-      - MIxS:room_net_area
+      - mixs:room_net_area
 
   room_occup:
     aliases:
@@ -2866,7 +2866,7 @@ slots:
     is_a: attribute
     range: quantity value  ## syntax: {integer}
     mappings:
-      - MIxS:room_occup
+      - mixs:room_occup
 
   room_samp_pos:
     aliases:
@@ -2878,7 +2878,7 @@ slots:
     range: text value  ## syntax: [north corner|south corner|west corner|east corner|northeast corner|northwest corner|southeast corner|southwest corner|center]
     pattern: "[north corner|south corner|west corner|east corner|northeast corner|northwest corner|southeast corner|southwest corner|center]"
     mappings:
-      - MIxS:room_samp_pos
+      - mixs:room_samp_pos
 
   room_type:
     aliases:
@@ -2890,7 +2890,7 @@ slots:
     range: text value  ## syntax: "[attic|bathroom|closet|conference room|elevator|examining room|hallway|kitchen|mail room|private office|open office|stairwell|,restroom|lobby|vestibule|mechanical or electrical room|data center|laboratory_wet|laboratory_dry|gymnasium|natatorium|auditorium|lockers|cafe|warehouse] "
     pattern: "[attic|bathroom|closet|conference room|elevator|examining room|hallway|kitchen|mail room|private office|open office|stairwell|,restroom|lobby|vestibule|mechanical or electrical room|data center|laboratory_wet|laboratory_dry|gymnasium|natatorium|auditorium|lockers|cafe|warehouse]"
     mappings:
-      - MIxS:room_type
+      - mixs:room_type
 
   room_vol:
     aliases:
@@ -2902,7 +2902,7 @@ slots:
     range: quantity value  ## syntax: {integer} {unit}
     string_serialization: "{integer} {unit}"
     mappings:
-      - MIxS:room_vol
+      - mixs:room_vol
 
   room_window_count:
     aliases:
@@ -2913,7 +2913,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:room_window_count
+      - mixs:room_window_count
 
   room_connected:
     aliases:
@@ -2925,7 +2925,7 @@ slots:
     range: text value  ## syntax: [attic|bathroom|closet|conference room|elevator|examining room|hallway|kitchen|mail room|office|stairwell]
     pattern: "[attic|bathroom|closet|conference room|elevator|examining room|hallway|kitchen|mail room|office|stairwell]"
     mappings:
-      - MIxS:room_connected
+      - mixs:room_connected
 
   room_hallway:
     aliases:
@@ -2936,7 +2936,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text};{integer}
     mappings:
-      - MIxS:room_hallway
+      - mixs:room_hallway
 
   room_door_share:
     aliases:
@@ -2947,7 +2947,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text};{integer}
     mappings:
-      - MIxS:room_door_share
+      - mixs:room_door_share
 
   room_wall_share:
     aliases:
@@ -2958,7 +2958,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text};{integer}
     mappings:
-      - MIxS:room_wall_share
+      - mixs:room_wall_share
 
   samp_weather:
     aliases:
@@ -2970,7 +2970,7 @@ slots:
     range: text value  ## syntax: [clear sky|cloudy|foggy|hail|rain|snow|sleet|sunny|windy]
     pattern: "[clear sky|cloudy|foggy|hail|rain|snow|sleet|sunny|windy]"
     mappings:
-      - MIxS:samp_weather
+      - mixs:samp_weather
 
   samp_floor:
     aliases:
@@ -2981,7 +2981,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: [lobby|basement|1st floor|2nd floor|{integer} floor]
     mappings:
-      - MIxS:samp_floor
+      - mixs:samp_floor
 
   samp_room_id:
     aliases:
@@ -2992,7 +2992,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:samp_room_id
+      - mixs:samp_room_id
 
   samp_time_out:
     aliases:
@@ -3004,7 +3004,7 @@ slots:
     range: text value  ## syntax: {float}
     pattern: "\\d+[.\\d+]"
     mappings:
-      - MIxS:samp_time_out
+      - mixs:samp_time_out
 
   season:
     aliases:
@@ -3016,7 +3016,7 @@ slots:
     range: text value  ## syntax: [Spring|Summer|Fall|Winter]
     pattern: "[Spring|Summer|Fall|Winter]"
     mappings:
-      - MIxS:season
+      - mixs:season
 
   season_use:
     aliases:
@@ -3028,7 +3028,7 @@ slots:
     range: text value  ## syntax: [Spring|Summer|Fall|Winter]
     pattern: "[Spring|Summer|Fall|Winter]"
     mappings:
-      - MIxS:season_use
+      - mixs:season_use
 
   shading_device_cond:
     aliases:
@@ -3040,7 +3040,7 @@ slots:
     range: text value  ## syntax: [damaged|needs repair|new|rupture|visible wear]
     pattern: "[damaged|needs repair|new|rupture|visible wear]"
     mappings:
-      - MIxS:shading_device_cond
+      - mixs:shading_device_cond
 
   shading_device_loc:
     aliases:
@@ -3052,7 +3052,7 @@ slots:
     range: text value  ## syntax: [exterior|interior]
     pattern: "[exterior|interior]"
     mappings:
-      - MIxS:shading_device_loc
+      - mixs:shading_device_loc
 
   shading_device_mat:
     aliases:
@@ -3063,7 +3063,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:shading_device_mat
+      - mixs:shading_device_mat
 
   shading_device_water_mold:
     aliases:
@@ -3075,7 +3075,7 @@ slots:
     range: text value  ## syntax: [presence of mold visible|no presence of mold visible]
     pattern: "[presence of mold visible|no presence of mold visible]"
     mappings:
-      - MIxS:shading_device_water_mold
+      - mixs:shading_device_water_mold
 
   shading_device_type:
     aliases:
@@ -3087,7 +3087,7 @@ slots:
     range: text value  ## syntax: [bahama shutters|exterior roll blind|gambrel awning|hood awning|porchroller awning|sarasota shutters|slatted aluminum|solid aluminum awning|sun screen|tree|trellis|venetian awning]
     pattern: "[bahama shutters|exterior roll blind|gambrel awning|hood awning|porchroller awning|sarasota shutters|slatted aluminum|solid aluminum awning|sun screen|tree|trellis|venetian awning]"
     mappings:
-      - MIxS:shading_device_type
+      - mixs:shading_device_type
 
   specific_humidity:
     aliases:
@@ -3100,7 +3100,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:specific_humidity
+      - mixs:specific_humidity
 
   specific:
     aliases:
@@ -3112,7 +3112,7 @@ slots:
     range: text value  ## syntax: [operation|as built|construction|bid|design|photos]
     pattern: "[operation|as built|construction|bid|design|photos]"
     mappings:
-      - MIxS:specific
+      - mixs:specific
 
   temp_out:
     aliases:
@@ -3125,7 +3125,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:temp_out
+      - mixs:temp_out
 
   train_line:
     aliases:
@@ -3137,7 +3137,7 @@ slots:
     range: text value  ## syntax: [red|green|orange]
     pattern: "[red|green|orange]"
     mappings:
-      - MIxS:train_line
+      - mixs:train_line
 
   train_stat_loc:
     aliases:
@@ -3149,7 +3149,7 @@ slots:
     range: text value  ## syntax: [south station above ground|south station underground|south station amtrak|forest hills|riverside]
     pattern: "[south station above ground|south station underground|south station amtrak|forest hills|riverside]"
     mappings:
-      - MIxS:train_stat_loc
+      - mixs:train_stat_loc
 
   train_stop_loc:
     aliases:
@@ -3161,7 +3161,7 @@ slots:
     range: text value  ## syntax: [end|mid|downtown]
     pattern: "[end|mid|downtown]"
     mappings:
-      - MIxS:train_stop_loc
+      - mixs:train_stop_loc
 
   vis_media:
     aliases:
@@ -3173,7 +3173,7 @@ slots:
     range: text value  ## syntax: "[photos|videos|commonly of the building|site context (adjacent buildings, vegetation, terrain, streets)|interiors|equipment|3D scans]"
     pattern: "[photos|videos|commonly of the building|site context (adjacent buildings, vegetation, terrain, streets)|interiors|equipment|3D scans]"
     mappings:
-      - MIxS:vis_media
+      - mixs:vis_media
 
   wall_area:
     aliases:
@@ -3186,7 +3186,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:wall_area
+      - mixs:wall_area
 
   wall_const_type:
     aliases:
@@ -3198,7 +3198,7 @@ slots:
     range: text value  ## syntax: [frame construction|joisted masonry|light noncombustible|masonry noncombustible|modified fire resistive|fire resistive]
     pattern: "[frame construction|joisted masonry|light noncombustible|masonry noncombustible|modified fire resistive|fire resistive]"
     mappings:
-      - MIxS:wall_const_type
+      - mixs:wall_const_type
 
   wall_finish_mat:
     aliases:
@@ -3210,7 +3210,7 @@ slots:
     range: text value  ## syntax: [plaster|gypsum plaster|veneer plaster|gypsum board|tile|terrazzo|stone facing|acoustical treatment|wood|metal|masonry]
     pattern: "[plaster|gypsum plaster|veneer plaster|gypsum board|tile|terrazzo|stone facing|acoustical treatment|wood|metal|masonry]"
     mappings:
-      - MIxS:wall_finish_mat
+      - mixs:wall_finish_mat
 
   wall_height:
     aliases:
@@ -3223,7 +3223,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:wall_height
+      - mixs:wall_height
 
   wall_loc:
     aliases:
@@ -3235,7 +3235,7 @@ slots:
     range: text value  ## syntax: [north|south|east|west]
     pattern: "[north|south|east|west]"
     mappings:
-      - MIxS:wall_loc
+      - mixs:wall_loc
 
   wall_water_mold:
     aliases:
@@ -3247,7 +3247,7 @@ slots:
     range: text value  ## syntax: [presence of mold visible|no presence of mold visible]
     pattern: "[presence of mold visible|no presence of mold visible]"
     mappings:
-      - MIxS:wall_water_mold
+      - mixs:wall_water_mold
 
   wall_surf_treatment:
     aliases:
@@ -3259,7 +3259,7 @@ slots:
     range: text value  ## syntax: [painted|wall paper|no treatment|paneling|stucco|fabric]
     pattern: "[painted|wall paper|no treatment|paneling|stucco|fabric]"
     mappings:
-      - MIxS:wall_surf_treatment
+      - mixs:wall_surf_treatment
 
   wall_texture:
     aliases:
@@ -3271,7 +3271,7 @@ slots:
     range: text value  ## syntax: [crows feet|crows-foot stomp||double skip|hawk and trowel|knockdown|popcorn|orange peel|rosebud stomp|Santa-Fe texture|skip trowel|smooth|stomp knockdown|swirl]
     pattern: "[crows feet|crows\\-foot stomp|double skip|hawk and trowel|knockdown|popcorn|orange peel|rosebud stomp|Santa\\-Fe texture|skip trowel|smooth|stomp knockdown|swirl]"
     mappings:
-      - MIxS:wall_texture
+      - mixs:wall_texture
 
   wall_thermal_mass:
     aliases:
@@ -3284,7 +3284,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:wall_thermal_mass
+      - mixs:wall_thermal_mass
 
   water_feat_size:
     aliases:
@@ -3297,7 +3297,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:water_feat_size
+      - mixs:water_feat_size
 
   water_feat_type:
     aliases:
@@ -3309,7 +3309,7 @@ slots:
     range: text value  ## syntax: [fountain|pool|standing feature|stream|waterfall]
     pattern: "[fountain|pool|standing feature|stream|waterfall]"
     mappings:
-      - MIxS:water_feat_type
+      - mixs:water_feat_type
 
   weekday:
     aliases:
@@ -3321,7 +3321,7 @@ slots:
     range: text value  ## syntax: [Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday]
     pattern: "[Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday]"
     mappings:
-      - MIxS:weekday
+      - mixs:weekday
 
   window_size:
     aliases:
@@ -3334,7 +3334,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+ x \\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit} x {float} {unit}"
     mappings:
-      - MIxS:window_size
+      - mixs:window_size
 
   window_cond:
     aliases:
@@ -3346,7 +3346,7 @@ slots:
     range: text value  ## syntax: [damaged|needs repair|new|rupture|visible wear]
     pattern: "[damaged|needs repair|new|rupture|visible wear]"
     mappings:
-      - MIxS:window_cond
+      - mixs:window_cond
 
   window_cover:
     aliases:
@@ -3358,7 +3358,7 @@ slots:
     range: text value  ## syntax: [blinds|curtains|none]
     pattern: "[blinds|curtains|none]"
     mappings:
-      - MIxS:window_cover
+      - mixs:window_cover
 
   window_horiz_pos:
     aliases:
@@ -3370,7 +3370,7 @@ slots:
     range: text value  ## syntax: [left|middle|right]
     pattern: "[left|middle|right]"
     mappings:
-      - MIxS:window_horiz_pos
+      - mixs:window_horiz_pos
 
   window_loc:
     aliases:
@@ -3382,7 +3382,7 @@ slots:
     range: text value  ## syntax: [north|south|east|west]
     pattern: "[north|south|east|west]"
     mappings:
-      - MIxS:window_loc
+      - mixs:window_loc
 
   window_mat:
     aliases:
@@ -3394,7 +3394,7 @@ slots:
     range: text value  ## syntax: [clad|fiberglass|metal|vinyl|wood]
     pattern: "[clad|fiberglass|metal|vinyl|wood]"
     mappings:
-      - MIxS:window_mat
+      - mixs:window_mat
 
   window_open_freq:
     aliases:
@@ -3405,7 +3405,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:window_open_freq
+      - mixs:window_open_freq
 
   window_water_mold:
     aliases:
@@ -3417,7 +3417,7 @@ slots:
     range: text value  ## syntax: [presence of mold visible|no presence of mold visible]
     pattern: "[presence of mold visible|no presence of mold visible]"
     mappings:
-      - MIxS:window_water_mold
+      - mixs:window_water_mold
 
   window_status:
     aliases:
@@ -3429,7 +3429,7 @@ slots:
     range: text value  ## syntax: [closed|open]
     pattern: "[closed|open]"
     mappings:
-      - MIxS:window_status
+      - mixs:window_status
 
   window_type:
     aliases:
@@ -3441,7 +3441,7 @@ slots:
     range: text value  ## syntax: [single-hung sash window|horizontal sash window|fixed window] 
     pattern: "[single\\-hung sash window|horizontal sash window|fixed window] "
     mappings:
-      - MIxS:window_type
+      - mixs:window_type
 
   window_vert_pos:
     aliases:
@@ -3453,7 +3453,7 @@ slots:
     range: text value  ## syntax: [bottom|middle|top|low|middle|high]
     pattern: "[bottom|middle|top|low|middle|high]"
     mappings:
-      - MIxS:window_vert_pos
+      - mixs:window_vert_pos
 
   ances_data:
     aliases:
@@ -3464,7 +3464,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:ances_data
+      - mixs:ances_data
 
   biol_stat:
     aliases:
@@ -3476,7 +3476,7 @@ slots:
     range: text value  ## syntax: [wild|natural|semi-natural|inbred line|breeder's line|hybrid|clonal selection|mutant]
     pattern: "[wild|natural|semi\\-natural|inbred line|breeder\\'s line|hybrid|clonal selection|mutant]"
     mappings:
-      - MIxS:biol_stat
+      - mixs:biol_stat
 
   genetic_mod:
     aliases:
@@ -3487,7 +3487,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}|{text}
     mappings:
-      - MIxS:genetic_mod
+      - mixs:genetic_mod
 
   host_common_name:
     aliases:
@@ -3498,7 +3498,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:host_common_name
+      - mixs:host_common_name
 
   samp_capt_status:
     aliases:
@@ -3510,7 +3510,7 @@ slots:
     range: text value  ## syntax: [active surveillance in response to an outbreak|active surveillance not initiated by an outbreak|farm sample|market sample|other]
     pattern: "[active surveillance in response to an outbreak|active surveillance not initiated by an outbreak|farm sample|market sample|other]"
     mappings:
-      - MIxS:samp_capt_status
+      - mixs:samp_capt_status
 
   samp_dis_stage:
     aliases:
@@ -3521,7 +3521,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:samp_dis_stage
+      - mixs:samp_dis_stage
 
   host_taxid:
     aliases:
@@ -3532,7 +3532,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {NCBI taxid}
     mappings:
-      - MIxS:host_taxid
+      - mixs:host_taxid
 
   host_subject_id:
     aliases:
@@ -3543,7 +3543,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:host_subject_id
+      - mixs:host_subject_id
 
   host_age:
     aliases:
@@ -3556,7 +3556,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:host_age
+      - mixs:host_age
 
   host_life_stage:
     aliases:
@@ -3567,7 +3567,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:host_life_stage
+      - mixs:host_life_stage
 
   host_sex:
     aliases:
@@ -3579,7 +3579,7 @@ slots:
     range: text value  ## syntax: [male|female|neuter|hermaphrodite|not determined]
     pattern: "[male|female|neuter|hermaphrodite|not determined]"
     mappings:
-      - MIxS:host_sex
+      - mixs:host_sex
 
   host_disease_stat:
     aliases:
@@ -3590,7 +3590,7 @@ slots:
     is_a: attribute
     range: controlled term value  ## syntax: {termLabel} {[termID]}|{text}
     mappings:
-      - MIxS:host_disease_stat
+      - mixs:host_disease_stat
 
   host_body_habitat:
     aliases:
@@ -3601,7 +3601,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:host_body_habitat
+      - mixs:host_body_habitat
 
   host_body_site:
     aliases:
@@ -3613,7 +3613,7 @@ slots:
     range: controlled term value  ## syntax: {termLabel} {[termID]}
     pattern: ".* \\S+:\\S+"
     mappings:
-      - MIxS:host_body_site
+      - mixs:host_body_site
 
   host_body_product:
     aliases:
@@ -3625,7 +3625,7 @@ slots:
     range: controlled term value  ## syntax: {termLabel} {[termID]}
     pattern: ".* \\S+:\\S+"
     mappings:
-      - MIxS:host_body_product
+      - mixs:host_body_product
 
   host_tot_mass:
     aliases:
@@ -3638,7 +3638,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:host_tot_mass
+      - mixs:host_tot_mass
 
   host_height:
     aliases:
@@ -3651,7 +3651,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:host_height
+      - mixs:host_height
 
   host_length:
     aliases:
@@ -3664,7 +3664,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:host_length
+      - mixs:host_length
 
   host_diet:
     aliases:
@@ -3675,7 +3675,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:host_diet
+      - mixs:host_diet
 
   host_last_meal:
     aliases:
@@ -3686,7 +3686,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text};{duration}
     mappings:
-      - MIxS:host_last_meal
+      - mixs:host_last_meal
 
   host_growth_cond:
     aliases:
@@ -3697,7 +3697,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}|{text}
     mappings:
-      - MIxS:host_growth_cond
+      - mixs:host_growth_cond
 
   host_substrate:
     aliases:
@@ -3708,7 +3708,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:host_substrate
+      - mixs:host_substrate
 
   host_family_relationship:
     aliases:
@@ -3719,7 +3719,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text};{text}
     mappings:
-      - MIxS:host_family_relationship
+      - mixs:host_family_relationship
 
   host_infra_specific_name:
     aliases:
@@ -3730,7 +3730,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:host_infra_specific_name
+      - mixs:host_infra_specific_name
 
   host_infra_specific_rank:
     aliases:
@@ -3741,7 +3741,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:host_infra_specific_rank
+      - mixs:host_infra_specific_rank
 
   host_genotype:
     aliases:
@@ -3752,7 +3752,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:host_genotype
+      - mixs:host_genotype
 
   host_phenotype:
     aliases:
@@ -3764,7 +3764,7 @@ slots:
     range: controlled term value  ## syntax: {termLabel} {[termID]}
     pattern: ".* \\S+:\\S+"
     mappings:
-      - MIxS:host_phenotype
+      - mixs:host_phenotype
 
   host_body_temp:
     aliases:
@@ -3777,7 +3777,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:host_body_temp
+      - mixs:host_body_temp
 
   host_dry_mass:
     aliases:
@@ -3790,7 +3790,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:host_dry_mass
+      - mixs:host_dry_mass
 
   host_blood_press_diast:
     aliases:
@@ -3803,7 +3803,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:host_blood_press_diast
+      - mixs:host_blood_press_diast
 
   host_blood_press_syst:
     aliases:
@@ -3816,7 +3816,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:host_blood_press_syst
+      - mixs:host_blood_press_syst
 
   host_color:
     aliases:
@@ -3827,7 +3827,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:host_color
+      - mixs:host_color
 
   host_shape:
     aliases:
@@ -3838,7 +3838,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:host_shape
+      - mixs:host_shape
 
   gravidity:
     aliases:
@@ -3849,7 +3849,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {boolean};{timestamp}
     mappings:
-      - MIxS:gravidity
+      - mixs:gravidity
 
   ihmc_medication_code:
     aliases:
@@ -3860,7 +3860,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:ihmc_medication_code
+      - mixs:ihmc_medication_code
 
   smoker:
     aliases:
@@ -3872,7 +3872,7 @@ slots:
     range: boolean value  ## syntax: {boolean}
     pattern: "[true|false]"
     mappings:
-      - MIxS:smoker
+      - mixs:smoker
 
   host_hiv_stat:
     aliases:
@@ -3884,7 +3884,7 @@ slots:
     range: text value  ## syntax: {boolean};{boolean}
     pattern: "[true|false];[true|false]"
     mappings:
-      - MIxS:host_hiv_stat
+      - mixs:host_hiv_stat
 
   drug_usage:
     aliases:
@@ -3895,7 +3895,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text};{integer}/[year|month|week|day|hour]
     mappings:
-      - MIxS:drug_usage
+      - mixs:drug_usage
 
   host_body_mass_index:
     aliases:
@@ -3908,7 +3908,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:host_body_mass_index
+      - mixs:host_body_mass_index
 
   diet_last_six_month:
     aliases:
@@ -3919,7 +3919,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {boolean};{text}
     mappings:
-      - MIxS:diet_last_six_month
+      - mixs:diet_last_six_month
 
   weight_loss_3_month:
     aliases:
@@ -3932,7 +3932,7 @@ slots:
     pattern: "[true|false];\\d+[.\\d+] \\S+"
     string_serialization: "{boolean};{float} {unit}"
     mappings:
-      - MIxS:weight_loss_3_month
+      - mixs:weight_loss_3_month
 
   ihmc_ethnicity:
     aliases:
@@ -3943,7 +3943,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}|{text}
     mappings:
-      - MIxS:ihmc_ethnicity
+      - mixs:ihmc_ethnicity
 
   host_occupation:
     aliases:
@@ -3954,7 +3954,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {integer}
     mappings:
-      - MIxS:host_occupation
+      - mixs:host_occupation
 
   pet_farm_animal:
     aliases:
@@ -3965,7 +3965,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {boolean};{text}
     mappings:
-      - MIxS:pet_farm_animal
+      - mixs:pet_farm_animal
 
   travel_out_six_month:
     aliases:
@@ -3976,7 +3976,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:travel_out_six_month
+      - mixs:travel_out_six_month
 
   twin_sibling:
     aliases:
@@ -3988,7 +3988,7 @@ slots:
     range: boolean value  ## syntax: {boolean}
     pattern: "[true|false]"
     mappings:
-      - MIxS:twin_sibling
+      - mixs:twin_sibling
 
   medic_hist_perform:
     aliases:
@@ -4000,7 +4000,7 @@ slots:
     range: boolean value  ## syntax: {boolean}
     pattern: "[true|false]"
     mappings:
-      - MIxS:medic_hist_perform
+      - mixs:medic_hist_perform
 
   study_complt_stat:
     aliases:
@@ -4012,7 +4012,7 @@ slots:
     range: text value  ## syntax: {boolean};[adverse event|non-compliance|lost to follow up|other-specify]
     pattern: "[true|false];[adverse event|non\\-compliance|lost to follow up|other\\-specify]"
     mappings:
-      - MIxS:study_complt_stat
+      - mixs:study_complt_stat
 
   pulmonary_disord:
     aliases:
@@ -4023,7 +4023,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:pulmonary_disord
+      - mixs:pulmonary_disord
 
   nose_throat_disord:
     aliases:
@@ -4034,7 +4034,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:nose_throat_disord
+      - mixs:nose_throat_disord
 
   blood_blood_disord:
     aliases:
@@ -4045,7 +4045,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:blood_blood_disord
+      - mixs:blood_blood_disord
 
   host_pulse:
     aliases:
@@ -4058,7 +4058,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:host_pulse
+      - mixs:host_pulse
 
   gestation_state:
     aliases:
@@ -4069,7 +4069,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:gestation_state
+      - mixs:gestation_state
 
   maternal_health_stat:
     aliases:
@@ -4080,7 +4080,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:maternal_health_stat
+      - mixs:maternal_health_stat
 
   foetal_health_stat:
     aliases:
@@ -4091,7 +4091,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:foetal_health_stat
+      - mixs:foetal_health_stat
 
   amniotic_fluid_color:
     aliases:
@@ -4102,7 +4102,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:amniotic_fluid_color
+      - mixs:amniotic_fluid_color
 
   kidney_disord:
     aliases:
@@ -4113,7 +4113,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:kidney_disord
+      - mixs:kidney_disord
 
   urogenit_tract_disor:
     aliases:
@@ -4124,7 +4124,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:urogenit_tract_disor
+      - mixs:urogenit_tract_disor
 
   urine_collect_meth:
     aliases:
@@ -4136,7 +4136,7 @@ slots:
     range: text value  ## syntax: [clean catch|catheter]
     pattern: "[clean catch|catheter]"
     mappings:
-      - MIxS:urine_collect_meth
+      - mixs:urine_collect_meth
 
   gastrointest_disord:
     aliases:
@@ -4147,7 +4147,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:gastrointest_disord
+      - mixs:gastrointest_disord
 
   liver_disord:
     aliases:
@@ -4158,7 +4158,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:liver_disord
+      - mixs:liver_disord
 
   special_diet:
     aliases:
@@ -4170,7 +4170,7 @@ slots:
     range: text value  ## syntax: [low carb|reduced calorie|vegetarian|other(to be specified)]
     pattern: "[low carb|reduced calorie|vegetarian|other(to be specified)]"
     mappings:
-      - MIxS:special_diet
+      - mixs:special_diet
 
   nose_mouth_teeth_throat_disord:
     aliases:
@@ -4181,7 +4181,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:nose_mouth_teeth_throat_disord
+      - mixs:nose_mouth_teeth_throat_disord
 
   time_last_toothbrush:
     aliases:
@@ -4192,7 +4192,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {duration}
     mappings:
-      - MIxS:time_last_toothbrush
+      - mixs:time_last_toothbrush
 
   dermatology_disord:
     aliases:
@@ -4203,7 +4203,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:dermatology_disord
+      - mixs:dermatology_disord
 
   time_since_last_wash:
     aliases:
@@ -4214,7 +4214,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {duration}
     mappings:
-      - MIxS:time_since_last_wash
+      - mixs:time_since_last_wash
 
   dominant_hand:
     aliases:
@@ -4226,7 +4226,7 @@ slots:
     range: text value  ## syntax: [left|right|ambidextrous]
     pattern: "[left|right|ambidextrous]"
     mappings:
-      - MIxS:dominant_hand
+      - mixs:dominant_hand
 
   menarche:
     aliases:
@@ -4237,7 +4237,7 @@ slots:
     is_a: attribute
     range: timestamp value  ## syntax: {timestamp}
     mappings:
-      - MIxS:menarche
+      - mixs:menarche
 
   sexual_act:
     aliases:
@@ -4248,7 +4248,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:sexual_act
+      - mixs:sexual_act
 
   pregnancy:
     aliases:
@@ -4259,7 +4259,7 @@ slots:
     is_a: attribute
     range: timestamp value  ## syntax: {timestamp}
     mappings:
-      - MIxS:pregnancy
+      - mixs:pregnancy
 
   douche:
     aliases:
@@ -4270,7 +4270,7 @@ slots:
     is_a: attribute
     range: timestamp value  ## syntax: {timestamp}
     mappings:
-      - MIxS:douche
+      - mixs:douche
 
   birth_control:
     aliases:
@@ -4281,7 +4281,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:birth_control
+      - mixs:birth_control
 
   menopause:
     aliases:
@@ -4292,7 +4292,7 @@ slots:
     is_a: attribute
     range: timestamp value  ## syntax: {timestamp}
     mappings:
-      - MIxS:menopause
+      - mixs:menopause
 
   hrt:
     aliases:
@@ -4303,7 +4303,7 @@ slots:
     is_a: attribute
     range: timestamp value  ## syntax: {timestamp}
     mappings:
-      - MIxS:hrt
+      - mixs:hrt
 
   hysterectomy:
     aliases:
@@ -4315,7 +4315,7 @@ slots:
     range: boolean value  ## syntax: {boolean}
     pattern: "[true|false]"
     mappings:
-      - MIxS:hysterectomy
+      - mixs:hysterectomy
 
   gynecologic_disord:
     aliases:
@@ -4326,7 +4326,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:gynecologic_disord
+      - mixs:gynecologic_disord
 
   urogenit_disord:
     aliases:
@@ -4337,7 +4337,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:urogenit_disord
+      - mixs:urogenit_disord
 
   hcr:
     aliases:
@@ -4349,7 +4349,7 @@ slots:
     range: text value  ## syntax: [Oil Reservoir|Gas Reservoir|Oil Sand|Coalbed|Shale|Tight Oil Reservoir|Tight Gas Reservoir|other]
     pattern: "[Oil Reservoir|Gas Reservoir|Oil Sand|Coalbed|Shale|Tight Oil Reservoir|Tight Gas Reservoir|other]"
     mappings:
-      - MIxS:hcr
+      - mixs:hcr
 
   hc_produced:
     aliases:
@@ -4361,7 +4361,7 @@ slots:
     range: text value  ## syntax: [Oil|Gas-Condensate|Gas|Bitumen|Coalbed Methane|other]
     pattern: "[Oil|Gas\\-Condensate|Gas|Bitumen|Coalbed Methane|other]"
     mappings:
-      - MIxS:hc_produced
+      - mixs:hc_produced
 
   basin:
     aliases:
@@ -4372,7 +4372,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:basin
+      - mixs:basin
 
   field:
     aliases:
@@ -4383,7 +4383,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:field
+      - mixs:field
 
   reservoir:
     aliases:
@@ -4394,7 +4394,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:reservoir
+      - mixs:reservoir
 
   hcr_temp:
     aliases:
@@ -4407,7 +4407,7 @@ slots:
     pattern: "\\d+[.\\d+] \\- \\d+[.\\d+] \\S+"
     string_serialization: "{float} - {float} {unit}"
     mappings:
-      - MIxS:hcr_temp
+      - mixs:hcr_temp
 
   tvdss_of_hcr_temp:
     aliases:
@@ -4420,7 +4420,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:tvdss_of_hcr_temp
+      - mixs:tvdss_of_hcr_temp
 
   hcr_pressure:
     aliases:
@@ -4433,7 +4433,7 @@ slots:
     pattern: "\\d+[.\\d+] \\- \\d+[.\\d+] \\S+"
     string_serialization: "{float} - {float} {unit}"
     mappings:
-      - MIxS:hcr_pressure
+      - mixs:hcr_pressure
 
   tvdss_of_hcr_pressure:
     aliases:
@@ -4446,7 +4446,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:tvdss_of_hcr_pressure
+      - mixs:tvdss_of_hcr_pressure
 
   permeability:
     aliases:
@@ -4458,7 +4458,7 @@ slots:
     range: quantity value  ## syntax: {integer} - {integer} {unit}
     string_serialization: "{integer} - {integer} {unit}"
     mappings:
-      - MIxS:permeability
+      - mixs:permeability
 
   porosity:
     aliases:
@@ -4471,7 +4471,7 @@ slots:
     pattern: "\\d+[.\\d+] \\- \\d+[.\\d+] \\S+"
     string_serialization: "{float} - {float} {unit}"
     mappings:
-      - MIxS:porosity
+      - mixs:porosity
 
   lithology:
     aliases:
@@ -4483,7 +4483,7 @@ slots:
     range: text value  ## syntax: [Basement|Chalk|Chert|Coal|Conglomerate|Diatomite|Dolomite|Limestone|Sandstone|Shale|Siltstone|Volcanic|other]
     pattern: "[Basement|Chalk|Chert|Coal|Conglomerate|Diatomite|Dolomite|Limestone|Sandstone|Shale|Siltstone|Volcanic|other]"
     mappings:
-      - MIxS:lithology
+      - mixs:lithology
 
   depos_env:
     aliases:
@@ -4495,7 +4495,7 @@ slots:
     range: text value  ## syntax: [Continental - Alluvial|Continental - Aeolian|Continental - Fluvial|Continental - Lacustrine|Transitional - Deltaic|Transitional - Tidal|Transitional - Lagoonal|Transitional - Beach|Transitional - Lake|Marine - Shallow|Marine - Deep|Marine - Reef|Other - Evaporite|Other - Glacial|Other - Volcanic|other]
     pattern: "[Continental \\- Alluvial|Continental \\- Aeolian|Continental \\- Fluvial|Continental \\- Lacustrine|Transitional \\- Deltaic|Transitional \\- Tidal|Transitional \\- Lagoonal|Transitional \\- Beach|Transitional \\- Lake|Marine \\- Shallow|Marine \\- Deep|Marine \\- Reef|Other \\- Evaporite|Other \\- Glacial|Other \\- Volcanic|other]"
     mappings:
-      - MIxS:depos_env
+      - mixs:depos_env
 
   hcr_geol_age:
     aliases:
@@ -4507,7 +4507,7 @@ slots:
     range: text value  ## syntax: [Archean|Cambrian|Carboniferous|Cenozoic|Cretaceous|Devonian|Jurassic|Mesozoic|Neogene|Ordovician|Paleogene|Paleozoic|Permian|Precambrian|Proterozoic|Silurian|Triassic|other]
     pattern: "[Archean|Cambrian|Carboniferous|Cenozoic|Cretaceous|Devonian|Jurassic|Mesozoic|Neogene|Ordovician|Paleogene|Paleozoic|Permian|Precambrian|Proterozoic|Silurian|Triassic|other]"
     mappings:
-      - MIxS:hcr_geol_age
+      - mixs:hcr_geol_age
 
   owc_tvdss:
     aliases:
@@ -4520,7 +4520,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:owc_tvdss
+      - mixs:owc_tvdss
 
   hcr_fw_salinity:
     aliases:
@@ -4533,7 +4533,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:hcr_fw_salinity
+      - mixs:hcr_fw_salinity
 
   sulfate_fw:
     aliases:
@@ -4546,7 +4546,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:sulfate_fw
+      - mixs:sulfate_fw
 
   vfa_fw:
     aliases:
@@ -4559,7 +4559,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:vfa_fw
+      - mixs:vfa_fw
 
   sr_kerog_type:
     aliases:
@@ -4571,7 +4571,7 @@ slots:
     range: text value  ## syntax: [Type I|Type II|Type III|Type IV|other]
     pattern: "[Type I|Type II|Type III|Type IV|other]"
     mappings:
-      - MIxS:sr_kerog_type
+      - mixs:sr_kerog_type
 
   sr_lithology:
     aliases:
@@ -4583,7 +4583,7 @@ slots:
     range: text value  ## syntax: [Clastic|Carbonate|Coal|Biosilicieous|other]
     pattern: "[Clastic|Carbonate|Coal|Biosilicieous|other]"
     mappings:
-      - MIxS:sr_lithology
+      - mixs:sr_lithology
 
   sr_dep_env:
     aliases:
@@ -4595,7 +4595,7 @@ slots:
     range: text value  ## syntax: [Lacustine|Fluvioldeltaic|Fluviomarine|Marine|other]
     pattern: "[Lacustine|Fluvioldeltaic|Fluviomarine|Marine|other]"
     mappings:
-      - MIxS:sr_dep_env
+      - mixs:sr_dep_env
 
   sr_geol_age:
     aliases:
@@ -4607,7 +4607,7 @@ slots:
     range: text value  ## syntax: [Archean|Cambrian|Carboniferous|Cenozoic|Cretaceous|Devonian|Jurassic|Mesozoic|Neogene|Ordovician|Paleogene|Paleozoic|Permian|Precambrian|Proterozoic|Silurian|Triassic|other]
     pattern: "[Archean|Cambrian|Carboniferous|Cenozoic|Cretaceous|Devonian|Jurassic|Mesozoic|Neogene|Ordovician|Paleogene|Paleozoic|Permian|Precambrian|Proterozoic|Silurian|Triassic|other]"
     mappings:
-      - MIxS:sr_geol_age
+      - mixs:sr_geol_age
 
   samp_well_name:
     aliases:
@@ -4618,7 +4618,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:samp_well_name
+      - mixs:samp_well_name
 
   win:
     aliases:
@@ -4629,7 +4629,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:win
+      - mixs:win
 
   samp_type:
     aliases:
@@ -4641,7 +4641,7 @@ slots:
     range: text value  ## syntax: [core|rock trimmings|drill cuttings|piping section|coupon|pigging debris|solid deposit|produced fluid|produced water|injected water|water from treatment plant|fresh water|sea water|drilling fluid|procedural blank|positive control|negative control|other]
     pattern: "[core|rock trimmings|drill cuttings|piping section|coupon|pigging debris|solid deposit|produced fluid|produced water|injected water|water from treatment plant|fresh water|sea water|drilling fluid|procedural blank|positive control|negative control|other]"
     mappings:
-      - MIxS:samp_type
+      - mixs:samp_type
 
   samp_subtype:
     aliases:
@@ -4653,7 +4653,7 @@ slots:
     range: text value  ## syntax: [oil phase|water phase|biofilm|not applicable|other]
     pattern: "[oil phase|water phase|biofilm|not applicable|other]"
     mappings:
-      - MIxS:samp_subtype
+      - mixs:samp_subtype
 
   pressure:
     aliases:
@@ -4666,7 +4666,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:pressure
+      - mixs:pressure
 
   samp_tvdss:
     aliases:
@@ -4679,7 +4679,7 @@ slots:
     pattern: "\\d+[.\\d+]\\-\\d+[.\\d+] \\S+"
     string_serialization: "{float}-{float} {unit}"
     mappings:
-      - MIxS:samp_tvdss
+      - mixs:samp_tvdss
 
   samp_md:
     aliases:
@@ -4692,7 +4692,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+;[GL|DF|RT|KB|MSL|other]"
     string_serialization: "{float} {unit};[GL|DF|RT|KB|MSL|other]"
     mappings:
-      - MIxS:samp_md
+      - mixs:samp_md
 
   samp_transport_cond:
     aliases:
@@ -4705,7 +4705,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+;\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit};{float} {unit}"
     mappings:
-      - MIxS:samp_transport_cond
+      - mixs:samp_transport_cond
 
   organism_count_qpcr_info:
     aliases:
@@ -4716,7 +4716,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text};FWD:{dna};REV:{dna};initial denaturation:degrees_minutes;denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes; total cycles
     mappings:
-      - MIxS:organism_count_qpcr_info
+      - mixs:organism_count_qpcr_info
 
   ph:
     aliases:
@@ -4728,7 +4728,7 @@ slots:
     range: quantity value  ## syntax: {float}
     pattern: "\\d+[.\\d+]"
     mappings:
-      - MIxS:ph
+      - mixs:ph
 
   alkalinity:
     aliases:
@@ -4741,7 +4741,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:alkalinity
+      - mixs:alkalinity
 
   alkalinity_method:
     aliases:
@@ -4752,7 +4752,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:alkalinity_method
+      - mixs:alkalinity_method
 
   sulfate:
     aliases:
@@ -4765,7 +4765,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:sulfate
+      - mixs:sulfate
 
   sulfide:
     aliases:
@@ -4778,7 +4778,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:sulfide
+      - mixs:sulfide
 
   tot_sulfur:
     aliases:
@@ -4791,7 +4791,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:tot_sulfur
+      - mixs:tot_sulfur
 
   nitrate:
     aliases:
@@ -4804,7 +4804,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:nitrate
+      - mixs:nitrate
 
   nitrite:
     aliases:
@@ -4817,7 +4817,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:nitrite
+      - mixs:nitrite
 
   ammonium:
     aliases:
@@ -4830,7 +4830,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:ammonium
+      - mixs:ammonium
 
   tot_nitro:
     aliases:
@@ -4843,7 +4843,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:tot_nitro
+      - mixs:tot_nitro
 
   diss_iron:
     aliases:
@@ -4856,7 +4856,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:diss_iron
+      - mixs:diss_iron
 
   sodium:
     aliases:
@@ -4869,7 +4869,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:sodium
+      - mixs:sodium
 
   chloride:
     aliases:
@@ -4882,7 +4882,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:chloride
+      - mixs:chloride
 
   potassium:
     aliases:
@@ -4895,7 +4895,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:potassium
+      - mixs:potassium
 
   magnesium:
     aliases:
@@ -4908,7 +4908,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:magnesium
+      - mixs:magnesium
 
   calcium:
     aliases:
@@ -4921,7 +4921,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:calcium
+      - mixs:calcium
 
   tot_iron:
     aliases:
@@ -4934,7 +4934,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:tot_iron
+      - mixs:tot_iron
 
   diss_org_carb:
     aliases:
@@ -4947,7 +4947,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:diss_org_carb
+      - mixs:diss_org_carb
 
   diss_inorg_carb:
     aliases:
@@ -4960,7 +4960,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:diss_inorg_carb
+      - mixs:diss_inorg_carb
 
   diss_inorg_phosp:
     aliases:
@@ -4973,7 +4973,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:diss_inorg_phosp
+      - mixs:diss_inorg_phosp
 
   tot_phosp:
     aliases:
@@ -4986,7 +4986,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:tot_phosp
+      - mixs:tot_phosp
 
   suspend_solids:
     aliases:
@@ -4998,7 +4998,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:suspend_solids
+      - mixs:suspend_solids
 
   density:
     aliases:
@@ -5011,7 +5011,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:density
+      - mixs:density
 
   diss_carb_dioxide:
     aliases:
@@ -5024,7 +5024,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:diss_carb_dioxide
+      - mixs:diss_carb_dioxide
 
   diss_oxygen_fluid:
     aliases:
@@ -5037,7 +5037,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:diss_oxygen_fluid
+      - mixs:diss_oxygen_fluid
 
   vfa:
     aliases:
@@ -5050,7 +5050,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:vfa
+      - mixs:vfa
 
   benzene:
     aliases:
@@ -5063,7 +5063,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:benzene
+      - mixs:benzene
 
   toluene:
     aliases:
@@ -5076,7 +5076,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:toluene
+      - mixs:toluene
 
   ethylbenzene:
     aliases:
@@ -5089,7 +5089,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:ethylbenzene
+      - mixs:ethylbenzene
 
   xylene:
     aliases:
@@ -5102,7 +5102,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:xylene
+      - mixs:xylene
 
   api:
     aliases:
@@ -5115,7 +5115,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:api
+      - mixs:api
 
   tan:
     aliases:
@@ -5128,7 +5128,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:tan
+      - mixs:tan
 
   viscosity:
     aliases:
@@ -5141,7 +5141,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+;\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit};{float} {unit}"
     mappings:
-      - MIxS:viscosity
+      - mixs:viscosity
 
   pour_point :
     aliases:
@@ -5154,7 +5154,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:pour_point 
+      - mixs:pour_point 
 
   saturates_pc:
     aliases:
@@ -5166,7 +5166,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:saturates_pc
+      - mixs:saturates_pc
 
   aromatics_pc:
     aliases:
@@ -5178,7 +5178,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:aromatics_pc
+      - mixs:aromatics_pc
 
   resins_pc:
     aliases:
@@ -5190,7 +5190,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:resins_pc
+      - mixs:resins_pc
 
   asphaltenes_pc:
     aliases:
@@ -5202,7 +5202,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:asphaltenes_pc
+      - mixs:asphaltenes_pc
 
   additional_info:
     aliases:
@@ -5213,7 +5213,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:additional_info
+      - mixs:additional_info
 
   prod_start_date:
     aliases:
@@ -5224,7 +5224,7 @@ slots:
     is_a: attribute
     range: timestamp value  ## syntax: {timestamp}
     mappings:
-      - MIxS:prod_start_date
+      - mixs:prod_start_date
 
   prod_rate:
     aliases:
@@ -5237,7 +5237,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:prod_rate
+      - mixs:prod_rate
 
   water_production_rate:
     aliases:
@@ -5250,7 +5250,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:water_production_rate
+      - mixs:water_production_rate
 
   water_cut:
     aliases:
@@ -5263,7 +5263,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:water_cut
+      - mixs:water_cut
 
   iwf:
     aliases:
@@ -5276,7 +5276,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:iwf
+      - mixs:iwf
 
   add_recov_method:
     aliases:
@@ -5287,7 +5287,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: [Water Injection|Dump Flood|Gas Injection|Wag Immiscible Injection|Polymer Addition|Surfactant Addition|Not Applicable|other];{timestamp}
     mappings:
-      - MIxS:add_recov_method
+      - mixs:add_recov_method
 
   iw_bt_date_well:
     aliases:
@@ -5298,7 +5298,7 @@ slots:
     is_a: attribute
     range: timestamp value  ## syntax: {timestamp}
     mappings:
-      - MIxS:iw_bt_date_well
+      - mixs:iw_bt_date_well
 
   biocide:
     aliases:
@@ -5309,7 +5309,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text};{text};{timestamp}
     mappings:
-      - MIxS:biocide
+      - mixs:biocide
 
   biocide_admin_method:
     aliases:
@@ -5321,7 +5321,7 @@ slots:
     range: quantity value  ## syntax: {float} {unit};{Rn/start_time/end_time/duration};{duration}
     string_serialization: "{float} {unit};{Rn/start_time/end_time/duration};{duration}"
     mappings:
-      - MIxS:biocide_admin_method
+      - mixs:biocide_admin_method
 
   chem_treatment:
     aliases:
@@ -5332,7 +5332,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text};{text};{timestamp}
     mappings:
-      - MIxS:chem_treatment
+      - mixs:chem_treatment
 
   chem_treatment_method:
     aliases:
@@ -5344,7 +5344,7 @@ slots:
     range: quantity value  ## syntax: {float} {unit};{Rn/start_time/end_time/duration};{duration};{duration}
     string_serialization: "{float} {unit};{Rn/start_time/end_time/duration};{duration};{duration}"
     mappings:
-      - MIxS:chem_treatment_method
+      - mixs:chem_treatment_method
 
   samp_loc_corr_rate:
     aliases:
@@ -5357,7 +5357,7 @@ slots:
     pattern: "\\d+[.\\d+] \\- \\d+[.\\d+] \\S+"
     string_serialization: "{float} - {float} {unit}"
     mappings:
-      - MIxS:samp_loc_corr_rate
+      - mixs:samp_loc_corr_rate
 
   samp_collection_point:
     aliases:
@@ -5369,7 +5369,7 @@ slots:
     range: text value  ## syntax: [well|test well|drilling rig|wellhead|separator|storage tank|other]
     pattern: "[well|test well|drilling rig|wellhead|separator|storage tank|other]"
     mappings:
-      - MIxS:samp_collection_point
+      - mixs:samp_collection_point
 
   samp_preserv:
     aliases:
@@ -5381,7 +5381,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:samp_preserv
+      - mixs:samp_preserv
 
   alkyl_diethers:
     aliases:
@@ -5394,7 +5394,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:alkyl_diethers
+      - mixs:alkyl_diethers
 
   aminopept_act:
     aliases:
@@ -5407,7 +5407,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:aminopept_act
+      - mixs:aminopept_act
 
   bacteria_carb_prod:
     aliases:
@@ -5420,7 +5420,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:bacteria_carb_prod
+      - mixs:bacteria_carb_prod
 
   biomass:
     aliases:
@@ -5432,7 +5432,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:biomass
+      - mixs:biomass
 
   bishomohopanol:
     aliases:
@@ -5445,7 +5445,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:bishomohopanol
+      - mixs:bishomohopanol
 
   bromide:
     aliases:
@@ -5458,7 +5458,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:bromide
+      - mixs:bromide
 
   carb_nitro_ratio:
     aliases:
@@ -5471,7 +5471,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:carb_nitro_ratio
+      - mixs:carb_nitro_ratio
 
   chlorophyll:
     aliases:
@@ -5484,7 +5484,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:chlorophyll
+      - mixs:chlorophyll
 
   diether_lipids:
     aliases:
@@ -5496,7 +5496,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:diether_lipids
+      - mixs:diether_lipids
 
   diss_hydrogen:
     aliases:
@@ -5509,7 +5509,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:diss_hydrogen
+      - mixs:diss_hydrogen
 
   diss_org_nitro:
     aliases:
@@ -5522,7 +5522,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:diss_org_nitro
+      - mixs:diss_org_nitro
 
   diss_oxygen:
     aliases:
@@ -5535,7 +5535,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:diss_oxygen
+      - mixs:diss_oxygen
 
   glucosidase_act:
     aliases:
@@ -5548,7 +5548,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:glucosidase_act
+      - mixs:glucosidase_act
 
   mean_frict_vel:
     aliases:
@@ -5561,7 +5561,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:mean_frict_vel
+      - mixs:mean_frict_vel
 
   mean_peak_frict_vel:
     aliases:
@@ -5574,7 +5574,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:mean_peak_frict_vel
+      - mixs:mean_peak_frict_vel
 
   n_alkanes:
     aliases:
@@ -5586,7 +5586,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:n_alkanes
+      - mixs:n_alkanes
 
   nitro:
     aliases:
@@ -5599,7 +5599,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:nitro
+      - mixs:nitro
 
   org_carb:
     aliases:
@@ -5612,7 +5612,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:org_carb
+      - mixs:org_carb
 
   org_matter:
     aliases:
@@ -5625,7 +5625,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:org_matter
+      - mixs:org_matter
 
   org_nitro:
     aliases:
@@ -5638,7 +5638,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:org_nitro
+      - mixs:org_nitro
 
   part_org_carb:
     aliases:
@@ -5651,7 +5651,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:part_org_carb
+      - mixs:part_org_carb
 
   petroleum_hydrocarb:
     aliases:
@@ -5664,7 +5664,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:petroleum_hydrocarb
+      - mixs:petroleum_hydrocarb
 
   phaeopigments:
     aliases:
@@ -5676,7 +5676,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:phaeopigments
+      - mixs:phaeopigments
 
   phosphate:
     aliases:
@@ -5689,7 +5689,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:phosphate
+      - mixs:phosphate
 
   phosplipid_fatt_acid:
     aliases:
@@ -5701,7 +5701,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:phosplipid_fatt_acid
+      - mixs:phosplipid_fatt_acid
 
   redox_potential:
     aliases:
@@ -5714,7 +5714,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:redox_potential
+      - mixs:redox_potential
 
   salinity:
     aliases:
@@ -5727,7 +5727,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:salinity
+      - mixs:salinity
 
   silicate:
     aliases:
@@ -5740,7 +5740,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:silicate
+      - mixs:silicate
 
   tot_carb:
     aliases:
@@ -5753,7 +5753,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:tot_carb
+      - mixs:tot_carb
 
   tot_nitro_content:
     aliases:
@@ -5766,7 +5766,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:tot_nitro_content
+      - mixs:tot_nitro_content
 
   tot_org_carb:
     aliases:
@@ -5779,7 +5779,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:tot_org_carb
+      - mixs:tot_org_carb
 
   turbidity:
     aliases:
@@ -5792,7 +5792,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:turbidity
+      - mixs:turbidity
 
   water_content:
     aliases:
@@ -5805,7 +5805,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:water_content
+      - mixs:water_content
 
   water_current:
     aliases:
@@ -5818,7 +5818,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:water_current
+      - mixs:water_current
 
   air_temp_regm:
     aliases:
@@ -5830,7 +5830,7 @@ slots:
     range: quantity value  ## syntax: {float} {unit};{Rn/start_time/end_time/duration}
     string_serialization: "{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
-      - MIxS:air_temp_regm
+      - mixs:air_temp_regm
 
   antibiotic_regm:
     aliases:
@@ -5842,7 +5842,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
     string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
-      - MIxS:antibiotic_regm
+      - mixs:antibiotic_regm
 
   biotic_regm:
     aliases:
@@ -5853,7 +5853,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:biotic_regm
+      - mixs:biotic_regm
 
   chem_mutagen:
     aliases:
@@ -5865,7 +5865,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
     string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
-      - MIxS:chem_mutagen
+      - mixs:chem_mutagen
 
   climate_environment:
     aliases:
@@ -5876,7 +5876,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text};{Rn/start_time/end_time/duration}
     mappings:
-      - MIxS:climate_environment
+      - mixs:climate_environment
 
   cult_root_med:
     aliases:
@@ -5887,7 +5887,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}|{PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:cult_root_med
+      - mixs:cult_root_med
 
   fertilizer_regm:
     aliases:
@@ -5899,7 +5899,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
     string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
-      - MIxS:fertilizer_regm
+      - mixs:fertilizer_regm
 
   fungicide_regm:
     aliases:
@@ -5911,7 +5911,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
     string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
-      - MIxS:fungicide_regm
+      - mixs:fungicide_regm
 
   gaseous_environment:
     aliases:
@@ -5923,7 +5923,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
     string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
-      - MIxS:gaseous_environment
+      - mixs:gaseous_environment
 
   gravity:
     aliases:
@@ -5935,7 +5935,7 @@ slots:
     range: quantity value  ## syntax: {float} {unit};{Rn/start_time/end_time/duration}
     string_serialization: "{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
-      - MIxS:gravity
+      - mixs:gravity
 
   growth_facil:
     aliases:
@@ -5946,7 +5946,7 @@ slots:
     is_a: attribute
     range: controlled term value  ## syntax: {text}|{termLabel} {[termID]}
     mappings:
-      - MIxS:growth_facil
+      - mixs:growth_facil
 
   growth_habit:
     aliases:
@@ -5958,7 +5958,7 @@ slots:
     range: text value  ## syntax: [erect|semi-erect|spreading|prostrate] 
     pattern: "[erect|semi\\-erect|spreading|prostrate] "
     mappings:
-      - MIxS:growth_habit
+      - mixs:growth_habit
 
   growth_hormone_regm:
     aliases:
@@ -5970,7 +5970,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
     string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
-      - MIxS:growth_hormone_regm
+      - mixs:growth_hormone_regm
 
   herbicide_regm:
     aliases:
@@ -5982,7 +5982,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
     string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
-      - MIxS:herbicide_regm
+      - mixs:herbicide_regm
 
   host_wet_mass:
     aliases:
@@ -5995,7 +5995,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:host_wet_mass
+      - mixs:host_wet_mass
 
   humidity_regm:
     aliases:
@@ -6007,7 +6007,7 @@ slots:
     range: quantity value  ## syntax: {float} {unit};{Rn/start_time/end_time/duration}
     string_serialization: "{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
-      - MIxS:humidity_regm
+      - mixs:humidity_regm
 
   light_regm:
     aliases:
@@ -6019,7 +6019,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit};{float} {unit}
     string_serialization: "{text};{float} {unit};{float} {unit}"
     mappings:
-      - MIxS:light_regm
+      - mixs:light_regm
 
   mechanical_damage:
     aliases:
@@ -6030,7 +6030,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text};{text}
     mappings:
-      - MIxS:mechanical_damage
+      - mixs:mechanical_damage
 
   mineral_nutr_regm:
     aliases:
@@ -6042,7 +6042,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
     string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
-      - MIxS:mineral_nutr_regm
+      - mixs:mineral_nutr_regm
 
   non_mineral_nutr_regm:
     aliases:
@@ -6054,7 +6054,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
     string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
-      - MIxS:non_mineral_nutr_regm
+      - mixs:non_mineral_nutr_regm
 
   ph_regm:
     aliases:
@@ -6065,7 +6065,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {float};{Rn/start_time/end_time/duration}
     mappings:
-      - MIxS:ph_regm
+      - mixs:ph_regm
 
   pesticide_regm:
     aliases:
@@ -6077,7 +6077,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
     string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
-      - MIxS:pesticide_regm
+      - mixs:pesticide_regm
 
   plant_growth_med:
     aliases:
@@ -6089,7 +6089,7 @@ slots:
     range: controlled term value  ## syntax: {termLabel} {[termID]}
     pattern: ".* \\S+:\\S+"
     mappings:
-      - MIxS:plant_growth_med
+      - mixs:plant_growth_med
 
   plant_product:
     aliases:
@@ -6100,7 +6100,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:plant_product
+      - mixs:plant_product
 
   plant_sex:
     aliases:
@@ -6112,7 +6112,7 @@ slots:
     range: text value  ## syntax: [Androdioecious|Androecious|Androgynous|Androgynomonoecious|Andromonoecious|Bisexual|Dichogamous|Diclinous|Dioecious|Gynodioecious|Gynoecious|Gynomonoecious|Hermaphroditic|Imperfect|Monoclinous|Monoecious|Perfect|Polygamodioecious|Polygamomonoecious|Polygamous|Protandrous|Protogynous|Subandroecious|Subdioecious|Subgynoecious|Synoecious|Trimonoecious|Trioecious|Unisexual]
     pattern: "[Androdioecious|Androecious|Androgynous|Androgynomonoecious|Andromonoecious|Bisexual|Dichogamous|Diclinous|Dioecious|Gynodioecious|Gynoecious|Gynomonoecious|Hermaphroditic|Imperfect|Monoclinous|Monoecious|Perfect|Polygamodioecious|Polygamomonoecious|Polygamous|Protandrous|Protogynous|Subandroecious|Subdioecious|Subgynoecious|Synoecious|Trimonoecious|Trioecious|Unisexual]"
     mappings:
-      - MIxS:plant_sex
+      - mixs:plant_sex
 
   plant_struc:
     aliases:
@@ -6124,7 +6124,7 @@ slots:
     range: controlled term value  ## syntax: {termLabel} {[termID]}
     pattern: ".* \\S+:\\S+"
     mappings:
-      - MIxS:plant_struc
+      - mixs:plant_struc
 
   radiation_regm:
     aliases:
@@ -6136,7 +6136,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
     string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
-      - MIxS:radiation_regm
+      - mixs:radiation_regm
 
   rainfall_regm:
     aliases:
@@ -6148,7 +6148,7 @@ slots:
     range: quantity value  ## syntax: {float} {unit};{Rn/start_time/end_time/duration}
     string_serialization: "{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
-      - MIxS:rainfall_regm
+      - mixs:rainfall_regm
 
   root_cond:
     aliases:
@@ -6159,7 +6159,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}|{text}
     mappings:
-      - MIxS:root_cond
+      - mixs:root_cond
 
   root_med_carbon:
     aliases:
@@ -6171,7 +6171,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:root_med_carbon
+      - mixs:root_med_carbon
 
   root_med_macronutr:
     aliases:
@@ -6183,7 +6183,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:root_med_macronutr
+      - mixs:root_med_macronutr
 
   root_med_micronutr:
     aliases:
@@ -6195,7 +6195,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:root_med_micronutr
+      - mixs:root_med_micronutr
 
   root_med_suppl:
     aliases:
@@ -6207,7 +6207,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:root_med_suppl
+      - mixs:root_med_suppl
 
   root_med_ph:
     aliases:
@@ -6219,7 +6219,7 @@ slots:
     range: quantity value  ## syntax: {float}
     pattern: "\\d+[.\\d+]"
     mappings:
-      - MIxS:root_med_ph
+      - mixs:root_med_ph
 
   root_med_regl:
     aliases:
@@ -6231,7 +6231,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:root_med_regl
+      - mixs:root_med_regl
 
   root_med_solid:
     aliases:
@@ -6242,7 +6242,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:root_med_solid
+      - mixs:root_med_solid
 
   salt_regm:
     aliases:
@@ -6254,7 +6254,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit};{Rn/start_time/end_time/duration}
     string_serialization: "{text};{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
-      - MIxS:salt_regm
+      - mixs:salt_regm
 
   season_environment:
     aliases:
@@ -6265,7 +6265,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text};{Rn/start_time/end_time/duration}
     mappings:
-      - MIxS:season_environment
+      - mixs:season_environment
 
   standing_water_regm:
     aliases:
@@ -6276,7 +6276,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text};{Rn/start_time/end_time/duration}
     mappings:
-      - MIxS:standing_water_regm
+      - mixs:standing_water_regm
 
   tiss_cult_growth_med:
     aliases:
@@ -6287,7 +6287,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}|{text}
     mappings:
-      - MIxS:tiss_cult_growth_med
+      - mixs:tiss_cult_growth_med
 
   water_temp_regm:
     aliases:
@@ -6299,7 +6299,7 @@ slots:
     range: quantity value  ## syntax: {float} {unit};{Rn/start_time/end_time/duration}
     string_serialization: "{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
-      - MIxS:water_temp_regm
+      - mixs:water_temp_regm
 
   watering_regm:
     aliases:
@@ -6311,7 +6311,7 @@ slots:
     range: quantity value  ## syntax: {float} {unit};{Rn/start_time/end_time/duration}
     string_serialization: "{float} {unit};{Rn/start_time/end_time/duration}"
     mappings:
-      - MIxS:watering_regm
+      - mixs:watering_regm
 
   particle_class:
     aliases:
@@ -6323,7 +6323,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:particle_class
+      - mixs:particle_class
 
   sediment_type:
     aliases:
@@ -6335,7 +6335,7 @@ slots:
     range: text value  ## syntax: [biogenous|cosmogenous|hydrogenous|lithogenous]
     pattern: "[biogenous|cosmogenous|hydrogenous|lithogenous]"
     mappings:
-      - MIxS:sediment_type
+      - mixs:sediment_type
 
   tidal_stage:
     aliases:
@@ -6347,7 +6347,7 @@ slots:
     range: text value  ## syntax: [low tide|ebb tide|flood tide|high tide]
     pattern: "[low tide|ebb tide|flood tide|high tide]"
     mappings:
-      - MIxS:tidal_stage
+      - mixs:tidal_stage
 
   tot_depth_water_col:
     aliases:
@@ -6360,7 +6360,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:tot_depth_water_col
+      - mixs:tot_depth_water_col
 
   cur_land_use:
     aliases:
@@ -6372,7 +6372,7 @@ slots:
     range: text value  ## syntax: "[cities|farmstead|industrial areas|roads/railroads|rock|sand|gravel|mudflats|salt flats|badlands|permanent snow or ice|saline seeps|mines/quarries|oil waste areas|small grains|row crops|vegetable crops|horticultural plants (e.g. tulips)|marshlands (grass,sedges,rushes)|tundra (mosses,lichens)|rangeland|pastureland (grasslands used for livestock grazing)|hayland|meadows (grasses,alfalfa,fescue,bromegrass,timothy)|shrub land (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus)|successional shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)|shrub crops (blueberries,nursery ornamentals,filberts)|vine crops (grapes)|conifers (e.g. pine,spruce,fir,cypress)|hardwoods (e.g. oak,hickory,elm,aspen)|intermixed hardwood and conifers|tropical (e.g. mangrove,palms)|rainforest (evergreen forest receiving >406 cm annual rainfall)|swamp (permanent or semi-permanent water body dominated by woody plants)|crop trees (nuts,fruit,christmas trees,nursery trees)]"
     pattern: "[cities|farmstead|industrial areas|roads\\/railroads|rock|sand|gravel|mudflats|salt flats|badlands|permanent snow or ice|saline seeps|mines\\/quarries|oil waste areas|small grains|row crops|vegetable crops|horticultural plants (e.g. tulips)|marshlands (grass,sedges,rushes)|tundra (mosses,lichens)|rangeland|pastureland (grasslands used for livestock grazing)|hayland|meadows (grasses,alfalfa,fescue,bromegrass,timothy)|shrub land (e.g. mesquite,sage\\-brush,creosote bush,shrub oak,eucalyptus)|successional shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)|shrub crops (blueberries,nursery ornamentals,filberts)|vine crops (grapes)|conifers (e.g. pine,spruce,fir,cypress)|hardwoods (e.g. oak,hickory,elm,aspen)|intermixed hardwood and conifers|tropical (e.g. mangrove,palms)|rainforest (evergreen forest receiving >406 cm annual rainfall)|swamp (permanent or semi\\-permanent water body dominated by woody plants)|crop trees (nuts,fruit,christmas trees,nursery trees)]"
     mappings:
-      - MIxS:cur_land_use
+      - mixs:cur_land_use
 
   cur_vegetation:
     aliases:
@@ -6383,7 +6383,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:cur_vegetation
+      - mixs:cur_vegetation
 
   cur_vegetation_meth:
     aliases:
@@ -6394,7 +6394,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:cur_vegetation_meth
+      - mixs:cur_vegetation_meth
 
   previous_land_use:
     aliases:
@@ -6405,7 +6405,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text};{timestamp}
     mappings:
-      - MIxS:previous_land_use
+      - mixs:previous_land_use
 
   previous_land_use_meth:
     aliases:
@@ -6416,7 +6416,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:previous_land_use_meth
+      - mixs:previous_land_use_meth
 
   crop_rotation:
     aliases:
@@ -6427,7 +6427,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {boolean};{Rn/start_time/end_time/duration}
     mappings:
-      - MIxS:crop_rotation
+      - mixs:crop_rotation
 
   agrochem_addition:
     aliases:
@@ -6439,7 +6439,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit};{timestamp}
     string_serialization: "{text};{float} {unit};{timestamp}"
     mappings:
-      - MIxS:agrochem_addition
+      - mixs:agrochem_addition
 
   tillage:
     aliases:
@@ -6451,7 +6451,7 @@ slots:
     range: text value  ## syntax: [drill|cutting disc|ridge till|strip tillage|zonal tillage|chisel|tined|mouldboard|disc plough]
     pattern: "[drill|cutting disc|ridge till|strip tillage|zonal tillage|chisel|tined|mouldboard|disc plough]"
     mappings:
-      - MIxS:tillage
+      - mixs:tillage
 
   fire:
     aliases:
@@ -6462,7 +6462,7 @@ slots:
     is_a: attribute
     range: timestamp value  ## syntax: {timestamp}
     mappings:
-      - MIxS:fire
+      - mixs:fire
 
   flooding:
     aliases:
@@ -6473,7 +6473,7 @@ slots:
     is_a: attribute
     range: timestamp value  ## syntax: {timestamp}
     mappings:
-      - MIxS:flooding
+      - mixs:flooding
 
   extreme_event:
     aliases:
@@ -6484,7 +6484,7 @@ slots:
     is_a: attribute
     range: timestamp value  ## syntax: {timestamp}
     mappings:
-      - MIxS:extreme_event
+      - mixs:extreme_event
 
   horizon:
     aliases:
@@ -6496,7 +6496,7 @@ slots:
     range: text value  ## syntax: [O horizon|A horizon|E horizon|B horizon|C horizon|R layer|Permafrost]
     pattern: "[O horizon|A horizon|E horizon|B horizon|C horizon|R layer|Permafrost]"
     mappings:
-      - MIxS:horizon
+      - mixs:horizon
 
   horizon_meth:
     aliases:
@@ -6507,7 +6507,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:horizon_meth
+      - mixs:horizon_meth
 
   sieving:
     aliases:
@@ -6519,7 +6519,7 @@ slots:
     range: quantity value  ## syntax: {{text}|{float} {unit}};{float} {unit}
     string_serialization: "{{text}|{float} {unit}};{float} {unit}"
     mappings:
-      - MIxS:sieving
+      - mixs:sieving
 
   water_content_soil_meth:
     aliases:
@@ -6530,7 +6530,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:water_content_soil_meth
+      - mixs:water_content_soil_meth
 
   pool_dna_extracts:
     aliases:
@@ -6541,7 +6541,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {boolean};{integer}
     mappings:
-      - MIxS:pool_dna_extracts
+      - mixs:pool_dna_extracts
 
   store_cond:
     aliases:
@@ -6552,7 +6552,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text};{duration}
     mappings:
-      - MIxS:store_cond
+      - mixs:store_cond
 
   link_climate_info:
     aliases:
@@ -6563,7 +6563,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:link_climate_info
+      - mixs:link_climate_info
 
   annual_temp:
     aliases:
@@ -6576,7 +6576,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:annual_temp
+      - mixs:annual_temp
 
   season_temp:
     aliases:
@@ -6589,7 +6589,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:season_temp
+      - mixs:season_temp
 
   annual_precpt:
     aliases:
@@ -6602,7 +6602,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:annual_precpt
+      - mixs:annual_precpt
 
   season_precpt:
     aliases:
@@ -6615,7 +6615,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:season_precpt
+      - mixs:season_precpt
 
   link_class_info:
     aliases:
@@ -6626,7 +6626,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:link_class_info
+      - mixs:link_class_info
 
   fao_class:
     aliases:
@@ -6638,7 +6638,7 @@ slots:
     range: text value  ## syntax: [Acrisols|Andosols|Arenosols|Cambisols|Chernozems|Ferralsols|Fluvisols|Gleysols|Greyzems|Gypsisols|Histosols|Kastanozems|Lithosols|Luvisols|Nitosols|Phaeozems|Planosols|Podzols|Podzoluvisols|Rankers|Regosols|Rendzinas|Solonchaks|Solonetz|Vertisols|Yermosols]
     pattern: "[Acrisols|Andosols|Arenosols|Cambisols|Chernozems|Ferralsols|Fluvisols|Gleysols|Greyzems|Gypsisols|Histosols|Kastanozems|Lithosols|Luvisols|Nitosols|Phaeozems|Planosols|Podzols|Podzoluvisols|Rankers|Regosols|Rendzinas|Solonchaks|Solonetz|Vertisols|Yermosols]"
     mappings:
-      - MIxS:fao_class
+      - mixs:fao_class
 
   local_class:
     aliases:
@@ -6649,7 +6649,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:local_class
+      - mixs:local_class
 
   local_class_meth:
     aliases:
@@ -6660,7 +6660,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:local_class_meth
+      - mixs:local_class_meth
 
   soil_type:
     aliases:
@@ -6671,7 +6671,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:soil_type
+      - mixs:soil_type
 
   soil_type_meth:
     aliases:
@@ -6682,7 +6682,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:soil_type_meth
+      - mixs:soil_type_meth
 
   slope_gradient:
     aliases:
@@ -6695,7 +6695,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:slope_gradient
+      - mixs:slope_gradient
 
   slope_aspect:
     aliases:
@@ -6708,7 +6708,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:slope_aspect
+      - mixs:slope_aspect
 
   profile_position:
     aliases:
@@ -6720,7 +6720,7 @@ slots:
     range: text value  ## syntax: [summit|shoulder|backslope|footslope|toeslope]
     pattern: "[summit|shoulder|backslope|footslope|toeslope]"
     mappings:
-      - MIxS:profile_position
+      - mixs:profile_position
 
   drainage_class:
     aliases:
@@ -6732,7 +6732,7 @@ slots:
     range: text value  ## syntax: [very poorly|poorly|somewhat poorly|moderately well|well|excessively drained]
     pattern: "[very poorly|poorly|somewhat poorly|moderately well|well|excessively drained]"
     mappings:
-      - MIxS:drainage_class
+      - mixs:drainage_class
 
   texture:
     aliases:
@@ -6745,7 +6745,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:texture
+      - mixs:texture
 
   texture_meth:
     aliases:
@@ -6756,7 +6756,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:texture_meth
+      - mixs:texture_meth
 
   ph_meth:
     aliases:
@@ -6767,7 +6767,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:ph_meth
+      - mixs:ph_meth
 
   tot_org_c_meth:
     aliases:
@@ -6778,7 +6778,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:tot_org_c_meth
+      - mixs:tot_org_c_meth
 
   tot_nitro_content_meth:
     aliases:
@@ -6789,7 +6789,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:tot_nitro_content_meth
+      - mixs:tot_nitro_content_meth
 
   microbial_biomass:
     aliases:
@@ -6802,7 +6802,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:microbial_biomass
+      - mixs:microbial_biomass
 
   microbial_biomass_meth:
     aliases:
@@ -6813,7 +6813,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:microbial_biomass_meth
+      - mixs:microbial_biomass_meth
 
   link_addit_analys:
     aliases:
@@ -6824,7 +6824,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:link_addit_analys
+      - mixs:link_addit_analys
 
   extreme_salinity:
     aliases:
@@ -6837,7 +6837,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:extreme_salinity
+      - mixs:extreme_salinity
 
   salinity_meth:
     aliases:
@@ -6848,7 +6848,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:salinity_meth
+      - mixs:salinity_meth
 
   heavy_metals:
     aliases:
@@ -6860,7 +6860,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:heavy_metals
+      - mixs:heavy_metals
 
   heavy_metals_meth:
     aliases:
@@ -6871,7 +6871,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:heavy_metals_meth
+      - mixs:heavy_metals_meth
 
   al_sat:
     aliases:
@@ -6884,7 +6884,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:al_sat
+      - mixs:al_sat
 
   al_sat_meth:
     aliases:
@@ -6895,7 +6895,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {PMID}|{DOI}|{URL}
     mappings:
-      - MIxS:al_sat_meth
+      - mixs:al_sat_meth
 
   biochem_oxygen_dem:
     aliases:
@@ -6908,7 +6908,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:biochem_oxygen_dem
+      - mixs:biochem_oxygen_dem
 
   chem_oxygen_dem:
     aliases:
@@ -6921,7 +6921,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:chem_oxygen_dem
+      - mixs:chem_oxygen_dem
 
   efficiency_percent:
     aliases:
@@ -6934,7 +6934,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:efficiency_percent
+      - mixs:efficiency_percent
 
   emulsions:
     aliases:
@@ -6946,7 +6946,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:emulsions
+      - mixs:emulsions
 
   gaseous_substances:
     aliases:
@@ -6958,7 +6958,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:gaseous_substances
+      - mixs:gaseous_substances
 
   indust_eff_percent:
     aliases:
@@ -6971,7 +6971,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:indust_eff_percent
+      - mixs:indust_eff_percent
 
   inorg_particles:
     aliases:
@@ -6983,7 +6983,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:inorg_particles
+      - mixs:inorg_particles
 
   org_particles:
     aliases:
@@ -6995,7 +6995,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:org_particles
+      - mixs:org_particles
 
   pre_treatment:
     aliases:
@@ -7006,7 +7006,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:pre_treatment
+      - mixs:pre_treatment
 
   primary_treatment:
     aliases:
@@ -7017,7 +7017,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:primary_treatment
+      - mixs:primary_treatment
 
   reactor_type:
     aliases:
@@ -7028,7 +7028,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:reactor_type
+      - mixs:reactor_type
 
   secondary_treatment:
     aliases:
@@ -7039,7 +7039,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:secondary_treatment
+      - mixs:secondary_treatment
 
   sewage_type:
     aliases:
@@ -7050,7 +7050,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:sewage_type
+      - mixs:sewage_type
 
   sludge_retent_time:
     aliases:
@@ -7063,7 +7063,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:sludge_retent_time
+      - mixs:sludge_retent_time
 
   soluble_inorg_mat:
     aliases:
@@ -7075,7 +7075,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:soluble_inorg_mat
+      - mixs:soluble_inorg_mat
 
   soluble_org_mat:
     aliases:
@@ -7087,7 +7087,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:soluble_org_mat
+      - mixs:soluble_org_mat
 
   tertiary_treatment:
     aliases:
@@ -7098,7 +7098,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:tertiary_treatment
+      - mixs:tertiary_treatment
 
   tot_phosphate:
     aliases:
@@ -7111,7 +7111,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:tot_phosphate
+      - mixs:tot_phosphate
 
   wastewater_type:
     aliases:
@@ -7122,7 +7122,7 @@ slots:
     is_a: attribute
     range: text value  ## syntax: {text}
     mappings:
-      - MIxS:wastewater_type
+      - mixs:wastewater_type
 
   atmospheric_data:
     aliases:
@@ -7134,7 +7134,7 @@ slots:
     range: quantity value  ## syntax: {text};{float} {unit}
     string_serialization: "{text};{float} {unit}"
     mappings:
-      - MIxS:atmospheric_data
+      - mixs:atmospheric_data
 
   bac_prod:
     aliases:
@@ -7147,7 +7147,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:bac_prod
+      - mixs:bac_prod
 
   bac_resp:
     aliases:
@@ -7160,7 +7160,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:bac_resp
+      - mixs:bac_resp
 
   conduc:
     aliases:
@@ -7173,7 +7173,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:conduc
+      - mixs:conduc
 
   diss_inorg_nitro:
     aliases:
@@ -7186,7 +7186,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:diss_inorg_nitro
+      - mixs:diss_inorg_nitro
 
   down_par:
     aliases:
@@ -7199,7 +7199,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:down_par
+      - mixs:down_par
 
   fluor:
     aliases:
@@ -7212,7 +7212,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:fluor
+      - mixs:fluor
 
   light_intensity:
     aliases:
@@ -7225,7 +7225,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:light_intensity
+      - mixs:light_intensity
 
   part_org_nitro:
     aliases:
@@ -7238,7 +7238,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:part_org_nitro
+      - mixs:part_org_nitro
 
   photon_flux:
     aliases:
@@ -7251,7 +7251,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:photon_flux
+      - mixs:photon_flux
 
   primary_prod:
     aliases:
@@ -7264,7 +7264,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:primary_prod
+      - mixs:primary_prod
 
   size_frac_low:
     aliases:
@@ -7277,7 +7277,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:size_frac_low
+      - mixs:size_frac_low
 
   size_frac_up:
     aliases:
@@ -7290,7 +7290,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:size_frac_up
+      - mixs:size_frac_up
 
   soluble_react_phosp:
     aliases:
@@ -7303,7 +7303,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:soluble_react_phosp
+      - mixs:soluble_react_phosp
 
   suspend_part_matter:
     aliases:
@@ -7316,7 +7316,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:suspend_part_matter
+      - mixs:suspend_part_matter
 
   tot_diss_nitro:
     aliases:
@@ -7329,7 +7329,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:tot_diss_nitro
+      - mixs:tot_diss_nitro
 
   tot_inorg_nitro:
     aliases:
@@ -7342,7 +7342,7 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:tot_inorg_nitro
+      - mixs:tot_inorg_nitro
 
   tot_part_carb:
     aliases:
@@ -7355,5 +7355,5 @@ slots:
     pattern: "\\d+[.\\d+] \\S+"
     string_serialization: "{float} {unit}"
     mappings:
-      - MIxS:tot_part_carb
+      - mixs:tot_part_carb
 

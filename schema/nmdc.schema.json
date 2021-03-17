@@ -21,7 +21,7 @@
           "type": "string"
         },
         "type": {
-          "description": "The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.",
+          "description": "An optional string that species the type object.  This is used to allow for searches for different kinds of objects.",
           "type": "string"
         },
         "used": {
@@ -67,10 +67,6 @@
           "description": "An optional string that specified the type of object.",
           "type": "string"
         },
-        "uriorcurie": {
-          "description": "A uri or curi associated with an entity.",
-          "type": "string"
-        },
         "was_generated_by": {
           "type": "string"
         }
@@ -84,6 +80,7 @@
       "description": "A material sample. It may be environmental (encompassing many organisms) or isolate or tissue.   An environmental sample containing genetic material from multiple individuals is commonly referred to as a biosample.",
       "properties": {
         "add_date": {
+          "description": "The date on which the information was added to the database.",
           "type": "string"
         },
         "agrochem_addition": {
@@ -98,18 +95,36 @@
           "$ref": "#/definitions/TextValue",
           "description": "Reference or method used in determining Al saturation"
         },
+        "alkalinity": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "\"Alkalinity, the ability of a solution to neutralize acids to the equivalence point of carbonate or bicarbonate\""
+        },
+        "alkalinity_method": {
+          "$ref": "#/definitions/TextValue",
+          "description": "Method used for alkalinity measurement"
+        },
+        "alkyl_diethers": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of alkyl diethers "
+        },
         "alt": {
-          "type": "number"
+          "$ref": "#/definitions/QuantityValue",
+          "description": "\"Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets, atmospheric balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object which is above the earthbs surface. In this context, the altitude measurement is the vertical distance between the earth's surface above sea level and the sampled position in the air\""
         },
         "alternate_identifiers": {
-          "description": "The same biosample may have distinct identifiers in different databases (e.g. GOLD and EMSL) slot_usage:",
+          "description": "Non-primary identifiers",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
-        "altitude": {
-          "type": "string"
+        "aminopept_act": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Measurement of aminopeptidase activity"
+        },
+        "ammonium": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of ammonium in the sample"
         },
         "annual_precpt": {
           "$ref": "#/definitions/QuantityValue",
@@ -119,14 +134,41 @@
           "$ref": "#/definitions/QuantityValue",
           "description": "Mean annual temperature"
         },
-        "chlorophyll": {
-          "type": "string"
+        "bacteria_carb_prod": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Measurement of bacterial carbon production"
         },
-        "chlorophyll_concentration": {
-          "type": "string"
+        "bishomohopanol": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of bishomohopanol "
+        },
+        "bromide": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of bromide "
+        },
+        "calcium": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of calcium in the sample"
+        },
+        "carb_nitro_ratio": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Ratio of amount or concentrations of carbon to nitrogen"
+        },
+        "chem_administration": {
+          "$ref": "#/definitions/ControlledTermValue",
+          "description": "\"List of chemical compounds administered to the host or site where sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can include multiple compounds. For chemical entities of biological interest ontology (chebi) (v 163), http://purl.bioontology.org/ontology/chebi\""
+        },
+        "chloride": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of chloride in the sample"
+        },
+        "chlorophyll": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of chlorophyll"
         },
         "collection_date": {
-          "type": "string"
+          "$ref": "#/definitions/TimestampValue",
+          "description": "\"The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant\""
         },
         "community": {
           "type": "string"
@@ -147,30 +189,64 @@
           "$ref": "#/definitions/TextValue",
           "description": "Reference or method used in vegetation classification "
         },
+        "density": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "\"Density of the sample, which is its mass per unit volume (aka volumetric mass density)\""
+        },
         "depth": {
-          "type": "number"
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Please refer to the definitions of depth in the environmental packages"
         },
         "description": {
           "description": "a human-readable description of a thing",
           "type": "string"
         },
+        "diss_carb_dioxide": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of dissolved carbon dioxide in the sample or liquid portion of the sample"
+        },
+        "diss_hydrogen": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of dissolved hydrogen"
+        },
+        "diss_inorg_carb": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "\"Dissolved inorganic carbon concentration in the sample, typically measured after filtering the sample using a 0.45 micrometer filter\""
+        },
+        "diss_inorg_phosp": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of dissolved inorganic phosphorus in the sample"
+        },
+        "diss_org_carb": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "\"Concentration of dissolved organic carbon in the sample, liquid portion of the sample, or aqueous phase of the fluid\""
+        },
+        "diss_org_nitro": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Dissolved organic nitrogen concentration measured as; total dissolved nitrogen - NH4 - NO3 - NO2"
+        },
         "diss_oxygen": {
-          "type": "string"
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of dissolved oxygen"
         },
         "drainage_class": {
           "$ref": "#/definitions/TextValue",
           "description": "Drainage classification from a standard system such as the USDA system"
         },
         "ecosystem": {
+          "description": "TODO",
           "type": "string"
         },
         "ecosystem_category": {
+          "description": "TODO",
           "type": "string"
         },
         "ecosystem_subtype": {
+          "description": "TODO",
           "type": "string"
         },
         "ecosystem_type": {
+          "description": "TODO",
           "type": "string"
         },
         "elev": {
@@ -179,15 +255,15 @@
         },
         "env_broad_scale": {
           "$ref": "#/definitions/ControlledTermValue",
-          "description": "formerly known as 'biome'"
+          "description": "\"In this field, report which major environmental system your sample or specimen came from. The systems identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. were you in the desert or a rainforest?). We recommend using subclasses of ENVOUs biome class: http://purl.obolibrary.org/obo/ENVO_00000428. Format (one term): termLabel [termID], Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a water sample from the photic zone in middle of the Atlantic Ocean, consider: oceanic epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample from the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228]. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html\""
         },
         "env_local_scale": {
           "$ref": "#/definitions/ControlledTermValue",
-          "description": "formerly known as 'feature'"
+          "description": "\"In this field, report the entity or entities which are in your sample or specimenUs local vicinity and which you believe have significant causal influences on your sample or specimen. Please use terms that are present in ENVO and which are of smaller spatial grain than your entry for env_broad_scale. Format (one term): termLabel [termID]; Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a pooled sample taken from various vegetation layers in a forest consider: canopy [ENVO:00000047]|herb and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory [01000335]|shrub layer [ENVO:01000336]. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html\""
         },
         "env_medium": {
           "$ref": "#/definitions/ControlledTermValue",
-          "description": "formerly known as 'material'"
+          "description": "\"In this field, report which environmental material or materials (pipe separated) immediately surrounded your sample or specimen prior to sampling, using one or more subclasses of ENVOUs environmental material class: http://purl.obolibrary.org/obo/ENVO_00010483. Format (one term): termLabel [termID]; Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a fish swimming in the upper 100 m of the Atlantic Ocean, consider: ocean water [ENVO:00002151]. Example: Annotating a duck on a pond consider: pond water [ENVO:00002228]|air ENVO_00002005. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html\""
         },
         "env_package": {
           "$ref": "#/definitions/TextValue",
@@ -210,10 +286,12 @@
           "description": "Historical and/or physical evidence of flooding"
         },
         "geo_loc_name": {
-          "type": "string"
+          "$ref": "#/definitions/TextValue",
+          "description": "\"The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (v 1.512) (http://purl.bioontology.org/ontology/GAZ)\""
         },
-        "growth_temperature": {
-          "type": "string"
+        "glucosidase_act": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Measurement of glucosidase activity"
         },
         "habitat": {
           "type": "string"
@@ -238,7 +316,7 @@
           "type": "string"
         },
         "id": {
-          "description": "The primary identifier for the biosample. Example: GOLD:Gb0205609",
+          "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
           "type": "string"
         },
         "identifier": {
@@ -271,6 +349,18 @@
         "location": {
           "type": "string"
         },
+        "magnesium": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of magnesium in the sample"
+        },
+        "mean_frict_vel": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Measurement of mean friction velocity"
+        },
+        "mean_peak_frict_vel": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Measurement of mean peak friction velocity"
+        },
         "microbial_biomass": {
           "$ref": "#/definitions/QuantityValue",
           "description": "\"The part of the organic matter in the soil that constitutes living microorganisms smaller than 5-10 micrometer. If you keep this, you would need to have correction factors used for conversion to the final units\""
@@ -284,37 +374,83 @@
           "description": "\"Any other measurement performed or parameter collected, that is not listed here\""
         },
         "mod_date": {
+          "description": "The last date on which the database information was modified.",
           "type": "string"
         },
+        "n_alkanes": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of n-alkanes; can include multiple n-alkanes"
+        },
         "name": {
-          "description": "A human readable name or description of the biosample",
+          "description": "A human readable label for an entity",
           "type": "string"
         },
         "ncbi_taxonomy_name": {
           "type": "string"
         },
         "nitrate": {
-          "type": "string"
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of nitrate in the sample"
         },
-        "nitrate_concentration": {
-          "type": "string"
+        "nitrite": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of nitrite in the sample"
         },
-        "oxygen_concentration": {
-          "type": "string"
+        "org_matter": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of organic matter "
+        },
+        "org_nitro": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of organic nitrogen"
+        },
+        "organism_count": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "\"Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)\""
+        },
+        "oxy_stat_samp": {
+          "$ref": "#/definitions/TextValue",
+          "description": "Oxygenation status of sample"
+        },
+        "part_org_carb": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of particulate organic carbon"
+        },
+        "perturbation": {
+          "$ref": "#/definitions/TextValue",
+          "description": "\"Type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with perturbation regimen including how many times the perturbation was repeated, how long each perturbation lasted, and the start and end time of the entire perturbation period; can include multiple perturbation types\""
+        },
+        "petroleum_hydrocarb": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of petroleum hydrocarbon"
         },
         "ph": {
-          "type": "string"
+          "$ref": "#/definitions/QuantityValue",
+          "description": "\"Ph measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid\""
         },
         "ph_meth": {
           "$ref": "#/definitions/TextValue",
           "description": "Reference or method used in determining ph"
         },
+        "phaeopigments": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of phaeopigments; can include multiple phaeopigments"
+        },
+        "phosplipid_fatt_acid": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of phospholipid fatty acids; can include multiple values"
+        },
         "pool_dna_extracts": {
           "$ref": "#/definitions/TextValue",
           "description": "\"Indicate whether multiple DNA extractions were mixed. If the answer yes, the number of extracts that were pooled should be given\""
         },
+        "potassium": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of potassium in the sample"
+        },
         "pressure": {
-          "type": "string"
+          "$ref": "#/definitions/QuantityValue",
+          "description": "\"Pressure to which the sample is subject to, in atmospheres\""
         },
         "previous_land_use": {
           "$ref": "#/definitions/TextValue",
@@ -331,27 +467,43 @@
         "proport_woa_temperature": {
           "type": "string"
         },
-        "salinity": {
-          "type": "string"
+        "redox_potential": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "\"Redox potential, measured relative to a hydrogen cell, indicating oxidation or reduction potential\""
         },
-        "salinity_concentration": {
+        "salinity": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "\"Salinity is the total concentration of all dissolved salts in a water sample. While salinity can be measured by a complete chemical analysis, this method is difficult and time consuming. More often, it is instead derived from the conductivity measurement. This is known as practical salinity. These derivations compare the specific conductance of the sample to a salinity standard such as seawater\""
+        },
+        "salinity_category": {
+          "description": "Categorcial description of the sample's salinity. Examples: halophile, halotolerant, hypersaline, huryhaline",
           "type": "string"
         },
         "salinity_meth": {
           "$ref": "#/definitions/TextValue",
           "description": "Reference or method used in determining salinity"
         },
+        "samp_collect_device": {
+          "$ref": "#/definitions/TextValue",
+          "description": "The method or device employed for collecting the sample"
+        },
+        "samp_store_dur": {
+          "$ref": "#/definitions/TextValue",
+          "description": "Duration for which the sample was stored"
+        },
+        "samp_store_loc": {
+          "$ref": "#/definitions/TextValue",
+          "description": "\"Location at which sample was stored, usually name of a specific freezer/room\""
+        },
+        "samp_store_temp": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "\"Temperature at which sample was stored, e.g. -80 degree Celsius\""
+        },
         "samp_vol_we_dna_ext": {
           "$ref": "#/definitions/QuantityValue",
           "description": "\"Volume (ml), weight (g) of processed sample, or surface area swabbed from sample for DNA extraction\""
         },
         "sample_collection_site": {
-          "type": "string"
-        },
-        "sample_volume": {
-          "type": "string"
-        },
-        "sampling_strategy": {
           "type": "string"
         },
         "season_precpt": {
@@ -366,6 +518,14 @@
           "$ref": "#/definitions/QuantityValue",
           "description": "Collection design of pooled samples and/or sieve size and amount of sample sieved "
         },
+        "size_frac_low": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Refers to the mesh/pore size used to pre-filter/pre-sort the sample. Materials larger than the size threshold are excluded from the sample"
+        },
+        "size_frac_up": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Refers to the mesh/pore size used to retain the sample. Materials smaller than the size threshold are excluded from the sample"
+        },
         "slope_aspect": {
           "$ref": "#/definitions/QuantityValue",
           "description": "\"The direction a slope faces. While looking down a slope use a compass to record the direction you are facing (direction or degrees); e.g., nw or 315 degrees. This measure provides an indication of sun and wind exposure that will influence soil temperature and evapotranspiration.\""
@@ -373,6 +533,10 @@
         "slope_gradient": {
           "$ref": "#/definitions/QuantityValue",
           "description": "Commonly called 'slope'. The angle between ground surface and a horizontal line (in percent). This is the direction that overland water would flow. This measure is usually taken with a hand level meter or clinometer"
+        },
+        "sodium": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Sodium concentration in the sample"
         },
         "soil_type": {
           "$ref": "#/definitions/TextValue",
@@ -386,6 +550,7 @@
           "type": "string"
         },
         "specific_ecosystem": {
+          "description": "TODO",
           "type": "string"
         },
         "store_cond": {
@@ -393,7 +558,19 @@
           "description": "Explain how and for how long the soil sample was stored before DNA extraction"
         },
         "subsurface_depth": {
-          "type": "string"
+          "$ref": "#/definitions/QuantityValue"
+        },
+        "sulfate": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of sulfate in the sample"
+        },
+        "sulfide": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Concentration of sulfide in the sample"
+        },
+        "temp": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Temperature of the sample at the time of sampling"
         },
         "texture": {
           "$ref": "#/definitions/QuantityValue",
@@ -403,18 +580,29 @@
           "$ref": "#/definitions/TextValue",
           "description": "Reference or method used in determining soil texture"
         },
+        "tidal_stage": {
+          "$ref": "#/definitions/TextValue",
+          "description": "Stage of tide"
+        },
         "tillage": {
           "$ref": "#/definitions/TextValue",
           "description": "Note method(s) used for tilling"
         },
+        "tot_depth_water_col": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Measurement of total depth of water column"
+        },
+        "tot_diss_nitro": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "\"Total dissolved nitrogen concentration, reported as nitrogen, measured by: total dissolved nitrogen = NH4 + NO3NO2 + dissolved organic nitrogen\""
+        },
         "tot_nitro_content": {
-          "type": "string"
+          "$ref": "#/definitions/QuantityValue",
+          "description": "Total nitrogen content of the sample"
         },
         "tot_nitro_content_meth": {
-          "type": "string"
-        },
-        "tot_nitrogen": {
-          "type": "string"
+          "$ref": "#/definitions/TextValue",
+          "description": "Reference or method used in determining the total nitrogen"
         },
         "tot_org_c_meth": {
           "$ref": "#/definitions/TextValue",
@@ -424,11 +612,12 @@
           "$ref": "#/definitions/QuantityValue",
           "description": "\"Definition for soil: total organic carbon content of the soil, definition otherwise: total organic carbon content\""
         },
-        "type": {
-          "description": "An optional string that specified the type of object.",
-          "type": "string"
+        "tot_phosp": {
+          "$ref": "#/definitions/QuantityValue",
+          "description": "\"Total phosphorus concentration in the sample, calculated by: total phosphorus = total dissolved phosphorus + particulate phosphorus\""
         },
-        "uriorcurie": {
+        "type": {
+          "description": "An optional string that species the type object.  This is used to allow for searches for different kinds of objects.",
           "type": "string"
         },
         "water_content": {
@@ -496,10 +685,6 @@
         },
         "type": {
           "description": "An optional string that specified the type of object.",
-          "type": "string"
-        },
-        "uriorcurie": {
-          "description": "A uri or curi associated with an entity.",
           "type": "string"
         },
         "was_generated_by": {
@@ -573,10 +758,6 @@
           "description": "An optional string that specified the type of object.",
           "type": "string"
         },
-        "uriorcurie": {
-          "description": "A uri or curi associated with an entity.",
-          "type": "string"
-        },
         "was_generated_by": {
           "type": "string"
         }
@@ -625,17 +806,13 @@
           "type": "string"
         },
         "type": {
-          "description": "An optional string that specified the type of object.",
-          "type": "string"
-        },
-        "uriorcurie": {
+          "description": "An optional string that species the type object.  This is used to allow for searches for different kinds of objects.",
           "type": "string"
         },
         "url": {
           "type": "string"
         },
         "was_generated_by": {
-          "description": "the activity that generated the file",
           "type": "string"
         }
       },
@@ -800,7 +977,7 @@
           "type": "string"
         },
         "type": {
-          "description": "The type of entity that the json object represents.  This is used to allow for searches for different kinds of objects.",
+          "description": "An optional string that species the type object.  This is used to allow for searches for different kinds of objects.",
           "type": "string"
         },
         "was_generated_by": {
@@ -907,10 +1084,6 @@
           "description": "An optional string that specified the type of object.",
           "type": "string"
         },
-        "uriorcurie": {
-          "description": "A uri or curi associated with an entity.",
-          "type": "string"
-        },
         "was_generated_by": {
           "type": "string"
         }
@@ -963,10 +1136,6 @@
         },
         "type": {
           "description": "An optional string that specified the type of object.",
-          "type": "string"
-        },
-        "uriorcurie": {
-          "description": "A uri or curi associated with an entity.",
           "type": "string"
         },
         "was_generated_by": {
@@ -1033,7 +1202,7 @@
           "type": "integer"
         },
         "type": {
-          "description": "An optional string that specified the type of object.",
+          "description": "An optional string that species the type object.  This is used to allow for searches for different kinds of objects.",
           "type": "string"
         }
       },
@@ -1100,7 +1269,7 @@
           "type": "integer"
         },
         "type": {
-          "description": "An optional string that specified the type of object.",
+          "description": "An optional string that species the type object.  This is used to allow for searches for different kinds of objects.",
           "type": "string"
         },
         "unbinned_contig_num": {
@@ -1198,7 +1367,7 @@
           "type": "string"
         },
         "type": {
-          "description": "An optional string that specified the type of object.",
+          "description": "An optional string that species the type object.  This is used to allow for searches for different kinds of objects.",
           "type": "string"
         },
         "used": {
@@ -1260,7 +1429,7 @@
           "type": "string"
         },
         "type": {
-          "description": "An optional string that specified the type of object.",
+          "description": "An optional string that species the type object.  This is used to allow for searches for different kinds of objects.",
           "type": "string"
         },
         "used": {
@@ -1429,7 +1598,7 @@
           "type": "string"
         },
         "type": {
-          "description": "An optional string that specified the type of object.",
+          "description": "An optional string that species the type object.  This is used to allow for searches for different kinds of objects.",
           "type": "string"
         },
         "used": {
@@ -1496,7 +1665,7 @@
           "type": "string"
         },
         "type": {
-          "description": "An optional string that specified the type of object.",
+          "description": "An optional string that species the type object.  This is used to allow for searches for different kinds of objects.",
           "type": "string"
         },
         "used": {
@@ -1562,7 +1731,7 @@
           "type": "string"
         },
         "type": {
-          "description": "An optional string that specified the type of object.",
+          "description": "An optional string that species the type object.  This is used to allow for searches for different kinds of objects.",
           "type": "string"
         },
         "used": {
@@ -1588,10 +1757,11 @@
       "description": "The methods and processes used to generate omics data from a biosample or organism.",
       "properties": {
         "add_date": {
+          "description": "The date on which the information was added to the database.",
           "type": "string"
         },
         "alternate_identifiers": {
-          "description": "The same omics processing may have distinct identifiers in different databases (e.g. GOLD and EMSL, as well as NCBI)",
+          "description": "Non-primary identifiers",
           "items": {
             "type": "string"
           },
@@ -1602,56 +1772,59 @@
           "type": "string"
         },
         "has_input": {
+          "description": "An input to a process.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "has_output": {
+          "description": "An output biosample to a processing step",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "id": {
-          "description": "The primary identifier for the omics processing. E.g. GOLD:GpNNNN",
+          "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
           "type": "string"
         },
         "instrument_name": {
+          "description": "The name of the instrument that was used for processing the sample.",
           "type": "string"
         },
         "mod_date": {
+          "description": "The last date on which the database information was modified.",
           "type": "string"
         },
         "name": {
-          "description": "A human readable name or description of the omics processing.",
+          "description": "A human readable label for an entity",
           "type": "string"
         },
         "ncbi_project_name": {
           "type": "string"
         },
         "omics_type": {
-          "type": "string"
+          "$ref": "#/definitions/ControlledTermValue",
+          "description": "The type of omics data"
         },
         "part_of": {
+          "description": "Links a resource to another resource that either logically or physically includes it.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "principal_investigator_name": {
-          "description": "An optional values that specifies the PI's name. This might be needed in cases where the study cannot be identified.",
-          "type": "string"
+          "$ref": "#/definitions/PersonValue",
+          "description": "represents the PI"
         },
         "processing_institution": {
           "description": "The organization that processed the sample.",
           "type": "string"
         },
         "type": {
-          "description": "An optional string that specified the type of object.",
-          "type": "string"
-        },
-        "uriorcurie": {
+          "description": "An optional string that species the type object.  This is used to allow for searches for different kinds of objects.",
           "type": "string"
         }
       },
@@ -1838,10 +2011,6 @@
           "description": "An optional string that specified the type of object.",
           "type": "string"
         },
-        "uriorcurie": {
-          "description": "A uri or curi associated with an entity.",
-          "type": "string"
-        },
         "was_generated_by": {
           "type": "string"
         }
@@ -1900,10 +2069,6 @@
         },
         "type": {
           "description": "An optional string that specified the type of object.",
-          "type": "string"
-        },
-        "uriorcurie": {
-          "description": "A uri or curi associated with an entity.",
           "type": "string"
         },
         "was_generated_by": {
@@ -2035,7 +2200,7 @@
           "type": "string"
         },
         "type": {
-          "description": "An optional string that specified the type of object.",
+          "description": "An optional string that species the type object.  This is used to allow for searches for different kinds of objects.",
           "type": "string"
         },
         "used": {
@@ -2118,7 +2283,7 @@
           "type": "string"
         },
         "type": {
-          "description": "An optional string that specified the type of object.",
+          "description": "An optional string that species the type object.  This is used to allow for searches for different kinds of objects.",
           "type": "string"
         },
         "used": {
@@ -2143,7 +2308,7 @@
       "description": "A study summarizes the overall goal of a research initiative and outlines the key objective of its underlying projects.",
       "properties": {
         "alternate_identifiers": {
-          "description": "The same study may have distinct identifiers in different databases (e.g. GOLD and EMSL)",
+          "description": "Non-primary identifiers",
           "items": {
             "type": "string"
           },
@@ -2154,39 +2319,42 @@
           "type": "string"
         },
         "doi": {
-          "type": "string"
+          "$ref": "#/definitions/AttributeValue"
         },
         "ecosystem": {
+          "description": "TODO",
           "type": "string"
         },
         "ecosystem_category": {
+          "description": "TODO",
           "type": "string"
         },
         "ecosystem_subtype": {
+          "description": "TODO",
           "type": "string"
         },
         "ecosystem_type": {
+          "description": "TODO",
           "type": "string"
         },
         "id": {
-          "description": "The primary identifier for the study.",
+          "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
           "type": "string"
         },
         "name": {
-          "description": "A human readable name or description of the study.",
+          "description": "A human readable label for an entity",
           "type": "string"
         },
         "principal_investigator_name": {
-          "type": "string"
+          "$ref": "#/definitions/PersonValue",
+          "description": "represents the PI"
         },
         "specific_ecosystem": {
+          "description": "TODO",
           "type": "string"
         },
         "type": {
-          "description": "An optional string that specified the type of object.",
-          "type": "string"
-        },
-        "uriorcurie": {
+          "description": "An optional string that species the type object.  This is used to allow for searches for different kinds of objects.",
           "type": "string"
         }
       },
@@ -2212,10 +2380,6 @@
           "description": "An optional string that specified the type of object.",
           "type": "string"
         },
-        "uriorcurie": {
-          "description": "A uri or curi associated with an entity.",
-          "type": "string"
-        },
         "was_generated_by": {
           "type": "string"
         }
@@ -2236,10 +2400,6 @@
           "description": "An optional string that specified the type of object.",
           "type": "string"
         },
-        "uriorcurie": {
-          "description": "A uri or curi associated with an entity.",
-          "type": "string"
-        },
         "was_generated_by": {
           "type": "string"
         }
@@ -2258,10 +2418,6 @@
         },
         "type": {
           "description": "An optional string that specified the type of object.",
-          "type": "string"
-        },
-        "uriorcurie": {
-          "description": "A uri or curi associated with an entity.",
           "type": "string"
         },
         "was_generated_by": {
@@ -2313,7 +2469,7 @@
           "type": "string"
         },
         "type": {
-          "description": "An optional string that specified the type of object.",
+          "description": "An optional string that species the type object.  This is used to allow for searches for different kinds of objects.",
           "type": "string"
         },
         "used": {

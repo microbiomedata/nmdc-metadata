@@ -69,7 +69,6 @@ metatype:Nodeidentifier NONLITERAL
     CLOSED {
        (  $<AttributeValue_tes> (  <has_raw_value> @metatype:String ? ;
              <was_generated_by> @<Activity> ? ;
-             <uriorcurie> @metatype:String ? ;
              <type> @metatype:String ?
           ) ;
           rdf:type [ <AttributeValue> ] ?
@@ -81,106 +80,141 @@ metatype:Nodeidentifier NONLITERAL
 <Biosample> CLOSED {
     (  $<Biosample_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
-          <https://microbiomedata/schema/mixs/env_package> @<TextValue> ? ;
-          <lat_lon> @<GeolocationValue> ? ;
-          <geo_loc_name> @metatype:String ? ;
-          <collection_date> @metatype:String ? ;
-          <env_broad_scale> @<ControlledTermValue> ? ;
-          <env_local_scale> @<ControlledTermValue> ? ;
-          <env_medium> @<ControlledTermValue> ? ;
-          <ecosystem> @metatype:String ? ;
-          <ecosystem_category> @<AttributeValue> ? ;
-          <ecosystem_type> @<AttributeValue> ? ;
-          <ecosystem_subtype> @<AttributeValue> ? ;
-          <specific_ecosystem> @<AttributeValue> ? ;
-          <depth> @metatype:Float ? ;
-          <https://microbiomedata/schema/mixs/tot_org_carb> @<QuantityValue> ? ;
-          <alt> @metatype:Float ? ;
-          <https://microbiomedata/schema/mixs/elev> @<QuantityValue> ? ;
-          <salinity> @metatype:String ? ;
-          <diss_oxygen> @metatype:String ? ;
-          <nitrate> @metatype:String ? ;
-          <chlorophyll> @metatype:String ? ;
+          <type> @metatype:String ? ;
+          <https://microbiomedata/schema/mixs/agrochem_addition> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/alkalinity> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/alkalinity_method> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/alkyl_diethers> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/alt> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/al_sat> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/al_sat_meth> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/aminopept_act> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/ammonium> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/annual_precpt> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/annual_temp> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/bacteria_carb_prod> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/bishomohopanol> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/bromide> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/calcium> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/carb_nitro_ratio> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/chem_administration> @<ControlledTermValue> ? ;
+          <https://microbiomedata/schema/mixs/chloride> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/chlorophyll> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/collection_date> @<TimestampValue> ? ;
           <https://microbiomedata/schema/mixs/cur_land_use> @<TextValue> ? ;
           <https://microbiomedata/schema/mixs/cur_vegetation> @<TextValue> ? ;
           <https://microbiomedata/schema/mixs/cur_vegetation_meth> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/previous_land_use> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/previous_land_use_meth> @<TextValue> ? ;
           <https://microbiomedata/schema/mixs/crop_rotation> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/agrochem_addition> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/tillage> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/density> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/depth> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/diss_carb_dioxide> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/diss_hydrogen> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/diss_inorg_carb> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/diss_inorg_phosp> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/diss_org_carb> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/diss_org_nitro> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/diss_oxygen> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/drainage_class> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/elev> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/env_package> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/env_broad_scale> @<ControlledTermValue> ? ;
+          <https://microbiomedata/schema/mixs/env_local_scale> @<ControlledTermValue> ? ;
+          <https://microbiomedata/schema/mixs/env_medium> @<ControlledTermValue> ? ;
+          <https://microbiomedata/schema/mixs/extreme_event> @<TimestampValue> ? ;
+          <https://microbiomedata/schema/mixs/fao_class> @<TextValue> ? ;
           <https://microbiomedata/schema/mixs/fire> @<TimestampValue> ? ;
           <https://microbiomedata/schema/mixs/flooding> @<TimestampValue> ? ;
-          <https://microbiomedata/schema/mixs/extreme_event> @<TimestampValue> ? ;
-          <https://microbiomedata/schema/mixs/horizon> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/horizon_meth> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/sieving> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/water_content> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/water_content_soil_meth> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/samp_vol_we_dna_ext> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/pool_dna_extracts> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/store_cond> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/link_climate_info> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/season_temp> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/annual_temp> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/season_precpt> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/annual_precpt> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/link_class_info> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/fao_class> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/local_class> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/local_class_meth> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/soil_type> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/soil_type_meth> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/slope_gradient> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/slope_aspect> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/profile_position> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/drainage_class> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/texture> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/texture_meth> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/ph_meth> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/tot_org_c_meth> @<TextValue> ? ;
-          <tot_nitro_content> @metatype:String ? ;
-          <tot_nitro_content_meth> @metatype:String ? ;
-          <https://microbiomedata/schema/mixs/microbial_biomass> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/microbial_biomass_meth> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/link_addit_analys> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/salinity_meth> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/geo_loc_name> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/glucosidase_act> @<QuantityValue> ? ;
           <https://microbiomedata/schema/mixs/heavy_metals> @<QuantityValue> ? ;
           <https://microbiomedata/schema/mixs/heavy_metals_meth> @<TextValue> ? ;
-          <https://microbiomedata/schema/mixs/al_sat> @<QuantityValue> ? ;
-          <https://microbiomedata/schema/mixs/al_sat_meth> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/horizon> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/horizon_meth> @<TextValue> ? ;
+          <lat_lon> @<GeolocationValue> ? ;
+          <https://microbiomedata/schema/mixs/link_addit_analys> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/link_class_info> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/link_climate_info> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/local_class> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/local_class_meth> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/magnesium> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/mean_frict_vel> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/mean_peak_frict_vel> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/microbial_biomass> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/microbial_biomass_meth> @<TextValue> ? ;
           <https://microbiomedata/schema/mixs/misc_param> @<QuantityValue> ? ;
-          <name> @metatype:String ? ;
-          <alternate_identifiers> @metatype:String * ;
-          <type> @metatype:String ? ;
-          <uriorcurie> @metatype:String ? ;
-          <add_date> @metatype:String ? ;
-          <mod_date> @metatype:String ? ;
-          <ncbi_taxonomy_name> @metatype:String ? ;
-          <community> @metatype:String ? ;
-          <location> @metatype:String ? ;
-          <habitat> @metatype:String ? ;
-          <sample_collection_site> @metatype:String ? ;
-          <identifier> @metatype:String ? ;
-          <host_name> @metatype:String ? ;
-          <sampling_strategy> @metatype:String ? ;
-          <growth_temperature> @metatype:String ? ;
-          <ph> @metatype:String ? ;
-          <altitude> @metatype:String ? ;
-          <pressure> @metatype:String ? ;
-          <subsurface_depth> @metatype:String ? ;
-          <salinity_concentration> @metatype:String ? ;
-          <oxygen_concentration> @metatype:String ? ;
-          <nitrate_concentration> @metatype:String ? ;
-          <soluble_iron_micromol> @metatype:String ? ;
-          <tot_nitrogen> @metatype:String ? ;
-          <chlorophyll_concentration> @metatype:String ? ;
-          <sample_volume> @metatype:String ? ;
-          <proport_woa_temperature> @metatype:String ? ;
+          <https://microbiomedata/schema/mixs/n_alkanes> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/nitrate> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/nitrite> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/org_matter> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/org_nitro> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/organism_count> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/oxy_stat_samp> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/part_org_carb> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/perturbation> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/petroleum_hydrocarb> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/ph> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/ph_meth> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/phaeopigments> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/phosplipid_fatt_acid> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/pool_dna_extracts> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/potassium> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/pressure> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/previous_land_use> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/previous_land_use_meth> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/profile_position> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/redox_potential> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/salinity> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/salinity_meth> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/samp_collect_device> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/samp_store_dur> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/samp_store_loc> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/samp_store_temp> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/samp_vol_we_dna_ext> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/season_temp> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/season_precpt> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/sieving> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/size_frac_low> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/size_frac_up> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/slope_gradient> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/slope_aspect> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/sodium> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/soil_type> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/soil_type_meth> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/store_cond> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/sulfate> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/sulfide> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/temp> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/texture> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/texture_meth> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/tillage> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/tidal_stage> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/tot_depth_water_col> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/tot_diss_nitro> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/tot_org_carb> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/tot_org_c_meth> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/tot_nitro_content> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/tot_nitro_content_meth> @<TextValue> ? ;
+          <https://microbiomedata/schema/mixs/tot_phosp> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/water_content> @<QuantityValue> ? ;
+          <https://microbiomedata/schema/mixs/water_content_soil_meth> @<TextValue> ? ;
+          <ecosystem> @metatype:String ? ;
           <ecosystem_category> @metatype:String ? ;
           <ecosystem_type> @metatype:String ? ;
           <ecosystem_subtype> @metatype:String ? ;
-          <specific_ecosystem> @metatype:String ?
+          <specific_ecosystem> @metatype:String ? ;
+          <add_date> @metatype:String ? ;
+          <community> @metatype:String ? ;
+          <habitat> @metatype:String ? ;
+          <host_name> @metatype:String ? ;
+          <identifier> @metatype:String ? ;
+          <location> @metatype:String ? ;
+          <mod_date> @metatype:String ? ;
+          <ncbi_taxonomy_name> @metatype:String ? ;
+          <proport_woa_temperature> @metatype:String ? ;
+          <salinity_category> @metatype:String ? ;
+          <sample_collection_site> @metatype:String ? ;
+          <soluble_iron_micromol> @metatype:String ? ;
+          <subsurface_depth> @<QuantityValue> ?
        ) ;
        rdf:type [ <Biosample> ]
     )
@@ -234,10 +268,9 @@ metatype:Nodeidentifier NONLITERAL
           <md5_checksum> @metatype:String ? ;
           <data_object_type> @<ControlledTermValue> ? ;
           <compression_type> @metatype:String ? ;
-          <was_generated_by> @<WorkflowExecutionActivity> ? ;
+          <was_generated_by> @<Activity> ? ;
           <url> @metatype:String ? ;
-          <type> @metatype:String ? ;
-          <uriorcurie> @metatype:String ?
+          <type> @metatype:String ?
        ) ;
        rdf:type [ <DataObject> ]
     )
@@ -347,7 +380,8 @@ metatype:Nodeidentifier NONLITERAL
 }
 
 <MAGBin> CLOSED {
-    (  $<MAGBin_tes> (  <bin_name> @metatype:String ? ;
+    (  $<MAGBin_tes> (  <type> @metatype:String ? ;
+          <bin_name> @metatype:String ? ;
           <number_of_contig> @metatype:Integer ? ;
           <completeness> @metatype:Float ? ;
           <contamination> @metatype:Float ? ;
@@ -363,8 +397,7 @@ metatype:Nodeidentifier NONLITERAL
           <gtdbtk_order> @metatype:String ? ;
           <gtdbtk_family> @metatype:String ? ;
           <gtdbtk_genus> @metatype:String ? ;
-          <gtdbtk_species> @metatype:String ? ;
-          <type> @metatype:String ?
+          <gtdbtk_species> @metatype:String ?
        ) ;
        rdf:type [ <MAGBin> ] ?
     )
@@ -484,20 +517,17 @@ metatype:Nodeidentifier NONLITERAL
 <OmicsProcessing> CLOSED {
     (  $<OmicsProcessing_tes> (  &<BiosampleProcessing_tes> ;
           rdf:type [ <BiosampleProcessing> ] ? ;
-          <has_output> @metatype:String * ;
-          <omics_type> @metatype:String ? ;
-          <part_of> @<Study> * ;
-          <name> @metatype:String ? ;
-          <alternate_identifiers> @metatype:String * ;
-          <has_input> @<Biosample> * ;
-          <type> @metatype:String ? ;
-          <principal_investigator_name> @metatype:String ? ;
-          <processing_institution> @metatype:String ? ;
-          <uriorcurie> @metatype:String ? ;
           <add_date> @metatype:String ? ;
           <mod_date> @metatype:String ? ;
+          <has_input> @<NamedThing> * ;
+          <has_output> @<NamedThing> * ;
+          <instrument_name> @metatype:String ? ;
           <ncbi_project_name> @metatype:String ? ;
-          <instrument_name> @metatype:String ?
+          <omics_type> @<ControlledTermValue> ? ;
+          dcterms:isPartOf @<NamedThing> * ;
+          <principal_investigator_name> @<PersonValue> ? ;
+          <processing_institution> @metatype:String ? ;
+          <type> @metatype:String ?
        ) ;
        rdf:type [ <OmicsProcessing> ]
     )
@@ -629,8 +659,8 @@ metatype:Nodeidentifier NONLITERAL
           <output_base_count> @metatype:Float ? ;
           <input_read_bases> @metatype:Float ? ;
           <output_read_bases> @metatype:Float ? ;
-          <has_input> @metatype:String * ;
-          <has_output> @metatype:String *
+          <has_input> @<NamedThing> * ;
+          <has_output> @<NamedThing> *
        ) ;
        rdf:type [ <ReadQCAnalysisActivity> ]
     )
@@ -640,20 +670,13 @@ metatype:Nodeidentifier NONLITERAL
     (  $<Study_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
           <ecosystem> @metatype:String ? ;
-          <ecosystem_category> @<AttributeValue> ? ;
-          <ecosystem_type> @<AttributeValue> ? ;
-          <ecosystem_subtype> @<AttributeValue> ? ;
-          <specific_ecosystem> @<AttributeValue> ? ;
-          <principal_investigator_name> @metatype:String ? ;
-          <doi> @metatype:String ? ;
-          <name> @metatype:String ? ;
-          <alternate_identifiers> @metatype:String * ;
-          <type> @metatype:String ? ;
-          <uriorcurie> @metatype:String ? ;
           <ecosystem_category> @metatype:String ? ;
           <ecosystem_type> @metatype:String ? ;
           <ecosystem_subtype> @metatype:String ? ;
-          <specific_ecosystem> @metatype:String ?
+          <specific_ecosystem> @metatype:String ? ;
+          <principal_investigator_name> @<PersonValue> ? ;
+          <doi> @<AttributeValue> ? ;
+          <type> @metatype:String ?
        ) ;
        rdf:type [ <Study> ]
     )
@@ -690,9 +713,8 @@ metatype:Nodeidentifier NONLITERAL
              rdf:type [ <Activity> ] ? ;
              <execution_resource> @metatype:String ? ;
              <git_url> @metatype:String ? ;
-             <has_input> @metatype:String * ;
-             <has_output> @metatype:String * ;
-             <type> @metatype:String ? ;
+             <has_input> @<NamedThing> * ;
+             <has_output> @<NamedThing> * ;
              <was_associated_with> @<WorkflowExecutionActivity> ?
           ) ;
           rdf:type [ <WorkflowExecutionActivity> ]

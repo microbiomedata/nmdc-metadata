@@ -7,13 +7,15 @@
       "has_output": [
         "emsl:output_359123"
       ],
-      "omics_type": "Metabolomics",
+      "instrument_name": "Agilent_GC_MS_01",
+      "omics_type": {
+        "has_raw_value": "Metabolomics"
+      },
       "part_of": [
         "gold:Gs0110132"
       ],
-      "type": "nmdc:OmicsProcessing",
       "processing_institution": "Environmental Molecular Sciences Lab",
-      "instrument_name": "Agilent_GC_MS_01"
+      "type": "nmdc:OmicsProcessing"
     },
     {
       "id": "emsl:359124",
@@ -22,13 +24,15 @@
       "has_output": [
         "emsl:output_359124"
       ],
-      "omics_type": "Metabolomics",
+      "instrument_name": "Agilent_GC_MS_01",
+      "omics_type": {
+        "has_raw_value": "Metabolomics"
+      },
       "part_of": [
         "gold:Gs0110132"
       ],
-      "type": "nmdc:OmicsProcessing",
       "processing_institution": "Environmental Molecular Sciences Lab",
-      "instrument_name": "Agilent_GC_MS_01"
+      "type": "nmdc:OmicsProcessing"
     },
     {
       "id": "emsl:359129",
@@ -37,13 +41,15 @@
       "has_output": [
         "emsl:output_359129"
       ],
-      "omics_type": "Metabolomics",
+      "instrument_name": "Agilent_GC_MS_01",
+      "omics_type": {
+        "has_raw_value": "Metabolomics"
+      },
       "part_of": [
         "gold:Gs0110132"
       ],
-      "type": "nmdc:OmicsProcessing",
       "processing_institution": "Environmental Molecular Sciences Lab",
-      "instrument_name": "Agilent_GC_MS_01"
+      "type": "nmdc:OmicsProcessing"
     }
   ]
 }

@@ -29,10 +29,10 @@ classes:
   ##        "file_size_bytes": 12060043683
   ##
   ##     If the value of key needs to be an object, you specify the keys and values of the object in a dictionary. 
-  ##     The type is of the object is specified using the clas_type key.
+  ##     The type is of the object is specified using the $class_type key.
   ##     For example, the attribute specification:
   ## 
-  ##        omics_type: {has_raw_value: omics_type, class_type: AttributeValue} 
+  ##        omics_type: {has_raw_value: omics_type, $class_type: AttributeValue} 
   ##
   ##     produces:
   ##
@@ -40,12 +40,12 @@ classes:
   ##
   ##     Other types value can also be specified as needed. 
   ## 
-  ##     If you need to specify which values are necessary to build an object, you use init and class_type keys as follows:
-  ##          - the init key contains a dict of key/value pairs needed to initialize the object
-  ##          - the class_type key refers to the type of object to create
-  ##     E.g.: {part_of: {init: {id: study_gold_id}, class_type: Study}]} outputs:
+  ##     If you need to specify which values are necessary to build an object, you use $init and $class_type keys as follows:
+  ##          - the $init key contains a dict of key/value pairs needed to initialize the object
+  ##          - the $class_type key refers to the type of object to create
+  ##     E.g.: {part_of: {$init: {id: study_gold_id}, $class_type: Study}]} outputs:
   ##
-  ##          "part_of": { "id": "gold:Gs0112340", "class_type": "nmdc:Study"}
+  ##          "part_of": { "id": "gold:Gs0112340", "$class_type": "nmdc:Study"}
   ## 
   ##     In many cases, an attribute will have a one-to-many relation. For these cases, the value of the attribute is a a list. 
   ##     If the attribute specification is given using a simple "name: [field]" syntax, the value the field is placed between the brackets.
@@ -61,13 +61,13 @@ classes:
   ##
   ##       has_output: [{field: data_object_id, split_val: ','}]
   ##
-  ##    If the data_object_id field contained the value "jgi:551a20d30d878525404e90d5,"jgi:551a20d50d878525404e90d7", the output would be:
+  ##    If the data_object_id field contained the value "jgi:551a20d30d878525404e90d5,jgi:551a20d50d878525404e90d7", the output would be:
   ##
   ##       "has_output": ["jgi:551a20d30d878525404e90d5", "jgi:551a20d50d878525404e90d7"]
   ##
-  ##    If a list of objects is need, you use the init ad class_type keys within the dictionary as described above.
-  ##    In this case, init field values are split on the comma character.
-  ##    E.g.: {has_output: [{init: {id: output_file_ids}, class_type: DataObject}]} outputs
+  ##    If a list of objects is need, you use the $init ad class_type keys within the dictionary as described above.
+  ##    In this case, $init field values are split on the comma character.
+  ##    E.g.: {has_output: [{$init: {id: output_file_ids}, $class_type: DataObject}]} outputs
   ##
   ##          "has_output": [
   ##              {
@@ -80,6 +80,51 @@ classes:
   ##              }
   ##            ]
   ##
+  ##    For some objects a constant values may need to be specified; e.g., depth has unit 'meter'.
+  ##    To do this, the value inside the dict is also a dict; e.g."has_unit: {const: meter}" in:
+  ##    
+  ##       depth: {has_numeric_value: "depth, float", has_unit: {const: meter}, has_raw_value: depth, class_type: QuantityValue}
+  ##
+  ##    sets the value of the 'has unit' slot to 'meter'. The 'const' key is only a mnemonic device. In the code, the constant value
+  ##    is set to whatever the value is regardless of the key.
+  ##
+  ##    Internally, using '$init' and '$class_type' as keys within the attribute's value (i.e. attribute: {$init: {...}, $class_type: ...})
+  ##    produces an instance of have object. NB: '$init' MUST always be used with '$class_type'
+  ##    If the '$init' key is not present, a dict is produced.
+  ##
+  ##    For example, if the depth attribute is specified using '$init' and '$class_type' as:
+  ##
+  ##    depth: 
+  ##        $init:
+  ##          has_numeric_value: depth, float
+  ##          has_unit: {const: meter}
+  ##          has_raw_value: depth
+  ##        $class_type: QuantityValue
+  ##    
+  ##    The internal representation of the output of an object of depth '29' will be:
+  ##
+  ##      depth=QuantityValue(has_raw_value='29.0', has_unit='meter', has_numeric_value=29.0)
+  ##
+  ##    But, if the '$init' is omitted like this:
+  ##       
+  ##      depth: 
+  ##          has_numeric_value: depth, float
+  ##          has_unit: {const: meter}
+  ##          has_raw_value: depth
+  ##
+  ##     The internal representation will be a dict:
+  ##
+  ##        depth={'has_raw_value': 29.0, 'has_unit': 'meter', 'has_numeric_value': 29.0}
+  ##
+  ##     Using the dict option (i.e., w/o 'inti') is quite flexible. For exmaple, if you add "type: QuantityValue"
+  ##     to the above example using depth, it will produce:
+  ##
+  ##        depth={'has_raw_value': 29.0, 'has_unit': 'meter', 'has_numeric_value': 29.0, 'type': 'QuantityValue'}
+  ##
+  ##     This allows for a lot of flexibility for adding extra information to the attribute values.
+  ##     However, you CANNOT use '$init' and '$class_type' as exta informational keys. Those keys are reserved for
+  ##     creating objects and will result in an error.
+
   
   gold_study:
     type: study
@@ -88,14 +133,15 @@ classes:
       name: study_name
       description: description
     attributes:
-      - principal_investigator_name
-      # - {ecosystem: {has_raw_value: ecosystem, class_type: gold:ecosystem}} # example using just the raw value
+      - principal_investigator_name:
+          has_raw_value: principal_investigator_name
       - ecosystem
       - ecosystem_category
       - ecosystem_type
       - ecosystem_subtype
       - specific_ecosystem
-      - doi
+      - doi:
+          has_raw_value: doi
   
   gold_omics_processing:
     type: omics processing
@@ -104,21 +150,19 @@ classes:
       name: project_name
       description: description
     attributes:
-      # - {part_of: [{init: {id: study_gold_id}, class_type: Study}]}
-      # - {has_input: [{id: biosample_gold_id, class_type: nmdc:Biosample}]}
-      # - {has_output: [{init: {id: output_file_ids}, class_type: DataObject}]}
-      - part_of: [{field: study_gold_id, split_val: ','}] ## inline values
-      - has_input: [{field: biosample_gold_id, split_val: ','}] # inline values
-      - has_output: [{field: output_file_ids, split_val: ','}] # inline values
+      - part_of: [{field: study_gold_id, split_val: ','}]
+      - has_input: [{field: biosample_gold_id, split_val: ','}]
+      - has_output: [{field: output_file_ids, split_val: ','}]
       - add_date 
       - mod_date
       - completion_date 
       - ncbi_project_name 
-      - omics_type 
-      - principal_investigator_name
+      - omics_type:
+          has_raw_value: omics_type
+      - principal_investigator_name:
+          has_raw_value: principal_investigator_name
       - processing_institution
-      
-            
+   
   emsl_omics_processing:
     type: omics processing
     constructor:
@@ -126,18 +170,13 @@ classes:
       name: dataset_name
       description: dataset_type_description
     attributes:
-      - omics_type
+      - omics_type:
+          has_raw_value: omics_type
       - instrument_name
       - processing_institution
-      # - {part_of: [{init: {id: gold_study_id}, class_type: Study}]}
-      - part_of: [{field: gold_study_id, split_val: ','}] ## inline values
-      # - has_output: [data_object_id]
-      # - has_output: ["data_object_id, str"]
-      - has_output: [{field: data_object_id, split_val: ','}] # inline values
-      # - {has_output: [{init: {id: data_object_id}, class_type: DataObject}]}
-      # - has_input: [biosample_gold_ids]
-      - has_input: [{field: biosample_gold_ids, split_val: ','}] # inline values
-      # - {has_input: [{id: biosample_gold_ids, class_type: nmdc:Biosample}]}
+      - part_of: [{field: gold_study_id, split_val: ','}]
+      - has_output: [{field: data_object_id, split_val: ','}]
+      - has_input: [{field: biosample_gold_ids, split_val: ','}]
       
   emsl_data_object:
     type: data object
@@ -163,14 +202,42 @@ classes:
       id: gold_id
       name: biosample_name
       description: description
-      env_broad_scale: {init: {has_raw_value: env_broad_scale}, class_type: ControlledTermValue}
-      env_local_scale: {init: {has_raw_value: env_local_scale}, class_type: ControlledTermValue}
-      env_medium: {init: {has_raw_value: env_medium}, class_type: ControlledTermValue}
-      lat_lon: {init: {latitude: latitude, longitude: longitude, has_raw_value: lat_lon}, class_type: GeolocationValue}
+      env_broad_scale: 
+        $init: 
+          has_raw_value: env_broad_scale
+        $class_type: ControlledTermValue
+      env_local_scale: 
+        $init: 
+          has_raw_value: env_local_scale
+        $class_type: ControlledTermValue
+      env_medium: 
+        $init: 
+          has_raw_value: env_medium
+        $class_type: ControlledTermValue
+      lat_lon: 
+        $init:
+          latitude: latitude
+          longitude: longitude
+          has_raw_value: lat_lon
+        $class_type: GeolocationValue
+    transforms:
+      pre:
+        - function: test_pre_transform
+          attributes:
+            - test_attribute
+      post:
+        # note: attribute names must match names in nmdc.yaml
+        - function: make_quantity_value
+          attributes:
+            - chlorophyll
+            - nitrate
+            - pressure
+            - samp_vol_we_dna_ext
     attributes:
       - add_date
       - mod_date
-      - collection_date
+      - collection_date:
+          has_numeric_value: collection_date # mixs:collection_date
       - ecosystem
       - ecosystem_category
       - ecosystem_type
@@ -180,84 +247,167 @@ classes:
       - location
       - community
       - ncbi_taxonomy_name
-      - geographic_location
+      - geographic_location:
+          has_raw_value: geographic_location
       - sample_collection_site
       - identifier
       - host_name
-      - depth, float
-      - subsurface_depth
-      - altitude, float
+      - depth: 
+          has_numeric_value: depth, float # mixs:depth
+          has_unit: {const: meter}
+          has_raw_value: depth
+      - subsurface_depth:
+          has_numeric_value: subsurface_depth, float
+          has_unit: {const: meter}
+          has_raw_value: subsurface_depth
+      - altitude:
+          has_numeric_value: altitude, float # mixs:alt
+          has_unit: {const: meter}
+          has_raw_value: altitude
       - proport_woa_temperature
       - biogas_temperature
-      - growth_temperature
-      - water_samp_store_temp
+      - growth_temperature:
+          has_raw_value: growth_temperature # mixs:temp
+          has_unit: {const: Celsius}
+          has_numeric_value: growth_temperature, float
+      - water_samp_store_temp:
+          has_raw_value: water_samp_store_temp # mixs:samp_store_temp
+          has_unit: {const: Celsius}
+          has_numeric_value: water_samp_store_temp, float
       - biogas_retention_time
-      - salinity
-      - pressure
-      - ph
-      - chlorophyll_concentration
-      - nitrate_concentration
-      - oxygen_concentration
-      - salinity_concentration
-      - sample_volume
-      - sampling_strategy
-      - soil_link_climate_info
-      - soil_misc_param
-      - soil_water_content
+      - salinity_category
+      - pressure:
+          has_raw_value: pressure # mixs:pressure
+      - ph:
+          has_raw_value: ph # mixs:ph
+      - chlorophyll_concentration:
+          has_raw_value: chlorophyll_concentration # mixs:chlorophyll
+      - nitrate_concentration:
+          has_raw_value: nitrate_concentration # mixs:nitrate
+      - oxygen_concentration:
+          has_raw_value: oxygen_concentration # mixs:diss_oxygen
+      - salinity_concentration:
+          has_raw_value: salinity_concentration # mixs:salinity
+      - sample_volume:
+          has_raw_value: sample_volume # mixs:samp_vol_we_dna_ext
+      - sampling_strategy:
+          has_raw_value: sampling_strategy
+      - soil_link_climate_info:
+          has_raw_value: soil_link_climate_info # mixs:link_climate_info
+      - soil_misc_param:
+          has_raw_value: soil_misc_param # mixs:misc_param
+      - soil_tot_n_method:
+          has_raw_value: soil_tot_n_method # mixs:tot_nitro_content_meth
+      - soil_water_content:
+          has_raw_value: soil_water_content # mixs:water_content
+      - soil_water_content_soil_meth:
+          has_raw_value: soil_water_content_soil_meth
       - soluble_iron_micromol
       - subsurface_depth2
-      - tot_nitrogen
-      - tot_org_carbon
-      - water_alkalinity
-      - water_alkalinity_method
-      - water_alkyl_diethers
-      - water_aminopept_act
-      - water_ammonium
-      - water_bacterial_carbon_prod
-      - water_bishomohopanol
-      - water_bromide
-      - water_calcium
-      - water_carbon_nitrog_ratio
-      - water_chem_administration
-      - water_chloride
-      - water_density
-      - water_diether_lipids
-      - water_diss_carbon_dioxide
-      - water_diss_hydrogen
-      - water_diss_inorg_carbon
-      - water_diss_inorg_phosphorus
-      - water_diss_org_carbon
-      - water_diss_org_nitrogen
-      - water_glucosidase_activity
-      - water_magnesium
-      - water_mean_frict_vel
-      - water_mean_peak_frict_vel
-      - water_misc_parameter
-      - water_n_alkanes
-      - water_nitrite
-      - water_org_matter
-      - water_org_nitrogen
-      - water_organism_count
-      - water_oxy_stat_sample
-      - water_part_org_carbon
-      - water_perturbation
-      - water_petroleum_hydrocarbon
-      - water_phaeopigments
-      - water_phosplipid_fatt_acid
-      - water_potassium
-      - water_redox_potential
-      - water_samp_store_dur
-      - water_samp_store_loc
-      - water_size_frac_low
-      - water_size_frac_up
-      - water_sodium
-      - water_sulfate
-      - water_sulfide
-      - water_tidal_stage
-      - water_tot_depth_water_col
-      - water_tot_diss_nitro
-      - water_tot_phosphorus
-      - water_turbidity
+      - tot_nitrogen:
+          has_raw_value: tot_nitrogen # mixs:tot_nitro_content
+      - tot_org_carbon:
+          has_raw_value: tot_org_carbon # mixs:tot_org_carb
+      - water_alkalinity:
+          has_raw_value: water_alkalinity # mixs:alkalinity
+      - water_alkalinity_method:
+          has_raw_value: water_alkalinity_method # mixs:alkalinity_method
+      - water_alkyl_diethers:
+          has_raw_value: water_alkyl_diethers # mixs:alkyl_diethers
+      - water_aminopept_act:
+          has_raw_value: water_aminopept_act # mixs:aminopept_act
+      - water_ammonium:
+          has_raw_value: water_ammonium # mixs:ammonium
+      - water_bacterial_carbon_prod:
+          has_raw_value: water_bacterial_carbon_prod # mixs:bacteria_carb_prod
+      - water_bishomohopanol:
+          has_raw_value: water_bishomohopanol # mixs:bishomohopanol
+      - water_bromide:
+          has_raw_value: water_bromide # mixs:bromide
+      - water_calcium:
+          has_raw_value: water_calcium # mixs:calcium
+      - water_carbon_nitrog_ratio:
+          has_raw_value: water_carbon_nitrog_ratio # mixs:carb_nitro_ratio
+      - water_chem_administration:
+          has_raw_value: water_chem_administration # mixs:chem_administration
+      - water_chloride:
+          has_raw_value: water_chloride # mixs:chloride
+      - water_density:
+          has_raw_value: water_density # mixs:density
+      - water_diether_lipids:
+          has_raw_value: water_diether_lipids # mixs:diether_lipids
+      - water_diss_carbon_dioxide:
+          has_raw_value: water_diss_carbon_dioxide # mixs:diss_carb_dioxide
+      - water_diss_hydrogen:
+          has_raw_value: water_diss_hydrogen # mixs:diss_hydrogen
+      - water_diss_inorg_carbon:
+          has_raw_value: water_diss_inorg_carbon # mixs:diss_inorg_carb
+      - water_diss_inorg_phosphorus:
+          has_raw_value: water_diss_inorg_phosphorus # mixs:diss_inorg_phosp
+      - water_diss_org_carbon:
+          has_raw_value: water_diss_org_carbon # mixs:diss_org_carb
+      - water_diss_org_nitrogen:
+          has_raw_value: water_diss_org_nitrogen # mixs:diss_org_nitro
+      - water_glucosidase_activity:
+          has_raw_value: water_glucosidase_activity # mixs:glucosidase_act
+      - water_magnesium:
+          has_raw_value: water_magnesium # mixs:magnesium
+      - water_mean_frict_vel:
+          has_raw_value: water_mean_frict_vel # mixs:mean_frict_vel
+      - water_mean_peak_frict_vel:
+          has_raw_value: water_mean_peak_frict_vel # mixs:mean_peak_frict_vel
+      - water_misc_parameter:
+          has_raw_value: water_misc_parameter # mixs:misc_param
+      - water_n_alkanes:
+          has_raw_value: water_n_alkanes # mixs:n_alkanes
+      - water_nitrite:
+          has_raw_value: water_nitrite # mixs:nitrite
+      - water_org_matter:
+          has_raw_value: water_org_matter # mixs:org_matter
+      - water_org_nitrogen:
+          has_raw_value: water_org_nitrogen # mixs:org_nitro
+      - water_organism_count:
+          has_raw_value: water_organism_count # mixs:organism_count
+      - water_oxy_stat_sample:
+          has_raw_value: water_oxy_stat_sample # mixs:oxy_stat_samp
+      - water_part_org_carbon:
+          has_raw_value: water_part_org_carbon # mixs:part_org_carb
+      - water_perturbation:
+          has_raw_value: water_perturbation # mixs:perturbation
+      - water_petroleum_hydrocarbon:
+          has_raw_value: water_petroleum_hydrocarbon # mixs:petroleum_hydrocarb
+      - water_phaeopigments:
+          has_raw_value: water_phaeopigments # mixs:phaeopigments
+      - water_phosplipid_fatt_acid:
+          has_raw_value: water_phosplipid_fatt_acid # mixs:phosplipid_fatt_acid
+      - water_potassium:
+          has_raw_value: water_potassium # mixs:potassium
+      - water_redox_potential:
+          has_raw_value: water_redox_potential # mixs:redox_potential
+      - water_samp_store_dur:
+          has_raw_value: water_samp_store_dur # mixs:samp_store_dur
+      - water_samp_store_loc:
+          has_raw_value: water_samp_store_loc # mixs:samp_store_loc
+      - water_size_frac_low:
+          has_raw_value: water_size_frac_low # mixs:size_frac_low
+      - water_size_frac_up:
+          has_raw_value:water_size_frac_up # mixs:size_frac_up
+      - water_sodium:
+          has_raw_value: water_sodium # mixs:sodium
+      - water_sulfate:
+          has_raw_value: water_sulfate # mixs:sulfate
+      - water_sulfide:
+          has_raw_value: water_sulfide # mixs:sulfide
+      - water_tidal_stage:
+          has_raw_value: water_tidal_stage # mixs:tidal_stage
+      - water_tot_depth_water_col:
+          has_raw_value: water_tot_depth_water_col # mixs:tot_depth_water_col
+      - water_tot_diss_nitro:
+          has_raw_value: water_tot_diss_nitro # mixs:tot_diss_nitro
+      - water_tot_phosphorus:
+          has_raw_value: water_tot_phosphorus # mixs:tot_phosp
+      - water_turbidity:
+          has_raw_value: water_turbidity # mixs:turbidity
 
 data_sources:
   ## The keys for the data sources are used as follows:
@@ -415,6 +565,8 @@ data_sources:
       - tot_nitrogen # BIOSAMPLE, MICROBIAL_MAT_PACKAGE, SEDIMENT_PACKAGE, SOIL_PACKAGE, WATER_PACKAGE
       - tot_org_carbon # BIOSAMPLE, SOIL_PACKAGE
     rename_slots:
+      - old_name: salinity
+        new_name: salinity_category
       - old_name: envo_biome_id
         new_name: env_broad_scale
       - old_name: envo_feature_id
@@ -468,6 +620,7 @@ data_sources:
       - soil_texture
       - soil_texture_method
       - soil_tillage
+      - soil_tot_n_method
       - soil_type
       - soil_type_method
       - soil_water_content_soil_meth
