@@ -133,13 +133,15 @@ classes:
       name: study_name
       description: description
     attributes:
-      - principal_investigator_name
+      - principal_investigator_name:
+          has_raw_value: principal_investigator_name
       - ecosystem
       - ecosystem_category
       - ecosystem_type
       - ecosystem_subtype
       - specific_ecosystem
-      - doi
+      - doi:
+          has_raw_value: doi
   
   gold_omics_processing:
     type: omics processing
@@ -155,8 +157,10 @@ classes:
       - mod_date
       - completion_date 
       - ncbi_project_name 
-      - omics_type 
-      - principal_investigator_name
+      - omics_type:
+          has_raw_value: omics_type
+      - principal_investigator_name:
+          has_raw_value: principal_investigator_name
       - processing_institution
    
   emsl_omics_processing:
@@ -166,7 +170,8 @@ classes:
       name: dataset_name
       description: dataset_type_description
     attributes:
-      - omics_type
+      - omics_type:
+          has_raw_value: omics_type
       - instrument_name
       - processing_institution
       - part_of: [{field: gold_study_id, split_val: ','}]
@@ -248,7 +253,7 @@ classes:
       - identifier
       - host_name
       - depth: 
-          has_numeric_value: depth, float
+          has_numeric_value: depth, float # mixs:depth
           has_unit: {const: meter}
           has_raw_value: depth
       - subsurface_depth:
@@ -272,13 +277,13 @@ classes:
       - biogas_retention_time
       - salinity_category
       - pressure:
-          has_raw_value: pressure
+          has_raw_value: pressure # mixs:pressure
       - ph:
           has_raw_value: ph # mixs:ph
-      - chlorophyll:
-          has_raw_value: chlorophyll_concentration
-      - nitrate:
-          has_raw_value: nitrate_concentration
+      - chlorophyll_concentration:
+          has_raw_value: chlorophyll_concentration # mixs:chlorophyll
+      - nitrate_concentration:
+          has_raw_value: nitrate_concentration # mixs:nitrate
       - oxygen_concentration:
           has_raw_value: oxygen_concentration # mixs:diss_oxygen
       - salinity_concentration:
@@ -305,55 +310,104 @@ classes:
           has_raw_value: tot_org_carbon # mixs:tot_org_carb
       - water_alkalinity:
           has_raw_value: water_alkalinity # mixs:alkalinity
-      - water_alkalinity_method
-      - water_alkyl_diethers
-      - water_aminopept_act
-      - water_ammonium
-      - water_bacterial_carbon_prod
-      - water_bishomohopanol
-      - water_bromide
-      - water_calcium
-      - water_carbon_nitrog_ratio
-      - water_chem_administration
-      - water_chloride
-      - water_density
-      - water_diether_lipids
-      - water_diss_carbon_dioxide
-      - water_diss_hydrogen
-      - water_diss_inorg_carbon
-      - water_diss_inorg_phosphorus
-      - water_diss_org_carbon
-      - water_diss_org_nitrogen
-      - water_glucosidase_activity
-      - water_magnesium
-      - water_mean_frict_vel
-      - water_mean_peak_frict_vel
-      - water_misc_parameter
-      - water_n_alkanes
-      - water_nitrite
-      - water_org_matter
-      - water_org_nitrogen
-      - water_organism_count
-      - water_oxy_stat_sample
-      - water_part_org_carbon
-      - water_perturbation
-      - water_petroleum_hydrocarbon
-      - water_phaeopigments
-      - water_phosplipid_fatt_acid
-      - water_potassium
-      - water_redox_potential
-      - water_samp_store_dur
-      - water_samp_store_loc
-      - water_size_frac_low
-      - water_size_frac_up
-      - water_sodium
-      - water_sulfate
-      - water_sulfide
-      - water_tidal_stage
-      - water_tot_depth_water_col
-      - water_tot_diss_nitro
-      - water_tot_phosphorus
-      - water_turbidity
+      - water_alkalinity_method:
+          has_raw_value: water_alkalinity_method # mixs:alkalinity_method
+      - water_alkyl_diethers:
+          has_raw_value: water_alkyl_diethers # mixs:alkyl_diethers
+      - water_aminopept_act:
+          has_raw_value: water_aminopept_act # mixs:aminopept_act
+      - water_ammonium:
+          has_raw_value: water_ammonium # mixs:ammonium
+      - water_bacterial_carbon_prod:
+          has_raw_value: water_bacterial_carbon_prod # mixs:bacteria_carb_prod
+      - water_bishomohopanol:
+          has_raw_value: water_bishomohopanol # mixs:bishomohopanol
+      - water_bromide:
+          has_raw_value: water_bromide # mixs:bromide
+      - water_calcium:
+          has_raw_value: water_calcium # mixs:calcium
+      - water_carbon_nitrog_ratio:
+          has_raw_value: water_carbon_nitrog_ratio # mixs:carb_nitro_ratio
+      - water_chem_administration:
+          has_raw_value: water_chem_administration # mixs:chem_administration
+      - water_chloride:
+          has_raw_value: water_chloride # mixs:chloride
+      - water_density:
+          has_raw_value: water_density # mixs:density
+      - water_diether_lipids:
+          has_raw_value: water_diether_lipids # mixs:diether_lipids
+      - water_diss_carbon_dioxide:
+          has_raw_value: water_diss_carbon_dioxide # mixs:diss_carb_dioxide
+      - water_diss_hydrogen:
+          has_raw_value: water_diss_hydrogen # mixs:diss_hydrogen
+      - water_diss_inorg_carbon:
+          has_raw_value: water_diss_inorg_carbon # mixs:diss_inorg_carb
+      - water_diss_inorg_phosphorus:
+          has_raw_value: water_diss_inorg_phosphorus # mixs:diss_inorg_phosp
+      - water_diss_org_carbon:
+          has_raw_value: water_diss_org_carbon # mixs:diss_org_carb
+      - water_diss_org_nitrogen:
+          has_raw_value: water_diss_org_nitrogen # mixs:diss_org_nitro
+      - water_glucosidase_activity:
+          has_raw_value: water_glucosidase_activity # mixs:glucosidase_act
+      - water_magnesium:
+          has_raw_value: water_magnesium # mixs:magnesium
+      - water_mean_frict_vel:
+          has_raw_value: water_mean_frict_vel # mixs:mean_frict_vel
+      - water_mean_peak_frict_vel:
+          has_raw_value: water_mean_peak_frict_vel # mixs:mean_peak_frict_vel
+      - water_misc_parameter:
+          has_raw_value: water_misc_parameter # mixs:misc_param
+      - water_n_alkanes:
+          has_raw_value: water_n_alkanes # mixs:n_alkanes
+      - water_nitrite:
+          has_raw_value: water_nitrite # mixs:nitrite
+      - water_org_matter:
+          has_raw_value: water_org_matter # mixs:org_matter
+      - water_org_nitrogen:
+          has_raw_value: water_org_nitrogen # mixs:org_nitro
+      - water_organism_count:
+          has_raw_value: water_organism_count # mixs:organism_count
+      - water_oxy_stat_sample:
+          has_raw_value: water_oxy_stat_sample # mixs:oxy_stat_samp
+      - water_part_org_carbon:
+          has_raw_value: water_part_org_carbon # mixs:part_org_carb
+      - water_perturbation:
+          has_raw_value: water_perturbation # mixs:perturbation
+      - water_petroleum_hydrocarbon:
+          has_raw_value: water_petroleum_hydrocarbon # mixs:petroleum_hydrocarb
+      - water_phaeopigments:
+          has_raw_value: water_phaeopigments # mixs:phaeopigments
+      - water_phosplipid_fatt_acid:
+          has_raw_value: water_phosplipid_fatt_acid # mixs:phosplipid_fatt_acid
+      - water_potassium:
+          has_raw_value: water_potassium # mixs:potassium
+      - water_redox_potential:
+          has_raw_value: water_redox_potential # mixs:redox_potential
+      - water_samp_store_dur:
+          has_raw_value: water_samp_store_dur # mixs:samp_store_dur
+      - water_samp_store_loc:
+          has_raw_value: water_samp_store_loc # mixs:samp_store_loc
+      - water_size_frac_low:
+          has_raw_value: water_size_frac_low # mixs:size_frac_low
+      - water_size_frac_up:
+          has_raw_value:water_size_frac_up # mixs:size_frac_up
+      - water_sodium:
+          has_raw_value: water_sodium # mixs:sodium
+      - water_sulfate:
+          has_raw_value: water_sulfate # mixs:sulfate
+      - water_sulfide:
+          has_raw_value: water_sulfide # mixs:sulfide
+      - water_tidal_stage:
+          has_raw_value: water_tidal_stage # mixs:tidal_stage
+      - water_tot_depth_water_col:
+          has_raw_value: water_tot_depth_water_col # mixs:tot_depth_water_col
+      - water_tot_diss_nitro:
+          has_raw_value: water_tot_diss_nitro # mixs:tot_diss_nitro
+      - water_tot_phosphorus:
+          has_raw_value: water_tot_phosphorus # mixs:tot_phosp
+      - water_turbidity:
+          has_raw_value: water_turbidity # mixs:turbidity
 
 data_sources:
   ## The keys for the data sources are used as follows:
