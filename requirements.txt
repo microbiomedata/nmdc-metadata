@@ -12,8 +12,16 @@
 
 biolinkml
 click
+dotted-dict
+git-root
+jq
 jupyter
+mongospawn
+pandas
 pipenv-to-requirements
 pymongo
+pytoolz
 pyyaml
 requests
+toolz
+tqdm
