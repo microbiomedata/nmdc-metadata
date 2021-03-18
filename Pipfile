@@ -15,6 +15,10 @@ pytoolz = "*"
 mongospawn = "*"
 toolz = "*"
 tqdm = "*"
+pandas = "*"
+jq = "*"
+dotted_dict = "*"
+git_root = "*"
 
 [dev-packages]
 jupyter = "*"
