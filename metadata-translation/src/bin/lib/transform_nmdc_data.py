@@ -750,15 +750,6 @@ def make_object_from_list(nmdc_record: namedtuple, nmdc_list: list) -> list:
     return obj_list
 
 
-def make_value_from_string(nmdc_record: namedtuple, attribute_string: str):
-    val = get_record_attr(nmdc_record, attribute_string)
-
-    if pds.notnull(val):
-        return val
-    else:
-        return None
-
-
 def dataframe_to_dict(
     nmdc_df: pds.DataFrame,
     nmdc_class,
