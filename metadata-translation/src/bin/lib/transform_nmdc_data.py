@@ -455,7 +455,16 @@ def make_attribute_value_from_record(nmdc_record: namedtuple, field, object_type
     return av
 
 
-def make_attribute_map(sssom_map_file: str):
+def make_attribute_map(sssom_map_file: str) -> dict:
+    """
+    Retuns a dict based on the values in sssom_map_file.
+
+     Args:
+        sssom_map_file (str): path to the sssom file
+
+    Returns:
+        dict: map relating the subject to the object where there is a skos:exactMatch
+    """
     attr_map = {}
     if len(sssom_map_file) > 0:
         ## load sssom mapping file and subset to skos:exactMatch
