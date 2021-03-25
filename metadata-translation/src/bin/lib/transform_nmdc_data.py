@@ -914,7 +914,17 @@ def make_quantity_value(nmdc_objs: list, tx_attributes: list, **kwargs) -> list:
     return nmdc_objs
 
 
-def get_json(file_path, replace_single_quote=False):
+def get_json(file_path: str, replace_single_quote=False):
+    """
+    Returns a json object from the file specied by file_path.
+
+    Args:
+        file_path (sting): path file holding json
+        replace_single_quote (bool, optional): specifies if "'" is replaced with '"'; defaults to False
+
+    Returns:
+        json object
+    """
     ## load json
     with open(file_path, "r") as in_file:
         if replace_single_quote:  # json
@@ -925,7 +935,17 @@ def get_json(file_path, replace_single_quote=False):
     return json_data
 
 
-def save_json(json_data, file_path):
+def save_json(json_data: str, file_path):
+    """
+    Saves json_data to file specified by file_path.
+
+    Args:
+        json_data: json data
+        file_path (sting): path to where json is saved
+
+    Returns:
+        [type]: [description]
+    """
     ## if json data is a string, it will need to be
     ## loaded into a variable to for "\" escape characters
     if type(json_data) == type(""):
