@@ -373,10 +373,23 @@ def make_dict_from_nmdc_obj(nmdc_obj) -> dict:
 def set_nmdc_object(
     nmdc_obj, nmdc_record: namedtuple, attribute_map: dict, attribute_field
 ):
+    """
+    Sets the properties of nmdc_obj using the values stored in the nmdc_record.
+    The update nmdc_obj is returned.
+
+    Args:
+        nmdc_obj: the nmdc object that will modified
+        nmdc_record (namedtuple): the record who's data will be used to set the values of the nmdc_obj
+        attribute_map (dict): a dict/map based on the sssom file used to update the object's field
+        attribute_field: the nmdc_obj's field to be set
+
+    Returns:
+        updated nmdc_obj
+    """
     ## by default property values are represented as dicts
-    ## the exception is when an value is created using '$init'
-    ## e.g. {'$init': {'latitude': 'latitude', 'longitude': 'longitude', 'has_raw_value': 'lat_lon'}, '$class_type': 'GeolocationValue'}
-    ## when '$init' is used the represent as dict flag is changed
+    ## the exception is when an value is created using '$class_type'
+    ## e.g. {latitude': 'latitude', 'longitude': 'longitude', 'has_raw_value': 'lat_lon', '$class_type': 'GeolocationValue'}
+    ## when '$class_type' is used the represent as dict flag is changed
     represent_as_dict = True
 
     ## check if attribute is a dict; e.g. part_of: gold_study_id
@@ -384,16 +397,17 @@ def set_nmdc_object(
         ## get the field and value parts from dict
         field, val = list(attribute_field.items())[0]
         if type([]) == type(val):
+            ## e.g. has_output: ["data_object_id, str"]
             av = make_object_from_list(nmdc_record, val)
         elif type({}) == type(val):
-            av = make_object_from_dict(nmdc_record, val)  # val is a dict
-
+            ## # e.g. has_output: {id: gold:0001, name: 'foo', $class_type: Study}
             ## check if the av needs to be represented as an object
-            if "$init" in val.keys():
+            if "$class_type" in val.keys():
                 represent_as_dict = False
-
-        elif type("") == type(val):  # e.g. has_output: "data_object_id, str"
-            av = make_value_from_string(nmdc_record, val)
+            av = make_object_from_dict(nmdc_record, val)  # val is a dict
+        elif type("") == type(val):
+            # e.g. has_output: "data_object_id, str" (not a list)
+            av = get_record_attr(nmdc_record, val)
         else:
             ## val names the field in the record
             av = make_attribute_value_from_record(nmdc_record, val)
@@ -404,7 +418,7 @@ def set_nmdc_object(
         else:
             field = attribute_field.strip()
 
-        av = make_value_from_string(nmdc_record, attribute_field)
+        av = get_record_attr(nmdc_record, attribute_field)
     else:
         field = attribute_field
         av = make_attribute_value_from_record(nmdc_record, field)
