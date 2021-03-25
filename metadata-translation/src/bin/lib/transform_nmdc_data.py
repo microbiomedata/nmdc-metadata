@@ -757,8 +757,34 @@ def dataframe_to_dict(
     attribute_fields=[],
     attribute_map={},
     transform_map={},
-):
+) -> dict:
+    """
+    This is the main interface for the module.
+    The nmdc dataframe (nmdc_df) is transformed and returned as a dict.
+
+    Args:
+        nmdc_df (pds.DataFrame): the Pandas dataframe to be transformed
+        nmdc_class: the NMDC class used to build objects
+        constructor_map (dict, optional): specifies constructor arguments need to build the object; defaults to {}
+        attribute_fields (list, optional): specifies which data fields to use as properties/keys; defaults to []
+        attribute_map (dict, optional): maps data fields to MIxS (or other standard) fields; defaults to {}
+        transform_map (dict, optional): specfies pre/post transformations to preform on the data; defaults to {}
+
+    Returns:
+        [type]: [description]
+    """
+
     def make_nmdc_object(nmdc_record: namedtuple, nmdc_class):
+        """
+        Creates an object from the nmdc records of the type nmdc_class.
+
+        Args:
+            nmdc_record (namedtuple): the records that holds the data
+            nmdc_class ([type]): the class tha the object will instantiate
+
+        Returns:
+            an object of the type specified by class_type
+        """
         ## check for constructor_map  containing the paramaters necessary to instantiate the class
         if len(constructor_map) > 0:
             constructor_args = make_constructor_args_from_record(
@@ -767,6 +793,8 @@ def dataframe_to_dict(
             nmdc_obj = nmdc_class(**constructor_args)
         else:
             nmdc_obj = nmdc_class()
+
+        # print("****\n", nmdc_obj)
 
         nmdc_obj.type = (
             nmdc_class.class_class_curie
