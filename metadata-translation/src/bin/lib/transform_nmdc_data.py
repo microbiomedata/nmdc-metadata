@@ -481,9 +481,15 @@ def make_attribute_map(sssom_map_file: str) -> dict:
     return attr_map
 
 
-def make_attribute_value(val, object_type=""):
+def make_attribute_value(val):
     """
-    Creates an attribute value object linked to value val.
+    Creates an attribute value object that has_raw_value val.
+
+    Args:
+        val: the value that is set as the value of has_raw_value
+
+    Returns:
+        attribute value object that has_raw_value val
     """
     av = nmdc.AttributeValue()
     if pds.notnull(val):
