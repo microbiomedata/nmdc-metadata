@@ -150,9 +150,9 @@ classes:
       name: project_name
       description: description
     attributes:
-      - part_of: [{field: study_gold_id, split_val: ','}]
-      - has_input: [{field: biosample_gold_id, split_val: ','}]
-      - has_output: [{field: output_file_ids, split_val: ','}]
+      - part_of: [study_gold_id]
+      - has_input: [biosample_gold_id]
+      - has_output: [output_file_ids]
       - add_date 
       - mod_date
       - completion_date 
@@ -174,9 +174,9 @@ classes:
           has_raw_value: omics_type
       - instrument_name
       - processing_institution
-      - part_of: [{field: gold_study_id, split_val: ','}]
-      - has_output: [{field: data_object_id, split_val: ','}]
-      - has_input: [{field: biosample_gold_ids, split_val: ','}]
+      - part_of: [gold_study_id]
+      - has_output: [data_object_id]
+      - has_input: [biosample_gold_ids]
       
   emsl_data_object:
     type: data object
@@ -203,23 +203,15 @@ classes:
       name: biosample_name
       description: description
       env_broad_scale: 
-        $init: 
-          has_raw_value: env_broad_scale
-        $class_type: ControlledTermValue
+        has_raw_value: env_broad_scale
       env_local_scale: 
-        $init: 
-          has_raw_value: env_local_scale
-        $class_type: ControlledTermValue
+        has_raw_value: env_local_scale
       env_medium: 
-        $init: 
-          has_raw_value: env_medium
-        $class_type: ControlledTermValue
+        has_raw_value: env_medium
       lat_lon: 
-        $init:
-          latitude: latitude
-          longitude: longitude
-          has_raw_value: lat_lon
-        $class_type: GeolocationValue
+        latitude: latitude
+        longitude: longitude
+        has_raw_value: lat_lon
     transforms:
       pre:
         - function: test_pre_transform
@@ -253,26 +245,31 @@ classes:
       - identifier
       - host_name
       - depth: 
-          has_numeric_value: depth, float # mixs:depth
-          has_unit: {const: meter}
           has_raw_value: depth
+          has_numeric_value: depth, float # mixs:depth
+          # has_unit: {$const: meter}
+          has_unit: meter
       - subsurface_depth:
-          has_numeric_value: subsurface_depth, float
-          has_unit: {const: meter}
           has_raw_value: subsurface_depth
+          has_numeric_value: subsurface_depth, float
+          # has_unit: {$const: meter}
+          has_unit: meter
       - altitude:
-          has_numeric_value: altitude, float # mixs:alt
-          has_unit: {const: meter}
           has_raw_value: altitude
+          has_numeric_value: altitude, float # mixs:alt
+          # has_unit: {$const: meter}
+          has_unit: meter
       - proport_woa_temperature
       - biogas_temperature
       - growth_temperature:
           has_raw_value: growth_temperature # mixs:temp
-          has_unit: {const: Celsius}
+          # has_unit: {$const: Celsius}
+          has_unit: Celsius
           has_numeric_value: growth_temperature, float
       - water_samp_store_temp:
           has_raw_value: water_samp_store_temp # mixs:samp_store_temp
-          has_unit: {const: Celsius}
+          # has_unit: {$const: Celsius}
+          has_unit: Celsius
           has_numeric_value: water_samp_store_temp, float
       - biogas_retention_time
       - salinity_category
@@ -391,7 +388,7 @@ classes:
       - water_size_frac_low:
           has_raw_value: water_size_frac_low # mixs:size_frac_low
       - water_size_frac_up:
-          has_raw_value:water_size_frac_up # mixs:size_frac_up
+          has_raw_value: water_size_frac_up # mixs:size_frac_up
       - water_sodium:
           has_raw_value: water_sodium # mixs:sodium
       - water_sulfate:
