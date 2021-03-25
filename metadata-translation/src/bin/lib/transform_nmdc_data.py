@@ -554,48 +554,25 @@ def make_record_dict(
 
 
 def make_object_from_dict(nmdc_record: namedtuple, object_dict: dict):
-    ## using the data from an nmdc record, create an object
-    ## There are two ways to do this:
-    ##   1. using the keys $init and $class_type
-    ##      the value of $init is a dict represent the constructor(s) needed to instantiate the object
-    ##      the value of $class_typ is a string or class reference that is the class the object instantiates
-    ##      e.g., {'$init': {latitude: 'latitude', longitude: 'longitude', has_raw_value: 'lat_lon'}, '$class_type': 'GeolocationValue'}
-    ##   2. using dict to specify the properties of an attibute value object
+    """
+    Creates and returns an "object" based on nmdc_record.
+    If the object_dict has a $class_type key, an instantiated object is returned.
+    Otherwise, a dict is returned.
 
-    ## determine the type of class
+    Args:
+        nmdc_record (namedtuple): the record that holds the data
+        object_dict (dict): the dict that specifies the field/data (key/value) pairings
+
+    Returns:
+        an object built from the record and object_dict information
+    """
+    record_dict = make_record_dict(nmdc_record, object_dict)
+
     if "$class_type" in object_dict.keys():
         class_type = make_nmdc_class(object_dict["$class_type"])
+        obj = class_type(**record_dict)  # build object
     else:
-        class_type = nmdc.AttributeValue
-
-    if "$init" in object_dict.keys():
-        ## get this intitialization dict and use it build constructor arguments
-        constructor_map = object_dict["$init"]
-
-        ## create constructor arguments from the intitialization dict
-        constructor_args = make_constructor_dict_from_record(
-            constructor_map, nmdc_record
-        )
-        obj = class_type(**constructor_args)  # create object from type
-    else:
-        obj = class_type()  # create AttributeValue object
-        for obj_key, obj_val in object_dict.items():
-            # if obj_key != "$class_type":  # ignore key specifying the class type
-            if type({}) == type(obj_val):
-                ## if the object value is a dict (e.g., {has_unit: {const: 'meter'}})
-                ## then set the value to the dict's value
-                record_value = list(obj_val.values())[0]
-            elif record_has_field(nmdc_record, obj_val):
-                ## get records value from nmdc record
-                record_value = get_record_attr(nmdc_record, obj_val)
-            else:
-                ## catch all condition: simply add key/val to ojbect
-                ## this is useful for adding extra informaton to the dict; e.g:
-                ##   {has_raw_value: '10', type: QuantityValue}
-                ## NB: the keys '$init' and '$class_type' has special meaning and will throw an error if used
-                record_value = obj_val
-
-            setattr(obj, obj_key, record_value)
+        obj = record_dict
 
     return obj
 
