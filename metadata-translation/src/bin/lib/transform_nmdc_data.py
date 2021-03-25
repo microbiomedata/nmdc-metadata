@@ -240,21 +240,6 @@ def make_constructor_args_from_record(
     return constructor_dict
 
 
-def make_constructor_args_from_record(constructor_map: dict, nmdc_record: namedtuple):
-    ## for every mapping between a key and data field create a dict
-    ## of the parameters needed to instantiate the class
-    constructor_dict = {}
-    for key, field in constructor_map.items():
-        ## if the fields is a dict, constructor param takes an object
-        ## e.g., {'$init': {'latitude': 'latitude', 'longitude': 'longitude', 'has_raw_value': 'lat_lon'}, '$lass_type': 'GeolocationValue'}
-        if type({}) == type(field):
-            constructor_dict[key] = make_object_from_dict(nmdc_record, field)
-        else:
-            constructor_dict[key] = get_record_attr(nmdc_record, field)
-
-    return constructor_dict
-
-
 def make_dict_from_nmdc_obj(nmdc_obj):
     def is_value(variable):
         ## check if variable is None
