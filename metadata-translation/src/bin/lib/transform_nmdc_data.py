@@ -499,6 +499,15 @@ def make_attribute_value(val):
 
 
 def make_nmdc_class(class_type):
+    """
+    Returns the NMDC class from the NMDC module as specified by class_type.
+
+    Args:
+        class_type: they type of class to return
+
+    Returns:
+        the specfied class reference (not string) that can be used to build an object
+    """
     ## check if the class type is being passed as a string e.g., '$class_type': 'GeolocationValue'
     if type("") == type(class_type):
         class_type = getattr(nmdc, class_type)
