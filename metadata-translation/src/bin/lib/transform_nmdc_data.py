@@ -514,6 +514,45 @@ def make_nmdc_class(class_type):
     return class_type
 
 
+def make_record_dict(
+    nmdc_record: namedtuple, object_dict: dict, return_field_if_none=True
+) -> dict:
+    """
+    Transforms nmdc_record into a dict in which the record field/properties are the keys.
+
+    Args:
+        nmdc_record (namedtuple): the record/tuple that holds the data
+        object_dict (dict): holds the specificaion of fields to get data from
+        return_field_if_none (bool, optional): defaults to True;
+            speficies return type if field doesn't have any data
+            this is useful returning constants; e.g: depth {has_unit: meter} will return
+            'meter' for the has_unit property even though 'has_unit' is not a field in the record
+
+    Returns:
+        dict: a dict representation of the nmdc record
+    """
+    ## build record from the field names in the object dict
+    ## note: $class_type is a special key that is ignored
+    record_dict = {}
+    for field_key, field in object_dict.items():
+        if field_key != "$class_type":
+            if type({}) == type(field):
+                ## if the object value is a dict (e.g., {has_unit: {const: 'meter'}})
+                ## then set the value to the dict's value
+                ## needed if a field name conflicts with constant (e.g, if there was field named 'meter')
+                if list(field.keys())[0] == "$const":
+                    record_dict[field_key] = list(field.values())[0]
+            else:
+                ## get records value from nmdc record
+                ## note: if the field is not in the nmdc record and return_field_if_none=True, the field is returned
+                ## e.g., adding a constant or type: {has_raw_value: '10', type: QuantityValue}
+                record_dict[field_key] = get_record_attr(
+                    nmdc_record, field, return_field_if_none
+                )
+
+    return record_dict
+
+
 def make_object_from_dict(nmdc_record: namedtuple, object_dict: dict):
     ## using the data from an nmdc record, create an object
     ## There are two ways to do this:
