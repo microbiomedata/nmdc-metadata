@@ -577,6 +577,138 @@ def make_object_from_dict(nmdc_record: namedtuple, object_dict: dict):
     return obj
 
 
+def make_object_from_list_item_dict(nmdc_record: namedtuple, item: dict) -> list:
+    """
+    When the item in the list is a dict; e.g.;
+      [{id: 'gold_id, int', name: project_name, $class_type: Study}]
+    A list of objects is returned that were created from the keys
+    in the dict.
+
+    This function is called from make_object_from_list.
+
+    Args:
+        nmdc_record (namedtuple): the record that holds the data values
+        item (dict): holds the information needed to build the object
+
+    Returns:
+        list: holds objects built from data in the record
+    """
+    ## set split value for values in dict (globally)
+    if "$spit_val" in item.keys():
+        split_val = item.pop("$split_val")
+    else:
+        split_val = ","
+
+    ## get class type if prestent
+    if "$class_type" in item.keys():
+        class_type = item.pop("$class_type")
+        class_type = make_nmdc_class(class_type)  # convert to a type
+    else:
+        class_type = None
+
+    ## get list of record values from nmdc record and split
+    ## e.g., [{id: 'gold_id, int', name: project_name, $class_type: Study}]
+    ## -> [['gold:001', 'gold:0002'], ['name 1', 'name 2']]
+    record_values = []
+    for field_name in item.values():
+        ## get value in nmdc record
+        val = get_record_attr(nmdc_record, field_name, return_field_if_none=False)
+
+        if val is not None:
+            dtype = get_dtype_from_attribute_field(field_name)  # determine data type
+
+            ## check for local spit val; e.g., [{id: {$field: 'gold_id, int', $split_val:'|'}}
+            mysplit = (
+                field_name["$split_val"]
+                if type({}) == type(field_name) and "$split_val" in field_name.keys()
+                else split_val
+            )
+
+            rv = [coerce_value(v.strip(), dtype) for v in str(val).split(mysplit)]
+            record_values.append(rv)
+        else:
+            record_values.append([None])
+
+    ## get list of keys from item
+    keys = [key for key in item.keys() if key != "$class_type"]
+
+    ## build list of objects
+    ## this works by using zip build dictionary using the keys and record values
+    ## first the values are zipped/paired/collated; e.g.:
+    ## zip(*[['gold:001', 'gold:0002'], ['name 1', 'name 2']])
+    ## -> [['gold:001', 'name 1'], ['gold:002', 'name 2']]
+    ## then the keys are zipped as a dict to the values; e.g.:
+    ## dict(zip(['id', 'name'], [['gold:001', 'name 1'], ['gold:002', 'name 2']]))
+    ## -> [{id: gold:001, name: 'name 1'}, {id: gold:002, name: 'name 2'}]
+    obj_list = []
+    for rv in zip_longest(*record_values):
+        obj_dict = dict(zip(keys, rv))
+
+        if class_type is not None:
+            ## add the instantiated object to the list; e.g. obj_list.append(Study(id='gold:001'))
+            obj_list.append(class_type(**obj_dict))
+        else:
+            ## simply add the object; e.g., obj_list.append({id: gold:001, name: name1})
+            obj_list.append(obj_dict)
+
+    return obj_list
+
+
+def make_value_from_list_item_dict(nmdc_record: namedtuple, item: dict) -> list:
+    """
+    When the item in the list is a dict; e.g.;
+      [{$field: 'data_object_id, int'}]
+      [{$field: 'data_object_id, int', $split=','}]
+    A list of values is returned that were created from the keys
+    in the dict.
+
+    This function is called from make_object_from_list.
+
+    Args:
+        nmdc_record (namedtuple): the record that holds the data values
+        item (dict): holds the information needed to build the object
+
+    Returns:
+        list: values retrieved from data in the record
+    """
+    # ****** add info to documentation ********
+    dtype = get_dtype_from_attribute_field(item["$field"])
+
+    ## set value to split on
+    if "$split_val" in item.keys():
+        split_val = item["$split_val"]
+    else:
+        split_val = ","
+
+    ## e.g., [{$field: data_object_id, $split=','}]
+    ## get record value for the field
+    ## returns None if the field is not in record
+    if "$const" in item.keys():
+        return [coerce_value(item["$const"], dtype)]
+    elif "$field" in item.keys():
+        record_val = get_record_attr(
+            nmdc_record, item["$field"], return_field_if_none=False
+        )
+    else:
+        record_val = None
+
+    ## check the record value is not None
+    if record_val is not None:
+        ## check if record needs to be split
+        if split_val is not None:
+            # make sure record_val is a string, needed for splitting
+            if type(record_val) != type(""):
+                record_val = str(record_val)
+
+            return [
+                coerce_value(rv.strip(), dtype) for rv in record_val.split(split_val)
+            ]
+        else:
+            return [coerce_value(record_val.strip(), dtype)]
+    else:
+        return [None]  # note: a list is returned
+
+
 def make_object_from_list(nmdc_record: namedtuple, nmdc_list: list):
     obj_list = []
     for val in nmdc_list:
