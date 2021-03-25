@@ -439,6 +439,14 @@ def set_nmdc_object(
 def make_attribute_value_from_record(nmdc_record: namedtuple, field, object_type=""):
     """
     Creates an attribute value object linked the value in the nmdc record's field.
+
+     Args:
+        nmdc_record (namedtuple): holds the data
+        field: the field to get the data from
+        object_type (str, optional): used to specify the type of object retured; defaults to ""
+
+    Returns:
+        an attribute value object (by default) with the has_raw_value property set to value in field
     """
     # val = getattr(nmdc_record, field)
     val = get_record_attr(nmdc_record, field)
