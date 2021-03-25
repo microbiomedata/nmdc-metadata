@@ -27,11 +27,20 @@ import nmdc_dataframes
 import nmdc
 
 
-def has_raw_value(obj, attribute):
+def has_raw_value(obj, attribute: str) -> bool:
     """
-    Helper function that returns True/False if a an object
+    Helper function that returns True/False if a an object attribute
     has a has_raw_value property.
+    E.g.: "lat_lon": {"has_raw_value": "-33.460524 150.168149"}
+
+    Args:
+        obj (dict or object):
+        attribute (string): the name of the attribute in obj to check.
+
+    Returns:
+        boolean: True if haw_raw_value property is present.
     """
+
     val = getattr(obj, attribute)  # get value of object
 
     if val is None:  # check that value exists
@@ -54,11 +63,20 @@ def has_raw_value(obj, attribute):
         return False
 
 
-def record_has_field(nmdc_record: namedtuple, attribute_field):
+def record_has_field(nmdc_record: namedtuple, attribute_field: str) -> bool:
     """
-    Helper fuction that returns True/False if a field is in
-    an nmdc record (a namedtuple)
+    Returns True/False if a field is in nmdc_record (a namedtuple).
+
+     Args:
+        nmdc_record (namedtuple): the nmdc record
+        attribute_field (string): the name of the attribute
+
+    Returns:
+        bool: True if the record has the field.
     """
+    if pds.isnull(nmdc_record):
+        return None
+
     if "," in attribute_field:  # e.g., "file_size_bytes, int"
         field = attribute_field.split(",")[0].strip()
     else:  # default to string datatype
@@ -67,25 +85,119 @@ def record_has_field(nmdc_record: namedtuple, attribute_field):
     return field in nmdc_record._fields
 
 
-def get_record_attr(record: namedtuple, attribute_field):
-    if "," in attribute_field:  # e.g., "file_size_bytes, int"
+def coerce_value(value, dtype: str):
+    """
+    Coerces value into the type specified by dtype and returns the coerced value.
+
+    Args:
+        value: the value to coerece
+        dtype (str): the data type to coerce/cast value into
+
+    Returns:
+        the value cast into the data type specified by dtype
+    """
+    if value is None:
+        return None
+
+    if dtype != "str":  # only do the eval when it is not a string
+        return eval(f"""{dtype}({value})""")  # convert value to specified datatype
+    else:
+        return f"""{value}"""
+
+
+def get_dtype_from_attribute_field(attribute_field) -> str:
+    """
+    Return data type part of attribute_field (e.g. 'file_size, int').
+    If no dtype is given, "str" is returned.
+
+    Args:
+        attribute_field: the attribute field to get the data type from
+
+    Returns:
+        str: the string representation of the attribute field's data type
+    """
+    if type(attribute_field) == type({}):
+        if "$const" in attribute_field.keys():
+            ## NB: RECURSIVE CALL
+            dtype = get_dtype_from_attribute_field(attribute_field["$const"])
+        else:
+            dtype = "str"
+    elif "," in attribute_field:  # e.g., "file_size_bytes, int"
+        dtype = attribute_field.split(",")[1].strip()
+    else:  # default to string datatype
+        dtype = "str"
+
+    return dtype
+
+
+def get_field_and_dtype_from_attribute_field(attribute_field) -> tuple:
+    """
+    Returns both the field and data type parts of attribute_field (e.g. 'file_size, int').
+    If no dtype is given, a dtype of "str" is returned.
+
+     Args:
+        attribute_field: the name of the attribute field
+
+    Returns:
+        tuple: contains the (field, data type)
+    """
+    if type(attribute_field) == type({}):
+        if "$const" in attribute_field.keys():
+            ## NB: RECURSIVE CALL
+            field, dtype = get_field_and_dtype_from_attribute_field(
+                attribute_field["$const"]
+            )
+        elif "$field" in attribute_field.keys():
+            ## NB: RECURSIVE CALL
+            field, dtype = get_field_and_dtype_from_attribute_field(
+                attribute_field["$field"]
+            )
+        else:
+            field, dtype = attribute_field, "str"
+    elif "," in attribute_field:  # e.g., "file_size_bytes, int"
         field, dtype = attribute_field.split(",")
         field, dtype = field.strip(), dtype.strip()
     else:  # default to string datatype
-        field = attribute_field.strip()
-        dtype = "str"
+        field, dtype = attribute_field.strip(), "str"
+
+    return field, dtype
+
+
+def get_record_attr(record: namedtuple, attribute_field, return_field_if_none=True):
+    """
+    Returns the value specified by attribute_field in the record.
+    E.g., get_record_attr(Record(id='gold:001', name='foo'), 'id') would return 'gold:001'.
+
+    In some cases, the attribure_field may used for constant value (e.g., unit: meter).
+    In these case the return_field_if_none (default True), specifies whether to return the
+    constant value (e.g., return 'meter' instead of None)
+
+    Args:
+        record (namedtuple): the record containing the data
+        attribute_field: the name of the field that contains the data
+        return_field_if_none (bool, optional): Defaults to True.
+
+    Returns:
+        the value of record's field
+    """
+    ## check for constant
+    if type({}) == type(attribute_field) and "$const" in attribute_field.keys():
+        field, dtype = get_field_and_dtype_from_attribute_field(
+            attribute_field["$const"]
+        )
+        return coerce_value(field, dtype)
+
+    ## get field name and data type
+    field, dtype = get_field_and_dtype_from_attribute_field(attribute_field)
 
     ## get value from record
     if record_has_field(record, field):  # check field
         val = getattr(record, field)
-    else:
-        val = None
+    else:  #### ********** Return value of field or None ******************* #######
+        val = field if return_field_if_none else None
 
     if pds.notnull(val):
-        if dtype != "str":  # only do the eval when it is not a string
-            return eval(f"""{dtype}({val})""")  # convert value to specified datatype
-        else:
-            return f"""{val}"""
+        return coerce_value(val, dtype)
     else:
         return None
 
