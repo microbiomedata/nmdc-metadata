@@ -514,16 +514,6 @@ def make_nmdc_class(class_type):
     return class_type
 
 
-def make_uriorcuri(object_dict={}, class_type=None, uriorcurie=""):
-    ## return uriorcurie based on rules
-    if "uriorcurie" in object_dict.keys():
-        return object_dict["uriorcurie"]
-    elif len(uriorcurie) > 0:
-        return uriorcurie
-    else:
-        return class_type.class_class_curie
-
-
 def make_object_type(object_dict={}, class_type=None, object_type=""):
     ## return object type based on rules
     if "$class_type" in object_dict.keys():
