@@ -856,14 +856,25 @@ def dataframe_to_dict(
 
 
 def test_pre_transform(nmdc_df, tx_attributes, **kwargs):
+    """
+    Dummy function to test pre-transform declarations.
+    """
     print("*** test pre-transform ******")
     return nmdc_df
 
 
-def make_quantity_value(nmdc_objs, tx_attributes, **kwargs):
+def make_quantity_value(nmdc_objs: list, tx_attributes: list, **kwargs) -> list:
     """
     Takes each nmdc object (either a dict or class instance) and
     and adds has_numeric_value and has_unit information.
+
+
+    Args:
+        nmdc_objs (list): list of objects to be updated with has_numeric_value and/or c values
+        tx_attributes (list): list of attributes whose values need to updated
+
+    Returns:
+        list: updated nmdc_objs with has_numeric_value and/or has_numeric_value values
     """
     print(f"*** executing make_quantity_value for attributes {tx_attributes}")
     for attribute in tx_attributes:
