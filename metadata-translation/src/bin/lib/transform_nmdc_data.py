@@ -709,108 +709,45 @@ def make_value_from_list_item_dict(nmdc_record: namedtuple, item: dict) -> list:
         return [None]  # note: a list is returned
 
 
-def make_object_from_list(nmdc_record: namedtuple, nmdc_list: list):
+def make_object_from_list(nmdc_record: namedtuple, nmdc_list: list) -> list:
+    """
+    When a list is specified as the value of a field; e.g.:
+      ['gold_id, str']
+      {$field: data_object_id, $split=','}]
+      [{id: gold_id, name: project_name, $class_type: Study}]
+    A list of items (either values objects) is returned.
+
+    Args:
+        nmdc_record (namedtuple): [description]
+        nmdc_list (list): [description]
+
+    Returns:
+        list: [description]
+    """
     obj_list = []
     for val in nmdc_list:
         if type({}) == type(val):
-            if "field" in val.keys():
-                ## e.g., [{field: data_object_id, dtype: str, multivalued: true}]
-                ## get record value for the field
-                # record_val = getattr(nmdc_record, val["field"])
-                record_val = get_record_attr(nmdc_record, val["field"])
-
-                ## check the record value is not None
-                if record_val is not None:
-                    ## set datatype for values
-                    if "dtype" in val.keys():
-                        dtype = val["dtype"]
-                    else:
-                        dtype = "str"
-
-                    ## check if record needs to be split
-                    if "split_val" in val.keys():
-                        split_val = val["split_val"]
-                        if type(record_val) != type(""):
-                            record_val = str(
-                                record_val
-                            )  # make sure record_val is a string
-
-                        for rv in record_val.split(split_val):
-                            ## coerce into datatype
-                            if dtype == "str":
-                                obj_list.append(str(rv))
-                            else:
-                                obj_list.append(eval("""{dtype}({rv})"""))
-                    else:
-                        ## coerce into datatype
-                        if dtype == "str":
-                            obj_list.append(str(record_val))
-                        else:
-                            obj_list.append(eval("""{dtype}({record_val}"""))
-
-            elif "$init" in val.keys():
-                ## e.g., {part_of: {$init: {id: study_gold_id}, $class_type: Study}}
-                init_dict = val["$init"]
-                class_type = val["$class_type"]
-
-                ## get each value from the nmdc record as specified
-                ## by the key in the $init dictionary
-                ## e.g., {'part_of': 'study_ids', 'name': 'study_names'}
-                ##       -> {'part_of': [1, 2], 'name': ['foo', 'bar']}
-                values_dict = {}
-                for k, v in init_dict.items():
-                    # record_vals = getattr(nmdc_record, v)
-                    record_vals = get_record_attr(nmdc_record, v)
-                    if pds.notnull(record_vals):  # check for null
-                        values_dict[k] = record_vals.split(",")
-
-                if len(values_dict) < 1:
-                    continue  # make sure we have values
-
-                ## set variables for easy access
-                keys = list(values_dict.keys())
-                values = list(values_dict.values())
-                value_len = len(values_dict[keys[0]])
-
-                ## grab the ith value for each value and create a
-                ## new dictionary based on this pairing with the keys
-                ## e.g., {'part_of': [1, 2], 'name': ['foo', 'bar']}
-                ##       -> [[1, 'foo'], [2, 'bar']]
-                ##       -> dict(zip(['part_of', 'name'], [1, 'foo']))
-                ##       -> {'id': '1', 'name': 'foo'}
-                ##       -> dict(zip(['part_of', 'name'], [2, 'bar']))
-                ##       -> {'id': '2', 'name': 'bar'}
-                ## each dict is used to create the object
-                for i in range(value_len):
-                    ith_vals = [v[i] for v in values]  # e.g., [1, 'foo'], [2, 'bar']]
-                    temp_dict = dict(
-                        zip(keys, ith_vals)
-                    )  # e.g., {'id': '1', 'name': 'foo'}
-                    class_type = getattr(nmdc, val["$class_type"])
-
-                    ## create object and add to list
-                    obj = class_type(**temp_dict)
-                    obj.type = class_type.class_class_curie
-                    obj_list.append(obj)
+            if "$field" in val.keys():
+                ## e.g., [{$field: data_object_id, $split=','}]
+                obj_list.extend(make_value_from_list_item_dict(nmdc_record, val))
             else:
-                ## e.g., {has_input [{id: biosample_gold_id, $class_type: nmdc:Biosample}]}
-                obj = make_object_from_dict(nmdc_record, val)
-                obj_list.append(obj)
-        elif type("") == type(val):
-            ## e.g., has_output: ["data_object_id, str"]
-            record_val = make_value_from_string(nmdc_record, val)
-            obj_list.append(record_val)
+                ## e.g., [{id: gold_id, name: project_name, $class_type: Study}]
+                obj_list.extend(make_object_from_list_item_dict(nmdc_record, val))
         else:
-            ## this is default case: the record is turned into an attribute value
-            # record_val = getattr(nmdc_record, val)
+            ## e.g., ['gold_id, str']
+            dtype = get_dtype_from_attribute_field(val)  # determine the data type
             record_val = get_record_attr(nmdc_record, val)
-
-            ## check the record value is not None
             if record_val is not None:
-                av = make_attribute_value(record_val)
-                obj_list.append(av)
+                obj_list.extend(
+                    [
+                        coerce_value(rv.strip(), dtype)
+                        for rv in str(record_val).split(",")
+                    ]
+                )
+            else:
+                obj_list.append(None)
 
-        return obj_list
+    return obj_list
 
 
 def make_value_from_string(nmdc_record: namedtuple, attribute_string: str):
