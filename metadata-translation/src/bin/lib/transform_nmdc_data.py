@@ -937,35 +937,6 @@ def save_json(json_data, file_path):
     return json_data
 
 
-def collapse_json_file(
-    file_path, json_property, collapse_property="id", replace_single_quote=False
-):
-    jdata = get_json(file_path, replace_single_quote)
-    return collapse_json_data(jdata, json_property, collapse_property)
-
-
-def collapse_json_data(json_data, json_property, collapse_property="id"):
-    if type(json_data) == type(""):
-        jdata = json.loads(json_data)
-    else:
-        jdata = json_data.copy()
-
-    print(jdata)
-
-    for data in jdata:
-        if type(data) == type({}) and json_property in data.keys():
-            values = data[json_property]
-            if type(values) == type([]):
-                data[json_property] = [val[collapse_property] for val in values]
-            else:
-                data[json_property] = values[collapse_property]
-
-    if type(json_data == type("")):
-        return json.dumps(jdata)
-    else:
-        return jdata
-
-
 if __name__ == "__main__":
     ## code for testing
     file_path = "../output/nmdc_etl/test.json"
