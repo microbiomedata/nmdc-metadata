@@ -202,25 +202,39 @@ def get_record_attr(record: namedtuple, attribute_field, return_field_if_none=Tr
         return None
 
 
-def make_constructor_dict_from_record(constructor_map: dict, nmdc_record: namedtuple):
+def make_constructor_args_from_record(
+    constructor_map: dict, nmdc_record: namedtuple
+) -> dict:
+    """
+    Returns the constructor arguments as a dict that are needed to build an object.
+    E.g., If the constructor map specifies that a Study object requires an id and name in
+    the constructor, this function would return {id: gold:001, name: foo}.
+
+    Args:
+        constructor_map (dict): the arguments specified to build an object
+        nmdc_record (namedtuple): holds the data that is used to build an object
+
+    Returns:
+        dict: the constructor arguments needed to build the object
+    """
     ## for every mapping between a key and data field create a dict
     ## of the parameters needed to instantiate the class
     constructor_dict = {}
     for key, field in constructor_map.items():
         ## if the fields is a dict, constructor param takes an object
-        ## e.g., {'$init': {'latitude': 'latitude', 'longitude': 'longitude', 'has_raw_value': 'lat_lon'}, '$class_type': 'GeolocationValue']
-        if type({}) == type(field):
-            constructor_dict = {}
-            for param_name, field in constructor_map.items():
-                ## if the field is a dict, then a constant value is being supplied
-                ## e.g., {$init: {has_numeric_value: "depth, float", has_unit: {const: 'meter'}}, $class_type: QuantityValue}
-                if type({}) == type(field):
-                    constructor_dict[param_name] = list(field.values())[0]
-                else:
-                    ## get value for paramater from record
-                    constructor_dict[param_name] = get_record_attr(nmdc_record, field)
+        ## e.g., {'latitude': 'latitude', 'longitude': 'longitude', 'has_raw_value': 'lat_lon', '$class_type': 'GeolocationValue'}
+        if type({}) == type(field) and len(field) > 0:
+            ## get values from the nmdc record for each field name
+            record_dict = make_record_dict(nmdc_record, field)
+            ## find constructors defined by the initialization key
+            if "$class_type" in field.keys():
+                class_type = make_nmdc_class(field["$class_type"])  # get class type
+
+                ## update constructor dict
+                constructor_dict[key] = class_type(**record_dict)
+            else:
+                constructor_dict[key] = record_dict
         else:
-            # constructor_dict[key] = getattr(nmdc_record, field)
             constructor_dict[key] = get_record_attr(nmdc_record, field)
 
     return constructor_dict
