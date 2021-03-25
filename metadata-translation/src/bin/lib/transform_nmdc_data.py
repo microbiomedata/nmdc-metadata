@@ -514,18 +514,6 @@ def make_nmdc_class(class_type):
     return class_type
 
 
-def make_object_type(object_dict={}, class_type=None, object_type=""):
-    ## return object type based on rules
-    if "$class_type" in object_dict.keys():
-        return object_dict["$class_type"]
-    elif type(class_type) == type(""):
-        return class_type
-    elif len(object_type) > 0:
-        return object_type
-    else:
-        return class_type.class_class_curie
-
-
 def make_object_from_dict(nmdc_record: namedtuple, object_dict: dict):
     ## using the data from an nmdc record, create an object
     ## There are two ways to do this:
