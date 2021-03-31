@@ -1,23 +1,6 @@
 {
   "study_set": [
     {
-      "id": "gold:Gs0110132",
-      "name": "Cyanobacterial communities from the Joint Genome Institute, California, USA",
-      "description": "We propose to utilize the unique resources at EMSL and the JGI to obtain a better understanding of the phylogenetic and functional diversity of cyanobacteria that have been collected from DOE mission relevant environments (e.g. alkaline and acidic hot springs, and hypersaline terrestrial and water habitats) and deposited in a culture collection that contains &gt;1,200 strains. The Cyanobacteria are one of the most metabolically and morphologically diverse bacterial phyla and it has been hypothesized that they are the origin of oxygenic photosynthesis. The project proposed here would complement and utilize the genomic information that was generated during JGI\u2019s GEBA Cyano project to add valuable insights about the metabolic processes that are active in members of this phylum and that have been - and still are - key factors in shaping our planet. In contrast to the GEBA Cyano project, the project proposed here include mixed cultures of organisms that are recalcitrant to separation. A comprehensive omics approach of these simple consortia will allow us to develop tools for Systems Microbiology and for analyzing microbe-microbe and microbe-climate interactions and the single-cell and whole system level. Phylogenomics: We will request 16S rRNA data from our culture collections to classify phenotypes that are most promising for addressing questions related to carbon and nitrogen cycling and developing new chassis for biofuel production strains. To obtain a complete 16S rRNA-based inventory of the Cyanobacteria collection we would request ~40 Gb of iTag data from the JGI. In addition, we would request Fluorescence in situ hybridization (FISH) microscopy from EMSL for selected samples that contain more than one phylotype, to obtain a better understanding of the special organization within mixed populations. We will request an additional ~10 Gb of iTag data to monitor phylogenetic changes in mixed cultures with phenotypes that are in particular relevant to carbon and nitrogen cycling.   Single Cell Genomics and Metagenomics: We will request sorting of mixed cultures targeting ~100 single cells and genomic sequencing of the obtained isolates using JGI's PacBio pipeline (total of ~50 Gb genomic data). For mixed cultured from which no ? or only a fraction of the community - can be isolated as single cell, we will request a total of ~50 Gb of metagenomics data. This will provide us with the genomic data that will be necessary to reconstruct metabolic pathways of hitherto uncultured cyanobacteria and to identify the key factors that make the individual members of these mixed cultures recalcitrant to cultivation under axenic conditions. Physiology and chemistry: To determine the physical and chemical changes that occur during Cyanobacteria mediated carbon and nitrogen cycling, we will request access to cryo-transmission electron microscopy, scanning electron microscopy coupled with focused ion beam, X ray spectroscopy and electron diffraction analyses, confocal microscopy, Raman spectroscopy, synchrotron-based computed x-ray microtomography, nano secondary ion mass spectrometry, and high field Fourier transform ion cyclotron resonance mass spectrometry at EMSL.   Functional dynamics: To determine the dynamics of the genetic modules that are being transcribed into mRNA during Cyanobacteria mediated carbon and nitrogen cycling, we propose to generate expression profiles from 10 selected axenic and 10 mixed cultures. We will request a total of ~10 Gb and ~50 Gb of transcriptome and metatranscriptomic data from the JGI, respectively. To determine the dynamics of genetic modules being translated and converted into proteins and metabolites during Cyanobacteria mediated carbon and nitrogen cycling, we will generate metaproteomic and metametabolomic data from 10 selected axenic and 10 mixed cultures. We will request access and support to and with mass spectrometry, NMR spectrometry, and computation time on Chinook from EMSL.",
-      "ecosystem": "Host-associated",
-      "ecosystem_category": "Microbial",
-      "ecosystem_type": "Bacteria",
-      "ecosystem_subtype": "Unclassified",
-      "specific_ecosystem": "Unclassified",
-      "principal_investigator_name": {
-        "has_raw_value": "Matthias Hess"
-      },
-      "doi": {
-        "has_raw_value": "10.25585/1487758"
-      },
-      "type": "nmdc:Study"
-    },
-    {
       "id": "gold:Gs0128849",
       "name": "Permafrost microbial communities from Stordalen Mire, Sweden",
       "description": "Thawing permafrost is one of the largest soil carbon pools on the planet. The goal of this project is to study microbial communities that participate in the soil carbon cycle.",
@@ -35,42 +18,59 @@
       "type": "nmdc:Study"
     },
     {
-      "id": "gold:Gs0135152",
-      "name": "Salt marsh sediment microbial communities from the Plum Island Ecosystem LTER, Massachusetts, United States",
-      "description": "The goal of this study is to identify genomes of novel microbial players that are able to decompose recalcitrant organic matter in the presence of nitrate; to determine which metabolic pathways are differentially expressed as a result of nitrate addition; and to link differential expression of these genes to the decomposition of organic matter in salt marsh sediments.",
+      "id": "gold:Gs0130354",
+      "name": "Forest soil microbial communities from Barre Woods Harvard Forest LTER site, Petersham, Massachusetts, United States",
+      "description": "The goal of this study is to learn the molecular mechanisms underlying changes in the temperature sensitive respiration response of forest soils to long-term experimental warming",
       "ecosystem": "Environmental",
-      "ecosystem_category": "Aquatic",
-      "ecosystem_type": "Marine",
-      "ecosystem_subtype": "Intertidal zone",
-      "specific_ecosystem": "Salt marsh",
+      "ecosystem_category": "Terrestrial",
+      "ecosystem_type": "Soil",
+      "ecosystem_subtype": "Unclassified",
+      "specific_ecosystem": "Forest Soil",
       "principal_investigator_name": {
-        "has_raw_value": "Jennifer Bowen"
+        "has_raw_value": "Jeffrey Blanchard"
       },
       "doi": {
-        "has_raw_value": "10.25585/1487491"
+        "has_raw_value": "10.25585/1488215"
+      },
+      "type": "nmdc:Study"
+    },
+    {
+      "id": "gold:Gs0134277",
+      "name": "Rhizosphere microbial communities from Carex aquatilis grown in University of Washington, Seatle, WA, United States",
+      "description": "The goal of this study is to advance understanding of the response of methane production and methane oxidation to changes in plant productivity so that modeled representations of these processes and interactions can be improved.",
+      "ecosystem": "Host-associated",
+      "ecosystem_category": "Plants",
+      "ecosystem_type": "Roots",
+      "ecosystem_subtype": "Rhizosphere",
+      "specific_ecosystem": "Soil",
+      "principal_investigator_name": {
+        "has_raw_value": "Rebecca Neumann"
+      },
+      "doi": {
+        "has_raw_value": "10.25585/1488209"
       },
       "type": "nmdc:Study"
     }
   ],
   "omics_processing_set": [
     {
-      "id": "gold:Gp0321404",
-      "name": "Salt marsh sediment microbial communities from the Plum Island Ecosystem LTER, Massachusetts, United States - WE1602-10",
-      "description": "Salt marsh sediment microbial communities from the Plum Island Ecosystem LTER, Massachusetts, United States",
+      "id": "gold:Gp0225767",
+      "name": "Forest soil microbial communities from Barre Woods Harvard Forest LTER site, Petersham, Massachusetts, United States - Inc-BW-C-14-O",
+      "description": "Forest soil from Barre Woods Harvard Forest LTER site was incubated at 10C with heavy water. Sample is from a control plot at ambient soil temperature, organic horizon - top 4cm of soil",
       "has_input": [
-        "gold:Gb0191784"
+        "gold:Gb0157174"
       ],
-      "add_date": "22-JUN-18 04.28.17.506000000 PM",
-      "mod_date": "04-APR-20 07.22.34.999000000 AM",
+      "add_date": "17-AUG-17 05.08.38.451000000 PM",
+      "mod_date": "16-OCT-20 02.04.01.374000000 AM",
       "has_output": [
-        "jgi:5b3065e764d0b3516a5e1543"
+        "jgi:599c3a117ded5e41edd7da77"
       ],
-      "ncbi_project_name": "Salt marsh sediment microbial communities from the Plum Island Ecosystem LTER, Massachusetts, United States - WE1602-10",
+      "ncbi_project_name": "Forest soil microbial communities from Barre Woods Harvard Forest LTER site, Petersham, Massachusetts, United States - Inc-BW-C-14-O",
       "omics_type": {
         "has_raw_value": "Metagenome"
       },
       "part_of": [
-        "gold:Gs0135152"
+        "gold:Gs0130354"
       ],
       "processing_institution": "Joint Genome Institute",
       "type": "nmdc:OmicsProcessing"
@@ -98,19 +98,23 @@
       "type": "nmdc:OmicsProcessing"
     },
     {
-      "id": "gold:Gp0507243",
-      "name": "Anaerobic lake sediment cyanobacterial communities from Washington, USA - FECB-40",
-      "description": "Anaerobic lake sediment cyanobacterial communities from Washington, USA",
+      "id": "gold:Gp0306221",
+      "name": "Rhizosphere microbial communities from Carex aquatilis grown in University of Washington, Seatle, WA, United States - 4-1-23 metaG",
+      "description": "Rhizosphere microbial communities from Carex aquatilis grown in submerged peat from a thermokarst bog, University of Washington, Seatle, WA, United States",
       "has_input": [
-        "gold:Gb0259532"
+        "gold:Gb0188037"
       ],
-      "add_date": "09-OCT-20 03.15.22.633000000 PM",
-      "mod_date": "11-OCT-20 05.03.57.573000000 PM",
+      "add_date": "29-MAR-18 01.27.30.036000000 PM",
+      "mod_date": "04-APR-20 08.26.35.067000000 AM",
+      "has_output": [
+        "jgi:5baa816646d1e63f764deb37"
+      ],
+      "ncbi_project_name": "Rhizosphere microbial communities from Carex aquatilis grown in University of Washington, Seatle, WA, United States - 4-1-23 metaG",
       "omics_type": {
-        "has_raw_value": "Targeted Gene Survey"
+        "has_raw_value": "Metagenome"
       },
       "part_of": [
-        "gold:Gs0110132"
+        "gold:Gs0134277"
       ],
       "processing_institution": "Joint Genome Institute",
       "type": "nmdc:OmicsProcessing"
@@ -122,6 +126,9 @@
       "name": "Permafrost microbial communities from Stordalen Mire, Sweden - 611E1M metaG",
       "description": "Permafrost microbial communities from Stordalen Mire, Sweden",
       "type": "nmdc:Biosample",
+      "collection_date": {
+        "has_raw_value": "2011-06-15"
+      },
       "env_broad_scale": {
         "has_raw_value": "ENVO:00000446"
       },
@@ -154,85 +161,83 @@
       "sample_collection_site": "Mire fen"
     },
     {
-      "id": "gold:Gb0191784",
-      "name": "Salt marsh sediment microbial communities from the Plum Island Ecosystem LTER, Massachusetts, United States - WE1602-10",
-      "description": "Salt marsh sediment microbial communities from the Plum Island Ecosystem LTER, Massachusetts, United States",
+      "id": "gold:Gb0157174",
+      "name": "Forest soil microbial communities from Barre Woods Harvard Forest LTER site, Petersham, Massachusetts, United States - Inc-BW-C-14-O",
+      "description": "Forest soil from Barre Woods Harvard Forest LTER site was incubated at 10C with heavy water. Sample is from a control plot at ambient soil temperature, organic horizon - top 4cm of soil",
       "type": "nmdc:Biosample",
-      "depth": {
-        "has_raw_value": "0.1",
-        "has_numeric_value": 0.1,
-        "has_unit": "meter"
+      "collection_date": {
+        "has_raw_value": "2017-05-24"
       },
       "env_broad_scale": {
-        "has_raw_value": "ENVO:01000022"
+        "has_raw_value": "ENVO:01000174"
       },
       "env_local_scale": {
-        "has_raw_value": "ENVO:00000316"
+        "has_raw_value": "ENVO:01000159"
       },
       "env_medium": {
-        "has_raw_value": "ENVO:00002007"
+        "has_raw_value": "ENVO:00002261"
       },
       "geo_loc_name": {
         "has_raw_value": "USA: Massachusetts"
       },
       "lat_lon": {
-        "has_raw_value": "42.75899999999999 -70.891",
-        "latitude": 42.75899999999999,
-        "longitude": -70.891
+        "has_raw_value": "42.481016 -72.178343",
+        "latitude": 42.481016,
+        "longitude": -72.178343
       },
       "ecosystem": "Environmental",
-      "ecosystem_category": "Aquatic",
-      "ecosystem_type": "Marine",
-      "ecosystem_subtype": "Intertidal zone",
-      "specific_ecosystem": "Salt marsh",
-      "add_date": "22-JUN-18 04.31.40.046000000 PM",
+      "ecosystem_category": "Terrestrial",
+      "ecosystem_type": "Soil",
+      "ecosystem_subtype": "Unclassified",
+      "specific_ecosystem": "Forest Soil",
+      "add_date": "17-AUG-17 05.38.34.719000000 PM",
       "community": "microbial communities",
-      "habitat": "salt marsh",
-      "identifier": "WE1602-10",
-      "location": "salt marshes at the Plum Island Ecosystem LTER, Massachusetts, United States",
-      "mod_date": "16-JUN-19 01.53.38.241000000 AM",
-      "ncbi_taxonomy_name": "salt marsh metagenome",
-      "sample_collection_site": "Salt marsh sediment"
+      "habitat": "soil",
+      "identifier": "Inc-BW-C-14-O",
+      "location": "Barre Woods Harvard Forest LTER site, Petersham, Massachusetts, United States",
+      "mod_date": "08-JAN-20 02.49.23.000000000 PM",
+      "ncbi_taxonomy_name": "soil metagenome",
+      "sample_collection_site": "forest soil"
     },
     {
-      "id": "gold:Gb0259532",
-      "name": "Anaerobic lake sediment cyanobacterial communities from Washington, USA - FECB-40",
-      "description": "Anaerobic lake sediment cyanobacterial communities from Washington, USA",
+      "id": "gold:Gb0188037",
+      "name": "Rhizosphere microbial communities from Carex aquatilis grown in University of Washington, Seatle, WA, United States - 4-1-23 metaG",
+      "description": "Rhizosphere microbial communities from Carex aquatilis grown in submerged peat from a thermokarst bog, University of Washington, Seatle, WA, United States",
       "type": "nmdc:Biosample",
-      "alt": {
-        "has_raw_value": "336.0",
-        "has_numeric_value": 336,
-        "has_unit": "meter"
+      "collection_date": {
+        "has_raw_value": "2018-01-29"
       },
       "env_broad_scale": {
-        "has_raw_value": "ENVO:01000252"
+        "has_raw_value": "ENVO:00000446"
       },
       "env_local_scale": {
-        "has_raw_value": "ENVO:01001072"
+        "has_raw_value": "ENVO:00005801"
       },
       "env_medium": {
-        "has_raw_value": "ENVO:00000546"
+        "has_raw_value": "ENVO:00005774"
       },
       "geo_loc_name": {
-        "has_raw_value": "USA: Washington"
+        "has_raw_value": "USA: Seattle, Washington"
       },
       "lat_lon": {
-        "has_raw_value": "47.3893 -119.4905",
-        "latitude": 47.3893,
-        "longitude": -119.4905
+        "has_raw_value": "47.6516 -122.3045",
+        "latitude": 47.6516,
+        "longitude": -122.3045
       },
-      "ecosystem": "Environmental",
-      "ecosystem_category": "Aquatic",
-      "ecosystem_type": "Freshwater",
-      "ecosystem_subtype": "Lake",
-      "specific_ecosystem": "Sediment",
-      "add_date": "09-OCT-20 03.15.26.224000000 PM",
-      "community": "cyanobacterial communities",
-      "habitat": "Anaerobic lake sediment",
-      "identifier": "FECB-40",
-      "location": "Washington, USA",
-      "ncbi_taxonomy_name": "sediment metagenome",
-      "sample_collection_site": "Anaerobic lake sediment"
+      "ecosystem": "Host-associated",
+      "ecosystem_category": "Plants",
+      "ecosystem_type": "Rhizosphere",
+      "ecosystem_subtype": "Soil",
+      "specific_ecosystem": "Unclassified",
+      "add_date": "29-MAR-18 01.27.40.709000000 PM",
+      "community": "microbial communities",
+      "habitat": "rhizosphere",
+      "host_name": "Carex aquatilis",
+      "identifier": "4-1-23 metaG",
+      "location": "University of Washington, Seatle, WA, United States",
+      "mod_date": "08-JAN-20 02.49.25.000000000 PM",
+      "ncbi_taxonomy_name": "rhizosphere metagenome",
+      "sample_collection_site": "Peat Soil"
     }
   ],
   "data_object_set": [
@@ -240,14 +245,21 @@
       "id": "jgi:58b653757ded5e7a2af951c4",
       "name": "11340.8.202049.GTCTCCT-AAGGAGA.fastq.gz",
       "description": "Raw sequencer read data",
-      "file_size_bytes": 9208349052,
+      "file_size_bytes": 9208349052.0,
       "type": "nmdc:DataObject"
     },
     {
-      "id": "jgi:5b3065e764d0b3516a5e1543",
-      "name": "12512.1.261459.GTCCACA-ATGTGGA.fastq.gz",
+      "id": "jgi:599c3a117ded5e41edd7da77",
+      "name": "11839.4.222578.GAGCTCA-TTGAGCT.fastq.gz",
       "description": "Raw sequencer read data",
-      "file_size_bytes": 6654909872,
+      "file_size_bytes": 34243309819.0,
+      "type": "nmdc:DataObject"
+    },
+    {
+      "id": "jgi:5baa816646d1e63f764deb37",
+      "name": "12660.4.274923.GATCGTAC-GTACGATC.fastq.gz",
+      "description": "Raw sequencer read data",
+      "file_size_bytes": 7580035314.0,
       "type": "nmdc:DataObject"
     }
   ]
