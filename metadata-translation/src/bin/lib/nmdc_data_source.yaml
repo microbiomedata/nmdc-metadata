@@ -229,7 +229,7 @@ classes:
       - add_date
       - mod_date
       - collection_date:
-          has_numeric_value: collection_date # mixs:collection_date
+          has_raw_value: collection_date # mixs:collection_date
       - ecosystem
       - ecosystem_category
       - ecosystem_type
