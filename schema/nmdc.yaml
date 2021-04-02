@@ -28,6 +28,9 @@ prefixes:
   OBI: http://purl.obolibrary.org/obo/OBI_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   igsn: https://app.geosamples.org/sample/igsn/
+  edam.data: http://edamontology.org/data_
+  edam.operation: http://edamontology.org/operation_
+  edam.topic: http://edamontology.org/topic_
   
 default_prefix: nmdc
 default_range: string
@@ -208,11 +211,15 @@ classes:
       - gc_avg
       - num_input_reads
       - num_aligned_reads
+    close_mappings:
+      - edam.topic:0196
 
   metagenome annotation activity:
     is_a: workflow execution activity
     in_subset: 
       - workflow subset
+    close_mappings:
+      - edam.operation:3672
 
   MAGs analysis activity:
     is_a: workflow execution activity
@@ -225,6 +232,8 @@ classes:
       - lowDepth contig num
       - unbinned contig num
       - mags list
+    close_mappings:
+      - edam.operation:3798
 
   read QC analysis activity:
     is_a: workflow execution activity
