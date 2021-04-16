@@ -17,7 +17,7 @@ import transform_nmdc_data as tx
 import extract_nmdc_data as ex
 import load_nmdc_data as lx
 import nmdc_dataframes as nmdc_dfs
-import nmdc
+from nmdc_schema import nmdc
 
 ## system level modules
 import pandas as pds
