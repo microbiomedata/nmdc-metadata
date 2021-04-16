@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import os, sys, click, pickle
 from git_root import git_root
 
@@ -6,6 +9,7 @@ sys.path.append(
 )  # add path nmdc schema files and modules
 sys.path.append(os.path.abspath(git_root("metadata-translation/src/bin")))
 sys.path.append(os.path.abspath(git_root("metadata-translation/src/bin/lib")))
+# import nmdc
 
 from lib.nmdc_etl_class import NMDC_ETL
 import yaml
@@ -15,7 +19,6 @@ from collections import namedtuple
 from pprint import pprint
 import pandas as pds
 import jsonasobj
-import nmdc
 import lib.data_operations as dop
 import nmdc_dataframes
 
@@ -368,8 +371,8 @@ def execute_etl(
 @click.option(
     "--sssomfile",
     "-ssom",
-    help="path to the sssom file to use for mapping",
-    default=git_root("schema/mappings/gold-to-mixs.sssom.tsv"),
+    help="optional path to the sssom file to use for mapping; if empty the SSSOM in the nmdc-schema package is used",
+    default="",
 )
 @click.option(
     "--specfile",
@@ -461,15 +464,14 @@ if __name__ == "__main__":
     # make_test_merged_data_source()  # build a testing subset from merged data source
 
     ## ------ testing specific etl modules -------- ##
-    # data_file = "../data/nmdc_merged_data.tsv.zip"
-    # data_file = "../data/nmdc_test_merged_data.tsv"  # test merged data source
     # sssom_map_file = git_root("schema/mappings/gold-to-mixs.sssom.tsv")
+    # data_file = "../data/nmdc_merged_data.tsv.zip"
     # spec_file = "lib/nmdc_data_source.yaml"
     # nmdc_etl = NMDC_ETL(
-    # merged_data_file=data_file,
-    # data_source_spec_file=spec_file,
-    # sssom_file=sssom_map_file,
-    # pickled_data="nmdc_etl_data.pickle",  # change this to load different data
+    #     merged_data_file=data_file,
+    #     data_source_spec_file=spec_file,
+    #     sssom_file="",
+    #     pickled_data="nmdc_etl_data.pickle",  # change this to load different data
     # )
 
     ## pickle nmdc data to speed up future loads

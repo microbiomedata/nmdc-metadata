@@ -12,7 +12,6 @@ sys.path.append(os.path.abspath("./lib"))
 
 ## system level modules
 import pandas as pds
-import jq
 import jsonasobj
 import json
 import zipfile
