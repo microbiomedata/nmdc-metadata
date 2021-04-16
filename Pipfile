@@ -19,6 +19,7 @@ pandas = "*"
 jq = "*"
 dotted_dict = "*"
 git_root = "*"
+nmdc-schema = "*"
 
 [dev-packages]
 jupyter = "*"
