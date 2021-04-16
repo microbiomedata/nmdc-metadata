@@ -121,6 +121,12 @@ docs/%-slides.pptx: docs/%-slides.md
 docs/%-slides.html: docs/%-slides.md
 	pandoc $< -s -t slidy -o $@
 
+# -- requirments --
+.PHONY: requirements-file
+requirements-file:
+# calls pipenv to generate the requirements.txt and requirements-dev.txt files
+	pipenv run pipenv_to_requirements
+
 # -- ETL commands --
 .PHONY: run-etl build-test-datasets build-example-db build-merged-db
 
