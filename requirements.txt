@@ -17,6 +17,7 @@ git-root
 jq
 jupyter
 mongospawn
+nmdc-schema
 pandas
 pipenv-to-requirements
 pymongo
