@@ -26,7 +26,7 @@ jobs:
       # install dependencies
       - run: pip install --upgrade pip
       - run: pip install mkdocs
-      - run: pip install biolinkml
+      - run: pip install linkml
         
       # generate markdown files
       - run: gen-markdown --dir docs schema/nmdc.yaml
