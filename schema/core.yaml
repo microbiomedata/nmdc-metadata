@@ -44,6 +44,8 @@ types:
     uri: xsd:int
     see_also:
       - UO:0000233
+    close_mappings:
+      - schema:contentSize
   
   decimal degree:
     description: >-
@@ -60,6 +62,8 @@ types:
       - https://en.wikipedia.org/wiki/ISO_639-1
     base: str
     uri: xsd:language
+    close_mappings:
+      - schema:language
 
   unit:
     base: str
@@ -67,6 +71,16 @@ types:
     mappings:
       - qud:Unit
       - UO:0000000
+    exact_mappings:
+      - schema:unitCode
+
+  url type:
+    base: str
+    uri: xsd:string
+    see_also:
+      - https://www.w3.org/TR/url/
+    exact_mappings:
+      - schema:url
 
     
 classes:
@@ -79,6 +93,8 @@ classes:
       - name
       - description
       - alternate identifiers
+    exact_mappings:
+      - schema:Thing
       
   attribute value:
     description: >-
@@ -128,6 +144,8 @@ classes:
       has raw value:
         description: >-
           the full name of the Investgator in format FIRST LAST
+    exact_mappings:
+      - schema:Person
           
       
   text value:
@@ -158,6 +176,9 @@ classes:
       A value that is an integer
     slots:
       - has numeric value
+    slot_usage:
+      has raw value:
+        pattern: "[\\-][1-9][0-9]*"
 
   boolean value:
     is_a: attribute value
@@ -165,6 +186,9 @@ classes:
       A value that is a boolean
     slots:
       - has boolean value
+    slot_usage:
+      has raw value:
+        pattern: "(true|false)"
       
   controlled term value:
     is_a: attribute value
