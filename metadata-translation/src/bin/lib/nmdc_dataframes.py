@@ -87,10 +87,15 @@ def make_dataframe(
                 sheet_name=sheet_name,
                 nrows=nrows,
                 comment=comment_str,
+                engine="openpyxl",
             )
         else:
             df = pds.read_excel(
-                file_name, sheet_name=sheet_name, nrows=nrows, comment=comment_str
+                file_name,
+                sheet_name=sheet_name,
+                nrows=nrows,
+                comment=comment_str,
+                engine="openpyxl",
             )
     elif "multi-sheet-excel" == file_type.lower():
         if None != file_archive:
@@ -101,6 +106,7 @@ def make_dataframe(
                     ignore_index=True,
                     nrows=nrows,
                     comment=comment_str,
+                    engine="openpyxl",
                 )
             )
         else:
@@ -111,6 +117,7 @@ def make_dataframe(
                     ignore_index=True,
                     nrows=nrows,
                     comment=comment_str,
+                    engine="openpyxl",
                 )
             )
 
