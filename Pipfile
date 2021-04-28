@@ -20,6 +20,9 @@ jq = "*"
 dotted_dict = "*"
 git_root = "*"
 nmdc-schema = "*"
+xlrd = "*"
+XlsxWriter = "*"
+openpyxl = "*"
 
 [dev-packages]
 jupyter = "*"
@@ -32,6 +35,7 @@ tabulate = "*"
 xlrd = "*"
 XlsxWriter = "*"
 jq = "*"
+openpyxl = "*"
 
 [requires]
 python_version = "3.7"

@@ -18,6 +18,7 @@ jq
 jupyter
 mongospawn
 nmdc-schema
+openpyxl
 pandas
 pipenv-to-requirements
 pymongo
@@ -26,3 +27,5 @@ pyyaml
 requests
 toolz
 tqdm
+xlrd
+xlsxwriter
