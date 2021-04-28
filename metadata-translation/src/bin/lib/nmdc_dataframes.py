@@ -103,7 +103,7 @@ def make_dataframe(
                 pds.read_excel(
                     file_archive.open(file_name),
                     sheet_name=None,
-                    ignore_index=True,
+                    index_col=None,
                     nrows=nrows,
                     comment=comment_str,
                     engine="openpyxl",
@@ -114,7 +114,7 @@ def make_dataframe(
                 pds.read_excel(
                     file_name,
                     sheet_name=None,
-                    ignore_index=True,
+                    index_col=None,
                     nrows=nrows,
                     comment=comment_str,
                     engine="openpyxl",
