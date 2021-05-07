@@ -10,12 +10,12 @@
 # `Pipfile.lock` and then regenerate `requirements*.txt`.
 ################################################################################
 
-biolinkml
 click
 dotted-dict
 git-root
 jq
 jupyter
+linkml
 mongospawn
 nmdc-schema
 openpyxl
