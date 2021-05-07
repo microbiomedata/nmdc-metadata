@@ -5,7 +5,7 @@ verify_ssl = true
 
 [packages]
 pyyaml = "*"
-biolinkml =  "*"
+linkml =  "*"
 requests = "*"
 click = "*"
 pipenv-to-requirements = "*"
