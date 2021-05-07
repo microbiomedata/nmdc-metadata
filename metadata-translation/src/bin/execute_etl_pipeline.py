@@ -19,7 +19,6 @@ from collections import namedtuple
 from pprint import pprint
 import pandas as pds
 import jsonasobj
-import lib.data_operations as dop
 import nmdc_dataframes
 
 # import align_nmdc_datatypes
