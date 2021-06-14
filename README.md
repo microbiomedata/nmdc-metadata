@@ -1,3 +1,11 @@
+
+# Important
+This repository is being deprecated.
+Please consider putting issues in:
+- NMDC Schema for schema changes/issues.
+- NMDC Ontology for issues related to producing terms or term subsets.
+- NMDC Runtime for isseus related to ETL issues.
+
 # Metadata management for the [National Microbiome Data Collaborative](https://microbiomedata.org/)
 [![Build Status](https://travis-ci.org/microbiomedata/nmdc-metadata.svg?branch=master)](https://travis-ci.org/microbiomedata/nmdc-metadata)
 ![Deploy Documentation](https://github.com/microbiomedata/nmdc-metadata/workflows/Deploy%20Documentation/badge.svg?branch=master)
