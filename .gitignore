@@ -5,3 +5,5 @@
 
 # PyCharm project config
 .idea/
+
+venv
