@@ -1,2 +1,4 @@
 jupyter
 black
+biopython
+xml2dict
