@@ -1,4 +1,4 @@
 jupyter
 black
 biopython
-xml2dict
+xmltodict
