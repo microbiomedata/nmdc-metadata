@@ -1,2 +1,4 @@
 mongo_nmdc_password:
   "<SECRET>"
+mongo_nmdc_host:
+  "<SECRET>"
