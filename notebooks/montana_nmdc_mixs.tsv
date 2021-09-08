@@ -1,0 +1,29 @@
+raw	template_block	slot	notes
+ID	green	id	curie
+investigation_type	green	investigation_type
+package	green	env_package
+sample_name	green	name	long textual
+source_mat_ID	green	source_mat_id
+collection_date	red	collection_date	has raw value
+env_broad_scale	red	env_broad_scale	has raw value
+env_local_scale	red	env_local_scale	has raw value
+env_medium	red	env_medium	has raw value
+geo_loc_name	red	geo_loc_name	has raw value
+gold_ecosystem	red		"ecosystem 
+ecosystem_category 
+ecosystem_type 
+ecosystem_subtype 
+specific_ecosystem "
+growth_facil	red	growth_facil
+lat_lon	red	lat_lon	has raw value
+microbiome_taxonomy	red	ncbi_taxonomy_name
+samp_mat_process	red	samp_mat_process
+samp_size	red	samp_size	column hidden on Example-Soil_NMDC_SampleMetadata https://docs.google.com/spreadsheets/d/1GZayIFIrY2jdoxRIpk9KDTBLiE71VVtb7YAd5ZSYGR0/edit#gid=860381937 
+samp_store_temp	red	samp_store_temp	there are three temp* slots in mongodb
+store_cond	red	store_cond
+ecosystem		ecosystem	instead of monolithic gold_ecosystem
+ecosystem_category		ecosystem_category	instead of monolithic gold_ecosystem
+ecosystem_subtype		ecosystem_subtype	instead of monolithic gold_ecosystem
+ecosystem_type		ecosystem_type	instead of monolithic gold_ecosystem
+specific_ecosystem		specific_ecosystem	instead of monolithic gold_ecosystem
+		identifier	textual

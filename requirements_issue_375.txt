@@ -1,8 +1,22 @@
-jupyter
+# libraries for parsing Montanas google sheet in full now commented out
+#biopython
+#bmt
+#matplotlib
+#pymongo
+#scikit-learn
+#xmltodict
+
+# packages esp. for dataharmonizer approach with minimal google sheet import
+# add pymongo back in?
+# currently using static dump
 black
-biopython
-xmltodict
-pymongo
-matplotlib
-scikit-learn
-bmt
+jupyter
+linkml-runtime
+pandas
+
+# probably only need one of these
+# actually probaly just using some lower level Google API
+# dependency that they pull in
+gsheets
+gspread
+
