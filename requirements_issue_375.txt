@@ -20,3 +20,6 @@ pandas
 gsheets
 gspread
 
+# igraph
+python-igraph
+
