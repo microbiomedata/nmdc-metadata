@@ -1,0 +1,41 @@
+child_id	child	parent
+ENVO:00000011	garden	anthropogenic geographic feature
+ENVO:00000174	isthmus	astronomical body part
+ENVO:00000420	tombolo	bar
+ENVO:00000068	tunnel	channel
+ENVO:01000687	coast	compound astronomical body part
+ENVO:01001071	impact crater	crater
+ENVO:00000277	dry lake	depression
+ENVO:01000995	dry river	dry stream
+ENVO:00000516	hummock	elevation
+ENVO:00000283	ridge	elevation
+ENVO:00000114	agricultural field	field
+ENVO:01000437	lava field	field
+ENVO:00000146	snow field	field
+ENVO:00000444	woodland clearing	field
+ENVO:00000179	mesa	flattened elevation
+ENVO:00000182	plateau	flattened elevation
+ENVO:01000687	coast	fluid astronomical body part
+ENVO:00000100	valley	geographic basin
+ENVO:01000669	active geological fault	geological fault
+ENVO:01000670	vein	geological fracture
+ENVO:00000247	volcano	geological fracture
+ENVO:00000170	dune	hill
+ENVO:00000083	hill	mount
+ENVO:00000081	mountain	mount
+ENVO:00000516	hummock	part of a landmass
+ENVO:00000305	peninsula	part of a landmass
+ENVO:00000382	lake shore	shore
+ENVO:00000087	cliff	slope
+ENVO:01000333	hillside	slope
+ENVO:00000091	beach	solid astronomical body part
+ENVO:00000067	cave	solid astronomical body part
+ENVO:03000117	channel	solid astronomical body part
+ENVO:00000175	karst	solid astronomical body part
+ENVO:00000086	plain	solid astronomical body part
+ENVO:00002000	slope	solid astronomical body part
+ENVO:00000169	canyon	valley
+ENVO:00000128	dry valley	valley
+ENVO:00000248	glacial valley	valley
+ENVO:01000664	tuff cone	volcanic cone
+ENVO:00000247	volcano	volcanic feature
