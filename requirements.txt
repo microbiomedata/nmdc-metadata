@@ -29,3 +29,4 @@ toolz
 tqdm
 xlrd
 xlsxwriter
+black
