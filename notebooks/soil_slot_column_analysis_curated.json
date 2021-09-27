@@ -1,0 +1,198 @@
+{
+  "Montana input": "https://docs.google.com/spreadsheets/d/1GZayIFIrY2jdoxRIpk9KDTBLiE71VVtb7YAd5ZSYGR0",
+  "MIxS input": "cmungall/mixs-source\ncommit b66f1b33af8360b65c5362e8876ab461431795c7\nAuthor: cmungall <cjm@berkeleybop.org>\nDate:   Tue Sep 14 14:12:05 2021 -0700",
+  "verion notes": "should I have used https://cmungall.github.io/mixs-source/SoilME/ instead of plain 'soil'?",
+  "Montana only": {
+    "MIxS other packages only": {
+      "explicitly associated with soil in MenuTerms tab": [
+        "oxy_stat_samp"
+      ],
+      "in red required section of Metadata tab": [
+        "growth_facil",
+        "samp_store_temp"
+      ],
+      "inherited from associated 'size_fract'": [
+        "filter_type"
+      ],
+      "inherited from associated 'treatment'": [
+        "air_temp_regm",
+        "biotic_regm",
+        "chem_administration",
+        "climate_environment",
+        "gaseous_environment",
+        "humidity_regm",
+        "light_regm",
+        "watering_regm"
+      ]
+    },
+    "Montana string mismatches": [
+      {
+        "term": "microbial_biomass_meth",
+        "notes": "simple abbreviation difference",
+        "repalcement MIxS term": "micro_biomass_meth"
+      },
+      {
+        "term": "microbiome_taxonomy",
+        "notes": "'frendlier' name? From core package.",
+        "repalcement MIxS term": "samp_taxon_id"
+      },
+      {
+        "term": "package",
+        "notes": "simple abbreviation difference. From core package. Do we want to record this on every row, or infer it globally from the template that was used?",
+        "repalcement MIxS term": "env_package"
+      },
+      {
+        "term": "previous_land_use_meth",
+        "notes": "simple abbreviation difference",
+        "repalcement MIxS term": "prev_land_use_meth"
+      },
+      {
+        "term": "samp_collect_device",
+        "notes": "simple abbreviation difference. From core package.",
+        "repalcement MIxS term": "samp_collec_device"
+      },
+      {
+        "term": "sample_name",
+        "notes": "simple abbreviation difference. From core package. nmdc-schema's named thing also have a mandatory name slot",
+        "repalcement MIxS term": "samp_name"
+      },
+      {
+        "term": "size_fract",
+        "notes": "simple abbreviation difference. From core package.",
+        "repalcement MIxS term": "size_frac"
+      },
+      {
+        "term": "source_mat_ID",
+        "notes": "simple case difference: source_mat_id. From core package.",
+        "repalcement MIxS term": "source_mat_id"
+      },
+      {
+        "term": "tot_nitro_content_meth",
+        "notes": "simple abbreviation difference",
+        "repalcement MIxS term": "tot_nitro_cont_meth"
+      },
+      {
+        "term": "water_content_meth",
+        "notes": "simple abbreviation difference",
+        "repalcement MIxS term": "water_cont_soil_meth"
+      }
+    ],
+    "identifiers": {
+      "terms": [
+        "ID",
+        "lab_ID",
+        "unique_ID"
+      ],
+      "notes": "Maybe two of these Montana column names mean the same thing but appear with different labels on different tabs? Use id nmdc-schema's named thing? identifier from biosample? See also https://microbiomedata.github.io/nmdc-schema/identifiers/. Lab_ID may be more like what nmdc-schema considers a name."
+    },
+    "Montana novel": [
+      {
+        "term": "filter_size",
+        "notes": "Supposed to be expressed with size_frac slot"
+      },
+      {
+        "term": "gold_ecosystem",
+        "notes": "See nmdc-schema's ecosystem, ecosystem_category, ecosystem_type, ecosystem_subtype, and specific_ecosystem"
+      },
+      {
+        "term": "isotope_exposure",
+        "notes": "grep isotope model/schema/* doesn't find anything. Is radiation_regm relevant?"
+      }
+    ]
+  },
+  "unassociated MIxS slots": [
+    {
+      "term": "alt",
+      "notes": "Acknoweledged in MenuTerms but not assigned to any package. Alias for elev?"
+    },
+    {
+      "term": "micro_biomass_meth",
+      "notes": "simple abbreviation difference",
+      "Montana's related term": "microbial_biomass_meth"
+    },
+    {
+      "term": "pool_dna_extracts",
+      "notes": ""
+    },
+    {
+      "term": "prev_land_use_meth",
+      "notes": "simple abbreviation difference",
+      "Montana's related term": "previous_land_use_meth"
+    },
+    {
+      "term": "temp",
+      "notes": "Acknoweledged in MenuTerms but not assigned to soil."
+    },
+    {
+      "term": "tot_nitro_cont_meth",
+      "notes": "simple abbreviation difference",
+      "Montana's related term": "tot_nitro_content_meth"
+    },
+    {
+      "term": "water_cont_soil_meth",
+      "notes": "simple abbreviation difference",
+      "Montana's related term": "water_content_meth"
+    }
+  ],
+  "Montana MIxS core intersection": [
+    "biotic_relationship",
+    "investigation_type",
+    "samp_mat_process"
+  ],
+  "Montana MIxS soil intersection": [
+    "agrochem_addition",
+    "al_sat",
+    "al_sat_meth",
+    "annual_precpt",
+    "annual_temp",
+    "collection_date",
+    "crop_rotation",
+    "cur_land_use",
+    "cur_vegetation",
+    "cur_vegetation_meth",
+    "depth",
+    "drainage_class",
+    "elev",
+    "env_broad_scale",
+    "env_local_scale",
+    "env_medium",
+    "extreme_event",
+    "extreme_salinity",
+    "fao_class",
+    "fire",
+    "flooding",
+    "geo_loc_name",
+    "heavy_metals",
+    "heavy_metals_meth",
+    "horizon",
+    "horizon_meth",
+    "lat_lon",
+    "link_addit_analys",
+    "link_class_info",
+    "link_climate_info",
+    "local_class",
+    "local_class_meth",
+    "microbial_biomass",
+    "misc_param",
+    "ph",
+    "ph_meth",
+    "previous_land_use",
+    "profile_position",
+    "salinity_meth",
+    "season_precpt",
+    "season_temp",
+    "sieving",
+    "slope_aspect",
+    "slope_gradient",
+    "soil_type",
+    "soil_type_meth",
+    "store_cond",
+    "texture",
+    "texture_meth",
+    "tillage",
+    "tot_nitro_content",
+    "tot_org_c_meth",
+    "tot_org_carb",
+    "water_content"
+  ]
+}
