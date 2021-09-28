@@ -1,0 +1,103 @@
+raw_env_package	env_package	alternative
+air	air	air
+MIGS/MIMS/MIMARKS.air	air	air
+built environment	built	built environment
+built	built	built environment
+host-associated	host-associated	host-associated
+MIGS/MIMS/MIMARKS.host-associated	host-associated	host-associated
+host_associated	host-associated	host-associated
+host associated	host-associated	host-associated
+human-gut	human-gut	human-gut
+MIGS/MIMS/MIMARKS.human-gut	human-gut	human-gut
+gut	human-gut	human-gut
+Human-gut	human-gut	human-gut
+human gut	human-gut	human-gut
+Human_Gut	human-gut	human-gut
+gut microbiome	human-gut	human-gut
+human-oral	human-oral	human-oral
+MIGS/MIMS/MIMARKS.human-oral	human-oral	human-oral
+Human-oral	human-oral	human-oral
+human-skin	human-skin	human-skin
+MIGS/MIMS/MIMARKS.human-skin	human-skin	human-skin
+human_skin	human-skin	human-skin
+human-vaginal	human-vaginal	human-vaginal
+Human-vaginal	human-vaginal	human-vaginal
+MIGS/MIMS/MIMARKS.human-vaginal	human-vaginal	human-vaginal
+microbial mat/biofilm	microbial mat/biofilm	microbial mat_biofilm
+MIGS/MIMS/MIMARKS.microbial	microbial mat/biofilm	microbial mat_biofilm
+biofilm	microbial mat/biofilm	microbial mat_biofilm
+microbial mat|biofilm	microbial mat/biofilm	microbial mat_biofilm
+MIGS/MIMS/MIMARKS.microbial|||microbial mat/biofilm	microbial mat/biofilm	microbial mat_biofilm
+misc environment	miscellaneous	miscellaneous natural or artificial environment
+miscellaneous natural or artificial environment	miscellaneous	miscellaneous natural or artificial environment
+MIGS/MIMS/MIMARKS.miscellaneous	miscellaneous	miscellaneous natural or artificial environment
+MIGS/MIMS/MIMARKS.miscellaneous|||miscellaneous natural or artificial environment	miscellaneous	miscellaneous natural or artificial environment
+miscellaneous	miscellaneous	miscellaneous natural or artificial environment
+misc-environment	miscellaneous	miscellaneous natural or artificial environment
+plant-associated	plant-associated	plant-associated
+MIGS/MIMS/MIMARKS.plant-associated	plant-associated	plant-associated
+MIGS.plant-associated	plant-associated	plant-associated
+plant	plant-associated	plant-associated
+sediment	sediment	sediment
+MIGS/MIMS/MIMARKS.sediment	sediment	sediment
+freshwater sediment	sediment	sediment
+Sediment	sediment	sediment
+marine sediment (ENVO:00002113)	sediment	sediment
+soil	soil	soil
+MIGS/MIMS/MIMARKS.soil	soil	soil
+soil-associated	soil	soil
+Soil	soil	soil
+MIGS/MIMS/MIMARKS.soil|||soil	soil	soil
+wastewater|sludge	wastewater/sludge	wastewater_sludge
+MIGS/MIMS/MIMARKS.wastewater	wastewater/sludge	wastewater_sludge
+wastewater/sludge	wastewater/sludge	wastewater_sludge
+wastewater sludge	wastewater/sludge	wastewater_sludge
+wastewater	wastewater/sludge	wastewater_sludge
+water	water	water
+MIGS/MIMS/MIMARKS.water	water	water
+MIGS/MIMS/MIMARKS.water|||water	water	water
+Water	water	water
+seawater	water	water
+sterile water	water	water
+fresh water	water	water
+MIMARKS_water	water	water
+sea water	water	water
+Coastal water body (ENVO:02000049)	water	water
+Deep-sea water	water	water
+Sea water	water	water
+"sea water, [ENVO:00002149]"	water	water
+ocean[ENVO:00000015]	water	water
+human-associated		
+MIGS/MIMS/MIMARKS.human-associated		
+mimarks		
+mouse-gut		
+Human-associated		
+Host-associated		
+human-not providedsopharyngeal		
+Missing: Not provided		
+mice gut		
+CV		
+default		
+"home, outdoor environment"		
+fermentation-associated		
+Unspecified		
+Mouse_Gut		
+mims extension		
+control		
+rock		
+arctic		
+extreme habitat		
+host-associated|||wastewater/sludge		
+soil|||water		
+MIENS_16S		
+cave		
+Not available		
+Host-associated|||MIGS/MIMS/MIMARKS.host-associated		
+not collected		
+host-associated|||misc environment		
+env_package		
+MIGS/MIMS/MIMARKS.air|||MIGS/MIMS/MIMARKS.microbial		
+ENVO:00000016		
+MIMARKS_16S		
+not applicable		
+saliva		

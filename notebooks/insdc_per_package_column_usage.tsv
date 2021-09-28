@@ -1,0 +1,1636 @@
+class	slot	usage	required	associated	mixs_defined
+air	alt	0.0	True	True	True
+air	altitude	0.46697038724373574	False	False	False
+air	barometric_press	0.0	False	True	True
+air	body_habitat	0.002277904328018223	False	False	False
+air	body_product	0.002277904328018223	False	False	False
+air	carb_dioxide	0.0	False	True	True
+air	carb_monoxide	0.0	False	True	True
+air	chem_administration	0.0	False	True	True
+air	collection_date	0.621867881548975	False	True	True
+air	collection_device	0.10933940774487472	False	False	False
+air	collection_method	0.10933940774487472	False	False	False
+air	depth	0.0	False	True	True
+air	dominant_hand	0.004555808656036446	False	False	True
+air	elev	0.37585421412300685	False	True	True
+air	env_broad_scale	0.9954441913439636	False	True	True
+air	env_local_scale	0.9954441913439636	False	True	True
+air	env_medium	0.9977220956719818	False	True	True
+air	estimated_size	0.004555808656036446	False	False	False
+air	ethnicity	0.009111617312072893	False	False	True
+air	geo_loc_name	0.9977220956719818	False	True	True
+air	host	0.10933940774487472	False	False	False
+air	host_common_name	0.004555808656036446	False	False	True
+air	host_subject_id	0.3735763097949886	False	False	True
+air	host_taxid	0.002277904328018223	False	False	True
+air	humidity	0.03644646924829157	False	True	True
+air	investigation_type	0.621867881548975	False	False	False
+air	isol_growth_condt	0.004555808656036446	False	False	False
+air	label	0.11161731207289294	False	False	False
+air	lat_lon	0.46697038724373574	False	True	True
+air	methane	0.0	False	True	True
+air	misc_param	0.0	False	True	True
+air	num_replicons	0.004555808656036446	False	False	False
+air	organism_count	0.06605922551252848	False	True	True
+air	oxy_stat_samp	0.0	False	True	True
+air	oxygen	0.0	False	True	True
+air	perturbation	0.0	False	True	True
+air	ph_meth	0.19134396355353075	False	False	True
+air	ploidy	0.004555808656036446	False	False	False
+air	pollutants	0.0	False	True	True
+air	project_name	0.5899772209567198	False	False	False
+air	propagation	0.004555808656036446	False	False	False
+air	race	0.004555808656036446	False	False	False
+air	resp_part_matter	0.0	False	True	True
+air	salinity	0.0	False	True	True
+air	samp_salinity	0.0	False	True	True
+air	samp_store_dur	0.0	False	True	True
+air	samp_store_loc	0.0	False	True	True
+air	samp_store_temp	0.0	False	True	True
+air	sample_name	0.5330296127562643	False	False	False
+air	sample_type	0.37813211845102507	False	False	False
+air	sex	0.01366742596810934	False	False	False
+air	solar_irradiance	0.0	False	True	True
+air	strain	0.004555808656036446	False	False	False
+air	temp	0.05239179954441914	False	True	True
+air	tissue	0.004555808656036446	False	False	False
+air	ventilation_rate	0.0	False	True	True
+air	ventilation_type	0.0	False	True	True
+air	volatile_org_comp	0.0	False	True	True
+air	wind_direction	0.018223234624145785	False	True	True
+air	wind_speed	0.03416856492027335	False	True	True
+built environment	abs_air_humidity	0.0	True	True	True
+built environment	address	0.0	False	True	True
+built environment	adj_room	0.0	False	True	True
+built environment	aero_struc	0.0	False	True	True
+built environment	age	0.06075342465753425	False	False	False
+built environment	air_temp	0.004178082191780822	True	True	True
+built environment	alt	0.0	False	True	True
+built environment	altitude	0.00020547945205479453	False	False	False
+built environment	ammonium	0.06287671232876713	False	False	True
+built environment	amount_light	0.0	False	True	True
+built environment	arch_struc	0.0	False	True	True
+built environment	avg_dew_point	0.0	False	True	True
+built environment	avg_occup	0.0	False	True	True
+built environment	avg_temp	0.0	False	True	True
+built environment	bathroom_count	0.0	False	True	True
+built environment	bedroom_count	0.0	False	True	True
+built environment	body_habitat	0.0008219178082191781	False	False	False
+built environment	body_product	0.0008219178082191781	False	False	False
+built environment	build_docs	0.0	False	True	True
+built environment	build_occup_type	0.06739726027397261	True	True	True
+built environment	building_setting	0.06726027397260274	True	True	True
+built environment	built_struc_age	0.0	False	True	True
+built environment	built_struc_set	0.0	False	True	True
+built environment	built_struc_type	0.0	False	True	True
+built environment	carb_dioxide	0.0	True	True	True
+built environment	ceil_area	0.0	False	True	True
+built environment	ceil_cond	0.0	False	True	True
+built environment	ceil_finish_mat	0.0	False	True	True
+built environment	ceil_struc	0.0	False	True	True
+built environment	ceil_texture	0.0	False	True	True
+built environment	ceil_thermal_mass	0.0	False	True	True
+built environment	ceil_type	0.0	False	True	True
+built environment	ceil_water_mold	0.0	False	True	True
+built environment	collection_date	0.18705479452054793	False	True	True
+built environment	collection_device	0.007123287671232876	False	False	False
+built environment	collection_method	0.007123287671232876	False	False	False
+built environment	cool_syst_id	0.0	False	True	True
+built environment	date_last_rain	0.0	False	True	True
+built environment	depth	0.06856164383561644	False	True	True
+built environment	description	0.008356164383561644	False	False	False
+built environment	dew_point	0.0	False	True	True
+built environment	diet	6.84931506849315e-05	False	False	False
+built environment	diss_org_carb	0.06287671232876713	False	False	True
+built environment	diss_oxygen	0.06287671232876713	False	False	True
+built environment	dominant_hand	6.84931506849315e-05	False	False	True
+built environment	door_comp_type	0.0	False	True	True
+built environment	door_cond	0.0	False	True	True
+built environment	door_direct	0.0	False	True	True
+built environment	door_loc	0.0	False	True	True
+built environment	door_mat	0.0	False	True	True
+built environment	door_move	0.0	False	True	True
+built environment	door_size	0.0	False	True	True
+built environment	door_type	0.0	False	True	True
+built environment	door_type_metal	0.0	False	True	True
+built environment	door_type_wood	0.0	False	True	True
+built environment	door_water_mold	0.0	False	True	True
+built environment	drawings	0.0	False	True	True
+built environment	elev	0.8936986301369862	False	True	True
+built environment	elevator	0.0	False	True	True
+built environment	env_broad_scale	0.9958219178082192	False	True	True
+built environment	env_local_scale	0.9958219178082192	False	True	True
+built environment	env_medium	0.9967123287671232	False	True	True
+built environment	escalator	0.0	False	True	True
+built environment	ethnicity	0.03856164383561644	False	False	True
+built environment	exp_duct	0.0	False	True	True
+built environment	exp_pipe	0.0	False	True	True
+built environment	ext_door	0.0	False	True	True
+built environment	ext_wall_orient	0.0	False	True	True
+built environment	ext_window_orient	0.0	False	True	True
+built environment	filter_type	0.013082191780821917	True	True	True
+built environment	fireplace_type	0.0	False	True	True
+built environment	floor_age	0.0	False	True	True
+built environment	floor_area	0.0	False	True	True
+built environment	floor_cond	0.0	False	True	True
+built environment	floor_count	0.0	False	True	True
+built environment	floor_finish_mat	0.0	False	True	True
+built environment	floor_struc	0.0	False	True	True
+built environment	floor_thermal_mass	0.0	False	True	True
+built environment	floor_water_mold	0.0	False	True	True
+built environment	freq_clean	0.0	False	True	True
+built environment	freq_cook	0.0	False	True	True
+built environment	furniture	0.0	False	True	True
+built environment	gender_restroom	0.0	False	True	True
+built environment	geo_loc_name	0.9062328767123288	False	True	True
+built environment	hall_count	0.0	False	True	True
+built environment	handidness	0.0	False	True	True
+built environment	heat_cool_type	0.0	True	True	True
+built environment	heat_deliv_loc	0.0	False	True	True
+built environment	heat_sys_deliv_meth	0.0	False	True	True
+built environment	heat_system_id	0.0	False	True	True
+built environment	height_carper_fiber	0.0	False	True	True
+built environment	height_or_length	6.84931506849315e-05	False	False	False
+built environment	host	0.015136986301369863	False	False	False
+built environment	host_age	6.84931506849315e-05	False	False	True
+built environment	host_body_habitat	0.0042465753424657535	False	False	True
+built environment	host_body_mass_index	6.84931506849315e-05	False	False	True
+built environment	host_body_product	6.84931506849315e-05	False	False	True
+built environment	host_common_name	0.010958904109589041	False	False	True
+built environment	host_height	6.84931506849315e-05	False	False	True
+built environment	host_life_stage	6.84931506849315e-05	False	False	True
+built environment	host_sex	0.004178082191780822	False	False	True
+built environment	host_subject_id	0.9316438356164384	False	False	True
+built environment	host_taxid	0.02417808219178082	False	False	True
+built environment	host_tissue_sampled	6.84931506849315e-05	False	False	False
+built environment	indoor_space	0.08876712328767124	True	True	True
+built environment	indoor_surf	0.06636986301369863	False	True	True
+built environment	inside_lux	0.0	False	True	True
+built environment	int_wall_cond	0.0	False	True	True
+built environment	investigation_type	0.06267123287671234	False	False	False
+built environment	isolation_source	0.004178082191780822	False	False	False
+built environment	last_clean	0.0	False	True	True
+built environment	lat_lon	0.004178082191780822	False	True	True
+built environment	light_intensity	0.03883561643835617	False	False	True
+built environment	light_type	0.018424657534246575	True	True	True
+built environment	max_occup	0.0	False	True	True
+built environment	mech_struc	0.0	False	True	True
+built environment	nitrate	0.000273972602739726	False	False	True
+built environment	nitrite	0.000273972602739726	False	False	True
+built environment	number_pets	0.0	False	True	True
+built environment	number_plants	0.0	False	True	True
+built environment	number_resident	0.0	False	True	True
+built environment	occup_density_samp	0.0	True	True	True
+built environment	occup_document	0.0	False	True	True
+built environment	occup_samp	0.014246575342465753	True	True	True
+built environment	org_matter	0.05582191780821918	False	False	True
+built environment	organism_count	0.0	True	True	True
+built environment	pet_farm_animal	0.004178082191780822	False	False	False
+built environment	ph	0.001095890410958904	False	False	True
+built environment	phosphate	0.000273972602739726	False	False	True
+built environment	pres_animal_insect	0.0	False	True	True
+built environment	project_name	0.10445205479452055	False	False	False
+built environment	quad_pos	0.0	False	True	True
+built environment	rel_air_humidity	0.018424657534246575	True	True	True
+built environment	rel_humidity_out	0.0	False	True	True
+built environment	rel_samp_loc	0.0	False	True	True
+built environment	room_air_exch_rate	0.0	False	True	True
+built environment	room_architec_elem	0.0	False	True	True
+built environment	room_condt	0.0	False	True	True
+built environment	room_connected	0.0	False	True	True
+built environment	room_count	0.0	False	True	True
+built environment	room_dim	0.0	False	True	True
+built environment	room_door_dist	0.0	False	True	True
+built environment	room_door_share	0.0	False	True	True
+built environment	room_hallway	0.0	False	True	True
+built environment	room_loc	0.0	False	True	True
+built environment	room_moist_dam_hist	0.0	False	True	True
+built environment	room_net_area	0.0	False	True	True
+built environment	room_occup	0.0	False	True	True
+built environment	room_samp_pos	0.0	False	True	True
+built environment	room_type	0.0	False	True	True
+built environment	room_vol	0.0	False	True	True
+built environment	room_wall_share	0.0	False	True	True
+built environment	room_window_count	0.0	False	True	True
+built environment	samp_collect_device	0.053356164383561645	False	False	False
+built environment	samp_floor	0.0	False	True	True
+built environment	samp_room_id	0.0	False	True	True
+built environment	samp_sort_meth	0.0	False	True	True
+built environment	samp_time_out	0.0	False	True	True
+built environment	samp_weather	0.0	False	True	True
+built environment	sample_name	0.9958219178082192	False	False	False
+built environment	sample_type	0.9323972602739726	False	False	False
+built environment	season	0.0	False	True	True
+built environment	season_use	0.0	False	True	True
+built environment	sex	0.0741095890410959	False	False	False
+built environment	shad_dev_water_mold	0.0	False	True	True
+built environment	shading_device_cond	0.0	False	True	True
+built environment	shading_device_loc	0.0	False	True	True
+built environment	shading_device_mat	0.0	False	True	True
+built environment	shading_device_type	0.0	False	True	True
+built environment	smoker	0.004178082191780822	False	False	False
+built environment	space_typ_state	0.0	True	True	True
+built environment	specific	0.0	False	True	True
+built environment	specific_humidity	0.0	False	True	True
+built environment	substructure_type	0.0	False	True	True
+built environment	surf_air_cont	0.0	False	True	True
+built environment	surf_humidity	0.0	False	True	True
+built environment	surf_material	0.09082191780821917	False	True	True
+built environment	surf_moisture	0.055753424657534245	False	True	True
+built environment	surf_moisture_ph	0.0	False	True	True
+built environment	surf_temp	0.0	False	True	True
+built environment	temp	0.06780821917808219	False	True	True
+built environment	temp_out	0.0	False	True	True
+built environment	tissue	0.005616438356164383	False	False	False
+built environment	train_line	0.0	False	True	True
+built environment	train_stat_loc	0.0	False	True	True
+built environment	train_stop_loc	0.0	False	True	True
+built environment	travel_out_six_month	0.004178082191780822	False	False	False
+built environment	typ_occup_density	0.0	True	True	True
+built environment	typ_occupant_dens	0.014246575342465753	False	False	False
+built environment	ventilation_type	0.013082191780821917	True	True	True
+built environment	vis_media	0.0	False	True	True
+built environment	wall_area	0.0	False	True	True
+built environment	wall_const_type	0.0	False	True	True
+built environment	wall_finish_mat	0.0	False	True	True
+built environment	wall_height	0.0	False	True	True
+built environment	wall_loc	0.0	False	True	True
+built environment	wall_surf_treatment	0.0	False	True	True
+built environment	wall_texture	0.0	False	True	True
+built environment	wall_thermal_mass	0.0	False	True	True
+built environment	wall_water_mold	0.0	False	True	True
+built environment	water_feat_size	0.0	False	True	True
+built environment	water_feat_type	0.0	False	True	True
+built environment	weekday	0.0	False	True	True
+built environment	window_cond	0.0	False	True	True
+built environment	window_cover	0.0	False	True	True
+built environment	window_horiz_pos	0.0	False	True	True
+built environment	window_loc	0.0	False	True	True
+built environment	window_mat	0.0	False	True	True
+built environment	window_open_freq	0.0	False	True	True
+built environment	window_size	0.0	False	True	True
+built environment	window_status	0.0	False	True	True
+built environment	window_type	0.0	False	True	True
+built environment	window_vert_pos	0.0	False	True	True
+built environment	window_water_mold	0.0	False	True	True
+host-associated	age	0.16655724526026663	False	False	False
+host-associated	alt	0.0	False	True	True
+host-associated	altitude	0.16327460306826555	False	False	False
+host-associated	ances_data	0.0	False	True	True
+host-associated	annual_season_precpt	1.3398539559188049e-05	False	False	False
+host-associated	bio_material	0.002706504990955986	False	False	False
+host-associated	biol_stat	0.0	False	True	True
+host-associated	biotic_relationship	0.0012996583372412408	False	False	False
+host-associated	birth_date	0.009499564547464326	False	False	False
+host-associated	blood_press_diast	0.0	False	True	True
+host-associated	blood_press_syst	0.0	False	True	True
+host-associated	body_habitat	0.2615394921953507	False	False	False
+host-associated	body_mass_index	0.02820392577209084	False	False	False
+host-associated	body_product	0.25903396529778255	False	False	False
+host-associated	breed	0.006324110671936759	False	False	False
+host-associated	chem_administration	0.002773497688751926	False	True	True
+host-associated	chlorophyll	0.017954043009311985	False	False	True
+host-associated	collection_date	0.20782474710256582	False	True	True
+host-associated	collection_device	0.02603336236350238	False	False	False
+host-associated	collection_method	0.03312118979031286	False	False	False
+host-associated	component_organism	0.0029208816239029945	False	False	False
+host-associated	cultivar	0.0003081664098613251	False	False	False
+host-associated	depth	0.24670730890332954	False	True	True
+host-associated	description	0.07262008441079923	False	False	False
+host-associated	dev_stage	0.005466604140148724	False	False	False
+host-associated	diet	0.10887653245796208	False	False	False
+host-associated	disease	0.032357473035439135	False	False	False
+host-associated	dose	0.016654384672070744	False	False	False
+host-associated	ecotype	5.3594158236752195e-05	False	False	False
+host-associated	elev	0.8432236886179406	False	True	True
+host-associated	env_broad_scale	0.9989683124539426	False	True	True
+host-associated	env_local_scale	0.9989683124539426	False	True	True
+host-associated	env_medium	0.7417699470757687	False	True	True
+host-associated	estimated_size	0.00045555034501239364	False	False	False
+host-associated	experimental_factor	0.01639981242044617	False	False	False
+host-associated	genetic_mod	0.0	False	True	True
+host-associated	genotype	0.062303208950224426	False	False	False
+host-associated	geo_loc_name	0.9656595431098011	False	True	True
+host-associated	gravidity	0.0006029342801634622	False	True	True
+host-associated	height_or_length	0.01656059489515643	False	False	False
+host-associated	host	0.8424063777048302	False	False	False
+host-associated	host_age	0.3693039458699002	False	True	True
+host-associated	host_blood_press_diast	0.00021437663294700878	False	False	False
+host-associated	host_blood_press_syst	0.00021437663294700878	False	False	False
+host-associated	host_body_habitat	0.4584846251758558	False	True	True
+host-associated	host_body_mass_index	0.005091445032491458	False	False	True
+host-associated	host_body_product	0.4485295102833791	False	True	True
+host-associated	host_body_site	0.0	False	True	True
+host-associated	host_body_temp	0.0021705634085884638	False	True	True
+host-associated	host_color	0.00026797079118376095	False	True	True
+host-associated	host_common_name	0.7876331479868695	False	True	True
+host-associated	host_diet	0.01978964292892075	False	True	True
+host-associated	host_disease	0.00775775440476988	False	False	False
+host-associated	host_dry_mass	0.00021437663294700878	False	True	True
+host-associated	host_family_relation	0.0	False	True	True
+host-associated	host_family_relationship	0.004006163328197226	False	False	False
+host-associated	host_genotype	0.0029342801634621826	False	True	True
+host-associated	host_growth_cond	0.004756481543511757	False	True	True
+host-associated	host_health_state	0.03164735043880217	False	False	False
+host-associated	host_height	0.2187311583037449	False	True	True
+host-associated	host_infra_spec_name	0.0	False	True	True
+host-associated	host_infra_spec_rank	0.0	False	True	True
+host-associated	host_infra_specific_name	0.00021437663294700878	False	False	False
+host-associated	host_infra_specific_rank	0.00021437663294700878	False	False	False
+host-associated	host_last_meal	0.0040731560259931665	False	True	True
+host-associated	host_length	0.00109868024385342	False	True	True
+host-associated	host_life_stage	0.3354190393247136	False	True	True
+host-associated	host_phenotype	0.00021437663294700878	False	True	True
+host-associated	host_sex	0.03494339117036243	False	True	True
+host-associated	host_shape	0.00022777517250619682	False	True	True
+host-associated	host_subject_id	0.8816774971528103	False	True	True
+host-associated	host_subspecf_genlin	0.0	False	True	True
+host-associated	host_substrate	0.0006565284384002143	False	True	True
+host-associated	host_symbiont	0.0	False	True	True
+host-associated	host_taxid	0.8617270717491793	False	True	True
+host-associated	host_tissue_sampled	0.45638105446506333	False	False	False
+host-associated	host_tot_mass	0.0010718831647350438	False	True	True
+host-associated	infra_specific_name	0.00016078247471025658	False	False	False
+host-associated	investigation_type	0.14841562269712602	False	False	False
+host-associated	isol_growth_condt	0.006565284384002144	False	False	False
+host-associated	isolate	0.002760099149192738	False	False	False
+host-associated	isolation_source	0.0037649896161318416	False	False	False
+host-associated	label	0.009191398137603002	False	False	False
+host-associated	last_meal	0.0020767736316741475	False	False	False
+host-associated	lat_lon	0.06708648757285456	False	True	True
+host-associated	life_stage	0.20300127286125813	False	False	False
+host-associated	misc_param	0.02313927781871776	False	True	True
+host-associated	num_replicons	6.699269779594024e-05	False	False	False
+host-associated	organism_count	0.00021437663294700878	False	True	True
+host-associated	oxy_stat_samp	0.0003081664098613251	False	True	True
+host-associated	perturbation	0.007302204059757487	False	True	True
+host-associated	ph	0.04932002411737121	False	False	True
+host-associated	ph_meth	0.0025725195953641053	False	False	True
+host-associated	phenotype	0.006900247872981845	False	False	False
+host-associated	ploidy	1.3398539559188049e-05	False	False	False
+host-associated	pool_dna_extracts	2.6797079118376097e-05	False	False	True
+host-associated	pre_treatment	0.00042875326589401756	False	False	True
+host-associated	project_name	0.13236417230521874	False	False	False
+host-associated	propagation	0.0004019561867756415	False	False	False
+host-associated	pulse	0.014979567227172239	False	False	False
+host-associated	race	0.004970858176458766	False	False	False
+host-associated	ref_biomaterial	0.0007101225966369666	False	False	False
+host-associated	rel_to_oxygen	0.0012996583372412408	False	False	False
+host-associated	salinity	0.0029476787030213707	False	True	True
+host-associated	samp_capt_status	0.0	False	True	True
+host-associated	samp_collect_device	0.02250954645943592	False	False	False
+host-associated	samp_dis_stage	0.0	False	True	True
+host-associated	samp_mat_process	0.009352180612313257	False	False	False
+host-associated	samp_salinity	0.00028136933074294904	False	True	True
+host-associated	samp_size	0.008816239029945735	False	False	False
+host-associated	samp_store_dur	0.004287532658940175	False	True	True
+host-associated	samp_store_loc	0.0011522744020901721	False	True	True
+host-associated	samp_store_temp	0.014671400817310913	False	True	True
+host-associated	sample_name	0.9304481811482549	False	False	False
+host-associated	sample_type	0.8642593957258659	False	False	False
+host-associated	sex	0.5831044416158638	False	False	False
+host-associated	slope_aspect	2.6797079118376097e-05	False	False	True
+host-associated	slope_gradient	2.6797079118376097e-05	False	False	True
+host-associated	soil_type	4.0195618677564146e-05	False	False	True
+host-associated	source_material_id	0.004448315133650432	False	False	False
+host-associated	source_name	0.00016078247471025658	False	False	False
+host-associated	store_cond	0.0015006364306290613	False	False	True
+host-associated	strain	0.029155222080793193	False	False	False
+host-associated	sub_species	0.001366651035037181	False	False	False
+host-associated	subspecf_gen_lin	6.699269779594024e-05	False	False	False
+host-associated	substrate	0.00026797079118376095	False	False	False
+host-associated	surf_material	0.0005225430428083339	False	False	True
+host-associated	surf_moisture	0.0005225430428083339	False	False	True
+host-associated	temp	0.026877470355731226	False	True	True
+host-associated	tissue	0.27201715013063577	False	False	False
+host-associated	tot_carb	2.6797079118376097e-05	False	False	True
+host-associated	tot_depth_water_col	0.00020097809338782074	False	False	True
+host-associated	tot_mass	0.02244255376163998	False	False	False
+host-associated	tot_nitro	2.6797079118376097e-05	False	False	True
+host-associated	treatment	0.10395926843974007	False	False	False
+host-associated	trophic_level	1.3398539559188049e-05	False	False	False
+host-associated	water_content_soil	2.6797079118376097e-05	False	False	False
+human-gut	age	0.16966343937298295	False	False	False
+human-gut	alt	0.0	False	True	True
+human-gut	altitude	0.06656079777333812	False	False	False
+human-gut	biomaterial_provider	0.005037310247084336	False	False	False
+human-gut	birth_date	0.02863582808257774	False	False	False
+human-gut	birth_location	0.003090688660075474	False	False	False
+human-gut	body_habitat	0.4756245410924987	False	False	False
+human-gut	body_mass_index	0.44321499923159674	False	False	False
+human-gut	body_product	0.47921042296330446	False	False	False
+human-gut	breed	0.0018270921913153355	False	False	False
+human-gut	chem_administration	0.002817478612775985	False	True	True
+human-gut	collection_date	0.547837371719345	False	True	True
+human-gut	collection_device	0.014087393063879924	False	False	False
+human-gut	collection_method	0.07023205778392501	False	False	False
+human-gut	cultivar	0.00920376346840155	False	False	False
+human-gut	depth	0.06802930177757287	False	True	True
+human-gut	description	0.049912060516025473	False	False	False
+human-gut	diet	0.033860970237180474	False	False	False
+human-gut	disease	0.029916500179294092	False	False	False
+human-gut	dominant_hand	0.3630278503491966	False	False	True
+human-gut	ecotype	0.00884517528132097	False	False	False
+human-gut	elev	0.7438314294008163	False	True	True
+human-gut	env_broad_scale	0.972525314618445	False	True	True
+human-gut	env_local_scale	0.969229718422895	False	True	True
+human-gut	env_medium	0.9519662585591585	False	True	True
+human-gut	ethnicity	0.025101173095640594	False	True	True
+human-gut	experimental_factor	0.0008025545139422502	False	False	False
+human-gut	family_id	0.09179857589262845	False	False	False
+human-gut	family_relationship	0.006830251182487236	False	False	False
+human-gut	gastrointest_disord	0.044857674640984925	False	True	True
+human-gut	genotype	0.0010074620494168673	False	False	False
+human-gut	geo_loc_name	0.9613578539350784	False	True	True
+human-gut	haplotype	0.001348974608541229	False	False	False
+human-gut	height_or_length	0.022420299506514352	False	False	False
+human-gut	hiv_stat	0.009511124771613476	False	False	False
+human-gut	host	0.5015794955859502	False	False	False
+human-gut	host_age	0.2845824155183307	False	True	True
+human-gut	host_body_habitat	0.22008776872769495	False	False	True
+human-gut	host_body_mass_index	0.18376790806481907	False	True	True
+human-gut	host_body_product	0.24621347950070863	False	True	True
+human-gut	host_body_site	0.0	False	True	True
+human-gut	host_body_temp	6.830251182487236e-05	False	True	True
+human-gut	host_common_name	0.8008469511466284	False	False	True
+human-gut	host_diet	0.0007001007462049416	False	True	True
+human-gut	host_disease	0.028294315523453375	False	False	False
+human-gut	host_family_relation	0.0	False	True	True
+human-gut	host_family_relationship	5.122688386865427e-05	False	False	False
+human-gut	host_genotype	0.0	False	True	True
+human-gut	host_height	0.17890135409729693	False	True	True
+human-gut	host_last_meal	0.0006659494902925055	False	True	True
+human-gut	host_life_stage	0.12104912658163004	False	False	True
+human-gut	host_occupation	0.0006659494902925055	False	True	True
+human-gut	host_phenotype	6.830251182487236e-05	False	True	True
+human-gut	host_pulse	6.830251182487236e-05	False	True	True
+human-gut	host_sex	0.09451360073766712	False	True	True
+human-gut	host_subject_id	0.8241039564229975	False	True	True
+human-gut	host_symbiont	0.0	False	True	True
+human-gut	host_taxid	0.8106483615934976	False	False	True
+human-gut	host_tissue_sampled	0.22384440687806295	False	False	False
+human-gut	host_tot_mass	0.0027321004729948944	False	True	True
+human-gut	ihmc_medication_code	0.0	False	True	True
+human-gut	investigation_type	0.19153731878489832	False	False	False
+human-gut	isol_growth_condt	0.011457746358622338	False	False	False
+human-gut	isolate	0.020883492990454725	False	False	False
+human-gut	isolation_source	0.005771562249201714	False	False	False
+human-gut	label	0.030770281577105	False	False	False
+human-gut	lat_lon	0.1118624387411847	False	True	True
+human-gut	life_stage	0.05271246350084524	False	False	False
+human-gut	liver_disord	0.0006659494902925055	False	True	True
+human-gut	medic_hist_perform	0.00011952939569352662	False	True	True
+human-gut	misc_param	0.003961545685842597	False	True	True
+human-gut	num_replicons	0.00027321004729948943	False	False	False
+human-gut	organism_count	6.830251182487236e-05	False	True	True
+human-gut	oxy_stat_samp	6.830251182487236e-05	False	True	True
+human-gut	perturbation	0.00039273944299301604	False	True	True
+human-gut	population	0.001331898980585011	False	False	False
+human-gut	pre_treatment	0.00010245376773730854	False	False	True
+human-gut	project_name	0.21747519765039358	False	False	False
+human-gut	pulse	0.002100302238614825	False	False	False
+human-gut	race	0.4110615917900381	False	False	False
+human-gut	ref_biomaterial	0.000956235165548213	False	False	False
+human-gut	rel_to_oxygen	0.016699964141181294	False	False	False
+human-gut	salinity	0.0	False	True	True
+human-gut	samp_collect_device	0.024623055512866487	False	False	False
+human-gut	samp_mat_process	0.0027491761009511124	False	False	False
+human-gut	samp_salinity	6.830251182487236e-05	False	True	True
+human-gut	samp_size	0.012413981524170552	False	False	False
+human-gut	samp_store_dur	0.0010586889332855215	False	True	True
+human-gut	samp_store_loc	0.0013831258644536654	False	True	True
+human-gut	samp_store_temp	0.01876611512388368	False	True	True
+human-gut	sample_name	0.8776531256936974	False	False	False
+human-gut	sample_type	0.7613680993118522	False	False	False
+human-gut	sex	0.7138124754537848	False	False	False
+human-gut	smoker	0.023478988439799873	False	False	False
+human-gut	source_material_id	0.003637108754674453	False	False	False
+human-gut	special_diet	0.00039273944299301604	False	True	True
+human-gut	strain	0.01074056998446118	False	False	False
+human-gut	temp	0.006317982343800693	False	True	True
+human-gut	tissue	0.49071939620579547	False	False	False
+human-gut	tot_mass	0.023905879138705326	False	False	False
+human-gut	treatment	0.013284838549937674	False	False	False
+human-oral	age	0.15824429685244007	False	False	False
+human-oral	alt	0.0	False	True	True
+human-oral	altitude	0.02675907209548561	False	False	False
+human-oral	birth_date	0.010395610742131101	False	False	False
+human-oral	body_habitat	0.2919434016748484	False	False	False
+human-oral	body_mass_index	0.2648955626143036	False	False	False
+human-oral	body_product	0.2927134469150063	False	False	False
+human-oral	breed	0.008085475021657523	False	False	False
+human-oral	calcium	0.005005294061026086	False	False	True
+human-oral	chem_administration	0.0	False	True	True
+human-oral	collection_date	0.36837039176051595	False	True	True
+human-oral	collection_device	0.02233131196457792	False	False	False
+human-oral	collection_method	0.021850033689479256	False	False	False
+human-oral	depth	0.039657329868129754	False	True	True
+human-oral	description	0.015400904803157185	False	False	False
+human-oral	diet	0.049475406680142456	False	False	False
+human-oral	disease	0.010491866397150832	False	False	False
+human-oral	dominant_hand	0.166907305804216	False	False	True
+human-oral	elev	0.7877562806814901	False	True	True
+human-oral	env_broad_scale	0.9862354413321782	False	True	True
+human-oral	env_local_scale	0.9862354413321782	False	True	True
+human-oral	env_medium	0.9975936086245067	False	True	True
+human-oral	ethnicity	0.13552796226778324	False	True	True
+human-oral	family_id	0.2653768408894023	False	False	False
+human-oral	family_relationship	0.0383097506978535	False	False	False
+human-oral	geo_loc_name	0.9966310520743094	False	True	True
+human-oral	health_state	0.004427760130907691	False	False	False
+human-oral	height_or_length	0.020502454519203003	False	False	False
+human-oral	hiv_stat	0.048994128405043795	False	False	False
+human-oral	host	0.7344306478005583	False	False	False
+human-oral	host_age	0.49764173645201654	False	True	True
+human-oral	host_body_habitat	0.48243334295889884	False	False	True
+human-oral	host_body_mass_index	0.3872365001443835	False	True	True
+human-oral	host_body_product	0.48243334295889884	False	True	True
+human-oral	host_body_site	0.0	False	True	True
+human-oral	host_body_temp	0.0	False	True	True
+human-oral	host_common_name	0.7547405910097218	False	False	True
+human-oral	host_diet	0.0	False	True	True
+human-oral	host_disease	0.04620271440947156	False	False	False
+human-oral	host_family_relation	0.0	False	True	True
+human-oral	host_genotype	0.0	False	True	True
+human-oral	host_height	0.3972470882664357	False	True	True
+human-oral	host_last_meal	0.0	False	True	True
+human-oral	host_life_stage	0.07402059871017422	False	False	True
+human-oral	host_occupation	0.0	False	True	True
+human-oral	host_phenotype	0.0	False	True	True
+human-oral	host_pulse	0.0	False	True	True
+human-oral	host_sex	0.05573202425642507	False	True	True
+human-oral	host_subject_id	0.8239484069689095	False	True	True
+human-oral	host_symbiont	0.0	False	True	True
+human-oral	host_taxid	0.7720666089132736	False	False	True
+human-oral	host_tissue_sampled	0.5281547790932717	False	False	False
+human-oral	host_tot_mass	0.0	False	True	True
+human-oral	ihmc_medication_code	0.0	False	True	True
+human-oral	investigation_type	0.20925979401289826	False	False	False
+human-oral	isol_growth_condt	0.020791221484262202	False	False	False
+human-oral	isolate	0.019443642313985945	False	False	False
+human-oral	label	0.023775146789873906	False	False	False
+human-oral	lat_lon	0.11743189912407354	False	True	True
+human-oral	life_stage	0.11377418423332371	False	False	False
+human-oral	medic_hist_perform	0.0	False	True	True
+human-oral	misc_param	0.003080180960631437	False	True	True
+human-oral	nose_mouth_teeth_throat_disord	0.004620271440947156	False	False	False
+human-oral	nose_throat_disord	0.0	False	True	True
+human-oral	organism_count	0.0	False	True	True
+human-oral	oxy_stat_samp	0.0	False	True	True
+human-oral	perturbation	0.0	False	True	True
+human-oral	phosphate	0.004909038406006353	False	False	True
+human-oral	project_name	0.4125517374145731	False	False	False
+human-oral	propagation	0.008470497641736453	False	False	False
+human-oral	pulse	0.010395610742131101	False	False	False
+human-oral	race	0.15689671768216382	False	False	False
+human-oral	salinity	0.0	False	True	True
+human-oral	samp_collect_device	0.01280200211762441	False	False	False
+human-oral	samp_mat_process	0.0007700452401578592	False	False	False
+human-oral	samp_salinity	0.0	False	True	True
+human-oral	samp_size	0.0007700452401578592	False	False	False
+human-oral	samp_store_dur	0.005390316681105015	False	True	True
+human-oral	samp_store_loc	0.005390316681105015	False	True	True
+human-oral	samp_store_temp	0.016652228318413707	False	True	True
+human-oral	sample_name	0.8733275579940322	False	False	False
+human-oral	sample_type	0.7924728077774569	False	False	False
+human-oral	sex	0.6915968813167773	False	False	False
+human-oral	smoker	0.07642699008566753	False	False	False
+human-oral	special_diet	0.017133506593512367	False	False	True
+human-oral	strain	0.008470497641736453	False	False	False
+human-oral	temp	0.01116565598228896	False	True	True
+human-oral	time_last_toothbrush	0.0007700452401578592	False	True	True
+human-oral	tissue	0.29742997401097315	False	False	False
+human-oral	tot_mass	0.0001925113100394648	False	False	False
+human-skin	age	0.3245295928840233	False	False	False
+human-skin	air_temp	0.0019158398905234349	False	False	True
+human-skin	alt	0.0	False	True	True
+human-skin	altitude	0.017447827574409852	False	False	False
+human-skin	birth_date	0.01464249059185768	False	False	False
+human-skin	body_habitat	0.40047895997263083	False	False	False
+human-skin	body_mass_index	0.14320903181662675	False	False	False
+human-skin	body_product	0.40725282244269584	False	False	False
+human-skin	breed	0.005815942524803284	False	False	False
+human-skin	chem_administration	0.0	False	True	True
+human-skin	collection_date	0.14108792336640438	False	True	True
+human-skin	collection_device	0.0040369483407458094	False	False	False
+human-skin	collection_method	0.0040369483407458094	False	False	False
+human-skin	depth	0.028737598357851522	False	True	True
+human-skin	dermatology_disord	0.0	False	True	True
+human-skin	description	0.006773862470065002	False	False	False
+human-skin	diet	0.07793362983236402	False	False	False
+human-skin	disease	0.01094765651727677	False	False	False
+human-skin	dominant_hand	0.13007184399589464	False	True	True
+human-skin	elev	0.9876154635648307	False	True	True
+human-skin	env_broad_scale	0.9836469380773178	False	True	True
+human-skin	env_local_scale	0.9836469380773178	False	True	True
+human-skin	env_medium	1.0	False	True	True
+human-skin	ethnicity	0.07259664728019158	False	True	True
+human-skin	family_id	0.36182004789599725	False	False	False
+human-skin	family_relationship	0.05138556277796784	False	False	False
+human-skin	geo_loc_name	0.9940472117687308	False	True	True
+human-skin	height_or_length	0.19739993157714678	False	False	False
+human-skin	hiv_stat	0.06787547040711597	False	False	False
+human-skin	host	0.8286007526513856	False	False	False
+human-skin	host_age	0.5122819021553199	False	True	True
+human-skin	host_body_habitat	0.5445090660280534	False	False	True
+human-skin	host_body_mass_index	0.4526171741361615	False	True	True
+human-skin	host_body_product	0.5425932261375299	False	True	True
+human-skin	host_body_site	0.0	False	True	True
+human-skin	host_body_temp	0.0	False	True	True
+human-skin	host_common_name	0.9439616832021895	False	False	True
+human-skin	host_diet	0.0	False	True	True
+human-skin	host_family_relation	0.0	False	True	True
+human-skin	host_genotype	0.0	False	True	True
+human-skin	host_height	0.4526171741361615	False	True	True
+human-skin	host_last_meal	0.0	False	True	True
+human-skin	host_life_stage	0.050017105713308245	False	False	True
+human-skin	host_occupation	0.0	False	True	True
+human-skin	host_phenotype	0.0	False	True	True
+human-skin	host_pulse	0.0	False	True	True
+human-skin	host_sex	0.002531645569620253	False	True	True
+human-skin	host_subject_id	0.9783099555251454	False	True	True
+human-skin	host_symbiont	0.0	False	True	True
+human-skin	host_taxid	0.9479302086897023	False	False	True
+human-skin	host_tissue_sampled	0.49538145740677386	False	False	False
+human-skin	host_tot_mass	0.0	False	True	True
+human-skin	ihmc_medication_code	0.0	False	True	True
+human-skin	investigation_type	0.009237085186452275	False	False	False
+human-skin	isol_growth_condt	0.005131713992473486	False	False	False
+human-skin	isolate	0.005131713992473486	False	False	False
+human-skin	isolation_source	0.007047553882996921	False	False	False
+human-skin	last_meal	0.00013684570646595962	False	False	False
+human-skin	lat_lon	0.01115292507697571	False	True	True
+human-skin	life_stage	0.06999657885733836	False	False	False
+human-skin	light_type	0.0019158398905234349	False	False	True
+human-skin	medic_hist_perform	0.0	False	True	True
+human-skin	misc_param	0.0	False	True	True
+human-skin	organism_count	0.0	False	True	True
+human-skin	oxy_stat_samp	0.0	False	True	True
+human-skin	perturbation	0.0	False	True	True
+human-skin	pet_farm_animal	0.0019158398905234349	False	False	False
+human-skin	phenotype	0.005131713992473486	False	False	False
+human-skin	project_name	0.35915155661991105	False	False	False
+human-skin	pulse	0.01464249059185768	False	False	False
+human-skin	race	0.09736572015053027	False	False	False
+human-skin	rel_air_humidity	0.0019158398905234349	False	False	True
+human-skin	salinity	0.0	False	True	True
+human-skin	samp_salinity	0.0	False	True	True
+human-skin	samp_store_dur	0.0	False	True	True
+human-skin	samp_store_loc	0.0	False	True	True
+human-skin	samp_store_temp	0.0	False	True	True
+human-skin	sample_name	0.9848785494355115	False	False	False
+human-skin	sample_type	0.9939787889154977	False	False	False
+human-skin	sex	0.854464591173452	False	False	False
+human-skin	smoker	0.06979131029763941	False	False	False
+human-skin	surf_material	0.0019158398905234349	False	False	True
+human-skin	temp	0.01464249059185768	False	True	True
+human-skin	time_since_last_wash	0.0	False	True	True
+human-skin	tissue	0.4149846048580226	False	False	False
+human-skin	tot_mass	0.1532671912418748	False	False	False
+human-skin	travel_out_six_month	0.0019158398905234349	False	False	False
+human-skin	treatment	0.00013684570646595962	False	False	False
+human-vaginal	age	0.050711743772241996	False	False	False
+human-vaginal	alt	0.0	False	True	True
+human-vaginal	altitude	0.03469750889679715	False	False	False
+human-vaginal	birth_control	0.0	False	True	True
+human-vaginal	birth_date	0.017793594306049824	False	False	False
+human-vaginal	body_habitat	0.0791814946619217	False	False	False
+human-vaginal	body_mass_index	0.09430604982206406	False	False	False
+human-vaginal	body_product	0.0791814946619217	False	False	False
+human-vaginal	chem_administration	0.0	False	True	True
+human-vaginal	collection_date	0.07473309608540925	False	True	True
+human-vaginal	depth	0.03469750889679715	False	True	True
+human-vaginal	description	0.004448398576512456	False	False	False
+human-vaginal	diet	0.05249110320284697	False	False	False
+human-vaginal	dominant_hand	0.046263345195729534	False	False	True
+human-vaginal	douche	0.0	False	True	True
+human-vaginal	elev	0.9670818505338078	False	True	True
+human-vaginal	env_broad_scale	0.9973309608540926	False	True	True
+human-vaginal	env_local_scale	0.9973309608540926	False	True	True
+human-vaginal	env_medium	1.0	False	True	True
+human-vaginal	ethnicity	0.017793594306049824	False	True	True
+human-vaginal	family_id	0.8078291814946619	False	False	False
+human-vaginal	family_relationship	0.11298932384341637	False	False	False
+human-vaginal	geo_loc_name	1.0	False	True	True
+human-vaginal	gynecologic_disord	0.0	False	True	True
+human-vaginal	host	0.9314946619217082	False	False	False
+human-vaginal	host_age	0.8879003558718861	False	True	True
+human-vaginal	host_body_habitat	0.8701067615658363	False	False	True
+human-vaginal	host_body_mass_index	0.8879003558718861	False	True	True
+human-vaginal	host_body_product	0.8701067615658363	False	True	True
+human-vaginal	host_body_site	0.0	False	True	True
+human-vaginal	host_body_temp	0.0	False	True	True
+human-vaginal	host_common_name	0.9644128113879004	False	False	True
+human-vaginal	host_diet	0.0	False	True	True
+human-vaginal	host_family_relation	0.0	False	True	True
+human-vaginal	host_genotype	0.0	False	True	True
+human-vaginal	host_height	0.8879003558718861	False	True	True
+human-vaginal	host_last_meal	0.0	False	True	True
+human-vaginal	host_occupation	0.0	False	True	True
+human-vaginal	host_phenotype	0.0	False	True	True
+human-vaginal	host_pulse	0.0	False	True	True
+human-vaginal	host_sex	0.0	False	True	True
+human-vaginal	host_subject_id	0.9635231316725978	False	True	True
+human-vaginal	host_symbiont	0.0	False	True	True
+human-vaginal	host_taxid	0.9644128113879004	False	False	True
+human-vaginal	host_tissue_sampled	0.8701067615658363	False	False	False
+human-vaginal	host_tot_mass	0.0	False	True	True
+human-vaginal	hrt	0.0	False	True	True
+human-vaginal	hysterectomy	0.0	False	True	True
+human-vaginal	ihmc_medication_code	0.0	False	True	True
+human-vaginal	investigation_type	0.03291814946619217	False	False	False
+human-vaginal	isol_growth_condt	0.0008896797153024911	False	False	False
+human-vaginal	lat_lon	0.00800711743772242	False	True	True
+human-vaginal	life_stage	0.03291814946619217	False	False	False
+human-vaginal	medic_hist_perform	0.0	False	True	True
+human-vaginal	menarche	0.0	False	True	True
+human-vaginal	menopause	0.0	False	True	True
+human-vaginal	misc_param	0.0	False	True	True
+human-vaginal	num_replicons	0.0008896797153024911	False	False	False
+human-vaginal	organism_count	0.0	False	True	True
+human-vaginal	oxy_stat_samp	0.0	False	True	True
+human-vaginal	perturbation	0.0	False	True	True
+human-vaginal	pregnancy	0.0	False	True	True
+human-vaginal	project_name	0.8158362989323843	False	False	False
+human-vaginal	pulse	0.017793594306049824	False	False	False
+human-vaginal	race	0.046263345195729534	False	False	False
+human-vaginal	ref_biomaterial	0.0008896797153024911	False	False	False
+human-vaginal	salinity	0.0	False	True	True
+human-vaginal	samp_salinity	0.0	False	True	True
+human-vaginal	samp_store_dur	0.0	False	True	True
+human-vaginal	samp_store_loc	0.0	False	True	True
+human-vaginal	samp_store_temp	0.0	False	True	True
+human-vaginal	sample_name	0.9661921708185054	False	False	False
+human-vaginal	sample_type	0.9670818505338078	False	False	False
+human-vaginal	sex	0.9670818505338078	False	False	False
+human-vaginal	sexual_act	0.0	False	True	True
+human-vaginal	source_material_id	0.0071174377224199285	False	False	False
+human-vaginal	strain	0.0008896797153024911	False	False	False
+human-vaginal	temp	0.017793594306049824	False	True	True
+human-vaginal	tissue	0.0791814946619217	False	False	False
+human-vaginal	urogenit_disord	0.0	False	True	True
+microbial mat_biofilm	air_temp	0.0006581112207963146	False	False	True
+microbial mat_biofilm	alkalinity	0.0315893385982231	False	True	True
+microbial mat_biofilm	alkyl_diethers	0.0	False	True	True
+microbial mat_biofilm	alt	0.0	False	True	True
+microbial mat_biofilm	altitude	0.044093451793353076	False	False	False
+microbial mat_biofilm	aminopept_act	0.0	False	True	True
+microbial mat_biofilm	ammonium	0.0	False	True	True
+microbial mat_biofilm	bacteria_carb_prod	0.017769002961500493	False	True	True
+microbial mat_biofilm	biomass	0.0	False	True	True
+microbial mat_biofilm	biomaterial_provider	0.0003290556103981573	False	False	False
+microbial mat_biofilm	bishomohopanol	0.0	False	True	True
+microbial mat_biofilm	body_habitat	0.0016452780519907865	False	False	False
+microbial mat_biofilm	body_product	0.0016452780519907865	False	False	False
+microbial mat_biofilm	breed	0.0003290556103981573	False	False	False
+microbial mat_biofilm	bromide	0.0315893385982231	False	True	True
+microbial mat_biofilm	calcium	0.11451135241855874	False	True	True
+microbial mat_biofilm	carb_nitro_ratio	0.0315893385982231	False	True	True
+microbial mat_biofilm	chem_administration	0.0	False	True	True
+microbial mat_biofilm	chloride	0.11451135241855874	False	True	True
+microbial mat_biofilm	chlorophyll	0.014149391247120764	False	True	True
+microbial mat_biofilm	collected_by	0.0003290556103981573	False	False	False
+microbial mat_biofilm	collection_date	0.2787101020072392	False	True	True
+microbial mat_biofilm	conduc	0.018756169792694965	False	False	True
+microbial mat_biofilm	cultivar	0.0009871668311944718	False	False	False
+microbial mat_biofilm	culture_collection	0.0003290556103981573	False	False	False
+microbial mat_biofilm	density	0.0006581112207963146	False	False	True
+microbial mat_biofilm	depth	0.5185916419874959	False	True	True
+microbial mat_biofilm	description	0.0384995064165844	False	False	False
+microbial mat_biofilm	diether_lipids	0.0	False	True	True
+microbial mat_biofilm	diss_carb_dioxide	0.11451135241855874	False	True	True
+microbial mat_biofilm	diss_hydrogen	0.0	False	True	True
+microbial mat_biofilm	diss_inorg_carb	0.087857847976308	False	True	True
+microbial mat_biofilm	diss_org_carb	0.087857847976308	False	True	True
+microbial mat_biofilm	diss_org_nitro	0.0	False	True	True
+microbial mat_biofilm	diss_oxygen	0.0003290556103981573	False	True	True
+microbial mat_biofilm	elev	0.9526159921026653	False	True	True
+microbial mat_biofilm	env_broad_scale	1.0	False	True	True
+microbial mat_biofilm	env_local_scale	1.0	False	True	True
+microbial mat_biofilm	env_medium	0.953932214544258	False	True	True
+microbial mat_biofilm	estimated_size	0.0006581112207963146	False	False	False
+microbial mat_biofilm	experimental_factor	0.009871668311944718	False	False	False
+microbial mat_biofilm	genotype	0.0003290556103981573	False	False	False
+microbial mat_biofilm	geo_loc_name	0.9693978282329714	False	True	True
+microbial mat_biofilm	glucosidase_act	0.0	False	True	True
+microbial mat_biofilm	host	0.06910167818361303	False	False	False
+microbial mat_biofilm	host_age	0.0013162224415926291	False	False	True
+microbial mat_biofilm	host_common_name	0.03718328397499177	False	False	True
+microbial mat_biofilm	host_health_state	0.0009871668311944718	False	False	False
+microbial mat_biofilm	host_length	0.01349128002632445	False	False	True
+microbial mat_biofilm	host_sex	0.0013162224415926291	False	False	True
+microbial mat_biofilm	host_subject_id	0.7275419545903258	False	False	True
+microbial mat_biofilm	host_taxid	0.0562685093780849	False	False	True
+microbial mat_biofilm	host_tissue_sampled	0.0003290556103981573	False	False	False
+microbial mat_biofilm	identified_by	0.0003290556103981573	False	False	False
+microbial mat_biofilm	investigation_type	0.2905561039815729	False	False	False
+microbial mat_biofilm	isol_growth_condt	0.015465613688713393	False	False	False
+microbial mat_biofilm	isolate	0.010529779532741033	False	False	False
+microbial mat_biofilm	isolation_source	0.006252056597564989	False	False	False
+microbial mat_biofilm	lab_host	0.0003290556103981573	False	False	False
+microbial mat_biofilm	label	0.05561039815728858	False	False	False
+microbial mat_biofilm	lat_lon	0.2411977624218493	False	True	True
+microbial mat_biofilm	life_stage	0.006910167818361303	False	False	False
+microbial mat_biofilm	magnesium	0.11451135241855874	False	True	True
+microbial mat_biofilm	mating_type	0.0003290556103981573	False	False	False
+microbial mat_biofilm	mean_frict_vel	0.0	False	True	True
+microbial mat_biofilm	mean_peak_frict_vel	0.0	False	True	True
+microbial mat_biofilm	methane	0.0315893385982231	False	True	True
+microbial mat_biofilm	misc_param	0.0	False	True	True
+microbial mat_biofilm	n_alkanes	0.0	False	True	True
+microbial mat_biofilm	nitrate	0.08292201382033564	False	True	True
+microbial mat_biofilm	nitrite	0.0	False	True	True
+microbial mat_biofilm	nitro	0.0	False	True	True
+microbial mat_biofilm	num_replicons	0.01085883514313919	False	False	False
+microbial mat_biofilm	org_carb	0.0315893385982231	False	True	True
+microbial mat_biofilm	org_matter	0.0	False	True	True
+microbial mat_biofilm	org_nitro	0.0	False	True	True
+microbial mat_biofilm	organism_count	0.049358341559723594	False	True	True
+microbial mat_biofilm	oxy_stat_samp	0.0	False	True	True
+microbial mat_biofilm	oxygen	0.08292201382033564	False	False	True
+microbial mat_biofilm	part_org_carb	0.0	False	True	True
+microbial mat_biofilm	passage_history	0.0003290556103981573	False	False	False
+microbial mat_biofilm	perturbation	0.0	False	True	True
+microbial mat_biofilm	petroleum_hydrocarb	0.0	False	True	True
+microbial mat_biofilm	ph	0.29944060546232315	False	True	True
+microbial mat_biofilm	ph_meth	0.12964791049687396	False	False	True
+microbial mat_biofilm	phaeopigments	0.0	False	True	True
+microbial mat_biofilm	phosphate	0.11451135241855874	False	True	True
+microbial mat_biofilm	phosplipid_fatt_acid	0.0315893385982231	False	True	True
+microbial mat_biofilm	ploidy	0.0006581112207963146	False	False	False
+microbial mat_biofilm	porosity	0.11977624218492926	False	False	True
+microbial mat_biofilm	potassium	0.11451135241855874	False	True	True
+microbial mat_biofilm	pressure	0.0	False	True	True
+microbial mat_biofilm	project_name	0.19545903257650543	False	False	False
+microbial mat_biofilm	propagation	0.0006581112207963146	False	False	False
+microbial mat_biofilm	redox_potential	0.03652517275419546	False	True	True
+microbial mat_biofilm	ref_biomaterial	0.010529779532741033	False	False	False
+microbial mat_biofilm	rel_to_oxygen	0.0003290556103981573	False	False	False
+microbial mat_biofilm	salinity	0.13688713392563343	False	True	True
+microbial mat_biofilm	samp_collect_device	0.007897334649555774	False	False	False
+microbial mat_biofilm	samp_size	0.002303389272787101	False	False	False
+microbial mat_biofilm	samp_store_dur	0.0019743336623889436	False	True	True
+microbial mat_biofilm	samp_store_loc	0.0019743336623889436	False	True	True
+microbial mat_biofilm	samp_store_temp	0.060217176702862786	False	True	True
+microbial mat_biofilm	sample_name	0.7640671273445212	False	False	False
+microbial mat_biofilm	sample_type	0.7288581770319184	False	False	False
+microbial mat_biofilm	sediment_type	0.0019743336623889436	False	False	True
+microbial mat_biofilm	serotype	0.0003290556103981573	False	False	False
+microbial mat_biofilm	serovar	0.0003290556103981573	False	False	False
+microbial mat_biofilm	sex	0.019085225403093122	False	False	False
+microbial mat_biofilm	silicate	0.0	False	True	True
+microbial mat_biofilm	sodium	0.08292201382033564	False	True	True
+microbial mat_biofilm	specimen_voucher	0.0003290556103981573	False	False	False
+microbial mat_biofilm	strain	0.009871668311944718	False	False	False
+microbial mat_biofilm	substrate	0.004935834155972359	False	False	False
+microbial mat_biofilm	sulfate	0.11451135241855874	False	True	True
+microbial mat_biofilm	sulfide	0.0315893385982231	False	True	True
+microbial mat_biofilm	temp	0.2783810463968411	False	True	True
+microbial mat_biofilm	tidal_stage	0.0019743336623889436	False	False	True
+microbial mat_biofilm	tissue	0.0016452780519907865	False	False	False
+microbial mat_biofilm	tot_carb	0.006581112207963146	False	True	True
+microbial mat_biofilm	tot_diss_nitro	0.08292201382033564	False	False	True
+microbial mat_biofilm	tot_n_meth	0.011846001974333662	False	False	False
+microbial mat_biofilm	tot_nitro	0.011846001974333662	False	False	True
+microbial mat_biofilm	tot_nitro_content	0.0	False	True	True
+microbial mat_biofilm	tot_org_carb	0.018427114182296808	False	True	True
+microbial mat_biofilm	treatment	0.21980914774596907	False	False	False
+microbial mat_biofilm	turbidity	0.0	False	True	True
+microbial mat_biofilm	water_content	0.0315893385982231	False	True	True
+microbial mat_biofilm	water_content_soil	0.011846001974333662	False	False	False
+miscellaneous natural or artificial environment	age	0.008209275255774062	False	False	False
+miscellaneous natural or artificial environment	alkalinity	0.0	False	True	True
+miscellaneous natural or artificial environment	alt	0.0	False	True	True
+miscellaneous natural or artificial environment	altitude	0.10212583471175642	False	False	False
+miscellaneous natural or artificial environment	ammonium	0.0	False	True	True
+miscellaneous natural or artificial environment	biomass	0.0	False	True	True
+miscellaneous natural or artificial environment	body_habitat	0.006003798321387	False	False	False
+miscellaneous natural or artificial environment	body_mass_index	0.002328003430741898	False	False	False
+miscellaneous natural or artificial environment	body_product	0.006126324817741837	False	False	False
+miscellaneous natural or artificial environment	bromide	0.0	False	True	True
+miscellaneous natural or artificial environment	calcium	0.00024505299270967347	False	True	True
+miscellaneous natural or artificial environment	chem_administration	0.0011027384671935306	False	True	True
+miscellaneous natural or artificial environment	chloride	0.00024505299270967347	False	True	True
+miscellaneous natural or artificial environment	chlorophyll	0.003982111131532194	False	True	True
+miscellaneous natural or artificial environment	collected_by	0.00012252649635483673	False	False	False
+miscellaneous natural or artificial environment	collection_date	0.1584880230349813	False	True	True
+miscellaneous natural or artificial environment	collection_device	0.07369968755743429	False	False	False
+miscellaneous natural or artificial environment	collection_method	0.039331005329902594	False	False	False
+miscellaneous natural or artificial environment	conduc	0.00012252649635483673	False	False	True
+miscellaneous natural or artificial environment	cultivar	0.0004901059854193469	False	False	False
+miscellaneous natural or artificial environment	culture_collection	6.126324817741837e-05	False	False	False
+miscellaneous natural or artificial environment	cur_land_use	0.0005513692335967653	False	False	True
+miscellaneous natural or artificial environment	density	0.0	False	True	True
+miscellaneous natural or artificial environment	depth	0.1327574588004656	False	True	True
+miscellaneous natural or artificial environment	description	0.022238559088402866	False	False	False
+miscellaneous natural or artificial environment	diet	0.0015315812044354592	False	False	False
+miscellaneous natural or artificial environment	diether_lipids	0.0	False	True	True
+miscellaneous natural or artificial environment	disease	6.126324817741837e-05	False	False	False
+miscellaneous natural or artificial environment	diss_carb_dioxide	0.00024505299270967347	False	True	True
+miscellaneous natural or artificial environment	diss_hydrogen	0.0	False	True	True
+miscellaneous natural or artificial environment	diss_inorg_carb	0.00024505299270967347	False	True	True
+miscellaneous natural or artificial environment	diss_org_carb	0.00024505299270967347	False	False	True
+miscellaneous natural or artificial environment	diss_org_nitro	0.0	False	True	True
+miscellaneous natural or artificial environment	diss_oxygen	0.0	False	True	True
+miscellaneous natural or artificial environment	dominant_hand	0.0014703179562580407	False	False	True
+miscellaneous natural or artificial environment	ecotype	0.00012252649635483673	False	False	False
+miscellaneous natural or artificial environment	elev	0.7990565459780677	False	True	True
+miscellaneous natural or artificial environment	env_broad_scale	0.986093242663726	False	True	True
+miscellaneous natural or artificial environment	env_local_scale	0.9866446118973228	False	True	True
+miscellaneous natural or artificial environment	env_medium	0.9384304355816946	False	True	True
+miscellaneous natural or artificial environment	estimated_size	0.0013477914599032042	False	False	False
+miscellaneous natural or artificial environment	experimental_factor	0.011762543650064326	False	False	False
+miscellaneous natural or artificial environment	family_id	0.0009189487226612755	False	False	False
+miscellaneous natural or artificial environment	geo_loc_name	0.8334252282055995	False	True	True
+miscellaneous natural or artificial environment	growth_med	6.126324817741837e-05	False	False	False
+miscellaneous natural or artificial environment	height_or_length	0.015315812044354591	False	False	False
+miscellaneous natural or artificial environment	host	0.084053176499418	False	False	False
+miscellaneous natural or artificial environment	host_age	0.037431844636402624	False	False	True
+miscellaneous natural or artificial environment	host_body_habitat	0.013722967591741714	False	False	True
+miscellaneous natural or artificial environment	host_body_mass_index	0.00263431967162899	False	False	True
+miscellaneous natural or artificial environment	host_body_product	0.013477914599032042	False	False	True
+miscellaneous natural or artificial environment	host_common_name	0.11983091343503033	False	False	True
+miscellaneous natural or artificial environment	host_diet	0.0028793726643386633	False	False	True
+miscellaneous natural or artificial environment	host_height	0.02352508730012865	False	False	True
+miscellaneous natural or artificial environment	host_life_stage	0.03351099675304785	False	False	True
+miscellaneous natural or artificial environment	host_subject_id	0.7975249647736323	False	False	True
+miscellaneous natural or artificial environment	host_taxid	0.16724866752435213	False	False	True
+miscellaneous natural or artificial environment	host_tissue_sampled	0.013477914599032042	False	False	False
+miscellaneous natural or artificial environment	investigation_type	0.11125405869019175	False	False	False
+miscellaneous natural or artificial environment	isol_growth_condt	0.008699381241193408	False	False	False
+miscellaneous natural or artificial environment	isolate	0.008821907737548245	False	False	False
+miscellaneous natural or artificial environment	isolation_source	0.00030631624088709185	False	False	False
+miscellaneous natural or artificial environment	label	0.005023586350548306	False	False	False
+miscellaneous natural or artificial environment	lat_lon	0.03479752496477363	False	True	True
+miscellaneous natural or artificial environment	life_stage	0.018562764197757764	False	False	False
+miscellaneous natural or artificial environment	magnesium	0.00024505299270967347	False	False	True
+miscellaneous natural or artificial environment	misc_param	0.0007351589781290203	False	True	True
+miscellaneous natural or artificial environment	nitrate	0.00024505299270967347	False	True	True
+miscellaneous natural or artificial environment	nitrite	0.0	False	True	True
+miscellaneous natural or artificial environment	nitro	0.0	False	True	True
+miscellaneous natural or artificial environment	num_replicons	0.0014703179562580407	False	False	False
+miscellaneous natural or artificial environment	org_carb	0.0004901059854193469	False	True	True
+miscellaneous natural or artificial environment	org_matter	0.0	False	True	True
+miscellaneous natural or artificial environment	org_nitro	0.0004901059854193469	False	True	True
+miscellaneous natural or artificial environment	organism_count	0.001164001715370949	False	True	True
+miscellaneous natural or artificial environment	oxy_stat_samp	0.0040433743797096125	False	True	True
+miscellaneous natural or artificial environment	oxygen	0.00024505299270967347	False	False	True
+miscellaneous natural or artificial environment	part_org_carb	0.003798321386999939	False	False	True
+miscellaneous natural or artificial environment	part_org_nitro	0.003798321386999939	False	False	True
+miscellaneous natural or artificial environment	perturbation	0.0	False	True	True
+miscellaneous natural or artificial environment	ph	0.02352508730012865	False	True	True
+miscellaneous natural or artificial environment	ph_meth	0.001837897445322551	False	False	True
+miscellaneous natural or artificial environment	phaeopigments	0.0039208478833547755	False	False	True
+miscellaneous natural or artificial environment	phosphate	0.00024505299270967347	False	True	True
+miscellaneous natural or artificial environment	phosplipid_fatt_acid	0.0	False	True	True
+miscellaneous natural or artificial environment	ploidy	0.0013477914599032042	False	False	False
+miscellaneous natural or artificial environment	potassium	0.00024505299270967347	False	True	True
+miscellaneous natural or artificial environment	pressure	0.00024505299270967347	False	True	True
+miscellaneous natural or artificial environment	project_name	0.0997365680328371	False	False	False
+miscellaneous natural or artificial environment	propagation	0.0013477914599032042	False	False	False
+miscellaneous natural or artificial environment	race	0.0017153709489677142	False	False	False
+miscellaneous natural or artificial environment	ref_biomaterial	0.00012252649635483673	False	False	False
+miscellaneous natural or artificial environment	rel_to_oxygen	0.004656006861483796	False	False	False
+miscellaneous natural or artificial environment	salinity	0.005758745328677327	False	True	True
+miscellaneous natural or artificial environment	salinity_meth	0.0009802119708386939	False	False	True
+miscellaneous natural or artificial environment	samp_collect_device	0.02585309073087055	False	False	False
+miscellaneous natural or artificial environment	samp_mat_process	0.007535379525822459	False	False	False
+miscellaneous natural or artificial environment	samp_size	0.010414752190161122	False	False	False
+miscellaneous natural or artificial environment	samp_store_dur	0.0030018991606935	False	True	True
+miscellaneous natural or artificial environment	samp_store_loc	0.003982111131532194	False	True	True
+miscellaneous natural or artificial environment	samp_store_temp	0.00863811799301599	False	True	True
+miscellaneous natural or artificial environment	sample_name	0.9588923604729522	False	False	False
+miscellaneous natural or artificial environment	sample_type	0.8934632114194695	False	False	False
+miscellaneous natural or artificial environment	sex	0.030202781351467256	False	False	False
+miscellaneous natural or artificial environment	silicate	0.0	False	True	True
+miscellaneous natural or artificial environment	sodium	0.00024505299270967347	False	True	True
+miscellaneous natural or artificial environment	source_material_id	0.005084849598725724	False	False	False
+miscellaneous natural or artificial environment	strain	0.00030631624088709185	False	False	False
+miscellaneous natural or artificial environment	sub_species	0.00012252649635483673	False	False	False
+miscellaneous natural or artificial environment	sulfate	0.00024505299270967347	False	True	True
+miscellaneous natural or artificial environment	sulfide	0.0	False	True	True
+miscellaneous natural or artificial environment	surf_material	0.0014703179562580407	False	False	True
+miscellaneous natural or artificial environment	temp	0.004839796606016051	False	True	True
+miscellaneous natural or artificial environment	tissue	0.007106536788580531	False	False	False
+miscellaneous natural or artificial environment	tot_diss_nitro	0.00024505299270967347	False	False	True
+miscellaneous natural or artificial environment	tot_mass	0.003675794890645102	False	False	False
+miscellaneous natural or artificial environment	treatment	0.01948171292041904	False	False	False
+miscellaneous natural or artificial environment	variety	0.04766280708203149	False	False	False
+miscellaneous natural or artificial environment	water_content_soil	0.00012252649635483673	False	False	False
+miscellaneous natural or artificial environment	water_content_soil_meth	0.00012252649635483673	False	False	False
+miscellaneous natural or artificial environment	water_current	0.00024505299270967347	False	True	True
+plant-associated	age	0.01380071763731714	False	False	False
+plant-associated	air_temp_regm	0.009660502346121999	False	True	True
+plant-associated	alt	0.0	False	True	True
+plant-associated	altitude	0.14601159260281535	False	False	False
+plant-associated	ances_data	0.0	False	True	True
+plant-associated	antibiotic_regm	0.0	False	True	True
+plant-associated	biol_stat	0.0	False	True	True
+plant-associated	biotic_regm	0.0	False	True	True
+plant-associated	biotic_relationship	0.0002760143527463428	False	False	False
+plant-associated	breed	0.06044714325144908	False	False	False
+plant-associated	chem_administration	0.0	False	True	True
+plant-associated	chem_mutagen	0.0	False	True	True
+plant-associated	climate_environment	0.006348330113165885	False	True	True
+plant-associated	clone	0.0011040574109853713	False	False	False
+plant-associated	collection_date	0.6930720397460668	False	True	True
+plant-associated	collection_device	0.08694452111509798	False	False	False
+plant-associated	collection_method	0.08694452111509798	False	False	False
+plant-associated	cult_root_med	0.0	False	True	True
+plant-associated	cultivar	0.24537675959149877	False	False	False
+plant-associated	culture_collection	0.0002760143527463428	False	False	False
+plant-associated	depth	0.09467292299199559	False	True	True
+plant-associated	description	0.016008832459287883	False	False	False
+plant-associated	ecotype	0.0002760143527463428	False	False	False
+plant-associated	elev	0.30803201766491856	False	True	True
+plant-associated	env_broad_scale	1.0	False	True	True
+plant-associated	env_local_scale	0.9997239856472536	False	True	True
+plant-associated	env_medium	1.0	False	True	True
+plant-associated	estimated_size	0.07314380347778085	False	False	False
+plant-associated	experimental_factor	0.0019321004692243997	False	False	False
+plant-associated	extreme_salinity	0.0008280430582390284	False	False	True
+plant-associated	fertilizer_regm	0.0	False	True	True
+plant-associated	fungicide_regm	0.0	False	True	True
+plant-associated	gaseous_environment	0.0	False	True	True
+plant-associated	genetic_mod	0.0	False	True	True
+plant-associated	geo_loc_name	1.0	False	True	True
+plant-associated	gravity	0.0	False	True	True
+plant-associated	growth_facil	0.0	False	True	True
+plant-associated	growth_habit	0.0	False	True	True
+plant-associated	growth_hormone_regm	0.0	False	True	True
+plant-associated	growth_med	0.0002760143527463428	False	False	False
+plant-associated	health_state	0.0002760143527463428	False	False	False
+plant-associated	herbicide_regm	0.0	False	True	True
+plant-associated	host	0.5804581838255589	False	False	False
+plant-associated	host_age	0.025945349158156224	False	True	True
+plant-associated	host_body_habitat	0.0016560861164780568	False	False	True
+plant-associated	host_body_product	0.0016560861164780568	False	False	True
+plant-associated	host_common_name	0.2740822522771184	False	True	True
+plant-associated	host_dry_mass	0.0	False	True	True
+plant-associated	host_genotype	0.09632900910847364	False	True	True
+plant-associated	host_height	0.0	False	True	True
+plant-associated	host_infra_spec_name	0.0	False	True	True
+plant-associated	host_infra_spec_rank	0.0	False	True	True
+plant-associated	host_infra_specific_name	0.0005520287054926856	False	False	False
+plant-associated	host_length	0.0	False	True	True
+plant-associated	host_life_stage	0.009660502346121999	False	True	True
+plant-associated	host_phenotype	0.0	False	True	True
+plant-associated	host_subject_id	0.3000276014352746	False	False	True
+plant-associated	host_subspecf_genlin	0.0	False	True	True
+plant-associated	host_symbiont	0.0	False	True	True
+plant-associated	host_taxid	0.3105161468396357	False	True	True
+plant-associated	host_tissue_sampled	0.0016560861164780568	False	False	False
+plant-associated	host_tot_mass	0.0	False	True	True
+plant-associated	host_wet_mass	0.0	False	True	True
+plant-associated	humidity_regm	0.009660502346121999	False	True	True
+plant-associated	investigation_type	0.6908639249240961	False	False	False
+plant-associated	isol_growth_condt	0.07507590394700524	False	False	False
+plant-associated	isolate	0.04140215291195142	False	False	False
+plant-associated	isolation_source	0.004692243996687827	False	False	False
+plant-associated	label	0.061275186309688104	False	False	False
+plant-associated	lat_lon	0.23433618548164503	False	True	True
+plant-associated	light_regm	0.0	False	True	True
+plant-associated	mechanical_damage	0.0	False	True	True
+plant-associated	mineral_nutr_regm	0.009660502346121999	False	True	True
+plant-associated	misc_param	0.0	False	True	True
+plant-associated	non_min_nutr_regm	0.0	False	True	True
+plant-associated	num_replicons	0.07314380347778085	False	False	False
+plant-associated	organism_count	0.0	False	True	True
+plant-associated	oxy_stat_samp	0.0	False	True	True
+plant-associated	pathogenicity	0.0002760143527463428	False	False	False
+plant-associated	pathovar	0.0008280430582390284	False	False	False
+plant-associated	perturbation	0.04968258349434171	False	True	True
+plant-associated	pesticide_regm	0.0	False	True	True
+plant-associated	ph	0.024289263041678166	False	False	True
+plant-associated	ph_meth	0.016008832459287883	False	False	True
+plant-associated	ph_regm	0.0	False	True	True
+plant-associated	plant_body_site	0.0071763731714049135	False	False	False
+plant-associated	plant_growth_med	0.0	False	True	True
+plant-associated	plant_product	0.0	False	True	True
+plant-associated	plant_sex	0.0	False	True	True
+plant-associated	plant_struc	0.0	False	True	True
+plant-associated	ploidy	0.07231576041954181	False	False	False
+plant-associated	project_name	0.6287606955561689	False	False	False
+plant-associated	propagation	0.07203974606679547	False	False	False
+plant-associated	radiation_regm	0.0	False	True	True
+plant-associated	rainfall_regm	0.0	False	True	True
+plant-associated	ref_biomaterial	0.0019321004692243997	False	False	False
+plant-associated	rel_to_oxygen	0.0008280430582390284	False	False	False
+plant-associated	root_cond	0.0	False	True	True
+plant-associated	root_med_carbon	0.0	False	True	True
+plant-associated	root_med_macronutr	0.0	False	True	True
+plant-associated	root_med_micronutr	0.0	False	True	True
+plant-associated	root_med_ph	0.0	False	True	True
+plant-associated	root_med_regl	0.0	False	True	True
+plant-associated	root_med_solid	0.0	False	True	True
+plant-associated	root_med_suppl	0.0	False	True	True
+plant-associated	salinity	0.016008832459287883	False	True	True
+plant-associated	salinity_meth	0.016008832459287883	False	False	True
+plant-associated	salt_regm	0.0	False	True	True
+plant-associated	samp_capt_status	0.0	False	True	True
+plant-associated	samp_dis_stage	0.0	False	True	True
+plant-associated	samp_salinity	0.007452387524151256	False	True	True
+plant-associated	samp_size	0.0002760143527463428	False	False	False
+plant-associated	samp_store_dur	0.0	False	True	True
+plant-associated	samp_store_loc	0.0	False	True	True
+plant-associated	samp_store_temp	0.0	False	True	True
+plant-associated	sample_name	0.7038365995031741	False	False	False
+plant-associated	sample_type	0.3069279602539332	False	False	False
+plant-associated	season_environment	0.017112889870273255	False	True	True
+plant-associated	source_material_id	0.001380071763731714	False	False	False
+plant-associated	standing_water_regm	0.0	False	True	True
+plant-associated	strain	0.06624344465912227	False	False	False
+plant-associated	temp	0.010212531051614683	False	True	True
+plant-associated	texture	0.008280430582390284	False	False	True
+plant-associated	tiss_cult_growth_med	0.0	False	True	True
+plant-associated	tissue	0.025945349158156224	False	False	False
+plant-associated	tot_carb	0.007452387524151256	False	False	True
+plant-associated	tot_nitro	0.007452387524151256	False	False	True
+plant-associated	tot_org_carb	0.007452387524151256	False	False	True
+plant-associated	water_content_soil	0.007452387524151256	False	False	False
+plant-associated	water_temp_regm	0.0	False	True	True
+plant-associated	watering_regm	0.009660502346121999	False	True	True
+sediment	age	0.00013478905512872354	False	False	False
+sediment	alkalinity	0.0646987464617873	False	True	True
+sediment	alkyl_diethers	0.0	False	True	True
+sediment	alt	0.0	False	True	True
+sediment	altitude	0.04623264590915218	False	False	False
+sediment	aminopept_act	0.0	False	True	True
+sediment	ammonium	0.06281169968998518	False	True	True
+sediment	bacteria_carb_prod	0.0	False	True	True
+sediment	bio_material	0.003639304488475536	False	False	False
+sediment	biomass	0.0	False	True	True
+sediment	biotic_relationship	0.0005391562205148942	False	False	False
+sediment	bishomohopanol	0.0	False	True	True
+sediment	body_habitat	0.003639304488475536	False	False	False
+sediment	body_product	0.003639304488475536	False	False	False
+sediment	breed	0.00013478905512872354	False	False	False
+sediment	bromide	0.006874241811564901	False	True	True
+sediment	calcium	0.0417846070899043	False	True	True
+sediment	carb_nitro_ratio	0.05593745787842027	False	True	True
+sediment	chem_administration	0.0	False	True	True
+sediment	chloride	0.040975872759131955	False	True	True
+sediment	chlorophyll	0.0	False	True	True
+sediment	collection_date	0.2525946893112279	False	True	True
+sediment	collection_device	0.003639304488475536	False	False	False
+sediment	collection_method	0.003639304488475536	False	False	False
+sediment	component_organism	0.00606550748079256	False	False	False
+sediment	conduc	0.0018870467718021297	False	False	True
+sediment	cultivar	0.00013478905512872354	False	False	False
+sediment	density	0.038280091656557484	False	True	True
+sediment	depth	0.8607629060520285	True	True	True
+sediment	description	0.020353147324437257	False	False	False
+sediment	diether_lipids	0.0	False	True	True
+sediment	diss_carb_dioxide	0.06577705890281708	False	True	True
+sediment	diss_hydrogen	0.0002695781102574471	False	True	True
+sediment	diss_inorg_carb	0.026823021970615986	False	True	True
+sediment	diss_org_carb	0.027901334411645773	False	True	True
+sediment	diss_org_nitro	0.0	False	True	True
+sediment	diss_oxygen	0.015635530394931933	False	True	True
+sediment	elev	0.9011996225906457	False	True	True
+sediment	encoded_traits	0.00013478905512872354	False	False	False
+sediment	env_broad_scale	0.9991912656692277	False	True	True
+sediment	env_local_scale	0.9995956328346138	False	True	True
+sediment	env_medium	0.9929909691333064	False	True	True
+sediment	estimated_size	0.0004043671653861706	False	False	False
+sediment	experimental_factor	0.5283730961045963	False	False	False
+sediment	extreme_salinity	0.001482679606415959	False	False	True
+sediment	geo_loc_name	0.991238711416633	False	True	True
+sediment	glucosidase_act	0.0	False	True	True
+sediment	host	0.012400593071842566	False	False	False
+sediment	host_common_name	0.018331311497506404	False	False	True
+sediment	host_subject_id	0.740126701711821	False	False	True
+sediment	host_taxid	0.018331311497506404	False	False	True
+sediment	investigation_type	0.7832591993530126	False	False	False
+sediment	isol_growth_condt	0.009974390079525542	False	False	False
+sediment	isolate	0.003234937323089365	False	False	False
+sediment	isolation_source	0.014287639843644695	False	False	False
+sediment	label	0.021970615985981937	False	False	False
+sediment	lat_lon	0.6847284000539157	False	True	True
+sediment	life_stage	0.00876128858336703	False	False	False
+sediment	magnesium	0.04218897425529047	False	True	True
+sediment	mean_frict_vel	0.0	False	True	True
+sediment	mean_peak_frict_vel	0.0	False	True	True
+sediment	methane	0.007548187087208519	False	True	True
+sediment	misc_param	0.00013478905512872354	False	True	True
+sediment	n_alkanes	0.0006739452756436178	False	True	True
+sediment	nitrate	0.07521229276182774	False	True	True
+sediment	nitrite	0.04528912252325111	False	True	True
+sediment	nitro	0.0	False	True	True
+sediment	num_replicons	0.009030866693624478	False	False	False
+sediment	org_carb	0.08276047984903626	False	True	True
+sediment	org_matter	0.03868445882194366	False	True	True
+sediment	org_nitro	0.0372017792155277	False	True	True
+sediment	organism_count	0.007143819921822348	False	True	True
+sediment	oxy_stat_samp	0.0463674349642809	False	True	True
+sediment	oxygen	0.026823021970615986	False	False	True
+sediment	part_org_carb	0.0	False	True	True
+sediment	particle_class	0.003908882598732983	False	True	True
+sediment	perturbation	0.0008087343307723412	False	True	True
+sediment	petroleum_hydrocarb	0.0005391562205148942	False	True	True
+sediment	ph	0.16174686615446826	False	True	True
+sediment	ph_meth	0.09179134654266073	False	False	True
+sediment	phaeopigments	0.0	False	True	True
+sediment	phosphate	0.07696455047850115	False	True	True
+sediment	phosplipid_fatt_acid	0.0	False	True	True
+sediment	porosity	0.043132497641191536	False	True	True
+sediment	potassium	0.04030192748348834	False	True	True
+sediment	pressure	0.039762771262973444	False	True	True
+sediment	project_name	0.7563013883272678	False	False	False
+sediment	redox_potential	0.011457069685941502	False	True	True
+sediment	ref_biomaterial	0.01213101496158512	False	False	False
+sediment	rel_to_oxygen	0.5484566653187761	False	False	False
+sediment	salinity	0.10122658040167139	False	True	True
+sediment	salinity_meth	0.010243968189782989	False	False	True
+sediment	samp_collect_device	0.5453565170508154	False	False	False
+sediment	samp_mat_process	0.5391562205148942	False	False	False
+sediment	samp_size	0.5693489688637282	False	False	False
+sediment	samp_store_dur	0.01644426472570427	False	True	True
+sediment	samp_store_loc	0.002965359212831918	False	True	True
+sediment	samp_store_temp	0.026014287639843644	False	True	True
+sediment	sample_name	0.8408141258929774	False	False	False
+sediment	sample_type	0.7507750370669901	False	False	False
+sediment	sediment_type	0.01711821000134789	False	True	True
+sediment	silicate	0.0372017792155277	False	True	True
+sediment	sodium	0.039762771262973444	False	True	True
+sediment	source_material_id	0.0021566248820595766	False	False	False
+sediment	strain	0.009300444803881924	False	False	False
+sediment	subspecf_gen_lin	0.013478905512872355	False	False	False
+sediment	subsrc_note	0.00013478905512872354	False	False	False
+sediment	sulfate	0.03908882598732983	False	True	True
+sediment	sulfide	0.007009030866693624	False	True	True
+sediment	temp	0.1368108909556544	False	True	True
+sediment	texture	0.001482679606415959	False	False	True
+sediment	tidal_stage	0.0	False	True	True
+sediment	tissue	0.003639304488475536	False	False	False
+sediment	tot_carb	0.05809408276047985	False	True	True
+sediment	tot_depth_water_col	0.08639978433751179	False	True	True
+sediment	tot_diss_nitro	0.026823021970615986	False	False	True
+sediment	tot_nitro	0.05620703598867772	False	False	True
+sediment	tot_nitro_content	0.0	False	True	True
+sediment	tot_org_carb	0.006604663701307454	False	True	True
+sediment	tot_phosp	0.018870467718021297	False	False	True
+sediment	treatment	0.0010783124410297883	False	False	False
+sediment	trophic_level	0.0002695781102574471	False	False	False
+sediment	turbidity	0.0	False	True	True
+sediment	water_content	0.050411106618142604	False	True	True
+soil	age	0.3004950495049505	False	False	False
+soil	agrochem_addition	0.03849009900990099	False	True	True
+soil	air_temp	0.0009282178217821782	False	False	True
+soil	al_sat	0.006683168316831683	False	True	True
+soil	al_sat_meth	0.006683168316831683	False	True	True
+soil	alt	0.0	False	True	True
+soil	altitude	0.18428217821782178	False	False	False
+soil	ammonium	0.03248762376237624	False	False	True
+soil	annual_precpt	0.0	False	True	True
+soil	annual_season_precpt	0.10037128712871288	False	False	False
+soil	annual_season_temp	0.07790841584158416	False	False	False
+soil	annual_temp	0.0	False	True	True
+soil	bio_material	0.00018564356435643565	False	False	False
+soil	biotic_relationship	6.188118811881188e-05	False	False	False
+soil	calcium	0.0416460396039604	False	False	True
+soil	carb_nitro_ratio	0.04195544554455446	False	False	True
+soil	chloride	0.006559405940594059	False	False	True
+soil	chlorophyll	0.005940594059405941	False	False	True
+soil	collected_by	0.024566831683168318	False	False	False
+soil	collection_date	0.389480198019802	False	True	True
+soil	collection_device	0.0035272277227722773	False	False	False
+soil	collection_method	0.0035272277227722773	False	False	False
+soil	conduc	0.02524752475247525	False	False	True
+soil	crop_rotation	0.013737623762376238	False	True	True
+soil	cultivar	0.019863861386138614	False	False	False
+soil	culture_collection	6.188118811881188e-05	False	False	False
+soil	cur_land_use	0.12301980198019802	False	True	True
+soil	cur_vegetation	0.06646039603960396	False	True	True
+soil	cur_vegetation_meth	0.011633663366336634	False	True	True
+soil	depth	0.9063737623762376	True	True	True
+soil	description	0.02271039603960396	False	False	False
+soil	diss_carb_dioxide	0.006559405940594059	False	False	True
+soil	diss_inorg_carb	0.006559405940594059	False	False	True
+soil	diss_org_carb	0.016831683168316833	False	False	True
+soil	diss_org_nitro	0.004207920792079208	False	False	True
+soil	drainage_class	0.08335396039603961	False	True	True
+soil	elev	0.8870668316831684	True	True	True
+soil	env_broad_scale	0.9999381188118812	False	True	True
+soil	env_local_scale	0.9991955445544555	False	True	True
+soil	env_medium	0.9930074257425743	False	True	True
+soil	experimental_factor	0.03155940594059406	False	False	False
+soil	extreme_event	0.020915841584158417	False	True	True
+soil	extreme_salinity	0.008601485148514852	False	True	True
+soil	fao_class	0.0338490099009901	False	True	True
+soil	fire	0.018007425742574256	False	True	True
+soil	flooding	0.007858910891089109	False	True	True
+soil	geo_loc_name	0.9892326732673268	False	True	True
+soil	heavy_metals	0.009777227722772277	False	True	True
+soil	heavy_metals_meth	0.006806930693069307	False	True	True
+soil	horizon	0.037066831683168315	False	True	True
+soil	horizon_meth	0.006683168316831683	False	True	True
+soil	host	0.33149752475247524	False	False	False
+soil	host_common_name	0.38254950495049506	False	False	True
+soil	host_subject_id	0.6372524752475247	False	False	True
+soil	host_taxid	0.38972772277227724	False	False	True
+soil	investigation_type	0.3416460396039604	False	False	False
+soil	isol_growth_condt	0.003155940594059406	False	False	False
+soil	isolate	0.010767326732673266	False	False	False
+soil	isolation_source	0.0035891089108910893	False	False	False
+soil	label	0.03954207920792079	False	False	False
+soil	lat_lon	0.2469059405940594	False	True	True
+soil	link_addit_analys	0.0	False	True	True
+soil	link_class_info	0.006745049504950495	False	True	True
+soil	link_climate_info	0.010952970297029702	False	True	True
+soil	local_class	0.03663366336633663	False	True	True
+soil	local_class_meth	0.019987623762376238	False	True	True
+soil	magnesium	0.0416460396039604	False	False	True
+soil	micro_biomass_meth	0.0	False	True	True
+soil	microbial_biomass	0.011014851485148514	False	True	True
+soil	microbial_biomass_meth	0.011448019801980198	False	False	False
+soil	misc_param	0.03508663366336634	False	True	True
+soil	nitrate	0.0390470297029703	False	False	True
+soil	num_replicons	0.0019183168316831683	False	False	False
+soil	org_matter	0.0024752475247524753	False	False	True
+soil	oxygen	0.006559405940594059	False	False	True
+soil	perturbation	0.011757425742574257	False	False	True
+soil	petroleum_hydrocarb	0.0003094059405940594	False	False	True
+soil	ph	0.32215346534653466	False	True	True
+soil	ph_meth	0.23799504950495048	False	True	True
+soil	phosphate	0.006559405940594059	False	False	True
+soil	plant_product	0.2986386138613861	False	False	True
+soil	pool_dna_extracts	0.011448019801980198	False	True	True
+soil	potassium	0.0416460396039604	False	False	True
+soil	prev_land_use_meth	0.0	False	True	True
+soil	previous_land_use	0.052537128712871285	False	True	True
+soil	previous_land_use_meth	0.006745049504950495	False	False	False
+soil	profile_position	0.020853960396039605	False	True	True
+soil	project_name	0.2739480198019802	False	False	False
+soil	propagation	0.00018564356435643565	False	False	False
+soil	ref_biomaterial	0.0019801980198019802	False	False	False
+soil	rel_to_oxygen	0.0003712871287128713	False	False	False
+soil	salinity	0.006559405940594059	False	False	True
+soil	salinity_meth	0.007920792079207921	False	True	True
+soil	samp_collect_device	0.04832920792079208	False	False	False
+soil	samp_mat_process	0.03941831683168317	False	False	False
+soil	samp_size	0.33310643564356435	False	False	False
+soil	samp_store_temp	0.0009282178217821782	False	False	True
+soil	samp_vol_we_dna_ext	0.0016089108910891088	False	False	False
+soil	sample_name	0.7630569306930693	False	False	False
+soil	sample_type	0.649009900990099	False	False	False
+soil	season_precpt	0.0	False	True	True
+soil	season_temp	0.0	False	True	True
+soil	sieving	0.05340346534653465	False	True	True
+soil	slope_aspect	0.013675742574257426	False	True	True
+soil	slope_gradient	0.01701732673267327	False	True	True
+soil	sodium	0.021905940594059405	False	False	True
+soil	soil_type	0.1327970297029703	False	True	True
+soil	soil_type_meth	0.053774752475247524	False	True	True
+soil	source_material_id	0.00018564356435643565	False	False	False
+soil	store_cond	0.1171410891089109	False	True	True
+soil	strain	0.0018564356435643563	False	False	False
+soil	subspecf_gen_lin	0.009405940594059406	False	False	False
+soil	substrate	0.0019801980198019802	False	False	False
+soil	sulfate	0.006559405940594059	False	False	True
+soil	temp	0.054764851485148515	False	True	True
+soil	texture	0.050742574257425746	False	True	True
+soil	texture_meth	0.007611386138613861	False	True	True
+soil	tillage	0.0060643564356435645	False	True	True
+soil	tot_carb	0.057982673267326736	False	False	True
+soil	tot_diss_nitro	0.006559405940594059	False	False	True
+soil	tot_n_meth	0.10699257425742574	False	False	False
+soil	tot_nitro	0.17642326732673266	False	False	True
+soil	tot_nitro_cont_meth	0.0	False	True	True
+soil	tot_nitro_content	0.0	False	True	True
+soil	tot_org_c_meth	0.05340346534653465	False	True	True
+soil	tot_org_carb	0.11138613861386139	False	True	True
+soil	treatment	0.013428217821782178	False	False	False
+soil	trophic_level	6.188118811881188e-05	False	False	False
+soil	water_cont_soil_meth	0.0	False	True	True
+soil	water_content	0.03570544554455445	False	True	True
+soil	water_content_soil	0.15495049504950495	False	False	False
+soil	water_content_soil_meth	0.10117574257425743	False	False	False
+wastewater_sludge	alkalinity	0.0	False	True	True
+wastewater_sludge	alt	0.0	False	True	True
+wastewater_sludge	biochem_oxygen_dem	0.00390625	False	True	True
+wastewater_sludge	breed	0.00390625	False	False	False
+wastewater_sludge	chem_administration	0.0	False	True	True
+wastewater_sludge	chem_oxygen_dem	0.01171875	False	True	True
+wastewater_sludge	collected_by	0.04375	False	False	False
+wastewater_sludge	collection_date	0.86484375	False	True	True
+wastewater_sludge	conduc	0.00625	False	False	True
+wastewater_sludge	cultivar	0.0171875	False	False	False
+wastewater_sludge	depth	0.04453125	False	True	True
+wastewater_sludge	ecotype	0.00546875	False	False	False
+wastewater_sludge	efficiency_percent	0.0	False	True	True
+wastewater_sludge	elev	0.13984375	False	True	True
+wastewater_sludge	emulsions	0.0	False	True	True
+wastewater_sludge	env_broad_scale	0.9296875	False	True	True
+wastewater_sludge	env_local_scale	0.9296875	False	True	True
+wastewater_sludge	env_medium	0.9296875	False	True	True
+wastewater_sludge	experimental_factor	0.03046875	False	False	False
+wastewater_sludge	gaseous_substances	0.0	False	True	True
+wastewater_sludge	geo_loc_name	0.890625	False	True	True
+wastewater_sludge	host	0.04375	False	False	False
+wastewater_sludge	host_subject_id	0.1234375	False	False	True
+wastewater_sludge	indust_eff_percent	0.0	False	True	True
+wastewater_sludge	inorg_particles	0.0	False	True	True
+wastewater_sludge	investigation_type	0.84765625	False	False	False
+wastewater_sludge	isol_growth_condt	0.01953125	False	False	False
+wastewater_sludge	isolate	0.06640625	False	False	False
+wastewater_sludge	isolation_source	0.0171875	False	False	False
+wastewater_sludge	label	0.03671875	False	False	False
+wastewater_sludge	lat_lon	0.2984375	False	True	True
+wastewater_sludge	misc_param	0.00234375	False	True	True
+wastewater_sludge	nitrate	0.0	False	True	True
+wastewater_sludge	num_replicons	0.003125	False	False	False
+wastewater_sludge	org_particles	0.0	False	True	True
+wastewater_sludge	organism_count	0.0	False	True	True
+wastewater_sludge	orgmod_note	0.00078125	False	False	False
+wastewater_sludge	oxy_stat_samp	0.0421875	False	True	True
+wastewater_sludge	perturbation	0.0	False	True	True
+wastewater_sludge	ph	0.05625	False	True	True
+wastewater_sludge	phosphate	0.0171875	False	True	True
+wastewater_sludge	pre_treatment	0.00390625	False	True	True
+wastewater_sludge	primary_treatment	0.0078125	False	True	True
+wastewater_sludge	project_name	0.8140625	False	False	False
+wastewater_sludge	propagation	0.00078125	False	False	False
+wastewater_sludge	reactor_type	0.0734375	False	True	True
+wastewater_sludge	ref_biomaterial	0.0609375	False	False	False
+wastewater_sludge	rel_to_oxygen	0.0125	False	False	False
+wastewater_sludge	salinity	0.0	False	True	True
+wastewater_sludge	samp_collect_device	0.0046875	False	False	False
+wastewater_sludge	samp_mat_process	0.01171875	False	False	False
+wastewater_sludge	samp_salinity	0.0078125	False	True	True
+wastewater_sludge	samp_size	0.00703125	False	False	False
+wastewater_sludge	samp_store_dur	0.009375	False	True	True
+wastewater_sludge	samp_store_loc	0.0203125	False	True	True
+wastewater_sludge	samp_store_temp	0.034375	False	True	True
+wastewater_sludge	samp_vol_we_dna_ext	0.0078125	False	False	False
+wastewater_sludge	sample_name	0.690625	False	False	False
+wastewater_sludge	sample_type	0.18125	False	False	False
+wastewater_sludge	secondary_treatment	0.06484375	False	True	True
+wastewater_sludge	sewage_type	0.0578125	False	True	True
+wastewater_sludge	sludge_retent_time	0.01640625	False	True	True
+wastewater_sludge	sodium	0.0015625	False	True	True
+wastewater_sludge	soluble_inorg_mat	0.0	False	True	True
+wastewater_sludge	soluble_org_mat	0.0	False	True	True
+wastewater_sludge	strain	0.009375	False	False	False
+wastewater_sludge	suspend_solids	0.01171875	False	True	True
+wastewater_sludge	temp	0.03125	False	True	True
+wastewater_sludge	tertiary_treatment	0.0078125	False	True	True
+wastewater_sludge	tot_nitro	0.04609375	False	True	True
+wastewater_sludge	tot_phosp	0.0078125	False	False	True
+wastewater_sludge	tot_phosphate	0.03828125	False	True	True
+wastewater_sludge	turbidity	0.0140625	False	False	True
+wastewater_sludge	wastewater_type	0.096875	False	True	True
+water	age	0.00015073861923424781	False	False	False
+water	air_temp	0.012310320570796904	False	False	True
+water	alkalinity	0.004974374434730178	False	True	True
+water	alkalinity_method	0.0	False	True	True
+water	alkyl_diethers	0.0	False	True	True
+water	alt	0.0	False	True	True
+water	altitude	0.12847954979399057	False	False	False
+water	aminopept_act	0.0	False	True	True
+water	ammonium	0.0343684051854085	False	True	True
+water	atmospheric_data	0.012812782634911065	False	True	True
+water	bac_prod	0.0	False	True	True
+water	bac_resp	0.0	False	True	True
+water	bacteria_carb_prod	0.0030147723846849564	False	True	True
+water	bio_material	0.0014068937795196463	False	False	False
+water	biomass	0.00010049241282283188	False	True	True
+water	biomaterial_provider	0.00010049241282283188	False	False	False
+water	biotic_relationship	0.0006532006833484072	False	False	False
+water	bishomohopanol	0.0	False	True	True
+water	breed	0.00010049241282283188	False	False	False
+water	bromide	0.0	False	True	True
+water	calcium	0.14094060898402172	False	True	True
+water	carb_nitro_ratio	0.0007034468897598232	False	True	True
+water	chem_administration	0.0	False	True	True
+water	chloride	0.1444578434328208	False	True	True
+water	chlorophyll	0.04120188925736107	False	True	True
+water	collected_by	0.00020098482564566376	False	False	False
+water	collection_date	0.37247512812782635	False	True	True
+water	collection_device	0.00160787860516531	False	False	False
+water	collection_method	0.00160787860516531	False	False	False
+water	conduc	0.07431413928248418	False	True	True
+water	cultivar	0.0014571399859310621	False	False	False
+water	culture_collection	5.024620641141594e-05	False	False	False
+water	death_date	0.00010049241282283188	False	False	False
+water	density	0.036076776203396645	False	True	True
+water	depth	0.8004723143402673	True	True	True
+water	description	0.11546578233343383	False	False	False
+water	dev_stage	0.00010049241282283188	False	False	False
+water	diether_lipids	0.0	False	True	True
+water	diss_carb_dioxide	0.1383780524570395	False	True	True
+water	diss_hydrogen	0.0	False	True	True
+water	diss_inorg_carb	0.1532006833484072	False	True	True
+water	diss_inorg_nitro	0.0	False	True	True
+water	diss_inorg_phosp	0.0	False	True	True
+water	diss_org_carb	0.1573208722741433	False	True	True
+water	diss_org_nitro	0.002462064114159381	False	True	True
+water	diss_oxygen	0.14073962415837604	False	True	True
+water	down_par	0.0	False	True	True
+water	ecotype	0.00020098482564566376	False	False	False
+water	elev	0.42196764144307103	False	True	True
+water	env_broad_scale	0.9944226710883328	False	True	True
+water	env_local_scale	0.9948246407396242	False	True	True
+water	env_medium	0.9559340769771882	False	True	True
+water	estimated_size	0.0004019696512913275	False	False	False
+water	experimental_factor	0.020600944628680534	False	False	False
+water	extreme_salinity	0.0006029544769369913	False	False	True
+water	fluor	0.011204904029745754	False	True	True
+water	geo_loc_name	0.7681137574113155	False	True	True
+water	glucosidase_act	0.0	False	True	True
+water	health_state	0.0004522158577027434	False	False	False
+water	heavy_metals_meth	0.0013566475731082302	False	False	True
+water	host	0.02225906944025726	False	False	False
+water	host_body_habitat	0.0003517234448799116	False	False	True
+water	host_body_mass_index	0.0004522158577027434	False	False	True
+water	host_body_product	0.0003517234448799116	False	False	True
+water	host_common_name	0.018842327404280976	False	False	True
+water	host_health_state	0.007888654406592302	False	False	False
+water	host_height	0.0004522158577027434	False	False	True
+water	host_subject_id	0.4132248015274847	False	False	True
+water	host_taxid	0.0264797507788162	False	False	True
+water	host_tissue_sampled	0.0003517234448799116	False	False	False
+water	indoor_space	0.00010049241282283188	False	False	True
+water	investigation_type	0.34313134358355946	False	False	False
+water	isol_growth_condt	0.00482363581549593	False	False	False
+water	isolate	0.00432117375138177	False	False	False
+water	isolation_source	0.008190131645060798	False	False	False
+water	label	0.016531001909355844	False	False	False
+water	last_meal	0.0017586172243995578	False	False	False
+water	lat_lon	0.13249924630690382	False	True	True
+water	life_stage	0.01864134257863531	False	False	False
+water	light_intensity	0.003266003416742036	False	True	True
+water	magnesium	0.14003617726861622	False	True	True
+water	mean_frict_vel	0.0	False	True	True
+water	mean_peak_frict_vel	0.0	False	True	True
+water	misc_param	0.003919204100090443	False	True	True
+water	n_alkanes	5.024620641141594e-05	False	True	True
+water	nitrate	0.19696512913275047	False	True	True
+water	nitrite	0.03170535624560346	False	True	True
+water	nitro	0.004672897196261682	False	True	True
+water	num_replicons	0.001557632398753894	False	False	False
+water	org_carb	0.0036177268616219473	False	True	True
+water	org_matter	0.0	False	True	True
+water	org_nitro	0.0036177268616219473	False	True	True
+water	organism_count	0.006029544769369913	False	True	True
+water	oxy_stat_samp	0.01658124811576726	False	True	True
+water	oxygen	0.2042508290624058	False	False	True
+water	part_org_carb	0.006732991659129736	False	True	True
+water	part_org_nitro	0.006732991659129736	False	True	True
+water	perturbation	0.002663048939805045	False	True	True
+water	petroleum_hydrocarb	0.0	False	True	True
+water	ph	0.2673098181087328	False	True	True
+water	ph_meth	0.22650989850266304	False	False	True
+water	phaeopigments	0.014119184001607879	False	True	True
+water	phosphate	0.19726660637121898	False	True	True
+water	phosplipid_fatt_acid	0.0	False	True	True
+water	photon_flux	0.0	False	True	True
+water	ploidy	0.000803939302582655	False	False	False
+water	potassium	0.14144307104813586	False	True	True
+water	pressure	0.005426590292432921	False	True	True
+water	primary_prod	0.004019696512913275	False	True	True
+water	project_name	0.546025525072857	False	False	False
+water	propagation	0.0003517234448799116	False	False	False
+water	redox_potential	0.0025625565269822128	False	True	True
+water	ref_biomaterial	0.003115264797507788	False	False	False
+water	rel_to_oxygen	0.007436438548889559	False	False	False
+water	salinity	0.28007235453723245	False	True	True
+water	salinity_meth	0.003416742035976284	False	False	True
+water	samp_collect_device	0.04431715405486886	False	False	False
+water	samp_mat_process	0.0309014169430208	False	False	False
+water	samp_salinity	0.002462064114159381	False	False	True
+water	samp_size	0.03502160586875691	False	False	False
+water	samp_store_dur	0.02215857702743443	False	True	True
+water	samp_store_loc	0.022108330821023012	False	True	True
+water	samp_store_temp	0.023464978394131242	False	True	True
+water	samp_vol_we_dna_ext	0.002361571701336549	False	False	False
+water	sample_name	0.8832780625062808	False	False	False
+water	sample_type	0.425585368304693	False	False	False
+water	sex	0.00010049241282283188	False	False	False
+water	silicate	0.042508290624057886	False	True	True
+water	size_frac_low	0.0	False	True	True
+water	size_frac_up	0.0	False	True	True
+water	slope_aspect	0.00015073861923424781	False	False	True
+water	sodium	0.13953371520450206	False	True	True
+water	soluble_react_phosp	0.0	False	True	True
+water	source_material_id	0.002361571701336549	False	False	False
+water	strain	0.000803939302582655	False	False	False
+water	sulfate	0.14043814691990755	False	True	True
+water	sulfide	0.0	False	True	True
+water	suspend_part_matter	0.0005024620641141594	False	True	True
+water	temp	0.5894382474123203	False	True	True
+water	tidal_stage	0.00010049241282283188	False	True	True
+water	tissue	0.0005527082705255753	False	False	False
+water	tot_carb	0.0015073861923424782	False	False	True
+water	tot_depth_water_col	0.03994573409707567	False	True	True
+water	tot_diss_nitro	0.14340267309818108	False	True	True
+water	tot_inorg_nitro	0.0	False	True	True
+water	tot_mass	5.024620641141594e-05	False	False	False
+water	tot_nitro	0.003115264797507788	False	True	True
+water	tot_part_carb	0.0011054165410511506	False	True	True
+water	tot_phosp	0.0027635413526278766	False	True	True
+water	treatment	0.010300472314340267	False	False	False
+water	trophic_level	0.0006532006833484072	False	False	False
+water	turbidity	0.004220681338558939	False	True	True
+water	water_current	0.0	False	True	True
+water	wind_speed	0.018390111546578235	False	False	True

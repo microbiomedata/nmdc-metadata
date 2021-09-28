@@ -1,0 +1,103 @@
+raw_env_package	env_package
+host-associated	host-associated
+human-gut	human-gut
+water	water
+misc environment	miscellaneous
+built environment	built
+human-skin	human-skin
+soil	soil
+human-oral	human-oral
+sediment	sediment
+human-associated	
+MIGS/MIMS/MIMARKS.soil	soil
+MIGS/MIMS/MIMARKS.host-associated	host-associated
+plant-associated	plant-associated
+MIGS/MIMS/MIMARKS.human-gut	human-gut
+microbial mat/biofilm	microbial mat/biofilm
+MIGS/MIMS/MIMARKS.water	water
+MIGS/MIMS/MIMARKS.human-associated	
+MIGS/MIMS/MIMARKS.sediment	sediment
+MIGS/MIMS/MIMARKS.human-oral	human-oral
+human-vaginal	human-vaginal
+MIGS/MIMS/MIMARKS.plant-associated	plant-associated
+MIGS/MIMS/MIMARKS.microbial	microbial mat/biofilm
+miscellaneous natural or artificial environment	miscellaneous
+MIGS/MIMS/MIMARKS.miscellaneous	miscellaneous
+mimarks	
+wastewater|sludge	wastewater/sludge
+mouse-gut	
+MIGS/MIMS/MIMARKS.wastewater	wastewater/sludge
+wastewater/sludge	wastewater/sludge
+air	air
+Human-associated	
+MIGS/MIMS/MIMARKS.air	air
+Human-oral	human-oral
+gut	human-gut
+host_associated	host-associated
+MIGS/MIMS/MIMARKS.human-skin	human-skin
+biofilm	microbial mat/biofilm
+Human-gut	human-gut
+Host-associated	
+human-not providedsopharyngeal	
+wastewater sludge	wastewater/sludge
+Missing: Not provided	
+mice gut	
+MIGS/MIMS/MIMARKS.water|||water	water
+built	built
+CV	
+human gut	human-gut
+Human_Gut	human-gut
+Water	water
+default	
+microbial mat|biofilm	microbial mat/biofilm
+"home, outdoor environment"	
+fermentation-associated	
+Unspecified	
+soil-associated	soil
+seawater	water
+sterile water	water
+MIGS/MIMS/MIMARKS.miscellaneous|||miscellaneous natural or artificial environment	miscellaneous
+miscellaneous	miscellaneous
+human_skin	human-skin
+Human-vaginal	human-vaginal
+fresh water	water
+Mouse_Gut	
+gut microbiome	human-gut
+Soil	soil
+mims extension	
+wastewater	wastewater/sludge
+control	
+rock	
+arctic	
+extreme habitat	
+MIGS/MIMS/MIMARKS.human-vaginal	human-vaginal
+freshwater sediment	sediment
+host-associated|||wastewater/sludge	
+misc-environment	miscellaneous
+soil|||water	
+MIMARKS_water	water
+MIENS_16S	
+cave	
+Not available	
+MIGS/MIMS/MIMARKS.microbial|||microbial mat/biofilm	microbial mat/biofilm
+MIGS.plant-associated	plant-associated
+plant	plant-associated
+Host-associated|||MIGS/MIMS/MIMARKS.host-associated	
+not collected	
+host associated	host-associated
+Sediment	sediment
+MIGS/MIMS/MIMARKS.soil|||soil	soil
+sea water	water
+host-associated|||misc environment	
+env_package	
+marine sediment (ENVO:00002113)	sediment
+Coastal water body (ENVO:02000049)	water
+Deep-sea water	water
+Sea water	water
+"sea water, [ENVO:00002149]"	water
+ocean[ENVO:00000015]	water
+MIGS/MIMS/MIMARKS.air|||MIGS/MIMS/MIMARKS.microbial	
+ENVO:00000016	
+MIMARKS_16S	
+not applicable	
+saliva	
