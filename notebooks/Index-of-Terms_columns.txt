@@ -1,0 +1,11 @@
+Column Header
+name
+Definition
+Guidance
+Expected Value
+syntax
+Category
+Associated Packages
+Origin
+Notes
+GitHub Ticket
