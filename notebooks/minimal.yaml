@@ -1,0 +1,1909 @@
+name: minimal
+description: minimal LinkML
+id: https://w3id.org/minimal
+imports:
+- linkml:types
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  minimal:
+    prefix_prefix: minimal
+    prefix_reference: https://w3id.org/minimal/
+default_prefix: minimal
+default_range: string
+types:
+  string:
+    name: string
+    definition_uri: https://w3id.org/linkml/String
+    description: A character string
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: str
+    uri: xsd:string
+  integer:
+    name: integer
+    definition_uri: https://w3id.org/linkml/Integer
+    description: An integer
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: int
+    uri: xsd:integer
+  boolean:
+    name: boolean
+    definition_uri: https://w3id.org/linkml/Boolean
+    description: A binary (true or false) value
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: Bool
+    uri: xsd:boolean
+    repr: bool
+  float:
+    name: float
+    definition_uri: https://w3id.org/linkml/Float
+    description: A real number that conforms to the xsd:float specification
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: float
+    uri: xsd:float
+  double:
+    name: double
+    definition_uri: https://w3id.org/linkml/Double
+    description: A real number that conforms to the xsd:double specification
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: float
+    uri: xsd:double
+  decimal:
+    name: decimal
+    definition_uri: https://w3id.org/linkml/Decimal
+    description: A real number with arbitrary precision that conforms to the xsd:decimal
+      specification
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: Decimal
+    uri: xsd:decimal
+  time:
+    name: time
+    definition_uri: https://w3id.org/linkml/Time
+    description: A time object represents a (local) time of day, independent of any
+      particular day
+    notes:
+    - URI is dateTime because OWL reasoners don't work with straight date or time
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: XSDTime
+    uri: xsd:dateTime
+    repr: str
+  date:
+    name: date
+    definition_uri: https://w3id.org/linkml/Date
+    description: a date (year, month and day) in an idealized calendar
+    notes:
+    - URI is dateTime because OWL reasoners don't work with straight date or time
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: XSDDate
+    uri: xsd:date
+    repr: str
+  datetime:
+    name: datetime
+    definition_uri: https://w3id.org/linkml/Datetime
+    description: The combination of a date and time
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: XSDDateTime
+    uri: xsd:dateTime
+    repr: str
+  uriorcurie:
+    name: uriorcurie
+    definition_uri: https://w3id.org/linkml/Uriorcurie
+    description: a URI or a CURIE
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: URIorCURIE
+    uri: xsd:anyURI
+    repr: str
+  uri:
+    name: uri
+    definition_uri: https://w3id.org/linkml/Uri
+    description: a complete URI
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: URI
+    uri: xsd:anyURI
+    repr: str
+  ncname:
+    name: ncname
+    definition_uri: https://w3id.org/linkml/Ncname
+    description: Prefix part of CURIE
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: NCName
+    uri: xsd:string
+    repr: str
+  objectidentifier:
+    name: objectidentifier
+    definition_uri: https://w3id.org/linkml/Objectidentifier
+    description: A URI or CURIE that represents an object in the model.
+    comments:
+    - Used for inheritence and type checking
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: ElementIdentifier
+    uri: shex:iri
+    repr: str
+  nodeidentifier:
+    name: nodeidentifier
+    definition_uri: https://w3id.org/linkml/Nodeidentifier
+    description: A URI, CURIE or BNODE that represents a node in a model.
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: NodeIdentifier
+    uri: shex:nonLiteral
+    repr: str
+slots:
+  unique_ID:
+    name: unique_ID
+    mappings:
+    - minimal:unique_ID
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:unique_ID
+    range: string
+  samp_name:
+    name: samp_name
+    mappings:
+    - minimal:samp_name
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:samp_name
+    range: string
+  investigation_type:
+    name: investigation_type
+    mappings:
+    - minimal:investigation_type
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:investigation_type
+    range: string
+  package:
+    name: package
+    mappings:
+    - minimal:package
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:package
+    range: string
+  source_mat_id:
+    name: source_mat_id
+    mappings:
+    - minimal:source_mat_id
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:source_mat_id
+    range: string
+  growth_facil:
+    name: growth_facil
+    mappings:
+    - minimal:growth_facil
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:growth_facil
+    range: string
+  collection_date:
+    name: collection_date
+    mappings:
+    - minimal:collection_date
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:collection_date
+    range: string
+  ?? Incubation collection date:
+    name: ?? Incubation collection date
+    mappings:
+    - minimal:??_Incubation_collection_date
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:??_Incubation_collection_date
+    range: string
+  ?? Incubation start date:
+    name: ?? Incubation start date
+    mappings:
+    - minimal:??_Incubation_start_date
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:??_Incubation_start_date
+    range: string
+  samp_mat_process:
+    name: samp_mat_process
+    mappings:
+    - minimal:samp_mat_process
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:samp_mat_process
+    range: string
+  store_cond:
+    name: store_cond
+    mappings:
+    - minimal:store_cond
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:store_cond
+    range: string
+  samp_store_temp:
+    name: samp_store_temp
+    mappings:
+    - minimal:samp_store_temp
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:samp_store_temp
+    range: string
+  samp_size:
+    name: samp_size
+    mappings:
+    - minimal:samp_size
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:samp_size
+    range: string
+  geo_loc_name:
+    name: geo_loc_name
+    mappings:
+    - minimal:geo_loc_name
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:geo_loc_name
+    range: string
+  lat_lon:
+    name: lat_lon
+    mappings:
+    - minimal:lat_lon
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:lat_lon
+    range: string
+  elev:
+    name: elev
+    mappings:
+    - minimal:elev
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:elev
+    range: string
+  depth:
+    name: depth
+    mappings:
+    - minimal:depth
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:depth
+    range: string
+  chem_administration:
+    name: chem_administration
+    mappings:
+    - minimal:chem_administration
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:chem_administration
+    range: string
+  watering_regm:
+    name: watering_regm
+    mappings:
+    - minimal:watering_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:watering_regm
+    range: string
+  air_temp_regm:
+    name: air_temp_regm
+    mappings:
+    - minimal:air_temp_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:air_temp_regm
+    range: string
+  gaseous_environment:
+    name: gaseous_environment
+    mappings:
+    - minimal:gaseous_environment
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:gaseous_environment
+    range: string
+  isotope_exposure:
+    name: isotope_exposure
+    mappings:
+    - minimal:isotope_exposure
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:isotope_exposure
+    range: string
+  climate_environment:
+    name: climate_environment
+    mappings:
+    - minimal:climate_environment
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:climate_environment
+    range: string
+  humidity_regm:
+    name: humidity_regm
+    mappings:
+    - minimal:humidity_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:humidity_regm
+    range: string
+  light_regm:
+    name: light_regm
+    mappings:
+    - minimal:light_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:light_regm
+    range: string
+  biotic_regm:
+    name: biotic_regm
+    mappings:
+    - minimal:biotic_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:biotic_regm
+    range: string
+  other:
+    name: other
+    mappings:
+    - minimal:other
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:other
+    range: string
+  size_frac_low:
+    name: size_frac_low
+    mappings:
+    - minimal:size_frac_low
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:size_frac_low
+    range: string
+  size_frac_up:
+    name: size_frac_up
+    mappings:
+    - minimal:size_frac_up
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:size_frac_up
+    range: string
+  size_frac:
+    name: size_frac
+    mappings:
+    - minimal:size_frac
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:size_frac
+    range: string
+  sieving:
+    name: sieving
+    mappings:
+    - minimal:sieving
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:sieving
+    range: string
+  samp_collect_device:
+    name: samp_collect_device
+    mappings:
+    - minimal:samp_collect_device
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:samp_collect_device
+    range: string
+  plant_struc:
+    name: plant_struc
+    mappings:
+    - minimal:plant_struc
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:plant_struc
+    range: string
+  host_common_name:
+    name: host_common_name
+    mappings:
+    - minimal:host_common_name
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:host_common_name
+    range: string
+  host_taxid:
+    name: host_taxid
+    mappings:
+    - minimal:host_taxid
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:host_taxid
+    range: string
+  alt:
+    name: alt
+    mappings:
+    - minimal:alt
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:alt
+    range: string
+  isol_growth_condt:
+    name: isol_growth_condt
+    mappings:
+    - minimal:isol_growth_condt
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:isol_growth_condt
+    range: string
+  growth_medium:
+    name: growth_medium
+    mappings:
+    - minimal:growth_medium
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:growth_medium
+    range: string
+  agrochem_addition:
+    name: agrochem_addition
+    mappings:
+    - minimal:agrochem_addition
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:agrochem_addition
+    range: string
+  al_sat:
+    name: al_sat
+    mappings:
+    - minimal:al_sat
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:al_sat
+    range: string
+  al_sat_meth:
+    name: al_sat_meth
+    mappings:
+    - minimal:al_sat_meth
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:al_sat_meth
+    range: string
+  alkalinity:
+    name: alkalinity
+    mappings:
+    - minimal:alkalinity
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:alkalinity
+    range: string
+  alkalinity_method:
+    name: alkalinity_method
+    mappings:
+    - minimal:alkalinity_method
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:alkalinity_method
+    range: string
+  alkyl_diethers:
+    name: alkyl_diethers
+    mappings:
+    - minimal:alkyl_diethers
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:alkyl_diethers
+    range: string
+  aminopept_act:
+    name: aminopept_act
+    mappings:
+    - minimal:aminopept_act
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:aminopept_act
+    range: string
+  ammonium:
+    name: ammonium
+    mappings:
+    - minimal:ammonium
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:ammonium
+    range: string
+  ances_data:
+    name: ances_data
+    mappings:
+    - minimal:ances_data
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:ances_data
+    range: string
+  annual_precpt:
+    name: annual_precpt
+    mappings:
+    - minimal:annual_precpt
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:annual_precpt
+    range: string
+  annual_temp:
+    name: annual_temp
+    mappings:
+    - minimal:annual_temp
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:annual_temp
+    range: string
+  antibiotic_regm:
+    name: antibiotic_regm
+    mappings:
+    - minimal:antibiotic_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:antibiotic_regm
+    range: string
+  atmospheric_data:
+    name: atmospheric_data
+    mappings:
+    - minimal:atmospheric_data
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:atmospheric_data
+    range: string
+  bac_prod:
+    name: bac_prod
+    mappings:
+    - minimal:bac_prod
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:bac_prod
+    range: string
+  bac_resp:
+    name: bac_resp
+    mappings:
+    - minimal:bac_resp
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:bac_resp
+    range: string
+  bacteria_carb_prod:
+    name: bacteria_carb_prod
+    mappings:
+    - minimal:bacteria_carb_prod
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:bacteria_carb_prod
+    range: string
+  biochem_oxygen_dem:
+    name: biochem_oxygen_dem
+    mappings:
+    - minimal:biochem_oxygen_dem
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:biochem_oxygen_dem
+    range: string
+  biol_stat:
+    name: biol_stat
+    mappings:
+    - minimal:biol_stat
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:biol_stat
+    range: string
+  biomass:
+    name: biomass
+    mappings:
+    - minimal:biomass
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:biomass
+    range: string
+  biotic_relationship:
+    name: biotic_relationship
+    mappings:
+    - minimal:biotic_relationship
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:biotic_relationship
+    range: string
+  bishomohopanol:
+    name: bishomohopanol
+    mappings:
+    - minimal:bishomohopanol
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:bishomohopanol
+    range: string
+  bromide:
+    name: bromide
+    mappings:
+    - minimal:bromide
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:bromide
+    range: string
+  calcium:
+    name: calcium
+    mappings:
+    - minimal:calcium
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:calcium
+    range: string
+  carb_nitro_ratio:
+    name: carb_nitro_ratio
+    mappings:
+    - minimal:carb_nitro_ratio
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:carb_nitro_ratio
+    range: string
+  chem_mutagen:
+    name: chem_mutagen
+    mappings:
+    - minimal:chem_mutagen
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:chem_mutagen
+    range: string
+  chem_oxygen_dem:
+    name: chem_oxygen_dem
+    mappings:
+    - minimal:chem_oxygen_dem
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:chem_oxygen_dem
+    range: string
+  chloride:
+    name: chloride
+    mappings:
+    - minimal:chloride
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:chloride
+    range: string
+  chlorophyll:
+    name: chlorophyll
+    mappings:
+    - minimal:chlorophyll
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:chlorophyll
+    range: string
+  conduc:
+    name: conduc
+    mappings:
+    - minimal:conduc
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:conduc
+    range: string
+  crop_rotation:
+    name: crop_rotation
+    mappings:
+    - minimal:crop_rotation
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:crop_rotation
+    range: string
+  cult_root_med:
+    name: cult_root_med
+    mappings:
+    - minimal:cult_root_med
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:cult_root_med
+    range: string
+  cur_land_use:
+    name: cur_land_use
+    mappings:
+    - minimal:cur_land_use
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:cur_land_use
+    range: string
+  cur_vegetation:
+    name: cur_vegetation
+    mappings:
+    - minimal:cur_vegetation
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:cur_vegetation
+    range: string
+  cur_vegetation_meth:
+    name: cur_vegetation_meth
+    mappings:
+    - minimal:cur_vegetation_meth
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:cur_vegetation_meth
+    range: string
+  density:
+    name: density
+    mappings:
+    - minimal:density
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:density
+    range: string
+  diether_lipids:
+    name: diether_lipids
+    mappings:
+    - minimal:diether_lipids
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:diether_lipids
+    range: string
+  diss_carb_dioxide:
+    name: diss_carb_dioxide
+    mappings:
+    - minimal:diss_carb_dioxide
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:diss_carb_dioxide
+    range: string
+  diss_hydrogen:
+    name: diss_hydrogen
+    mappings:
+    - minimal:diss_hydrogen
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:diss_hydrogen
+    range: string
+  diss_inorg_carb:
+    name: diss_inorg_carb
+    mappings:
+    - minimal:diss_inorg_carb
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:diss_inorg_carb
+    range: string
+  diss_inorg_nitro:
+    name: diss_inorg_nitro
+    mappings:
+    - minimal:diss_inorg_nitro
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:diss_inorg_nitro
+    range: string
+  diss_inorg_phosp:
+    name: diss_inorg_phosp
+    mappings:
+    - minimal:diss_inorg_phosp
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:diss_inorg_phosp
+    range: string
+  diss_org_carb:
+    name: diss_org_carb
+    mappings:
+    - minimal:diss_org_carb
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:diss_org_carb
+    range: string
+  diss_org_nitro:
+    name: diss_org_nitro
+    mappings:
+    - minimal:diss_org_nitro
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:diss_org_nitro
+    range: string
+  diss_oxygen:
+    name: diss_oxygen
+    mappings:
+    - minimal:diss_oxygen
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:diss_oxygen
+    range: string
+  down_par:
+    name: down_par
+    mappings:
+    - minimal:down_par
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:down_par
+    range: string
+  drainage_class:
+    name: drainage_class
+    mappings:
+    - minimal:drainage_class
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:drainage_class
+    range: string
+  efficiency_percent:
+    name: efficiency_percent
+    mappings:
+    - minimal:efficiency_percent
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:efficiency_percent
+    range: string
+  emulsions:
+    name: emulsions
+    mappings:
+    - minimal:emulsions
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:emulsions
+    range: string
+  encoded_traits:
+    name: encoded_traits
+    mappings:
+    - minimal:encoded_traits
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:encoded_traits
+    range: string
+  extreme_event:
+    name: extreme_event
+    mappings:
+    - minimal:extreme_event
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:extreme_event
+    range: string
+  extreme_salinity:
+    name: extreme_salinity
+    mappings:
+    - minimal:extreme_salinity
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:extreme_salinity
+    range: string
+  fao_class:
+    name: fao_class
+    mappings:
+    - minimal:fao_class
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:fao_class
+    range: string
+  fertilizer_regm:
+    name: fertilizer_regm
+    mappings:
+    - minimal:fertilizer_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:fertilizer_regm
+    range: string
+  fire:
+    name: fire
+    mappings:
+    - minimal:fire
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:fire
+    range: string
+  flooding:
+    name: flooding
+    mappings:
+    - minimal:flooding
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:flooding
+    range: string
+  fluor:
+    name: fluor
+    mappings:
+    - minimal:fluor
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:fluor
+    range: string
+  fungicide_regm:
+    name: fungicide_regm
+    mappings:
+    - minimal:fungicide_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:fungicide_regm
+    range: string
+  gaseous_substances:
+    name: gaseous_substances
+    mappings:
+    - minimal:gaseous_substances
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:gaseous_substances
+    range: string
+  genetic_mod:
+    name: genetic_mod
+    mappings:
+    - minimal:genetic_mod
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:genetic_mod
+    range: string
+  glucosidase_act:
+    name: glucosidase_act
+    mappings:
+    - minimal:glucosidase_act
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:glucosidase_act
+    range: string
+  gravity:
+    name: gravity
+    mappings:
+    - minimal:gravity
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:gravity
+    range: string
+  growth_habit:
+    name: growth_habit
+    mappings:
+    - minimal:growth_habit
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:growth_habit
+    range: string
+  growth_hormone_regm:
+    name: growth_hormone_regm
+    mappings:
+    - minimal:growth_hormone_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:growth_hormone_regm
+    range: string
+  heavy_metals:
+    name: heavy_metals
+    mappings:
+    - minimal:heavy_metals
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:heavy_metals
+    range: string
+  heavy_metals_meth:
+    name: heavy_metals_meth
+    mappings:
+    - minimal:heavy_metals_meth
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:heavy_metals_meth
+    range: string
+  herbicide_regm:
+    name: herbicide_regm
+    mappings:
+    - minimal:herbicide_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:herbicide_regm
+    range: string
+  horizon:
+    name: horizon
+    mappings:
+    - minimal:horizon
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:horizon
+    range: string
+  horizon_meth:
+    name: horizon_meth
+    mappings:
+    - minimal:horizon_meth
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:horizon_meth
+    range: string
+  host_age:
+    name: host_age
+    mappings:
+    - minimal:host_age
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:host_age
+    range: string
+  host_disease_stat:
+    name: host_disease_stat
+    mappings:
+    - minimal:host_disease_stat
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:host_disease_stat
+    range: string
+  host_dry_mass:
+    name: host_dry_mass
+    mappings:
+    - minimal:host_dry_mass
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:host_dry_mass
+    range: string
+  host_genotype:
+    name: host_genotype
+    mappings:
+    - minimal:host_genotype
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:host_genotype
+    range: string
+  host_height:
+    name: host_height
+    mappings:
+    - minimal:host_height
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:host_height
+    range: string
+  host_infra_specific_name:
+    name: host_infra_specific_name
+    mappings:
+    - minimal:host_infra_specific_name
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:host_infra_specific_name
+    range: string
+  host_infra_specific_rank:
+    name: host_infra_specific_rank
+    mappings:
+    - minimal:host_infra_specific_rank
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:host_infra_specific_rank
+    range: string
+  host_length:
+    name: host_length
+    mappings:
+    - minimal:host_length
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:host_length
+    range: string
+  host_life_stage:
+    name: host_life_stage
+    mappings:
+    - minimal:host_life_stage
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:host_life_stage
+    range: string
+  host_phenotype:
+    name: host_phenotype
+    mappings:
+    - minimal:host_phenotype
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:host_phenotype
+    range: string
+  host_spec_range:
+    name: host_spec_range
+    mappings:
+    - minimal:host_spec_range
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:host_spec_range
+    range: string
+  host_symbiont:
+    name: host_symbiont
+    mappings:
+    - minimal:host_symbiont
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:host_symbiont
+    range: string
+  host_tot_mass:
+    name: host_tot_mass
+    mappings:
+    - minimal:host_tot_mass
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:host_tot_mass
+    range: string
+  host_wet_mass:
+    name: host_wet_mass
+    mappings:
+    - minimal:host_wet_mass
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:host_wet_mass
+    range: string
+  indust_eff_percent:
+    name: indust_eff_percent
+    mappings:
+    - minimal:indust_eff_percent
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:indust_eff_percent
+    range: string
+  inorg_particles:
+    name: inorg_particles
+    mappings:
+    - minimal:inorg_particles
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:inorg_particles
+    range: string
+  light_intensity:
+    name: light_intensity
+    mappings:
+    - minimal:light_intensity
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:light_intensity
+    range: string
+  link_addit_analys:
+    name: link_addit_analys
+    mappings:
+    - minimal:link_addit_analys
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:link_addit_analys
+    range: string
+  link_class_info:
+    name: link_class_info
+    mappings:
+    - minimal:link_class_info
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:link_class_info
+    range: string
+  link_climate_info:
+    name: link_climate_info
+    mappings:
+    - minimal:link_climate_info
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:link_climate_info
+    range: string
+  local_class:
+    name: local_class
+    mappings:
+    - minimal:local_class
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:local_class
+    range: string
+  local_class_meth:
+    name: local_class_meth
+    mappings:
+    - minimal:local_class_meth
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:local_class_meth
+    range: string
+  magnesium:
+    name: magnesium
+    mappings:
+    - minimal:magnesium
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:magnesium
+    range: string
+  mean_frict_vel:
+    name: mean_frict_vel
+    mappings:
+    - minimal:mean_frict_vel
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:mean_frict_vel
+    range: string
+  mean_peak_frict_vel:
+    name: mean_peak_frict_vel
+    mappings:
+    - minimal:mean_peak_frict_vel
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:mean_peak_frict_vel
+    range: string
+  mechanical_damage:
+    name: mechanical_damage
+    mappings:
+    - minimal:mechanical_damage
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:mechanical_damage
+    range: string
+  methane:
+    name: methane
+    mappings:
+    - minimal:methane
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:methane
+    range: string
+  microbial_biomass:
+    name: microbial_biomass
+    mappings:
+    - minimal:microbial_biomass
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:microbial_biomass
+    range: string
+  microbial_biomass_meth:
+    name: microbial_biomass_meth
+    mappings:
+    - minimal:microbial_biomass_meth
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:microbial_biomass_meth
+    range: string
+  mineral_nutr_regm:
+    name: mineral_nutr_regm
+    mappings:
+    - minimal:mineral_nutr_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:mineral_nutr_regm
+    range: string
+  misc_param:
+    name: misc_param
+    mappings:
+    - minimal:misc_param
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:misc_param
+    range: string
+  n_alkanes:
+    name: n_alkanes
+    mappings:
+    - minimal:n_alkanes
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:n_alkanes
+    range: string
+  nitrate:
+    name: nitrate
+    mappings:
+    - minimal:nitrate
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:nitrate
+    range: string
+  nitrite:
+    name: nitrite
+    mappings:
+    - minimal:nitrite
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:nitrite
+    range: string
+  nitro:
+    name: nitro
+    mappings:
+    - minimal:nitro
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:nitro
+    range: string
+  non_min_nutr_regm:
+    name: non_min_nutr_regm
+    mappings:
+    - minimal:non_min_nutr_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:non_min_nutr_regm
+    range: string
+  org_carb:
+    name: org_carb
+    mappings:
+    - minimal:org_carb
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:org_carb
+    range: string
+  org_matter:
+    name: org_matter
+    mappings:
+    - minimal:org_matter
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:org_matter
+    range: string
+  org_nitro:
+    name: org_nitro
+    mappings:
+    - minimal:org_nitro
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:org_nitro
+    range: string
+  org_particles:
+    name: org_particles
+    mappings:
+    - minimal:org_particles
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:org_particles
+    range: string
+  organism_count:
+    name: organism_count
+    mappings:
+    - minimal:organism_count
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:organism_count
+    range: string
+  oxy_stat_samp:
+    name: oxy_stat_samp
+    mappings:
+    - minimal:oxy_stat_samp
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:oxy_stat_samp
+    range: string
+  part_org_carb:
+    name: part_org_carb
+    mappings:
+    - minimal:part_org_carb
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:part_org_carb
+    range: string
+  part_org_nitro:
+    name: part_org_nitro
+    mappings:
+    - minimal:part_org_nitro
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:part_org_nitro
+    range: string
+  particle_class:
+    name: particle_class
+    mappings:
+    - minimal:particle_class
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:particle_class
+    range: string
+  pathogenicity:
+    name: pathogenicity
+    mappings:
+    - minimal:pathogenicity
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:pathogenicity
+    range: string
+  perturbation:
+    name: perturbation
+    mappings:
+    - minimal:perturbation
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:perturbation
+    range: string
+  pesticide_regm:
+    name: pesticide_regm
+    mappings:
+    - minimal:pesticide_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:pesticide_regm
+    range: string
+  petroleum_hydrocarb:
+    name: petroleum_hydrocarb
+    mappings:
+    - minimal:petroleum_hydrocarb
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:petroleum_hydrocarb
+    range: string
+  ph:
+    name: ph
+    mappings:
+    - minimal:ph
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:ph
+    range: string
+  ph_meth:
+    name: ph_meth
+    mappings:
+    - minimal:ph_meth
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:ph_meth
+    range: string
+  ph_regm:
+    name: ph_regm
+    mappings:
+    - minimal:ph_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:ph_regm
+    range: string
+  phaeopigments:
+    name: phaeopigments
+    mappings:
+    - minimal:phaeopigments
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:phaeopigments
+    range: string
+  phosphate:
+    name: phosphate
+    mappings:
+    - minimal:phosphate
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:phosphate
+    range: string
+  phosplipid_fatt_acid:
+    name: phosplipid_fatt_acid
+    mappings:
+    - minimal:phosplipid_fatt_acid
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:phosplipid_fatt_acid
+    range: string
+  photon_flux:
+    name: photon_flux
+    mappings:
+    - minimal:photon_flux
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:photon_flux
+    range: string
+  plant_growth_med:
+    name: plant_growth_med
+    mappings:
+    - minimal:plant_growth_med
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:plant_growth_med
+    range: string
+  plant_product:
+    name: plant_product
+    mappings:
+    - minimal:plant_product
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:plant_product
+    range: string
+  plant_sex:
+    name: plant_sex
+    mappings:
+    - minimal:plant_sex
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:plant_sex
+    range: string
+  porosity:
+    name: porosity
+    mappings:
+    - minimal:porosity
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:porosity
+    range: string
+  potassium:
+    name: potassium
+    mappings:
+    - minimal:potassium
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:potassium
+    range: string
+  pre_treatment:
+    name: pre_treatment
+    mappings:
+    - minimal:pre_treatment
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:pre_treatment
+    range: string
+  pressure:
+    name: pressure
+    mappings:
+    - minimal:pressure
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:pressure
+    range: string
+  previous_land_use:
+    name: previous_land_use
+    mappings:
+    - minimal:previous_land_use
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:previous_land_use
+    range: string
+  previous_land_use_meth:
+    name: previous_land_use_meth
+    mappings:
+    - minimal:previous_land_use_meth
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:previous_land_use_meth
+    range: string
+  primary_prod:
+    name: primary_prod
+    mappings:
+    - minimal:primary_prod
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:primary_prod
+    range: string
+  primary_treatment:
+    name: primary_treatment
+    mappings:
+    - minimal:primary_treatment
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:primary_treatment
+    range: string
+  profile_position:
+    name: profile_position
+    mappings:
+    - minimal:profile_position
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:profile_position
+    range: string
+  propagation:
+    name: propagation
+    mappings:
+    - minimal:propagation
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:propagation
+    range: string
+  radiation_regm:
+    name: radiation_regm
+    mappings:
+    - minimal:radiation_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:radiation_regm
+    range: string
+  rainfall_regm:
+    name: rainfall_regm
+    mappings:
+    - minimal:rainfall_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:rainfall_regm
+    range: string
+  reactor_type:
+    name: reactor_type
+    mappings:
+    - minimal:reactor_type
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:reactor_type
+    range: string
+  redox_potential:
+    name: redox_potential
+    mappings:
+    - minimal:redox_potential
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:redox_potential
+    range: string
+  ref_biomaterial:
+    name: ref_biomaterial
+    mappings:
+    - minimal:ref_biomaterial
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:ref_biomaterial
+    range: string
+  root_cond:
+    name: root_cond
+    mappings:
+    - minimal:root_cond
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:root_cond
+    range: string
+  root_med_carbon:
+    name: root_med_carbon
+    mappings:
+    - minimal:root_med_carbon
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:root_med_carbon
+    range: string
+  root_med_macronutr:
+    name: root_med_macronutr
+    mappings:
+    - minimal:root_med_macronutr
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:root_med_macronutr
+    range: string
+  root_med_micronutr:
+    name: root_med_micronutr
+    mappings:
+    - minimal:root_med_micronutr
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:root_med_micronutr
+    range: string
+  root_med_ph:
+    name: root_med_ph
+    mappings:
+    - minimal:root_med_ph
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:root_med_ph
+    range: string
+  root_med_regl:
+    name: root_med_regl
+    mappings:
+    - minimal:root_med_regl
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:root_med_regl
+    range: string
+  root_med_solid:
+    name: root_med_solid
+    mappings:
+    - minimal:root_med_solid
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:root_med_solid
+    range: string
+  root_med_suppl:
+    name: root_med_suppl
+    mappings:
+    - minimal:root_med_suppl
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:root_med_suppl
+    range: string
+  salinity:
+    name: salinity
+    mappings:
+    - minimal:salinity
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:salinity
+    range: string
+  salinity_meth:
+    name: salinity_meth
+    mappings:
+    - minimal:salinity_meth
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:salinity_meth
+    range: string
+  salt_regm:
+    name: salt_regm
+    mappings:
+    - minimal:salt_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:salt_regm
+    range: string
+  samp_capt_status:
+    name: samp_capt_status
+    mappings:
+    - minimal:samp_capt_status
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:samp_capt_status
+    range: string
+  samp_dis_stage:
+    name: samp_dis_stage
+    mappings:
+    - minimal:samp_dis_stage
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:samp_dis_stage
+    range: string
+  samp_salinity:
+    name: samp_salinity
+    mappings:
+    - minimal:samp_salinity
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:samp_salinity
+    range: string
+  season_environment:
+    name: season_environment
+    mappings:
+    - minimal:season_environment
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:season_environment
+    range: string
+  season_precpt:
+    name: season_precpt
+    mappings:
+    - minimal:season_precpt
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:season_precpt
+    range: string
+  season_temp:
+    name: season_temp
+    mappings:
+    - minimal:season_temp
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:season_temp
+    range: string
+  secondary_treatment:
+    name: secondary_treatment
+    mappings:
+    - minimal:secondary_treatment
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:secondary_treatment
+    range: string
+  sediment_type:
+    name: sediment_type
+    mappings:
+    - minimal:sediment_type
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:sediment_type
+    range: string
+  sewage_type:
+    name: sewage_type
+    mappings:
+    - minimal:sewage_type
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:sewage_type
+    range: string
+  silicate:
+    name: silicate
+    mappings:
+    - minimal:silicate
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:silicate
+    range: string
+  slope_aspect:
+    name: slope_aspect
+    mappings:
+    - minimal:slope_aspect
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:slope_aspect
+    range: string
+  slope_gradient:
+    name: slope_gradient
+    mappings:
+    - minimal:slope_gradient
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:slope_gradient
+    range: string
+  sludge_retent_time:
+    name: sludge_retent_time
+    mappings:
+    - minimal:sludge_retent_time
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:sludge_retent_time
+    range: string
+  sodium:
+    name: sodium
+    mappings:
+    - minimal:sodium
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:sodium
+    range: string
+  soil_type:
+    name: soil_type
+    mappings:
+    - minimal:soil_type
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:soil_type
+    range: string
+  soil_type_meth:
+    name: soil_type_meth
+    mappings:
+    - minimal:soil_type_meth
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:soil_type_meth
+    range: string
+  soluble_inorg_mat:
+    name: soluble_inorg_mat
+    mappings:
+    - minimal:soluble_inorg_mat
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:soluble_inorg_mat
+    range: string
+  soluble_org_mat:
+    name: soluble_org_mat
+    mappings:
+    - minimal:soluble_org_mat
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:soluble_org_mat
+    range: string
+  soluble_react_phosp:
+    name: soluble_react_phosp
+    mappings:
+    - minimal:soluble_react_phosp
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:soluble_react_phosp
+    range: string
+  specific_host:
+    name: specific_host
+    mappings:
+    - minimal:specific_host
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:specific_host
+    range: string
+  standing_water_regm:
+    name: standing_water_regm
+    mappings:
+    - minimal:standing_water_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:standing_water_regm
+    range: string
+  subspecf_gen_lin:
+    name: subspecf_gen_lin
+    mappings:
+    - minimal:subspecf_gen_lin
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:subspecf_gen_lin
+    range: string
+  sulfate:
+    name: sulfate
+    mappings:
+    - minimal:sulfate
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:sulfate
+    range: string
+  sulfide:
+    name: sulfide
+    mappings:
+    - minimal:sulfide
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:sulfide
+    range: string
+  suspend_part_matter:
+    name: suspend_part_matter
+    mappings:
+    - minimal:suspend_part_matter
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:suspend_part_matter
+    range: string
+  suspend_solids:
+    name: suspend_solids
+    mappings:
+    - minimal:suspend_solids
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:suspend_solids
+    range: string
+  temp:
+    name: temp
+    mappings:
+    - minimal:temp
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:temp
+    range: string
+  tertiary_treatment:
+    name: tertiary_treatment
+    mappings:
+    - minimal:tertiary_treatment
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:tertiary_treatment
+    range: string
+  texture:
+    name: texture
+    mappings:
+    - minimal:texture
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:texture
+    range: string
+  texture_meth:
+    name: texture_meth
+    mappings:
+    - minimal:texture_meth
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:texture_meth
+    range: string
+  tidal_stage:
+    name: tidal_stage
+    mappings:
+    - minimal:tidal_stage
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:tidal_stage
+    range: string
+  tillage:
+    name: tillage
+    mappings:
+    - minimal:tillage
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:tillage
+    range: string
+  tiss_cult_growth_med:
+    name: tiss_cult_growth_med
+    mappings:
+    - minimal:tiss_cult_growth_med
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:tiss_cult_growth_med
+    range: string
+  tot_carb:
+    name: tot_carb
+    mappings:
+    - minimal:tot_carb
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:tot_carb
+    range: string
+  tot_depth_water_col:
+    name: tot_depth_water_col
+    mappings:
+    - minimal:tot_depth_water_col
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:tot_depth_water_col
+    range: string
+  tot_diss_nitro:
+    name: tot_diss_nitro
+    mappings:
+    - minimal:tot_diss_nitro
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:tot_diss_nitro
+    range: string
+  tot_inorg_nitro:
+    name: tot_inorg_nitro
+    mappings:
+    - minimal:tot_inorg_nitro
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:tot_inorg_nitro
+    range: string
+  tot_nitro:
+    name: tot_nitro
+    mappings:
+    - minimal:tot_nitro
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:tot_nitro
+    range: string
+  tot_nitro_content:
+    name: tot_nitro_content
+    mappings:
+    - minimal:tot_nitro_content
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:tot_nitro_content
+    range: string
+  tot_n_meth:
+    name: tot_n_meth
+    mappings:
+    - minimal:tot_n_meth
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:tot_n_meth
+    range: string
+  tot_org_c_meth:
+    name: tot_org_c_meth
+    mappings:
+    - minimal:tot_org_c_meth
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:tot_org_c_meth
+    range: string
+  tot_org_carb:
+    name: tot_org_carb
+    mappings:
+    - minimal:tot_org_carb
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:tot_org_carb
+    range: string
+  tot_part_carb:
+    name: tot_part_carb
+    mappings:
+    - minimal:tot_part_carb
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:tot_part_carb
+    range: string
+  tot_phosp:
+    name: tot_phosp
+    mappings:
+    - minimal:tot_phosp
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:tot_phosp
+    range: string
+  tot_phosphate:
+    name: tot_phosphate
+    mappings:
+    - minimal:tot_phosphate
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:tot_phosphate
+    range: string
+  trophic_level:
+    name: trophic_level
+    mappings:
+    - minimal:trophic_level
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:trophic_level
+    range: string
+  turbidity:
+    name: turbidity
+    mappings:
+    - minimal:turbidity
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:turbidity
+    range: string
+  wastewater_type:
+    name: wastewater_type
+    mappings:
+    - minimal:wastewater_type
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:wastewater_type
+    range: string
+  water_content:
+    name: water_content
+    mappings:
+    - minimal:water_content
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:water_content
+    range: string
+  water_cont_soil_meth:
+    name: water_cont_soil_meth
+    mappings:
+    - minimal:water_cont_soil_meth
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:water_cont_soil_meth
+    range: string
+  water_current:
+    name: water_current
+    mappings:
+    - minimal:water_current
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:water_current
+    range: string
+  water_temp_regm:
+    name: water_temp_regm
+    mappings:
+    - minimal:water_temp_regm
+    from_schema: https://w3id.org/minimal
+    slot_uri: minimal:water_temp_regm
+    range: string
+classes:
+  culture_environmental:
+    name: culture_environmental
+    mappings:
+    - minimal:CultureEnvironmental
+    from_schema: https://w3id.org/minimal
+    class_uri: minimal:CultureEnvironmental
+  mixed_culture:
+    name: mixed_culture
+    mappings:
+    - minimal:MixedCulture
+    from_schema: https://w3id.org/minimal
+    class_uri: minimal:MixedCulture
+  plant_associated:
+    name: plant_associated
+    mappings:
+    - minimal:PlantAssociated
+    from_schema: https://w3id.org/minimal
+    class_uri: minimal:PlantAssociated
+  pore_water:
+    name: pore_water
+    mappings:
+    - minimal:PoreWater
+    from_schema: https://w3id.org/minimal
+    class_uri: minimal:PoreWater
+  pure_culture:
+    name: pure_culture
+    mappings:
+    - minimal:PureCulture
+    from_schema: https://w3id.org/minimal
+    class_uri: minimal:PureCulture
+  sediment:
+    name: sediment
+    mappings:
+    - minimal:Sediment
+    from_schema: https://w3id.org/minimal
+    class_uri: minimal:Sediment
+  soil:
+    name: soil
+    mappings:
+    - minimal:Soil
+    from_schema: https://w3id.org/minimal
+    class_uri: minimal:Soil
+  water:
+    name: water
+    mappings:
+    - minimal:Water
+    from_schema: https://w3id.org/minimal
+    class_uri: minimal:Water
+  water_extract_biosolid:
+    name: water_extract_biosolid
+    mappings:
+    - minimal:WaterExtractBiosolid
+    from_schema: https://w3id.org/minimal
+    class_uri: minimal:WaterExtractBiosolid
+  water_extract_soil:
+    name: water_extract_soil
+    mappings:
+    - minimal:WaterExtractSoil
+    from_schema: https://w3id.org/minimal
+    class_uri: minimal:WaterExtractSoil
+source_file: minimal.yaml

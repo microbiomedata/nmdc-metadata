@@ -11,15 +11,16 @@
 # currently using static dump
 black
 jupyter
-linkml-runtime
+# linkml-runtime
+linkml
 pandas
 
-# probably only need one of these
-# actually probaly just using some lower level Google API
-# dependency that they pull in
-gsheets
-gspread
 
 # igraph
-python-igraph
+#python-igraph
 
+google-api-python-client
+google-auth-oauthlib
+
+# ERROR: httplib2 0.20.1 has requirement pyparsing<3,>=2.4.2, but you'll have pyparsing 3.0.3 which is incompatible.
+pyparsing~=2.4.7 
