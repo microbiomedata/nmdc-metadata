@@ -1,10 +1,10 @@
 
-# Important
-This repository is being deprecated.
-Please consider putting issues in:
-- NMDC Schema for schema changes/issues.
-- NMDC Ontology for issues related to producing terms or term subsets.
-- NMDC Runtime for isseus related to ETL issues.
+> [!WARNING] 
+> This repository is deprecated.
+> Please consider putting issues in:
+> - [NMDC Schema](https://github.com/microbiomedata/nmdc-schema) for schema changes/issues.
+> - [NMDC Ontology](https://github.com/microbiomedata/nmdc-ontology) for issues related to producing terms or term subsets.
+> - [NMDC Runtime](https://github.com/microbiomedata/nmdc-runtime) for isseus related to ETL issues.
 
 # Metadata management for the [National Microbiome Data Collaborative](https://microbiomedata.org/)
 [![Build Status](https://travis-ci.org/microbiomedata/nmdc-metadata.svg?branch=master)](https://travis-ci.org/microbiomedata/nmdc-metadata)
